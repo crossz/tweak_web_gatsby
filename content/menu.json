@@ -1,0 +1,32 @@
+[
+  {
+    "title": "title1",
+    "banner": "url1",
+    "path": "/path1",
+    "children": [
+      {
+        "title": "children1",
+        "path": "/children-path-1"
+      },
+      {
+        "title": "children2",
+        "path": "/children-path-2"
+      }
+    ]
+  },
+  {
+    "title": "title2",
+    "banner": "url2",
+    "path": "/path2",
+    "children": [
+      {
+        "title": "children1",
+        "path": "/children-path-1"
+      },
+      {
+        "title": "children2",
+        "path": "/children-path-2"
+      }
+    ]
+  }
+]

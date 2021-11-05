@@ -1,14 +1,15 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import Container from '@material-ui/core/Container'
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
   return (
-    <div>
+    <Container disableGutters maxWidth='xl'>
       <Header></Header>
-      {props.children}
+      {children}
       <Footer></Footer>
-    </div>
+    </Container>
   )
 }
 

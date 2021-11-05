@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/assets/images/icon.png',
       },
     },
     {
@@ -34,7 +34,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
       __key: 'images',
     },
@@ -49,11 +49,27 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'blogs',
-        path: `${__dirname}/src/blogs`,
+        name: 'content',
+        path: `${__dirname}/content/`,
       },
       __key: 'blogs',
     },
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': 'src/components',
+          '@layouts': 'src/layouts',
+          '@pages': 'src/pages',
+          '@images': 'src/assets/images',
+          '@templates': 'src/templates',
+          '@content': 'content',
+          '@themes': 'src/themes',
+        },
+        extensions: ['js'],
+      },
+    },
+    'gatsby-plugin-react-svg',
   ],
 }
