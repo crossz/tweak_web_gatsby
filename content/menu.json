@@ -1,32 +1,91 @@
-[
-  {
-    "title": "title1",
-    "banner": "url1",
-    "path": "/path1",
-    "children": [
-      {
-        "title": "children1",
-        "path": "/children-path-1"
-      },
-      {
-        "title": "children2",
-        "path": "/children-path-2"
-      }
-    ]
-  },
-  {
-    "title": "title2",
-    "banner": "url2",
-    "path": "/path2",
-    "children": [
-      {
-        "title": "children1",
-        "path": "/children-path-1"
-      },
-      {
-        "title": "children2",
-        "path": "/children-path-2"
-      }
-    ]
-  }
-]
+{
+  "menu": [
+    {
+      "title": "最新動態及推廣",
+      "banner": "url1",
+      "path": "/whats-new",
+      "children": [
+        {
+          "title": "最新推廣優惠",
+          "path": "/whats-new/promotions"
+        },
+        {
+          "title": "健康資訊",
+          "path": "/whats-new/health-tips"
+        },
+        {
+          "title": "Take2™ 最新動態",
+          "path": "/whats-new/updates"
+        }
+      ]
+    },
+    {
+      "title": "創新技術",
+      "banner": "url2",
+      "path": "/our-technologies",
+      "children": [
+        {
+          "title": "認識早期鼻咽癌篩查",
+          "path": "/our-technologies/early-cancer-detection"
+        },
+        {
+          "title": "了解NGS技術",
+          "path": "/our-technologies/NGS"
+        },
+        {
+          "title": "相關研究報告",
+          "path": "/our-technologies/clinical-papers"
+        }
+      ]
+    },
+    {
+      "title": "產品及服務",
+      "banner": "url2",
+      "path": "/products-and-services",
+      "children": [
+        {
+          "title": "Take2 ProphecyTM",
+          "path": "/products-and-services/take2-prophecy"
+        },
+        {
+          "title": "Take2 Extra Care會員計劃",
+          "path": "/products-and-services/take2-extra-care"
+        },
+        {
+          "title": "常見問題",
+          "path": "/products-and-services/FAQ"
+        }
+      ]
+    },
+    {
+      "title": "本港篩查服務點",
+      "banner": "url2",
+      "path": "/service-location"
+    },
+    {
+      "title": "商業合作",
+      "banner": "url2",
+      "path": "/international"
+    },
+    {
+      "title": "關於 Take2 Health",
+      "banner": "url2",
+      "path": "/about-us",
+      "children": [
+        {
+          "title": "信念和使命",
+          "path": "/about-us/mission"
+        },
+        {
+          "title": "加入我們",
+          "path": "/about-us/join-us"
+        }
+      ]
+    },
+    {
+      "title": "聯絡我們",
+      "banner": "url2",
+      "path": "/contact-us"
+    }
+  ]
+}
