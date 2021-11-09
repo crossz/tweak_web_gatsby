@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme, alpha } from '@material-ui/core/styles'
 // Use createMuiTheme here is good for theme object key suggestion
 let theme = createTheme({
   palette: {
@@ -43,11 +43,99 @@ let theme = createTheme({
 })
 
 theme = createTheme(theme, {
+  props: {
+    // 组件的名字 ⚛️
+    MuiButtonBase: {
+      // 需要应用的属性
+      disableRipple: true, // 在整个应用中都不会有涟漪效果 💣！
+    },
+  },
   overrides: {
     MuiButton: {
       root: {
-        borderRadius: 8,
+        borderRadius: 6,
+        height: theme.spacing(7),
+        padding: theme.spacing(2, 6),
+        fontSize: theme.typography.body1.fontSize,
+        fontWeight: theme.typography.fontWeightBold,
       },
+      text: {
+        padding: theme.spacing(2, 6),
+        textDecoration: 'underline',
+        '&:hover': {
+          color: theme.palette.secondary.main,
+          textDecoration: 'underline',
+        },
+        '&:active': {
+          color: theme.palette.secondary.dark,
+          textDecoration: 'underline',
+        },
+        '&:disabled': {
+          color: theme.palette.grey[600],
+        },
+      },
+      outlined: {
+        padding: theme.spacing(2, 6),
+      },
+      sizeSmall: {
+        height: theme.spacing(5.5),
+        fontSize: theme.typography.caption.fontSize,
+        padding: theme.spacing(1.5, 5),
+      },
+      outlinedSizeSmall: {
+        padding: theme.spacing(1.5, 5),
+      },
+      containedSizeSmall: {
+        padding: theme.spacing(1.5, 5),
+      },
+      containedSecondary: {
+        '&:hover': {
+          transform: 'translateY(-4px)',
+          transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.standard,
+          }),
+          backgroundColor: theme.palette.secondary.main,
+          boxShadow: `0 11px 15px -4px ${alpha(
+            theme.palette.secondary.main,
+            0.3
+          )}`,
+        },
+        '&:active': {
+          backgroundColor: theme.palette.secondary.dark,
+          boxShadow: `0 11px 15px -4px ${alpha(
+            theme.palette.secondary.dark,
+            0.3
+          )}`,
+        },
+        '&:disabled': {
+          color: theme.palette.grey[600],
+          backgroundColor: theme.palette.grey[400],
+        },
+      },
+      outlinedPrimary: {
+        '&:hover': {
+          backgroundColor: theme.palette.background.paper,
+          transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.standard,
+          }),
+          color: theme.palette.secondary.main,
+          borderColor: theme.palette.secondary.main,
+        },
+        '&:active': {
+          color: theme.palette.secondary.dark,
+          borderColor: theme.palette.secondary.dark,
+        },
+        '&:disabled': {
+          color: theme.palette.grey[600],
+          backgroundColor: theme.palette.grey[200],
+          borderColor: theme.palette.grey[400],
+        },
+      },
+
+      textPrimary: {
+        padding: theme.spacing(2, 6),
+      },
+      sizeLarge: {},
       contained: {
         boxShadow: 'none',
         '&:hover': {
