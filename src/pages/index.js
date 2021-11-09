@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Map from '@components/Map'
-// markup
-const IndexPage = () => {
-  return <Map></Map>
+import Homepage from '@components/Homepage'
+
+const Index = () => {
+  return <Homepage></Homepage>
 }
 
-export default IndexPage
+export default Index

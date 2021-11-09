@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { makeStyles } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
+import Banner from './Banner'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,11 +18,14 @@ const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <Container disableGutters maxWidth='xl' className={classes.container}>
+    <main className={classes.container}>
       <Header></Header>
-      {children}
+      <Banner></Banner>
+      <Container disableGutters maxWidth='lg' className={classes.container}>
+        {children}
+      </Container>
       <Footer></Footer>
-    </Container>
+    </main>
   )
 }
 

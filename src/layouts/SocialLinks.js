@@ -20,13 +20,7 @@ const useStyles = makeStyles((theme) => ({
 const SocialLinks = () => {
   const classes = useStyles()
   const { whatsapp, linkedin, youtube, facebook } = useSiteMetadata()
-  const socialList = [
-    {
-      icon: Facebook,
-      url: facebook,
-    },
-  ]
-  console.log('whatsapp', whatsapp)
+
   return (
     <Box display='flex'>
       <Link href={facebook} target='_blank'>

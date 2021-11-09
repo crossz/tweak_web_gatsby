@@ -123,7 +123,7 @@ const Menu = () => {
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <Container disableGutters maxWidth='xl'>
+        <Container disableGutters maxWidth='lg'>
           <Box className={classes.header}>
             <Take2Logo type='take2WhiteOrange'></Take2Logo>
             <IconButton

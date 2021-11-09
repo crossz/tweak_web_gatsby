@@ -1,5 +1,11 @@
 import React from 'react'
-import { makeStyles, useMediaQuery, useTheme, Grid } from '@material-ui/core'
+import {
+  makeStyles,
+  useMediaQuery,
+  useTheme,
+  Grid,
+  Container,
+} from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import useMenu from '@hooks/useMenu'
 import useSiteMetadata from '@hooks/useSiteMetadata'
@@ -54,65 +60,68 @@ const Footer = () => {
 
   return (
     <Box className={classes.root}>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <Box>
-            <Take2Logo type='take2WhiteOrange'></Take2Logo>
-            <a href={`tel:${phone}`}>
-              <Box>
-                <PhoneIcon></PhoneIcon>
-                {phone}
-              </Box>
-            </a>
-            <a mailto={`tel:${email}`}>
-              <Box>
-                <EmailIcon></EmailIcon>
-                {email}
-              </Box>
-            </a>
-            <Divider className={classes.divider} />
-            關注我們
-            <SocialLinks></SocialLinks>
-          </Box>
-        </Grid>
-        <Grid item xs={8}>
-          <ImageList cols={matches ? 1 : 3}>
-            {menu?.map(
-              (item, index) =>
-                index < menu?.length - 1 && (
-                  <EAccordion
-                    defaultExpanded={!matches}
-                    square
-                    disabled={!matches}
-                    key={item.title}
-                  >
-                    <EAccordionSummary
-                      expandIcon={
-                        item.children &&
-                        item.children?.length && (
-                          <ArrowIcon className={classes.arrowIcon} />
-                        )
-                      }
-                      aria-controls='panel1a-content'
-                      id='panel1a-header'
+      <Container disableGutters maxWidth='lg'>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            <Box>
+              <Take2Logo type='take2WhiteOrange'></Take2Logo>
+              <a href={`tel:${phone}`}>
+                <Box>
+                  <PhoneIcon></PhoneIcon>
+                  {phone}
+                </Box>
+              </a>
+              <a mailto={`tel:${email}`}>
+                <Box>
+                  <EmailIcon></EmailIcon>
+                  {email}
+                </Box>
+              </a>
+              <Divider className={classes.divider} />
+              關注我們
+              <SocialLinks></SocialLinks>
+            </Box>
+          </Grid>
+          <Grid item xs={8}>
+            <ImageList cols={matches ? 1 : 3}>
+              {menu?.map(
+                (item, index) =>
+                  index < menu?.length - 1 && (
+                    <EAccordion
+                      defaultExpanded={!matches}
+                      square
+                      disabled={!matches}
+                      key={item.title}
                     >
-                      <Typography variant='h3'>{item.title}</Typography>
-                    </EAccordionSummary>
-                    {item.children && item.children?.length && (
-                      <EAccordionDetails>
-                        <Typography variant='body1' component='div'>
-                          {item.children.map((tab) => (
-                            <Box key={tab.title}>{tab.title}</Box>
-                          ))}
-                        </Typography>
-                      </EAccordionDetails>
-                    )}
-                  </EAccordion>
-                )
-            )}
-          </ImageList>
+                      <EAccordionSummary
+                        expandIcon={
+                          item.children &&
+                          item.children?.length && (
+                            <ArrowIcon className={classes.arrowIcon} />
+                          )
+                        }
+                        aria-controls='panel1a-content'
+                        id='panel1a-header'
+                      >
+                        <Typography variant='h3'>{item.title}</Typography>
+                      </EAccordionSummary>
+                      {item.children && item.children?.length && (
+                        <EAccordionDetails>
+                          <Typography variant='body1' component='div'>
+                            {item.children.map((tab) => (
+                              <Box key={tab.title}>{tab.title}</Box>
+                            ))}
+                          </Typography>
+                        </EAccordionDetails>
+                      )}
+                    </EAccordion>
+                  )
+              )}
+            </ImageList>
+          </Grid>
         </Grid>
-      </Grid>
+        <CopyRights></CopyRights>
+      </Container>
     </Box>
   )
 }

@@ -35,9 +35,9 @@ let theme = createTheme({
     values: {
       xs: 0,
       sm: 768,
-      md: 966,
-      lg: 1216,
-      xl: 1440,
+      md: 1216,
+      lg: 1440,
+      xl: 1920,
     },
   },
 })
