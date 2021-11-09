@@ -2,8 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { makeStyles } from '@material-ui/core'
-import Container from '@material-ui/core/Container'
-import Banner from './Banner'
+import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -20,10 +19,7 @@ const Layout = ({ children }) => {
   return (
     <main className={classes.container}>
       <Header></Header>
-      <Banner></Banner>
-      <Container disableGutters maxWidth='lg' className={classes.container}>
-        {children}
-      </Container>
+      <Box className={classes.container}>{children}</Box>
       <Footer></Footer>
     </main>
   )

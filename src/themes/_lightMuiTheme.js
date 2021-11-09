@@ -18,6 +18,9 @@ let theme = createTheme({
       main: '#7FE34A',
     },
     divider: '#DEDEDE',
+    text: {
+      primary: '#272C31',
+    },
     grey: {
       50: '#FFFFFF',
       100: '#FAFAFA',

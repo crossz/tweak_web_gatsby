@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   makeStyles,
   useMediaQuery,
@@ -23,19 +23,68 @@ import ImageList from '@material-ui/core/ImageList'
 import { Link } from 'gatsby'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
+import Hidden from '@material-ui/core/Hidden'
+import TitleDot from '@themes/components/TitleDot'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: 'auto',
+    backgroundColor: theme.palette.primary.main,
+    height: theme.spacing(66.5),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(4),
+    color: theme.palette.primary.contrastText,
+    [theme.breakpoints.down('xs')]: {
+      height: 'auto',
+      padding: theme.spacing(3, 1),
+      paddingBottom: theme.spacing(10.5),
+    },
+  },
+  logo: {
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(4.5),
+      width: theme.spacing(16.25),
+    },
+  },
+  container: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   divider: {
     backgroundColor: theme.palette.background.paper,
-    width: theme.spacing(31.25),
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(2),
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      backgroundColor: 'transparent',
+      marginBottom: 0,
+    },
   },
   arrowIcon: {
     transform: 'rotate(90deg)',
+    '& path': {
+      fill: theme.palette.primary.contrastText,
+    },
+  },
+  link: {
+    color: theme.palette.primary.contrastText,
+    textDecoration: 'none',
+  },
+  copyRight: {
+    fontSize: theme.typography.caption.fontSize,
+    display: 'flex',
+    marginTop: 'auto',
+  },
+  copyRightLink: {
+    marginRight: theme.spacing(5),
+  },
+  infoWrapper: {
+    height: '100%',
+  },
+  socialTitle: {},
+  infoIcon: {
+    paddingRight: theme.spacing(1),
     '& path': {
       fill: theme.palette.primary.contrastText,
     },
@@ -48,53 +97,72 @@ const Footer = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
   const { email, phone } = useSiteMetadata()
+  const [panel, setPanel] = useState('')
+
+  const handleChange = (activePanel) => (e, isExpanded) =>
+    setPanel(isExpanded ? activePanel : '')
 
   const CopyRights = (params) => (
-    <Box>
+    <Box className={classes.copyRight}>
       <Box>©2021 Take2 Health 版權所有</Box>
-      <Link to=''>私隱政策</Link>
-      <Link to=''>服務條款</Link>
-      <Link to=''>免責聲明</Link>
+      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+        私隱政策
+      </Link>
+      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+        服務條款
+      </Link>
+      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+        免責聲明
+      </Link>
     </Box>
   )
 
   return (
-    <Box className={classes.root}>
-      <Container disableGutters maxWidth='lg'>
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <Box>
-              <Take2Logo type='take2WhiteOrange'></Take2Logo>
-              <a href={`tel:${phone}`}>
-                <Box>
-                  <PhoneIcon></PhoneIcon>
+    <Container disableGutters maxWidth='xl' className={classes.root}>
+      <Container className={classes.container} maxWidth='md'>
+        <Grid container>
+          <Grid className={classes.infoWrapper} item xs={12} sm={4} md={5}>
+            <Take2Logo
+              type='take2WhiteOrange'
+              className={classes.logo}
+            ></Take2Logo>
+            <Box mt={matches ? 4 : 5}>
+              <a href={`tel:${phone}`} className={classes.link}>
+                <Box display='flex' mb={matches ? 1 : 1.5} alignItems='center'>
+                  <PhoneIcon className={classes.infoIcon}></PhoneIcon>
                   {phone}
                 </Box>
               </a>
-              <a mailto={`tel:${email}`}>
-                <Box>
-                  <EmailIcon></EmailIcon>
+              <a mailto={`tel:${email}`} className={classes.link}>
+                <Box display='flex' alignItems='center'>
+                  <EmailIcon className={classes.infoIcon}></EmailIcon>
                   {email}
                 </Box>
               </a>
+            </Box>
+            <Box display='inline-block'>
               <Divider className={classes.divider} />
-              關注我們
+              <Box className={classes.socialTitle}>關注我們</Box>
               <SocialLinks></SocialLinks>
             </Box>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={12} sm={8} md={7}>
             <ImageList cols={matches ? 1 : 3}>
               {menu?.map(
                 (item, index) =>
                   index < menu?.length - 1 && (
                     <EAccordion
-                      defaultExpanded={!matches}
+                      expanded={!matches || item.path === panel}
                       square
-                      disabled={!matches}
+                      disabled={
+                        !matches || !(item.children && item.children?.length)
+                      }
                       key={item.title}
+                      onChange={handleChange(item.path)}
                     >
                       <EAccordionSummary
                         expandIcon={
+                          matches &&
                           item.children &&
                           item.children?.length && (
                             <ArrowIcon className={classes.arrowIcon} />
@@ -103,13 +171,29 @@ const Footer = () => {
                         aria-controls='panel1a-content'
                         id='panel1a-header'
                       >
-                        <Typography variant='h3'>{item.title}</Typography>
+                        <Hidden smUp>
+                          <TitleDot bgcolor='background.paper'></TitleDot>
+                        </Hidden>
+                        <Box
+                          fontSize='body1.fontSize'
+                          fontWeight='fontWeightBold'
+                        >
+                          {item.title}
+                        </Box>
                       </EAccordionSummary>
                       {item.children && item.children?.length && (
                         <EAccordionDetails>
                           <Typography variant='body1' component='div'>
                             {item.children.map((tab) => (
-                              <Box key={tab.title}>{tab.title}</Box>
+                              <Box
+                                fontSize='body2.fontSize'
+                                mb={1}
+                                key={tab.title}
+                              >
+                                <Link to={tab.path} className={classes.link}>
+                                  {tab.title}
+                                </Link>
+                              </Box>
                             ))}
                           </Typography>
                         </EAccordionDetails>
@@ -122,7 +206,7 @@ const Footer = () => {
         </Grid>
         <CopyRights></CopyRights>
       </Container>
-    </Box>
+    </Container>
   )
 }
 

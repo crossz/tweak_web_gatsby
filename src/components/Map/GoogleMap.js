@@ -4,8 +4,10 @@ import GoogleMapReact, { fitBounds } from 'google-map-react'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    with: '100%',
-    height: 400,
+    width: '100%',
+    height: 664,
+    borderRadius: 6,
+    overflow: 'hidden',
   },
 }))
 const Marker = ({ text }) => <div style={{ color: 'red' }}>{text}</div>
@@ -40,7 +42,6 @@ const GoogleMap = (props) => {
         }}
         onGoogleApiLoaded={({ map, maps }) => {
           // Use google default marker style
-
           const marker = new maps.Marker({
             position: defaultProps.center,
             map: map,

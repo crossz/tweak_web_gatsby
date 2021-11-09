@@ -27,6 +27,7 @@ import {
 import ArrowIcon from '@images/icons/arrow.svg'
 import SocialLinks from '@layouts/SocialLinks'
 import { Link } from 'gatsby'
+import TitleDot from '@themes/components/TitleDot'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 6),
     display: 'flex',
     alignItems: 'center',
+    flexShrink: 0,
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(MOBILE_HEADER_HEIGHT),
       padding: theme.spacing(0, 3),
@@ -72,6 +74,60 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.primary.contrastText,
     },
   },
+  imageList: {
+    padding: theme.spacing(2),
+    paddingTop: theme.spacing(18),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: 0,
+    },
+  },
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+  },
+  menuWrapper: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(4, 3),
+    },
+  },
+
+  menuChildrenItem: {
+    fontSize: theme.typography.subtitle1.fontSize,
+    marginTop: theme.spacing(2.5),
+  },
+  bottomInfo: {
+    marginTop: 'auto',
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: theme.spacing(8.5),
+    alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    },
+  },
+  link: {
+    color: theme.palette.primary.contrastText,
+    cursor: 'pointer',
+    textDecoration: 'none',
+  },
+  contactLink: {
+    marginRight: theme.spacing(14.5),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: theme.spacing(5),
+    },
+  },
+  contactList: {
+    fontSize: theme.typography.subtitle1.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(3),
+    },
+  },
 }))
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -85,6 +141,7 @@ const Menu = () => {
   const menu = useMenu()
   const { platformUrl } = useSiteMetadata()
   const [open, setOpen] = useState(false)
+  const [panel, setPanel] = useState('')
 
   const handleOpen = () => {
     setOpen(true)
@@ -94,14 +151,32 @@ const Menu = () => {
     setOpen(false)
   }
 
+  const handleChange = (activePanel) => (e, isExpanded) =>
+    setPanel(isExpanded ? activePanel : '')
+
   const ContactList = () => {
     const contactUsItem = menu[6]
     const joinUsItem = menu[5].children[1]
     return (
-      <Box>
-        <Link to={contactUsItem.path}>{contactUsItem.title}</Link>
-        <Link to={joinUsItem.path}>{joinUsItem.title}</Link>
-        <MuiLink href={platformUrl}>登入/登記</MuiLink>
+      <Box className={classes.contactList} display='flex'>
+        <Link
+          className={classnames(classes.link, classes.contactLink)}
+          to={contactUsItem.path}
+        >
+          {contactUsItem.title}
+        </Link>
+        <Link
+          className={classnames(classes.link, classes.contactLink)}
+          to={joinUsItem.path}
+        >
+          {joinUsItem.title}
+        </Link>
+        <MuiLink
+          className={classnames(classes.link, classes.contactLink)}
+          href={platformUrl}
+        >
+          登入/登記
+        </MuiLink>
       </Box>
     )
   }
@@ -123,7 +198,7 @@ const Menu = () => {
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <Container disableGutters maxWidth='lg'>
+        <Container className={classes.wrapper} disableGutters maxWidth='lg'>
           <Box className={classes.header}>
             <Take2Logo type='take2WhiteOrange'></Take2Logo>
             <IconButton
@@ -136,19 +211,23 @@ const Menu = () => {
               <CloseIcon className={classes.icon} />
             </IconButton>
           </Box>
-          <Container maxWidth='lg'>
-            <ImageList cols={matches ? 1 : 3}>
+          <Container className={classes.menuWrapper} maxWidth='md'>
+            <ImageList className={classes.imageList} cols={matches ? 1 : 3}>
               {menu?.map(
                 (item, index) =>
                   index < menu?.length - 1 && (
                     <EAccordion
-                      defaultExpanded={!matches}
                       square
-                      disabled={!matches}
+                      disabled={
+                        !matches || !(item.children && item.children?.length)
+                      }
                       key={item.title}
+                      expanded={!matches || item.path === panel}
+                      onChange={handleChange(item.path)}
                     >
                       <EAccordionSummary
                         expandIcon={
+                          matches &&
                           item.children &&
                           item.children?.length &&
                           index !== 5 && (
@@ -158,13 +237,26 @@ const Menu = () => {
                         aria-controls='panel1a-content'
                         id='panel1a-header'
                       >
-                        <Typography variant='h3'>{item.title}</Typography>
+                        <TitleDot
+                          bgcolor='background.paper'
+                          size={1.5}
+                        ></TitleDot>
+                        <Link className={classes.link} to={item.path}>
+                          <Typography variant='h4'>{item.title}</Typography>
+                        </Link>
                       </EAccordionSummary>
                       {item.children && item.children?.length && index !== 5 && (
-                        <EAccordionDetails>
+                        <EAccordionDetails className={classes.menuChildren}>
                           <Typography variant='body1' component='div'>
                             {item.children.map((tab) => (
-                              <Box key={tab.title}>{tab.title}</Box>
+                              <Box
+                                className={classes.menuChildrenItem}
+                                key={tab.title}
+                              >
+                                <Link to={tab.path} className={classes.link}>
+                                  {tab.title}
+                                </Link>
+                              </Box>
                             ))}
                           </Typography>
                         </EAccordionDetails>
@@ -173,7 +265,7 @@ const Menu = () => {
                   )
               )}
             </ImageList>
-            <Box>
+            <Box className={classes.bottomInfo}>
               <ContactList></ContactList>
               <SocialLinks></SocialLinks>
             </Box>

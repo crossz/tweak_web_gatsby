@@ -13,16 +13,26 @@ export const EAccordion = withStyles((theme) => ({
     '&.Mui-expanded': {
       margin: 0,
     },
+    '&.Mui-disabled': {
+      backgroundColor: 'transparent',
+      color: theme.palette.primary.contrastText,
+    },
+    '&:before': {
+      display: 'none',
+    },
   },
 }))(Accordion)
 
 export const EAccordionSummary = withStyles((theme) => ({
   root: {
-    minHeight: 'auto',
+    minHeight: theme.spacing(6),
     '&.Mui-expanded': {
       minHeight: 'auto',
     },
     justifyContent: 'left',
+    '&.Mui-disabled': {
+      opacity: 1,
+    },
   },
   content: {
     margin: 0,
@@ -37,7 +47,6 @@ export const EAccordionSummary = withStyles((theme) => ({
 export const EAccordionDetails = withStyles((theme) => ({
   root: {
     backgroundColor: 'transparent',
-
     marginBottom: 0,
   },
 }))(AccordionDetails)
