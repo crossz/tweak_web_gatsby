@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@material-ui/core/Box'
 import Take2Logo from '@layouts/Take2Logo'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import { useMatch } from '@reach/router'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(0, 3),
     },
   },
-  mobileRoot: {
+  homepageRoot: {
     backgroundColor: 'transparent',
     position: 'fixed',
     boxShadow: 'none',
@@ -43,12 +43,14 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const matchHomepage = useMatch('/')
 
   return (
     <Container
       className={classnames(classes.root, {
-        [classes.mobileRoot]: matchHomepage,
+        [classes.homepageRoot]: !matches && matchHomepage,
       })}
       maxWidth='lg'
       disableGutters

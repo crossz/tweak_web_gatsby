@@ -5,9 +5,13 @@ import {
   Container,
   Button,
   Hidden,
+  useTheme,
+  useMediaQuery,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import HomepageBanner from '@images/homepage_banner.jpg'
+import HomepageBannerMobile from '@images/homepage_banner_mobile.jpg'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     height: theme.spacing(110),
@@ -15,10 +19,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(62.75),
+      backgroundImage: `url(${HomepageBannerMobile})`,
+    },
   },
   wrapper: {
     position: 'relative',
     height: '100%',
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 3),
+    },
   },
   contentWrapper: {
     height: '100%',
@@ -27,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(5.5),
     display: 'flex',
     flexDirection: 'column',
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(3),
+      paddingBottom: 0,
+    },
   },
   marks: {
     width: theme.spacing(82.5),
@@ -35,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 'auto',
     [theme.breakpoints.down('md')]: {
       width: 'auto',
+      lineHeight: 1.5,
+      fontSize: 6,
+      marginBottom: theme.spacing(-3),
     },
   },
   btn: {
@@ -44,17 +62,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Banner = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
-      <Container className={classes.wrapper} disableGutters maxWidth='md'>
+      <Container className={classes.wrapper} maxWidth='md'>
         <Box className={classes.contentWrapper}>
           <Typography variant='h2' color='primary' component='div'>
-            <Box mb={2}>
+            <Box mb={matches ? 1 : 2}>
               Take2 Prophecy™ <br />
               早期鼻咽癌篩查
             </Box>
             <Box
-              fontSize='body1.fontSize'
+              fontSize={matches ? 'caption.fontSize' : 'body1.fontSize'}
               fontWeight='fontWeightLight'
               lineHeight='1.5'
             >

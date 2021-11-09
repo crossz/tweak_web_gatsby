@@ -8,7 +8,11 @@ import Banner from './Banner'
 import TitleDot from '@themes/components/TitleDot'
 import Typography from '@material-ui/core/Typography'
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 3),
+    },
+  },
   title: {
     marginTop: theme.spacing(6),
     marginBottom: theme.spacing(4),
@@ -22,7 +26,7 @@ const Homepage = () => {
   return (
     <>
       <Banner></Banner>
-      <Container className={classes.root} disableGutters maxWidth='md'>
+      <Container className={classes.root} maxWidth='md'>
         <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>
