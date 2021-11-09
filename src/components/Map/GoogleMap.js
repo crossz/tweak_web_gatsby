@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     height: 664,
     borderRadius: 6,
     overflow: 'hidden',
+    [theme.breakpoints.down('xs')]: {
+      height: 350,
+    },
   },
 }))
 const Marker = ({ text }) => <div style={{ color: 'red' }}>{text}</div>

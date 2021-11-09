@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     display: 'flex',
     fontSize: theme.typography.h4.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(2.5),
+    },
   },
 }))
 
