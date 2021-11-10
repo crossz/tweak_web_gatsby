@@ -61,6 +61,9 @@ theme = createTheme(theme, {
         padding: theme.spacing(2, 6),
         fontSize: theme.typography.body1.fontSize,
         fontWeight: theme.typography.fontWeightBold,
+        transition: theme.transitions.create('transform', {
+          duration: theme.transitions.duration.standard,
+        }),
       },
       text: {
         padding: theme.spacing(2, 6),
@@ -94,9 +97,6 @@ theme = createTheme(theme, {
       containedSecondary: {
         '&:hover': {
           transform: 'translateY(-4px)',
-          transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.standard,
-          }),
           backgroundColor: theme.palette.secondary.main,
           boxShadow: `0 11px 15px -4px ${alpha(
             theme.palette.secondary.main,
@@ -118,9 +118,6 @@ theme = createTheme(theme, {
       outlinedPrimary: {
         '&:hover': {
           backgroundColor: theme.palette.background.paper,
-          transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.standard,
-          }),
           color: theme.palette.secondary.main,
           borderColor: theme.palette.secondary.main,
         },
