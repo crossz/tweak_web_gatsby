@@ -11,7 +11,7 @@ import { Waypoint } from 'react-waypoint'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    boxShadow: `0 0 0 1px ${theme.palette.grey[400]}`,
+    boxShadow: `0 1px 0 0  ${theme.palette.grey[400]}`,
     backgroundColor: theme.palette.background.paper,
     position: 'sticky',
     top: 0,
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   withBg: {
     backgroundColor: theme.palette.background.paper,
-    boxShadow: `0 0 0 1px ${theme.palette.grey[400]}`,
+    boxShadow: `0 1px 0 0  ${theme.palette.grey[400]}`,
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.standard,
     }),
