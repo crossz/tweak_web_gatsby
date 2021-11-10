@@ -5,6 +5,7 @@ import {
   useTheme,
   Grid,
   Container,
+  alpha,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import useMenu from '@hooks/useMenu'
@@ -23,8 +24,6 @@ import ImageList from '@material-ui/core/ImageList'
 import { Link } from 'gatsby'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
-import Hidden from '@material-ui/core/Hidden'
-import TitleDot from '@themes/components/TitleDot'
 import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
@@ -75,19 +74,46 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.caption.fontSize,
     display: 'flex',
     marginTop: 'auto',
+    flexWrap: 'wrap',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(6),
+    },
   },
   copyRightLink: {
     marginRight: theme.spacing(5),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: theme.spacing(3),
+    },
   },
   infoWrapper: {
     height: '100%',
   },
-  socialTitle: {},
   infoIcon: {
     paddingRight: theme.spacing(1),
     '& path': {
       fill: theme.palette.primary.contrastText,
     },
+  },
+  imageList: {
+    overflowY: 'initial',
+    [theme.breakpoints.down('xs')]: {
+      borderBottom: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
+    },
+  },
+  accordionSummaryRoot: {
+    [theme.breakpoints.down('xs')]: {
+      minHeight: theme.spacing(9),
+      borderTop: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
+      padding: 0,
+    },
+  },
+  accordionSummaryExpanded: {
+    [theme.breakpoints.down('xs')]: {
+      minHeight: theme.spacing(9),
+    },
+  },
+  accordionSummaryContent: {
+    flexGrow: 1,
   },
 }))
 
@@ -104,7 +130,9 @@ const Footer = () => {
 
   const CopyRights = (params) => (
     <Box className={classes.copyRight}>
-      <Box>©2021 Take2 Health 版權所有</Box>
+      <Box width={matches ? '100%' : 'auto'} mb={matches ? 2 : 0}>
+        ©2021 Take2 Health 版權所有
+      </Box>
       <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         私隱政策
       </Link>
@@ -140,14 +168,14 @@ const Footer = () => {
                 </Box>
               </a>
             </Box>
-            <Box display='inline-block'>
+            <Box mb={matches ? 5 : 0} display='inline-block'>
               <Divider className={classes.divider} />
-              <Box className={classes.socialTitle}>關注我們</Box>
+              <Box mb={0.5}>關注我們</Box>
               <SocialLinks></SocialLinks>
             </Box>
           </Grid>
           <Grid item xs={12} sm={8} md={7}>
-            <ImageList cols={matches ? 1 : 3}>
+            <ImageList className={classes.imageList} cols={matches ? 1 : 3}>
               {menu?.map(
                 (item, index) =>
                   index < menu?.length - 1 && (
@@ -170,10 +198,12 @@ const Footer = () => {
                         }
                         aria-controls='panel1a-content'
                         id='panel1a-header'
+                        classes={{
+                          root: classes.accordionSummaryRoot,
+                          expanded: classes.accordionSummaryExpanded,
+                          content: classes.accordionSummaryContent,
+                        }}
                       >
-                        <Hidden smUp>
-                          <TitleDot bgcolor='background.paper'></TitleDot>
-                        </Hidden>
                         <Box
                           fontSize='body1.fontSize'
                           fontWeight='fontWeightBold'

@@ -28,6 +28,8 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import SocialLinks from '@layouts/SocialLinks'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
+import Divider from '@material-ui/core/Divider'
+import Hidden from '@material-ui/core/Hidden'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -125,8 +127,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.subtitle1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     [theme.breakpoints.down('xs')]: {
-      marginBottom: theme.spacing(3),
+      marginBottom: theme.spacing(1.5),
     },
+  },
+  accordionRoot: {
+    marginBottom: `${theme.spacing(14)}px !important`,
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: `${theme.spacing(2)}px !important`,
+    },
+  },
+  divider: {
+    backgroundColor: '#2C3C75',
+    marginBottom: theme.spacing(3),
   },
 }))
 
@@ -140,7 +152,7 @@ const Menu = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
   const { platformUrl } = useSiteMetadata()
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const [panel, setPanel] = useState('')
 
   const handleOpen = () => {
@@ -221,6 +233,7 @@ const Menu = () => {
                       disabled={
                         !matches || !(item.children && item.children?.length)
                       }
+                      classes={{ root: classes.accordionRoot }}
                       key={item.title}
                       expanded={!matches || item.path === panel}
                       onChange={handleChange(item.path)}
@@ -265,6 +278,9 @@ const Menu = () => {
                   )
               )}
             </ImageList>
+            <Hidden smUp>
+              <Divider className={classes.divider} />
+            </Hidden>
             <Box className={classes.bottomInfo}>
               <ContactList></ContactList>
               <SocialLinks></SocialLinks>
