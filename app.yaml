@@ -1,10 +1,24 @@
 runtime: nodejs14
+api_version: '1'
+threadsafe: true
+
 handlers:
   # Serve all static files with url ending with a file extension
-  - url: /(.*\..+)$
-    static_files: build/\1
-    upload: public/(.*\..+)$
+  # - url: /(.*\..+)$
+  # static_files: build/\1
+  # upload: public/(.*\..+)$
   # Catch all handler to index.html
-  - url: /.*
+  # - url: /.*
+  #   static_files: public/index.html
+  #   upload: public/index.html
+  - url: /
     static_files: public/index.html
     upload: public/index.html
+
+  - url: /((.*\/)*[^\/]+\.[^\/]+)$
+    static_files: public/\1
+    upload: public/.*
+
+  - url: /(.*)$
+    static_files: public/\1/index.html
+    upload: public/.*/index.html

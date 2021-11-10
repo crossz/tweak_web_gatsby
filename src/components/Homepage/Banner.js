@@ -70,7 +70,7 @@ const Banner = () => {
       <Container className={classes.wrapper} maxWidth='md'>
         <Box className={classes.contentWrapper}>
           <Typography variant='h2' color='primary' component='div'>
-            <Box mb={matches ? 1 : 2}>
+            <Box mb={matches ? 1 : 2} lineHeight={1.5}>
               Take2 Prophecy™ <br />
               早期鼻咽癌篩查
             </Box>
