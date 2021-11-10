@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: `0 1px 0 0 ${theme.palette.grey[400]}`,
       width: '100%',
       flexGlow: 1,
+      minWidth: 'auto',
     },
   },
   activeTab: {
@@ -88,7 +89,7 @@ const SectionBanner = () => {
           <Box mt='auto' mb={4} ml={2}>
             <Typography variant='h3' color='primary'>
               <TitleDot></TitleDot>
-              {curMenuItem.title}
+              {curMenuItem?.title}
             </Typography>
           </Box>
         </Container>
