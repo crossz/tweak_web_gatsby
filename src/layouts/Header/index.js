@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@material-ui/core/Box'
 import Take2Logo from '@layouts/Take2Logo'
 import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
@@ -7,6 +7,7 @@ import { useMatch } from '@reach/router'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
+import { Waypoint } from 'react-waypoint'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     right: 0,
   },
+  withBg: {
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: `0 0 0 1px ${theme.palette.grey[400]}`,
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.standard,
+    }),
+  },
   authBtn: {
     cursor: 'pointer',
     marginLeft: 'auto',
@@ -46,21 +54,33 @@ const Header = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const matchHomepage = useMatch('/')
+  const [withBg, setWithBg] = useState(false)
+
+  // const handleWaypoint = (status) => {
+  //   if (status !== withBg) setWithBg(status)
+  // }
 
   return (
-    <Container
-      className={classnames(classes.root, {
-        [classes.homepageRoot]: !matches && matchHomepage,
-      })}
-      maxWidth='lg'
-      disableGutters
-    >
-      <Take2Logo type='take2FullColor'></Take2Logo>
-      <Box className={classes.authBtn} color='primary.main' component='span'>
-        登入/登記
-      </Box>
-      <Menu></Menu>
-    </Container>
+    <>
+      <Container
+        className={classnames(classes.root, {
+          [classes.homepageRoot]: !matches && matchHomepage,
+          [classes.withBg]: !matches && withBg,
+        })}
+        maxWidth='lg'
+        disableGutters
+      >
+        <Take2Logo type='take2FullColor'></Take2Logo>
+        <Box className={classes.authBtn} color='primary.main' component='span'>
+          登入/登記
+        </Box>
+        <Menu></Menu>
+      </Container>
+      {/* <Waypoint
+        onLeave={() => handleWaypoint(true)}
+        onEnter={() => handleWaypoint(false)}
+      ></Waypoint> */}
+    </>
   )
 }
 

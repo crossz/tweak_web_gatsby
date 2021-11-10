@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imageList: {
     padding: theme.spacing(2),
-    paddingTop: theme.spacing(18),
+    paddingTop: theme.spacing(12),
     [theme.breakpoints.down('xs')]: {
       paddingTop: 0,
     },
@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 'auto',
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: theme.spacing(8.5),
+    marginBottom: theme.spacing(7),
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
@@ -131,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   accordionRoot: {
-    marginBottom: `${theme.spacing(14)}px !important`,
+    marginBottom: `${theme.spacing(12)}px !important`,
     [theme.breakpoints.down('xs')]: {
       marginBottom: `${theme.spacing(2)}px !important`,
     },
