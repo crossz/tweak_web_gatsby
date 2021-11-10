@@ -140,7 +140,7 @@ const Menu = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
   const { platformUrl } = useSiteMetadata()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const [panel, setPanel] = useState('')
 
   const handleOpen = () => {
