@@ -105,13 +105,12 @@ const useStyles = makeStyles((theme) => ({
       minHeight: theme.spacing(9),
       borderTop: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
       padding: 0,
+      '&.Mui-expanded': {
+        minHeight: theme.spacing(9),
+      },
     },
   },
-  accordionSummaryExpanded: {
-    [theme.breakpoints.down('xs')]: {
-      minHeight: theme.spacing(9),
-    },
-  },
+
   accordionSummaryContent: {
     flexGrow: 1,
   },
@@ -146,7 +145,7 @@ const Footer = () => {
   )
 
   return (
-    <Container disableGutters maxWidth='xl' className={classes.root}>
+    <Box className={classes.root}>
       <Container className={classes.container} maxWidth='md'>
         <Grid container>
           <Grid className={classes.infoWrapper} item xs={12} sm={4} md={5}>
@@ -200,7 +199,6 @@ const Footer = () => {
                         id='panel1a-header'
                         classes={{
                           root: classes.accordionSummaryRoot,
-                          expanded: classes.accordionSummaryExpanded,
                           content: classes.accordionSummaryContent,
                         }}
                       >
@@ -236,7 +234,7 @@ const Footer = () => {
         </Grid>
         <CopyRights></CopyRights>
       </Container>
-    </Container>
+    </Box>
   )
 }
 

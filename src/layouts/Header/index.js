@@ -11,15 +11,17 @@ import { Waypoint } from 'react-waypoint'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 6),
     boxShadow: `0 0 0 1px ${theme.palette.grey[400]}`,
-    height: theme.spacing(HEADER_HEIGHT),
     backgroundColor: theme.palette.background.paper,
     position: 'sticky',
     top: 0,
     zIndex: theme.zIndex.appBar,
+  },
+  wrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 6),
+    height: theme.spacing(HEADER_HEIGHT),
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(MOBILE_HEADER_HEIGHT),
       padding: theme.spacing(0, 3),
@@ -55,21 +57,19 @@ const Header = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const matchHomepage = useMatch('/')
   const [withBg, setWithBg] = useState(false)
-
+  // TODO homepage scroll leave banner show header background.
   // const handleWaypoint = (status) => {
   //   if (status !== withBg) setWithBg(status)
   // }
 
   return (
-    <>
-      <Container
-        className={classnames(classes.root, {
-          [classes.homepageRoot]: !matches && matchHomepage,
-          [classes.withBg]: !matches && withBg,
-        })}
-        maxWidth='lg'
-        disableGutters
-      >
+    <Box
+      className={classnames(classes.root, {
+        [classes.homepageRoot]: !matches && matchHomepage,
+        [classes.withBg]: !matches && withBg,
+      })}
+    >
+      <Container className={classes.wrapper} maxWidth='lg'>
         <Take2Logo type='take2FullColor'></Take2Logo>
         <Box className={classes.authBtn} color='primary.main' component='span'>
           登入/登記
@@ -80,7 +80,7 @@ const Header = () => {
         onLeave={() => handleWaypoint(true)}
         onEnter={() => handleWaypoint(false)}
       ></Waypoint> */}
-    </>
+    </Box>
   )
 }
 

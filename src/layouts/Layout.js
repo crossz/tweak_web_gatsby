@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import SectionBanner from './SectionBanner'
 import { makeStyles } from '@material-ui/core'
-import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles((theme) => ({
-  container: {
+  root: {
     backgroundColor: theme.palette.background.default,
     display: 'flex',
     flexDirection: 'column',
@@ -17,9 +17,10 @@ const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <main className={classes.container}>
+    <main className={classes.root}>
       <Header></Header>
-      <Box className={classes.container}>{children}</Box>
+      <SectionBanner></SectionBanner>
+      {children}
       <Footer></Footer>
     </main>
   )

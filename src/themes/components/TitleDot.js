@@ -24,7 +24,7 @@ const TitleDot = ({ bgcolor = 'secondary.main', size }) => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({ size, matches })
   return (
-    <Box className={classes.root}>
+    <Box className={classes.root} component='span'>
       <Box className={classes.dot} bgcolor={bgcolor}></Box>
     </Box>
   )
