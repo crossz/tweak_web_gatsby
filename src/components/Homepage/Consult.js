@@ -84,7 +84,7 @@ const Consult = () => {
               <Box mt={matches ? 3 : 0}>立即登記 線上專業諮詢</Box>
               <Box className={classes.content}>
                 只需輸入簡單資料，便可與我們保持聯繫，亦可享用線上醫療諮詢服務或特快預約測試，接收專業資訊、測試提示、活動推廣及首輪優惠等。
-                <Link to='' className={classes.greyLink}>
+                <Link to='/' className={classes.greyLink}>
                   條款及細則
                 </Link>
               </Box>
@@ -109,7 +109,7 @@ const Consult = () => {
               </Button>
             </Box>
             <Box mt={5} textAlign={matches ? 'center' : 'left'}>
-              <Link className={classes.blueLink} to='' comments='div'>
+              <Link className={classes.blueLink} to='/'>
                 了解更多我們的產品
               </Link>
             </Box>

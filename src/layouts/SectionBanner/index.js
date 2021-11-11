@@ -82,8 +82,9 @@ const SectionBanner = () => {
     [menu, pathname]
   )
 
-  return (
+  return curMenuItem ? (
     <Box className={classes.root}>
+      {JSON.stringify(curMenuItem)}
       <Container className={classes.bannerWrapper} disableGutters maxWidth='xl'>
         <Container className={classes.titleWrapper} maxWidth='lg'>
           <Box mt='auto' mb={4} ml={2}>
@@ -111,7 +112,7 @@ const SectionBanner = () => {
       )}
       <Box>{JSON.stringify(curMenuItem)}</Box>
     </Box>
-  )
+  ) : null
 }
 
 export default SectionBanner
