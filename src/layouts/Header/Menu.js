@@ -17,7 +17,6 @@ import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import Typography from '@material-ui/core/Typography'
 import ImageList from '@material-ui/core/ImageList'
 import { Link as MuiLink } from '@material-ui/core'
-import Take2Logo from '@layouts/Take2Logo'
 import classnames from 'classnames'
 import {
   EAccordion,
@@ -30,6 +29,7 @@ import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
 import Divider from '@material-ui/core/Divider'
 import Hidden from '@material-ui/core/Hidden'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -212,7 +212,13 @@ const Menu = () => {
       >
         <Container className={classes.wrapper} disableGutters maxWidth='lg'>
           <Box className={classes.header}>
-            <Take2Logo type='take2WhiteOrange'></Take2Logo>
+            <Box width={matches ? 100 : 145}>
+              <StaticImage
+                src='../../assets/images/common/take2_white_orange.png'
+                alt='Logo'
+                placeholder='tracedSVG'
+              />
+            </Box>
             <IconButton
               className={classnames(classes.btn, classes.closeBtn)}
               edge='start'

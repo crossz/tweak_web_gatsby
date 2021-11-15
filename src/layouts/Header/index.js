@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Box from '@material-ui/core/Box'
-import Take2Logo from '@layouts/Take2Logo'
 import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import { useMatch } from '@reach/router'
@@ -8,6 +7,7 @@ import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
 import { Waypoint } from 'react-waypoint'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,7 +70,13 @@ const Header = () => {
       })}
     >
       <Container className={classes.wrapper} maxWidth='lg'>
-        <Take2Logo type='take2FullColor'></Take2Logo>
+        <Box width={matches ? 100 : 145}>
+          <StaticImage
+            src='../../assets/images/common/take2_full_Color.png'
+            alt='Logo'
+            placeholder='tracedSVG'
+          />
+        </Box>
         <Box className={classes.authBtn} color='primary.main' component='span'>
           登入/登記
         </Box>

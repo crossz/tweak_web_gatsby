@@ -10,7 +10,6 @@ import {
 import Box from '@material-ui/core/Box'
 import useMenu from '@hooks/useMenu'
 import useSiteMetadata from '@hooks/useSiteMetadata'
-import Take2Logo from '@layouts/Take2Logo'
 import PhoneIcon from '@images/icons/phone.svg'
 import EmailIcon from '@images/icons/mail.svg'
 import SocialLinks from '@layouts/SocialLinks'
@@ -25,6 +24,7 @@ import { Link } from 'gatsby'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -149,10 +149,13 @@ const Footer = () => {
       <Container className={classes.container} maxWidth='md'>
         <Grid container>
           <Grid className={classes.infoWrapper} item xs={12} sm={4} md={5}>
-            <Take2Logo
-              type='take2WhiteOrange'
-              className={classes.logo}
-            ></Take2Logo>
+            <Box width={matches ? 100 : 145}>
+              <StaticImage
+                src='../../assets/images/common/take2_white_orange.png'
+                alt='Logo'
+                placeholder='tracedSVG'
+              />
+            </Box>
             <Box mt={matches ? 4 : 5}>
               <a href={`tel:${phone}`} className={classes.link}>
                 <Box display='flex' mb={matches ? 1 : 1.5} alignItems='center'>
