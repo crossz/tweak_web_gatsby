@@ -11,22 +11,29 @@ import {
 import Box from '@material-ui/core/Box'
 import HomepageBanner from '@images/homepage_banner.jpg'
 import HomepageBannerMobile from '@images/homepage_banner_mobile.jpg'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: theme.spacing(110),
-    backgroundImage: `url(${HomepageBanner})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    // backgroundImage: `url(${HomepageBanner})`,
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: 'cover',
+    // backgroundPosition: 'center',
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(62.75),
-      backgroundImage: `url(${HomepageBannerMobile})`,
+      // backgroundImage: `url(${HomepageBannerMobile})`,
     },
+    display: 'grid',
+  },
+  staticImage: {
+    gridArea: '1/1',
   },
   wrapper: {
     position: 'relative',
     height: '100%',
+    gridArea: '1/1',
+    display: 'grid',
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 3),
     },
@@ -67,6 +74,33 @@ const Banner = () => {
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
+      {matches ? (
+        <StaticImage
+          className={classes.staticImage}
+          placeholder='blurred'
+          layout='fullWidth'
+          // You can optionally force an aspect ratio for the generated image
+          // aspectRatio={3 / 1}
+          // This is a presentational image, so the alt should be an empty string
+          alt='Homepage'
+          // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
+          src={'../../assets/images/homepage_banner_mobile.jpg'}
+          formats={['auto', 'webp', 'avif']}
+        />
+      ) : (
+        <StaticImage
+          className={classes.staticImage}
+          placeholder='blurred'
+          layout='fullWidth'
+          // You can optionally force an aspect ratio for the generated image
+          // aspectRatio={3 / 1}
+          // This is a presentational image, so the alt should be an empty string
+          alt='Homepage'
+          // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
+          src={'../../assets/images/homepage_banner.jpg'}
+          formats={['auto', 'webp', 'avif']}
+        />
+      )}
       <Container className={classes.wrapper} maxWidth='md'>
         <Box className={classes.contentWrapper}>
           <Typography variant='h2' color='primary' component='div'>
