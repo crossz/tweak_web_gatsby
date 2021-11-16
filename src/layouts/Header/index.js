@@ -8,6 +8,7 @@ import classnames from 'classnames'
 import Menu from './Menu'
 import { Waypoint } from 'react-waypoint'
 import { StaticImage } from 'gatsby-plugin-image'
+import { Link } from 'gatsby'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,13 +71,15 @@ const Header = () => {
       })}
     >
       <Container className={classes.wrapper} maxWidth='lg'>
-        <Box width={matches ? 100 : 145}>
-          <StaticImage
-            src='../../assets/images/common/take2_full_Color.png'
-            alt='Logo'
-            placeholder='tracedSVG'
-          />
-        </Box>
+        <Link to='/'>
+          <Box width={matches ? 100 : 145}>
+            <StaticImage
+              src='../../assets/images/common/take2_full_Color.png'
+              alt='Logo'
+              placeholder='tracedSVG'
+            />
+          </Box>
+        </Link>
         <Box className={classes.authBtn} color='primary.main' component='span'>
           登入/登記
         </Box>

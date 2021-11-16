@@ -119,6 +119,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contactLink: {
     marginRight: theme.spacing(14.5),
+    flexShrink: 0,
     [theme.breakpoints.down('xs')]: {
       marginRight: theme.spacing(5),
     },
@@ -174,18 +175,21 @@ const Menu = () => {
         <Link
           className={classnames(classes.link, classes.contactLink)}
           to={contactUsItem.path}
+          onClick={handleClose}
         >
           {contactUsItem.title}
         </Link>
         <Link
           className={classnames(classes.link, classes.contactLink)}
           to={joinUsItem.path}
+          onClick={handleClose}
         >
           {joinUsItem.title}
         </Link>
         <MuiLink
           className={classnames(classes.link, classes.contactLink)}
           href={platformUrl}
+          onClick={handleClose}
         >
           登入/登記
         </MuiLink>

@@ -24,6 +24,7 @@ export const query = graphql`
     ) {
       nodes {
         id
+        name
         childMarkdownRemark {
           html
           frontmatter {

@@ -7,7 +7,7 @@ import {
   Box,
   Typography,
 } from '@material-ui/core'
-import { useLocation } from '@reach/router'
+import { useLocation, Match } from '@reach/router'
 import useMenu from '@hooks/useMenu'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
@@ -82,36 +82,53 @@ const SectionBanner = () => {
     [menu, pathname]
   )
 
-  return curMenuItem ? (
-    <Box className={classes.root}>
-      {JSON.stringify(curMenuItem)}
-      <Container className={classes.bannerWrapper} disableGutters maxWidth='xl'>
-        <Container className={classes.titleWrapper} maxWidth='lg'>
-          <Box mt='auto' mb={4} ml={2}>
-            <Typography variant='h3' color='primary'>
-              <TitleDot></TitleDot>
-              {curMenuItem?.title}
-            </Typography>
-          </Box>
-        </Container>
-      </Container>
-      {curMenuItem?.children && curMenuItem?.children?.length && (
-        <Box className={classes.tabsWrapper}>
-          {curMenuItem?.children.map((item) => (
-            <Link
-              to={item.path}
-              className={classes.tab}
-              activeClassName={classes.activeTab}
-              key={item.title}
-              partiallyActive={true}
+  const curMenuItemPath = useMemo(() => {
+    const curMenuItemChild = curMenuItem?.children?.length
+      ? curMenuItem?.children?.find((child) => pathname.includes(child.path))
+      : curMenuItem
+    return curMenuItemChild?.path
+  }, [curMenuItem, pathname])
+
+  return curMenuItemPath ? (
+    <Match path={curMenuItemPath}>
+      {(props) =>
+        props.match ? (
+          <Box className={classes.root}>
+            {JSON.stringify(curMenuItem)}
+            <Container
+              className={classes.bannerWrapper}
+              disableGutters
+              maxWidth='xl'
             >
-              {item.title}
-            </Link>
-          ))}
-        </Box>
-      )}
-      <Box>{JSON.stringify(curMenuItem)}</Box>
-    </Box>
+              <Container className={classes.titleWrapper} maxWidth='lg'>
+                <Box mt='auto' mb={4} ml={2}>
+                  <Typography variant='h3' color='primary'>
+                    <TitleDot></TitleDot>
+                    {curMenuItem?.title}
+                  </Typography>
+                </Box>
+              </Container>
+            </Container>
+            {curMenuItem?.children && curMenuItem?.children?.length && (
+              <Box className={classes.tabsWrapper}>
+                {curMenuItem?.children.map((item) => (
+                  <Link
+                    to={item.path}
+                    className={classes.tab}
+                    activeClassName={classes.activeTab}
+                    key={item.title}
+                    partiallyActive={true}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </Box>
+            )}
+            <Box>{JSON.stringify(curMenuItem)}</Box>
+          </Box>
+        ) : null
+      }
+    </Match>
   ) : null
 }
 

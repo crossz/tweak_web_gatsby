@@ -6,26 +6,14 @@ const PostList = (props) => {
     <div>
       {props.title}
       {props.caption}
-
       {props.children}
-
       {props?.posts?.map((post) => (
-        <Link
-          key={post.id}
-          to={
-            post.relativeDirectory + post.childMarkdownRemark.frontmatter.slug
-          }
-        >
+        <Link key={post.id} to={post.name}>
           {post.childMarkdownRemark.frontmatter.title}
         </Link>
       ))}
     </div>
   )
 }
-
-// import React from "react"
-// import { graphql } from "gatsby"
-
-// const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
 
 export default PostList
