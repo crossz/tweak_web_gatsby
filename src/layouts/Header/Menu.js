@@ -236,13 +236,16 @@ const Menu = () => {
                   index < menu?.length - 1 && (
                     <EAccordion
                       square
-                      disabled={
-                        !matches || !(item.children && item.children?.length)
-                      }
                       classes={{ root: classes.accordionRoot }}
                       key={item.title}
                       expanded={!matches || item.path === panel}
-                      onChange={handleChange(item.path)}
+                      onChange={handleChange(
+                        !matches ||
+                          !(item.children && item.children?.length) ||
+                          index === 5
+                          ? ''
+                          : item.path
+                      )}
                     >
                       <EAccordionSummary
                         expandIcon={
@@ -260,9 +263,19 @@ const Menu = () => {
                           bgcolor='background.paper'
                           size={1.5}
                         ></TitleDot>
-                        <Link className={classes.link} to={item.path}>
+                        {item.children &&
+                        item.children?.length &&
+                        index !== 5 ? (
                           <Typography variant='h4'>{item.title}</Typography>
-                        </Link>
+                        ) : (
+                          <Link
+                            className={classes.link}
+                            to={item.path}
+                            onClick={handleClose}
+                          >
+                            <Typography variant='h4'>{item.title}</Typography>
+                          </Link>
+                        )}
                       </EAccordionSummary>
                       {item.children && item.children?.length && index !== 5 && (
                         <EAccordionDetails className={classes.menuChildren}>
@@ -272,7 +285,11 @@ const Menu = () => {
                                 className={classes.menuChildrenItem}
                                 key={tab.title}
                               >
-                                <Link to={tab.path} className={classes.link}>
+                                <Link
+                                  to={tab.path}
+                                  className={classes.link}
+                                  onClick={handleClose}
+                                >
                                   {tab.title}
                                 </Link>
                               </Box>

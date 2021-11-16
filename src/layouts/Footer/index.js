@@ -184,11 +184,12 @@ const Footer = () => {
                     <EAccordion
                       expanded={!matches || item.path === panel}
                       square
-                      disabled={
-                        !matches || !(item.children && item.children?.length)
-                      }
                       key={item.title}
-                      onChange={handleChange(item.path)}
+                      onChange={handleChange(
+                        !matches || !(item.children && item.children?.length)
+                          ? ''
+                          : item.path
+                      )}
                     >
                       <EAccordionSummary
                         expandIcon={
@@ -205,12 +206,24 @@ const Footer = () => {
                           content: classes.accordionSummaryContent,
                         }}
                       >
-                        <Box
-                          fontSize='body1.fontSize'
-                          fontWeight='fontWeightBold'
-                        >
-                          {item.title}
-                        </Box>
+                        {!matches ||
+                        !(item.children && item.children?.length) ? (
+                          <Link className={classes.link} to={item.path}>
+                            <Box
+                              fontSize='body1.fontSize'
+                              fontWeight='fontWeightBold'
+                            >
+                              {item.title}
+                            </Box>
+                          </Link>
+                        ) : (
+                          <Box
+                            fontSize='body1.fontSize'
+                            fontWeight='fontWeightBold'
+                          >
+                            {item.title}
+                          </Box>
+                        )}
                       </EAccordionSummary>
                       {item.children && item.children?.length && (
                         <EAccordionDetails>
