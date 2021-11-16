@@ -1,6 +1,7 @@
 import React from 'react'
-import PostList from '@templates/PostList'
-const promotions = () => {
+import PostList from '@components/WhatsNew/PostList'
+
+const promotions = (props) => {
   return (
     <PostList
       title='最新推廣優惠'
