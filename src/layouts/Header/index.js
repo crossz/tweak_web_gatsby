@@ -71,15 +71,15 @@ const Header = () => {
       })}
     >
       <Container className={classes.wrapper} maxWidth='lg'>
-        <Link to='/'>
-          <Box width={matches ? 100 : 145}>
+        <Box width={matches ? 100 : 145}>
+          <Link to='/'>
             <StaticImage
               src='../../assets/images/common/take2_full_Color.png'
               alt='Logo'
               placeholder='tracedSVG'
             />
-          </Box>
-        </Link>
+          </Link>
+        </Box>
         <Box className={classes.authBtn} color='primary.main' component='span'>
           登入/登記
         </Box>
