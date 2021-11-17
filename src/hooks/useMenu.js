@@ -6,6 +6,7 @@ const useMenu = () => {
       json {
         menu {
           banner
+          mobileBanner
           path
           title
           children {

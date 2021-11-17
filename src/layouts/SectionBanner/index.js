@@ -11,6 +11,8 @@ import { useLocation, Match } from '@reach/router'
 import useMenu from '@hooks/useMenu'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
+import { StaticImage } from 'gatsby-plugin-image'
+import Image from '@components/Image'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -94,7 +96,10 @@ const SectionBanner = () => {
       {(props) =>
         props.match ? (
           <Box className={classes.root}>
-            {JSON.stringify(curMenuItem)}
+            <Image
+              filename={matches ? curMenuItem.mobileBanner : curMenuItem.banner}
+              alt='image'
+            ></Image>
             <Container
               className={classes.bannerWrapper}
               disableGutters
@@ -124,7 +129,6 @@ const SectionBanner = () => {
                 ))}
               </Box>
             )}
-            <Box>{JSON.stringify(curMenuItem)}</Box>
           </Box>
         ) : null
       }

@@ -2,7 +2,8 @@
   "menu": [
     {
       "title": "最新動態及推廣",
-      "banner": "url1",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/whats-new",
       "children": [
         {
@@ -21,7 +22,8 @@
     },
     {
       "title": "創新技術",
-      "banner": "url2",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/our-technologies",
       "children": [
         {
@@ -40,7 +42,8 @@
     },
     {
       "title": "產品及服務",
-      "banner": "url2",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/products-and-services",
       "children": [
         {
@@ -59,17 +62,20 @@
     },
     {
       "title": "本港篩查服務點",
-      "banner": "url2",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/service-location"
     },
     {
       "title": "商業合作",
-      "banner": "url2",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/international"
     },
     {
       "title": "關於 Take2 Health",
-      "banner": "url2",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/about-us",
       "children": [
         {
@@ -84,7 +90,8 @@
     },
     {
       "title": "聯絡我們",
-      "banner": "url2",
+      "banner": "whats_new_section_banner",
+      "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/contact-us"
     }
   ]
