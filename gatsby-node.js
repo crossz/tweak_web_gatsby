@@ -1,34 +1,42 @@
 'use strict'
-exports.createPages = async ({ actions }) => {
+
+exports.createPages = async ({ graphql, actions }) => {
+  const formatPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
+
   const { createRedirect } = actions
 
-  // const newestBlogEntry = await graphql(
-  //   `
-  //     {
-  //       allMarkdownRemark(
-  //         limit: 1
-  //         filter: { fileAbsolutePath: { regex: "/blogs/" } }
-  //         sort: { fields: [frontmatter___date], order: DESC }
-  //       ) {
-  //         edges {
-  //           node {
-  //             frontmatter {
-  //               slug
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // )
+  const menuData = await graphql(`
+    {
+      json {
+        menu {
+          banner
+          path
+          title
+          children {
+            path
+            title
+          }
+        }
+      }
+    }
+  `)
+  const menuList = menuData.data.json.menu
 
-  // const newestBlogNode = newestBlogEntry.data.allMarkdownRemark.edges[0].node
+  menuList?.forEach((menu) => {
+    if (menu?.children?.length) {
+      const fromPath = formatPath(menu.path)
+      const toPath = formatPath(menu?.children[0].path)
+      createRedirect({
+        fromPath,
+        redirectInBrowser: true,
+        toPath,
+      })
+    }
+  })
 
-  // Blog landing page should always show the most recent blog entry.
-  // const pathArray = ['/blogs/', '/blogs']
   createRedirect({
-    fromPath: '/blogs',
-    toPath: '/blogs/my-first-post/',
+    fromPath: '/index.html',
     redirectInBrowser: true,
+    toPath: '/',
   })
 }
