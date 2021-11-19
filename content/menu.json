@@ -5,6 +5,7 @@
       "banner": "whats_new_section_banner",
       "mobileBanner": "whats_new_section_banner_mobile",
       "path": "/whats-new",
+      "titleColor": "primary.main",
       "children": [
         {
           "title": "最新推廣優惠",
@@ -25,6 +26,7 @@
       "banner": "technologies_section_banner",
       "mobileBanner": "technologies_section_banner_mobile",
       "path": "/our-technologies",
+      "titleColor": "primary.main",
       "children": [
         {
           "title": "認識早期鼻咽癌篩查",
@@ -45,6 +47,7 @@
       "banner": "products_services_section_banner",
       "mobileBanner": "products_services_section_banner_mobile",
       "path": "/products-and-services",
+      "titleColor": "primary.main",
       "children": [
         {
           "title": "Take2 ProphecyTM",
@@ -64,21 +67,22 @@
       "title": "本港篩查服務點",
       "banner": "whats_new_section_banner",
       "mobileBanner": "whats_new_section_banner_mobile",
-      "path": "/service-location"
+      "path": "/service-location",
+      "titleColor": "common.white"
     },
     {
       "title": "商業合作",
       "banner": "international_section_banner",
       "mobileBanner": "international_section_banner_mobile",
       "path": "/international",
-      "titleColor": "white"
+      "titleColor": "common.white"
     },
     {
       "title": "關於 Take2 Health",
       "banner": "about_us_section_banner",
       "mobileBanner": "about_us_section_banner_mobile",
       "path": "/about-us",
-      "titleColor": "white",
+      "titleColor": "common.white",
       "children": [
         {
           "title": "信念和使命",

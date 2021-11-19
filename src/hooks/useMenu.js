@@ -9,6 +9,7 @@ const useMenu = () => {
           mobileBanner
           path
           title
+          titleColor
           children {
             path
             title

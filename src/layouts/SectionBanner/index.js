@@ -118,12 +118,11 @@ const SectionBanner = () => {
               ></Image>
               <Container className={classes.titleWrapper} maxWidth='lg'>
                 <Box mt='auto' mb={4} ml={2}>
-                  <Typography
-                    variant='h3'
-                    color={curMenuItem.titleColor || 'primary'}
-                  >
+                  <Typography variant='h3'>
                     <TitleDot></TitleDot>
-                    {curMenuItem?.title}
+                    <Box color={curMenuItem.titleColor}>
+                      {curMenuItem?.title}
+                    </Box>
                   </Typography>
                 </Box>
               </Container>
