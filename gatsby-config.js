@@ -33,12 +33,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.md`, `.mdx`],
         defaultLayouts: {
-          default: require.resolve('./src/components/MdxLayout'),
+          default: require.resolve('./src/layouts/MdxLayout'),
         },
       },
     },
-    // 'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -75,20 +75,11 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'pages',
-        path: `${__dirname}/src/pages`,
-      },
-      __key: 'pages',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'content',
         path: `${__dirname}/content/`,
       },
       __key: 'content',
     },
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {

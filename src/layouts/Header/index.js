@@ -6,7 +6,7 @@ import { useMatch } from '@reach/router'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
-import { Waypoint } from 'react-waypoint'
+// import { Waypoint } from 'react-waypoint'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 

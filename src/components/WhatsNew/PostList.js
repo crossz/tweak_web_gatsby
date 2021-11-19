@@ -8,8 +8,8 @@ const PostList = (props) => {
       {props.caption}
       {props.children}
       {props?.posts?.map((post) => (
-        <Link key={post.id} to={post.name}>
-          {post.childMarkdownRemark.frontmatter.title}
+        <Link key={post.id} to={`/whats-new${post.slug}`}>
+          {post.frontmatter.title}
         </Link>
       ))}
     </div>

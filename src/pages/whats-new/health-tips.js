@@ -7,7 +7,7 @@ const HealthTips = ({ data }) => {
     <PostList
       title='健康資訊 為您更新'
       caption='為了讓您更了解健康狀況，我們會與不同合作夥伴攜手為您帶來產品及服務優惠，助您全面掌握健康。'
-      posts={data.allFile.nodes}
+      posts={data.allMdx.nodes}
     ></PostList>
   )
 }
@@ -16,25 +16,15 @@ export default HealthTips
 
 export const query = graphql`
   {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "content" }
-        relativeDirectory: { eq: "health-tips" }
-      }
-    ) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/health-tips/" } }) {
+      totalCount
       nodes {
         id
-        name
-        childMarkdownRemark {
-          html
-          frontmatter {
-            date(formatString: "DD/MM/YYYY")
-            slug
-            title
-          }
+        slug
+        frontmatter {
+          title
+          date(fromNow: true)
         }
-        relativeDirectory
-        relativePath
       }
     }
   }
