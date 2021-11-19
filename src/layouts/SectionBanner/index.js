@@ -21,10 +21,16 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(33.125),
     },
+    display: 'grid',
+  },
+  banner: {
+    gridArea: '1/1',
   },
   titleWrapper: {
+    gridArea: '1/1',
+    display: 'grid',
     height: '100%',
-    display: 'flex',
+    position: 'relative',
     flexDirection: 'column',
   },
   tabsWrapper: {
@@ -96,18 +102,26 @@ const SectionBanner = () => {
       {(props) =>
         props.match ? (
           <Box className={classes.root}>
-            <Image
-              filename={matches ? curMenuItem.mobileBanner : curMenuItem.banner}
-              alt='image'
-            ></Image>
             <Container
               className={classes.bannerWrapper}
               disableGutters
               maxWidth='xl'
             >
+              <Image
+                filename={
+                  matches ? curMenuItem.mobileBanner : curMenuItem.banner
+                }
+                alt='image'
+                style={{
+                  gridArea: '1/1',
+                }}
+              ></Image>
               <Container className={classes.titleWrapper} maxWidth='lg'>
                 <Box mt='auto' mb={4} ml={2}>
-                  <Typography variant='h3' color='primary'>
+                  <Typography
+                    variant='h3'
+                    color={curMenuItem.titleColor || 'primary'}
+                  >
                     <TitleDot></TitleDot>
                     {curMenuItem?.title}
                   </Typography>

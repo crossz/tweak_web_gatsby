@@ -9,8 +9,6 @@ import {
   useMediaQuery,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
-import HomepageBanner from '@images/homepage_banner.jpg'
-import HomepageBannerMobile from '@images/homepage_banner_mobile.jpg'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({

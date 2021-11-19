@@ -22,8 +22,8 @@
     },
     {
       "title": "創新技術",
-      "banner": "whats_new_section_banner",
-      "mobileBanner": "whats_new_section_banner_mobile",
+      "banner": "technologies_section_banner",
+      "mobileBanner": "technologies_section_banner_mobile",
       "path": "/our-technologies",
       "children": [
         {
@@ -42,8 +42,8 @@
     },
     {
       "title": "產品及服務",
-      "banner": "whats_new_section_banner",
-      "mobileBanner": "whats_new_section_banner_mobile",
+      "banner": "products_services_section_banner",
+      "mobileBanner": "products_services_section_banner_mobile",
       "path": "/products-and-services",
       "children": [
         {
@@ -68,15 +68,17 @@
     },
     {
       "title": "商業合作",
-      "banner": "whats_new_section_banner",
-      "mobileBanner": "whats_new_section_banner_mobile",
-      "path": "/international"
+      "banner": "international_section_banner",
+      "mobileBanner": "international_section_banner_mobile",
+      "path": "/international",
+      "titleColor": "white"
     },
     {
       "title": "關於 Take2 Health",
-      "banner": "whats_new_section_banner",
-      "mobileBanner": "whats_new_section_banner_mobile",
+      "banner": "about_us_section_banner",
+      "mobileBanner": "about_us_section_banner_mobile",
       "path": "/about-us",
+      "titleColor": "white",
       "children": [
         {
           "title": "信念和使命",
@@ -90,8 +92,9 @@
     },
     {
       "title": "聯絡我們",
-      "banner": "whats_new_section_banner",
-      "mobileBanner": "whats_new_section_banner_mobile",
+      "titleColor": "common.white",
+      "banner": "contact_us_section_banner",
+      "mobileBanner": "contact_us_section_banner_mobile",
       "path": "/contact-us"
     }
   ]
