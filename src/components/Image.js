@@ -21,7 +21,7 @@ const Image = ({ alt, filename, ...rest }) => {
       `}
       render={(data) => {
         const imageData = data.images.nodes.find((n) => {
-          return n.relativePath.includes(filename)
+          return n.name === filename
         })
 
         if (!imageData) {

@@ -88,7 +88,6 @@ const Banner = () => {
       ) : (
         <StaticImage
           className={classes.staticImage}
-          placeholder='blurred'
           layout='fullWidth'
           // You can optionally force an aspect ratio for the generated image
           // aspectRatio={3 / 1}
@@ -96,7 +95,6 @@ const Banner = () => {
           alt='Homepage'
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
           src={'../../assets/images/homepage_banner.jpg'}
-          formats={['auto', 'webp', 'avif']}
         />
       )}
       <Container className={classes.wrapper} maxWidth='md'>
