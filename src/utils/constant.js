@@ -1,3 +1,4 @@
+import { MOBILE_REGEX_HK, MOBILE_REGEX_CN, MOBILE_REGEX_MO } from './regex'
 export const HEADER_HEIGHT = 10.5
 export const MOBILE_HEADER_HEIGHT = 7.5
 export const LOGO_TYPE = {
@@ -17,3 +18,20 @@ export const DATE_FORMAT_WITH_WEEK = `yyyy-MM-dd(${DAY_OF_WEEK})`
 export const DATE_FORMAT_WITH_TIME = 'yyyy-MM-dd HH:mm'
 export const DATABASE_DATE_TIME_FORMAT = 'yyyy-MM-dd HH:mm:ss'
 export const TIME_SLICE = 'HH:mm'
+export const DIALING_CODES = [
+  {
+    label: '+852',
+    value: '852',
+    regex: MOBILE_REGEX_HK,
+  },
+  {
+    label: '+086',
+    value: '086',
+    regex: MOBILE_REGEX_CN,
+  },
+  {
+    label: '+853',
+    value: '853',
+    regex: MOBILE_REGEX_MO,
+  },
+]
