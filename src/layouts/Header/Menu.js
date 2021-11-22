@@ -169,7 +169,7 @@ const Menu = () => {
 
   const ContactList = () => {
     const contactUsItem = menu[6]
-    const joinUsItem = menu[5].children[1]
+    const joinUsItem = menu[5].sections[1]
     return (
       <Box className={classes.contactList} display='flex'>
         <Link
@@ -245,7 +245,7 @@ const Menu = () => {
                       expanded={!matches || item.path === panel}
                       onChange={handleChange(
                         !matches ||
-                          !(item.children && item.children?.length) ||
+                          !(item.sections && item.sections?.length) ||
                           index === 5
                           ? ''
                           : item.path
@@ -254,8 +254,8 @@ const Menu = () => {
                       <EAccordionSummary
                         expandIcon={
                           matches &&
-                          item.children &&
-                          item.children?.length &&
+                          item.sections &&
+                          item.sections?.length &&
                           index !== 5 && (
                             <ArrowIcon className={classes.arrowIcon} />
                           )
@@ -267,8 +267,8 @@ const Menu = () => {
                           bgcolor='background.paper'
                           size={1.5}
                         ></TitleDot>
-                        {item.children &&
-                        item.children?.length &&
+                        {item.sections &&
+                        item.sections?.length &&
                         index !== 5 ? (
                           <Typography variant='h4'>{item.title}</Typography>
                         ) : (
@@ -281,10 +281,10 @@ const Menu = () => {
                           </Link>
                         )}
                       </EAccordionSummary>
-                      {item.children && item.children?.length && index !== 5 && (
+                      {item.sections && item.sections?.length && index !== 5 && (
                         <EAccordionDetails className={classes.menuChildren}>
                           <Typography variant='body1' component='div'>
-                            {item.children.map((tab) => (
+                            {item.sections.map((tab) => (
                               <Box
                                 className={classes.menuChildrenItem}
                                 key={tab.title}

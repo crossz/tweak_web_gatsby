@@ -73,12 +73,13 @@ module.exports = {
         checkSupportedExtensions: false,
       },
     },
-    {
-      resolve: `gatsby-transformer-json`,
-      options: {
-        typeName: `Json`, // a fixed string
-      },
-    },
+    `gatsby-transformer-json`,
+    // {
+    //   resolve: `gatsby-transformer-json`,
+    //   options: {
+    //     typeName: `Json`, // a fixed string
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

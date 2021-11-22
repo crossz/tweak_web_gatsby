@@ -186,7 +186,7 @@ const Footer = () => {
                       square
                       key={item.title}
                       onChange={handleChange(
-                        !matches || !(item.children && item.children?.length)
+                        !matches || !(item.sections && item.sections?.length)
                           ? ''
                           : item.path
                       )}
@@ -194,8 +194,8 @@ const Footer = () => {
                       <EAccordionSummary
                         expandIcon={
                           matches &&
-                          item.children &&
-                          item.children?.length && (
+                          item.sections &&
+                          item.sections?.length && (
                             <ArrowIcon className={classes.arrowIcon} />
                           )
                         }
@@ -207,7 +207,7 @@ const Footer = () => {
                         }}
                       >
                         {!matches ||
-                        !(item.children && item.children?.length) ? (
+                        !(item.sections && item.sections?.length) ? (
                           <Link className={classes.link} to={item.path}>
                             <Box
                               fontSize='body1.fontSize'
@@ -225,10 +225,10 @@ const Footer = () => {
                           </Box>
                         )}
                       </EAccordionSummary>
-                      {item.children && item.children?.length && (
+                      {item.sections && item.sections?.length && (
                         <EAccordionDetails>
                           <Typography variant='body1' component='div'>
-                            {item.children.map((tab) => (
+                            {item.sections.map((tab) => (
                               <Box
                                 fontSize='body2.fontSize'
                                 mb={1}

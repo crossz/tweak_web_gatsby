@@ -35,3 +35,45 @@ export const DIALING_CODES = [
     regex: MOBILE_REGEX_MO,
   },
 ]
+export const REGIONS = [
+  {
+    label: '所有地區',
+    value: 0,
+    districts: [
+      {
+        label: '所有地區',
+        value: 0,
+      },
+    ],
+  },
+  {
+    label: '香港',
+    value: 1,
+    districts: [
+      {
+        label: '所有地區',
+        value: 0,
+      },
+      {
+        label: '香港',
+        value: 1,
+      },
+      {
+        label: '九龍',
+        value: 2,
+      },
+      {
+        label: '新界東',
+        value: 3,
+      },
+      {
+        label: '新界西',
+        value: 4,
+      },
+      {
+        label: '澳門',
+        value: 5,
+      },
+    ],
+  },
+]

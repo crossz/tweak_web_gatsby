@@ -11,7 +11,6 @@ import { useLocation, Match } from '@reach/router'
 import useMenu from '@hooks/useMenu'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
-import { StaticImage } from 'gatsby-plugin-image'
 import Image from '@components/Image'
 
 const useStyles = makeStyles((theme) => ({
@@ -91,13 +90,13 @@ const SectionBanner = () => {
   )
 
   const curMenuItemPath = useMemo(() => {
-    const curMenuItemChild = curMenuItem?.children?.length
-      ? curMenuItem?.children?.find((child) => pathname.includes(child.path))
+    const curMenuItemChild = curMenuItem?.sections?.length
+      ? curMenuItem?.sections?.find((child) => pathname.includes(child.path))
       : curMenuItem
     return curMenuItemChild?.path
   }, [curMenuItem, pathname])
 
-  return curMenuItemPath ? (
+  return curMenuItemPath && curMenuItem?.path !== '/service-location' ? (
     <Match path={curMenuItemPath}>
       {(props) =>
         props.match ? (
@@ -127,9 +126,9 @@ const SectionBanner = () => {
                 </Box>
               </Container>
             </Container>
-            {curMenuItem?.children && curMenuItem?.children?.length && (
+            {curMenuItem?.sections && curMenuItem?.sections?.length && (
               <Box className={classes.tabsWrapper}>
-                {curMenuItem?.children.map((item) => (
+                {curMenuItem?.sections.map((item) => (
                   <Link
                     to={item.path}
                     className={classes.tab}

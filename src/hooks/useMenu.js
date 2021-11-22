@@ -3,14 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 const useMenu = () => {
   const data = useStaticQuery(graphql`
     {
-      json {
-        menu {
+      allMenuJson {
+        nodes {
           banner
           mobileBanner
           path
           title
           titleColor
-          children {
+          sections {
             path
             title
           }
@@ -18,7 +18,7 @@ const useMenu = () => {
       }
     }
   `)
-  return data.json.menu
+  return data.allMenuJson.nodes
 }
 
 export default useMenu
