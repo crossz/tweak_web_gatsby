@@ -19,6 +19,7 @@ export const query = graphql`
     allMdx(
       limit: 1000
       filter: { fileAbsolutePath: { regex: "/health-tips/" } }
+      sort: { fields: frontmatter___date, order: ASC }
     ) {
       totalCount
       nodes {

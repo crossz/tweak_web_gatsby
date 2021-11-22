@@ -8,6 +8,8 @@ import Banner from './Banner'
 import TitleDot from '@themes/components/TitleDot'
 import Typography from '@material-ui/core/Typography'
 import Quiz from '@components/Quiz'
+import PromotionList from './PromotionList'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down('xs')]: {
@@ -25,13 +27,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Homepage = () => {
+const Homepage = ({ promotionNodes }) => {
   const classes = useStyles()
   return (
     <>
       <Banner></Banner>
       <Container className={classes.root} maxWidth='md'>
         <Quiz></Quiz>
+        <Box className={classes.title}>
+          <TitleDot></TitleDot>
+          <Typography variant='h4' color='primary'>
+            最新推廣優惠
+          </Typography>
+        </Box>
+        <Box fontSize='caption.fontSize' color='text.primary'>
+          為了讓你更了解健康狀況，我們會與不同合作夥伴攜手為你帶來產品及服務優惠，助你全面掌握健康。
+        </Box>
+        <PromotionList nodes={promotionNodes}></PromotionList>
         <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>

@@ -5,15 +5,23 @@ import {
   date as yDate,
 } from 'yup'
 
+import { DIALING_CODES } from '@utils/constant'
+
 export const oriSchema = yObject({
+  companyName: yString().nullable(),
+  message: yString().nullable(),
+  dialingCode: yString().nullable().required('dialingCode'),
   gender: yNumber().nullable().required('error'),
   birthday: yDate().nullable().required('error'),
-  email: yString()
+  email: yString().nullable().email('error').required('error'),
+  phone: yString()
     .nullable()
-    .when('verificationType', (arg, schema) => {
-      // When verification type is not email and not empty,email no required
-      return !arg || arg === 'email'
-        ? schema.email('error').required('error')
-        : schema.notRequired()
+    .when(['dialingCode'], (arg, schema) => {
+      const activeDialingCode = DIALING_CODES.find(
+        (dialingCode) => dialingCode.value === arg
+      )
+      return schema
+        .matches(new RegExp(activeDialingCode?.regex), 'error')
+        .required('error')
     }),
 })

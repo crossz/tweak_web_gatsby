@@ -9,6 +9,12 @@ export const LOGO_TYPE = {
   prophecyBlue: 'prophecy_blue',
   prophecyFullColor: 'prophecy_full_color',
 }
+export const FOOTER_HEIGHT = 20
+export const LABEL_WIDTH = 20
+export const MOBILE_LABEL_WIDTH = 12
+export const INPUT_WIDTH = 30
+export const MOBILE_INPUT_WIDTH = 24
+
 export const DATE_FORMAT = 'yyyy-MM-dd'
 export const DATE_FORMAT_WITHOUT_CONNECT = 'yyyyMMdd'
 export const BIRTHDAY_FORMAT = 'yyyy/MM/dd'

@@ -22,7 +22,11 @@ export default Updates
 
 export const query = graphql`
   {
-    allMdx(limit: 1000, filter: { fileAbsolutePath: { regex: "/updates/" } }) {
+    allMdx(
+      limit: 1000
+      filter: { fileAbsolutePath: { regex: "/updates/" } }
+      sort: { fields: frontmatter___date, order: ASC }
+    ) {
       nodes {
         id
         frontmatter {

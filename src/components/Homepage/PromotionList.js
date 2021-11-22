@@ -1,14 +1,13 @@
 import React from 'react'
-import UpdateItem from './UpdateItem'
+import PostCard from '@components/WhatsNew/PostCard'
 import Box from '@material-ui/core/Box'
 
-const MoreUpdates = ({ title, nodes }) => {
+const PromotionList = ({ nodes }) => {
   return (
     <Box>
-      <Box>{title}</Box>
       {nodes?.length &&
         nodes.map((node) => (
-          <UpdateItem
+          <PostCard
             key={node.id}
             slug={`/whats-new/${node.slug}`}
             {...node.frontmatter}
@@ -18,4 +17,4 @@ const MoreUpdates = ({ title, nodes }) => {
   )
 }
 
-export default MoreUpdates
+export default PromotionList
