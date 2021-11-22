@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
   allMdxList?.forEach((mdx) => {
-    const path = '/whats-new' + mdx.slug
+    const path = '/whats-new/' + mdx.slug
     createPage({
       path: path,
       component: postTemplate,

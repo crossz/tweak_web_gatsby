@@ -1,18 +1,24 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import PostCard from './PostCard'
+import Box from '@material-ui/core/Box'
 
-const PostList = (props) => {
+const PostList = ({ title, caption, nodes }) => {
   return (
-    <div>
-      {props.title}
-      {props.caption}
-      {props.children}
-      {props?.posts?.map((post) => (
-        <Link key={post.id} to={`/whats-new${post.slug}`}>
-          {post.frontmatter.title}
-        </Link>
-      ))}
-    </div>
+    <Box>
+      <Box>{title}</Box>
+      <Box>{caption}</Box>
+      <Box>
+        {nodes?.length &&
+          nodes.map((node) => (
+            <PostCard
+              key={node.id}
+              slug={`/whats-new/${node.slug}`}
+              {...node.frontmatter}
+            ></PostCard>
+          ))}
+      </Box>
+    </Box>
   )
 }
 
