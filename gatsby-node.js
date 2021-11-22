@@ -57,6 +57,11 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           id
           slug
+          parent {
+            ... on File {
+              relativeDirectory
+            }
+          }
         }
       }
     }
@@ -71,6 +76,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: postTemplate,
       context: {
         slug: mdx.slug,
+        sectionPath: mdx.parent.relativeDirectory,
+        regex: `/${mdx.parent.relativeDirectory}/`,
       },
     })
     const fromPath = path + '.html'

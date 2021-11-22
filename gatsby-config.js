@@ -37,8 +37,17 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/layouts/MdxLayout'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 570,
+            },
+          },
+        ],
       },
     },
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
