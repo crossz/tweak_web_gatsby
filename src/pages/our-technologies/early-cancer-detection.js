@@ -149,6 +149,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(8),
       fontSize: theme.typography.body2.fontSize,
       padding: theme.spacing(2.5, 3),
+      textAlign: 'center',
     },
   },
 }))

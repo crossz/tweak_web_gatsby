@@ -7,6 +7,11 @@ let theme = createTheme({
       main: '#1A285D',
       light: '#7BB8C8',
     },
+    supporting: {
+      supporting01: '#A9BFCC',
+      supporting02: '#F2512D',
+      supporting03: '#272C31',
+    },
     prophecyPrimary: {
       main: '#29678F',
       light: '#7BB8C8',

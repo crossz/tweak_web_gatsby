@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const TitleDot = ({ bgcolor = 'secondary.main', size, left }) => {
+const TitleDot = ({ bgcolor, size, left }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({ size, matches, left })
   return (
     <Box className={classes.root} component='span'>
-      <Box className={classes.dot} bgcolor={bgcolor}></Box>
+      <Box className={classes.dot} bgcolor={bgcolor || 'secondary.main'}></Box>
     </Box>
   )
 }
