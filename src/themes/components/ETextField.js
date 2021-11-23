@@ -43,7 +43,6 @@ export const EInputBase = withStyles((theme) => ({
 
 export const EFormLabel = withStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(1.5),
     minWidth: theme.spacing(LABEL_WIDTH),
     fontWeight: 'bolder',
     fontSize: theme.typography.body2.fontSize,

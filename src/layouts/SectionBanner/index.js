@@ -118,11 +118,20 @@ const SectionBanner = () => {
               <Container className={classes.titleWrapper} maxWidth='lg'>
                 <Box mt='auto' mb={4} ml={2}>
                   <Typography variant='h3'>
-                    <TitleDot></TitleDot>
+                    <TitleDot left={-3.75}></TitleDot>
                     <Box color={curMenuItem.titleColor}>
                       {curMenuItem?.title}
                     </Box>
                   </Typography>
+                  {pathname.includes('/contact-us') && (
+                    <Box
+                      mt={3}
+                      fontSize='body1.fontSize'
+                      color='primary.contrastText'
+                    >
+                      如有任何意見或查詢，歡迎透過下列方式與我們聯繫
+                    </Box>
+                  )}
                 </Box>
               </Container>
             </Container>

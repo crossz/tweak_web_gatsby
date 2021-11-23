@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { makeStyles, Container } from '@material-ui/core'
+import {
+  makeStyles,
+  Container,
+  Grid,
+  useMediaQuery,
+  useTheme,
+} from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import PhoneIcon from '@images/icons/phone.svg'
@@ -18,10 +24,86 @@ import { throttle } from 'lodash-es'
 import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
 import { EInputBase, EFormLabel } from '@themes/components/ETextField'
+import ImageList from '@material-ui/core/ImageList'
+import ImageListItem from '@material-ui/core/ImageListItem'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    paddingBottom: theme.spacing(11),
+  },
+  flexContainer: {
+    borderBottom: `1px solid ${theme.palette.primary.contrastText}`,
+  },
+  tabsRoot: {
+    margin: theme.spacing(0, -2),
+  },
+  tabRoot: {
+    color: theme.palette.primary.contrastText,
+    fontSize: theme.typography.body1.fontSize,
+    minWidth: 'auto',
+    padding: theme.spacing(0, 3),
+    opacity: 1,
+    flexGrow: 1,
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+      fontSize: theme.typography.body2.fontSize,
+    },
+  },
+  selected: {
+    fontWeight: theme.typography.fontWeightBold,
+  },
+  scrollButtons: {
+    color: theme.palette.primary.contrastText,
+  },
+  imageListItem: {
+    height: 'auto',
+  },
+  imageListItemItem: {
+    overflow: 'initial',
+  },
+  button: {
+    width: '100%',
+    height: theme.spacing(11),
+    paddingLeft: theme.spacing(2.5),
+    paddingRight: theme.spacing(2.5),
+    fontSize: theme.typography.body1.fontSize,
+    justifyContent: 'flex-start',
+    textTransform: 'none',
+    '& svg': {
+      width: theme.spacing(5),
+      height: theme.spacing(5),
+      [theme.breakpoints.down('md')]: {
+        width: theme.spacing(4),
+        height: theme.spacing(4),
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: theme.spacing(3),
+        height: theme.spacing(3),
+      },
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.typography.body2.fontSize,
+      height: theme.spacing(8),
+      paddingLeft: theme.spacing(1.5),
+      paddingRight: theme.spacing(1.5),
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(9),
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(3),
+    },
+  },
+  activeIcon: {
+    '& path': {
+      fill: theme.palette.primary.contrastText,
+    },
+  },
+  form: {
     backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6, 5),
+    borderRadius: theme.spacing(1.5),
+    marginTop: theme.spacing(2),
   },
 }))
 
@@ -43,6 +125,8 @@ const schema = oriSchema.pick([
 
 const ContactUs = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [activeTab, setActiveTab] = useState(0)
   const { whatsapp, email, phone, facebook } = useSiteMetadata()
 
@@ -77,77 +161,85 @@ const ContactUs = () => {
     },
   ]
 
-  const handleChange = (event, newValue) => {
-    setActiveTab(newValue)
-  }
+  const handleChange = (event, newValue) => setActiveTab(newValue)
 
   return (
-    <Container maxWidth='xl'>
-      <Box></Box>
+    <Container className={classes.root} disableGutters maxWidth='xl'>
+      <Box
+        height={matches ? 118 : 190}
+        bgcolor='primary.main'
+        mb={-13.75}
+      ></Box>
       <Container maxWidth='md'>
-        <Box>
-          <Tabs value={activeTab} onChange={handleChange}>
-            {contactTypes.map((contactType) => (
-              <Tab key={contactType.label} label={contactType.tabLabel}></Tab>
-            ))}
-          </Tabs>
-          <Box>
-            {contactTypes.map(({ label, Icon }) => (
-              <Button
-                key={label}
-                variant='contained'
-                color='default'
-                startIcon={<Icon />}
-              >
-                {label}
-              </Button>
-            ))}
-          </Box>
-        </Box>
-        <Box>
-          <Box>提交意見或查詢</Box>
-          <Formik initialValues={initialValues} validationSchema={schema}>
-            {(props) => {
-              const { values, handleChange } = props
-              return (
-                <form noValidate>
-                  <Box>
-                    <FormControl>
-                      <EFormLabel>公司名稱/姓名</EFormLabel>
-                      <EInputBase
-                        id='company-ame'
-                        name='companyName'
-                        margin='none'
-                        value={values.companyName}
-                        onChange={handleChange}
-                        placeholder='请输入公司名稱/姓名'
-                        type='text'
-                      />
-                    </FormControl>
-                  </Box>
-                  <Box>
-                    <FormControl>
-                      <EFormLabel>電話號碼</EFormLabel>
-                      <Box>
-                        <FormControl required>
-                          <Select
-                            labelId='dialingCode-select-label'
-                            id='dialingCode-type-select'
-                            name='dialingCode'
-                            value={values.dialingCode}
-                            onChange={handleChange}
-                            input={<EInputBase />}
-                          >
-                            {DIALING_CODES.map((dialingCode) => (
-                              <MenuItem
-                                key={dialingCode.value}
-                                value={dialingCode.value}
-                              >
-                                {dialingCode.label}
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
+        <Grid container spacing={48}>
+          <Grid item xs={12} sm={7}>
+            <Tabs
+              variant='scrollable'
+              indicatorColor='secondary'
+              value={activeTab}
+              onChange={handleChange}
+              classes={{
+                root: classes.tabsRoot,
+                flexContainer: classes.flexContainer,
+                scrollButtons: classes.scrollButtons,
+              }}
+            >
+              {contactTypes.map((contactType) => (
+                <Tab
+                  key={contactType.label}
+                  label={contactType.tabLabel}
+                  classes={{
+                    root: classes.tabRoot,
+                    selected: classes.selected,
+                  }}
+                ></Tab>
+              ))}
+            </Tabs>
+            <Box mx={matches ? 1 : 5} mt={matches ? 4 : 3.75}>
+              <ImageList rowHeight='auto' cols={matches ? 1 : 2} gap={16}>
+                {contactTypes.map(({ label, Icon }, index) => (
+                  <ImageListItem
+                    key={label}
+                    classes={{
+                      item: classes.imageListItemItem,
+                    }}
+                    className={classes.imageListItem}
+                  >
+                    <Button
+                      className={classes.button}
+                      classes={{
+                        startIcon: classes.startIcon,
+                      }}
+                      variant='contained'
+                      color={index === activeTab ? 'secondary' : 'default'}
+                      startIcon={
+                        <Icon
+                          className={classnames(
+                            index === activeTab && classes.activeIcon
+                          )}
+                        />
+                      }
+                      size='large'
+                    >
+                      {label}
+                    </Button>
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={5}>
+            <Box color='primary.contrastText' mt={1.5}>
+              提交意見或查詢
+            </Box>
+            <Formik initialValues={initialValues} validationSchema={schema}>
+              {(props) => {
+                const { values, handleChange } = props
+                return (
+                  <form className={classes.form} noValidate>
+                    <Box>
+                      <FormControl>
+                        <EFormLabel>公司名稱/姓名</EFormLabel>
                         <EInputBase
                           id='company-ame'
                           name='companyName'
@@ -157,30 +249,65 @@ const ContactUs = () => {
                           placeholder='请输入公司名稱/姓名'
                           type='text'
                         />
-                      </Box>
-                    </FormControl>
-                  </Box>
-                  <Box>
-                    <FormControl>
-                      <EFormLabel>訊息</EFormLabel>
-                      <TextareaAutosize
-                        minRows={8}
-                        maxRows={8}
-                        readOnly
-                        aria-label='message'
-                        name='message'
-                        value={values.message}
-                      />
-                    </FormControl>
-                  </Box>
-                  <Button variant='contained' color='secondary'>
-                    提交
-                  </Button>
-                </form>
-              )
-            }}
-          </Formik>
-        </Box>
+                      </FormControl>
+                    </Box>
+                    <Box>
+                      <FormControl>
+                        <EFormLabel>電話號碼</EFormLabel>
+                        <Box>
+                          <FormControl required>
+                            <Select
+                              labelId='dialingCode-select-label'
+                              id='dialingCode-type-select'
+                              name='dialingCode'
+                              value={values.dialingCode}
+                              onChange={handleChange}
+                              input={<EInputBase />}
+                            >
+                              {DIALING_CODES.map((dialingCode) => (
+                                <MenuItem
+                                  key={dialingCode.value}
+                                  value={dialingCode.value}
+                                >
+                                  {dialingCode.label}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </FormControl>
+                          <EInputBase
+                            id='company-ame'
+                            name='companyName'
+                            margin='none'
+                            value={values.companyName}
+                            onChange={handleChange}
+                            placeholder='请输入公司名稱/姓名'
+                            type='text'
+                          />
+                        </Box>
+                      </FormControl>
+                    </Box>
+                    <Box>
+                      <FormControl>
+                        <EFormLabel>訊息</EFormLabel>
+                        <TextareaAutosize
+                          minRows={8}
+                          maxRows={8}
+                          readOnly
+                          aria-label='message'
+                          name='message'
+                          value={values.message}
+                        />
+                      </FormControl>
+                    </Box>
+                    <Button variant='contained' color='secondary'>
+                      提交
+                    </Button>
+                  </form>
+                )
+              }}
+            </Formik>
+          </Grid>
+        </Grid>
       </Container>
     </Container>
   )

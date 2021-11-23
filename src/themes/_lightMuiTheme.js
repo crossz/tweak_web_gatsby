@@ -151,6 +151,8 @@ theme = createTheme(theme, {
       },
       sizeLarge: {},
       contained: {
+        backgroundColor: theme.palette.background.paper,
+        color: theme.palette.primary.main,
         boxShadow: 'none',
         '&:hover': {
           boxShadow: 'none',
