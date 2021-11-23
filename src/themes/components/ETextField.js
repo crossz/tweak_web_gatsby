@@ -2,7 +2,12 @@ import { withStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import FormLabel from '@material-ui/core/FormLabel'
 
-import { INPUT_WIDTH, MOBILE_INPUT_WIDTH, LABEL_WIDTH, MOBILE_LABEL_WIDTH } from '../../utils/constant'
+import {
+  INPUT_WIDTH,
+  MOBILE_INPUT_WIDTH,
+  LABEL_WIDTH,
+  MOBILE_LABEL_WIDTH,
+} from '../../utils/constant'
 
 export const EInputBase = withStyles((theme) => ({
   root: {

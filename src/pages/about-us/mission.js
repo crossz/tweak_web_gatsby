@@ -12,14 +12,24 @@ const Mission = () => {
   const classes = useStyles()
   const beliefs = [
     {
-      image: '../../assets/images/belief_01.jpg',
+      image: (
+        <StaticImage
+          src='../../assets/images/belief_01.jpg'
+          alt='belief 01'
+        ></StaticImage>
+      ),
       type: '企業與品牌信念',
       slogan: '我們旨在引領生物科技行業發展，改寫人類對健康的認知。',
       content:
         '我們身處一個科學躍進、突破常規的時代；只有在科研和數碼領域力求創新，以實用的資訊持續改善人類的健康和生活，才能為世界帶來實在的改變。 因此，我們引領卓越，聚集頂尖的人才和科技，組成專業團隊；捉緊機遇、釋放潛能，提供嶄新的科技和實用的資訊，確立世界對健康的看法和需求，引領亞洲邁向健康的新紀元。 與此同時，我們相信每個人都值得擁有健康無憂的人生，能透過學習、啟發和經驗，掌握健康，創造屬於自己的理想生活。 ',
     },
     {
-      image: '../../assets/images/belief_02.jpg',
+      image: (
+        <StaticImage
+          src='../../assets/images/belief_02.jpg'
+          alt='belief 02'
+        ></StaticImage>
+      ),
       type: '我們的使命',
       slogan: '我們旨在成為癌症檢測的翹楚，協助及早驗出癌症。',
       content:
@@ -33,9 +43,7 @@ const Mission = () => {
         <Box>
           {beliefs.map((belief, index) => (
             <Box key={index}>
-              <Box>
-                <StaticImage src={belief.image} alt={belief.type}></StaticImage>
-              </Box>
+              <Box>{belief.image}</Box>
               <Box>
                 <Box>{belief.type}</Box>
                 <Box>{belief.slogan}</Box>

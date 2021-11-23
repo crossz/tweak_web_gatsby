@@ -23,12 +23,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const menuQuery = await graphql(`
     {
-      json {
-        menu {
+      allMenuJson {
+        nodes {
           banner
+          mobileBanner
           path
           title
-          children {
+          titleColor
+          sections {
             path
             title
           }
@@ -36,12 +38,12 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  const menuList = menuQuery.data.json.menu
+  const menuList = menuQuery.data.allMenuJson.nodes
 
   menuList?.forEach((menu) => {
-    if (menu?.children?.length) {
+    if (menu?.sections?.length) {
       const fromPath = formatEndsPath(menu?.path)
-      const toPath = formatEndsPath(menu?.children[0]?.path)
+      const toPath = formatEndsPath(menu?.sections[0]?.path)
       createRedirect({
         fromPath,
         redirectInBrowser: true,

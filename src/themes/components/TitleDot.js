@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   dot: {
-    left: theme.spacing(-3.75),
+    left: (props) => theme.spacing(props.left || -3.75),
     position: 'absolute',
     // top: theme.spacing(0.5),
     width: (props) =>
@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const TitleDot = ({ bgcolor = 'secondary.main', size }) => {
+const TitleDot = ({ bgcolor = 'secondary.main', size, left }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const classes = useStyles({ size, matches })
+  const classes = useStyles({ size, matches, left })
   return (
     <Box className={classes.root} component='span'>
       <Box className={classes.dot} bgcolor={bgcolor}></Box>
