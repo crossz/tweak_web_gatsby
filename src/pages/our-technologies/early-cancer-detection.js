@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(9.5),
     paddingBottom: theme.spacing(26.75),
     [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 1.5),
       paddingTop: theme.spacing(8),
       paddingBottom: theme.spacing(15),
     },
@@ -251,12 +252,14 @@ const EarlyCancerDetection = () => {
                 mb={matches ? 3 : 10}
                 fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
                 color='text.primary'
+                mx={matches ? -1 : 0}
               >
                 許多人聞癌色變，因為患癌可能會為人生帶來很多變數，但是隨著科技發達，我們雖然不能直接「預防」癌症，卻能「提防」患癌，例如定期進行早期癌症篩查，就是一個及時了解自己身體狀況的好習慣。
               </Box>
               <Box
                 fontSize={matches ? 10 : 'caption.fontSize'}
                 color='grey.600'
+                mx={matches ? -1 : 0}
               >
                 {references.map((reference, index) => (
                   <Box key={index}>{reference}</Box>

@@ -205,7 +205,7 @@ theme = createTheme(theme, {
       fontSize: '1.25rem',
       fontWeight: theme.typography.fontWeightBold,
       [theme.breakpoints.down('xs')]: {
-        fontSize: '0.98.rem',
+        fontSize: '0.98rem',
       },
     },
     button: {

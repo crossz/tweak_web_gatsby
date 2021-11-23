@@ -88,8 +88,8 @@ const useStyles = makeStyles((theme) => ({
     width: '30%',
     flexShrink: 0,
     [theme.breakpoints.down('xs')]: {
+      maxWidth: 'initial',
       width: '100%',
-      height: 'auto',
     },
   },
 }))
@@ -199,6 +199,7 @@ const NGS = () => {
                       <StaticImage
                         src='../../assets/images/ngs_02.jpg'
                         alt='ngs 02'
+                        layout='fullWidth'
                       ></StaticImage>
                     ) : (
                       <StaticImage
