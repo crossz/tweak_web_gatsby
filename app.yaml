@@ -1,5 +1,4 @@
 runtime: nodejs14
-service: test-gcp
 
 handlers:
   - url: /
