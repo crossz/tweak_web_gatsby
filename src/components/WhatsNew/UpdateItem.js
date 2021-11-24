@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.contrastText,
     backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(0.25, 1),
-    lineHeight: 1,
   },
 }))
 

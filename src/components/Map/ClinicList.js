@@ -1,11 +1,18 @@
 import React, { useMemo } from 'react'
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, makeStyles } from '@material-ui/core/styles'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import Box from '@material-ui/core/Box'
 import useServiceLocation from '@hooks/useServiceLocation'
 import { REGIONS } from '@utils/constant'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    overflow: 'hidden',
+  },
+}))
 
 const MapAccordion = withStyles((theme) => ({
   root: {},
@@ -20,6 +27,7 @@ const MapAccordionDetails = withStyles((theme) => ({
 }))(AccordionDetails)
 
 const ClinicList = ({ region, district }) => {
+  const classes = useStyles()
   const serviceLocation = useServiceLocation()
   const regionClinicData = useMemo(
     () =>
@@ -30,7 +38,7 @@ const ClinicList = ({ region, district }) => {
   )
 
   return (
-    <Box>
+    <Box className={classes.root}>
       {REGIONS[region]?.districts?.map((districtItem, index) => (
         <MapAccordion
           key={districtItem.label}

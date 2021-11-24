@@ -206,8 +206,7 @@ const Footer = () => {
                           content: classes.accordionSummaryContent,
                         }}
                       >
-                        {!matches ||
-                        !(item.sections && item.sections?.length) ? (
+                        {!(item.sections && item.sections?.length) ? (
                           <Link className={classes.link} to={item.path}>
                             <Box
                               fontSize='body1.fontSize'

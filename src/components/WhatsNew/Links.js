@@ -12,12 +12,14 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const useStyles = makeStyles((theme) => ({
   btn: {
-    [theme.breakpoints.down('xs')]: {
-      margin: 0,
-      marginRight: theme.spacing(3.25),
-    },
     '& path': {
       fill: theme.palette.primary.main,
+    },
+    '& svg': {
+      [theme.breakpoints.down('xs')]: {
+        width: theme.spacing(2.5),
+        height: theme.spacing(2.5),
+      },
     },
   },
 }))
@@ -50,7 +52,7 @@ const Links = ({ href }) => {
   ]
 
   return (
-    <Box display='flex'>
+    <Box display='flex' mr={-1.5}>
       {links.map(({ Icon, type, link }, index) => (
         <Box key={index}>
           {type === 'link' && (

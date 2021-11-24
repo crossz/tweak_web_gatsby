@@ -3,7 +3,7 @@
     "title": "最新動態及推廣",
     "banner": "whats_new_section_banner",
     "mobileBanner": "whats_new_section_banner_mobile",
-    "path": "/whats-new",
+    "path": "/whats-new/",
     "titleColor": "primary.main",
     "sections": [
       {
@@ -24,7 +24,7 @@
     "title": "創新技術",
     "banner": "technologies_section_banner",
     "mobileBanner": "technologies_section_banner_mobile",
-    "path": "/our-technologies",
+    "path": "/our-technologies/",
     "titleColor": "primary.main",
     "sections": [
       {
@@ -45,7 +45,7 @@
     "title": "產品及服務",
     "banner": "products_services_section_banner",
     "mobileBanner": "products_services_section_banner_mobile",
-    "path": "/products-and-services",
+    "path": "/products-and-services/",
     "titleColor": "primary.main",
     "sections": [
       {
@@ -66,21 +66,21 @@
     "title": "本港篩查服務點",
     "banner": "whats_new_section_banner",
     "mobileBanner": "whats_new_section_banner_mobile",
-    "path": "/service-location",
+    "path": "/service-location/",
     "titleColor": "common.white"
   },
   {
     "title": "商業合作",
     "banner": "international_section_banner",
     "mobileBanner": "international_section_banner_mobile",
-    "path": "/international",
+    "path": "/international/",
     "titleColor": "common.white"
   },
   {
     "title": "關於 Take2 Health",
     "banner": "about_us_section_banner",
     "mobileBanner": "about_us_section_banner_mobile",
-    "path": "/about-us",
+    "path": "/about-us/",
     "titleColor": "common.white",
     "sections": [
       {
@@ -98,6 +98,6 @@
     "titleColor": "common.white",
     "banner": "contact_us_section_banner",
     "mobileBanner": "contact_us_section_banner_mobile",
-    "path": "/contact-us"
+    "path": "/contact-us/"
   }
 ]

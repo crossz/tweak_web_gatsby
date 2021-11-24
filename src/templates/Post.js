@@ -7,10 +7,10 @@ import {
   makeStyles,
   alpha,
   Typography,
-  Grid,
   Container,
   Box,
   Breadcrumbs,
+  Hidden,
 } from '@material-ui/core'
 import ArrowIcon from '@images/icons/arrow.svg'
 import useMenu from '@hooks/useMenu'
@@ -21,6 +21,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 const useStyles = makeStyles((theme) => ({
   root: {},
   breadcrumbsWrapper: {
+    position: 'relative',
+    zIndex: 1,
     height: 150,
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
@@ -29,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.body2.fontSize,
     '& a': {
       color: theme.palette.primary.contrastText,
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: 85,
     },
   },
   breadcrumbsTitle: {
@@ -49,6 +54,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      alignItems: 'flex-start',
+    },
+  },
+  topLeft: {
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   },
   date: {
     color: theme.palette.text.primary,
@@ -56,7 +71,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     marginRight: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(1.5),
+      marginBottom: theme.spacing(1),
       marginRight: theme.spacing(2),
+      fontSize: theme.typography.body2.fontSize,
+      fontWeight: theme.typography.fontWeightMedium,
     },
   },
   mark: {
@@ -64,26 +83,35 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.contrastText,
     backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(0.25, 1),
+    display: 'inline-block',
   },
   contentWrapper: {
     position: 'relative',
+    padding: theme.spacing(0, 3),
   },
   content: {
     paddingBottom: theme.spacing(30),
     position: 'relative',
-    zIndex: 1,
+    zIndex: 2,
   },
   image: {
     marginTop: theme.spacing(-4),
     marginBottom: theme.spacing(-5),
     borderRadius: theme.spacing(1.25),
     overflow: 'hidden',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(-6),
+    },
   },
   postBg: {
     width: '100%',
     height: 980,
     position: 'absolute',
     bottom: 0,
+    left: 0,
+    [theme.breakpoints.down('xs')]: {
+      height: 400,
+    },
   },
   moreWrapper: {
     padding: theme.spacing(5, 3),
@@ -118,16 +146,18 @@ const Post = ({ data, pageContext, location: { href } }) => {
     <Box className={classes.root}>
       <Container disableGutters maxWidth='xl'>
         <Box className={classes.breadcrumbsWrapper}>
-          <Container disableGutters maxWidth='sm'>
-            <Breadcrumbs
-              separator={<ArrowIcon className={classes.arrowIcon} />}
-              aria-label='breadcrumb'
-            >
-              <Link to='/'>Take2 Health</Link>
-              <Link to={middlePath}>{middleTitle}</Link>
-              <Box className={classes.breadcrumbsTitle}>{title}</Box>
-            </Breadcrumbs>
-          </Container>
+          <Hidden xsDown>
+            <Container disableGutters maxWidth='sm'>
+              <Breadcrumbs
+                separator={<ArrowIcon className={classes.arrowIcon} />}
+                aria-label='breadcrumb'
+              >
+                <Link to='/'>Take2 Health</Link>
+                <Link to={middlePath}>{middleTitle}</Link>
+                <Box className={classes.breadcrumbsTitle}>{title}</Box>
+              </Breadcrumbs>
+            </Container>
+          </Hidden>
         </Box>
         <Box className={classes.contentWrapper}>
           <Container className={classes.content} disableGutters maxWidth='sm'>
@@ -138,8 +168,10 @@ const Post = ({ data, pageContext, location: { href } }) => {
             )}
             <Box className={classes.header}>
               <Box className={classes.top}>
-                <Box className={classes.date}>{date}</Box>
-                <Box className={classes.mark}>{type}</Box>
+                <Box className={classes.topLeft}>
+                  <Box className={classes.date}>{date}</Box>
+                  <Box className={classes.mark}>{type}</Box>
+                </Box>
                 <Box ml='auto'>
                   <Links href={href}></Links>
                 </Box>
