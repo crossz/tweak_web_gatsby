@@ -1,22 +1,16 @@
 import React from 'react'
 import UpdateItem from './UpdateItem'
-import Box from '@material-ui/core/Box'
 import {
   makeStyles,
   alpha,
   Typography,
   Grid,
   Container,
+  Box,
 } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(5, 3),
-    backgroundColor: alpha(theme.palette.primary.main, 0.05),
-    [theme.breakpoints.down('xs')]: {
-      backgroundColor: '#F8F9FA',
-    },
-  },
+  root: {},
   title: {
     paddingTop: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {

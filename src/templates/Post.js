@@ -1,8 +1,98 @@
 import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
 import MoreUpdates from '@components/WhatsNew/MoreUpdates'
+import {
+  makeStyles,
+  alpha,
+  Typography,
+  Grid,
+  Container,
+  Box,
+  Breadcrumbs,
+} from '@material-ui/core'
+import ArrowIcon from '@images/icons/arrow.svg'
+import useMenu from '@hooks/useMenu'
+import Links from '@components/WhatsNew/Links'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
+
+const useStyles = makeStyles((theme) => ({
+  root: {},
+  breadcrumbsWrapper: {
+    height: 150,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: theme.typography.body2.fontSize,
+    '& a': {
+      color: theme.palette.primary.contrastText,
+    },
+  },
+  breadcrumbsTitle: {
+    color: theme.palette.primary.contrastText,
+  },
+  arrowIcon: {
+    width: theme.spacing(1.5),
+    height: theme.spacing(1.5),
+    '& path': {
+      fill: theme.palette.primary.contrastText,
+    },
+  },
+  header: {
+    paddingTop: theme.spacing(8),
+    marginBottom: theme.spacing(3),
+  },
+  top: {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: theme.spacing(3),
+  },
+  date: {
+    color: theme.palette.text.primary,
+    fontSize: theme.typography.body1.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
+    marginRight: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: theme.spacing(2),
+    },
+  },
+  mark: {
+    fontSize: theme.typography.overline.fontSize,
+    color: theme.palette.secondary.contrastText,
+    backgroundColor: theme.palette.secondary.main,
+    padding: theme.spacing(0.25, 1),
+  },
+  contentWrapper: {
+    position: 'relative',
+  },
+  content: {
+    paddingBottom: theme.spacing(30),
+    position: 'relative',
+    zIndex: 1,
+  },
+  image: {
+    marginTop: theme.spacing(-4),
+    marginBottom: theme.spacing(-5),
+    borderRadius: theme.spacing(1.25),
+    overflow: 'hidden',
+  },
+  postBg: {
+    width: '100%',
+    height: 980,
+    position: 'absolute',
+    bottom: 0,
+  },
+  moreWrapper: {
+    padding: theme.spacing(5, 3),
+    backgroundColor: alpha(theme.palette.primary.main, 0.03),
+    [theme.breakpoints.down('xs')]: {
+      backgroundColor: '#F8F9FA',
+    },
+  },
+}))
 
 const morePostTitle = {
   'health-tips': '更多健康資訊',
@@ -10,25 +100,79 @@ const morePostTitle = {
   updates: '更多相關動態',
 }
 
-const Post = ({ data, pageContext }) => {
-  const mdx = data?.one?.body
+const Post = ({ data, pageContext, location: { href } }) => {
+  const classes = useStyles()
+  const menu = useMenu()
+  const mdx = data?.mdx?.body
+  const { slug } = pageContext
+  const { date, title, type, cover } = data?.mdx?.frontmatter
+  const image = getImage(cover)
   const morePostsNodes = data?.morePosts?.nodes
 
+  const middlePath = `/whats-new/${slug.split('/')[0]}`
+  const middleTitle = menu[0].sections?.find((section) =>
+    section.path.includes(slug.split('/')[0])
+  )?.title
+
   return (
-    <>
-      <MdxLayout>{mdx}</MdxLayout>
-      {pageContext?.sectionPath === 'updates' ? (
-        <MoreUpdates
-          title={morePostTitle[pageContext?.sectionPath]}
-          nodes={morePostsNodes}
-        ></MoreUpdates>
-      ) : (
-        <MorePosts
-          title={morePostTitle[pageContext?.sectionPath]}
-          nodes={morePostsNodes}
-        ></MorePosts>
-      )}
-    </>
+    <Box className={classes.root}>
+      <Container disableGutters maxWidth='xl'>
+        <Box className={classes.breadcrumbsWrapper}>
+          <Container disableGutters maxWidth='sm'>
+            <Breadcrumbs
+              separator={<ArrowIcon className={classes.arrowIcon} />}
+              aria-label='breadcrumb'
+            >
+              <Link to='/'>Take2 Health</Link>
+              <Link to={middlePath}>{middleTitle}</Link>
+              <Box className={classes.breadcrumbsTitle}>{title}</Box>
+            </Breadcrumbs>
+          </Container>
+        </Box>
+        <Box className={classes.contentWrapper}>
+          <Container className={classes.content} disableGutters maxWidth='sm'>
+            {image && (
+              <Box className={classes.image}>
+                <GatsbyImage image={image} alt={title}></GatsbyImage>
+              </Box>
+            )}
+            <Box className={classes.header}>
+              <Box className={classes.top}>
+                <Box className={classes.date}>{date}</Box>
+                <Box className={classes.mark}>{type}</Box>
+                <Box ml='auto'>
+                  <Links href={href}></Links>
+                </Box>
+              </Box>
+              <Typography variant='h5' color='primary'>
+                {title}
+              </Typography>
+            </Box>
+            <MdxLayout>{mdx}</MdxLayout>
+          </Container>
+          <StaticImage
+            className={classes.postBg}
+            src='../assets/images/post_bg.png'
+            alt='post background'
+          ></StaticImage>
+        </Box>
+        <Box className={classes.moreWrapper}>
+          <Container disableGutters maxWidth='md'>
+            {pageContext?.sectionPath === 'updates' ? (
+              <MoreUpdates
+                title={morePostTitle[pageContext?.sectionPath]}
+                nodes={morePostsNodes}
+              ></MoreUpdates>
+            ) : (
+              <MorePosts
+                title={morePostTitle[pageContext?.sectionPath]}
+                nodes={morePostsNodes}
+              ></MorePosts>
+            )}
+          </Container>
+        </Box>
+      </Container>
+    </Box>
   )
 }
 
@@ -36,11 +180,17 @@ export default Post
 
 export const query = graphql`
   query ($slug: String!, $regex: String!) {
-    one: mdx(slug: { eq: $slug }) {
+    mdx: mdx(slug: { eq: $slug }) {
       id
       frontmatter {
         date
         title
+        type
+        cover {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       body
     }

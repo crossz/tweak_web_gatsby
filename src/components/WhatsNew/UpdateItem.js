@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.overline.fontSize,
     color: theme.palette.secondary.contrastText,
     backgroundColor: theme.palette.secondary.main,
-    padding: theme.spacing(0.5, 1),
+    padding: theme.spacing(0.25, 1),
     lineHeight: 1,
   },
 }))
