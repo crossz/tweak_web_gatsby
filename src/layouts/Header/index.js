@@ -81,12 +81,13 @@ const Header = () => {
     >
       <Container className={classes.wrapper} maxWidth='lg'>
         <Link to='/'>
-          <StaticImage
-            className={classes.logo}
-            src='../../assets/images/common/take2_full_Color.png'
-            alt='Logo'
-            placeholder='tracedSVG'
-          />
+          <Box width={matches ? 100 : 145}>
+            <StaticImage
+              src='../../assets/images/common/take2_full_Color.png'
+              alt='Logo'
+              placeholder='tracedSVG'
+            />
+          </Box>
         </Link>
         <Box className={classes.authBtn} color='primary.main' component='span'>
           <MuiLink href={`${platformUrl}/signup`} target='_blank'>
