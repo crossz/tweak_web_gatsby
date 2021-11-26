@@ -123,7 +123,7 @@ const Banner = () => {
                 了解更多
               </Button>
               <Button variant='contained' color='secondary'>
-                立即登入預約
+                立即預約
               </Button>
             </Box>
           </Hidden>

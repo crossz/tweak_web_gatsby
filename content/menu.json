@@ -11,11 +11,11 @@
         "path": "/whats-new/promotions"
       },
       {
-        "title": "健康資訊",
+        "title": "健康及專業醫護資訊",
         "path": "/whats-new/health-tips"
       },
       {
-        "title": "Take2™ 最新動態",
+        "title": "最新動態",
         "path": "/whats-new/updates"
       }
     ]
@@ -49,7 +49,7 @@
     "titleColor": "primary.main",
     "sections": [
       {
-        "title": "Take2 ProphecyTM",
+        "title": "Take 2 Prophecy™早期鼻咽癌篩查",
         "path": "/products-and-services/take2-prophecy"
       },
       {

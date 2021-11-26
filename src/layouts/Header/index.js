@@ -9,6 +9,8 @@ import Menu from './Menu'
 // import { Waypoint } from 'react-waypoint'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import { Link as MuiLink } from '@material-ui/core'
+import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +58,7 @@ const Header = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { platformUrl } = useSiteMetadata()
   const matchHomepage = useMatch('/')
   const [withBg, setWithBg] = useState(false)
   // TODO homepage scroll leave banner show header background.
@@ -71,17 +74,19 @@ const Header = () => {
       })}
     >
       <Container className={classes.wrapper} maxWidth='lg'>
-        <Box width={matches ? 100 : 145}>
-          <Link to='/'>
+        <Link to='/'>
+          <Box width={matches ? 100 : 145}>
             <StaticImage
               src='../../assets/images/common/take2_full_Color.png'
               alt='Logo'
               placeholder='tracedSVG'
             />
-          </Link>
-        </Box>
+          </Box>
+        </Link>
         <Box className={classes.authBtn} color='primary.main' component='span'>
-          登入/登記
+          <MuiLink href={`${platformUrl}/signup`} target='_blank'>
+            登入/登記
+          </MuiLink>
         </Box>
         <Menu></Menu>
       </Container>
