@@ -5,7 +5,6 @@ import FormLabel from '@material-ui/core/FormLabel'
 import {
   INPUT_WIDTH,
   MOBILE_INPUT_WIDTH,
-  LABEL_WIDTH,
   MOBILE_LABEL_WIDTH,
 } from '../../utils/constant'
 
@@ -19,13 +18,16 @@ export const EInputBase = withStyles((theme) => ({
     fontSize: theme.typography.body2.fontSize,
     padding: theme.spacing(0.5, 1.5),
     transition: theme.transitions.create(['border-color', 'box-shadow']),
+    color: theme.palette.supporting.supporting03,
     '&:hover': {
       borderColor: theme.palette.primary.main,
     },
-    minWidth: theme.spacing(INPUT_WIDTH),
     [theme.breakpoints.down('xs')]: {
       minWidth: theme.spacing(MOBILE_INPUT_WIDTH),
       fontSize: theme.typography.overline.fontSize,
+    },
+    '&::placeholder': {
+      color: 'red',
     },
   },
   focused: {
@@ -43,10 +45,10 @@ export const EInputBase = withStyles((theme) => ({
 
 export const EFormLabel = withStyles((theme) => ({
   root: {
-    minWidth: theme.spacing(LABEL_WIDTH),
     fontWeight: 'bolder',
-    fontSize: theme.typography.body2.fontSize,
+    fontSize: theme.typography.overline.fontSize,
     color: theme.palette.primary.main,
+    marginBottom: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       minWidth: theme.spacing(MOBILE_LABEL_WIDTH),
       fontSize: theme.typography.overline.fontSize,

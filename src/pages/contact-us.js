@@ -26,6 +26,7 @@ import FormControl from '@material-ui/core/FormControl'
 import { EInputBase, EFormLabel } from '@themes/components/ETextField'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
+import FormHelperText from '@material-ui/core/FormHelperText'
 import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
@@ -105,6 +106,19 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.spacing(1.5),
     marginTop: theme.spacing(2),
   },
+  dialingCode: {
+    flexShrink: 0,
+  },
+  textarea: {
+    borderColor: theme.palette.grey[300],
+    borderRadius: theme.spacing(0.75),
+    padding: theme.spacing(2),
+    fontSize: theme.typography.body1,
+    color: theme.palette.supporting.supporting03,
+    '&::placeholder': {
+      color: theme.palette.grey[400],
+    },
+  },
 }))
 
 const initialValues = {
@@ -171,7 +185,7 @@ const ContactUs = () => {
         mb={-13.75}
       ></Box>
       <Container maxWidth='md'>
-        <Grid container spacing={48}>
+        <Grid container spacing={1}>
           <Grid item xs={12} sm={7}>
             <Tabs
               variant='scrollable'
@@ -234,11 +248,28 @@ const ContactUs = () => {
             </Box>
             <Formik initialValues={initialValues} validationSchema={schema}>
               {(props) => {
-                const { values, handleChange } = props
+                const { values, handleSubmit, handleChange, touched, errors } =
+                  props
+                const isError = (field) =>
+                  touched[field] && Boolean(errors[field])
+                const errorText = (field) => (
+                  <FormHelperText>
+                    {touched[field] && errors[field]}
+                  </FormHelperText>
+                )
+                console.log('touched, errors', touched, errors)
                 return (
-                  <form className={classes.form} noValidate>
-                    <Box>
-                      <FormControl>
+                  <form
+                    onSubmit={handleSubmit}
+                    className={classes.form}
+                    noValidate
+                  >
+                    <Box mb={4}>
+                      <FormControl
+                        fullWidth
+                        error={isError('companyName')}
+                        required
+                      >
                         <EFormLabel>公司名稱/姓名</EFormLabel>
                         <EInputBase
                           id='company-ame'
@@ -249,13 +280,16 @@ const ContactUs = () => {
                           placeholder='请输入公司名稱/姓名'
                           type='text'
                         />
+                        {errorText('companyName')}
                       </FormControl>
                     </Box>
-                    <Box>
-                      <FormControl>
+                    <Box mb={4}>
+                      <Box mb={1}>
                         <EFormLabel>電話號碼</EFormLabel>
-                        <Box>
-                          <FormControl required>
+                      </Box>
+                      <Box display='flex'>
+                        <Box mr={0.5}>
+                          <FormControl className={classes.dialingCode} required>
                             <Select
                               labelId='dialingCode-select-label'
                               id='dialingCode-type-select'
@@ -274,32 +308,59 @@ const ContactUs = () => {
                               ))}
                             </Select>
                           </FormControl>
-                          <EInputBase
-                            id='company-ame'
-                            name='companyName'
-                            margin='none'
-                            value={values.companyName}
-                            onChange={handleChange}
-                            placeholder='请输入公司名稱/姓名'
-                            type='text'
-                          />
                         </Box>
+
+                        <FormControl>
+                          <EInputBase
+                            id='phone'
+                            name='phone'
+                            margin='none'
+                            value={values.phone}
+                            onChange={handleChange}
+                            placeholder='9876 5432'
+                            type='number'
+                          />
+                        </FormControl>
+                      </Box>
+                    </Box>
+                    <Box mb={4}>
+                      <FormControl fullWidth error={isError('email')} required>
+                        <EFormLabel>電郵</EFormLabel>
+                        <EInputBase
+                          id='email'
+                          name='email'
+                          margin='none'
+                          value={values.email}
+                          onChange={handleChange}
+                          placeholder='请输入電郵'
+                          type='text'
+                        />
+                        {errorText('email')}
                       </FormControl>
                     </Box>
-                    <Box>
-                      <FormControl>
+                    <Box mb={4}>
+                      <FormControl fullWidth>
                         <EFormLabel>訊息</EFormLabel>
                         <TextareaAutosize
-                          minRows={8}
-                          maxRows={8}
-                          readOnly
+                          className={classes.textarea}
+                          minRows={6}
                           aria-label='message'
                           name='message'
+                          onChange={handleChange}
                           value={values.message}
+                          placeholder='請輸入你的訊息'
                         />
                       </FormControl>
+                      <FormHelperText>
+                        <Box color='primary.main'>*必填資料</Box>
+                      </FormHelperText>
                     </Box>
-                    <Button variant='contained' color='secondary'>
+                    <Button
+                      type='submit'
+                      fullWidth
+                      variant='contained'
+                      color='secondary'
+                    >
                       提交
                     </Button>
                   </form>

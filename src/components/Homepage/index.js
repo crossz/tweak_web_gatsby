@@ -33,7 +33,7 @@ const Homepage = ({ promotionNodes }) => {
     <>
       <Banner></Banner>
       <Container className={classes.root} maxWidth='md'>
-        <Quiz></Quiz>
+        {/* <Quiz></Quiz> */}
         {/* <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>
@@ -50,7 +50,7 @@ const Homepage = ({ promotionNodes }) => {
             本港篩查服務點
           </Typography>
         </Box>
-        <Map></Map>
+        <Map from='homepage'></Map>
       </Container>
       <Consult></Consult>
     </>

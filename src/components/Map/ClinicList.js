@@ -6,6 +6,8 @@ import AccordionDetails from '@material-ui/core/AccordionDetails'
 import Box from '@material-ui/core/Box'
 import useServiceLocation from '@hooks/useServiceLocation'
 import { REGIONS } from '@utils/constant'
+import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +52,7 @@ const ClinicList = ({ region, district }) => {
             {REGIONS[region]?.label}·{districtItem?.label}
           </MapAccordionSummary>
           <MapAccordionDetails>
-            <Box>
+            <Box width='100%'>
               {regionClinicData
                 .filter(
                   (clinic) =>
@@ -59,13 +61,24 @@ const ClinicList = ({ region, district }) => {
                 )
                 ?.map((districtClinic, index) => (
                   <Box key={index}>
-                    {districtClinic.region}
-                    {districtClinic.district}
-                    <Box>
-                      {districtClinic.clinic}
-                      {districtClinic.call}
-                      {districtClinic.address}
-                    </Box>
+                    <Grid container spacing={0}>
+                      <Grid item xs={2}>
+                        {districtClinic.region}
+                      </Grid>
+                      <Grid item xs={2}>
+                        {districtClinic.district}
+                      </Grid>
+                      <Grid item xs={5}>
+                        {districtClinic.clinic}
+                        {districtClinic.call}
+                        {districtClinic.address}
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Button variant='outlined' color='primary'>
+                          立即預約
+                        </Button>
+                      </Grid>
+                    </Grid>
                   </Box>
                 ))}
             </Box>

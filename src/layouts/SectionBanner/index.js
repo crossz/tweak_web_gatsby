@@ -96,7 +96,7 @@ const SectionBanner = () => {
     return curMenuItemChild?.path
   }, [curMenuItem, pathname])
 
-  return curMenuItemPath && curMenuItem?.path !== '/service-location' ? (
+  return curMenuItemPath && !curMenuItem?.path?.includes('service-location') ? (
     <Match path={curMenuItemPath}>
       {(props) =>
         props.match ? (
