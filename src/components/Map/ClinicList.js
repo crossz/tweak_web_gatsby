@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { withStyles, makeStyles, alpha } from '@material-ui/core/styles'
+import {
+  withStyles,
+  makeStyles,
+  alpha,
+  useTheme,
+  useMediaQuery,
+} from '@material-ui/core/'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
@@ -32,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 2),
     width: '100%',
     color: theme.palette.primary.main,
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+    },
   },
   item: {
     boxShadow: `0 1px 0 0 ${theme.palette.grey[400]}`,
@@ -41,15 +50,25 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(1),
       width: theme.spacing(2),
       height: theme.spacing(2),
+      [theme.breakpoints.down('xs')]: {
+        marginTop: theme.spacing(0.25),
+      },
       '& path': {
         fill: theme.palette.grey[800],
       },
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(3, 0),
     },
   },
   info: {
     display: 'flex',
     alignItems: 'center',
     flexShrink: 0,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.body2.fontSize,
+      alignItems: 'flex-start',
+    },
   },
   btnCell: {
     display: 'flex',
@@ -58,6 +77,10 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     minWidth: 165,
+    [theme.breakpoints.down('xs')]: {
+      minWidth: 'auto',
+      marginTop: theme.spacing(3),
+    },
   },
 }))
 
@@ -77,6 +100,9 @@ const MapAccordion = withStyles((theme) => ({
     },
     '&:before': {
       display: 'none',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(2),
     },
   },
 }))(Accordion)
@@ -118,6 +144,8 @@ const MapAccordionDetails = withStyles((theme) => ({
 
 const ClinicList = ({ region, district, onChange }) => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const serviceLocation = useServiceLocation()
   const [activePanel, setActivePanel] = useState('')
 
@@ -178,12 +206,23 @@ const ClinicList = ({ region, district, onChange }) => {
                       <Grid item xs={2}>
                         {districtClinic.district}
                       </Grid>
-                      <Grid item xs={5}>
-                        <Box fontWeight='fontWeightBold' mb={1.5}>
+                      <Grid item xs={12} sm={5}>
+                        <Box
+                          fontWeight='fontWeightBold'
+                          mt={matches ? 1.5 : 0}
+                          mb={matches ? 1 : 1.5}
+                        >
                           {districtClinic.clinic}
                         </Box>
-                        <Box color='text.primary' display='flex'>
-                          <Box className={classes.info} mr={3}>
+                        <Box
+                          color='text.primary'
+                          display={matches ? 'block' : 'flex'}
+                        >
+                          <Box
+                            className={classes.info}
+                            mr={matches ? 0 : 3}
+                            mb={matches ? 1 : 0}
+                          >
                             <PhoneIcon></PhoneIcon>
                             {districtClinic.call}
                           </Box>
@@ -193,7 +232,7 @@ const ClinicList = ({ region, district, onChange }) => {
                           </Box>
                         </Box>
                       </Grid>
-                      <Grid className={classes.btnCell} item xs={3}>
+                      <Grid className={classes.btnCell} xs={12} item sm={3}>
                         <Button
                           className={classes.btn}
                           variant='outlined'

@@ -149,7 +149,6 @@ theme = createTheme(theme, {
       textPrimary: {
         padding: theme.spacing(2, 6),
       },
-      sizeLarge: {},
       contained: {
         backgroundColor: theme.palette.background.paper,
         color: theme.palette.primary.main,
@@ -165,9 +164,19 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiSelect: {
+      select: {
+        color: theme.palette.primary.main,
+        fontWeight: theme.typography.fontWeightBold,
+        '&:focus': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
   },
   typography: {
-    fontFamily: 'Noto Sans TC',
+    fontFamily:
+      '"Noto Sans TC",-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif',
     h1: {
       fontSize: '3.81rem',
       fontWeight: theme.typography.fontWeightBold,

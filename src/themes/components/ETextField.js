@@ -19,11 +19,12 @@ export const EInputBase = withStyles((theme) => ({
     padding: theme.spacing(0.5, 1.5),
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     color: theme.palette.supporting.supporting03,
+    height: theme.spacing(5.5),
     '&:hover': {
       borderColor: theme.palette.primary.main,
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: theme.spacing(MOBILE_INPUT_WIDTH),
+      // minWidth: theme.spacing(MOBILE_INPUT_WIDTH),
       fontSize: theme.typography.overline.fontSize,
     },
     '&::placeholder': {
