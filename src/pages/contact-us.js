@@ -5,6 +5,7 @@ import {
   Grid,
   useMediaQuery,
   useTheme,
+  IconButton,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import useSiteMetadata from '@hooks/useSiteMetadata'
@@ -28,6 +29,9 @@ import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import classnames from 'classnames'
+import InputAdornment from '@material-ui/core/InputAdornment'
+
+import CancelIcon from '@images/icons/cancel.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -117,6 +121,16 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.supporting.supporting03,
     '&::placeholder': {
       color: theme.palette.grey[400],
+    },
+  },
+  cancelIcon: {
+    '& path': {
+      fill: theme.palette.error.main,
+    },
+  },
+  disabledCancelIcon: {
+    '& path': {
+      fill: theme.palette.grey[400],
     },
   },
 }))
@@ -323,6 +337,7 @@ const ContactUs = () => {
                         </FormControl>
                       </Box>
                     </Box>
+
                     <Box mb={4}>
                       <FormControl fullWidth error={isError('email')} required>
                         <EFormLabel>電郵</EFormLabel>
@@ -334,7 +349,31 @@ const ContactUs = () => {
                           onChange={handleChange}
                           placeholder='请输入電郵'
                           type='text'
+                          endAdornment={
+                            <InputAdornment position='end'>
+                              <Box
+                                className={classnames(
+                                  isError('email')
+                                    ? classes.cancelIcon
+                                    : classes.disabledCancelIcon
+                                )}
+                              >
+                                <CancelIcon></CancelIcon>
+                              </Box>
+                              {/* <IconButton
+                                aria-label='toggle password visibility'
+                                // onClick={handleClickShowPassword}
+                                // onMouseDown={handleMouseDownPassword}
+                                disableRipple
+                                disableFocusRipple
+                                edge={false}
+                              >
+                                <CancelIcon></CancelIcon>
+                              </IconButton> */}
+                            </InputAdornment>
+                          }
                         />
+
                         {errorText('email')}
                       </FormControl>
                     </Box>

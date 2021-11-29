@@ -36,6 +36,7 @@ export const EInputBase = withStyles((theme) => ({
     borderColor: theme.palette.primary.main,
   },
   error: {
+    color: theme.palette.error.main,
     borderColor: theme.palette.error.main,
     boxShadow: 'none',
     '&:hover': {
