@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     position: 'sticky',
     top: 0,
-    zIndex: theme.zIndex.tooltip,
+    zIndex: theme.zIndex.appBar,
   },
   wrapper: {
     display: 'flex',
