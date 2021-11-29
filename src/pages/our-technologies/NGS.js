@@ -6,6 +6,7 @@ import {
   useTheme,
   useMediaQuery,
   Hidden,
+  Grid,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
@@ -64,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.spacing(0.75),
     overflow: 'hidden',
-    minHeight: 270,
     marginBottom: theme.spacing(9),
     [theme.breakpoints.down('xs')]: {
       display: 'block',
@@ -84,13 +84,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   noteImage: {
-    maxWidth: 275,
-    width: '30%',
-    flexShrink: 0,
-    [theme.breakpoints.down('xs')]: {
-      maxWidth: 'initial',
-      width: '100%',
-    },
+    height: '100%',
+    borderRadius: theme.spacing(0.75),
+    overflow: 'hidden',
   },
 }))
 
@@ -99,16 +95,43 @@ const notes = [
     title: '我們如何應用 NGS技術，以進行早期鼻咽癌篩查？',
     content:
       'Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，讓醫生能識別出早期鼻咽癌患者，提高患者成功治癒的可能性及存活率³。',
+    image: (
+      <StaticImage
+        style={{
+          height: '100%',
+        }}
+        src='../../assets/images/1_how_do_we_use_ngs.jpg'
+        alt='how do we use ngs'
+      ></StaticImage>
+    ),
   },
   {
     title: '以組織活檢檢測鼻咽癌的局限',
     content:
       '組織活檢為癌症臨床診斷的金標準，由受過專業訓練的醫生以鼻內視鏡抽取鼻腔組織，再進行細胞分析。這類方法具入侵性，不易用於所有身體部位；加上腫瘤細胞會隨著時間變化，而組織活檢只能代表檢測當下取得的腫瘤細胞的情況，故僅能提供有限的腫瘤資料；再者，組織活檢不能頻繁、重覆地使用以監測疾病的進展；有凝血障礙的人士在抽取組織的過程中也有較高的出血風險。因此，組織活檢存在不同方面的缺陷。',
+    image: (
+      <StaticImage
+        style={{
+          height: '100%',
+        }}
+        src='../../assets/images/2_endoscopy.png'
+        alt='endoscopy'
+      ></StaticImage>
+    ),
   },
   {
     title: '傳統EB病毒檢測難以準確檢測出鼻咽癌',
     content:
       '除了透過鼻內視鏡進行組織活檢外，抽血驗EB病毒 (Epstein-Barr Virus) 也是常見的鼻咽癌檢測手段，因為鼻咽癌與EB病毒關係非常密切。兩種最常用的檢測方法包括血清學檢測和通過定量PCR測量血漿中的EB病毒DNA數值，然而EB病毒感染非常普遍，病毒或抗體的存在可能僅代表短暫感染，並不一定代表患有鼻咽癌，所以兩種方法都難以區分僅感染EB病毒的人和實際患有鼻咽癌的人。',
+    image: (
+      <StaticImage
+        style={{
+          height: '100%',
+        }}
+        src='../../assets/images/3_traditional_ebv_test.jpg'
+        alt='traditional ebv test'
+      ></StaticImage>
+    ),
   },
 ]
 
@@ -194,33 +217,26 @@ const NGS = () => {
             (note, index) =>
               (!matches || index === activeNote) && (
                 <Box key={index} className={classes.noteItem}>
-                  <Box className={classes.noteImage}>
-                    {matches ? (
-                      <StaticImage
-                        src='../../assets/images/ngs_02.jpg'
-                        alt='ngs 02'
-                        layout='fullWidth'
-                      ></StaticImage>
-                    ) : (
-                      <StaticImage
-                        src='../../assets/images/ngs_01.jpg'
-                        alt='ngs 01'
-                      ></StaticImage>
-                    )}
-                  </Box>
-                  <Box className={classes.noteContent}>
-                    <Box mb={1.25}>
-                      <Typography variant='h4' color='primary'>
-                        {note.title}
-                      </Typography>
-                    </Box>
-                    <Box>
-                      <Hidden xsDown>
-                        <TitleDot left={-5}></TitleDot>
-                      </Hidden>
-                      {note.content}
-                    </Box>
-                  </Box>
+                  <Grid container spacing={0}>
+                    <Grid item xs={3}>
+                      <Box className={classes.noteImage}>{note.image}</Box>
+                    </Grid>
+                    <Grid item xs={9}>
+                      <Box className={classes.noteContent}>
+                        <Box mb={1.25}>
+                          <Typography variant='h4' color='primary'>
+                            {note.title}
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <Hidden xsDown>
+                            <TitleDot left={-5}></TitleDot>
+                          </Hidden>
+                          {note.content}
+                        </Box>
+                      </Box>
+                    </Grid>
+                  </Grid>
                 </Box>
               )
           )}

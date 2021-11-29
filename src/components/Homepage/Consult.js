@@ -3,10 +3,11 @@ import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
-import ConsultImage from '@images/homepage_consult.jpg'
+// import ConsultImage from '@images/homepage_consult.jpg'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'gatsby'
 import Button from '@material-ui/core/Button'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       paddingRight: theme.spacing(3),
     },
+  },
+  leftImage: {
+    borderRadius: `0 12px 12px 0`,
   },
   rightWrapper: {
     padding: theme.spacing(0, 1.75),
@@ -42,18 +46,18 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: 1.5,
     },
   },
-  bg: {
-    width: '100%',
-    height: theme.spacing(66),
-    backgroundImage: `url(${ConsultImage})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center right',
-    borderRadius: `0 6px 6px 0`,
-    [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(33.25),
-    },
-  },
+  // bg: {
+  //   width: '100%',
+  //   height: theme.spacing(66),
+  //   backgroundImage: `url(${ConsultImage})`,
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center right',
+  //   borderRadius: `0 6px 6px 0`,
+  //   [theme.breakpoints.down('xs')]: {
+  //     height: theme.spacing(33.25),
+  //   },
+  // },
   greyLink: {
     color: theme.palette.grey[600],
   },
@@ -76,7 +80,11 @@ const Consult = () => {
     <Container disableGutters className={classes.root} maxWidth='xl'>
       <Grid container>
         <Grid className={classes.leftWrapper} item xs={12} sm={6}>
-          <Box className={classes.bg}></Box>
+          <StaticImage
+            className={classes.leftImage}
+            src='../../assets/images/homepage_consult.jpg'
+            alt='homepage consult'
+          ></StaticImage>
         </Grid>
         <Grid className={classes.rightWrapper} item xs={12} sm={6}>
           <Box maxWidth={matches ? 'auto' : 560}>
