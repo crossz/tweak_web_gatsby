@@ -41,6 +41,16 @@ export const DIALING_CODES = [
     regex: MOBILE_REGEX_MO,
   },
 ]
+
+export const POST_TYPES = [
+  { label: '所有最新動態', color: '' },
+  { label: '公司動向', color: 'supporting.supporting01' },
+  { label: '公司獎項與成就', color: 'secondary.main' },
+  { label: '行業資訊', color: 'prophecySupporting.supporting01' },
+  { label: '商業合作', color: 'prophecyPrimary.main' },
+  { label: '行政總裁分享', color: 'prophecySupporting.supporting02' },
+]
+
 export const REGIONS = [
   {
     label: '所有地區',

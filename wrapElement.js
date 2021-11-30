@@ -3,6 +3,7 @@ import Layout from './src/layouts/Layout'
 import { ThemeProvider } from '@material-ui/core/styles'
 import getTheme from './src/themes'
 import { CssBaseline } from '@material-ui/core'
+import './src/app.css'
 
 const DEFAULT_THEME = 'light'
 // Pass all props (hence the ...props) to the layout component so it has access to things like pageContext or location

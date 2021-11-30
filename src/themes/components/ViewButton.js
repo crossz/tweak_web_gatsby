@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import RightIcon from '@images/icons/right.svg'
 
 const useStyles = makeStyles((theme) => ({
@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(6),
     height: theme.spacing(6),
     padding: theme.spacing(1),
+    transition: 'background-color ease 0.3s',
     '&:hover': {
       backgroundColor: theme.palette.primary.main,
     },
@@ -32,15 +33,15 @@ const useStyles = makeStyles((theme) => ({
 const ViewButton = ({ slug }) => {
   const classes = useStyles()
   return (
-    <Link to={slug}>
-      <IconButton
-        className={classes.root}
-        color='primary'
-        aria-label='back button'
-      >
-        <RightIcon></RightIcon>
-      </IconButton>
-    </Link>
+    // <Link to={slug}>
+    <IconButton
+      className={classes.root}
+      color='primary'
+      aria-label='back button'
+    >
+      <RightIcon></RightIcon>
+    </IconButton>
+    // </Link>
   )
 }
 

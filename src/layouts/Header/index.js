@@ -58,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
       width: 100,
     },
   },
+  link: {
+    display: 'block',
+  },
 }))
 
 const Header = () => {
@@ -80,7 +83,7 @@ const Header = () => {
       })}
     >
       <Container className={classes.wrapper} maxWidth='lg'>
-        <Link to='/'>
+        <Link className={classes.link} to='/'>
           <Box width={matches ? 100 : 145}>
             <StaticImage
               src='../../assets/images/common/take2_full_Color.png'

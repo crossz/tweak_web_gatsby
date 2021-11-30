@@ -17,6 +17,7 @@ import useMenu from '@hooks/useMenu'
 import Links from '@components/WhatsNew/Links'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
+import { POST_TYPES } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -38,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
   },
   breadcrumbsTitle: {
     color: theme.palette.primary.contrastText,
+    maxWidth: theme.spacing(40),
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
   },
   arrowIcon: {
     width: theme.spacing(1.5),
@@ -81,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
   mark: {
     fontSize: theme.typography.overline.fontSize,
     color: theme.palette.secondary.contrastText,
-    backgroundColor: theme.palette.secondary.main,
+    // backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(0.25, 1),
     display: 'inline-block',
   },
@@ -170,7 +175,15 @@ const Post = ({ data, pageContext, location: { href } }) => {
               <Box className={classes.top}>
                 <Box className={classes.topLeft}>
                   <Box className={classes.date}>{date}</Box>
-                  <Box className={classes.mark}>{type}</Box>
+                  <Box
+                    className={classes.mark}
+                    bgcolor={
+                      POST_TYPES.find((item) => item.label === type)?.color ||
+                      'secondary.main'
+                    }
+                  >
+                    {type}
+                  </Box>
                 </Box>
                 <Box ml='auto'>
                   <Links href={href}></Links>
@@ -215,7 +228,7 @@ export const query = graphql`
     mdx: mdx(slug: { eq: $slug }) {
       id
       frontmatter {
-        date
+        date(formatString: "YYYY/MM/DD")
         title
         type
         cover {

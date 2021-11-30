@@ -16,15 +16,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 import classNames from 'classnames'
 import { EInputBase } from '@themes/components/ETextField'
-
-const types = [
-  { label: '所有最新動態', value: 0 },
-  { label: '公司動向', value: 1 },
-  { label: '公司獎項與成就', value: 2 },
-  { label: '行業資訊', value: 3 },
-  { label: '商業合作', value: 4 },
-  { label: '行政總裁分享', value: 5 },
-]
+import { POST_TYPES } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   type: {
     padding: theme.spacing(1.5, 0),
+    cursor: 'pointer',
   },
   activeType: {
     color: theme.palette.primary.main,
@@ -65,7 +58,7 @@ const Updates = ({ data }) => {
       !activeType
         ? nodes
         : nodes.filter(
-            (node) => node.frontmatter?.type === types[activeType]?.label
+            (node) => node.frontmatter?.type === POST_TYPES[activeType]?.label
           ) || []
     )
   }, [activeType])
@@ -89,22 +82,22 @@ const Updates = ({ data }) => {
                 onChange={handleMobileChange}
                 input={<EInputBase />}
               >
-                {types.map((type) => (
-                  <MenuItem key={type.value} value={type.value}>
+                {POST_TYPES.map((type, index) => (
+                  <MenuItem key={index} value={index}>
                     {type.label}
                   </MenuItem>
                 ))}
               </Select>
             ) : (
               <Box className={classes.types} onClick={handleChange}>
-                {types.map((type) => (
+                {POST_TYPES.map((type, index) => (
                   <Box
                     className={classNames(
                       classes.type,
-                      activeType === type.value && classes.activeType
+                      activeType === index && classes.activeType
                     )}
-                    key={type.value}
-                    data-value={type.value}
+                    key={index}
+                    data-value={index}
                   >
                     {type.label}
                   </Box>
@@ -141,10 +134,11 @@ export const query = graphql`
       nodes {
         id
         frontmatter {
-          date
+          date(formatString: "YYYY年MM月DD日")
           detail
           title
           type
+          href
           cover {
             childImageSharp {
               gatsbyImageData
