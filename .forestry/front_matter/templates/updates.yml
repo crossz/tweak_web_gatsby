@@ -1,0 +1,19 @@
+---
+label: updates
+hide_body: false
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: detail
+  label: detail
+- type: text
+  name: type
+  label: type
+- type: text
+  name: href
+  label: href
