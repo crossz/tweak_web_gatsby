@@ -217,10 +217,12 @@ const useStyles = makeStyles((theme) => ({
     '& path': {
       fill: '#C8002E',
     },
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(0, 2),
+    },
     [theme.breakpoints.down('xs')]: {
       width: theme.spacing(3),
       height: theme.spacing(3),
-      margin: theme.spacing(0, 2),
     },
   },
   greenRightIcon: {
@@ -250,6 +252,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+    },
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(5),
       fontSize: theme.typography.body1.fontSize,
@@ -415,7 +420,7 @@ const Take2Prophecy = () => {
             <Grid item xs={12} sm={6}>
               <StaticImage
                 className={classes.prophecyImage}
-                src='../../assets/images/take2_prophecy_01.jpg'
+                src='../../assets/images/take2_prophecy_01.png'
                 alt='take2 prophecy 01'
               ></StaticImage>
             </Grid>

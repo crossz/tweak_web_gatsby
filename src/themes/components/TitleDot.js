@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     height: (props) =>
       theme.spacing(props.matches ? 1 : props.size ? props.size : 1.75),
     [theme.breakpoints.down('xs')]: {
-      left: theme.spacing(-2),
+      left: (props) => theme.spacing((props.left || -3.75) * 0.6),
     },
   },
 }))
