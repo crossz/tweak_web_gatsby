@@ -36,14 +36,12 @@ import CancelIcon from '@images/icons/cancel.svg'
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingBottom: theme.spacing(11),
-  },
-  flexContainer: {
-    borderBottom: `1px solid ${theme.palette.primary.contrastText}`,
-  },
-  tabsRoot: {
-    margin: theme.spacing(0, -2),
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: 0,
+    },
   },
   tabRoot: {
+    borderBottom: `1px solid ${theme.palette.primary.contrastText}`,
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.body1.fontSize,
     minWidth: 'auto',
@@ -53,6 +51,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       padding: 0,
       fontSize: theme.typography.body2.fontSize,
+    },
+  },
+  leftWrapper: {
+    paddingRight: theme.spacing(11.5),
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: theme.spacing(6),
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingRight: 0,
     },
   },
   selected: {
@@ -109,6 +116,23 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6, 5),
     borderRadius: theme.spacing(1.5),
     marginTop: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(4, 3),
+      paddingBottom: theme.spacing(7.5),
+      borderRadius: `${theme.spacing(1.5)} ${theme.spacing(1.5)} 0 0 `,
+    },
+  },
+  formTitle: {
+    color: theme.palette.primary.contrastText,
+    marginBottom: theme.spacing(1.5),
+    fontSize: theme.typography.body1.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      color: theme.palette.primary.main,
+      margin: theme.spacing(0, 3),
+      marginBottom: theme.spacing(2),
+      marginTop: theme.spacing(6),
+      fontSize: theme.typography.body2.fontSize,
+    },
   },
   dialingCode: {
     flexShrink: 0,
@@ -122,13 +146,24 @@ const useStyles = makeStyles((theme) => ({
     '&::placeholder': {
       color: theme.palette.grey[400],
     },
+    '&:focus': {
+      borderColor: theme.palette.primary.main,
+    },
   },
   cancelIcon: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    '& svg': {
+      width: theme.spacing(2.5),
+      height: theme.spacing(2.5),
+    },
     '& path': {
       fill: theme.palette.error.main,
     },
   },
-  disabledCancelIcon: {
+  activeCancelIcon: {
     '& path': {
       fill: theme.palette.grey[400],
     },
@@ -189,7 +224,7 @@ const ContactUs = () => {
     },
   ]
 
-  const handleChange = (event, newValue) => setActiveTab(newValue)
+  const handleTabChange = (event, newValue) => setActiveTab(newValue)
 
   return (
     <Container className={classes.root} disableGutters maxWidth='xl'>
@@ -198,14 +233,15 @@ const ContactUs = () => {
         bgcolor='primary.main'
         mb={-13.75}
       ></Box>
-      <Container maxWidth='md'>
-        <Grid container spacing={1}>
-          <Grid item xs={12} sm={7}>
+      <Container disableGutters maxWidth='md'>
+        <Grid container spacing={0}>
+          <Grid className={classes.leftWrapper} item xs={12} sm={7}>
             <Tabs
+              scrollButtons='off'
               variant='scrollable'
               indicatorColor='secondary'
               value={activeTab}
-              onChange={handleChange}
+              onChange={handleTabChange}
               classes={{
                 root: classes.tabsRoot,
                 flexContainer: classes.flexContainer,
@@ -223,7 +259,7 @@ const ContactUs = () => {
                 ></Tab>
               ))}
             </Tabs>
-            <Box mx={matches ? 1 : 5} mt={matches ? 4 : 3.75}>
+            <Box px={matches ? 3 : 0} mt={matches ? 4 : 3.75}>
               <ImageList rowHeight='auto' cols={matches ? 1 : 2} gap={16}>
                 {contactTypes.map(({ label, Icon }, index) => (
                   <ImageListItem
@@ -257,13 +293,17 @@ const ContactUs = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={5}>
-            <Box color='primary.contrastText' mt={1.5}>
-              提交意見或查詢
-            </Box>
+            <Box className={classes.formTitle}>提交意見或查詢</Box>
             <Formik initialValues={initialValues} validationSchema={schema}>
               {(props) => {
-                const { values, handleSubmit, handleChange, touched, errors } =
-                  props
+                const {
+                  values,
+                  handleSubmit,
+                  handleChange,
+                  touched,
+                  errors,
+                  setFieldValue,
+                } = props
                 const isError = (field) =>
                   touched[field] && Boolean(errors[field])
                 const errorText = (field) => (
@@ -271,7 +311,21 @@ const ContactUs = () => {
                     {touched[field] && errors[field]}
                   </FormHelperText>
                 )
-                console.log('touched, errors', touched, errors)
+                const CancelButton = ({ field }) =>
+                  values[field] ? (
+                    <InputAdornment position='end'>
+                      <Box
+                        className={classnames(
+                          classes.cancelIcon,
+                          !isError(field) && classes.activeCancelIcon
+                        )}
+                        onClick={() => setFieldValue(field, '')}
+                      >
+                        <CancelIcon></CancelIcon>
+                      </Box>
+                    </InputAdornment>
+                  ) : null
+
                 return (
                   <form
                     onSubmit={handleSubmit}
@@ -293,6 +347,7 @@ const ContactUs = () => {
                           onChange={handleChange}
                           placeholder='请输入公司名稱/姓名'
                           type='text'
+                          endAdornment={<CancelButton field='companyName' />}
                         />
                         {errorText('companyName')}
                       </FormControl>
@@ -323,8 +378,7 @@ const ContactUs = () => {
                             </Select>
                           </FormControl>
                         </Box>
-
-                        <FormControl>
+                        <FormControl error={isError('phone')}>
                           <EInputBase
                             id='phone'
                             name='phone'
@@ -332,8 +386,9 @@ const ContactUs = () => {
                             value={values.phone}
                             onChange={handleChange}
                             placeholder='9876 5432'
-                            type='number'
+                            endAdornment={<CancelButton field='phone' />}
                           />
+                          {errorText('phone')}
                         </FormControl>
                       </Box>
                     </Box>
@@ -348,30 +403,7 @@ const ContactUs = () => {
                           value={values.email}
                           onChange={handleChange}
                           placeholder='请输入電郵'
-                          type='text'
-                          endAdornment={
-                            <InputAdornment position='end'>
-                              <Box
-                                className={classnames(
-                                  isError('email')
-                                    ? classes.cancelIcon
-                                    : classes.disabledCancelIcon
-                                )}
-                              >
-                                <CancelIcon></CancelIcon>
-                              </Box>
-                              {/* <IconButton
-                                aria-label='toggle password visibility'
-                                // onClick={handleClickShowPassword}
-                                // onMouseDown={handleMouseDownPassword}
-                                disableRipple
-                                disableFocusRipple
-                                edge={false}
-                              >
-                                <CancelIcon></CancelIcon>
-                              </IconButton> */}
-                            </InputAdornment>
-                          }
+                          endAdornment={<CancelButton field='email' />}
                         />
 
                         {errorText('email')}

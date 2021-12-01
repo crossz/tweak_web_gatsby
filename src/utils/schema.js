@@ -8,7 +8,7 @@ import {
 import { DIALING_CODES } from '@utils/constant'
 
 export const oriSchema = yObject({
-  companyName: yString().nullable().required('請輸入正確格式'),
+  companyName: yString().nullable().required('請輸入公司名稱/姓名'),
   message: yString().nullable(),
   dialingCode: yString().nullable().required('dialingCode'),
   gender: yNumber().nullable().required('error'),
@@ -20,8 +20,9 @@ export const oriSchema = yObject({
       const activeDialingCode = DIALING_CODES.find(
         (dialingCode) => dialingCode.value === arg
       )
-      return schema
-        .matches(new RegExp(activeDialingCode?.regex), 'error')
-        .required('error')
+      return schema.matches(
+        new RegExp(activeDialingCode?.regex),
+        '請輸入正確格式電話號碼'
+      )
     }),
 })

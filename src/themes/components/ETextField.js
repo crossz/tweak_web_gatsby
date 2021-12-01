@@ -34,6 +34,7 @@ export const EInputBase = withStyles((theme) => ({
   focused: {
     boxShadow: ` ${theme.palette.primary.main} 0 0 0 1px`,
     borderColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.contrastText,
   },
   error: {
     color: theme.palette.error.main,
@@ -42,6 +43,9 @@ export const EInputBase = withStyles((theme) => ({
     '&:hover': {
       borderColor: theme.palette.error.main,
     },
+  },
+  input: {
+    WebkitBoxShadow: '0 0 0 1000px white inset',
   },
 }))(InputBase)
 
