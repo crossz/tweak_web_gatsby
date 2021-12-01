@@ -53,18 +53,8 @@ export const POST_TYPES = [
 
 export const REGIONS = [
   {
-    label: '所有地區',
-    value: 0,
-    districts: [
-      {
-        label: '所有地區',
-        value: 0,
-      },
-    ],
-  },
-  {
     label: '香港',
-    value: 1,
+    value: 0,
     districts: [
       {
         label: '所有地區',

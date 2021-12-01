@@ -172,83 +172,88 @@ const ClinicList = ({ region, district, onChange }) => {
   }
   return (
     <Box className={classes.root}>
-      {REGIONS[region]?.districts?.map((districtItem, index) => (
-        <MapAccordion
-          key={districtItem.label}
-          expanded={`${region}-${districtItem.value}` === activePanel}
-          onChange={_handleChange(districtItem.value)}
-        >
-          <MapAccordionSummary
-            expandIcon={
-              `${region}-${districtItem.value}` === activePanel ? (
-                <CollapseIcon className={classes.collapseIcon} />
-              ) : (
-                <ExpandIcon className={classes.expandIcon} />
-              )
-            }
+      {REGIONS[region]?.districts?.map((districtItem, index) =>
+        index ? (
+          <MapAccordion
+            key={districtItem.label}
+            expanded={`${region}-${districtItem.value}` === activePanel}
+            onChange={_handleChange(districtItem.value)}
+            TransitionProps={{
+              timeout: 300,
+            }}
           >
-            {REGIONS[region]?.label}·{districtItem?.label}
-          </MapAccordionSummary>
-          <MapAccordionDetails>
-            <Box className={classes.list}>
-              {regionClinicData
-                .filter(
-                  (clinic) =>
-                    clinic.region === REGIONS[region]?.label &&
-                    clinic.district === districtItem?.label
+            <MapAccordionSummary
+              expandIcon={
+                `${region}-${districtItem.value}` === activePanel ? (
+                  <CollapseIcon className={classes.collapseIcon} />
+                ) : (
+                  <ExpandIcon className={classes.expandIcon} />
                 )
-                ?.map((districtClinic, index) => (
-                  <Box className={classes.item} key={index}>
-                    <Grid container spacing={0}>
-                      <Grid item xs={2}>
-                        {districtClinic.region}
-                      </Grid>
-                      <Grid item xs={2}>
-                        {districtClinic.district}
-                      </Grid>
-                      <Grid item xs={12} sm={5}>
-                        <Box
-                          fontWeight='fontWeightBold'
-                          mt={matches ? 1.5 : 0}
-                          mb={matches ? 1 : 1.5}
-                        >
-                          {districtClinic.clinic}
-                        </Box>
-                        <Box
-                          color='text.primary'
-                          display={matches ? 'block' : 'flex'}
-                        >
+              }
+            >
+              {REGIONS[region]?.label}·{districtItem?.label}
+            </MapAccordionSummary>
+            <MapAccordionDetails>
+              <Box className={classes.list}>
+                {regionClinicData
+                  .filter(
+                    (clinic) =>
+                      clinic.region === REGIONS[region]?.label &&
+                      clinic.district === districtItem?.label
+                  )
+                  ?.map((districtClinic, index) => (
+                    <Box className={classes.item} key={index}>
+                      <Grid container spacing={0}>
+                        <Grid item xs={2}>
+                          {districtClinic.region}
+                        </Grid>
+                        <Grid item xs={2}>
+                          {districtClinic.district}
+                        </Grid>
+                        <Grid item xs={12} sm={5}>
                           <Box
-                            className={classes.info}
-                            mr={matches ? 0 : 3}
-                            mb={matches ? 1 : 0}
+                            fontWeight='fontWeightBold'
+                            mt={matches ? 1.5 : 0}
+                            mb={matches ? 1 : 1.5}
                           >
-                            <PhoneIcon></PhoneIcon>
-                            {districtClinic.call}
+                            {districtClinic.clinic}
                           </Box>
-                          <Box className={classes.info}>
-                            <LocationIcon></LocationIcon>
-                            {districtClinic.address}
+                          <Box
+                            color='text.primary'
+                            display={matches ? 'block' : 'flex'}
+                          >
+                            <Box
+                              className={classes.info}
+                              mr={matches ? 0 : 3}
+                              mb={matches ? 1 : 0}
+                            >
+                              <PhoneIcon></PhoneIcon>
+                              {districtClinic.call}
+                            </Box>
+                            <Box className={classes.info}>
+                              <LocationIcon></LocationIcon>
+                              {districtClinic.address}
+                            </Box>
                           </Box>
-                        </Box>
+                        </Grid>
+                        <Grid className={classes.btnCell} xs={12} item sm={3}>
+                          <Button
+                            className={classes.btn}
+                            variant='outlined'
+                            size='small'
+                            color='primary'
+                          >
+                            立即預約
+                          </Button>
+                        </Grid>
                       </Grid>
-                      <Grid className={classes.btnCell} xs={12} item sm={3}>
-                        <Button
-                          className={classes.btn}
-                          variant='outlined'
-                          size='small'
-                          color='primary'
-                        >
-                          立即預約
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                ))}
-            </Box>
-          </MapAccordionDetails>
-        </MapAccordion>
-      ))}
+                    </Box>
+                  ))}
+              </Box>
+            </MapAccordionDetails>
+          </MapAccordion>
+        ) : null
+      )}
     </Box>
   )
 }

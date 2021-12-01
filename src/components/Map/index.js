@@ -135,8 +135,8 @@ const useStyles = makeStyles((theme) => ({
 const Map = ({ from }) => {
   const classes = useStyles()
   const [viewType, setViewType] = useState('list')
-  const [region, setRegion] = useState(1)
-  const [district, setDistrict] = useState(1)
+  const [region, setRegion] = useState(0)
+  const [district, setDistrict] = useState(0)
   const handleRegion = (e) => setRegion(e.target.value)
   const handleDistrict = (e) => setDistrict(e.target.value)
   const handleViewType = (value) => setViewType(value)
