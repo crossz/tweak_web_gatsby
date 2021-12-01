@@ -83,12 +83,14 @@ const Header = () => {
       })}
     >
       <Container className={classes.wrapper} maxWidth='lg'>
-        <Box width={matches ? 100 : 145}>
-          <StaticImage
-            src='../../assets/images/common/take2_full_Color.png'
-            alt='Logo'
-          />
-        </Box>
+        <Link to='/'>
+          <Box width={matches ? 100 : 145}>
+            <StaticImage
+              src='../../assets/images/common/take2_full_color.png'
+              alt='Logo'
+            />
+          </Box>
+        </Link>
         <Box className={classes.authBtn} color='primary.main' component='span'>
           <MuiLink href={`${platformUrl}/signup`} target='_blank'>
             登入/登記
