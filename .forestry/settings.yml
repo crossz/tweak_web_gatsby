@@ -5,6 +5,12 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
+  path: content/promotions
+  label: Promotions
+  create: all
+  match: "**/*"
+  new_doc_ext: ".md"
+- type: directory
   path: content/health-tips
   label: Health Tips
   create: all
