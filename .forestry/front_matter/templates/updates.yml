@@ -32,3 +32,5 @@ fields:
       path: 
   label: type
   description: post type
+pages:
+- content/updates/dna.md
