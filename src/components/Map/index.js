@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarRoot: {
     position: 'sticky',
-    zIndex: theme.zIndex.appBar,
+    zIndex: theme.zIndex.speedDial,
     top: theme.spacing(HEADER_HEIGHT),
     backgroundColor: theme.palette.background.paper,
     [theme.breakpoints.down('xs')]: {

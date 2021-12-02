@@ -63,12 +63,13 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     display: 'flex',
-    alignItems: 'center',
-    flexShrink: 0,
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.body2.fontSize,
-      alignItems: 'flex-start',
     },
+  },
+  infoIcon: {
+    flexShrink: 0,
+    marginTop: theme.spacing(0.25),
   },
   btnCell: {
     display: 'flex',
@@ -204,35 +205,42 @@ const ClinicList = ({ region, district, onChange }) => {
                   ?.map((districtClinic, index) => (
                     <Box className={classes.item} key={index}>
                       <Grid container spacing={0}>
-                        <Grid item xs={2}>
+                        <Grid item xs={1}>
                           {districtClinic.region}
                         </Grid>
                         <Grid item xs={2}>
                           {districtClinic.district}
                         </Grid>
-                        <Grid item xs={12} sm={5}>
-                          <Box
-                            fontWeight='fontWeightBold'
-                            mt={matches ? 1.5 : 0}
-                            mb={matches ? 1 : 1.5}
-                          >
-                            {districtClinic.clinic}
-                          </Box>
-                          <Box
-                            color='text.primary'
-                            display={matches ? 'block' : 'flex'}
-                          >
+                        <Grid item xs={12} sm={6}>
+                          <Box width='100%'>
                             <Box
-                              className={classes.info}
-                              mr={matches ? 0 : 3}
-                              mb={matches ? 1 : 0}
+                              fontWeight='fontWeightBold'
+                              mt={matches ? 1.5 : 0}
+                              mb={matches ? 1 : 1.5}
                             >
-                              <PhoneIcon></PhoneIcon>
-                              {districtClinic.call}
+                              {districtClinic.clinic}
                             </Box>
-                            <Box className={classes.info}>
-                              <LocationIcon></LocationIcon>
-                              {districtClinic.address}
+                            <Box
+                              color='text.primary'
+                              display={matches ? 'block' : 'flex'}
+                            >
+                              <Box
+                                className={classes.info}
+                                mr={matches ? 0 : 3}
+                                mb={matches ? 1 : 0}
+                                flexShrink={0}
+                              >
+                                <Box className={classes.infoIcon}>
+                                  <PhoneIcon></PhoneIcon>
+                                </Box>
+                                {districtClinic.call}
+                              </Box>
+                              <Box className={classes.info}>
+                                <Box className={classes.infoIcon}>
+                                  <LocationIcon></LocationIcon>
+                                </Box>
+                                <Box>{districtClinic.address}</Box>
+                              </Box>
                             </Box>
                           </Box>
                         </Grid>
