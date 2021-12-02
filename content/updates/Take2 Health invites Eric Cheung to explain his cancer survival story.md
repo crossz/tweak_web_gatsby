@@ -2,7 +2,8 @@
 date: 2021-11-09
 title: Take2 Health invites Eric Cheung to explain his cancer survival story
 auth: SIMON YUEN
-detail: 'Hong Kong-based healthcare tech startup Take2Health has launched a campaign
+detail:
+  'Hong Kong-based healthcare tech startup Take2Health has launched a campaign
   to introduce a product for nasopharynx cancer testing and is featuring actor Eric
   Cheung Tat-ming, who is also a survivor of the cancer.  Titled "Go Live Again",
   the campaign includes a video telling the story of Cheung who details the narrative.
@@ -12,9 +13,9 @@ detail: 'Hong Kong-based healthcare tech startup Take2Health has launched a camp
   lack of knowledge on nasopharynx cancer and thought that the cancer would not have
   anything to do with his life. '
 type: 公司動向
-cover: "../images/updates/take2health.jpeg"
-
+cover: '../images/take2health.jpeg'
 ---
+
 Hong Kong-based healthcare tech startup Take2Health has launched a campaign to introduce a product for nasopharynx cancer testing and is featuring actor Eric Cheung Tat-ming, who is also a survivor of the cancer. Titled "Go Live Again", the campaign includes a video telling the story of Cheung who details the narrative. After unveiling his face as the voice of the campaign, Cheung apologises for his unclear voice since he cannot speak as quickly and clearly as he could before, post his survival of the cancer. He then shares openly with the audience on his prior lack of knowledge on nasopharynx cancer and thought that the cancer would not have anything to do with his life.
 
 Jay Ng, founder of creative agency SO DON’T BORE, explained the idea of the campaign, saying, "Instead of showcasing his face at the very beginning of the campaign video, we understand that Cheung's voice, which is different from his original voice due to damages done by therapies, is far more impactful."
