@@ -110,6 +110,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
+      marginTop: 0,
+      marginBottom: 0,
     },
   },
   link: {
