@@ -32,5 +32,3 @@ The campaign, running until January 2022, includes multiple touchpoints such as 
 Take2Health said the campaign can drive awareness on nasopharynx cancer, which is also the main goal of the campaign in 2021. It added that data gained from this campaign will be used by the company to brand better understand the target audience's behaviours, enabling the brand to further develop a marketing plan for the next year.
 
 "We will explore different segments and we are going to develop further specific marketing communication messages catered to different stages of the consumer journey. Apart from driving more conversions in Hong Kong, we hope to expand into China and even other Asian markets in 2022 as well," the company said.
-
-`youtube: `[`https://youtu.be/BACVA3es0NI`](https://youtu.be/BACVA3es0NI "https://youtu.be/BACVA3es0NI")
