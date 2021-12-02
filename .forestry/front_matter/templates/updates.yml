@@ -1,5 +1,5 @@
 ---
-label: updates
+label: Updates
 hide_body: false
 fields:
 - type: datetime
@@ -12,8 +12,28 @@ fields:
   name: detail
   label: detail
 - type: text
-  name: type
-  label: type
-- type: text
   name: href
   label: href
+- name: type
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - 公司動向
+    - 公司獎項與成就
+    - 行業資訊
+    - 商業合作
+    - 行政總裁分享
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: type
+  description: post type
+pages:
+- content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
+- content/updates/dna.md
+- content/updates/startup-focus.md
+- content/updates/take2-grail.md
