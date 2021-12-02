@@ -4,11 +4,8 @@ import UpdateItem from '@components/WhatsNew/UpdateItem'
 import {
   makeStyles,
   Container,
-  Typography,
-  alpha,
   useTheme,
   useMediaQuery,
-  Hidden,
   Grid,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
@@ -61,7 +58,7 @@ const Updates = ({ data }) => {
             (node) => node.frontmatter?.type === POST_TYPES[activeType]?.label
           ) || []
     )
-  }, [activeType])
+  }, [activeType, nodes])
 
   const handleChange = (e) =>
     e.target.dataset?.value && setActiveType(Number(e.target.dataset?.value))

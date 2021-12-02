@@ -6,9 +6,8 @@ import MenuItem from '@material-ui/core/MenuItem'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import { REGIONS } from '@utils/constant'
 import ClinicList from './ClinicList'
-import { EInputBase, EFormLabel } from '@themes/components/ETextField'
 import Container from '@material-ui/core/Container'
-import { withStyles, makeStyles, Hidden } from '@material-ui/core'
+import { makeStyles, Hidden } from '@material-ui/core'
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 import MapIcon from '@images/icons/map.svg'
 import ListIcon from '@images/icons/list.svg'
@@ -16,6 +15,7 @@ import IconButton from '@material-ui/core/IconButton'
 import ArrowIcon from '@images/icons/arrow.svg'
 import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
+import { EInputBase } from '@themes/components/ETextField'
 
 const switchButtons = [
   {

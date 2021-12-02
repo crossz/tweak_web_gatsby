@@ -65,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.spacing(0.75),
     overflow: 'hidden',
-    marginBottom: theme.spacing(9),
     [theme.breakpoints.down('xs')]: {
       display: 'block',
     },
