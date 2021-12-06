@@ -1,6 +1,6 @@
 ---
-label: Updates
-hide_body: false
+label: Post
+hide_body: true
 fields:
 - type: datetime
   name: date
@@ -11,9 +11,6 @@ fields:
 - type: textarea
   name: detail
   label: detail
-- type: text
-  name: href
-  label: href
 - name: type
   type: select
   default: []
@@ -32,6 +29,16 @@ fields:
       path: 
   label: type
   description: post type
+- name: cover
+  type: file
+  config:
+    maxSize: 64
+  label: cover
+- name: href
+  type: text
+  config:
+    required: false
+  label: href
 pages:
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
 - content/updates/dna.md
