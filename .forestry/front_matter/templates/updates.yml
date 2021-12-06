@@ -5,17 +5,23 @@ fields:
 - type: datetime
   name: date
   label: date
+  config:
+    required: true
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: textarea
   name: detail
   label: detail
+  config:
+    required: true
 - name: type
   type: select
   default: []
   config:
-    required: false
+    required: true
     options:
     - 公司動向
     - 公司獎項與成就
@@ -34,11 +40,13 @@ fields:
   config:
     maxSize: 64
   label: cover
+  description: 文章封面；文章卡片使用；updates类型文章可以不填。
 - name: href
   type: text
   config:
     required: false
   label: href
+  description: 跳转类型文章；该字段为跳转链接；
 pages:
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
 - content/updates/dna.md
