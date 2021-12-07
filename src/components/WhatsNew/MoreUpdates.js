@@ -29,7 +29,7 @@ const MoreUpdates = ({ title, nodes }) => {
               nodes.map((node) => (
                 <UpdateItem
                   key={node.id}
-                  slug={`/whats-new/${node.slug}`}
+                  slug={`/whats-new/${node.fields.slug}`}
                   {...node.frontmatter}
                 />
               ))}
