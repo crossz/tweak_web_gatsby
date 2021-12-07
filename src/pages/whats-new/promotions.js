@@ -23,7 +23,9 @@ export const query = graphql`
     ) {
       nodes {
         id
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           date

@@ -107,7 +107,7 @@ const Updates = ({ data }) => {
               ? list.map((node) => (
                   <UpdateItem
                     key={node.id}
-                    slug={`/whats-new/${node.slug}`}
+                    slug={`/whats-new/${node.fields.slug}`}
                     {...node.frontmatter}
                   />
                 ))
@@ -142,7 +142,9 @@ export const query = graphql`
             }
           }
         }
-        slug
+        fields {
+          slug
+        }
       }
     }
   }

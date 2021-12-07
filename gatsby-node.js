@@ -10,13 +10,12 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'Mdx') {
     const { relativeDirectory, name } = getNode(node.parent)
-
+    const slug = `${relativeDirectory}/${node.frontmatter.slug || name}`
+    console.log('------', slug)
     createNodeField({
       node,
       name: `slug`,
-      value: formatStartsPath(
-        `${relativeDirectory}/${node.frontmatter.slug || name}`
-      ),
+      value: slug,
     })
   }
 }
@@ -61,7 +60,9 @@ exports.createPages = async ({ graphql, actions }) => {
       allMdx(limit: 1000) {
         nodes {
           id
-          slug
+          fields {
+            slug
+          }
           parent {
             ... on File {
               relativeDirectory
@@ -75,12 +76,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
   allMdxList?.forEach((mdx) => {
-    const path = '/whats-new/' + mdx.slug
+    const path = '/whats-new/' + mdx.fields.slug
     createPage({
       path: path,
       component: postTemplate,
       context: {
-        slug: mdx.slug,
+        slug: mdx.fields.slug,
         sectionPath: mdx.parent.relativeDirectory,
         regex: `/${mdx.parent.relativeDirectory}/`,
       },

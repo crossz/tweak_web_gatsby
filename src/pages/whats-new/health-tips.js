@@ -24,7 +24,9 @@ export const query = graphql`
       totalCount
       nodes {
         id
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           date
