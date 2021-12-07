@@ -38,12 +38,6 @@ fields:
       path: 
   label: type
   description: Tag of post.
-- name: cover
-  type: file
-  config:
-    maxSize: 64
-  label: cover
-  description: Cover of post, used by post card.
 - name: href
   type: text
   config:
@@ -57,6 +51,12 @@ fields:
     required: true
   label: slug
   description: Path for post detail page.
+- name: cover
+  type: text
+  config:
+    required: false
+  label: cover
+  description: Cover of post card, should copy the link from media.
 pages:
 - content/promotions/ok-good-job.md
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
