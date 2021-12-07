@@ -16,19 +16,23 @@ cover: "../images/take2health.jpeg"
 
 \# Look at this Video: 
 
-\`video: https://www.youtube.com/embed/2Xc9gXyf2G4\`
+`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
 
-\`youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4\`
+`youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4`
 
-\`youtube: 2Xc9gXyf2G4\` \`vimeo: https://vimeo.com/5299404\` 
+`youtube: 2Xc9gXyf2G4`
 
-\`vimeo: 5299404\` \`videoPress: https://videopress.com/v/kUJmAcSf\` 
+`vimeo: https://vimeo.com/5299404`
 
-\`videoPress: kUJmAcSf\` \`twitch: https://player.twitch.tv/?channel=dakotaz\` 
+`imeo: 5299404`
 
-\`twitch: https://player.twitch.tv/?autoplay=false&video=v273436948\` 
+`videoPress: https://videopress.com/v/kUJmAcSf`
 
-\`twitch: 273436948\` \`twitchLive: dakotaz\`
+`videoPress: kUJmAcSf` `twitch: https://player.twitch.tv/?channel=dakotaz`
+
+`twitch: https://player.twitch.tv/?autoplay=false&video=v273436948`
+
+`twitch: 273436948` `twitchLive: dakotaz`
 
 香港的科研力量世界知名，但真正能做到商業化並推出市場的只有少數。翁錦輝表示，目前公司以早期鼻咽癌檢測技術，作為第一個普及的產品及服務。資料顯示，該技術由香港中文大學盧煜明教授與其團隊研發，2017年盧教授研究成果證實了通過分析游離DNA，可在未有病徵前便有效地檢測出早期鼻咽癌，及後將技術授予GRAIL, Inc。
 
