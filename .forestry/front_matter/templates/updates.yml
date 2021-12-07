@@ -1,7 +1,7 @@
 ---
 label: Post
 hide_body: false
-display_field: title
+display_field: slug
 fields:
 - type: datetime
   name: date
