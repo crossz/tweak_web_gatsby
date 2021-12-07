@@ -24,7 +24,7 @@ cover: "../images/take2health.jpeg"
 
 `vimeo: https://vimeo.com/5299404`
 
-`imeo: 5299404`
+`vimeo: 5299404`
 
 `videoPress: https://videopress.com/v/kUJmAcSf`
 
