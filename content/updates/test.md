@@ -12,7 +12,7 @@ cover: "../images/take2health.jpeg"
 
 經過2020年，大眾開始關注自身健康，醫療健康科技技術公司開始湧現。得易健康有限公司（TAKE2 HEALTH LTD）行政總裁翁錦輝表示，去年疫情令大家對健康關注度更高，香港、中國內地及其他地方的醫療健康科技產業發展非常蓬勃。
 
-`youtube: `[**`https://youtu.be/BACVA3es0NI`**](https://youtu.be/BACVA3es0NI "https://youtu.be/BACVA3es0NI")
+`youtube: https://youtu.be/BACVA3es0NI`
 
 香港的科研力量世界知名，但真正能做到商業化並推出市場的只有少數。翁錦輝表示，目前公司以早期鼻咽癌檢測技術，作為第一個普及的產品及服務。資料顯示，該技術由香港中文大學盧煜明教授與其團隊研發，2017年盧教授研究成果證實了通過分析游離DNA，可在未有病徵前便有效地檢測出早期鼻咽癌，及後將技術授予GRAIL, Inc。
 
