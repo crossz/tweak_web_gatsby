@@ -52,11 +52,11 @@ fields:
   label: slug
   description: Path for post detail page.
 - name: cover
-  type: text
+  type: file
   config:
-    required: false
+    maxSize: 64
   label: cover
-  description: Cover of post card, should copy the link from media.
+  description: Cover for post card, could be empty.
 pages:
 - content/promotions/ok-good-job.md
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
