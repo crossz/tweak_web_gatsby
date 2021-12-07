@@ -4,7 +4,7 @@ date: 2021-12-05T00:00:00+08:00
 title: "《杏林早茶:先知先醫 生命有Take2》商業電台專訪 鼻咽癌特輯"
 detail: "《杏林早茶:先知先醫 生命有Take2》商業電台專訪 鼻咽癌特輯"
 href: ''
-slug: take2-tea-02
+slug: take2-tea
 cover: "../images/take2health.jpeg"
 
 ---
