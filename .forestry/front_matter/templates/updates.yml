@@ -60,6 +60,7 @@ fields:
   description: Cover for post card, could be empty.
 pages:
 - content/health-tips/cross-s-health-tip.md
+- content/health-tips/take2.md
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
 - content/updates/dna.md
 - content/updates/startup-focus.md
