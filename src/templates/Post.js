@@ -225,7 +225,7 @@ export default Post
 
 export const query = graphql`
   query ($slug: String!, $regex: String!) {
-    mdx: mdx(slug: { eq: $slug }) {
+    mdx: mdx(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {
         date(formatString: "YYYY/MM/DD")
@@ -245,7 +245,9 @@ export const query = graphql`
       sort: { fields: frontmatter___date, order: ASC }
     ) {
       nodes {
-        slug
+        fields {
+          slug
+        }
         id
         frontmatter {
           cover {
