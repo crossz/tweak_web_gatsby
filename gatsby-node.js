@@ -1,24 +1,27 @@
 'use strict'
 
 const { resolve } = require('path')
-const { createFilePath } = require(`gatsby-source-filesystem`)
+// const { createFilePath } = require(`gatsby-source-filesystem`)
+
+const formatEndsPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
+const formatStartsPath = (path) => (path?.startsWith('/') ? path : `/${path}`)
 
 exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'Mdx') {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const { relativeDirectory, name } = getNode(node.parent)
+
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
+      value: formatStartsPath(
+        `${relativeDirectory}/${node.frontmatter.slug || name}`
+      ),
     })
   }
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const formatEndsPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
-  const formatStartsPath = (path) => (path?.startsWith('/') ? path : `/${path}`)
-
   const { createRedirect, createPage } = actions
 
   const menuQuery = await graphql(`
