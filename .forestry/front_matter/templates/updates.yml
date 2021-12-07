@@ -48,6 +48,7 @@ fields:
   label: href
   description: 跳转类型文章；该字段为跳转链接；
 pages:
+- content/promotions/ok-good-job.md
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited.md
 - content/updates/dna.md
 - content/updates/startup-focus.md
