@@ -4,8 +4,9 @@ date: 2021-12-06T00:00:00+08:00
 title: Test Vedio
 detail: test
 href: ''
-slug: test
-cover: "../images/take2health.jpeg"
+slug: ''
+cover:
+- "../images/take2health.jpeg"
 
 ---
 ![](../images/post1.jpg)
