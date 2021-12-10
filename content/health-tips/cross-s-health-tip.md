@@ -1,11 +1,12 @@
 ---
 type: 公司動向
-date: 2021-12-07T09:00:00+08:00
+date: 2021-12-07T09:00:00.000+08:00
 title: Cross's Health Tip
 detail: running
 href: ''
-slug: cross
-cover: "../images/20210202TAKE2HEALTHLTD01.jpeg"
+slug: ''
+cover:
+- "../images/20210202TAKE2HEALTHLTD01.jpeg"
 
 ---
 Keep running.
