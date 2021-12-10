@@ -42,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     transition: 'color ease 0.3s',
+    textOverflow: 'ellipsis',
+    lineClamp: 2,
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    overflow: 'hidden',
   },
   detail: {
     margin: theme.spacing(3, 0),
