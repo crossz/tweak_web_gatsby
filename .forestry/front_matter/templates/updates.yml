@@ -51,7 +51,8 @@ fields:
   config:
     required: false
   label: slug
-  description: Path for post detail page.
+  description: Path for post detail page, if this is empty, post path would be post
+    title.
 - name: cover
   type: image_gallery
   config: {}
