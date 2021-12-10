@@ -14,6 +14,8 @@ detail: 'Manchester, UK - 3 November 2020: Yourgene (AIM: YGEN), the internation
   NPC (a major type of head and neck cancer) even before a patient is symptomatic,
   enabling more timely diagnosis and treatment.'
 href: ''
+slug: ''
+cover: []
 
 ---
 Yourgene Health plc
@@ -46,21 +48,7 @@ Under the MoU, the two companies will seek to establish an extended formal colla
 
 3 Lam, WK Jacky, et al. "Sequencing based counting and size profiling of plasma Epstein Barr virus DNA enhance population screening of nasopharyngeal carcinoma." Proceedings of the National Academy of Sciences 115.22 (2018): E5115 E5124.
 
-| --- | --- |
-| Yourgene Health plcLyn Rees, Chief Executive Officer | Tel: +44 (0)161 669 8122investors@yourgene-health.com |
-| Barry Hextall, Chief Financial Officer |  |
-| Joanne Cross, Director of Marketing |  |
-|  |  |
-| N+1 Singer (Joint Corporate Broker) | Tel: +44 (0)20 7496 3000 |
-| Aubrey Powell / Tom Salvesen / George Tzimas |  |
-|  |  |
-| Stifel Nicolaus Europe Limited (Joint Corporate Broker) | Tel: +44 (0)20 7710 7600 |
-| Nicholas Moore / Matthew Blawat / Ben Maddison |  |
-|  |  |
-| Walbrook PR Ltd (Media and Investor Relations) | Tel: +44 (0)20 7933 8780 or yourgene@walbrookpr.com |
-| Paul McManus / Lianne Cawthorne | Mob: 07980 541 893 / Mob: 07584 391 303 |
-|  |  |  |
-|  |  |  |  |
+| --- | --- | | Yourgene Health plcLyn Rees, Chief Executive Officer | Tel: +44 (0)161 669 8122investors@yourgene-health.com | | Barry Hextall, Chief Financial Officer |  | | Joanne Cross, Director of Marketing |  | |  |  | | N+1 Singer (Joint Corporate Broker) | Tel: +44 (0)20 7496 3000 | | Aubrey Powell / Tom Salvesen / George Tzimas |  | |  |  | | Stifel Nicolaus Europe Limited (Joint Corporate Broker) | Tel: +44 (0)20 7710 7600 | | Nicholas Moore / Matthew Blawat / Ben Maddison |  | |  |  | | Walbrook PR Ltd (Media and Investor Relations) | Tel: +44 (0)20 7933 8780 or yourgene@walbrookpr.com | | Paul McManus / Lianne Cawthorne | Mob: 07980 541 893 / Mob: 07584 391 303 | |  |  |  | |  |  |  |  |
 
 **About Take2 -** [https://www.take2.health/](https://www.take2.health/ "https://www.take2.health/")
 
@@ -80,8 +68,8 @@ Forward-Looking Statements
 
 Certain statements made in this announcement are forward-looking statements. These forward-looking statements are not historical facts but rather are based on the Company's current expectations, estimates, and projections about its industry; its beliefs; and assumptions. Words such as 'anticipates,' 'expects,' 'intends,' 'plans,' 'believes,' 'seeks,' 'estimates,' and similar expressions are intended to identify forward-looking statements. These statements are not guarantees of future performance and are subject to known and unknown risks, uncertainties, and other factors, some of which are beyond the Company's control, are difficult to predict, and could cause actual results to differ materially from those expressed or forecasted in the forward-looking statements. The Company cautions security holders and prospective security holders not to place undue reliance on these forward-looking statements, which reflect the view of the Company only as of the date of this announcement. The forward-looking statements made in this announcement relate only to events as of the date on which the statements are made. The Company will not undertake any obligation to release publicly any revisions or updates to these forward-looking statements to reflect events, circumstances, or unanticipated events occurring after the date of this announcement except as required by law or by any appropriate regulatory authority.
 
-This information is provided by Reach, the non-regulatory press release distribution service of RNS, part of the London Stock Exchange. Terms and conditions relating to the use and distribution of this information may apply. For further information, please contact [rns@lseg.com](mailto:rns@lseg.com) or visit [www.rns.com](http://www.rns.com/).  
-  
+This information is provided by Reach, the non-regulatory press release distribution service of RNS, part of the London Stock Exchange. Terms and conditions relating to the use and distribution of this information may apply. For further information, please contact [rns@lseg.com](mailto:rns@lseg.com) or visit [www.rns.com](http://www.rns.com/).
+
 RNS may use your IP address to confirm compliance with the terms and conditions, to analyse how you engage with the information contained in this communication, and to share such analysis on an anonymised basis with others as part of our commercial services. For further information about how RNS and the London Stock Exchange use the personal data you provide us, please see our [Privacy Policy](https://www.lseg.com/privacy-and-cookie-policy).
 
 END
