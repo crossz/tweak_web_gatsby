@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
     textDecoration: 'none',
+    height: theme.spacing(41.25),
+    display: 'flex',
+    flexDirection: 'column',
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.standard,
     }),
@@ -19,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
       transform: 'translateY(-8px)',
     },
     [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(31.25),
       marginBottom: theme.spacing(3.75),
     },
   },
@@ -51,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     fontSize: theme.typography.body1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
+    textOverflow: 'ellipsis',
+    lineClamp: 2,
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.body2.fontSize,
     },
@@ -63,14 +72,14 @@ const useStyles = makeStyles((theme) => ({
 
 const PostCard = ({ title, type, date, cover, slug }) => {
   const classes = useStyles()
-  const image = getImage(cover)
+  const images = cover.map((item) => getImage(item))
 
   return (
     <Link className={classes.link} to={slug}>
       <Box className={classes.root}>
         <GatsbyImage
           className={classes.image}
-          image={image}
+          image={images[0]}
           alt={title}
         ></GatsbyImage>
         <Box className={classes.info}>

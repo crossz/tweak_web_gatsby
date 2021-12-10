@@ -10,8 +10,9 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'Mdx') {
     const { relativeDirectory, name } = getNode(node.parent)
-    const slug = `${relativeDirectory}/${node.frontmatter.slug || name}`
-    console.log('------', slug)
+    const slug = `${relativeDirectory}/${
+      node.frontmatter.slug || node.frontmatter.title || name
+    }`
     createNodeField({
       node,
       name: `slug`,
@@ -78,7 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
   allMdxList?.forEach((mdx) => {
     const path = '/whats-new/' + mdx.fields.slug
     createPage({
-      path: path,
+      path: decodeURIComponent(path),
       component: postTemplate,
       context: {
         slug: mdx.fields.slug,
