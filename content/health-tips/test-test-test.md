@@ -3,7 +3,7 @@ type: 公司動向
 date: 2021-12-01T00:00:00+08:00
 title: Test Test Test
 detail: TAKE2獲GRAIL 授權早期鼻咽癌檢測技術
-href: https://www.businesswire.com/news/home/20190506005296/zh-HK/
+href: ''
 slug: https://www.businesswire.com/news/home/20190506005296/zh-HK/
 cover:
 - "../images/122534_1024.jpeg"
@@ -13,6 +13,8 @@ cover:
 # **_TAKE2獲GRAIL 授權早期鼻咽癌檢測技術_**
 
 May 06, 2019 12:00 PM Eastern Daylight Time
+
+[https://www.businesswire.com/news/home/20190506005296/zh-HK/](https://www.businesswire.com/news/home/20190506005296/zh-HK/ "https://www.businesswire.com/news/home/20190506005296/zh-HK/")
 
 中國香港--([BUSINESS WIRE](https://www.businesswire.com/))--TAKE2 HEALTH LTD. 「得易健康有限公司」 (“TAKE2”)，一家總部位於中國香港的醫療健康科技企業，今天宣佈與GRAIL, Inc. 就早期鼻咽癌檢測相關的一系列知識產權達成協議，TAKE2獲得相關技術的全球獨家授權。TAKE2創辦人包括香港中文大學的盧煜明教授、趙慧君教授和陳君賜教授。TAKE2致力推動醫療健康發展，讓最創新的醫療健康技術發明在中國以及亞州地區造福普羅大眾。
 
