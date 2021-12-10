@@ -63,14 +63,14 @@ const useStyles = makeStyles((theme) => ({
 
 const PostCard = ({ title, type, date, cover, slug }) => {
   const classes = useStyles()
-  const image = getImage(cover)
+  const images = cover.map((item) => getImage(item))
 
   return (
     <Link className={classes.link} to={slug}>
       <Box className={classes.root}>
         <GatsbyImage
           className={classes.image}
-          image={image}
+          image={images[0]}
           alt={title}
         ></GatsbyImage>
         <Box className={classes.info}>

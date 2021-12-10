@@ -1,11 +1,14 @@
 import React from 'react'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
+import ImageList from '@material-ui/core/ImageList'
+import ImageListItem from '@material-ui/core/ImageListItem'
 import { Link as MuiLink } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
 import ViewButton from '@themes/components/ViewButton'
 import { POST_TYPES } from '@utils/constant'
 import { Link } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,6 +67,18 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0.25, 1),
   },
   btnWrapper: {},
+  imageList: {
+    overflow: 'initial',
+  },
+
+  imageListItemItem: {
+    overflow: 'initial',
+    height: theme.spacing(12),
+  },
+  coverItem: {
+    height: '100%',
+    borderRadius: theme.spacing(0.5),
+  },
 }))
 
 const LinkWrapper = ({ href, slug, children, ...rest }) =>
@@ -77,13 +92,15 @@ const LinkWrapper = ({ href, slug, children, ...rest }) =>
     </Link>
   )
 
-const UpdateItem = ({ title, type, date, detail, href, slug }) => {
+const UpdateItem = ({ title, type, date, detail, href, slug, cover }) => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const images = cover.map((item) => getImage(item))
 
   return (
     <LinkWrapper href={href} slug={slug} className={classes.link}>
       <Box className={classes.root}>
-        {/* <GatsbyImage image={image} alt={title}></GatsbyImage> */}
         <Box className={classes.top}>
           <Box className={classes.date}>{date}</Box>
           <Box
@@ -102,6 +119,31 @@ const UpdateItem = ({ title, type, date, detail, href, slug }) => {
         <Typography className={classes.detail} variant='body1' color='primary'>
           {detail}
         </Typography>
+        <Box mb={3}>
+          <ImageList
+            className={classes.imageList}
+            rowHeight='auto'
+            cols={matches ? 2 : 4}
+            gap={matches ? 8 : 12}
+          >
+            {images?.length > 0 &&
+              images.map((image, index) => (
+                <ImageListItem
+                  className={classes.imageListItem}
+                  classes={{
+                    item: classes.imageListItemItem,
+                  }}
+                  key={index}
+                >
+                  <GatsbyImage
+                    className={classes.coverItem}
+                    image={image}
+                    alt={title}
+                  ></GatsbyImage>
+                </ImageListItem>
+              ))}
+          </ImageList>
+        </Box>
         <Box className={classes.btnWrapper} textAlign='right'>
           <ViewButton></ViewButton>
         </Box>
