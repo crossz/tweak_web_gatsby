@@ -1,12 +1,16 @@
 ---
 type: 公司動向
-date: 2021-12-06T00:00:00+08:00
-title: Test Vedio
+date: 2021-12-06T00:00:00.000+08:00
+title: Test TAKE2獲GRAIL 授權早期鼻咽癌檢測技術
 detail: test
 href: ''
-slug: ''
+slug: https://www.businesswire.com/news/home/20190506005296/zh-HK/
 cover:
-- "../images/take2health.jpeg"
+- "../images/20210202TAKE2HEALTHLTD01.jpeg"
+- "../images/122534_1024.jpeg"
+- "../images/20210202TAKE2HEALTHLTD02.jpeg"
+- "../images/cu_1024.png"
+- "../images/post1.jpg"
 
 ---
 ![](../images/post1.jpg)
