@@ -3,7 +3,7 @@ type: 公司動向
 date: 2021-12-06T00:00:00.000+08:00
 title: Test TAKE2獲GRAIL 授權早期鼻咽癌檢測技術
 detail: test
-href: ''
+href: https://www.businesswire.com/news/home/20190506005296/zh-HK/
 slug: https://www.businesswire.com/news/home/20190506005296/zh-HK/
 cover:
 - "../images/20210202TAKE2HEALTHLTD01.jpeg"
@@ -16,6 +16,8 @@ cover:
 ![](../images/post1.jpg)
 
 經過2020年，大眾開始關注自身健康，醫療健康科技技術公司開始湧現。得易健康有限公司（TAKE2 HEALTH LTD）行政總裁翁錦輝表示，去年疫情令大家對健康關注度更高，香港、中國內地及其他地方的醫療健康科技產業發展非常蓬勃。
+
+[https://www.businesswire.com/news/home/20190506005296/zh-HK/](https://www.businesswire.com/news/home/20190506005296/zh-HK/ "https://www.businesswire.com/news/home/20190506005296/zh-HK/")
 
 `youtube: https://youtu.be/BACVA3es0NI`
 
