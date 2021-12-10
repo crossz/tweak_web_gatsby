@@ -49,7 +49,7 @@ fields:
 - name: slug
   type: text
   config:
-    required: true
+    required: false
   label: slug
   description: Path for post detail page.
 - name: cover
