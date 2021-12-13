@@ -4,6 +4,13 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: directory
+  path: content/terms-and-conditions
+  label: T&C
+  create: all
+  match: "**/*"
+  templates:
+  - t-c
 - type: document
   path: content/menu.json
   label: Menu
@@ -13,18 +20,24 @@ sections:
   create: all
   match: "**/*"
   new_doc_ext: md
+  templates:
+  - updates
 - type: directory
   path: content/health-tips
   label: Health Tips
   create: all
   match: "**/*"
   new_doc_ext: md
+  templates:
+  - updates
 - type: directory
   path: content/updates
   label: Updates
   create: all
   match: "**/*"
   new_doc_ext: md
+  templates:
+  - updates
 upload_dir: content/images
 public_path: "../images"
 front_matter_path: ''
