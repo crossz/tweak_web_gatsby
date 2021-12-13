@@ -167,9 +167,9 @@ const centerData = [
 ]
 
 const references = [
-  '1Overview of Hong Kong Cancer Statistics of 2018. Hong Kong Hospital Authority, October 2020.',
-  '2Hong Kong Cancer Registry. Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
-  '3認識癌症：鼻咽癌. Hong Kong Cancer Fund, 2021, www.cancer-fund.org/wp-content/uploads/2021/03/NPC-20C-Revamp-Web_s.pdf.',
+  '<sup>1</sup><i>Overview of Hong Kong Cancer Statistics of 2018.</i> Hong Kong Hospital Authority, October 2020.',
+  '<sup>2</sup><i>Hong Kong Cancer Registry.</i> Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
+  '<sup>3</sup>認識癌症：鼻咽癌. Hong Kong Cancer Fund, 2021, www.cancer-fund.org/wp-content/uploads/2021/03/NPC-20C-Revamp-Web_s.pdf.',
 ]
 
 const EarlyCancerDetection = () => {
@@ -267,7 +267,10 @@ const EarlyCancerDetection = () => {
                 mx={matches ? -1 : 0}
               >
                 {references.map((reference, index) => (
-                  <Box key={index}>{reference}</Box>
+                  <Box
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: reference }}
+                  ></Box>
                 ))}
               </Box>
             </Container>
