@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <main className={classes.root}>
+    <main id='main' className={classes.root}>
       <Header></Header>
       <SectionBanner></SectionBanner>
       {children}

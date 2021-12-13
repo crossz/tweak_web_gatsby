@@ -13,6 +13,7 @@ const useSiteMetadata = () => {
           linkedin
           youtube
           facebook
+          messenger
           campaignPage
           phone
           email

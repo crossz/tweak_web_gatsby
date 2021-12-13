@@ -74,8 +74,9 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
-  btn: {
+  btnLink: {
     marginRight: theme.spacing(2),
+    flexShrink: 0,
   },
 }))
 
@@ -110,9 +111,11 @@ const Consult = () => {
               </Box>
             </Typography>
             <Box className={classes.btnWrapper}>
-              <Link to='/products-and-services/take2-extra-care'>
+              <Link
+                className={classes.btnLink}
+                to='/products-and-services/take2-extra-care'
+              >
                 <Button
-                  className={classes.btn}
                   variant='outlined'
                   color='primary'
                   size={matches ? 'small' : 'medium'}

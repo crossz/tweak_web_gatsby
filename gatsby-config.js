@@ -3,6 +3,7 @@ module.exports = {
     siteUrl: 'https://take2health.net',
     title: 'Take2 Prophecy',
     description: 'Details of Take2 Prophecy',
+    messenger: 'https://www.facebook.com/messages/t/100757495628023',
     whatsapp:
       'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0',
     facebook: 'https://www.facebook.com/take2health.ltd',
@@ -21,6 +22,7 @@ module.exports = {
         disableMinification: false,
       },
     },
+    `gatsby-plugin-smoothscroll`,
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',

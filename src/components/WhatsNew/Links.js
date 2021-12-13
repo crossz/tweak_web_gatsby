@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Links = ({ href }) => {
   const classes = useStyles()
-  const { whatsapp, messenger, facebook } = useSiteMetadata()
+  const { whatsapp, facebook } = useSiteMetadata()
 
   const links = [
     {
@@ -39,11 +39,11 @@ const Links = ({ href }) => {
       type: 'link',
       link: whatsapp,
     },
-    {
-      Icon: MessengerIcon,
-      type: 'link',
-      link: messenger,
-    },
+    // {
+    //   Icon: MessengerIcon,
+    //   type: 'link',
+    //   link: messenger,
+    // },
     {
       Icon: LinkIcon,
       type: 'copy',

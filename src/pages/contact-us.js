@@ -198,7 +198,7 @@ const ContactUs = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [activeTab, setActiveTab] = useState(0)
-  const { whatsapp, email, phone, facebook } = useSiteMetadata()
+  const { whatsapp, email, phone, messenger } = useSiteMetadata()
 
   const contactTypes = [
     {
@@ -227,7 +227,7 @@ const ContactUs = () => {
       Icon: MessengerIcon,
       tabLabel: '商務合作',
       type: 'link',
-      link: facebook,
+      link: messenger,
     },
   ]
 

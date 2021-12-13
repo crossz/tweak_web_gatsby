@@ -25,18 +25,19 @@ import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
+import GoToTop from './GoToTop'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: 'auto',
     backgroundColor: theme.palette.primary.main,
     height: theme.spacing(66.5),
-    paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(4),
     color: theme.palette.primary.contrastText,
     [theme.breakpoints.down('xs')]: {
       height: 'auto',
       padding: theme.spacing(3, 1),
+      paddingTop: 0,
       paddingBottom: theme.spacing(10.5),
     },
   },
@@ -47,9 +48,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   container: {
+    paddingTop: theme.spacing(10),
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    position: 'relative',
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(3),
+    },
   },
   divider: {
     backgroundColor: theme.palette.background.paper,
@@ -129,7 +135,11 @@ const Footer = () => {
 
   const CopyRights = (params) => (
     <Box className={classes.copyRight}>
-      <Box width={matches ? '100%' : 'auto'} mb={matches ? 2 : 0}>
+      <Box
+        className={classes.copyRightLink}
+        width={matches ? '100%' : 'auto'}
+        mb={matches ? 2 : 0}
+      >
         ©2021 Take2 Health 版權所有
       </Box>
       <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
@@ -147,6 +157,7 @@ const Footer = () => {
   return (
     <Box className={classes.root}>
       <Container className={classes.container} maxWidth='md'>
+        <GoToTop></GoToTop>
         <Grid container>
           <Grid className={classes.infoWrapper} item xs={12} sm={4} md={5}>
             <Box width={matches ? 100 : 145}>

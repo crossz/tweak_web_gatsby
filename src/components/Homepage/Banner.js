@@ -10,10 +10,12 @@ import {
   useMediaQuery,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
+import { Link } from 'gatsby'
+import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: theme.spacing(110),
+    height: theme.spacing(108.75),
     // backgroundImage: `url(${HomepageBanner})`,
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: 'cover',
@@ -60,8 +62,16 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(-3),
     },
   },
-  btn: {
-    marginRight: theme.spacing(2.5),
+  btnWrapper: {
+    marginTop: theme.spacing(8),
+    '& a': {
+      textDecoration: 'none',
+    },
+  },
+  btnLink: {
+    marginRight: theme.spacing(2),
+    flexShrink: 0,
+    textDecoration: 'none',
   },
 }))
 
@@ -69,6 +79,7 @@ const Banner = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { platformUrl } = useSiteMetadata()
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -114,23 +125,35 @@ const Banner = () => {
             </Box>
           </Typography>
           <Hidden xsDown>
-            <Box mt={8}>
-              <Button
-                className={classes.btn}
-                variant='outlined'
-                color='primary'
+            <Box className={classes.btnWrapper}>
+              <Link
+                className={classes.btnLink}
+                to='/products-and-services/take2-prophecy'
               >
-                了解更多
-              </Button>
-              <Button variant='contained' color='secondary'>
+                <Button
+                  className={classes.btn}
+                  variant='outlined'
+                  color='primary'
+                >
+                  了解更多
+                </Button>
+              </Link>
+
+              <Button
+                variant='contained'
+                color='secondary'
+                href={platformUrl}
+                target='_blank'
+              >
                 立即預約
               </Button>
             </Box>
           </Hidden>
           <Box className={classes.marks}>
             ¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus
-            DNA to Screen for Nasopharyngeal Cancer.” New England Journal of
-            Medicine, vol. 377, no. 6, 2017, pp. 513–22.
+            DNA to Screen for Nasopharyngeal Cancer.”{' '}
+            <i>New England Journal of Medicine</i>, vol. 377, no. 6, 2017, pp.
+            513–22.
           </Box>
         </Box>
       </Container>

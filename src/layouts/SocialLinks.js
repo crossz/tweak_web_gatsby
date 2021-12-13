@@ -41,11 +41,11 @@ const SocialLinks = () => {
           <Youtube></Youtube>
         </IconButton>
       </Link>
-      <Link href={whatsapp} target='_blank'>
+      {/* <Link href={whatsapp} target='_blank'>
         <IconButton className={classes.btn} aria-label='whatsapp'>
           <Whatsapp></Whatsapp>
         </IconButton>
-      </Link>
+      </Link> */}
       <Link href={linkedin} target='_blank'>
         <IconButton className={classes.btn} aria-label='linkedin'>
           <Linkedin></Linkedin>

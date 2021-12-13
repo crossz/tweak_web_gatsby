@@ -189,11 +189,21 @@ const Menu = () => {
           {joinUsItem.title}
         </Link>
         <MuiLink
-          className={classnames(classes.link, classes.contactLink)}
-          href={platformUrl}
+          className={classes.link}
+          href={`${platformUrl}/signin`}
           onClick={handleClose}
         >
-          登入/登記
+          登入
+        </MuiLink>
+        <Box component='span' mx={1} color='primary.contrastText'>
+          /
+        </Box>
+        <MuiLink
+          className={classes.link}
+          href={`${platformUrl}/signup`}
+          onClick={handleClose}
+        >
+          登記
         </MuiLink>
       </Box>
     )

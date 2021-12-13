@@ -77,6 +77,7 @@ const Header = () => {
 
   return (
     <Box
+      id='header'
       className={classnames(classes.root, {
         [classes.homepageRoot]: !matches && matchHomepage,
         [classes.withBg]: !matches && withBg,
@@ -92,8 +93,14 @@ const Header = () => {
           </Box>
         </Link>
         <Box className={classes.authBtn} color='primary.main' component='span'>
+          <MuiLink href={`${platformUrl}/signin`} target='_blank'>
+            登入
+          </MuiLink>
+          <Box component='span' mx={1}>
+            /
+          </Box>
           <MuiLink href={`${platformUrl}/signup`} target='_blank'>
-            登入/登記
+            登記
           </MuiLink>
         </Box>
         <Menu></Menu>
