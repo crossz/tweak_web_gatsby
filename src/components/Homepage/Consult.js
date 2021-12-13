@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import { Link } from 'gatsby'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
+import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,6 +67,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.primary.main,
   },
+  btnWrapper: {
+    display: 'flex',
+    marginTop: theme.spacing(4),
+    '& a': {
+      textDecoration: 'none',
+    },
+  },
   btn: {
     marginRight: theme.spacing(2),
   },
@@ -75,6 +83,7 @@ const Consult = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { platformUrl } = useSiteMetadata()
 
   return (
     <Container disableGutters className={classes.root} maxWidth='xl'>
@@ -91,36 +100,43 @@ const Consult = () => {
             <Typography variant='h5' color='primary' component='div'>
               <Box mt={matches ? 3 : 0}>立即登記 線上專業諮詢</Box>
               <Box className={classes.content}>
-                只需輸入簡單資料，便可與我們保持聯繫，亦可享用線上醫療諮詢服務或特快預約測試，接收專業資訊、測試提示、活動推廣及首輪優惠等。
-                <Link to='/' className={classes.greyLink}>
+                只需輸入簡單資料，便可與我們保持聯繫，你亦可享用線上醫療諮詢服務或特快預約測試，接收專業資訊、測試提示、活動推廣及首輪優惠等。
+                <Link
+                  to='/terms-and-conditions/條款及細則'
+                  className={classes.greyLink}
+                >
                   條款及細則
                 </Link>
               </Box>
             </Typography>
-            <Box display='flex' mt={4}>
-              <Button
-                className={classes.btn}
-                variant='outlined'
-                color='primary'
-                size={matches ? 'small' : 'medium'}
-                fullWidth={matches}
-              >
-                了解更多
-              </Button>
+            <Box className={classes.btnWrapper}>
+              <Link to='/products-and-services/take2-extra-care'>
+                <Button
+                  className={classes.btn}
+                  variant='outlined'
+                  color='primary'
+                  size={matches ? 'small' : 'medium'}
+                  fullWidth={matches}
+                >
+                  了解更多
+                </Button>
+              </Link>
               <Button
                 variant='contained'
                 color='secondary'
                 size={matches ? 'small' : 'medium'}
                 fullWidth={matches}
+                href={platformUrl}
+                target='_blank'
               >
                 立即登記
               </Button>
             </Box>
-            <Box mt={5} textAlign={matches ? 'center' : 'left'}>
+            {/* <Box mt={5} textAlign={matches ? 'center' : 'left'}>
               <Link className={classes.blueLink} to='/'>
                 了解更多我們的產品
               </Link>
-            </Box>
+            </Box> */}
           </Box>
         </Grid>
       </Grid>
