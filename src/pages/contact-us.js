@@ -243,6 +243,16 @@ const ContactUs = () => {
     })
     const resultData = await res.json()
   }
+  const getHref = (type, link) => {
+    switch (type) {
+      case 'phone':
+        return `tel:${link}`
+      case 'email':
+        return `mailto:${link}`
+      default:
+        return link
+    }
+  }
 
   return (
     <Container className={classes.root} disableGutters maxWidth='xl'>
@@ -285,7 +295,7 @@ const ContactUs = () => {
                   cols={matches ? 1 : 2}
                   gap={16}
                 >
-                  {contactTypes.map(({ label, Icon }, index) => (
+                  {contactTypes.map(({ label, Icon, type, link }, index) => (
                     <ImageListItem
                       key={label}
                       classes={{
@@ -308,6 +318,8 @@ const ContactUs = () => {
                           />
                         }
                         size='large'
+                        href={getHref(type, link)}
+                        target={type === 'link' && '_blank'}
                       >
                         {label}
                       </Button>
@@ -379,7 +391,9 @@ const ContactUs = () => {
                             margin='none'
                             value={values.companyName}
                             onChange={handleChange}
-                            placeholder='请输入公司名稱/姓名'
+                            placeholder={
+                              !isError('companyName') && '请输入公司名稱/姓名'
+                            }
                             type='text'
                             endAdornment={<CancelButton field='companyName' />}
                           />
@@ -429,7 +443,6 @@ const ContactUs = () => {
                           </FormControl>
                         </Box>
                       </Box>
-
                       <Box mb={4}>
                         <FormControl
                           fullWidth
@@ -443,7 +456,7 @@ const ContactUs = () => {
                             margin='none'
                             value={values.email}
                             onChange={handleChange}
-                            placeholder='请输入電郵'
+                            placeholder={!isError('email') && '请输入電郵'}
                             endAdornment={<CancelButton field='email' />}
                           />
 
