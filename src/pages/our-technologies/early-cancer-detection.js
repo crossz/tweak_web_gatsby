@@ -58,11 +58,15 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     width: theme.spacing(3),
     height: theme.spacing(3),
+    marginTop: theme.spacing(-0.4),
     flexShrink: 0,
     '& path:first-child': {
       fill: theme.palette.secondary.main,
     },
     marginRight: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      marginRight: theme.spacing(2),
+    },
   },
   centerDataWrapper: {
     height: theme.spacing(24),
@@ -80,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   centerDataItem: {
     width: `calc(50% - ${theme.spacing(3)}px)`,
     padding: theme.spacing(3),
+    paddingRight: theme.spacing(2),
     margin: theme.spacing(0, 1.5),
     backgroundColor: theme.palette.primary.contrastText,
     borderRadius: theme.spacing(1.5),
