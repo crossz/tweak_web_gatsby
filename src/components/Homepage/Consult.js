@@ -77,6 +77,10 @@ const useStyles = makeStyles((theme) => ({
   btnLink: {
     marginRight: theme.spacing(2),
     flexShrink: 0,
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      flexShrink: 1,
+    },
   },
 }))
 
