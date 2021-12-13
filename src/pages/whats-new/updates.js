@@ -126,7 +126,7 @@ export const query = graphql`
     allMdx(
       limit: 1000
       filter: { fileAbsolutePath: { regex: "/updates/" } }
-      sort: { fields: frontmatter___date, order: ASC }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         id

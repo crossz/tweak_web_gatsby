@@ -19,7 +19,7 @@ export const query = graphql`
     allMdx(
       limit: 1000
       filter: { fileAbsolutePath: { regex: "/promotions/" } }
-      sort: { fields: frontmatter___date, order: ASC }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         id
@@ -28,7 +28,7 @@ export const query = graphql`
         }
         frontmatter {
           title
-          date
+          date(formatString: "DD/MM/YYYY")
           type
           cover {
             childImageSharp {

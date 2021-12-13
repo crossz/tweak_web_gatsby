@@ -19,7 +19,7 @@ export const query = graphql`
     allMdx(
       limit: 1000
       filter: { fileAbsolutePath: { regex: "/health-tips/" } }
-      sort: { fields: frontmatter___date, order: ASC }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       totalCount
       nodes {
@@ -29,7 +29,7 @@ export const query = graphql`
         }
         frontmatter {
           title
-          date
+          date(formatString: "DD/MM/YYYY")
           type
           cover {
             childImageSharp {

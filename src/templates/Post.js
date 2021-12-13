@@ -242,7 +242,7 @@ export const query = graphql`
     morePosts: allMdx(
       filter: { fileAbsolutePath: { regex: $regex } }
       limit: 3
-      sort: { fields: frontmatter___date, order: ASC }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         fields {
@@ -255,7 +255,7 @@ export const query = graphql`
               gatsbyImageData
             }
           }
-          date
+          date(formatString: "DD/MM/YYYY")
           title
           type
           detail
