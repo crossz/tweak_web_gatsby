@@ -55,6 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
   const postTemplate = resolve(__dirname, 'src/templates/Post.js')
+  const tAndCTemplate = resolve(__dirname, 'src/templates/T&C.js')
 
   const allMdxQuery = await graphql(`
     {
@@ -77,10 +78,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
   allMdxList?.forEach((mdx) => {
-    const path = '/whats-new/' + mdx.fields.slug
+    const path =
+      `${
+        mdx.parent.relativeDirectory === 'terms-and-conditions'
+          ? '/'
+          : '/whats-new/'
+      }` + mdx.fields.slug
     createPage({
       path: decodeURIComponent(path),
-      component: postTemplate,
+      component:
+        mdx.parent.relativeDirectory === 'terms-and-conditions'
+          ? tAndCTemplate
+          : postTemplate,
       context: {
         slug: mdx.fields.slug,
         sectionPath: mdx.parent.relativeDirectory,
