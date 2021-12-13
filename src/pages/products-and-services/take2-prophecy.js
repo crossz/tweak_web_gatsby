@@ -453,7 +453,7 @@ const Take2Prophecy = () => {
                     href={platformUrl}
                     target='_blank'
                   >
-                    了解更多
+                    立即預約
                   </Button>
                   <Link className={classes.link} to='/service-location/'>
                     <Button
@@ -462,7 +462,7 @@ const Take2Prophecy = () => {
                       size={matches ? 'small' : 'medium'}
                       fullWidth={matches}
                     >
-                      立即預約
+                      篩查服務點
                     </Button>
                   </Link>
                 </Box>
