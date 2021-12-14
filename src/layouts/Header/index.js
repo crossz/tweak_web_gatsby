@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Box from '@material-ui/core/Box'
-import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
+import { makeStyles, useTheme, useMediaQuery, alpha } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import { useMatch } from '@reach/router'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
@@ -11,6 +11,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import { Link as MuiLink } from '@material-ui/core'
 import useSiteMetadata from '@hooks/useSiteMetadata'
+import { Waypoint } from 'react-waypoint'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'sticky',
     top: 0,
     zIndex: theme.zIndex.appBar,
+    transition: `background-color 0.6s`,
   },
   wrapper: {
     display: 'flex',
@@ -61,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     display: 'block',
   },
+  withoutShadow: {
+    boxShadow: 'none',
+  },
 }))
 
 const Header = () => {
@@ -76,40 +81,53 @@ const Header = () => {
   // }
 
   return (
-    <Box
-      id='header'
-      className={classnames(classes.root, {
-        [classes.homepageRoot]: !matches && matchHomepage,
-        [classes.withBg]: !matches && withBg,
-      })}
-    >
-      <Container className={classes.wrapper} maxWidth='lg'>
-        <Link to='/'>
-          <Box width={matches ? 100 : 145}>
-            <StaticImage
-              src='../../assets/images/common/take2_full_color.png'
-              alt='Logo'
-            />
+    <>
+      <Box
+        id='header'
+        className={classnames(classes.root, {
+          [classes.withBg]: !matches && withBg,
+          [classes.homepageRoot]: !matches && matchHomepage,
+          [classes.withoutShadow]: !matches && matchHomepage && withBg,
+        })}
+      >
+        <Container className={classes.wrapper} maxWidth='lg'>
+          <Link to='/'>
+            <Box width={matches ? 100 : 145}>
+              <StaticImage
+                src='../../assets/images/common/take2_full_color.png'
+                alt='Logo'
+              />
+            </Box>
+          </Link>
+          <Box
+            className={classes.authBtn}
+            color='primary.main'
+            component='span'
+          >
+            <MuiLink href={`${platformUrl}/signin`} target='_blank'>
+              登入
+            </MuiLink>
+            <Box component='span' mx={1}>
+              /
+            </Box>
+            <MuiLink href={`${platformUrl}/signup`} target='_blank'>
+              登記
+            </MuiLink>
           </Box>
-        </Link>
-        <Box className={classes.authBtn} color='primary.main' component='span'>
-          <MuiLink href={`${platformUrl}/signin`} target='_blank'>
-            登入
-          </MuiLink>
-          <Box component='span' mx={1}>
-            /
-          </Box>
-          <MuiLink href={`${platformUrl}/signup`} target='_blank'>
-            登記
-          </MuiLink>
-        </Box>
-        <Menu></Menu>
-      </Container>
-      {/* <Waypoint
+          <Menu></Menu>
+        </Container>
+        {/* <Waypoint
         onLeave={() => handleWaypoint(true)}
         onEnter={() => handleWaypoint(false)}
       ></Waypoint> */}
-    </Box>
+      </Box>
+      {matchHomepage && (
+        <Waypoint
+          onEnter={() => setWithBg(false)}
+          onLeave={() => setWithBg(true)}
+        ></Waypoint>
+      )}
+    </>
   )
 }
 
