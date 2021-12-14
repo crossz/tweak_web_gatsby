@@ -18,13 +18,14 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     transform: 'translateY(-50%)',
     backgroundColor: theme.palette.secondary.main,
+    marginRight: theme.spacing(3),
     filter: `drop-shadow(0px 4px 10px ${alpha(
       theme.palette.secondary.main,
       0.4
     )})`,
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(1),
-      right: theme.spacing(2),
+      marginRight: theme.spacing(2),
     },
     '& svg': {
       width: theme.spacing(3.5),

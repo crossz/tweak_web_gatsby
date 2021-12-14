@@ -57,6 +57,10 @@ let theme = createTheme({
       xl: 1920,
     },
   },
+  typography: {
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif',
+  },
 })
 
 theme = createTheme(theme, {
@@ -175,8 +179,6 @@ theme = createTheme(theme, {
     },
   },
   typography: {
-    fontFamily:
-      '"Noto Sans TC",-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif',
     h1: {
       fontSize: '3.81rem',
       fontWeight: theme.typography.fontWeightBold,
