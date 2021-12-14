@@ -83,3 +83,36 @@ export const REGIONS = [
     ],
   },
 ]
+
+export const QUIZ = [
+  {
+    question: '家族成員曾否患上鼻咽癌？',
+    answers: ['沒有', '不清楚', '有'],
+  },
+  {
+    question: '你有否出現鼻水帶血或流鼻血情況？',
+    answers: ['從不', '很少', '間中', '經常'],
+    type: 'slide',
+  },
+  {
+    question: '你有否出現頸部淋巴脹大？',
+    answers: ['沒有', '不清楚', '有'],
+  },
+  {
+    question: '你是否經常出現頭痛或單側頭痛？',
+    answers: ['從不', '很少', '間中', '經常'],
+    type: 'slide',
+  },
+  {
+    question: '你是否經常受耳鳴困擾？',
+    answers: ['從不', '很少', '間中', '經常'],
+    type: 'slide',
+  },
+  {
+    question: '你有沒有吸煙習慣？',
+    answers: ['從不', '很少', '間中', '經常'],
+    type: 'slide',
+  },
+]
+
+export const AGES = ['1~10', '11~20']

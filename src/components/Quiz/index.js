@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button'
 import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
 import FormLabel from '@material-ui/core/FormLabel'
-import InputLabel from '@material-ui/core/InputLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import Select from '@material-ui/core/Select'
@@ -21,6 +20,8 @@ import Typography from '@material-ui/core/Typography'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
+import { EInputBase, EFormLabel } from '@themes/components/ETextField'
+import { AGES } from '@utils/constant'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -44,10 +45,22 @@ const useStyle = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  genderLabel: {
+    marginLeft: 0,
+  },
+  label: {
+    fontSize: theme.typography.subtitle2.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
+    color: theme.palette.primary.main,
+    marginBottom: theme.spacing(1),
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }))
 
 const initialValues = {
-  gender: '男',
+  gender: '',
   age: '',
   quiz: [
     { label: 'quiz1', value: '' },
@@ -59,9 +72,15 @@ const initialValues = {
   ],
   email: '',
   phone: '',
-  dialing: '',
+  dialingCode: '',
 }
-const schema = oriSchema.pick(['gender'])
+const schema = oriSchema({ emailOrPhone: true }).pick([
+  'gender',
+  'age',
+  'email',
+  'dialingCode',
+  'phone',
+])
 
 const Quiz = () => {
   const classes = useStyle()
@@ -101,9 +120,17 @@ const Quiz = () => {
             errors,
             touched,
             isSubmitting,
+            setFieldTouched,
           } = props
 
+          const isError = (field) => touched[field] && Boolean(errors[field])
+          const errorText = (field) => (
+            <FormHelperText>{touched[field] && errors[field]}</FormHelperText>
+          )
+
           const handleStartQuiz = () => {
+            setFieldTouched('gender')
+            setFieldTouched('age')
             if (values.gender && values.age) setStep(1)
           }
 
@@ -138,48 +165,61 @@ const Quiz = () => {
                           雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
                         </Typography>
                       </Box>
-                      <FormControl component='fieldset'>
-                        <Typography variant='subtitle2' color='primary'>
-                          性別
-                        </Typography>
-                        <RadioGroup
-                          name='gender'
-                          value={values.gender}
-                          onChange={handleChange}
-                          row
+                      <Box mb={4}>
+                        <FormControl
+                          component='fieldset'
+                          error={isError('gender')}
+                          required
                         >
-                          <FormControlLabel
-                            value='男'
-                            control={<GenderRadio />}
-                          />
-                          <FormControlLabel
-                            value='女'
-                            control={<GenderRadio />}
-                          />
-                        </RadioGroup>
-                      </FormControl>
-                      <FormControl variant='outlined'>
-                        <InputLabel shrink>Age</InputLabel>
-                        <Select
-                          labelId='age-select-label'
-                          id='age-type-select'
-                          name='age'
-                          label='age'
-                          value={values.age}
-                          onChange={handleChange}
-                          placeholder='请选择'
-                        >
-                          <MenuItem value=''>请选择</MenuItem>
-                          <MenuItem value='0'>1~10</MenuItem>
-                          <MenuItem value='1'>11~20</MenuItem>
-                          <MenuItem value='2'>21~30</MenuItem>
-                          <MenuItem value='3'>31~40</MenuItem>
-                          <MenuItem value='4'>41~50</MenuItem>
-                          <MenuItem value='5'>51~60</MenuItem>
-                          <MenuItem value='6'>61~70</MenuItem>
-                          <MenuItem value='7'>71~80</MenuItem>
-                        </Select>
-                      </FormControl>
+                          <EFormLabel className={classes.label}>
+                            性別
+                          </EFormLabel>
+                          <RadioGroup
+                            name='gender'
+                            value={values.gender}
+                            onChange={handleChange}
+                            row
+                          >
+                            <FormControlLabel
+                              className={classes.genderLabel}
+                              value='男'
+                              control={<GenderRadio />}
+                            />
+                            <FormControlLabel
+                              className={classes.genderLabel}
+                              value='女'
+                              control={<GenderRadio />}
+                            />
+                          </RadioGroup>
+                          {errorText('gender')}
+                        </FormControl>
+                      </Box>
+                      <Box mb={5.75}>
+                        <FormControl required error={isError('age')}>
+                          <EFormLabel className={classes.label}>
+                            年齡
+                          </EFormLabel>
+                          <Select
+                            labelId='age-select-label'
+                            id='age-type-select'
+                            name='age'
+                            value={values.age}
+                            onChange={handleChange}
+                            input={<EInputBase />}
+                          >
+                            <MenuItem value='' disabled>
+                              请选择
+                            </MenuItem>
+                            {AGES.map((age) => (
+                              <MenuItem key={age} value={age}>
+                                {age}
+                              </MenuItem>
+                            ))}
+                          </Select>
+                          {errorText('age')}
+                        </FormControl>
+                      </Box>
+
                       <Button
                         variant='contained'
                         color='secondary'
@@ -236,7 +276,6 @@ const Quiz = () => {
                                   labelPlacement='end'
                                 />
                               </RadioGroup>
-                              <FormHelperText>error</FormHelperText>
                             </FormControl>
                           )
                       )
@@ -296,20 +335,23 @@ const Quiz = () => {
                       onChange={handleChange}
                     />
                     或
-                    <FormControl variant='outlined'>
+                    <FormControl>
                       <Select
-                        labelId='dialing-select-label'
-                        id='age-type-select'
-                        name='dialing'
-                        label='dialing'
-                        value={values.dialing}
+                        labelId='dialing-code-select-label'
+                        id='dialing-code-type-select'
+                        name='dialingCode'
+                        label='dialingCode'
+                        value={values.dialingCode}
                         onChange={handleChange}
                         placeholder='请选择'
                       >
                         <MenuItem value=''>请选择</MenuItem>
-                        {DIALING_CODES.map((dialing) => (
-                          <MenuItem value={dialing.value} key={dialing.value}>
-                            {dialing.label}
+                        {DIALING_CODES.map((dialingCode) => (
+                          <MenuItem
+                            value={dialingCode.value}
+                            key={dialingCode.value}
+                          >
+                            {dialingCode.label}
                           </MenuItem>
                         ))}
                       </Select>

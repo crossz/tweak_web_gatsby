@@ -185,7 +185,7 @@ const initialValues = {
   message: '',
 }
 
-const schema = oriSchema.pick([
+const schema = oriSchema().pick([
   'companyName',
   'message',
   'dialingCode',
