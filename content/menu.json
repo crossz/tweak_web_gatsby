@@ -15,13 +15,13 @@
         "path": "/whats-new/health-tips"
       },
       {
-        "title": "最新動態",
+        "title": "Take2 Health最新動態",
         "path": "/whats-new/updates"
       }
     ]
   },
   {
-    "title": "創新技術",
+    "title": "革新技術",
     "banner": "technologies_section_banner",
     "mobileBanner": "technologies_section_banner_mobile",
     "path": "/our-technologies/",
