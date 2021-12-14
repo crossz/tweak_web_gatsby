@@ -58,8 +58,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: 'auto',
       lineHeight: 1.5,
-      fontSize: 6,
       marginBottom: theme.spacing(-3),
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 6,
+      color: theme.palette.primary.main,
     },
   },
   btnWrapper: {

@@ -116,9 +116,32 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-
   accordionSummaryContent: {
     flexGrow: 1,
+  },
+  accordionDetailsRoot: {
+    paddingTop: 0,
+    paddingBottom: 0,
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(3),
+    },
+  },
+  menuWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    maxHeight: theme.spacing(36),
+    [theme.breakpoints.down('xs')]: {
+      maxHeight: 'none',
+    },
+  },
+  menuItem: {
+    width: `calc(100% / 3)`,
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      marginBottom: 0,
+    },
   },
 }))
 
@@ -159,7 +182,7 @@ const Footer = () => {
       <Container className={classes.container} maxWidth='md'>
         <GoToTop></GoToTop>
         <Grid container>
-          <Grid className={classes.infoWrapper} item xs={12} sm={4} md={5}>
+          <Grid className={classes.infoWrapper} item xs={12} sm={3} md={4}>
             <Box width={matches ? 100 : 145}>
               <StaticImage
                 src='../../assets/images/common/take2_white_orange.png'
@@ -187,75 +210,78 @@ const Footer = () => {
               <SocialLinks></SocialLinks>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={8} md={7}>
-            <ImageList className={classes.imageList} cols={matches ? 1 : 3}>
-              {menu?.map(
-                (item, index) =>
-                  index < menu?.length - 1 && (
-                    <EAccordion
-                      expanded={!matches || item.path === panel}
-                      square
-                      key={item.title}
-                      onChange={handleChange(
-                        !matches || !(item.sections && item.sections?.length)
-                          ? ''
-                          : item.path
-                      )}
+          <Grid item xs={12} sm={9} md={8}>
+            <Box className={classes.menuWrapper}>
+              {menu?.map((item, index) => (
+                <Box className={classes.menuItem}>
+                  <EAccordion
+                    expanded={!matches || item.path === panel}
+                    square
+                    key={item.title}
+                    onChange={handleChange(
+                      !matches || !(item.sections && item.sections?.length)
+                        ? ''
+                        : item.path
+                    )}
+                  >
+                    <EAccordionSummary
+                      expandIcon={
+                        matches &&
+                        item.sections &&
+                        item.sections?.length && (
+                          <ArrowIcon className={classes.arrowIcon} />
+                        )
+                      }
+                      aria-controls='panel1a-content'
+                      id='panel1a-header'
+                      classes={{
+                        root: classes.accordionSummaryRoot,
+                        content: classes.accordionSummaryContent,
+                      }}
                     >
-                      <EAccordionSummary
-                        expandIcon={
-                          matches &&
-                          item.sections &&
-                          item.sections?.length && (
-                            <ArrowIcon className={classes.arrowIcon} />
-                          )
-                        }
-                        aria-controls='panel1a-content'
-                        id='panel1a-header'
-                        classes={{
-                          root: classes.accordionSummaryRoot,
-                          content: classes.accordionSummaryContent,
-                        }}
-                      >
-                        {!(item.sections && item.sections?.length) ? (
-                          <Link className={classes.link} to={item.path}>
-                            <Box
-                              fontSize='body1.fontSize'
-                              fontWeight='fontWeightBold'
-                            >
-                              {item.title}
-                            </Box>
-                          </Link>
-                        ) : (
+                      {!(item.sections && item.sections?.length) ? (
+                        <Link className={classes.link} to={item.path}>
                           <Box
                             fontSize='body1.fontSize'
                             fontWeight='fontWeightBold'
                           >
                             {item.title}
                           </Box>
-                        )}
-                      </EAccordionSummary>
-                      {item.sections && item.sections?.length && (
-                        <EAccordionDetails>
-                          <Typography variant='body1' component='div'>
-                            {item.sections.map((tab) => (
-                              <Box
-                                fontSize='body2.fontSize'
-                                mb={1}
-                                key={tab.title}
-                              >
-                                <Link to={tab.path} className={classes.link}>
-                                  {tab.title}
-                                </Link>
-                              </Box>
-                            ))}
-                          </Typography>
-                        </EAccordionDetails>
+                        </Link>
+                      ) : (
+                        <Box
+                          fontSize='body1.fontSize'
+                          fontWeight='fontWeightBold'
+                        >
+                          {item.title}
+                        </Box>
                       )}
-                    </EAccordion>
-                  )
-              )}
-            </ImageList>
+                    </EAccordionSummary>
+                    {item.sections && item.sections?.length && (
+                      <EAccordionDetails
+                        classes={{
+                          root: classes.accordionDetailsRoot,
+                        }}
+                      >
+                        <Typography variant='body1' component='div'>
+                          {item.sections.map((tab) => (
+                            <Box
+                              fontSize='body2.fontSize'
+                              mt={1}
+                              key={tab.title}
+                            >
+                              <Link to={tab.path} className={classes.link}>
+                                {tab.title}
+                              </Link>
+                            </Box>
+                          ))}
+                        </Typography>
+                      </EAccordionDetails>
+                    )}
+                  </EAccordion>
+                </Box>
+              ))}
+            </Box>
           </Grid>
         </Grid>
         <CopyRights></CopyRights>
