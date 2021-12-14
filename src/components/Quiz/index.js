@@ -3,7 +3,7 @@ import { Formik, FieldArray } from 'formik'
 import { throttle } from 'lodash-es'
 import { oriSchema } from '@utils/schema'
 import { StaticImage } from 'gatsby-plugin-image'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, alpha } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import { DIALING_CODES } from '@utils/constant'
@@ -20,8 +20,6 @@ import Radio from '@material-ui/core/Radio'
 import Typography from '@material-ui/core/Typography'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
-import MaleIcon from '@images/icons/male.svg'
-import FemaleIcon from '@images/icons/female.svg'
 import GenderRadio from './GenderRadio'
 
 const useStyle = makeStyles((theme) => ({
@@ -49,7 +47,7 @@ const useStyle = makeStyles((theme) => ({
 }))
 
 const initialValues = {
-  gender: '0',
+  gender: '男',
   age: '',
   quiz: [
     { label: 'quiz1', value: '' },
@@ -151,24 +149,12 @@ const Quiz = () => {
                           row
                         >
                           <FormControlLabel
-                            value='0'
-                            control={
-                              <GenderRadio
-                                icon={<MaleIcon />}
-                                checkedIcon={<MaleIcon />}
-                              />
-                            }
-                            label='男性'
+                            value='男'
+                            control={<GenderRadio />}
                           />
                           <FormControlLabel
-                            value='1'
-                            control={
-                              <GenderRadio
-                                icon={<FemaleIcon color='primary' />}
-                                checkedIcon={<FemaleIcon color='primary' />}
-                              />
-                            }
-                            label='女性'
+                            value='女'
+                            control={<GenderRadio />}
                           />
                         </RadioGroup>
                       </FormControl>

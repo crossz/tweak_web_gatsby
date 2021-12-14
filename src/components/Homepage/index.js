@@ -7,7 +7,7 @@ import Consult from './Consult'
 import Banner from './Banner'
 import TitleDot from '@themes/components/TitleDot'
 import Typography from '@material-ui/core/Typography'
-// import Quiz from '@components/Quiz'
+import Quiz from '@components/Quiz'
 // import PromotionList from './PromotionList'
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ const Homepage = ({ promotionNodes }) => {
     <>
       <Banner></Banner>
       <Container className={classes.root} maxWidth='md'>
-        {/* <Quiz></Quiz> */}
+        <Quiz></Quiz>
         {/* <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>

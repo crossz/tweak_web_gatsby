@@ -213,11 +213,10 @@ const Footer = () => {
           <Grid item xs={12} sm={9} md={8}>
             <Box className={classes.menuWrapper}>
               {menu?.map((item, index) => (
-                <Box className={classes.menuItem}>
+                <Box className={classes.menuItem} key={item.title}>
                   <EAccordion
                     expanded={!matches || item.path === panel}
                     square
-                    key={item.title}
                     onChange={handleChange(
                       !matches || !(item.sections && item.sections?.length)
                         ? ''
