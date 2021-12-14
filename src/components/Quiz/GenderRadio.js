@@ -32,7 +32,6 @@ const useStyle = makeStyles((theme) => ({
 }))
 
 const GenderRadio = (props) => {
-  console.log('propr', props.value)
   const classes = useStyle()
 
   const GenderIcon =

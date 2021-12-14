@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Formik, FieldArray } from 'formik'
 import { throttle } from 'lodash-es'
 import { oriSchema } from '@utils/schema'
 import { StaticImage } from 'gatsby-plugin-image'
-import { makeStyles, alpha } from '@material-ui/core'
+import { makeStyles, alpha, Container } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import { DIALING_CODES } from '@utils/constant'
@@ -21,7 +21,9 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
 import { EInputBase, EFormLabel } from '@themes/components/ETextField'
-import { AGES } from '@utils/constant'
+import { AGES, QUIZ } from '@utils/constant'
+import FlagIcon from '@images/icons/flag.svg'
+import classnames from 'classnames'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -30,7 +32,7 @@ const useStyle = makeStyles((theme) => ({
     display: 'grid',
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(15),
-    // overflow: 'hidden',
+    color: theme.palette.primary.main,
   },
   quizBg: {
     gridArea: '1/1',
@@ -39,6 +41,8 @@ const useStyle = makeStyles((theme) => ({
     gridArea: '1/1',
     display: 'grid',
     position: 'relative',
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(10),
   },
   quizLeft: {
     display: 'flex',
@@ -57,19 +61,50 @@ const useStyle = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+  quizWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  progress: {
+    position: 'relative',
+  },
+  progressValue: {
+    transition: `0.5s ease-out`,
+    fontWeight: theme.typography.fontWeightBold,
+    fontSize: theme.typography.body1.fontSize,
+    marginLeft: theme.spacing(-3),
+    marginBottom: theme.spacing(1),
+  },
+  progressEnd: {
+    opacity: 0,
+  },
+  linearProgressInfo: {
+    position: 'relative',
+  },
+  flagIcon: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+  },
+  linearProgressRoot: {
+    borderRadius: 5,
+    backgroundColor: alpha(theme.palette.primary.main, 0.1),
+  },
+  linearProgressBar: {
+    borderRadius: 5,
+  },
 }))
 
 const initialValues = {
   gender: '',
   age: '',
-  quiz: [
-    { label: 'quiz1', value: '' },
-    { label: 'quiz2', value: '' },
-    { label: 'quiz3', value: '' },
-    { label: 'quiz4', value: '' },
-    { label: 'quiz5', value: '' },
-    { label: 'quiz6', value: '' },
-  ],
+  quiz: QUIZ.map((quiz, index) => {
+    return {
+      label: `quiz${index + 1}`,
+      value: '',
+    }
+  }),
   email: '',
   phone: '',
   dialingCode: '',
@@ -84,11 +119,16 @@ const schema = oriSchema({ emailOrPhone: true }).pick([
 
 const Quiz = () => {
   const classes = useStyle()
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(1)
+  const [finishQuiz, setFinishQuiz] = useState(false)
+  const progressValue = useMemo(
+    () => Math.round(((step - 1) / QUIZ.length) * 100),
+    [step]
+  )
 
   return (
     <Box className={classes.root}>
-      {step > 0 && step <= initialValues?.quiz?.length ? (
+      {step > 0 && step <= QUIZ.length ? (
         <StaticImage
           className={classes.quizBg}
           layout='fullWidth'
@@ -138,7 +178,14 @@ const Quiz = () => {
             setStep((oldValue) => Math.max(oldValue - 1, 1))
 
           const handleQuizNext = () =>
-            setStep((oldValue) => Math.min(oldValue + 1, 7))
+            setStep((oldValue) => {
+              if (oldValue >= QUIZ.length)
+                setTimeout(() => {
+                  setFinishQuiz(true)
+                }, 1500)
+              return Math.min(oldValue + 1, QUIZ.length + 1)
+            })
+
           return (
             <form onSubmit={handleSubmit} className={classes.formRoot}>
               {step === 0 && (
@@ -231,79 +278,93 @@ const Quiz = () => {
                   </Grid>
                 </Grid>
               )}
-              {step > 0 && step <= 6 && (
-                <>
-                  <Box display='flex' alignItems='center'>
+              {step > 0 && !finishQuiz && step <= QUIZ.length + 1 && (
+                <Container
+                  className={classes.quizWrapper}
+                  disableGutters
+                  maxWidth='sm'
+                >
+                  <Box width='100%' display='flex' alignItems='center'>
                     <Box width='100%' mr={1}>
+                      <Box className={classes.linearProgressInfo}>
+                        <Box
+                          className={classnames(
+                            classes.progressValue,
+                            step - 1 === QUIZ.length && classes.progressEnd
+                          )}
+                          style={{
+                            transform: `translateX(${progressValue}%)`,
+                          }}
+                        >
+                          {progressValue}%
+                        </Box>
+                        <FlagIcon className={classes.flagIcon}></FlagIcon>
+                      </Box>
                       <LinearProgress
+                        classes={{
+                          root: classes.linearProgressRoot,
+                          bar: classes.linearProgressBar,
+                        }}
+                        color='primary'
                         variant='determinate'
-                        value={(step / values?.quiz?.length) * 100}
+                        value={progressValue}
                       />
-                    </Box>
-                    <Box minWidth={35}>
-                      <Typography
-                        variant='body2'
-                        color='textSecondary'
-                      >{`${Math.round(
-                        (step / values?.quiz?.length) * 100
-                      )}%`}</Typography>
                     </Box>
                   </Box>
                   <FieldArray name='quiz'>
                     {() =>
-                      values?.quiz?.length &&
-                      values.quiz.map(
+                      QUIZ.length &&
+                      values?.quiz?.map(
                         (item, index) =>
                           index + 1 === step && (
                             <FormControl key={index} component='fieldset'>
-                              <FormLabel>{item.label}</FormLabel>
+                              <FormLabel>{QUIZ[index].question}</FormLabel>
                               <RadioGroup
                                 name={`quiz[${index}].value`}
                                 value={item.value}
                                 onChange={handleChange}
                                 row
                               >
-                                <FormControlLabel
-                                  value='0'
-                                  control={<Radio color='primary' />}
-                                  label='a1'
-                                  labelPlacement='end'
-                                />
-                                <FormControlLabel
-                                  value='1'
-                                  control={<Radio color='primary' />}
-                                  label='a2'
-                                  labelPlacement='end'
-                                />
+                                {QUIZ[index]?.answers?.map((answer) => (
+                                  <FormControlLabel
+                                    key={answer}
+                                    value={answer}
+                                    control={<Radio color='primary' />}
+                                    label={answer}
+                                    labelPlacement='end'
+                                  />
+                                ))}
                               </RadioGroup>
                             </FormControl>
                           )
                       )
                     }
                   </FieldArray>
-                  <Box display='flex'>
-                    {step !== 1 && (
-                      <Button
-                        variant='text'
-                        color='default'
-                        onClick={handleQuizBack}
-                      >
-                        返回上一题
-                      </Button>
-                    )}
-                    {step <= values.quiz.length && values.quiz[step - 1].value && (
-                      <Button
-                        variant='contained'
-                        color='secondary'
-                        onClick={handleQuizNext}
-                      >
-                        下一题
-                      </Button>
-                    )}
-                  </Box>
-                </>
+                  {step > 0 && step <= QUIZ.length && (
+                    <Box display='flex'>
+                      {step !== 1 && (
+                        <Button
+                          variant='text'
+                          color='default'
+                          onClick={handleQuizBack}
+                        >
+                          返回上一题
+                        </Button>
+                      )}
+                      {step <= QUIZ.length && values.quiz[step - 1].value && (
+                        <Button
+                          variant='contained'
+                          color='secondary'
+                          onClick={handleQuizNext}
+                        >
+                          下一题
+                        </Button>
+                      )}
+                    </Box>
+                  )}
+                </Container>
               )}
-              {step === 7 && (
+              {step === 7 && finishQuiz && (
                 <Grid container>
                   <Grid item xs={6}>
                     images

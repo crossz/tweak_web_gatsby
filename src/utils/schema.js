@@ -13,8 +13,8 @@ export const oriSchema = (props) => {
     companyName: yString().nullable().required('請輸入公司名稱/姓名'),
     message: yString().nullable(),
     dialingCode: yString().nullable().required(),
-    gender: yNumber().nullable().required('請選擇性別'),
-    age: yNumber().nullable().required('請選擇年齡'),
+    gender: yString().nullable().required('請選擇性別'),
+    age: yString().nullable().required('請選擇年齡'),
     quiz: yArray().of(yString()).length(QUIZ.length).required('請完成測驗'),
     birthday: yDate().nullable().required('請選擇出生日期'),
     email: yString()
