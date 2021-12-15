@@ -237,17 +237,21 @@ const ContactUs = () => {
   const handleTabChange = (event, newValue) => setActiveTab(newValue)
 
   const handleSubmit = async (values) => {
-    const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs/add`, {
-      method: 'POST',
-      body: JSON.stringify(values), // data can be `string` or {object}!
-      headers: new Headers({
-        'Content-Type': 'application/json',
-      }),
-    })
-    const resData = await res.json()
-    if (resData?.code !== 1000)
-      return Promise.reject(resData?.message || '提交失敗')
-    return
+    try {
+      const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs/add`, {
+        method: 'POST',
+        body: JSON.stringify(values), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
+      const resData = await res.json()
+      if (resData?.code !== 1000)
+        return Promise.reject(resData?.message || '提交失敗')
+      return
+    } catch (error) {
+      return Promise.reject('提交失敗')
+    }
   }
   const getHref = (type, link) => {
     switch (type) {
