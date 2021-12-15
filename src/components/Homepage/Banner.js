@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   staticImage: {
     gridArea: '1/1',
+    height: '100%',
   },
   wrapper: {
     position: 'relative',
@@ -78,7 +79,7 @@ const Banner = () => {
   const { platformUrl } = useSiteMetadata()
 
   return (
-    <Container disableGutters maxWidth='xl' className={classes.root}>
+    <Container disableGutters maxWidth='lg' className={classes.root}>
       {matches ? (
         <StaticImage
           className={classes.staticImage}
