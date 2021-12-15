@@ -79,9 +79,12 @@ theme = createTheme(theme, {
         padding: theme.spacing(2, 6),
         fontSize: theme.typography.body1.fontSize,
         fontWeight: theme.typography.fontWeightBold,
-        transition: theme.transitions.create('transform', {
-          duration: theme.transitions.duration.standard,
-        }),
+        transition: theme.transitions.create(
+          ['transform', 'background-color', 'color'],
+          {
+            duration: theme.transitions.duration.standard,
+          }
+        ),
       },
       text: {
         padding: theme.spacing(2, 6),
@@ -154,11 +157,16 @@ theme = createTheme(theme, {
         padding: theme.spacing(2, 6),
       },
       contained: {
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.palette.primary.contrastText,
         color: theme.palette.primary.main,
         boxShadow: 'none',
         '&:hover': {
           boxShadow: 'none',
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.primary.contrastText,
+          '& svg path': {
+            fill: theme.palette.primary.contrastText,
+          },
         },
       },
       containedPrimary: {

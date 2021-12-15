@@ -394,7 +394,7 @@ const ContactUs = () => {
                             placeholder={
                               isError('companyName')
                                 ? ''
-                                : '请输入公司名稱/姓名'
+                                : '請輸入公司名稱/姓名'
                             }
                             type='text'
                             endAdornment={<CancelButton field='companyName' />}
@@ -458,7 +458,7 @@ const ContactUs = () => {
                             margin='none'
                             value={values.email}
                             onChange={handleChange}
-                            placeholder={isError('email') ? '' : '请输入電郵'}
+                            placeholder={isError('email') ? '' : '請輸入電郵'}
                             endAdornment={<CancelButton field='email' />}
                           />
 

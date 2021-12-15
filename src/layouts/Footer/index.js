@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box'
 import useMenu from '@hooks/useMenu'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import PhoneIcon from '@images/icons/phone.svg'
+import WhatsappIcon from '@images/icons/whatsapp.svg'
 import EmailIcon from '@images/icons/mail.svg'
 import SocialLinks from '@layouts/SocialLinks'
 import {
@@ -122,6 +123,7 @@ const useStyles = makeStyles((theme) => ({
   accordionDetailsRoot: {
     paddingTop: 0,
     paddingBottom: 0,
+
     [theme.breakpoints.down('xs')]: {
       paddingBottom: theme.spacing(3),
     },
@@ -143,6 +145,12 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: 0,
     },
   },
+  lastMenuItem: {
+    marginTop: theme.spacing(3.5),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 0,
+    },
+  },
 }))
 
 const Footer = () => {
@@ -150,7 +158,7 @@ const Footer = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
-  const { email, phone } = useSiteMetadata()
+  const { email, phone, whatsapp, whatsappAccount } = useSiteMetadata()
   const [panel, setPanel] = useState('')
 
   const handleChange = (activePanel) => (e, isExpanded) =>
@@ -197,6 +205,12 @@ const Footer = () => {
                   {phone}
                 </Box>
               </a>
+              <a href={whatsapp} className={classes.link} target='_blank'>
+                <Box display='flex' mb={matches ? 1 : 1.5} alignItems='center'>
+                  <WhatsappIcon className={classes.infoIcon}></WhatsappIcon>
+                  {whatsappAccount}
+                </Box>
+              </a>
               <a mailto={`tel:${email}`} className={classes.link}>
                 <Box display='flex' alignItems='center'>
                   <EmailIcon className={classes.infoIcon}></EmailIcon>
@@ -213,7 +227,12 @@ const Footer = () => {
           <Grid item xs={12} sm={9} md={8}>
             <Box className={classes.menuWrapper}>
               {menu?.map((item, index) => (
-                <Box className={classes.menuItem}>
+                <Box
+                  className={classnames(
+                    classes.menuItem,
+                    index === menu.length - 1 && classes.lastMenuItem
+                  )}
+                >
                   <EAccordion
                     expanded={!matches || item.path === panel}
                     square
@@ -263,13 +282,9 @@ const Footer = () => {
                           root: classes.accordionDetailsRoot,
                         }}
                       >
-                        <Typography variant='body1' component='div'>
+                        <Typography variant='body2' component='div'>
                           {item.sections.map((tab) => (
-                            <Box
-                              fontSize='body2.fontSize'
-                              mt={1}
-                              key={tab.title}
-                            >
+                            <Box mt={1} key={tab.title}>
                               <Link to={tab.path} className={classes.link}>
                                 {tab.title}
                               </Link>
