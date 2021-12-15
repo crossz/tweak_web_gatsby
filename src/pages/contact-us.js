@@ -239,7 +239,7 @@ const ContactUs = () => {
   const handleSubmit = async (values) => {
     try {
       const res = await fetch(
-        `https://take2health.net/api/v1/app/contactUs/add`,
+        `http://1.13.159.75:28080/api/v1/app/contactUs/add`,
         {
           method: 'POST',
           body: JSON.stringify(values), // data can be `string` or {object}!
