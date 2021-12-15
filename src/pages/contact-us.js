@@ -238,13 +238,16 @@ const ContactUs = () => {
 
   const handleSubmit = async (values) => {
     try {
-      const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs/add`, {
-        method: 'POST',
-        body: JSON.stringify(values), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      })
+      const res = await fetch(
+        `https://take2health.net/api/v1/app/contactUs/add`,
+        {
+          method: 'POST',
+          body: JSON.stringify(values), // data can be `string` or {object}!
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        }
+      )
       const resData = await res.json()
       if (resData?.code !== 1000)
         return Promise.reject(resData?.message || '提交失敗')
