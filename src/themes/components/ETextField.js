@@ -1,8 +1,17 @@
-import { withStyles } from '@material-ui/core/styles'
+import React from 'react'
+import { withStyles, makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import FormLabel from '@material-ui/core/FormLabel'
-
+import Select from '@material-ui/core/Select'
 import { MOBILE_LABEL_WIDTH } from '../../utils/constant'
+
+const useStyle = makeStyles((theme) => ({
+  selectRoot: {
+    minWidth: theme.spacing(13.25),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+  },
+}))
 
 export const EInputBase = withStyles((theme) => ({
   root: {
@@ -15,7 +24,7 @@ export const EInputBase = withStyles((theme) => ({
     padding: theme.spacing(0.5, 1.5),
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     color: theme.palette.supporting.supporting03,
-    height: theme.spacing(5.5),
+    height: theme.spacing(7),
     '&:hover': {
       borderColor: theme.palette.primary.main,
     },
@@ -57,3 +66,18 @@ export const EFormLabel = withStyles((theme) => ({
     },
   },
 }))(FormLabel)
+
+export const ESelect = (props) => {
+  const classes = useStyle()
+  return (
+    <Select
+      classes={{
+        root: classes.selectRoot,
+      }}
+      input={<EInputBase />}
+      {...props}
+    >
+      {props.children}
+    </Select>
+  )
+}

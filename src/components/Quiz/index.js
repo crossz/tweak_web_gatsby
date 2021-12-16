@@ -20,7 +20,7 @@ import Typography from '@material-ui/core/Typography'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
-import { EInputBase, EFormLabel } from '@themes/components/ETextField'
+import { EInputBase, EFormLabel, ESelect } from '@themes/components/ETextField'
 import { AGES, QUIZ } from '@utils/constant'
 import FlagIcon from '@images/icons/flag.svg'
 import classnames from 'classnames'
@@ -33,6 +33,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(15),
     color: theme.palette.primary.main,
+    overflow: 'hidden',
   },
   quizBg: {
     gridArea: '1/1',
@@ -246,13 +247,12 @@ const Quiz = () => {
                           <EFormLabel className={classes.label}>
                             年齡
                           </EFormLabel>
-                          <Select
+                          <ESelect
                             labelId='age-select-label'
                             id='age-type-select'
                             name='age'
                             value={values.age}
                             onChange={handleChange}
-                            input={<EInputBase />}
                           >
                             <MenuItem value='' disabled>
                               请选择
@@ -262,7 +262,7 @@ const Quiz = () => {
                                 {age}
                               </MenuItem>
                             ))}
-                          </Select>
+                          </ESelect>
                           {errorText('age')}
                         </FormControl>
                       </Box>
@@ -397,7 +397,7 @@ const Quiz = () => {
                     />
                     或
                     <FormControl>
-                      <Select
+                      <ESelect
                         labelId='dialing-code-select-label'
                         id='dialing-code-type-select'
                         name='dialingCode'
@@ -415,7 +415,7 @@ const Quiz = () => {
                             {dialingCode.label}
                           </MenuItem>
                         ))}
-                      </Select>
+                      </ESelect>
                     </FormControl>
                     <TextField
                       variant='outlined'

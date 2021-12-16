@@ -21,7 +21,7 @@ export const oriSchema = (props) => {
       .nullable()
       .email('請輸入正確格式')
       .when('phone', (arg, schema) => {
-        if (props.emailOrPhone) return schema.notRequired()
+        if (props?.emailOrPhone) return schema.notRequired()
         return schema.required('請輸入電郵')
       }),
     phone: yString()

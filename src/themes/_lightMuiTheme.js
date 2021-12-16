@@ -180,7 +180,6 @@ theme = createTheme(theme, {
       select: {
         color: theme.palette.primary.main,
         fontWeight: theme.typography.fontWeightBold,
-        minWidth: theme.spacing(10),
         '&:focus': {
           backgroundColor: 'transparent',
         },

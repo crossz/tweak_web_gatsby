@@ -14,8 +14,8 @@ const useStyle = makeStyles((theme) => ({
     fontSize: theme.typography.body1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.primary.main,
-    padding: theme.spacing(1),
-    paddingRight: theme.spacing(3.25),
+    padding: theme.spacing(1.375),
+    paddingRight: theme.spacing(3.125),
     boxSizing: 'border-box',
   },
   checked: {
