@@ -15,6 +15,9 @@ const useStyle = makeStyles((theme) => ({
     height: 78,
     justifyContent: 'flex-start',
     paddingLeft: theme.spacing(4),
+    '&:hover': {
+      backgroundColor: alpha('#0CBFE6', 0.1),
+    },
     '&$checked': {
       color: theme.palette.primary.contrastText,
       '&:hover': {

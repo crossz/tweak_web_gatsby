@@ -18,6 +18,7 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
 import QuizRadio from './QuizRadio'
+import SliderRadio from './SliderRadio'
 import { EFormLabel, ESelect } from '@themes/components/ETextField'
 import { AGES, QUIZ } from '@utils/constant'
 import { padStartNum } from '@utils'
@@ -177,7 +178,7 @@ const schema = oriSchema({ emailOrPhone: true }).pick([
 
 const Quiz = () => {
   const classes = useStyle()
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(6)
   const [finishQuiz, setFinishQuiz] = useState(false)
   const progressValue = useMemo(
     () => Math.round(((step - 1) / QUIZ.length) * 100),
@@ -225,7 +226,6 @@ const Quiz = () => {
           const errorText = (field) => (
             <FormHelperText>{touched[field] && errors[field]}</FormHelperText>
           )
-          console.log('values', values)
           const handleStartQuiz = () => {
             setFieldTouched('gender')
             setFieldTouched('age')
@@ -243,6 +243,9 @@ const Quiz = () => {
                 }, 1500)
               return Math.min(oldValue + 1, QUIZ.length + 1)
             })
+          const handleSliderChange = (e, value) => {
+            return handleChange(e, value)
+          }
 
           return (
             <form onSubmit={handleSubmit} className={classes.formRoot}>
@@ -372,8 +375,7 @@ const Quiz = () => {
                       QUIZ.length &&
                       values?.quiz?.map(
                         (item, index) =>
-                          index + 1 === step &&
-                          (QUIZ[index]?.type === 'slider' ? null : (
+                          index + 1 === step && (
                             <FormControl key={index} component='fieldset'>
                               <Box className={classes.quizTitle}>
                                 <Box
@@ -390,28 +392,36 @@ const Quiz = () => {
                                 </Box>
                                 <Box>{QUIZ[index].question}</Box>
                               </Box>
-                              <RadioGroup
-                                className={classes.quizRadioWrapper}
-                                name={`quiz[${index}].value`}
-                                value={item.value}
-                                onChange={handleChange}
-                                row
-                              >
-                                {QUIZ[index]?.answers?.map(
-                                  (answer, answerIndex) => (
-                                    <FormControlLabel
-                                      className={classes.quizRadioLabel}
-                                      key={answer}
-                                      value={answer}
-                                      control={
-                                        <QuizRadio index={answerIndex} />
-                                      }
-                                    />
-                                  )
-                                )}
-                              </RadioGroup>
+                              {QUIZ[index]?.type === 'slider' ? (
+                                <SliderRadio
+                                  name={`quiz[${index}].value`}
+                                  answers={QUIZ[index]?.answers}
+                                  onChange={handleChange}
+                                />
+                              ) : (
+                                <RadioGroup
+                                  className={classes.quizRadioWrapper}
+                                  name={`quiz[${index}].value`}
+                                  value={item.value}
+                                  onChange={handleChange}
+                                  row
+                                >
+                                  {QUIZ[index]?.answers?.map(
+                                    (answer, answerIndex) => (
+                                      <FormControlLabel
+                                        className={classes.quizRadioLabel}
+                                        key={answer}
+                                        value={answer}
+                                        control={
+                                          <QuizRadio index={answerIndex} />
+                                        }
+                                      />
+                                    )
+                                  )}
+                                </RadioGroup>
+                              )}
                             </FormControl>
-                          ))
+                          )
                       )
                     }
                   </FieldArray>
