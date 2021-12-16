@@ -8,18 +8,16 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
-import FormLabel from '@material-ui/core/FormLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import RadioGroup from '@material-ui/core/RadioGroup'
-import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Grid from '@material-ui/core/Grid'
-import Radio from '@material-ui/core/Radio'
 import Typography from '@material-ui/core/Typography'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
+import QuizRadio from './QuizRadio'
 import { EFormLabel, ESelect } from '@themes/components/ETextField'
 import { AGES, QUIZ } from '@utils/constant'
 import { padStartNum } from '@utils'
@@ -189,7 +187,7 @@ const Quiz = () => {
           const errorText = (field) => (
             <FormHelperText>{touched[field] && errors[field]}</FormHelperText>
           )
-
+          console.log('values', values)
           const handleStartQuiz = () => {
             setFieldTouched('gender')
             setFieldTouched('age')
@@ -207,12 +205,6 @@ const Quiz = () => {
                 }, 1500)
               return Math.min(oldValue + 1, QUIZ.length + 1)
             })
-
-          const RadioButton = (params) => (
-            <Button variant='contained' color='primary' {...params}>
-              {params.children}
-            </Button>
-          )
 
           return (
             <form onSubmit={handleSubmit} className={classes.formRoot}>
@@ -257,12 +249,12 @@ const Quiz = () => {
                           >
                             <FormControlLabel
                               className={classes.genderLabel}
-                              value='男'
+                              value='男性'
                               control={<GenderRadio />}
                             />
                             <FormControlLabel
                               className={classes.genderLabel}
-                              value='女'
+                              value='女性'
                               control={<GenderRadio />}
                             />
                           </RadioGroup>
@@ -370,14 +362,7 @@ const Quiz = () => {
                                   <FormControlLabel
                                     key={answer}
                                     value={answer}
-                                    control={
-                                      <RadioButton
-                                        variant='contained'
-                                        color='primary'
-                                      >
-                                        {answer}
-                                      </RadioButton>
-                                    }
+                                    control={<QuizRadio />}
                                   />
                                 ))}
                               </RadioGroup>

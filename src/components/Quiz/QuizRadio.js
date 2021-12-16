@@ -2,14 +2,11 @@ import React from 'react'
 import Radio from '@material-ui/core/Radio'
 import Box from '@material-ui/core/Box'
 import { makeStyles, alpha } from '@material-ui/core'
-import MaleIcon from '@images/icons/male.svg'
-import FemaleIcon from '@images/icons/female.svg'
 
 const useStyle = makeStyles((theme) => ({
   root: {
-    border: `1px solid #E8E8E8`,
-    borderRadius: theme.spacing(1.25),
-    backgroundColor: alpha(theme.palette.background.paper, 0.5),
+    borderRadius: theme.spacing(0.75),
+    backgroundColor: theme.palette.background.paper,
     transition: 'transform 0.3s ease',
     fontSize: theme.typography.body1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
@@ -17,12 +14,17 @@ const useStyle = makeStyles((theme) => ({
     padding: theme.spacing(1.375),
     paddingRight: theme.spacing(3.125),
     boxSizing: 'border-box',
+    width: 178,
+    height: 78,
+    '&:hover': {
+      backgroundColor: alpha('#0CBFE6', 0.1),
+    },
   },
   checked: {
-    border: `3px solid ${theme.palette.primary.main}`,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#0CBFE6',
     transform: `translateY(-6px)`,
-    boxShadow: `0 2px 10px 0 ${alpha(theme.palette.common.black, 0.15)}`,
+    boxShadow: `0px 5px 20px rgba(109, 209, 255, 0.4)`,
+    color: theme.palette.primary.contrastText,
   },
   icon: {
     width: theme.spacing(4.25),
@@ -31,21 +33,10 @@ const useStyle = makeStyles((theme) => ({
   },
 }))
 
-const GenderRadio = (props) => {
+const QuizRadio = (props) => {
   const classes = useStyle()
 
-  const RadioIcon = () =>
-    props.value === '男性' ? (
-      <>
-        <MaleIcon className={classes.icon} />
-        <Box>{props.value}</Box>
-      </>
-    ) : (
-      <>
-        <FemaleIcon className={classes.icon} />
-        <Box>{props.value}</Box>
-      </>
-    )
+  const RadioIcon = () => props.value
 
   return (
     <Radio
@@ -58,4 +49,4 @@ const GenderRadio = (props) => {
   )
 }
 
-export default GenderRadio
+export default QuizRadio

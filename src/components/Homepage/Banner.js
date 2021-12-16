@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
   staticImage: {
     gridArea: '1/1',
-    height: 'calc((877 / 1440) * 100vw)',
-    minHeight: 877,
+    // height: 'calc((877 / 1440) * 100vw)',
+    height: 877,
     [theme.breakpoints.down('xs')]: {
       minHeight: 'auto',
       height: 'calc((502 / 375) * 100vw)',
@@ -87,6 +87,7 @@ const Banner = () => {
           // This is a presentational image, so the alt should be an empty string
           alt='Homepage'
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
+          objectPosition='center top'
           src={'../../assets/images/homepage_banner_mobile.jpg'}
           formats={['auto', 'webp', 'avif']}
         />
@@ -98,7 +99,7 @@ const Banner = () => {
           // aspectRatio={3 / 1}
           // This is a presentational image, so the alt should be an empty string
           alt='Homepage'
-          objectFit='cover'
+          objectPosition='center top'
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
           src={'../../assets/images/homepage_banner.jpg'}
         />
