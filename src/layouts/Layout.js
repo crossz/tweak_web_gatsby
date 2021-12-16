@@ -3,10 +3,15 @@ import Header from './Header'
 import Footer from './Footer'
 import SectionBanner from './SectionBanner'
 import { makeStyles } from '@material-ui/core'
+import { useMatch } from '@reach/router'
+import Seo from './Seo'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: ({ greyBg }) =>
+      greyBg
+        ? theme.palette.background.default
+        : theme.palette.background.paper,
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
@@ -14,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Layout = ({ children }) => {
-  const classes = useStyles()
+  const isContactUsPage = useMatch('/contact-us/')
+  const classes = useStyles({ greyBg: isContactUsPage })
 
   return (
     <main id='main' className={classes.root}>

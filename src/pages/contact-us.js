@@ -29,6 +29,8 @@ import ImageListItem from '@material-ui/core/ImageListItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import classnames from 'classnames'
 import InputAdornment from '@material-ui/core/InputAdornment'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import { toast } from 'react-toastify'
 
 import CancelIcon from '@images/icons/cancel.svg'
 
@@ -198,6 +200,7 @@ const ContactUs = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [activeTab, setActiveTab] = useState(0)
+  const [loading, setLoading] = useState(false)
   const { whatsapp, email, phone, messenger } = useSiteMetadata()
 
   const contactTypes = [
@@ -234,14 +237,21 @@ const ContactUs = () => {
   const handleTabChange = (event, newValue) => setActiveTab(newValue)
 
   const handleSubmit = async (values) => {
-    const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs`, {
-      method: 'POST',
-      // body: JSON.stringify(values), // data can be `string` or {object}!
-      // headers: new Headers({
-      //   'Content-Type': 'application/json',
-      // }),
-    })
-    const resultData = await res.json()
+    try {
+      const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs/add`, {
+        method: 'POST',
+        body: JSON.stringify(values), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
+      const resData = await res.json()
+      if (resData?.code !== 1000)
+        return Promise.reject(resData?.message || '提交失敗')
+      return
+    } catch (error) {
+      return Promise.reject('提交失敗')
+    }
   }
   const getHref = (type, link) => {
     switch (type) {
@@ -334,11 +344,15 @@ const ContactUs = () => {
                 initialValues={initialValues}
                 validationSchema={schema}
                 onSubmit={throttle(async (values) => {
+                  if (loading) return
                   try {
+                    setLoading(true)
                     await handleSubmit(values)
+                    toast.success('已成功提交')
                   } catch (error) {
-                    console.log('error')
+                    toast.error(error)
                   }
+                  setLoading(false)
                 }, 1000)}
               >
                 {(props) => {
@@ -394,7 +408,7 @@ const ContactUs = () => {
                             placeholder={
                               isError('companyName')
                                 ? ''
-                                : '请输入公司名稱/姓名'
+                                : '請輸入公司名稱/姓名'
                             }
                             type='text'
                             endAdornment={<CancelButton field='companyName' />}
@@ -458,7 +472,7 @@ const ContactUs = () => {
                             margin='none'
                             value={values.email}
                             onChange={handleChange}
-                            placeholder={isError('email') ? '' : '请输入電郵'}
+                            placeholder={isError('email') ? '' : '請輸入電郵'}
                             endAdornment={<CancelButton field='email' />}
                           />
 
@@ -490,7 +504,11 @@ const ContactUs = () => {
                         variant='contained'
                         color='secondary'
                       >
-                        提交
+                        {loading ? (
+                          <CircularProgress color='inherit' size={24} />
+                        ) : (
+                          '提交'
+                        )}
                       </Button>
                     </form>
                   )

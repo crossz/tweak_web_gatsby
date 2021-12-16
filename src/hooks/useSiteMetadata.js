@@ -9,6 +9,7 @@ const useSiteMetadata = () => {
           siteUrl
           platformUrl
           description
+          whatsappAccount
           whatsapp
           linkedin
           youtube

@@ -4,6 +4,7 @@ module.exports = {
     title: 'Take2 Prophecy',
     description: 'Details of Take2 Prophecy',
     messenger: 'https://www.facebook.com/messages/t/100757495628023',
+    whatsappAccount: '(852) 5377 0823',
     whatsapp:
       'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0',
     facebook: 'https://www.facebook.com/take2health.ltd',
@@ -12,7 +13,7 @@ module.exports = {
     campaignPage: 'https://take2health.net/whats-new/campaign/',
     platformUrl: 'https://take2health.net/health-platform',
     email: 'info@take2.health',
-    phone: '+852 3613 0533',
+    phone: '(852) 3613 0533',
   },
   plugins: [
     {
