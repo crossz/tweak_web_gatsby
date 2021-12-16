@@ -15,7 +15,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Checkbox from '@material-ui/core/Checkbox'
-import Link from '@material-ui/core/Link'
+import { Link as MuiLink } from '@material-ui/core'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
@@ -31,6 +31,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
 import CancelIcon from '@images/icons/cancel.svg'
+import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -57,7 +58,7 @@ const useStyle = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  quizLeftRight: {
+  quizRight: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -193,6 +194,13 @@ const useStyle = makeStyles((theme) => ({
       fill: theme.palette.grey[400],
     },
   },
+  link: {
+    textDecoration: 'underline',
+  },
+  platformLink: {
+    textDecoration: 'underline',
+    marginLeft: theme.spacing(4),
+  },
 }))
 
 const initialValues = {
@@ -220,8 +228,10 @@ const schema = oriSchema({ emailOrPhone: true }).pick([
 
 const Quiz = () => {
   const classes = useStyle()
-  const [step, setStep] = useState(7)
-  const [finishQuiz, setFinishQuiz] = useState(true)
+  const [step, setStep] = useState(0)
+  const [finishQuiz, setFinishQuiz] = useState(false)
+  const { platformUrl } = useSiteMetadata()
+
   const progressValue = useMemo(
     () => Math.round(((step - 1) / QUIZ.length) * 100),
     [step]
@@ -327,7 +337,7 @@ const Quiz = () => {
                     </Box>
                   </Grid>
                   <Grid item xs={6}>
-                    <Box className={classes.quizLeftRight}>
+                    <Box className={classes.quizRight}>
                       <Box mb={3}>
                         <Typography variant='h4' color='primary'>
                           免費測驗 了解健康
@@ -524,11 +534,15 @@ const Quiz = () => {
               )}
               {step === 7 && finishQuiz && (
                 <Grid container>
-                  <Grid item xs={6}>
-                    images
+                  <Grid className={classes.quizLeft} item xs={6}>
+                    <StaticImage
+                      width={248}
+                      src='../../assets/images/icons/completed.svg'
+                      alt='quiz cover'
+                    ></StaticImage>
                   </Grid>
                   <Grid item xs={6}>
-                    <Box className={classes.quizLeftRight}>
+                    <Box className={classes.quizRight}>
                       <Box mb={2}>
                         <Typography variant='h4' color='primary'>
                           最後一個步驟免費獲取結果!
@@ -623,17 +637,17 @@ const Quiz = () => {
                               >
                                 本人已明白及同意Take2 Health Limited
                                 的網站於take2health.net之網站
-                                <Link to='/' target='_blank'>
+                                <MuiLink href='/' className={classes.link}>
                                   <Box color='primary.main' component='span'>
                                     私隱政策
                                   </Box>
-                                </Link>
+                                </MuiLink>
                                 及
-                                <Link to='/' target='_blank'>
+                                <MuiLink href='/' className={classes.link}>
                                   <Box color='primary.main' component='span'>
                                     個人資料收集聲明
                                   </Box>
-                                </Link>
+                                </MuiLink>
                                 。
                               </Box>
                             }
@@ -651,7 +665,13 @@ const Quiz = () => {
                         >
                           提交
                         </Button>
-                        <Link>直接登記 得易健康服務平台</Link>
+                        <MuiLink
+                          className={classes.platformLink}
+                          href={platformUrl}
+                          target='_blank'
+                        >
+                          直接登記 得易健康服務平台
+                        </MuiLink>
                       </Box>
                     </Box>
                   </Grid>
@@ -659,35 +679,44 @@ const Quiz = () => {
               )}
               {step === 8 && (
                 <Grid container>
-                  <Grid item xs={6}>
-                    images
+                  <Grid className={classes.quizLeft} item xs={6}>
+                    <StaticImage
+                      width={248}
+                      src='../../assets/images/icons/sent.svg'
+                      alt='quiz cover'
+                    ></StaticImage>
                   </Grid>
                   <Grid item xs={6}>
-                    <Box className={classes.quizLeftRight}>
-                      <Box mb={3}>
+                    <Box className={classes.quizRight}>
+                      <Box mb={2}>
                         <Typography variant='h4' color='primary'>
                           多謝參與！
                         </Typography>
                       </Box>
-                      <Typography variant='h6' color='initial'>
-                        測驗經已完成！
-                      </Typography>
-                      <Box mb={2.5}>
-                        <Typography variant='body1'>
-                          以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
-                          <br />
-                          你亦可立即登記，免費成為Take2 Extra
-                          Care會員，預約進行檢測，或享用得易健康網上平台的服務。
-                        </Typography>
+                      <Box
+                        fontSize='body1.fontSize'
+                        color='grey.900'
+                        maxWidth={386}
+                        lineHeight={1.5}
+                      >
+                        <Box fontWeight='fontWeightBold' mb={1.5}>
+                          測驗經已完成！
+                        </Box>
+                        以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
+                        <br />
+                        你亦可立即登記，免費成為Take2 Extra
+                        Care會員，預約進行檢測，或享用得易健康網上平台的服務。
                       </Box>
-                      <Box display='flex'>
-                        <Button variant='outlined' color='primary'>
-                          了解更多
+                      <Box display='flex' maxWidth={482} mt={5}>
+                        <Box flexShrink={0} mr={2}>
+                          <Button variant='outlined' color='primary'>
+                            了解更多
+                          </Button>
+                        </Box>
+                        <Button fullWidth variant='contained' color='secondary'>
+                          登記成為會員
                         </Button>
                       </Box>
-                      <Button variant='contained' color='secondary'>
-                        登記成為會員
-                      </Button>
                     </Box>
                   </Grid>
                 </Grid>
