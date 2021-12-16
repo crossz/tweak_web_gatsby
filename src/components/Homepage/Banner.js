@@ -52,11 +52,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   marks: {
-    fontSize: 6,
+    fontSize: 9,
     lineHeight: 1,
     marginTop: 'auto',
     [theme.breakpoints.down('xs')]: {
       color: theme.palette.primary.main,
+      fontSize: 6,
+      marginBottom: theme.spacing(-3),
     },
   },
   btnWrapper: {
