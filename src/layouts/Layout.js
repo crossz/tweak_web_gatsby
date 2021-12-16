@@ -4,6 +4,7 @@ import Footer from './Footer'
 import SectionBanner from './SectionBanner'
 import { makeStyles } from '@material-ui/core'
 import { useMatch } from '@reach/router'
+import Seo from './Seo'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,12 +23,15 @@ const Layout = ({ children }) => {
   const classes = useStyles({ greyBg: isContactUsPage })
 
   return (
-    <main id='main' className={classes.root}>
-      <Header></Header>
-      <SectionBanner></SectionBanner>
-      {children}
-      <Footer></Footer>
-    </main>
+    <>
+      <Seo></Seo>
+      <main id='main' className={classes.root}>
+        <Header></Header>
+        <SectionBanner></SectionBanner>
+        {children}
+        <Footer></Footer>
+      </main>
+    </>
   )
 }
 
