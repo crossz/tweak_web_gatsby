@@ -92,7 +92,7 @@ export const QUIZ = [
   {
     question: '你有否出現鼻水帶血或流鼻血情況？',
     answers: ['從不', '很少', '間中', '經常'],
-    type: 'slide',
+    type: 'slider',
   },
   {
     question: '你有否出現頸部淋巴脹大？',
@@ -101,17 +101,17 @@ export const QUIZ = [
   {
     question: '你是否經常出現頭痛或單側頭痛？',
     answers: ['從不', '很少', '間中', '經常'],
-    type: 'slide',
+    type: 'slider',
   },
   {
     question: '你是否經常受耳鳴困擾？',
     answers: ['從不', '很少', '間中', '經常'],
-    type: 'slide',
+    type: 'slider',
   },
   {
     question: '你有沒有吸煙習慣？',
     answers: ['從不', '很少', '間中', '經常'],
-    type: 'slide',
+    type: 'slider',
   },
 ]
 

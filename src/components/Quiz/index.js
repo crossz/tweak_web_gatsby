@@ -22,6 +22,7 @@ import { EFormLabel, ESelect } from '@themes/components/ETextField'
 import { AGES, QUIZ } from '@utils/constant'
 import { padStartNum } from '@utils'
 import FlagIcon from '@images/icons/flag.svg'
+import BackIcon from '@images/icons/back.svg'
 import classnames from 'classnames'
 
 const useStyle = makeStyles((theme) => ({
@@ -62,6 +63,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
   quizWrapper: {
+    height: 515,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -108,11 +110,47 @@ const useStyle = makeStyles((theme) => ({
     marginRight: theme.spacing(3),
     fontSize: theme.typography.h2.fontSize,
   },
-
   quizLength: {
     fontSize: theme.typography.h6.fontSize,
     color: '#D2C7BC',
     fontWeight: theme.typography.fontWeightLight,
+  },
+  quizRadioWrapper: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  quizRadioLabel: {
+    margin: theme.spacing(0, 1),
+  },
+  quizBtnWrapper: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 'auto',
+  },
+  preBtn: {
+    textDecoration: 'none',
+    fontSize: theme.typography.h6.fontSize,
+    '& path': {
+      transition: theme.transitions.create('fill', {
+        duration: theme.transitions.duration.standard,
+      }),
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
+      textDecoration: 'none',
+      '& path': {
+        fill: theme.palette.secondary.main,
+      },
+    },
+  },
+  preBtnStartIcon: {
+    marginRight: theme.spacing(4),
+  },
+  nextBtn: {
+    marginLeft: 'auto',
   },
 }))
 
@@ -285,7 +323,6 @@ const Quiz = () => {
                           {errorText('age')}
                         </FormControl>
                       </Box>
-
                       <Button
                         variant='contained'
                         color='secondary'
@@ -335,7 +372,8 @@ const Quiz = () => {
                       QUIZ.length &&
                       values?.quiz?.map(
                         (item, index) =>
-                          index + 1 === step && (
+                          index + 1 === step &&
+                          (QUIZ[index]?.type === 'slider' ? null : (
                             <FormControl key={index} component='fieldset'>
                               <Box className={classes.quizTitle}>
                                 <Box
@@ -353,37 +391,49 @@ const Quiz = () => {
                                 <Box>{QUIZ[index].question}</Box>
                               </Box>
                               <RadioGroup
+                                className={classes.quizRadioWrapper}
                                 name={`quiz[${index}].value`}
                                 value={item.value}
                                 onChange={handleChange}
                                 row
                               >
-                                {QUIZ[index]?.answers?.map((answer) => (
-                                  <FormControlLabel
-                                    key={answer}
-                                    value={answer}
-                                    control={<QuizRadio />}
-                                  />
-                                ))}
+                                {QUIZ[index]?.answers?.map(
+                                  (answer, answerIndex) => (
+                                    <FormControlLabel
+                                      className={classes.quizRadioLabel}
+                                      key={answer}
+                                      value={answer}
+                                      control={
+                                        <QuizRadio index={answerIndex} />
+                                      }
+                                    />
+                                  )
+                                )}
                               </RadioGroup>
                             </FormControl>
-                          )
+                          ))
                       )
                     }
                   </FieldArray>
                   {step > 0 && step <= QUIZ.length && (
-                    <Box display='flex'>
+                    <Box className={classes.quizBtnWrapper}>
                       {step !== 1 && (
                         <Button
+                          className={classes.preBtn}
                           variant='text'
-                          color='default'
+                          color='primary'
                           onClick={handleQuizBack}
+                          startIcon={<BackIcon />}
+                          classes={{
+                            startIcon: classes.preBtnStartIcon,
+                          }}
                         >
                           返回上一题
                         </Button>
                       )}
                       {step <= QUIZ.length && values.quiz[step - 1].value && (
                         <Button
+                          className={classes.nextBtn}
                           variant='contained'
                           color='secondary'
                           onClick={handleQuizNext}
