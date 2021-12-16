@@ -31,7 +31,6 @@ import classnames from 'classnames'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
-
 import CancelIcon from '@images/icons/cancel.svg'
 
 const useStyles = makeStyles((theme) => ({
@@ -472,7 +471,9 @@ const ContactUs = () => {
                             margin='none'
                             value={values.email}
                             onChange={handleChange}
-                            placeholder={isError('email') ? '' : '請輸入電郵'}
+                            placeholder={
+                              isError('email') ? '' : 'example@take2health.com'
+                            }
                             endAdornment={<CancelButton field='email' />}
                           />
 

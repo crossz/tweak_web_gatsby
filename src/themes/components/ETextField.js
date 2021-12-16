@@ -7,7 +7,6 @@ import { MOBILE_LABEL_WIDTH } from '../../utils/constant'
 
 const useStyle = makeStyles((theme) => ({
   selectRoot: {
-    minWidth: theme.spacing(13.25),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },

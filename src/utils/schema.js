@@ -1,7 +1,7 @@
 import {
   object as yObject,
   string as yString,
-  number as yNumber,
+  bool as yBool,
   array as yArray,
   date as yDate,
 } from 'yup'
@@ -35,5 +35,6 @@ export const oriSchema = (props) => {
           '請輸入正確格式電話號碼'
         )
       }),
+    agreeTC: yBool().isTrue('請勾選同意'),
   })
 }
