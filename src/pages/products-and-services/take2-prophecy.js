@@ -300,7 +300,7 @@ const Take2Prophecy = () => {
         <Container className={classes.content} disableGutters maxWidth='md'>
           <Box className={classes.title}>
             <Typography variant='h5' color='primary'>
-              Take2 Prophecy™早期鼻咽癌篩查
+              Take2 Prophecy™ 早期鼻咽癌篩查
             </Typography>
             <Box mt={matches ? 2.5 : 3}>
               <Typography

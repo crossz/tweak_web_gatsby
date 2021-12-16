@@ -146,7 +146,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   lastMenuItem: {
-    marginTop: theme.spacing(3.5),
+    [theme.breakpoints.up('md')]: {
+      marginTop: theme.spacing(3.5),
+    },
     [theme.breakpoints.down('xs')]: {
       marginTop: 0,
     },
@@ -182,6 +184,9 @@ const Footer = () => {
       <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         免責聲明
       </Link>
+      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+        網站使用條款
+      </Link>
     </Box>
   )
 
@@ -211,7 +216,7 @@ const Footer = () => {
                   {whatsappAccount}
                 </Box>
               </a>
-              <a mailto={`tel:${email}`} className={classes.link}>
+              <a href={`mailto:${email}`} className={classes.link}>
                 <Box display='flex' alignItems='center'>
                   <EmailIcon className={classes.infoIcon}></EmailIcon>
                   {email}
