@@ -23,15 +23,12 @@ const Layout = ({ children }) => {
   const classes = useStyles({ greyBg: isContactUsPage })
 
   return (
-    <>
-      <Seo></Seo>
-      <main id='main' className={classes.root}>
-        <Header></Header>
-        <SectionBanner></SectionBanner>
-        {children}
-        <Footer></Footer>
-      </main>
-    </>
+    <main id='main' className={classes.root}>
+      <Header></Header>
+      <SectionBanner></SectionBanner>
+      {children}
+      <Footer></Footer>
+    </main>
   )
 }
 
