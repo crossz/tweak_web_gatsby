@@ -233,6 +233,7 @@ const Footer = () => {
             <Box className={classes.menuWrapper}>
               {menu?.map((item, index) => (
                 <Box
+                  key={index}
                   className={classnames(
                     classes.menuItem,
                     index === menu.length - 1 && classes.lastMenuItem

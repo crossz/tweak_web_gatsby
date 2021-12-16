@@ -15,20 +15,16 @@ import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: theme.spacing(108.75),
-    // backgroundImage: `url(${HomepageBanner})`,
-    // backgroundRepeat: 'no-repeat',
-    // backgroundSize: 'cover',
-    // backgroundPosition: 'center',
-    [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(62.75),
-      // backgroundImage: `url(${HomepageBannerMobile})`,
-    },
     display: 'grid',
   },
   staticImage: {
     gridArea: '1/1',
-    height: '100%',
+    height: 'calc((877 / 1440) * 100vw)',
+    minHeight: 877,
+    [theme.breakpoints.down('xs')]: {
+      minHeight: 'auto',
+      height: 'calc((502 / 375) * 100vw)',
+    },
   },
   wrapper: {
     position: 'relative',
@@ -81,11 +77,10 @@ const Banner = () => {
   const { platformUrl } = useSiteMetadata()
 
   return (
-    <Container disableGutters maxWidth='lg' className={classes.root}>
+    <Container disableGutters maxWidth='xl' className={classes.root}>
       {matches ? (
         <StaticImage
           className={classes.staticImage}
-          placeholder='blurred'
           layout='fullWidth'
           // You can optionally force an aspect ratio for the generated image
           // aspectRatio={3 / 1}
@@ -103,6 +98,7 @@ const Banner = () => {
           // aspectRatio={3 / 1}
           // This is a presentational image, so the alt should be an empty string
           alt='Homepage'
+          objectFit='cover'
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
           src={'../../assets/images/homepage_banner.jpg'}
         />

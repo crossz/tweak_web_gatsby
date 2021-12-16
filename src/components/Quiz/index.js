@@ -20,8 +20,9 @@ import Typography from '@material-ui/core/Typography'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
-import { EInputBase, EFormLabel, ESelect } from '@themes/components/ETextField'
+import { EFormLabel, ESelect } from '@themes/components/ETextField'
 import { AGES, QUIZ } from '@utils/constant'
+import { padStartNum } from '@utils'
 import FlagIcon from '@images/icons/flag.svg'
 import classnames from 'classnames'
 
@@ -94,6 +95,26 @@ const useStyle = makeStyles((theme) => ({
   },
   linearProgressBar: {
     borderRadius: 5,
+  },
+  quizTitle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: theme.palette.primary.main,
+    fontSize: theme.typography.h3.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
+    marginTop: theme.spacing(12),
+    marginBottom: theme.spacing(12.5),
+  },
+  quizNum: {
+    marginRight: theme.spacing(3),
+    fontSize: theme.typography.h2.fontSize,
+  },
+
+  quizLength: {
+    fontSize: theme.typography.h6.fontSize,
+    color: '#D2C7BC',
+    fontWeight: theme.typography.fontWeightLight,
   },
 }))
 
@@ -186,6 +207,12 @@ const Quiz = () => {
                 }, 1500)
               return Math.min(oldValue + 1, QUIZ.length + 1)
             })
+
+          const RadioButton = (params) => (
+            <Button variant='contained' color='primary' {...params}>
+              {params.children}
+            </Button>
+          )
 
           return (
             <form onSubmit={handleSubmit} className={classes.formRoot}>
@@ -318,7 +345,21 @@ const Quiz = () => {
                         (item, index) =>
                           index + 1 === step && (
                             <FormControl key={index} component='fieldset'>
-                              <FormLabel>{QUIZ[index].question}</FormLabel>
+                              <Box className={classes.quizTitle}>
+                                <Box
+                                  className={classes.quizNum}
+                                  component='span'
+                                >
+                                  {padStartNum(step)}
+                                  <Box
+                                    className={classes.quizLength}
+                                    component='span'
+                                  >
+                                    /{padStartNum(QUIZ.length)}
+                                  </Box>
+                                </Box>
+                                <Box>{QUIZ[index].question}</Box>
+                              </Box>
                               <RadioGroup
                                 name={`quiz[${index}].value`}
                                 value={item.value}
@@ -329,9 +370,14 @@ const Quiz = () => {
                                   <FormControlLabel
                                     key={answer}
                                     value={answer}
-                                    control={<Radio color='primary' />}
-                                    label={answer}
-                                    labelPlacement='end'
+                                    control={
+                                      <RadioButton
+                                        variant='contained'
+                                        color='primary'
+                                      >
+                                        {answer}
+                                      </RadioButton>
+                                    }
                                   />
                                 ))}
                               </RadioGroup>
