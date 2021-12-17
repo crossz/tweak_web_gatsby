@@ -3,7 +3,14 @@ import { Formik, FieldArray } from 'formik'
 import { throttle } from 'lodash-es'
 import { oriSchema } from '@utils/schema'
 import { StaticImage } from 'gatsby-plugin-image'
-import { makeStyles, alpha, Container } from '@material-ui/core'
+import {
+  makeStyles,
+  alpha,
+  Container,
+  useMediaQuery,
+  useTheme,
+  Hidden,
+} from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import { DIALING_CODES } from '@utils/constant'
@@ -35,23 +42,46 @@ import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyle = makeStyles((theme) => ({
   root: {
-    height: theme.spacing(82.5),
+    minHeight: theme.spacing(82.5),
     borderRadius: theme.spacing(4),
     display: 'grid',
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(15),
     color: theme.palette.primary.main,
     overflow: 'hidden',
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: theme.spacing(-2),
+      marginRight: theme.spacing(-2),
+      borderRadius: theme.spacing(2),
+      minHeight: theme.spacing(75),
+    },
   },
   quizBg: {
     gridArea: '1/1',
+    height: '100%',
+  },
+  quizBanner: {
+    width: 520,
+    [theme.breakpoints.down('xs')]: {
+      width: 210,
+      paddingTop: theme.spacing(4.75),
+      paddingBottom: theme.spacing(2.5),
+    },
+  },
+  quizIcon: {
+    width: 248,
+    [theme.breakpoints.down('xs')]: {
+      width: 110,
+      paddingTop: theme.spacing(8.5),
+    },
   },
   formRoot: {
     gridArea: '1/1',
     display: 'grid',
     position: 'relative',
-    // paddingTop: theme.spacing(8),
-    // paddingBottom: theme.spacing(10),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 2),
+    },
   },
   quizLeft: {
     display: 'flex',
@@ -64,9 +94,16 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: 'center',
     height: '100%',
     paddingRight: theme.spacing(5),
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+      justifyContent: 'flex-start',
+    },
   },
   genderLabel: {
     marginLeft: 0,
+    [theme.breakpoints.down('xs')]: {
+      flexGrow: 1,
+    },
   },
   label: {
     fontSize: theme.typography.subtitle2.fontSize,
@@ -95,6 +132,11 @@ const useStyle = makeStyles((theme) => ({
     fontSize: theme.typography.body1.fontSize,
     marginLeft: theme.spacing(-3),
     marginBottom: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: theme.spacing(-1),
+      marginBottom: theme.spacing(0.5),
+      fontSize: theme.typography.body2.fontSize,
+    },
   },
   progressEnd: {
     opacity: 0,
@@ -106,6 +148,10 @@ const useStyle = makeStyles((theme) => ({
     position: 'absolute',
     right: 0,
     top: 0,
+    [theme.breakpoints.down('xs')]: {
+      width: theme.spacing(3),
+      height: theme.spacing(3),
+    },
   },
   linearProgressRoot: {
     borderRadius: 5,
@@ -123,23 +169,45 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     marginTop: theme.spacing(12),
     marginBottom: theme.spacing(12.5),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(3),
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      fontSize: theme.typography.h6.fontSize,
+    },
   },
   quizNum: {
     marginRight: theme.spacing(3),
     fontSize: theme.typography.h2.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.h4.fontSize,
+      marginBottom: theme.spacing(1.5),
+    },
   },
   quizLength: {
     fontSize: theme.typography.h6.fontSize,
     color: '#D2C7BC',
     fontWeight: theme.typography.fontWeightLight,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+    },
   },
   quizRadioWrapper: {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+    },
   },
   quizRadioLabel: {
     margin: theme.spacing(0, 1),
+    [theme.breakpoints.down('xs')]: {
+      margin: 0,
+      marginBottom: theme.spacing(2),
+    },
   },
   quizBtnWrapper: {
     width: '100%',
@@ -147,6 +215,10 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: theme.spacing(12.25),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 'auto',
+      marginBottom: theme.spacing(8.75),
+    },
   },
   preBtn: {
     textDecoration: 'none',
@@ -163,18 +235,38 @@ const useStyle = makeStyles((theme) => ({
         fill: theme.palette.secondary.main,
       },
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.body2.fontSize,
+      '& svg': {
+        width: theme.spacing(2),
+        height: theme.spacing(2),
+      },
+      paddingLeft: 0,
+    },
   },
   preBtnStartIcon: {
     marginRight: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: theme.spacing(1.5),
+    },
   },
   nextBtn: {
     marginLeft: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.overline.fontSize,
+    },
   },
   formWrapper: {
     maxWidth: 372,
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: '100%',
+    },
   },
   checkBoxWrapper: {
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(3),
+    },
   },
   cancelIcon: {
     display: 'flex',
@@ -200,6 +292,14 @@ const useStyle = makeStyles((theme) => ({
   platformLink: {
     textDecoration: 'underline',
     marginLeft: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(2),
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: 0,
+      fontSize: theme.typography.caption.fontSize,
+    },
   },
 }))
 
@@ -228,6 +328,8 @@ const schema = oriSchema({ emailOrPhone: true }).pick([
 
 const Quiz = () => {
   const classes = useStyle()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [step, setStep] = useState(0)
   const [finishQuiz, setFinishQuiz] = useState(false)
   const { platformUrl } = useSiteMetadata()
@@ -244,8 +346,7 @@ const Quiz = () => {
           className={classes.quizBg}
           layout='fullWidth'
           src='../../assets/images/quiz_02.png'
-          alt='quiz bg 01'
-          objectFit='fill'
+          alt='quiz bg 02'
         ></StaticImage>
       ) : (
         <StaticImage
@@ -253,7 +354,7 @@ const Quiz = () => {
           layout='fullWidth'
           src='../../assets/images/quiz_01.png'
           alt='quiz bg 01'
-          objectFit='fill'
+          objectPosition='90%'
         ></StaticImage>
       )}
       <Formik
@@ -328,33 +429,37 @@ const Quiz = () => {
             <form onSubmit={handleSubmit} className={classes.formRoot}>
               {step === 0 && (
                 <Grid container>
-                  <Grid item className={classes.quizLeft} xs={6}>
-                    <Box maxWidth={520}>
+                  <Grid item className={classes.quizLeft} xs={12} sm={6}>
+                    <Box className={classes.quizBanner}>
                       <StaticImage
                         src='../../assets/images/quiz_cover.png'
                         alt='quiz cover'
                       ></StaticImage>
                     </Box>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12} sm={6}>
                     <Box className={classes.quizRight}>
-                      <Box mb={3}>
-                        <Typography variant='h4' color='primary'>
+                      <Box mb={matches ? 1 : 3}>
+                        <Typography
+                          variant={matches ? 'h5' : 'h4'}
+                          color='primary'
+                        >
                           免費測驗 了解健康
                         </Typography>
                       </Box>
-                      <Box mb={2.5} color='grey.900'>
-                        <Typography variant='body1'>
+                      <Box mb={matches ? 3 : 2.5} color='grey.900'>
+                        <Typography variant={matches ? 'body2' : 'body1'}>
                           來個簡單測驗？可能逆轉一切！
                           <br />
                           雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
                         </Typography>
                       </Box>
-                      <Box mb={4}>
+                      <Box mb={matches ? 2 : 4}>
                         <FormControl
                           component='fieldset'
                           error={isError('gender')}
                           required
+                          fullWidth={matches}
                         >
                           <EFormLabel className={classes.label}>
                             性別
@@ -374,13 +479,20 @@ const Quiz = () => {
                               className={classes.genderLabel}
                               value='女性'
                               control={<GenderRadio />}
+                              style={{
+                                marginRight: 0,
+                              }}
                             />
                           </RadioGroup>
                           {errorText('gender')}
                         </FormControl>
                       </Box>
-                      <Box mb={5.75}>
-                        <FormControl required error={isError('age')}>
+                      <Box mb={matches ? 3 : 5.75}>
+                        <FormControl
+                          fullWidth={matches}
+                          required
+                          error={isError('age')}
+                        >
                           <EFormLabel className={classes.label}>
                             年齡
                           </EFormLabel>
@@ -421,7 +533,7 @@ const Quiz = () => {
                   maxWidth='sm'
                 >
                   <Box className={classes.progressWrapper}>
-                    <Box width='100%' mr={1}>
+                    <Box width='100%'>
                       <Box className={classes.linearProgressInfo}>
                         <Box
                           className={classnames(
@@ -452,8 +564,14 @@ const Quiz = () => {
                       QUIZ.length &&
                       values?.quiz?.map(
                         (item, index) =>
-                          index + 1 === step && (
-                            <FormControl key={index} component='fieldset'>
+                          (index + 1 === step ||
+                            (index + 2 === step &&
+                              step === QUIZ.length + 1)) && (
+                            <FormControl
+                              fullWidth
+                              key={index}
+                              component='fieldset'
+                            >
                               <Box className={classes.quizTitle}>
                                 <Box
                                   className={classes.quizNum}
@@ -502,7 +620,7 @@ const Quiz = () => {
                       )
                     }
                   </FieldArray>
-                  {step > 0 && step <= QUIZ.length && (
+                  {step <= QUIZ.length && (
                     <Box className={classes.quizBtnWrapper}>
                       {step !== 1 && (
                         <Button
@@ -534,22 +652,28 @@ const Quiz = () => {
               )}
               {step === 7 && finishQuiz && (
                 <Grid container>
-                  <Grid className={classes.quizLeft} item xs={6}>
-                    <StaticImage
-                      width={248}
-                      src='../../assets/images/icons/completed.svg'
-                      alt='quiz cover'
-                    ></StaticImage>
+                  <Grid className={classes.quizLeft} item xs={12} sm={6}>
+                    <Box className={classes.quizIcon}>
+                      <StaticImage
+                        width={248}
+                        src='../../assets/images/icons/completed.svg'
+                        alt='quiz cover'
+                      ></StaticImage>
+                    </Box>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12} sm={6}>
                     <Box className={classes.quizRight}>
-                      <Box mb={2}>
+                      <Box textAlign={matches && 'center'} mb={matches ? 1 : 2}>
                         <Typography variant='h4' color='primary'>
                           最後一個步驟免費獲取結果!
                         </Typography>
                       </Box>
-                      <Box mb={2.5} color='grey.900'>
-                        <Typography variant='body1'>
+                      <Box
+                        textAlign={matches && 'center'}
+                        mb={matches ? 2 : 2.5}
+                        color='grey.900'
+                      >
+                        <Typography variant={matches ? 'caption' : 'body1'}>
                           來個簡單測驗？可能逆轉一切！
                           <br />
                           請輸入電郵以獲取結果，及後可通過得易健康服務平台網上系統免費登記成為Take2
@@ -579,7 +703,7 @@ const Quiz = () => {
                           </FormControl>
                         </Box>
                         <Box textAlign='center'>或</Box>
-                        <Box mb={4}>
+                        <Box mb={matches ? 2 : 4}>
                           <Box mb={1}>
                             <EFormLabel>電話號碼</EFormLabel>
                           </Box>
@@ -632,8 +756,9 @@ const Quiz = () => {
                             control={<Checkbox color='secondary' />}
                             label={
                               <Box
-                                fontSize='overline.fontSize'
+                                fontSize={matches ? 10 : 'caption.fontSize'}
                                 component='span'
+                                lineHeight={1}
                               >
                                 本人已明白及同意Take2 Health Limited
                                 的網站於take2health.net之網站
@@ -662,6 +787,7 @@ const Quiz = () => {
                           type='submit'
                           variant='contained'
                           color='secondary'
+                          fullWidth={matches}
                         >
                           提交
                         </Button>
@@ -679,17 +805,24 @@ const Quiz = () => {
               )}
               {step === 8 && (
                 <Grid container>
-                  <Grid className={classes.quizLeft} item xs={6}>
-                    <StaticImage
-                      width={248}
-                      src='../../assets/images/icons/sent.svg'
-                      alt='quiz cover'
-                    ></StaticImage>
+                  <Grid className={classes.quizLeft} item xs={12} sm={6}>
+                    <Box className={classes.quizIcon}>
+                      <StaticImage
+                        src='../../assets/images/icons/sent.svg'
+                        alt='quiz cover'
+                      ></StaticImage>{' '}
+                    </Box>
                   </Grid>
-                  <Grid item xs={6}>
-                    <Box className={classes.quizRight}>
-                      <Box mb={2}>
-                        <Typography variant='h4' color='primary'>
+                  <Grid item xs={12} sm={6}>
+                    <Box
+                      textAlign={matches && 'center'}
+                      className={classes.quizRight}
+                    >
+                      <Box mb={matches ? 1 : 2}>
+                        <Typography
+                          variant={matches ? 'h5' : 'h4'}
+                          color='primary'
+                        >
                           多謝參與！
                         </Typography>
                       </Box>
@@ -699,21 +832,46 @@ const Quiz = () => {
                         maxWidth={386}
                         lineHeight={1.5}
                       >
-                        <Box fontWeight='fontWeightBold' mb={1.5}>
+                        <Box fontWeight='fontWeightBold' mb={matches ? 2 : 1.5}>
                           測驗經已完成！
                         </Box>
-                        以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
-                        <br />
-                        你亦可立即登記，免費成為Take2 Extra
-                        Care會員，預約進行檢測，或享用得易健康網上平台的服務。
+                        <Box fontSize={matches && 'caption.fontSize'}>
+                          以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
+                          <br />
+                          <Hidden smUp>
+                            <br />
+                          </Hidden>
+                          你亦可立即登記，免費成為Take2 Extra
+                          Care會員，預約進行檢測，或享用得易健康網上平台的服務。
+                        </Box>
                       </Box>
-                      <Box display='flex' maxWidth={482} mt={5}>
-                        <Box flexShrink={0} mr={2}>
-                          <Button variant='outlined' color='primary'>
+                      <Box
+                        display='flex'
+                        flexWrap={matches && 'wrap'}
+                        maxWidth={482}
+                        mt={5}
+                      >
+                        <Box
+                          flexShrink={0}
+                          width={matches ? '100%' : 'auto'}
+                          mr={matches ? 0 : 2}
+                          mb={matches ? 1 : 0}
+                        >
+                          <Button
+                            size={matches && 'small'}
+                            variant='outlined'
+                            color='primary'
+                            fullWidth
+                          >
                             了解更多
                           </Button>
                         </Box>
-                        <Button fullWidth variant='contained' color='secondary'>
+                        <Button
+                          size={matches && 'small'}
+                          fullWidth
+                          variant='contained'
+                          color='secondary'
+                        >
                           登記成為會員
                         </Button>
                       </Box>

@@ -74,7 +74,7 @@ const Header = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const { platformUrl } = useSiteMetadata()
   const matchHomepage = useMatch('/')
-  const [withBg, setWithBg] = useState(false)
+  const [withBg, setWithBg] = useState(true)
   // TODO homepage scroll leave banner show header background.
   // const handleWaypoint = (status) => {
   //   if (status !== withBg) setWithBg(status)

@@ -85,6 +85,9 @@ theme = createTheme(theme, {
             duration: theme.transitions.duration.standard,
           }
         ),
+        [theme.breakpoints.down('xs')]: {
+          height: theme.spacing(5.625),
+        },
       },
       text: {
         padding: theme.spacing(2, 6),

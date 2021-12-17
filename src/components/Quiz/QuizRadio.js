@@ -24,6 +24,10 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: alpha('#0CBFE6', 0.9),
       },
     },
+    [theme.breakpoints.down('xs')]: {
+      width: 156,
+      height: 54,
+    },
   },
   checked: {
     backgroundColor: '#0CBFE6',

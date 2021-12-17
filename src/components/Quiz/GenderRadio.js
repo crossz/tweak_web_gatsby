@@ -15,12 +15,17 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.primary.main,
     padding: theme.spacing(1.375),
-    paddingRight: theme.spacing(3.125),
     boxSizing: 'border-box',
+    justifyContent: 'left',
+    [theme.breakpoints.down('xs')]: {
+      width: '100% ',
+      fontSize: theme.typography.body2.fontSize,
+      padding: theme.spacing(1.25, 1.5),
+    },
   },
   checked: {
     border: `3px solid ${theme.palette.primary.main}`,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: `${theme.palette.background.paper} !important`,
     transform: `translateY(-6px)`,
     boxShadow: `0 2px 10px 0 ${alpha(theme.palette.common.black, 0.15)}`,
   },
@@ -28,6 +33,11 @@ const useStyle = makeStyles((theme) => ({
     width: theme.spacing(4.25),
     height: theme.spacing(4.25),
     marginRight: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      width: theme.spacing(3.5),
+      height: theme.spacing(3.5),
+      marginRight: theme.spacing(1.5),
+    },
   },
 }))
 

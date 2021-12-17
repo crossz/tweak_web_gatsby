@@ -9,6 +9,10 @@ const useStyle = makeStyles((theme) => ({
   selectRoot: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(1),
+      paddingBottom: theme.spacing(1),
+    },
   },
 }))
 
@@ -28,8 +32,8 @@ export const EInputBase = withStyles((theme) => ({
       borderColor: theme.palette.primary.main,
     },
     [theme.breakpoints.down('xs')]: {
-      // minWidth: theme.spacing(MOBILE_INPUT_WIDTH),
       fontSize: theme.typography.overline.fontSize,
+      height: theme.spacing(5.625),
     },
     '&::placeholder': {
       color: 'red',
