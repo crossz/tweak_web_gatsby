@@ -25,21 +25,15 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(2.5),
     },
   },
-  healthTipsWrapper: {
-    position: 'relative',
-    paddingTop: theme.spacing(25),
-    color: theme.palette.primary.contrastText,
-    zIndex: 2,
-  },
   healthTipsBanner: {
-    position: 'absolute',
-    top: theme.spacing(15),
     backgroundColor: theme.palette.primary.main,
     height: 416,
     borderRadius: `16px 16px 0 0`,
-    zIndex: -1,
-
-    width: '100vw',
+    marginTop: theme.spacing(15),
+    marginBottom: -384,
+  },
+  healthTipsWrapper: {
+    color: theme.palette.primary.contrastText,
   },
 }))
 
@@ -67,11 +61,10 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
           </Typography>
         </Box>
         <Map from='homepage'></Map>
-        <Box className={classes.healthTipsWrapper}>
-          <Container
-            maxWidth='lg'
-            className={classes.healthTipsBanner}
-          ></Container>
+      </Container>
+      <Container disableGutters maxWidth='lg'>
+        <Box className={classes.healthTipsBanner}></Box>
+        <Container maxWidth='md' className={classes.healthTipsWrapper}>
           <Box className={classes.title}>
             <TitleDot></TitleDot>
             <Typography variant='h4'>健康及專業醫護資訊</Typography>
@@ -80,8 +73,12 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
             為了守護你的健康，我們在此為你提供實用健康資訊， 緊隨你的生活步伐。
           </Box>
           <PostSwiper nodes={healthTipsNodes}></PostSwiper>
-        </Box>
+        </Container>
       </Container>
+      {/* <Box className={classes.healthTipsWrapper}>
+        <Container maxWidth='lg'></Container>
+
+      </Box> */}
       <Consult></Consult>
     </>
   )
