@@ -17,9 +17,11 @@ const useStyle = makeStyles((theme) => ({
     padding: theme.spacing(1.375),
     boxSizing: 'border-box',
     justifyContent: 'left',
+    height: theme.spacing(7),
     [theme.breakpoints.down('xs')]: {
       width: '100% ',
       fontSize: theme.typography.body2.fontSize,
+      height: theme.spacing(6),
       padding: theme.spacing(1.25, 1.5),
     },
   },

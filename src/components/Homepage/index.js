@@ -63,7 +63,7 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
         <Map from='homepage'></Map>
       </Container>
       <Container disableGutters maxWidth='lg'>
-        <Box className={classes.healthTipsBanner}></Box>
+        <Box className={classes.healthTipsBanner} />
         <Container maxWidth='md' className={classes.healthTipsWrapper}>
           <Box className={classes.title}>
             <TitleDot></TitleDot>

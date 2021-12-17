@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
-import GoogleMapReact, { fitBounds } from 'google-map-react'
+import GoogleMapReact from 'google-map-react'
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -159,7 +159,7 @@ const ClinicList = ({ region, district, onChange }) => {
       serviceLocation?.filter(
         (clinic) => clinic.region === REGIONS[region]?.label
       ),
-    [region]
+    [region, serviceLocation]
   )
 
   const _handleChange = (value) => (e, isExpanded) => {

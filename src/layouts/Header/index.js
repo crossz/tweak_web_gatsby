@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Box from '@material-ui/core/Box'
-import { makeStyles, useTheme, useMediaQuery, alpha } from '@material-ui/core'
+import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import { useMatch } from '@reach/router'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'

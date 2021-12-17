@@ -20,7 +20,6 @@ import {
   EAccordionDetails,
 } from '@themes/components/EAccordion'
 import ArrowIcon from '@images/icons/arrow.svg'
-import ImageList from '@material-ui/core/ImageList'
 import { Link } from 'gatsby'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
@@ -99,12 +98,6 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(1),
     '& path': {
       fill: theme.palette.primary.contrastText,
-    },
-  },
-  imageList: {
-    overflowY: 'initial',
-    [theme.breakpoints.down('xs')]: {
-      borderBottom: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
     },
   },
   accordionSummaryRoot: {
@@ -210,7 +203,12 @@ const Footer = () => {
                   {phone}
                 </Box>
               </a>
-              <a href={whatsapp} className={classes.link} target='_blank'>
+              <a
+                href={whatsapp}
+                className={classes.link}
+                target='_blank'
+                rel='noreferrer'
+              >
                 <Box display='flex' mb={matches ? 1 : 1.5} alignItems='center'>
                   <WhatsappIcon className={classes.infoIcon}></WhatsappIcon>
                   {whatsappAccount}

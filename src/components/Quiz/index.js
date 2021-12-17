@@ -34,8 +34,8 @@ import FlagIcon from '@images/icons/flag.svg'
 import BackIcon from '@images/icons/back.svg'
 import classnames from 'classnames'
 import InputAdornment from '@material-ui/core/InputAdornment'
-import CircularProgress from '@material-ui/core/CircularProgress'
-import { toast } from 'react-toastify'
+// import CircularProgress from '@material-ui/core/CircularProgress'
+// import { toast } from 'react-toastify'
 import CancelIcon from '@images/icons/cancel.svg'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 
@@ -371,7 +371,6 @@ const Quiz = () => {
             handleSubmit,
             errors,
             touched,
-            isSubmitting,
             setFieldTouched,
             setFieldValue,
           } = props
@@ -501,6 +500,7 @@ const Quiz = () => {
                             name='age'
                             value={values.age}
                             onChange={handleChange}
+                            displayEmpty
                           >
                             <MenuItem value='' disabled>
                               请选择

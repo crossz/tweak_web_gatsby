@@ -70,6 +70,18 @@ export const EFormLabel = withStyles((theme) => ({
   },
 }))(FormLabel)
 
+const menuProps = {
+  anchorOrigin: {
+    vertical: 'bottom',
+    horizontal: -12,
+  },
+  transformOrigin: {
+    vertical: -8,
+    horizontal: 'left',
+  },
+  getContentAnchorEl: null,
+}
+
 export const ESelect = (props) => {
   const classes = useStyle()
   return (
@@ -77,6 +89,7 @@ export const ESelect = (props) => {
       classes={{
         root: classes.selectRoot,
       }}
+      MenuProps={menuProps}
       input={<EInputBase />}
       {...props}
     >

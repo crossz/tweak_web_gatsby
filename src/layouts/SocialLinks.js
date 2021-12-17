@@ -1,7 +1,6 @@
 import React from 'react'
 import Linkedin from '@images/icons/linkedin.svg'
 import Youtube from '@images/icons/youtube.svg'
-import Whatsapp from '@images/icons/whatsapp.svg'
 import Facebook from '@images/icons/facebook.svg'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import Link from '@material-ui/core/Link'
@@ -27,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SocialLinks = () => {
   const classes = useStyles()
-  const { whatsapp, linkedin, youtube, facebook } = useSiteMetadata()
+  const { linkedin, youtube, facebook } = useSiteMetadata()
 
   return (
     <Box className={classes.root} display='flex'>

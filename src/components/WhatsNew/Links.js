@@ -2,7 +2,6 @@ import React from 'react'
 import WhatsappIcon from '@images/icons/whatsapp.svg'
 import FacebookIcon from '@images/icons/facebook.svg'
 import LinkIcon from '@images/icons/link.svg'
-import MessengerIcon from '@images/icons/messenger.svg'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import Link from '@material-ui/core/Link'
 import Box from '@material-ui/core/Box'
@@ -39,11 +38,6 @@ const Links = ({ href }) => {
       type: 'link',
       link: whatsapp,
     },
-    // {
-    //   Icon: MessengerIcon,
-    //   type: 'link',
-    //   link: messenger,
-    // },
     {
       Icon: LinkIcon,
       type: 'copy',

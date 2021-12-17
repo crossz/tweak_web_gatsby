@@ -4,7 +4,6 @@ import Footer from './Footer'
 import SectionBanner from './SectionBanner'
 import { makeStyles } from '@material-ui/core'
 import { useMatch } from '@reach/router'
-import Seo from './Seo'
 
 const useStyles = makeStyles((theme) => ({
   root: {

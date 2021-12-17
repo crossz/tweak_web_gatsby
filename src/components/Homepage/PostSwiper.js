@@ -18,8 +18,6 @@ import RightIcon from '@images/icons/right.svg'
 import { Link } from 'gatsby'
 SwiperCore.use([Pagination, Navigation])
 
-const PROGRESS_WIDTH = 316
-
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',

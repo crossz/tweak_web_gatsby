@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  makeStyles,
-  useMediaQuery,
-  useTheme,
-  Grid,
-  Container,
-  alpha,
-} from '@material-ui/core'
+import { makeStyles, alpha } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import IconArrow from '@images/icons/arrow.svg'
 import scrollTo from 'gatsby-plugin-smoothscroll'
