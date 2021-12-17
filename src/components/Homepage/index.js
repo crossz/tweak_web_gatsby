@@ -8,7 +8,7 @@ import Banner from './Banner'
 import TitleDot from '@themes/components/TitleDot'
 import Typography from '@material-ui/core/Typography'
 import Quiz from '@components/Quiz'
-// import PromotionList from './PromotionList'
+import PostSwiper from './PostSwiper'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,16 +25,32 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(2.5),
     },
   },
+  healthTipsWrapper: {
+    position: 'relative',
+    paddingTop: theme.spacing(25),
+    color: theme.palette.primary.contrastText,
+    zIndex: 2,
+  },
+  healthTipsBanner: {
+    position: 'absolute',
+    top: theme.spacing(15),
+    backgroundColor: theme.palette.primary.main,
+    height: 416,
+    borderRadius: `16px 16px 0 0`,
+    zIndex: -1,
+
+    width: '100vw',
+  },
 }))
 
-const Homepage = ({ promotionNodes }) => {
+const Homepage = ({ promotionNodes, healthTipsNodes }) => {
   const classes = useStyles()
   return (
     <>
       <Banner></Banner>
       <Container className={classes.root} maxWidth='md'>
         <Quiz></Quiz>
-        {/* <Box className={classes.title}>
+        <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>
             最新推廣優惠
@@ -43,7 +59,7 @@ const Homepage = ({ promotionNodes }) => {
         <Box fontSize='caption.fontSize' color='text.primary'>
           為了讓你更了解健康狀況，我們會與不同合作夥伴攜手為你帶來產品及服務優惠，助你全面掌握健康。
         </Box>
-        <PromotionList nodes={promotionNodes}></PromotionList> */}
+        <PostSwiper nodes={promotionNodes}></PostSwiper>
         <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>
@@ -51,6 +67,20 @@ const Homepage = ({ promotionNodes }) => {
           </Typography>
         </Box>
         <Map from='homepage'></Map>
+        <Box className={classes.healthTipsWrapper}>
+          <Container
+            maxWidth='lg'
+            className={classes.healthTipsBanner}
+          ></Container>
+          <Box className={classes.title}>
+            <TitleDot></TitleDot>
+            <Typography variant='h4'>健康及專業醫護資訊</Typography>
+          </Box>
+          <Box fontSize='caption.fontSize'>
+            為了守護你的健康，我們在此為你提供實用健康資訊， 緊隨你的生活步伐。
+          </Box>
+          <PostSwiper nodes={healthTipsNodes}></PostSwiper>
+        </Box>
       </Container>
       <Consult></Consult>
     </>

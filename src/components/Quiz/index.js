@@ -24,7 +24,6 @@ import Typography from '@material-ui/core/Typography'
 import Checkbox from '@material-ui/core/Checkbox'
 import { Link as MuiLink } from '@material-ui/core'
 import LinearProgress from '@material-ui/core/LinearProgress'
-import TextField from '@material-ui/core/TextField'
 import GenderRadio from './GenderRadio'
 import QuizRadio from './QuizRadio'
 import SliderRadio from './SliderRadio'
@@ -515,13 +514,15 @@ const Quiz = () => {
                           {errorText('age')}
                         </FormControl>
                       </Box>
-                      <Button
-                        variant='contained'
-                        color='secondary'
-                        onClick={handleStartQuiz}
-                      >
-                        開始免費測驗
-                      </Button>
+                      <Box>
+                        <Button
+                          variant='contained'
+                          color='secondary'
+                          onClick={handleStartQuiz}
+                        >
+                          開始免費測驗
+                        </Button>
+                      </Box>
                     </Box>
                   </Grid>
                 </Grid>
@@ -663,13 +664,16 @@ const Quiz = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Box className={classes.quizRight}>
-                      <Box textAlign={matches && 'center'} mb={matches ? 1 : 2}>
+                      <Box
+                        textAlign={matches ? 'center' : 'left'}
+                        mb={matches ? 1 : 2}
+                      >
                         <Typography variant='h4' color='primary'>
                           最後一個步驟免費獲取結果!
                         </Typography>
                       </Box>
                       <Box
-                        textAlign={matches && 'center'}
+                        textAlign={matches ? 'center' : 'left'}
                         mb={matches ? 2 : 2.5}
                         color='grey.900'
                       >
@@ -815,7 +819,7 @@ const Quiz = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Box
-                      textAlign={matches && 'center'}
+                      textAlign={matches ? 'center' : 'left'}
                       className={classes.quizRight}
                     >
                       <Box mb={matches ? 1 : 2}>
@@ -835,7 +839,11 @@ const Quiz = () => {
                         <Box fontWeight='fontWeightBold' mb={matches ? 2 : 1.5}>
                           測驗經已完成！
                         </Box>
-                        <Box fontSize={matches && 'caption.fontSize'}>
+                        <Box
+                          fontSize={
+                            matches ? 'caption.fontSize' : 'body1.fontSize'
+                          }
+                        >
                           以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
                           <br />
                           <Hidden smUp>
@@ -847,7 +855,7 @@ const Quiz = () => {
                       </Box>
                       <Box
                         display='flex'
-                        flexWrap={matches && 'wrap'}
+                        flexWrap={matches ? 'wrap' : 'nowrap'}
                         maxWidth={482}
                         mt={5}
                       >
@@ -858,7 +866,7 @@ const Quiz = () => {
                           mb={matches ? 1 : 0}
                         >
                           <Button
-                            size={matches && 'small'}
+                            size={matches ? 'small' : 'medium'}
                             variant='outlined'
                             color='primary'
                             fullWidth
@@ -867,7 +875,7 @@ const Quiz = () => {
                           </Button>
                         </Box>
                         <Button
-                          size={matches && 'small'}
+                          size={matches ? 'small' : 'medium'}
                           fullWidth
                           variant='contained'
                           color='secondary'

@@ -144,6 +144,9 @@ theme = createTheme(theme, {
           backgroundColor: theme.palette.background.paper,
           color: theme.palette.secondary.main,
           borderColor: theme.palette.secondary.main,
+          '& path': {
+            fill: theme.palette.secondary.main,
+          },
         },
         '&:active': {
           color: theme.palette.secondary.dark,
@@ -176,6 +179,13 @@ theme = createTheme(theme, {
         '&:hover': {
           backgroundColor: theme.palette.primary.main,
           opacity: 0.9,
+        },
+      },
+      endIcon: {
+        '& path': {
+          transition: theme.transitions.create('fill', {
+            duration: theme.transitions.duration.standard,
+          }),
         },
       },
     },
