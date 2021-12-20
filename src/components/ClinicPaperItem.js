@@ -6,7 +6,10 @@ import PdfIcon from '@images/icons/pdf.svg'
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(5, 0),
-    boxShadow: `0 1px 0 0 ${theme.palette.grey[700]}`,
+    boxShadow: `0 1px 0 0 ${theme.palette.grey[300]}`,
+    '&:last-child': {
+      boxShadow: 'none',
+    },
     '&:hover': {
       '& path': {
         fill: theme.palette.secondary.main,
@@ -66,8 +69,8 @@ const ClinicPaperItem = ({ date, title, detail, pdf }) => {
   const classes = useStyles()
 
   return (
-    <Link href={pdf?.publicURL} className={classes.link} target='_blank'>
-      <Box className={classes.root}>
+    <Box className={classes.root}>
+      <Link href={pdf?.publicURL} className={classes.link} target='_blank'>
         <Grid container>
           <Grid item sm={3}>
             <Box>
@@ -91,8 +94,8 @@ const ClinicPaperItem = ({ date, title, detail, pdf }) => {
             </Box>
           </Grid>
         </Grid>
-      </Box>
-    </Link>
+      </Link>
+    </Box>
   )
 }
 
