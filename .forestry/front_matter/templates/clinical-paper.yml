@@ -1,0 +1,14 @@
+---
+label: Clinical Paper
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: pdf
+  type: text
+  config:
+    required: false
+  label: pdf
