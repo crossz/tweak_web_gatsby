@@ -23,7 +23,7 @@ import { oriSchema } from '@utils/schema'
 import { throttle } from 'lodash-es'
 import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
-import { EInputBase, EFormLabel } from '@themes/components/ETextField'
+import { EInputBase, EFormLabel, ESelect } from '@themes/components/ETextField'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
@@ -425,13 +425,13 @@ const ContactUs = () => {
                               className={classes.dialingCode}
                               required
                             >
-                              <Select
+                              <ESelect
                                 labelId='dialingCode-select-label'
                                 id='dialingCode-type-select'
                                 name='dialingCode'
                                 value={values.dialingCode}
                                 onChange={handleChange}
-                                input={<EInputBase />}
+                                displayEmpty
                               >
                                 {DIALING_CODES.map((dialingCode) => (
                                   <MenuItem
@@ -441,7 +441,7 @@ const ContactUs = () => {
                                     {dialingCode.label}
                                   </MenuItem>
                                 ))}
-                              </Select>
+                              </ESelect>
                             </FormControl>
                           </Box>
                           <FormControl error={isError('phone')}>

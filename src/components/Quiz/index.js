@@ -724,6 +724,7 @@ const Quiz = () => {
                                   value={values.dialingCode}
                                   onChange={handleChange}
                                   input={<EInputBase />}
+                                  disableEmpty
                                 >
                                   {DIALING_CODES.map((dialingCode) => (
                                     <MenuItem
