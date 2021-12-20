@@ -4,9 +4,6 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
-- type: document
-  path: content/clinical-papers.json
-  label: Clinical Papers
 - type: directory
   path: content/terms-and-conditions
   label: T&C
