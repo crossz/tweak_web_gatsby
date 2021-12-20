@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/clinical-papers.json
   label: Clinical Papers
-  match: "**/*"
 - type: directory
   path: content/terms-and-conditions
   label: T&C
