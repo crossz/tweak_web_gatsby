@@ -33,3 +33,5 @@ fields:
       format: markdown
   label: detail
   description: Detail of clinical paper.
+pages:
+- content/clinical-papers/精密計算機演算法揭示潛藏的基因信息.md
