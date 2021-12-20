@@ -9,7 +9,7 @@ sections:
   label: Clinical Papers
   create: all
   match: "**/*"
-  new_doc_ext: ".pdf"
+  new_doc_ext: pdf
 - type: directory
   path: content/terms-and-conditions
   label: T&C
