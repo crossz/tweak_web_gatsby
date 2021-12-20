@@ -5,14 +5,6 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: content/clinical-papers
-  label: Clinical Papers
-  create: all
-  match: "**/*"
-  new_doc_ext: ".json"
-  templates:
-  - clinical-paper
-- type: directory
   path: content/terms-and-conditions
   label: T&C
   create: all

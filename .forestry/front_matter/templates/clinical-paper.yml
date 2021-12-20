@@ -12,5 +12,3 @@ fields:
   config:
     required: false
   label: pdf
-pages:
-- content/clinical-papers/精密計算機演算法揭示潛藏的基因信息.pdf
