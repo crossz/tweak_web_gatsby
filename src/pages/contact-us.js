@@ -35,6 +35,9 @@ import CancelIcon from '@images/icons/cancel.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: theme.palette.background.default,
+  },
+  container: {
     paddingBottom: theme.spacing(11),
     [theme.breakpoints.down('xs')]: {
       paddingBottom: 0,
@@ -264,262 +267,268 @@ const ContactUs = () => {
   }
 
   return (
-    <Container className={classes.root} disableGutters maxWidth='xl'>
-      <Box
-        height={matches ? 118 : 190}
-        bgcolor='primary.main'
-        mb={-13.75}
-      ></Box>
-      <Box className={classes.contentRoot}>
-        <Container disableGutters maxWidth='md'>
-          <Grid container spacing={0}>
-            <Grid className={classes.leftWrapper} item xs={12} sm={7}>
-              <Tabs
-                scrollButtons='off'
-                variant='scrollable'
-                indicatorColor='secondary'
-                value={activeTab}
-                onChange={handleTabChange}
-                classes={{
-                  root: classes.tabsRoot,
-                  flexContainer: classes.flexContainer,
-                  scrollButtons: classes.scrollButtons,
-                }}
-              >
-                {contactTypes.map((contactType) => (
-                  <Tab
-                    key={contactType.label}
-                    label={contactType.tabLabel}
-                    classes={{
-                      root: classes.tabRoot,
-                      selected: classes.selected,
-                    }}
-                  ></Tab>
-                ))}
-              </Tabs>
-              <Box px={matches ? 3 : 0} mt={matches ? 4 : 3.75}>
-                <ImageList
-                  className={classes.imageList}
-                  rowHeight='auto'
-                  cols={matches ? 1 : 2}
-                  gap={16}
+    <Box className={classes.root}>
+      <Container className={classes.container} disableGutters maxWidth='xl'>
+        <Box
+          height={matches ? 118 : 190}
+          bgcolor='primary.main'
+          mb={-13.75}
+        ></Box>
+        <Box className={classes.contentRoot}>
+          <Container disableGutters maxWidth='md'>
+            <Grid container spacing={0}>
+              <Grid className={classes.leftWrapper} item xs={12} sm={7}>
+                <Tabs
+                  scrollButtons='off'
+                  variant='scrollable'
+                  indicatorColor='secondary'
+                  value={activeTab}
+                  onChange={handleTabChange}
+                  classes={{
+                    root: classes.tabsRoot,
+                    flexContainer: classes.flexContainer,
+                    scrollButtons: classes.scrollButtons,
+                  }}
                 >
-                  {contactTypes.map(({ label, Icon, type, link }, index) => (
-                    <ImageListItem
-                      key={label}
+                  {contactTypes.map((contactType) => (
+                    <Tab
+                      key={contactType.label}
+                      label={contactType.tabLabel}
                       classes={{
-                        item: classes.imageListItemItem,
+                        root: classes.tabRoot,
+                        selected: classes.selected,
                       }}
-                      className={classes.imageListItem}
-                    >
-                      <Button
-                        className={classes.button}
-                        classes={{
-                          startIcon: classes.startIcon,
-                        }}
-                        variant='contained'
-                        color={index === activeTab ? 'secondary' : 'default'}
-                        startIcon={
-                          <Icon
-                            className={classnames(
-                              index === activeTab && classes.activeIcon
-                            )}
-                          />
-                        }
-                        size='large'
-                        href={getHref(type, link)}
-                        target={type === 'link' ? '_blank' : ''}
-                      >
-                        {label}
-                      </Button>
-                    </ImageListItem>
+                    ></Tab>
                   ))}
-                </ImageList>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={5}>
-              <Box className={classes.formTitle}>提交意見或查詢</Box>
-              <Formik
-                initialValues={initialValues}
-                validationSchema={schema}
-                onSubmit={throttle(async (values) => {
-                  if (loading) return
-                  try {
-                    setLoading(true)
-                    await handleSubmit(values)
-                    toast.success('已成功提交')
-                  } catch (error) {
-                    toast.error(error)
-                  }
-                  setLoading(false)
-                }, 1000)}
-              >
-                {(props) => {
-                  const {
-                    values,
-                    handleSubmit,
-                    handleChange,
-                    touched,
-                    errors,
-                    setFieldValue,
-                  } = props
-                  const isError = (field) =>
-                    touched[field] && Boolean(errors[field])
-                  const errorText = (field) => (
-                    <FormHelperText>
-                      {touched[field] && errors[field]}
-                    </FormHelperText>
-                  )
-                  const CancelButton = ({ field }) =>
-                    values[field] ? (
-                      <InputAdornment position='end'>
-                        <Box
-                          className={classnames(
-                            classes.cancelIcon,
-                            !isError(field) && classes.activeCancelIcon
-                          )}
-                          onClick={() => setFieldValue(field, '')}
-                        >
-                          <CancelIcon></CancelIcon>
-                        </Box>
-                      </InputAdornment>
-                    ) : null
-
-                  return (
-                    <form
-                      onSubmit={handleSubmit}
-                      className={classes.form}
-                      noValidate
-                    >
-                      <Box mb={4}>
-                        <FormControl
-                          fullWidth
-                          error={isError('companyName')}
-                          required
-                        >
-                          <EFormLabel>公司名稱/姓名</EFormLabel>
-                          <EInputBase
-                            id='company-ame'
-                            name='companyName'
-                            margin='none'
-                            value={values.companyName}
-                            onChange={handleChange}
-                            placeholder={
-                              isError('companyName')
-                                ? ''
-                                : '請輸入公司名稱/姓名'
-                            }
-                            type='text'
-                            endAdornment={<CancelButton field='companyName' />}
-                          />
-                          {errorText('companyName')}
-                        </FormControl>
-                      </Box>
-                      <Box mb={4}>
-                        <Box mb={1}>
-                          <EFormLabel>電話號碼</EFormLabel>
-                        </Box>
-                        <Box display='flex'>
-                          <Box mr={0.5}>
-                            <FormControl
-                              className={classes.dialingCode}
-                              required
-                            >
-                              <ESelect
-                                labelId='dialingCode-select-label'
-                                id='dialingCode-type-select'
-                                name='dialingCode'
-                                value={values.dialingCode}
-                                onChange={handleChange}
-                                displayEmpty
-                              >
-                                {DIALING_CODES.map((dialingCode) => (
-                                  <MenuItem
-                                    key={dialingCode.value}
-                                    value={dialingCode.value}
-                                  >
-                                    {dialingCode.label}
-                                  </MenuItem>
-                                ))}
-                              </ESelect>
-                            </FormControl>
-                          </Box>
-                          <FormControl error={isError('phone')}>
-                            <EInputBase
-                              id='phone'
-                              name='phone'
-                              margin='none'
-                              value={values.phone}
-                              onChange={handleChange}
-                              placeholder='9876 5432'
-                              endAdornment={<CancelButton field='phone' />}
+                </Tabs>
+                <Box px={matches ? 3 : 0} mt={matches ? 4 : 3.75}>
+                  <ImageList
+                    className={classes.imageList}
+                    rowHeight='auto'
+                    cols={matches ? 1 : 2}
+                    gap={16}
+                  >
+                    {contactTypes.map(({ label, Icon, type, link }, index) => (
+                      <ImageListItem
+                        key={label}
+                        classes={{
+                          item: classes.imageListItemItem,
+                        }}
+                        className={classes.imageListItem}
+                      >
+                        <Button
+                          className={classes.button}
+                          classes={{
+                            startIcon: classes.startIcon,
+                          }}
+                          variant='contained'
+                          color={index === activeTab ? 'secondary' : 'default'}
+                          startIcon={
+                            <Icon
+                              className={classnames(
+                                index === activeTab && classes.activeIcon
+                              )}
                             />
-                            {errorText('phone')}
+                          }
+                          size='large'
+                          href={getHref(type, link)}
+                          target={type === 'link' ? '_blank' : ''}
+                        >
+                          {label}
+                        </Button>
+                      </ImageListItem>
+                    ))}
+                  </ImageList>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={5}>
+                <Box className={classes.formTitle}>提交意見或查詢</Box>
+                <Formik
+                  initialValues={initialValues}
+                  validationSchema={schema}
+                  onSubmit={throttle(async (values) => {
+                    if (loading) return
+                    try {
+                      setLoading(true)
+                      await handleSubmit(values)
+                      toast.success('已成功提交')
+                    } catch (error) {
+                      toast.error(error)
+                    }
+                    setLoading(false)
+                  }, 1000)}
+                >
+                  {(props) => {
+                    const {
+                      values,
+                      handleSubmit,
+                      handleChange,
+                      touched,
+                      errors,
+                      setFieldValue,
+                    } = props
+                    const isError = (field) =>
+                      touched[field] && Boolean(errors[field])
+                    const errorText = (field) => (
+                      <FormHelperText>
+                        {touched[field] && errors[field]}
+                      </FormHelperText>
+                    )
+                    const CancelButton = ({ field }) =>
+                      values[field] ? (
+                        <InputAdornment position='end'>
+                          <Box
+                            className={classnames(
+                              classes.cancelIcon,
+                              !isError(field) && classes.activeCancelIcon
+                            )}
+                            onClick={() => setFieldValue(field, '')}
+                          >
+                            <CancelIcon></CancelIcon>
+                          </Box>
+                        </InputAdornment>
+                      ) : null
+
+                    return (
+                      <form
+                        onSubmit={handleSubmit}
+                        className={classes.form}
+                        noValidate
+                      >
+                        <Box mb={4}>
+                          <FormControl
+                            fullWidth
+                            error={isError('companyName')}
+                            required
+                          >
+                            <EFormLabel>公司名稱/姓名</EFormLabel>
+                            <EInputBase
+                              id='company-ame'
+                              name='companyName'
+                              margin='none'
+                              value={values.companyName}
+                              onChange={handleChange}
+                              placeholder={
+                                isError('companyName')
+                                  ? ''
+                                  : '請輸入公司名稱/姓名'
+                              }
+                              type='text'
+                              endAdornment={
+                                <CancelButton field='companyName' />
+                              }
+                            />
+                            {errorText('companyName')}
                           </FormControl>
                         </Box>
-                      </Box>
-                      <Box mb={4}>
-                        <FormControl
-                          fullWidth
-                          error={isError('email')}
-                          required
-                        >
-                          <EFormLabel>電郵</EFormLabel>
-                          <EInputBase
-                            id='email'
-                            name='email'
-                            margin='none'
-                            value={values.email}
-                            onChange={handleChange}
-                            placeholder={
-                              isError('email') ? '' : 'example@take2health.com'
-                            }
-                            endAdornment={<CancelButton field='email' />}
-                          />
-
-                          {errorText('email')}
-                        </FormControl>
-                      </Box>
-                      <Box mb={4}>
-                        <FormControl fullWidth>
-                          <EFormLabel>訊息</EFormLabel>
-                          <TextareaAutosize
-                            className={classes.textarea}
-                            minRows={6}
-                            aria-label='message'
-                            name='message'
-                            onChange={handleChange}
-                            value={values.message}
-                            placeholder='請輸入你的訊息'
-                          />
-                        </FormControl>
-                        <FormHelperText>
-                          <Box color='primary.main' component='span'>
-                            *必填資料
+                        <Box mb={4}>
+                          <Box mb={1}>
+                            <EFormLabel>電話號碼</EFormLabel>
                           </Box>
-                        </FormHelperText>
-                      </Box>
-                      <Button
-                        type='submit'
-                        fullWidth
-                        variant='contained'
-                        color='secondary'
-                      >
-                        {loading ? (
-                          <CircularProgress color='inherit' size={24} />
-                        ) : (
-                          '提交'
-                        )}
-                      </Button>
-                    </form>
-                  )
-                }}
-              </Formik>
+                          <Box display='flex'>
+                            <Box mr={0.5}>
+                              <FormControl
+                                className={classes.dialingCode}
+                                required
+                              >
+                                <ESelect
+                                  labelId='dialingCode-select-label'
+                                  id='dialingCode-type-select'
+                                  name='dialingCode'
+                                  value={values.dialingCode}
+                                  onChange={handleChange}
+                                  displayEmpty
+                                >
+                                  {DIALING_CODES.map((dialingCode) => (
+                                    <MenuItem
+                                      key={dialingCode.value}
+                                      value={dialingCode.value}
+                                    >
+                                      {dialingCode.label}
+                                    </MenuItem>
+                                  ))}
+                                </ESelect>
+                              </FormControl>
+                            </Box>
+                            <FormControl error={isError('phone')}>
+                              <EInputBase
+                                id='phone'
+                                name='phone'
+                                margin='none'
+                                value={values.phone}
+                                onChange={handleChange}
+                                placeholder='9876 5432'
+                                endAdornment={<CancelButton field='phone' />}
+                              />
+                              {errorText('phone')}
+                            </FormControl>
+                          </Box>
+                        </Box>
+                        <Box mb={4}>
+                          <FormControl
+                            fullWidth
+                            error={isError('email')}
+                            required
+                          >
+                            <EFormLabel>電郵</EFormLabel>
+                            <EInputBase
+                              id='email'
+                              name='email'
+                              margin='none'
+                              value={values.email}
+                              onChange={handleChange}
+                              placeholder={
+                                isError('email')
+                                  ? ''
+                                  : 'example@take2health.com'
+                              }
+                              endAdornment={<CancelButton field='email' />}
+                            />
+
+                            {errorText('email')}
+                          </FormControl>
+                        </Box>
+                        <Box mb={4}>
+                          <FormControl fullWidth>
+                            <EFormLabel>訊息</EFormLabel>
+                            <TextareaAutosize
+                              className={classes.textarea}
+                              minRows={6}
+                              aria-label='message'
+                              name='message'
+                              onChange={handleChange}
+                              value={values.message}
+                              placeholder='請輸入你的訊息'
+                            />
+                          </FormControl>
+                          <FormHelperText>
+                            <Box color='primary.main' component='span'>
+                              *必填資料
+                            </Box>
+                          </FormHelperText>
+                        </Box>
+                        <Button
+                          type='submit'
+                          fullWidth
+                          variant='contained'
+                          color='secondary'
+                        >
+                          {loading ? (
+                            <CircularProgress color='inherit' size={24} />
+                          ) : (
+                            '提交'
+                          )}
+                        </Button>
+                      </form>
+                    )
+                  }}
+                </Formik>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
-    </Container>
+          </Container>
+        </Box>
+      </Container>
+    </Box>
   )
 }
 
