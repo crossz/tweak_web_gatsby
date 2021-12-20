@@ -8,21 +8,29 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
   },
-  outsideRoot: {
-    backgroundColor: theme.palette.background.paper,
-  },
   insideRoot: {
-    padding: theme.spacing(0, 10),
     boxSizing: 'content-box',
-    margin: theme.spacing(10, 0),
+    marginTop: theme.spacing(10),
+    marginBottom: theme.spacing(10),
+    backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(11.25),
+      paddingBottom: theme.spacing(9),
+      marginBottom: 0,
+    },
   },
   bannerWrapper: {
     position: 'relative',
+    marginLeft: theme.spacing(3),
   },
   banner: {
     height: 353,
     borderRadius: `12px 0 0 12px`,
     marginTop: theme.spacing(-3),
+    [theme.breakpoints.down('xs')]: {
+      height: 228,
+      marginTop: theme.spacing(-5),
+    },
   },
   bannerContent: {
     position: 'absolute',
@@ -31,14 +39,26 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
     maxWidth: 578,
     fontSize: theme.typography.body1.fontSize,
+    paddingRight: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      left: theme.spacing(3),
+      bottom: theme.spacing(3),
+      fontSize: theme.typography.body2.fontSize,
+    },
   },
   bannerTitle: {
     fontSize: theme.typography.h4.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(1),
+      fontSize: theme.typography.h6.fontSize,
+    },
   },
   list: {
-    margin: theme.spacing(0, 16),
+    maxWidth: 966,
+    margin: '0 auto',
+    padding: theme.spacing(0, 3),
   },
 }))
 
@@ -47,31 +67,29 @@ const ClinicalPapers = ({ data }) => {
   const { nodes } = data?.allMdx
   return (
     <Box className={classes.root}>
-      <Container className={classes.outsideRoot} disableGutters maxWidth='xl'>
-        <Container className={classes.insideRoot} disableGutters maxWidth='md'>
-          <Box className={classes.bannerWrapper}>
-            <StaticImage
-              className={classes.banner}
-              src='../../assets/images/clinical_papers_banner.jpg'
-              alt='clinical papers banner'
-            ></StaticImage>
-            <Box className={classes.bannerContent}>
-              <Box className={classes.bannerTitle}>相關研究報告</Box>
-              <Box>
-                我們的Take2 Prophecy™
-                早期鼻咽癌篩查測試由屢獲殊榮的中大研究團隊發明。團隊曾以該技術為2萬名人士進行鼻咽癌篩查，其臨床研究結果分別於《新英格蘭醫學雜誌》以及《美國國家科學院院刊》刊登，有關詳情請瀏覽以下刊物：
-              </Box>
+      <Container className={classes.insideRoot} disableGutters maxWidth='md'>
+        <Box className={classes.bannerWrapper}>
+          <StaticImage
+            className={classes.banner}
+            src='../../assets/images/clinical_papers_banner.jpg'
+            alt='clinical papers banner'
+          ></StaticImage>
+          <Box className={classes.bannerContent}>
+            <Box className={classes.bannerTitle}>相關研究報告</Box>
+            <Box>
+              我們的Take2 Prophecy™
+              早期鼻咽癌篩查測試由屢獲殊榮的中大研究團隊發明。團隊曾以該技術為2萬名人士進行鼻咽癌篩查，其臨床研究結果分別於《新英格蘭醫學雜誌》以及《美國國家科學院院刊》刊登，有關詳情請瀏覽以下刊物：
             </Box>
           </Box>
-          <Box className={classes.list}>
-            {nodes?.map((node) => (
-              <ClinicPaperItem
-                key={node.id}
-                {...node?.frontmatter}
-              ></ClinicPaperItem>
-            ))}
-          </Box>
-        </Container>
+        </Box>
+        <Box className={classes.list}>
+          {nodes?.map((node) => (
+            <ClinicPaperItem
+              key={node.id}
+              {...node?.frontmatter}
+            ></ClinicPaperItem>
+          ))}
+        </Box>
       </Container>
     </Box>
   )

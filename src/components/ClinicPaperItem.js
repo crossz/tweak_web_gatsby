@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.main,
       },
     },
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(3, 0),
+    },
   },
   date: {
     color: theme.palette.grey[600],
@@ -28,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.body1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.body2.fontSize,
+      marginBottom: theme.spacing(1.5),
+    },
   },
   detail: {
     textOverflow: 'ellipsis',
@@ -37,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     color: theme.palette.text.primary,
     fontSize: theme.typography.body2.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.caption.fontSize,
+    },
   },
   detailWrapper: {
     display: 'flex',
@@ -47,6 +57,14 @@ const useStyles = makeStyles((theme) => ({
   arrowIcon: {
     marginLeft: theme.spacing(3),
     marginTop: theme.spacing(-0.25),
+    [theme.breakpoints.down('xs')]: {
+      '& svg': {
+        width: theme.spacing(2),
+        height: theme.spacing(2),
+      },
+      marginLeft: theme.spacing(2),
+      marginTop: 0,
+    },
   },
   pdfWrapper: {
     display: 'flex',
@@ -54,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
     color: theme.palette.secondary.main,
     fontSize: theme.typography.body2.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      margin: theme.spacing(1.5, 0),
+      fontSize: theme.typography.caption.fontSize,
+    },
   },
   pdfIcon: {
     width: theme.spacing(4),
@@ -61,6 +83,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(0.5),
     '& path': {
       fill: theme.palette.secondary.main,
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: theme.spacing(3),
+      height: theme.spacing(3),
     },
   },
 }))
