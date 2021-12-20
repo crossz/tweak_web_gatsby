@@ -9,7 +9,7 @@ sections:
   label: Clinical Papers
   create: all
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
   templates:
   - clinical-paper
 - type: directory

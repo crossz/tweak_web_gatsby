@@ -5,10 +5,31 @@ fields:
 - name: title
   type: text
   config:
-    required: false
+    required: true
   label: title
-- name: pdf
-  type: text
+  description: Title of clinical paper.
+- name: date
+  type: datetime
+  label: date
+  description: 'Public or upload date of clinical paper '
   config:
-    required: false
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
   label: pdf
+  description: Pdf path of clinical paper.
+- name: detail
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: detail
+  description: Detail of clinical paper.
