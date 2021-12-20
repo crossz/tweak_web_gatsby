@@ -4,6 +4,8 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: heading
+  label: Test
 - type: document
   path: content/clinical-papers.json
   label: Clinical Papers
