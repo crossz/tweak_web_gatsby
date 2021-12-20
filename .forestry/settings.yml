@@ -9,7 +9,9 @@ sections:
   label: Clinical Papers
   create: all
   match: "**/*"
-  new_doc_ext: pdf
+  new_doc_ext: ".json"
+  templates:
+  - clinical-paper
 - type: directory
   path: content/terms-and-conditions
   label: T&C
