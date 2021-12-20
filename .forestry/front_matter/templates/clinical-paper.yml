@@ -1,4 +1,14 @@
 ---
 label: Clinical Paper
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
+  label: pdf
