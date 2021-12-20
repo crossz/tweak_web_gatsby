@@ -78,6 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
   allMdxList?.forEach((mdx) => {
+    if (mdx.parent.relativeDirectory === 'clinical-papers') return
     const path =
       `${
         mdx.parent.relativeDirectory === 'terms-and-conditions'
