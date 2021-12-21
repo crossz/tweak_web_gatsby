@@ -87,6 +87,7 @@ theme = createTheme(theme, {
         ),
         [theme.breakpoints.down('xs')]: {
           height: theme.spacing(5.625),
+          fontSize: theme.typography.body2.fontSize,
         },
       },
       text: {

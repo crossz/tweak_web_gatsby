@@ -63,6 +63,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     paddingTop: theme.spacing(9.75),
     paddingBottom: theme.spacing(23.5),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(5),
+      paddingBottom: theme.spacing(26),
+    },
   },
   root: {
     backgroundColor: '#F6F9FA',
@@ -76,7 +80,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'grid',
     borderRadius: theme.spacing(1.2),
     overflow: 'hidden',
-    marginTop: theme.spacing(-17.5),
+    marginTop: -140,
+    [theme.breakpoints.down('xs')]: {
+      height: 262,
+      marginTop: -172,
+    },
   },
   bannerCover: {
     height: '100%',
@@ -94,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contentRoot: {
     padding: theme.spacing(0, 8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(0, 1),
     },
   },
@@ -111,16 +119,35 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: -253,
+    padding: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      marginTop: -233,
+    },
+  },
+  box01Icon: {
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(10),
+      marginBottom: theme.spacing(4),
+    },
   },
   box01Content: {
-    marginLeft: theme.spacing(-3.5),
     maxWidth: 446,
+    fontSize: theme.typography.body1.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.body2.fontSize,
+      maxWidth: 'auto',
+    },
   },
   box01Title: {
     color: theme.palette.secondary.main,
     fontSize: theme.typography.h5.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+      marginBottom: theme.spacing(1.5),
+    },
   },
   downArrow: {
     paddingTop: theme.spacing(8),
@@ -132,12 +159,20 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(5),
       transform: 'rotate(90deg)',
     },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(2),
+      marginBottom: 0,
+      paddingTop: 0,
+    },
   },
   box02: {
     backgroundColor: theme.palette.primary.contrastText,
     padding: theme.spacing(8, 9.5),
     borderRadius: theme.spacing(1.5),
     textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(3, 6.75),
+    },
   },
   box02Title: {
     fontSize: theme.typography.h5.fontSize,
@@ -162,47 +197,80 @@ const useStyles = makeStyles((theme) => ({
     '& path:first-child': {
       fill: theme.palette.secondary.main,
     },
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      marginTop: 0,
+      padding: theme.spacing(3, 4),
+      fontSize: theme.typography.body1.fontSize,
+      alignItems: 'flex-start',
+    },
   },
   clubPlanItem: {
     display: 'flex',
     alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(3),
+      '&:last-child': {
+        marginBottom: 0,
+      },
+    },
   },
   box03: {
     marginTop: theme.spacing(8),
     padding: theme.spacing(0, 3),
     textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(6.25),
+    },
   },
   box03Title: {
     fontSize: theme.typography.h5.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(6),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+      marginBottom: theme.spacing(5),
+    },
   },
   stepsWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
   },
   stepItem: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: theme.spacing(31),
+    width: theme.spacing(31),
+    flexShrink: 1,
     '&:last-child $stepIcon': {
       width: 209,
+      [theme.breakpoints.down('xs')]: {
+        width: 174,
+      },
     },
   },
   stepIcon: {
-    height: 142,
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      width: 174,
+    },
   },
   stepLabel: {
     marginTop: theme.spacing(5.25),
     textAlign: 'left',
     display: 'flex',
     fontSize: theme.typography.body1.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(2),
+    },
   },
   stepNum: {
     display: 'flex',
@@ -211,12 +279,18 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     lineHeight: 1,
     marginRight: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
   },
   stepBetween: {
     margin: theme.spacing(0, 4.5),
+    paddingTop: theme.spacing(8),
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(0, 3),
       fontSize: theme.typography.h6.fontSize,
+      paddingTop: theme.spacing(1.5),
+      paddingBottom: theme.spacing(3),
     },
   },
   box04: {
@@ -224,23 +298,41 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(15.5),
     textAlign: 'center',
     fontSize: theme.typography.body1.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(12),
+      fontSize: theme.typography.body2.fontSize,
+    },
   },
   box04Title: {
     fontSize: theme.typography.h5.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+      marginBottom: theme.spacing(5),
+    },
   },
   box04Wrapper: {
     maxWidth: 568,
   },
   box04BtnWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
     marginTop: theme.spacing(8),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(4),
+    },
   },
   box04Btn: {
     width: theme.spacing(20.5),
+    flexShrink: 1,
     '&:last-child': {
       marginLeft: theme.spacing(2),
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
     },
   },
 }))
@@ -253,7 +345,7 @@ const Take2ExtraCare = () => {
 
   return (
     <>
-      <Typography className={classes.title} variant='h5' color='primary'>
+      <Typography className={classes.title} variant='h4' color='primary'>
         Take2 Prophecy™ 早期鼻咽癌篩查
       </Typography>
       <Box className={classes.root}>
@@ -266,12 +358,14 @@ const Take2ExtraCare = () => {
             ></StaticImage>
             <Box className={classes.bannerCover} />
           </Box>
-          <Box mx={2}>
+          <Box mx={3}>
             <Box className={classes.contentWrapper}>
               <Box className={classes.box01}>
                 <StaticImage
+                  className={classes.box01Icon}
                   src='../../assets/images/icons/take2Care/step_04.svg'
                   alt='homepage banner mobile'
+                  objectFit='contain'
                 ></StaticImage>
                 <Box className={classes.box01Content}>
                   <Box className={classes.box01Title}>
@@ -281,13 +375,17 @@ const Take2ExtraCare = () => {
                 </Box>
               </Box>
               <Box className={classes.downArrow}>
-                <ArrowIcon></ArrowIcon>
+                <Hidden xsDown>
+                  <ArrowIcon></ArrowIcon>
+                </Hidden>
               </Box>
               <Box className={classes.box02}>
-                <Box className={classes.box02Title}>
-                  甚麼是Take2 Extra Care會員計劃？
-                </Box>
-                這是一項由專業醫護人員團隊制訂的全面健康管理計劃，任何人士均可登記成爲會員。
+                <Hidden xsDown>
+                  <Box className={classes.box02Title}>
+                    甚麼是Take2 Extra Care會員計劃？
+                  </Box>
+                  這是一項由專業醫護人員團隊制訂的全面健康管理計劃，任何人士均可登記成爲會員。
+                </Hidden>
                 <Box className={classes.clubPlansWrapper}>
                   {clubPlans.map((clubPlan, index) => (
                     <Box className={classes.clubPlanItem} key={index}>
@@ -348,7 +446,9 @@ const Take2ExtraCare = () => {
               不需繳交任何會費的情況，就可成為永久會員，享用Take2 Extra
               Care會員計劃轄下一切服務，包括即時查詢、健康資訊、獨家優惠、年度篩查提醒等。{' '}
               <br />
-              <br />
+              <Hidden xsDown>
+                <br />
+              </Hidden>
               長遠而言，透過參加Take2 Extra
               Care會員計劃，你可更有效運用健康管理所需時間及金錢，透過現今科技和醫療專業意見協助你更早為健康做好準備。
             </Box>
