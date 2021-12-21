@@ -7,19 +7,13 @@ import {
   useTheme,
   useMediaQuery,
   Hidden,
-  Grid,
   Button,
+  Box,
 } from '@material-ui/core'
-import Box from '@material-ui/core/Box'
 import { StaticImage } from 'gatsby-plugin-image'
-import RightIcon from '@images/icons/right.svg'
-import { Link } from 'gatsby'
 import ArrowIcon from '@images/icons/arrow.svg'
 import CheckCircleIcon from '@images/icons/check_circle.svg'
-import ImageList from '@material-ui/core/ImageList'
-import ImageListItem from '@material-ui/core/ImageListItem'
 import useSiteMetadata from '@hooks/useSiteMetadata'
-import classnames from 'classnames'
 import TitleDot from '@themes/components/TitleDot'
 import { padStartNum } from '@utils'
 
@@ -289,6 +283,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(0, 3),
       fontSize: theme.typography.h6.fontSize,
+    },
+    [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(1.5),
       paddingBottom: theme.spacing(3),
     },
