@@ -54,31 +54,31 @@ export const POST_TYPES = [
 export const REGIONS = [
   {
     label: '香港',
-    value: 0,
+    value: '香港',
     districts: [
       {
         label: '所有地區',
-        value: 0,
+        value: '',
       },
       {
         label: '香港',
-        value: 1,
+        value: '香港',
       },
       {
         label: '九龍',
-        value: 2,
+        value: '九龍',
       },
       {
         label: '新界東',
-        value: 3,
+        value: '新界東',
       },
       {
         label: '新界西',
-        value: 4,
+        value: '新界西',
       },
       {
         label: '澳門',
-        value: 5,
+        value: '澳門',
       },
     ],
   },

@@ -96,6 +96,9 @@ theme = createTheme(theme, {
         '&:hover': {
           color: theme.palette.secondary.main,
           textDecoration: 'underline',
+          '& path': {
+            fill: theme.palette.secondary.main,
+          },
         },
         '&:active': {
           color: theme.palette.secondary.dark,

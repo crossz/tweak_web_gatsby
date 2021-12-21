@@ -17,6 +17,8 @@ export const oriSchema = (props) => {
     age: yString().nullable().required('請選擇年齡'),
     quiz: yArray().of(yString()).length(QUIZ.length).required('請完成測驗'),
     birthday: yDate().nullable().required('請選擇出生日期'),
+    message: yString().nullable(),
+    contactName: yString().nullable(),
     email: yString()
       .nullable()
       .email('請輸入正確格式')
