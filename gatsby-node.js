@@ -10,9 +10,25 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'Mdx') {
     const { relativeDirectory, name } = getNode(node.parent)
-    const slug = `${relativeDirectory}/${
-      node.frontmatter.slug || node.frontmatter.title || name
-    }`
+
+    let slug = ''
+
+    switch (relativeDirectory) {
+      case 'clinical-papers':
+        break
+      case 'join-us':
+        slug = `/about-us/${relativeDirectory}/${node.id}`
+        break
+      case 'terms-and-conditions':
+        slug = `/${node.frontmatter.slug || node.frontmatter.title || name}`
+        break
+      default:
+        slug = `/whats-new/${relativeDirectory}/${
+          node.frontmatter.slug || node.frontmatter.title || name
+        }`
+        break
+    }
+
     createNodeField({
       node,
       name: `slug`,
@@ -56,6 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   const postTemplate = resolve(__dirname, 'src/templates/Post.js')
   const tAndCTemplate = resolve(__dirname, 'src/templates/T&C.js')
+  const careerTemplate = resolve(__dirname, 'src/templates/Career.js')
 
   const allMdxQuery = await graphql(`
     {
@@ -78,19 +95,26 @@ exports.createPages = async ({ graphql, actions }) => {
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
   allMdxList?.forEach((mdx) => {
-    if (mdx.parent.relativeDirectory === 'clinical-papers') return
-    const path =
-      `${
-        mdx.parent.relativeDirectory === 'terms-and-conditions'
-          ? '/'
-          : '/whats-new/'
-      }` + mdx.fields.slug
+    let path = mdx.fields.slug
+    if (!path) return
+
+    let template = null
+
+    switch (mdx.parent.relativeDirectory) {
+      case 'terms-and-conditions':
+        template = tAndCTemplate
+        break
+      case 'join-us':
+        template = careerTemplate
+        break
+      default:
+        template = postTemplate
+        break
+    }
+
     createPage({
       path: decodeURIComponent(path),
-      component:
-        mdx.parent.relativeDirectory === 'terms-and-conditions'
-          ? tAndCTemplate
-          : postTemplate,
+      component: template,
       context: {
         slug: mdx.fields.slug,
         sectionPath: mdx.parent.relativeDirectory,

@@ -23,7 +23,9 @@ export const query = graphql`
     ) {
       nodes {
         id
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           date(formatString: "DD/MM/YYYY")
@@ -43,7 +45,9 @@ export const query = graphql`
     ) {
       nodes {
         id
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           date(formatString: "DD/MM/YYYY")

@@ -178,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(-9),
     width: `93%`,
     [theme.breakpoints.down('xs')]: {
-      width: `calc(100% ${theme.spacing(3)})`,
+      width: `calc(100% - ${theme.spacing(3)}px)`,
       marginTop: theme.spacing(-26),
     },
   },

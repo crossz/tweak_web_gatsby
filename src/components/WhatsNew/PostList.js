@@ -60,7 +60,7 @@ const PostList = ({ title, caption, nodes }) => {
                   key={node.id}
                 >
                   <PostCard
-                    slug={`/whats-new/${node.fields.slug}`}
+                    slug={node.fields.slug}
                     {...node.frontmatter}
                   ></PostCard>
                 </ImageListItem>
