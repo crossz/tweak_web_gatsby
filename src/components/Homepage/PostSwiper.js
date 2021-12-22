@@ -115,7 +115,7 @@ const PostSwiper = ({ nodes }) => {
             <SwiperSlide key={index}>
               <PostCard
                 key={node.id}
-                slug={`/whats-new/${node.fields.slug}`}
+                slug={node.fields.slug}
                 {...node.frontmatter}
               />
             </SwiperSlide>
