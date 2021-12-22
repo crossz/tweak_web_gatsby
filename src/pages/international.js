@@ -252,7 +252,7 @@ const partners = [
 const initialValues = {
   companyName: '',
   dialingCode: '852',
-  contactName: '',
+  name: '',
   phone: '',
   email: '',
   area: '',
@@ -261,7 +261,7 @@ const initialValues = {
 const schema = oriSchema().pick([
   'companyName',
   'dialingCode',
-  'contactName',
+  'name',
   'phone',
   'email',
   'area',
@@ -480,23 +480,20 @@ const International = () => {
                         <Box className={classes.formControlLine}>
                           <FormControl
                             fullWidth
-                            error={isError('contactName')}
-                            required
+                            error={isError('name')}
                             className={classes.formControl}
                           >
                             <EFormLabel>聯絡人姓名</EFormLabel>
                             <EInputBase
                               id='contact-name'
-                              name='contactName'
+                              name='name'
                               margin='none'
-                              value={values.contactName}
+                              value={values.name}
                               onChange={handleChange}
                               type='text'
-                              endAdornment={
-                                <CusCancelButton field='contactName' />
-                              }
+                              endAdornment={<CusCancelButton field='name' />}
                             />
-                            {errorText('contactName')}
+                            {errorText('name')}
                           </FormControl>
                           <FormControl
                             fullWidth

@@ -10,6 +10,8 @@ import { DIALING_CODES, QUIZ } from '@utils/constant'
 
 export const oriSchema = (props) => {
   return yObject({
+    requiredArea: yBool(),
+    requiredName: yBool(),
     companyName: yString().nullable().required('請輸入公司名稱/姓名'),
     dialingCode: yString().nullable().required(),
     gender: yString().nullable().required('請選擇性別'),
@@ -17,7 +19,12 @@ export const oriSchema = (props) => {
     quiz: yArray().of(yString()).length(QUIZ.length).required('請完成測驗'),
     birthday: yDate().nullable().required('請選擇出生日期'),
     message: yString().nullable(),
-    contactName: yString().nullable(),
+    name: yString()
+      .nullable()
+      .when('requiredName', {
+        is: true,
+        then: yString().required('請輸入聯絡人姓名'),
+      }),
     email: yString()
       .nullable()
       .email('請輸入正確格式')
@@ -37,5 +44,12 @@ export const oriSchema = (props) => {
         )
       }),
     agreeTC: yBool().isTrue('請勾選同意'),
+    area: yString()
+      .nullable()
+      .when('requiredArea', {
+        is: true,
+        then: yString().required('請選擇地區'),
+      }),
+    department: yString().nullable().required('請選擇部門'),
   })
 }

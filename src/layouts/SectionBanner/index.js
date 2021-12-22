@@ -41,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(5.75),
       padding: 0,
+      backgroundColor: theme.palette.grey[100],
+      borderBottom: `1px solid ${theme.palette.grey[400]}`,
     },
   },
   tab: {
@@ -62,12 +64,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.caption.fontSize,
       margin: 0,
-      padding: theme.spacing(0.75, 1),
+      padding: theme.spacing(0.75, 0),
       height: '100%',
       borderRadius: 0,
-      boxShadow: `0 1px 0 0 ${theme.palette.grey[400]}`,
       width: '100%',
-      flexGlow: 1,
+      flexGrow: 1,
       minWidth: 'auto',
     },
   },

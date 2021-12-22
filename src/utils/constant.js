@@ -116,3 +116,18 @@ export const QUIZ = [
 ]
 
 export const AGES = ['1~10', '11~20']
+
+export const DEPARTMENTS = [
+  {
+    label: '所有部門',
+    value: '',
+  },
+  {
+    label: '商業戰略合作',
+    value: '商業戰略合作',
+  },
+  {
+    label: 'DITE',
+    value: 'DITE',
+  },
+]
