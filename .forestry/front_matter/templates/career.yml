@@ -1,4 +1,41 @@
 ---
 label: Career
 hide_body: false
-fields: []
+fields:
+- name: career
+  type: text
+  config:
+    required: true
+  label: career
+- name: department
+  type: select
+  default: ''
+  config:
+    required: true
+    options: []
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: department
+- name: date
+  type: datetime
+  label: date
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: region
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: region
