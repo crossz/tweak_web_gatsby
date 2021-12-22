@@ -9,13 +9,13 @@ sections:
   label: Careers
   create: documents
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
   templates:
   - career
 - type: directory
   path: content/clinical-papers
   label: Clinical Papers
-  create: all
+  create: documents
   match: "**/*"
   new_doc_ext: md
   templates:
