@@ -11,7 +11,6 @@ import { DIALING_CODES, QUIZ } from '@utils/constant'
 export const oriSchema = (props) => {
   return yObject({
     companyName: yString().nullable().required('請輸入公司名稱/姓名'),
-    message: yString().nullable(),
     dialingCode: yString().nullable().required(),
     gender: yString().nullable().required('請選擇性別'),
     age: yString().nullable().required('請選擇年齡'),

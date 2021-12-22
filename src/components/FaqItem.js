@@ -2,15 +2,7 @@ import React from 'react'
 import {
   makeStyles,
   withStyles,
-  Container,
-  Typography,
-  alpha,
-  useTheme,
-  useMediaQuery,
-  Hidden,
-  Button,
   Box,
-  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -38,7 +30,6 @@ const FaqAccordion = withStyles((theme) => ({
   root: {
     backgroundColor: 'transparent',
     boxShadow: 'none',
-    padding: `0px !important`,
     height: 'auto !important',
     padding: theme.spacing(5, 0),
     marginBottom: 0,

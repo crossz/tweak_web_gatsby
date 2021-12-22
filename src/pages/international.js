@@ -14,6 +14,8 @@ import {
   FormHelperText,
   CircularProgress,
   MenuItem,
+  useTheme,
+  useMediaQuery,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import RightIcon from '@images/icons/right.svg'
@@ -34,16 +36,28 @@ const useStyles = makeStyles((theme) => ({
   box01: {
     textAlign: 'center',
     padding: theme.spacing(9.5, 9.25),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 1),
+      paddingTop: theme.spacing(6.25),
+      paddingBottom: theme.spacing(5.5),
+    },
   },
   box01Title: {
     marginBottom: theme.spacing(2),
   },
+  box01Content: {
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.body2.fontSize,
+    },
+  },
   bannerWrapper: {
     height: 250,
     display: 'grid',
+    [theme.breakpoints.down('xs')]: {
+      height: 140,
+    },
   },
   bannerBg: {
-    height: '100%',
     gridArea: '1/1',
   },
   bannerCover: {
@@ -60,13 +74,21 @@ const useStyles = makeStyles((theme) => ({
   box02: {
     backgroundColor: alpha(theme.palette.primary.main, 0.05),
     position: 'relative',
-    paddingBottom: theme.spacing(23.75),
+    paddingBottom: 190,
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 1),
+      paddingBottom: 193,
+    },
   },
   box02Title: {
     color: theme.palette.primary.contrastText,
     textAlign: 'center',
     marginTop: -184,
     marginBottom: theme.spacing(6),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: -92,
+      marginBottom: theme.spacing(3),
+    },
   },
   imageList: {
     overflow: 'initial',
@@ -91,20 +113,34 @@ const useStyles = makeStyles((theme) => ({
     '& a:hover': {
       textDecoration: 'none',
     },
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(1.25),
+    },
   },
   country: {
     color: theme.palette.secondary.main,
     fontSize: theme.typography.caption.fontSize,
     marginBottom: theme.spacing(1.5),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(0.5),
+    },
   },
   name: {
     fontWeight: theme.typography.fontWeightBold,
     marginBottom: theme.spacing(3.5),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(0.5),
+      fontSize: theme.typography.body2.fontSize,
+    },
   },
   partnerBtnWrapper: {
     textAlign: 'right',
     marginTop: theme.spacing(3),
     minHeight: theme.spacing(7),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(2.5),
+      minHeight: theme.spacing(5.5),
+    },
   },
   viewBtn: {
     width: theme.spacing(15),
@@ -114,31 +150,54 @@ const useStyles = makeStyles((theme) => ({
   box03: {
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(15),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(12),
+      paddingBottom: theme.spacing(10),
+    },
   },
   form: {
     marginTop: theme.spacing(5),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(4),
+    },
   },
   box03Title: {
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(1),
+    },
   },
   box03Wrapper: {
     maxWidth: 570,
     fontSize: theme.typography.body1.fontSize,
+    padding: theme.spacing(0, 3),
   },
   sideImg: {
     borderRadius: `0 12px 12px 0`,
     marginTop: theme.spacing(-9),
-    width: `85%`,
+    width: `93%`,
+    [theme.breakpoints.down('xs')]: {
+      width: `calc(100% ${theme.spacing(3)})`,
+      marginTop: theme.spacing(-26),
+    },
   },
   formControl: {
     '&:last-child': {
       marginLeft: theme.spacing(3),
+      [theme.breakpoints.down('xs')]: {
+        marginLeft: 0,
+        marginTop: theme.spacing(3),
+      },
     },
   },
   formControlLine: {
     marginBottom: theme.spacing(3),
     display: 'flex',
     alignItems: 'flex-start',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+    },
   },
   dialingCodeFormControl: {
     flexShrink: 0,
@@ -210,6 +269,8 @@ const schema = oriSchema().pick([
 
 const International = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (values) => {
@@ -236,19 +297,29 @@ const International = () => {
   return (
     <Box className={classes.root}>
       <Container className={classes.box01} maxWidth='lg'>
-        <Typography className={classes.box01Title} variant='h5' color='primary'>
-          開拓邊界，引領改變
-        </Typography>
-        <Typography variant='body1' color='textPrimary'>
-          作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
-        </Typography>
+        <Box mx={2}>
+          <Typography
+            className={classes.box01Title}
+            variant='h4'
+            color='primary'
+          >
+            開拓邊界，引領改變
+          </Typography>
+          <Typography
+            className={classes.box01Content}
+            variant='body1'
+            color='textPrimary'
+          >
+            作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
+          </Typography>
+        </Box>
       </Container>
       <Container disableGutters className={classes.bannerWrapper} maxWidth='lg'>
         <StaticImage
           className={classes.bannerBg}
           src='../assets/images/international_banner_bg.jpg'
           alt='international banner'
-          objectFit='fill'
+          objectPosition='left'
         ></StaticImage>
         <Box className={classes.bannerCover} />
       </Container>
@@ -260,8 +331,8 @@ const International = () => {
           <ImageList
             className={classes.imageList}
             rowHeight='auto'
-            cols={3}
-            gap={24}
+            cols={matches ? 1 : 3}
+            gap={matches ? 16 : 24}
           >
             {partners.map(({ country, name, intro, link }, index) => (
               <ImageListItem
@@ -281,7 +352,10 @@ const International = () => {
                     >
                       {name}
                     </Typography>
-                    <Typography variant='body1' color='textPrimary'>
+                    <Typography
+                      variant={matches ? 'body2' : 'body1'}
+                      color='textPrimary'
+                    >
                       {intro}
                     </Typography>
                     <Box className={classes.partnerBtnWrapper}>
@@ -318,16 +392,17 @@ const International = () => {
               <Box className={classes.box03Wrapper}>
                 <Typography
                   className={classes.box03Title}
-                  variant='h5'
+                  variant='h4'
                   color='primary'
                 >
                   成為合作夥伴
                 </Typography>
-                <Box>
-                  <Box>
-                    如閣下期望與我們一起透過創新科技，推廣早期鼻咽癌篩查服務，歡迎填妥以下資料，我們將會儘快與你聯絡。
-                  </Box>
-                </Box>
+                <Typography
+                  variant={matches ? 'body2' : 'body1'}
+                  color='textPrimary'
+                >
+                  如閣下期望與我們一起透過創新科技，推廣早期鼻咽癌篩查服務，歡迎填妥以下資料，我們將會儘快與你聯絡。
+                </Typography>
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
