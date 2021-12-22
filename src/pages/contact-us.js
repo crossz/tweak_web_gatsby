@@ -22,15 +22,18 @@ import { oriSchema } from '@utils/schema'
 import { throttle } from 'lodash-es'
 import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
-import { EInputBase, EFormLabel, ESelect } from '@themes/components/ETextField'
+import {
+  EInputBase,
+  EFormLabel,
+  ESelect,
+  CancelButton,
+} from '@themes/components/ETextField'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import classnames from 'classnames'
-import InputAdornment from '@material-ui/core/InputAdornment'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
-import CancelIcon from '@images/icons/cancel.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -158,24 +161,6 @@ const useStyles = makeStyles((theme) => ({
     },
     '&:focus': {
       borderColor: theme.palette.primary.main,
-    },
-  },
-  cancelIcon: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-    '& svg': {
-      width: theme.spacing(2.5),
-      height: theme.spacing(2.5),
-    },
-    '& path': {
-      fill: theme.palette.error.main,
-    },
-  },
-  activeCancelIcon: {
-    '& path': {
-      fill: theme.palette.grey[400],
     },
   },
 }))
@@ -368,26 +353,21 @@ const ContactUs = () => {
                     } = props
                     const isError = (field) =>
                       touched[field] && Boolean(errors[field])
-                    const errorText = (field) => (
-                      <FormHelperText>
-                        {touched[field] && errors[field]}
-                      </FormHelperText>
-                    )
-                    const CancelButton = ({ field }) =>
-                      values[field] ? (
-                        <InputAdornment position='end'>
-                          <Box
-                            className={classnames(
-                              classes.cancelIcon,
-                              !isError(field) && classes.activeCancelIcon
-                            )}
-                            onClick={() => setFieldValue(field, '')}
-                          >
-                            <CancelIcon></CancelIcon>
-                          </Box>
-                        </InputAdornment>
-                      ) : null
+                    const errorText = (field) =>
+                      touched[field] &&
+                      errors[field] && (
+                        <FormHelperText>{errors[field]}</FormHelperText>
+                      )
 
+                    const CusCancelButton = ({ field }) => (
+                      <CancelButton
+                        values={values}
+                        touched={touched}
+                        errors={errors}
+                        field={field}
+                        onCancel={(field) => setFieldValue(field, '')}
+                      />
+                    )
                     return (
                       <form
                         onSubmit={handleSubmit}
@@ -414,7 +394,7 @@ const ContactUs = () => {
                               }
                               type='text'
                               endAdornment={
-                                <CancelButton field='companyName' />
+                                <CusCancelButton field='companyName' />
                               }
                             />
                             {errorText('companyName')}
@@ -457,7 +437,7 @@ const ContactUs = () => {
                                 value={values.phone}
                                 onChange={handleChange}
                                 placeholder='9876 5432'
-                                endAdornment={<CancelButton field='phone' />}
+                                endAdornment={<CusCancelButton field='phone' />}
                               />
                               {errorText('phone')}
                             </FormControl>
@@ -481,7 +461,7 @@ const ContactUs = () => {
                                   ? ''
                                   : 'example@take2health.com'
                               }
-                              endAdornment={<CancelButton field='email' />}
+                              endAdornment={<CusCancelButton field='email' />}
                             />
 
                             {errorText('email')}

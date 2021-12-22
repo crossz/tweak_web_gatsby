@@ -1,17 +1,51 @@
 import React from 'react'
-import { withStyles, makeStyles } from '@material-ui/core/styles'
-import InputBase from '@material-ui/core/InputBase'
-import FormLabel from '@material-ui/core/FormLabel'
-import Select from '@material-ui/core/Select'
+import {
+  withStyles,
+  makeStyles,
+  InputAdornment,
+  InputBase,
+  FormLabel,
+  Select,
+  Box,
+} from '@material-ui/core'
 import { MOBILE_LABEL_WIDTH } from '../../utils/constant'
+import classnames from 'classnames'
+import CancelIcon from '@images/icons/cancel.svg'
+import CheckCircleIcon from '@images/icons/check_circle.svg'
 
-const useStyle = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   selectRoot: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(1),
       paddingBottom: theme.spacing(1),
+    },
+  },
+  cancelIcon: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    '& svg': {
+      width: theme.spacing(2.5),
+      height: theme.spacing(2.5),
+    },
+    '& path': {
+      fill: theme.palette.error.main,
+    },
+  },
+  activeCancelIcon: {
+    '& path': {
+      fill: theme.palette.grey[400],
+    },
+  },
+  successIcon: {
+    '& path:first-child': {
+      fill: theme.palette.success.main,
+    },
+    '& path:last-child': {
+      fill: theme.palette.primary.contrastText,
     },
   },
 }))
@@ -83,7 +117,7 @@ const menuProps = {
 }
 
 export const ESelect = (props) => {
-  const classes = useStyle()
+  const classes = useStyles()
   return (
     <Select
       classes={{
@@ -96,4 +130,26 @@ export const ESelect = (props) => {
       {props.children}
     </Select>
   )
+}
+
+export const CancelButton = ({ values, touched, errors, field, onCancel }) => {
+  const classes = useStyles()
+  return values[field] ? (
+    <InputAdornment position='end'>
+      <Box
+        className={classnames(
+          classes.cancelIcon,
+          !(touched[field] && errors[field]) && classes.activeCancelIcon,
+          touched[field] && !errors[field] && classes.successIcon
+        )}
+        onClick={() => onCancel && onCancel(field)}
+      >
+        {touched[field] && !errors[field] ? (
+          <CheckCircleIcon></CheckCircleIcon>
+        ) : (
+          <CancelIcon></CancelIcon>
+        )}
+      </Box>
+    </InputAdornment>
+  ) : null
 }

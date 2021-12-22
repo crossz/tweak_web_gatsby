@@ -27,16 +27,19 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import GenderRadio from './GenderRadio'
 import QuizRadio from './QuizRadio'
 import SliderRadio from './SliderRadio'
-import { EFormLabel, ESelect, EInputBase } from '@themes/components/ETextField'
+import {
+  EFormLabel,
+  ESelect,
+  EInputBase,
+  CancelButton,
+} from '@themes/components/ETextField'
 import { AGES, QUIZ } from '@utils/constant'
 import { padStartNum } from '@utils'
 import FlagIcon from '@images/icons/flag.svg'
 import BackIcon from '@images/icons/back.svg'
 import classnames from 'classnames'
-import InputAdornment from '@material-ui/core/InputAdornment'
 // import CircularProgress from '@material-ui/core/CircularProgress'
 // import { toast } from 'react-toastify'
-import CancelIcon from '@images/icons/cancel.svg'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyle = makeStyles((theme) => ({
@@ -267,24 +270,6 @@ const useStyle = makeStyles((theme) => ({
       marginBottom: theme.spacing(3),
     },
   },
-  cancelIcon: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-    '& svg': {
-      width: theme.spacing(2.5),
-      height: theme.spacing(2.5),
-    },
-    '& path': {
-      fill: theme.palette.error.main,
-    },
-  },
-  activeCancelIcon: {
-    '& path': {
-      fill: theme.palette.grey[400],
-    },
-  },
   link: {
     textDecoration: 'underline',
   },
@@ -395,9 +380,10 @@ const Quiz = () => {
 
           const isError = (field) => touched[field] && Boolean(errors[field])
 
-          const errorText = (field) => (
-            <FormHelperText>{touched[field] && errors[field]}</FormHelperText>
-          )
+          const errorText = (field) =>
+            touched[field] &&
+            errors[field] && <FormHelperText>{errors[field]}</FormHelperText>
+
           const customErrorText = () =>
             touched.email &&
             !errors.email &&
@@ -408,20 +394,15 @@ const Quiz = () => {
               <FormHelperText error>請輸入電話號碼或電郵</FormHelperText>
             )
 
-          const CancelButton = ({ field }) =>
-            values[field] ? (
-              <InputAdornment position='end'>
-                <Box
-                  className={classnames(
-                    classes.cancelIcon,
-                    !isError(field) && classes.activeCancelIcon
-                  )}
-                  onClick={() => setFieldValue(field, '')}
-                >
-                  <CancelIcon></CancelIcon>
-                </Box>
-              </InputAdornment>
-            ) : null
+          const CusCancelButton = ({ field }) => (
+            <CancelButton
+              values={values}
+              touched={touched}
+              errors={errors}
+              field={field}
+              onCancel={(field) => setFieldValue(field, '')}
+            />
+          )
 
           return (
             <form onSubmit={handleSubmit} className={classes.formRoot}>
@@ -700,7 +681,7 @@ const Quiz = () => {
                                   ? ''
                                   : 'example@take2health.com'
                               }
-                              endAdornment={<CancelButton field='email' />}
+                              endAdornment={<CusCancelButton field='email' />}
                             />
 
                             {errorText('email')}
@@ -745,7 +726,7 @@ const Quiz = () => {
                                 value={values.phone}
                                 onChange={handleChange}
                                 placeholder='9876 5432'
-                                endAdornment={<CancelButton field='phone' />}
+                                endAdornment={<CusCancelButton field='phone' />}
                               />
                               {errorText('phone')}
                             </FormControl>

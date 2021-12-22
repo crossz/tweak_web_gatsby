@@ -11,7 +11,6 @@ import {
   Link,
   Grid,
   FormControl,
-  InputAdornment,
   FormHelperText,
   CircularProgress,
   MenuItem,
@@ -22,10 +21,13 @@ import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
 import { throttle } from 'lodash-es'
 import { DIALING_CODES, REGIONS } from '@utils/constant'
-import { EInputBase, EFormLabel, ESelect } from '@themes/components/ETextField'
-import classnames from 'classnames'
+import {
+  EInputBase,
+  EFormLabel,
+  ESelect,
+  CancelButton,
+} from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
-import CancelIcon from '@images/icons/cancel.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -113,6 +115,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(15),
   },
+  form: {
+    marginTop: theme.spacing(5),
+  },
   box03Title: {
     marginBottom: theme.spacing(3),
   },
@@ -124,6 +129,26 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: `0 12px 12px 0`,
     marginTop: theme.spacing(-9),
     width: `85%`,
+  },
+  formControl: {
+    '&:last-child': {
+      marginLeft: theme.spacing(3),
+    },
+  },
+  formControlLine: {
+    marginBottom: theme.spacing(3),
+    display: 'flex',
+    alignItems: 'flex-start',
+  },
+  dialingCodeFormControl: {
+    flexShrink: 0,
+    marginRight: theme.spacing(1),
+  },
+  submitBtn: {
+    marginTop: theme.spacing(1),
+  },
+  hiddenLabel: {
+    opacity: 0,
   },
 }))
 
@@ -189,13 +214,16 @@ const International = () => {
 
   const handleSubmit = async (values) => {
     try {
-      const res = await fetch(`${process.env.GATSBY_API_URL}/partner/add`, {
-        method: 'POST',
-        body: JSON.stringify(values), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      })
+      const res = await fetch(
+        `${process.env.GATSBY_API_URL}/applyPartner/add`,
+        {
+          method: 'POST',
+          body: JSON.stringify(values), // data can be `string` or {object}!
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        }
+      )
       const resData = await res.json()
       if (resData?.code !== 1000)
         return Promise.reject(resData?.message || '提交失敗')
@@ -211,7 +239,7 @@ const International = () => {
         <Typography className={classes.box01Title} variant='h5' color='primary'>
           開拓邊界，引領改變
         </Typography>
-        <Typography variant='body1' color='text'>
+        <Typography variant='body1' color='textPrimary'>
           作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
         </Typography>
       </Container>
@@ -235,9 +263,9 @@ const International = () => {
             cols={3}
             gap={24}
           >
-            {partners.map(({ country, name, intro, link }) => (
+            {partners.map(({ country, name, intro, link }, index) => (
               <ImageListItem
-                key={name}
+                key={name + index}
                 classes={{
                   item: classes.imageListItemItem,
                 }}
@@ -253,7 +281,7 @@ const International = () => {
                     >
                       {name}
                     </Typography>
-                    <Typography variant='body1' color='text'>
+                    <Typography variant='body1' color='textPrimary'>
                       {intro}
                     </Typography>
                     <Box className={classes.partnerBtnWrapper}>
@@ -326,25 +354,21 @@ const International = () => {
                     } = props
                     const isError = (field) =>
                       touched[field] && Boolean(errors[field])
-                    const errorText = (field) => (
-                      <FormHelperText>
-                        {touched[field] && errors[field]}
-                      </FormHelperText>
+                    const errorText = (field) =>
+                      touched[field] &&
+                      errors[field] && (
+                        <FormHelperText>{errors[field]}</FormHelperText>
+                      )
+
+                    const CusCancelButton = ({ field }) => (
+                      <CancelButton
+                        values={values}
+                        touched={touched}
+                        errors={errors}
+                        field={field}
+                        onCancel={(field) => setFieldValue(field, '')}
+                      />
                     )
-                    const CancelButton = ({ field }) =>
-                      values[field] ? (
-                        <InputAdornment position='end'>
-                          <Box
-                            className={classnames(
-                              classes.cancelIcon,
-                              !isError(field) && classes.activeCancelIcon
-                            )}
-                            onClick={() => setFieldValue(field, '')}
-                          >
-                            <CancelIcon></CancelIcon>
-                          </Box>
-                        </InputAdornment>
-                      ) : null
 
                     return (
                       <form
@@ -352,7 +376,7 @@ const International = () => {
                         className={classes.form}
                         noValidate
                       >
-                        <Box mb={4}>
+                        <Box className={classes.formControlLine}>
                           <FormControl
                             fullWidth
                             error={isError('companyName')}
@@ -372,35 +396,38 @@ const International = () => {
                               }
                               type='text'
                               endAdornment={
-                                <CancelButton field='companyName' />
+                                <CusCancelButton field='companyName' />
                               }
                             />
                             {errorText('companyName')}
                           </FormControl>
                         </Box>
-                        <Box mb={4}>
+                        <Box className={classes.formControlLine}>
                           <FormControl
                             fullWidth
                             error={isError('contactName')}
                             required
+                            className={classes.formControl}
                           >
                             <EFormLabel>聯絡人姓名</EFormLabel>
                             <EInputBase
                               id='contact-name'
                               name='contactName'
                               margin='none'
-                              value={values.companyName}
+                              value={values.contactName}
                               onChange={handleChange}
                               type='text'
                               endAdornment={
-                                <CancelButton field='contactName' />
+                                <CusCancelButton field='contactName' />
                               }
                             />
                             {errorText('contactName')}
                           </FormControl>
-                        </Box>
-                        <Box>
-                          <FormControl error={isError('area')}>
+                          <FormControl
+                            fullWidth
+                            error={isError('area')}
+                            className={classes.formControl}
+                          >
                             <EFormLabel>所在地區</EFormLabel>
                             <ESelect
                               displayEmpty
@@ -422,54 +449,12 @@ const International = () => {
                             {errorText('area')}
                           </FormControl>
                         </Box>
-                        <Box mb={4}>
-                          <Box mb={1}>
-                            <EFormLabel>電話號碼</EFormLabel>
-                          </Box>
-                          <Box display='flex'>
-                            <Box mr={0.5}>
-                              <FormControl
-                                className={classes.dialingCode}
-                                required
-                              >
-                                <ESelect
-                                  labelId='dialingCode-select-label'
-                                  id='dialingCode-type-select'
-                                  name='dialingCode'
-                                  value={values.dialingCode}
-                                  onChange={handleChange}
-                                  displayEmpty
-                                >
-                                  {DIALING_CODES.map((dialingCode) => (
-                                    <MenuItem
-                                      key={dialingCode.value}
-                                      value={dialingCode.value}
-                                    >
-                                      {dialingCode.label}
-                                    </MenuItem>
-                                  ))}
-                                </ESelect>
-                              </FormControl>
-                            </Box>
-                            <FormControl error={isError('phone')}>
-                              <EInputBase
-                                id='phone'
-                                name='phone'
-                                margin='none'
-                                value={values.phone}
-                                onChange={handleChange}
-                                placeholder='9876 5432'
-                                endAdornment={<CancelButton field='phone' />}
-                              />
-                              {errorText('phone')}
-                            </FormControl>
-                          </Box>
-                        </Box>
-                        <Box mb={4}>
+                        <Box className={classes.formControlLine}>
                           <FormControl
                             fullWidth
                             error={isError('email')}
                             required
+                            className={classes.formControl}
                           >
                             <EFormLabel>電郵</EFormLabel>
                             <EInputBase
@@ -483,17 +468,60 @@ const International = () => {
                                   ? ''
                                   : 'example@take2health.com'
                               }
-                              endAdornment={<CancelButton field='email' />}
+                              endAdornment={<CusCancelButton field='email' />}
                             />
-
                             {errorText('email')}
                           </FormControl>
+                          <Box
+                            width='100%'
+                            display='flex'
+                            className={classes.formControl}
+                          >
+                            <FormControl
+                              className={classes.dialingCodeFormControl}
+                            >
+                              <EFormLabel>電話號碼</EFormLabel>
+                              <ESelect
+                                labelId='dialingCode-select-label'
+                                id='dialingCode-type-select'
+                                name='dialingCode'
+                                value={values.dialingCode}
+                                onChange={handleChange}
+                                displayEmpty
+                              >
+                                {DIALING_CODES.map((dialingCode) => (
+                                  <MenuItem
+                                    key={dialingCode.value}
+                                    value={dialingCode.value}
+                                  >
+                                    {dialingCode.label}
+                                  </MenuItem>
+                                ))}
+                              </ESelect>
+                            </FormControl>
+                            <FormControl fullWidth error={isError('phone')}>
+                              <EFormLabel className={classes.hiddenLabel}>
+                                hidden
+                              </EFormLabel>
+                              <EInputBase
+                                id='phone'
+                                name='phone'
+                                margin='none'
+                                value={values.phone}
+                                onChange={handleChange}
+                                placeholder='9876 5432'
+                                endAdornment={<CusCancelButton field='phone' />}
+                              />
+                              {errorText('phone')}
+                            </FormControl>
+                          </Box>
                         </Box>
                         <Button
                           type='submit'
                           fullWidth
                           variant='contained'
                           color='secondary'
+                          className={classes.submitBtn}
                         >
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
