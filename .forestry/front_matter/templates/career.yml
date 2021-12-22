@@ -12,7 +12,9 @@ fields:
   default: ''
   config:
     required: true
-    options: []
+    options:
+    - 商業戰略合作
+    - DITE
     source:
       type: simple
       section: 
@@ -32,7 +34,10 @@ fields:
   default: []
   config:
     required: true
-    options: []
+    options:
+    - 香港
+    - 海外地區
+    - 所有地區
     source:
       type: simple
       section: 
