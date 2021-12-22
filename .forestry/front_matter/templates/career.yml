@@ -2,12 +2,12 @@
 label: Career
 hide_body: false
 fields:
-- name: career
+- name: title
   type: text
   config:
     required: true
   label: career
-- name: department
+- name: type
   type: select
   default: ''
   config:
