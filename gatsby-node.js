@@ -37,7 +37,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createRedirect, createPage } = actions
 
   const menuQuery = await graphql(`
@@ -57,6 +57,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+  if (menuQuery.errors)
+    return reporter.panicOnBuild(`Error while running GraphQL query.`)
+
   const menuList = menuQuery.data.allMenuJson.nodes
 
   menuList?.forEach((menu) => {
@@ -91,6 +95,9 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+  if (allMdxQuery.errors)
+    return reporter.panicOnBuild(`Error while running GraphQL query.`)
 
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
