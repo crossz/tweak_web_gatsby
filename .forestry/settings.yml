@@ -9,7 +9,7 @@ sections:
   label: Careers
   create: documents
   match: "**/*"
-  new_doc_ext: app
+  new_doc_ext: ".md"
   templates:
   - career
 - type: directory
@@ -17,7 +17,7 @@ sections:
   label: Clinical Papers
   create: documents
   match: "**/*"
-  new_doc_ext: app
+  new_doc_ext: ".md"
   templates:
   - clinical-paper
 - type: directory
@@ -25,6 +25,7 @@ sections:
   label: T&C
   create: all
   match: "**/*"
+  new_doc_ext: ".md"
   templates:
   - t-c
 - type: document
@@ -35,7 +36,7 @@ sections:
   label: Promotions
   create: documents
   match: "**/*"
-  new_doc_ext: app
+  new_doc_ext: ".md"
   templates:
   - updates
 - type: directory
@@ -43,7 +44,7 @@ sections:
   label: Health Tips
   create: documents
   match: "**/*"
-  new_doc_ext: app
+  new_doc_ext: ".md"
   templates:
   - updates
 - type: directory
@@ -51,7 +52,7 @@ sections:
   label: Updates
   create: documents
   match: "**/*"
-  new_doc_ext: app
+  new_doc_ext: ".md"
   templates:
   - updates
 upload_dir: content/images
