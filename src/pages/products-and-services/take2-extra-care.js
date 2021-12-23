@@ -4,8 +4,6 @@ import {
   Container,
   Typography,
   alpha,
-  useTheme,
-  useMediaQuery,
   Hidden,
   Button,
   Box,
@@ -235,6 +233,11 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
     },
   },
+  arrowIcon: {
+    [theme.breakpoints.down('xs')]: {
+      transform: `rotate(90deg)`,
+    },
+  },
   stepItem: {
     display: 'flex',
     flexDirection: 'column',
@@ -336,8 +339,6 @@ const useStyles = makeStyles((theme) => ({
 const Take2ExtraCare = () => {
   const classes = useStyles()
   const { platformUrl } = useSiteMetadata()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
     <>
@@ -397,8 +398,8 @@ const Take2ExtraCare = () => {
                 </Box>
                 <Box className={classes.stepsWrapper}>
                   {steps.map(({ icon, label }, index) => (
-                    <>
-                      <Box className={classes.stepItem} key={index}>
+                    <React.Fragment key={index}>
+                      <Box className={classes.stepItem}>
                         <Box className={classes.stepIcon}>{icon}</Box>
                         <Box className={classes.stepLabel}>
                           {index < steps.length - 1 && (
@@ -412,7 +413,7 @@ const Take2ExtraCare = () => {
                       </Box>
                       {index === 0 && (
                         <Box className={classes.stepBetween}>
-                          <ArrowIcon class />
+                          <ArrowIcon className={classes.arrowIcon} />
                         </Box>
                       )}
                       {index === 1 && (
@@ -420,11 +421,12 @@ const Take2ExtraCare = () => {
                           className={classes.stepBetween}
                           variant='h5'
                           color='primary'
+                          key='or'
                         >
                           或
                         </Typography>
                       )}
-                    </>
+                    </React.Fragment>
                   ))}
                 </Box>
               </Box>
