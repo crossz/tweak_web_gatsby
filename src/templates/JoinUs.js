@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {
   makeStyles,
-  InputAdornment,
   Box,
   Container,
   Typography,
@@ -16,8 +15,7 @@ import {
   Button,
   IconButton,
 } from '@material-ui/core'
-import { debounce, throttle } from 'lodash-es'
-import SearchIcon from '@images/icons/search.svg'
+import { throttle } from 'lodash-es'
 import { graphql, Link } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
@@ -33,6 +31,7 @@ import { toast } from 'react-toastify'
 import { StaticImage } from 'gatsby-plugin-image'
 import ArrowIcon from '@images/icons/arrow.svg'
 import classnames from 'classnames'
+import Search from '@components/Search'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -197,20 +196,18 @@ const initialValues = {
 
 const schema = oriSchema().pick(['name', 'email', 'area', 'department'])
 
-const JoinUs = ({ data, pageContext }) => {
-  console.log('pageContext', pageContext)
+const JoinUs = ({ data, pageContext, location }) => {
   const classes = useStyles()
-  const nodes = data?.allMdx?.nodes || []
   const { totalCount } = data?.allMdx?.pageInfo
   const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
     pageContext
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const curPageCareers = data?.allMdx?.nodes || []
+  const [careers, setCareers] = useState(curPageCareers || [])
+  const [searching, setSearching] = useState(false)
+  const allCareer = data?.allCareer?.nodes || []
   const [loading, setLoading] = useState(false)
-
-  const handleSearch = debounce((e) => {
-    console.log('e', e.target.value)
-  }, 300)
 
   const handleSubmit = async (values) => {
     try {
@@ -257,28 +254,25 @@ const JoinUs = ({ data, pageContext }) => {
         <Box className={classes.careersWrapper}>
           <Grid container>
             <Grid item xs={12} sm={4}>
-              <EInputBase
-                className={classes.searchInput}
-                placeholder='Search'
-                onChange={handleSearch}
-                startAdornment={
-                  <InputAdornment position='start'>
-                    <SearchIcon color='disabled' />
-                  </InputAdornment>
-                }
-              ></EInputBase>
+              <Search
+                location={location}
+                data={allCareer}
+                setSearchResult={(result) => setCareers(result)}
+                setSearching={(status) => setSearching(status)}
+                setPageList={() => setCareers(curPageCareers)}
+              ></Search>
             </Grid>
             <Grid item xs={12} sm={8}>
               <Box>
-                {nodes?.map((node) => (
+                {careers?.map((career) => (
                   <CareerItem
-                    key={node.id}
-                    slug={node?.fields?.slug}
-                    {...node.frontmatter}
+                    key={career.id}
+                    slug={career?.fields?.slug}
+                    {...career.frontmatter}
                   ></CareerItem>
                 ))}
               </Box>
-              {numberOfPages > 1 && (
+              {numberOfPages > 1 && !searching && careers?.length > 0 && (
                 <Box className={classes.pagination}>
                   <Link
                     className={classnames(
@@ -535,6 +529,23 @@ export const query = graphql`
       }
       pageInfo {
         totalCount
+      }
+    }
+    allCareer: allMdx(
+      filter: { fileAbsolutePath: { regex: "/join-us/" } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "DD/MM/YYYY")
+          title
+          type
+          region
+        }
       }
     }
   }

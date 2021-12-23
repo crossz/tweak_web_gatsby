@@ -4,33 +4,20 @@ import {
   Container,
   Typography,
   alpha,
-  useTheme,
-  useMediaQuery,
   Hidden,
   Button,
   Box,
   Grid,
-  InputAdornment,
 } from '@material-ui/core'
-import { EInputBase } from '@themes/components/ETextField'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import PhoneIcon from '@images/icons/phone.svg'
 import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
-import SearchIcon from '@images/icons/search.svg'
-import { debounce } from 'lodash-es'
+import Search from '@components/Search'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  searchInput: {
-    width: '100%',
-    maxWidth: 273,
-    [theme.breakpoints.down('xs')]: {
-      maxWidth: 'none',
-      marginBottom: theme.spacing(4),
-    },
-  },
   title: {
     paddingLeft: theme.spacing(6),
     paddingBottom: theme.spacing(8),
@@ -125,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const FAQ = () => {
+const FAQ = ({ location }) => {
   const classes = useStyles()
   const { whatsapp, phone } = useSiteMetadata()
   const [faqList, setFaqList] = useState([])
@@ -143,18 +130,20 @@ const FAQ = () => {
       const resData = await res.json()
       if (resData?.code !== 1000)
         return Promise.reject(resData?.message || '提交失敗')
-      faqListRef.current = resData?.data
-      setFaqList(resData?.data)
-      return
+      faqListRef.current = resData?.data?.map((item) => {
+        return {
+          id: item.id,
+          question: item.questionHk,
+          content: item.contentHk,
+        }
+      })
+      return setFaqList(faqListRef.current)
     } catch (error) {
       return Promise.reject('提交失敗')
     }
   }, [])
 
   const handleChange = (index) => setActivePanel(index)
-  const handleSearch = debounce((e) => {
-    console.log('e', e.target.value)
-  }, 300)
 
   return (
     <Box className={classes.root}>
@@ -166,42 +155,36 @@ const FAQ = () => {
               常見問題
             </Typography>
             <Hidden smUp>
-              <EInputBase
-                className={classes.searchInput}
-                placeholder='Search'
-                onChange={handleSearch}
-                startAdornment={
-                  <InputAdornment position='start'>
-                    <SearchIcon color='disabled' />
-                  </InputAdornment>
-                }
-              ></EInputBase>
+              <Search
+                location={location}
+                data={faqListRef?.current || []}
+                setSearchResult={(result) => setFaqList(result)}
+                setPageList={() => setFaqList(faqListRef?.current || [])}
+                isFAQ
+              ></Search>
             </Hidden>
           </Grid>
         </Grid>
         <Grid className={classes.faqList} container spacing={4}>
           <Grid item sm={4}>
             <Hidden xsDown>
-              <EInputBase
-                className={classes.searchInput}
-                placeholder='Search'
-                onChange={handleSearch}
-                startAdornment={
-                  <InputAdornment position='start'>
-                    <SearchIcon color='disabled' />
-                  </InputAdornment>
-                }
-              ></EInputBase>
+              <Search
+                location={location}
+                data={faqListRef?.current || []}
+                setSearchResult={(result) => setFaqList(result)}
+                setPageList={() => setFaqList(faqListRef?.current || [])}
+                isFAQ
+              ></Search>
             </Hidden>
           </Grid>
           <Grid item sm={8}>
             {faqList.length > 0 &&
-              faqList.map((faq) => (
+              faqList.map((faq, index) => (
                 <FaqItem
                   key={faq.id}
                   id={faq.id}
-                  question={faq.questionHk}
-                  content={faq.contentHk}
+                  question={faq.question}
+                  content={faq.question}
                   onChange={handleChange}
                   activePanel={activePanel}
                 ></FaqItem>

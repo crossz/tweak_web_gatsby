@@ -94,7 +94,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   paginate({
     createPage, // The Gatsby `createPage` function
     items: careers?.data?.allMdx?.nodes || [], // An array of objects
-    itemsPerPage: 1, // How many items you want per page
+    itemsPerPage: 5, // How many items you want per page
     pathPrefix: '/about-us/join-us', // Creates pages like `/blog`, `/blog/2`, etc
     component: joinUsTemplate, // Just like `createPage()`
   })
