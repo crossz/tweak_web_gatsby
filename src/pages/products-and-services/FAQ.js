@@ -33,18 +33,19 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     paddingLeft: theme.spacing(6),
-    paddingBottom: theme.spacing(9),
+    paddingBottom: theme.spacing(8),
+    boxShadow: `0 1px 0 0 #E8E8E8`,
+    marginLeft: theme.spacing(1.5),
     [theme.breakpoints.down('xs')]: {
       paddingLeft: 0,
       textAlign: 'center',
       paddingBottom: theme.spacing(5),
+      marginLeft: 0,
     },
   },
-  titleWrapper: {
-    boxShadow: `0 1px 0 0 #E8E8E8`,
-  },
+  titleWrapper: {},
   faqList: {
-    marginTop: theme.spacing(-5),
+    // marginTop: theme.spacing(-5),
   },
   contentRoot: {
     padding: theme.spacing(0, 3.5),
