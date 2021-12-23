@@ -172,6 +172,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 570,
     fontSize: theme.typography.body1.fontSize,
     padding: theme.spacing(0, 3),
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 'none',
+    },
   },
   sideImg: {
     borderRadius: `0 12px 12px 0`,

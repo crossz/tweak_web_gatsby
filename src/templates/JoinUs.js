@@ -14,10 +14,11 @@ import {
   useTheme,
   useMediaQuery,
   Button,
+  IconButton,
 } from '@material-ui/core'
 import { debounce, throttle } from 'lodash-es'
 import SearchIcon from '@images/icons/search.svg'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
@@ -30,6 +31,8 @@ import {
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import { StaticImage } from 'gatsby-plugin-image'
+import ArrowIcon from '@images/icons/arrow.svg'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -38,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8.5),
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(5),
+      paddingBottom: theme.spacing(19.5),
       paddingBottom: theme.spacing(19.5),
     },
   },
@@ -100,6 +104,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 570,
     fontSize: theme.typography.body1.fontSize,
     padding: theme.spacing(0, 3),
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 'none',
+    },
   },
   sideImg: {
     borderRadius: `0 12px 12px 0`,
@@ -136,6 +143,47 @@ const useStyles = makeStyles((theme) => ({
   hiddenLabel: {
     opacity: 0,
   },
+  pagination: {
+    margin: '0 auto',
+    marginTop: theme.spacing(6.5),
+    marginBottom: theme.spacing(-1.5),
+    width: 254,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    fontSize: theme.typography.body2.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(4.5),
+      width: '100%',
+      fontSize: theme.typography.caption.fontSize,
+    },
+  },
+  pageInfo: {
+    display: 'flex',
+    alignItems: 'center',
+    flexShrink: 0,
+    color: theme.palette.grey[600],
+  },
+  prePageBtn: {
+    transform: `rotate(-180deg)`,
+  },
+  curPageBtn: {
+    display: 'flex',
+    height: theme.spacing(3.5),
+    width: theme.spacing(3.5),
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: `1px solid ${theme.palette.grey[400]}`,
+    borderRadius: theme.spacing(0.5),
+    marginRight: theme.spacing(1),
+    color: theme.palette.primary.main,
+  },
+  disableLink: {
+    pointerEvents: 'none',
+    '& path': {
+      fill: theme.palette.grey[400],
+    },
+  },
 }))
 
 const initialValues = {
@@ -149,10 +197,13 @@ const initialValues = {
 
 const schema = oriSchema().pick(['name', 'email', 'area', 'department'])
 
-const JoinUs = ({ data }) => {
+const JoinUs = ({ data, pageContext }) => {
+  console.log('pageContext', pageContext)
   const classes = useStyles()
   const nodes = data?.allMdx?.nodes || []
-  const pageInfo = data?.allMdx?.pageInfo
+  const { totalCount } = data?.allMdx?.pageInfo
+  const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
+    pageContext
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [loading, setLoading] = useState(false)
@@ -200,7 +251,7 @@ const JoinUs = ({ data }) => {
         </Container>
         <Box className={classes.countWrapper}>
           <Typography variant='h5' color='primary'>
-            瀏覽現有空缺 ({pageInfo.totalCount})
+            瀏覽現有空缺 ({totalCount})
           </Typography>
         </Box>
         <Box className={classes.careersWrapper}>
@@ -227,6 +278,33 @@ const JoinUs = ({ data }) => {
                   ></CareerItem>
                 ))}
               </Box>
+              {numberOfPages > 1 && (
+                <Box className={classes.pagination}>
+                  <Link
+                    className={classnames(
+                      humanPageNumber === 1 && classes.disableLink
+                    )}
+                    to={previousPagePath}
+                    disabled
+                  >
+                    <IconButton
+                      className={classes.prePageBtn}
+                      aria-label='previous page'
+                    >
+                      <ArrowIcon></ArrowIcon>
+                    </IconButton>
+                  </Link>
+                  <Box className={classes.pageInfo}>
+                    <Box className={classes.curPageBtn}>{humanPageNumber}</Box>
+                    <Box>of {numberOfPages}</Box>
+                  </Box>
+                  <Link to={nextPagePath}>
+                    <IconButton aria-label='previous page'>
+                      <ArrowIcon></ArrowIcon>
+                    </IconButton>
+                  </Link>
+                </Box>
+              )}
             </Grid>
           </Grid>
         </Box>
@@ -237,7 +315,7 @@ const JoinUs = ({ data }) => {
             <Grid item xs={12} sm={6}>
               <StaticImage
                 className={classes.sideImg}
-                src='../../assets/images/join_us_01.jpg'
+                src='../assets/images/join_us_01.jpg'
                 alt='international img 01'
                 objectFit='fill'
               ></StaticImage>
@@ -436,11 +514,12 @@ const JoinUs = ({ data }) => {
 export default JoinUs
 
 export const query = graphql`
-  {
+  query ($skip: Int!, $limit: Int!) {
     allMdx(
-      limit: 1000
       filter: { fileAbsolutePath: { regex: "/join-us/" } }
       sort: { fields: frontmatter___date, order: DESC }
+      skip: $skip
+      limit: $limit
     ) {
       nodes {
         id

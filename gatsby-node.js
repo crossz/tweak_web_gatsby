@@ -1,6 +1,6 @@
 'use strict'
-
 const { resolve } = require('path')
+const { paginate } = require('gatsby-awesome-pagination')
 // const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const formatEndsPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
@@ -74,9 +74,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     }
   })
-  const postTemplate = resolve(__dirname, 'src/templates/Post.js')
-  const tAndCTemplate = resolve(__dirname, 'src/templates/T&C.js')
-  const careerTemplate = resolve(__dirname, 'src/templates/Career.js')
+
+  const careers = await graphql(`
+    {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/join-us/" } }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+
+  if (careers.errors)
+    return reporter.panicOnBuild(`Error while running GraphQL query.`)
+  const joinUsTemplate = resolve(__dirname, 'src/templates/JoinUs.js')
+  paginate({
+    createPage, // The Gatsby `createPage` function
+    items: careers?.data?.allMdx?.nodes || [], // An array of objects
+    itemsPerPage: 1, // How many items you want per page
+    pathPrefix: '/about-us/join-us', // Creates pages like `/blog`, `/blog/2`, etc
+    component: joinUsTemplate, // Just like `createPage()`
+  })
 
   const allMdxQuery = await graphql(`
     {
@@ -98,6 +119,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (allMdxQuery.errors)
     return reporter.panicOnBuild(`Error while running GraphQL query.`)
+
+  const postTemplate = resolve(__dirname, 'src/templates/Post.js')
+  const tAndCTemplate = resolve(__dirname, 'src/templates/T&C.js')
+  const careerTemplate = resolve(__dirname, 'src/templates/Career.js')
 
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
