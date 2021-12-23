@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { makeStyles, InputAdornment } from '@material-ui/core'
+import {
+  makeStyles,
+  InputAdornment,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  Box,
+} from '@material-ui/core'
 import useJsSearch from '@hooks/useJsSearch'
 import { EInputBase } from '@themes/components/ETextField'
 import SearchIcon from '@images/icons/search.svg'
 import { navigate } from 'gatsby'
+import { CAREER_REGIONS } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -14,6 +22,13 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 'none',
       marginBottom: theme.spacing(4),
     },
+  },
+  regionWrapper: {
+    marginTop: theme.spacing(4),
+    marginLeft: theme.spacing(2),
+  },
+  regionItem: {
+    color: theme.palette.primary.main,
   },
 }))
 
@@ -28,27 +43,38 @@ const Search = ({
   const classes = useStyles()
   const { search } = useJsSearch(data, isFAQ)
   const [query, setQuery] = useState('')
+  const [region, setRegion] = useState('')
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const q = params.get('q') || ''
-    setSearching && setSearching(Boolean(q))
-    if (!q) return setPageList && setPageList()
-    const results = search(q) || []
-    setSearchResult && setSearchResult(results)
+    setSearching && setSearching(Boolean(q || region))
+    if (!q && !region) return setPageList && setPageList()
+    const results = (q ? search(q) : data) || []
+    setSearchResult &&
+      setSearchResult(
+        !isFAQ && region && results.length
+          ? results.filter((item) => item.frontmatter?.region === region)
+          : results
+      )
     setQuery(q)
-  }, [location, data])
+  }, [location, data, region])
 
   const handleSearch = (e) => setQuery(e.target.value)
 
   const handleSearchSubmit = async (e) => {
     e.preventDefault()
     try {
-      navigate(query ? `${location.pathname}?q=${query}` : location.pathname)
+      await navigate(`${location.pathname}${query ? `?q=${query}` : ''}`)
     } catch (err) {
       console.error(err)
     }
   }
+
+  const handleRegionChange = (e) => {
+    setRegion(e.target.value)
+  }
+
   return (
     <form noValidate onSubmit={handleSearchSubmit}>
       <EInputBase
@@ -62,6 +88,25 @@ const Search = ({
           </InputAdornment>
         }
       ></EInputBase>
+      {!isFAQ && (
+        <Box className={classes.regionWrapper}>
+          <RadioGroup
+            aria-label='gender'
+            value={region}
+            onChange={handleRegionChange}
+          >
+            {CAREER_REGIONS.map((region) => (
+              <FormControlLabel
+                className={classes.regionItem}
+                key={region.value}
+                value={region.value}
+                control={<Radio />}
+                label={region.label}
+              />
+            ))}
+          </RadioGroup>
+        </Box>
+      )}
     </form>
   )
 }

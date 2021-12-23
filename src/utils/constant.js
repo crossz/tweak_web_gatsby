@@ -131,3 +131,18 @@ export const DEPARTMENTS = [
     value: 'DITE',
   },
 ]
+
+export const CAREER_REGIONS = [
+  {
+    label: '所有地區',
+    value: '',
+  },
+  {
+    label: '香港',
+    value: '香港',
+  },
+  {
+    label: '海外地區',
+    value: '海外地區',
+  },
+]
