@@ -10,8 +10,6 @@ import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import Box from '@material-ui/core/Box'
-import useServiceLocation from '@hooks/useServiceLocation'
-import { REGIONS } from '@utils/constant'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import ExpandIcon from '@images/icons/expand.svg'
@@ -112,7 +110,6 @@ const MapAccordionSummary = withStyles((theme) => ({
   root: {
     minHeight: theme.spacing(6.75),
     backgroundColor: alpha(theme.palette.primary.main, 0.1),
-    transition: `background-color ease 0.3s`,
     '&.Mui-expanded': {
       minHeight: theme.spacing(6.75),
       backgroundColor: theme.palette.primary.main,
@@ -127,7 +124,6 @@ const MapAccordionSummary = withStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     fontSize: theme.typography.body1.fontSize,
     margin: 0,
-    // flexGrow: 0,
     '&.Mui-expanded': {
       margin: 0,
       minHeight: 'auto',
@@ -143,125 +139,96 @@ const MapAccordionDetails = withStyles((theme) => ({
   },
 }))(AccordionDetails)
 
-const ClinicList = ({ region, district, onChange }) => {
+const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const serviceLocation = useServiceLocation()
-  const [activePanel, setActivePanel] = useState('')
 
-  useEffect(() => {
-    setActivePanel(`${region}-${district}`)
-  }, [region, district])
-
-  const regionClinicData = useMemo(
-    () =>
-      serviceLocation?.filter(
-        (clinic) => clinic.region === REGIONS[region]?.label
-      ),
-    [region, serviceLocation]
-  )
-
-  const _handleChange = (value) => (e, isExpanded) => {
-    setActivePanel(isExpanded ? `${region}-${value}` : '')
-    onChange &&
-      isExpanded &&
-      onChange({
-        region,
-        district: value,
-      })
+  const _handleChange = (activeArea) => (e, isExpanded) => {
+    onChange && onChange(isExpanded ? activeArea : '')
   }
   return (
     <Box className={classes.root}>
-      {REGIONS[region]?.districts?.map((districtItem, index) =>
-        index ? (
-          <MapAccordion
-            key={districtItem.label}
-            expanded={`${region}-${districtItem.value}` === activePanel}
-            onChange={_handleChange(districtItem.value)}
-            TransitionProps={{
-              timeout: 300,
-            }}
+      {Object.keys(clinics)?.map((area, index) => (
+        <MapAccordion
+          key={area}
+          expanded={area === curArea}
+          onChange={_handleChange(area)}
+        >
+          <MapAccordionSummary
+            expandIcon={
+              area === curArea ? (
+                <CollapseIcon className={classes.collapseIcon} />
+              ) : (
+                <ExpandIcon className={classes.expandIcon} />
+              )
+            }
           >
-            <MapAccordionSummary
-              expandIcon={
-                `${region}-${districtItem.value}` === activePanel ? (
-                  <CollapseIcon className={classes.collapseIcon} />
-                ) : (
-                  <ExpandIcon className={classes.expandIcon} />
-                )
-              }
-            >
-              {REGIONS[region]?.label}·{districtItem?.label}
-            </MapAccordionSummary>
-            <MapAccordionDetails>
-              <Box className={classes.list}>
-                {regionClinicData
-                  .filter(
-                    (clinic) =>
-                      clinic.region === REGIONS[region]?.label &&
-                      clinic.district === districtItem?.label
-                  )
-                  ?.map((districtClinic, index) => (
-                    <Box className={classes.item} key={index}>
-                      <Grid container spacing={0}>
-                        <Grid item xs={1}>
-                          {districtClinic.region}
-                        </Grid>
-                        <Grid item xs={2}>
-                          {districtClinic.district}
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                          <Box width='100%'>
-                            <Box
-                              fontWeight='fontWeightBold'
-                              mt={matches ? 1.5 : 0}
-                              mb={matches ? 1 : 1.5}
-                            >
-                              {districtClinic.clinic}
-                            </Box>
-                            <Box
-                              color='text.primary'
-                              display={matches ? 'block' : 'flex'}
-                            >
-                              <Box
-                                className={classes.info}
-                                mr={matches ? 0 : 3}
-                                mb={matches ? 1 : 0}
-                                flexShrink={0}
-                              >
-                                <Box className={classes.infoIcon}>
-                                  <PhoneIcon></PhoneIcon>
-                                </Box>
-                                {districtClinic.call}
-                              </Box>
-                              <Box className={classes.info}>
-                                <Box className={classes.infoIcon}>
-                                  <LocationIcon></LocationIcon>
-                                </Box>
-                                <Box>{districtClinic.address}</Box>
-                              </Box>
-                            </Box>
-                          </Box>
-                        </Grid>
-                        <Grid className={classes.btnCell} xs={12} item sm={3}>
-                          <Button
-                            className={classes.btn}
-                            variant='outlined'
-                            size='small'
-                            color='primary'
+            {curProvince}·{area}
+          </MapAccordionSummary>
+          <MapAccordionDetails>
+            <Box className={classes.list}>
+              {clinics?.[curArea]?.map((clinic, index) => (
+                <Box className={classes.item} key={index}>
+                  <Grid container spacing={0}>
+                    <Grid item xs={1}>
+                      {clinic.province}
+                    </Grid>
+                    <Grid item xs={2}>
+                      {clinic.area}
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Box width='100%'>
+                        <Box
+                          fontWeight='fontWeightBold'
+                          mt={matches ? 1.5 : 0}
+                          mb={matches ? 1 : 1.5}
+                        >
+                          {clinic.nameHk}
+                        </Box>
+                        <Box
+                          color='text.primary'
+                          display={matches ? 'block' : 'flex'}
+                        >
+                          <Box
+                            className={classes.info}
+                            mr={matches ? 0 : 3}
+                            mb={matches ? 1 : 0}
+                            flexShrink={0}
                           >
-                            立即預約
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Box>
-                  ))}
-              </Box>
-            </MapAccordionDetails>
-          </MapAccordion>
-        ) : null
-      )}
+                            <Box className={classes.infoIcon}>
+                              <PhoneIcon></PhoneIcon>
+                            </Box>
+                            {clinic.phone}
+                          </Box>
+                          <Box className={classes.info}>
+                            <Box className={classes.infoIcon}>
+                              <LocationIcon></LocationIcon>
+                            </Box>
+                            <Box>{clinic.addressHk}</Box>
+                          </Box>
+                        </Box>
+                      </Box>
+                    </Grid>
+                    <Grid className={classes.btnCell} xs={12} item sm={3}>
+                      {clinic.clinicType === 1 && (
+                        <Button
+                          className={classes.btn}
+                          variant='outlined'
+                          size='small'
+                          color='primary'
+                        >
+                          立即預約
+                        </Button>
+                      )}
+                    </Grid>
+                  </Grid>
+                </Box>
+              ))}
+            </Box>
+          </MapAccordionDetails>
+        </MapAccordion>
+      ))}
     </Box>
   )
 }

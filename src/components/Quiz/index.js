@@ -811,7 +811,11 @@ const Quiz = () => {
                           fullWidth={matches}
                           disabled={reCapStatus === 1}
                         >
-                          提交
+                          {loading ? (
+                            <CircularProgress color='inherit' size={24} />
+                          ) : (
+                            '提交'
+                          )}
                         </Button>
                         <MuiLink
                           className={classes.platformLink}

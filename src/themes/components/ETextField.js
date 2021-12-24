@@ -125,6 +125,7 @@ export const ESelect = (props) => {
       }}
       MenuProps={menuProps}
       input={<EInputBase />}
+      displayEmpty
       {...props}
     >
       {props.children}

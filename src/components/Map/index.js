@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import GoogleMap from './GoogleMap'
 import Box from '@material-ui/core/Box'
-import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
-import { REGIONS } from '@utils/constant'
 import ClinicList from './ClinicList'
 import Container from '@material-ui/core/Container'
 import { makeStyles, Hidden } from '@material-ui/core'
@@ -15,7 +13,8 @@ import IconButton from '@material-ui/core/IconButton'
 import ArrowIcon from '@images/icons/arrow.svg'
 import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
-import { EInputBase } from '@themes/components/ETextField'
+import { ESelect } from '@themes/components/ETextField'
+import { groupBy } from 'lodash-es'
 
 const switchButtons = [
   {
@@ -137,14 +136,72 @@ const Map = ({ from }) => {
   const [viewType, setViewType] = useState('list')
   const [region, setRegion] = useState(0)
   const [district, setDistrict] = useState(0)
-  const handleRegion = (e) => setRegion(e.target.value)
-  const handleDistrict = (e) => setDistrict(e.target.value)
-  const handleViewType = (value) => setViewType(value)
-
-  const handleChange = ({ region, district }) => {
-    setRegion(region)
-    setDistrict(district)
+  const [location, setLocation] = useState([])
+  const [clinics, setClinics] = useState(null)
+  const [curProvince, setCurProvince] = useState('')
+  const [curArea, setCurArea] = useState('')
+  const handleProvince = (e) => {
+    const value = e.target.value
+    setCurProvince(value)
   }
+  const handleArea = (e) => setCurArea(e.target.value)
+  const handleViewType = (value) => setViewType(value)
+  const clinicsRef = useRef(null)
+
+  useEffect(async () => {
+    try {
+      const res = await fetch(
+        `${process.env.GATSBY_API_URL}/testCenters/list`,
+        {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        }
+      )
+      const resData = await res.json()
+      if (resData?.code !== 1000)
+        return Promise.reject(resData?.message || '获取数据失败')
+
+      const data = resData?.data || []
+      let location = []
+      const provinceGroup = groupBy(data, 'province')
+      const provinceKeys = Object.keys(provinceGroup)
+      provinceKeys.forEach((province, index) => {
+        const provinceData = provinceGroup[province]
+        const areaGroup = groupBy(provinceData, 'area')
+        const areaKeys = Object.keys(areaGroup)
+        location[index] = {
+          province,
+          area: areaKeys,
+        }
+      })
+      if (clinicsRef.current) {
+        clinicsRef.current.clinics = provinceGroup
+        clinicsRef.current.location = location
+      }
+      setClinics(provinceGroup)
+      setLocation(location)
+      setCurProvince('香港')
+      return
+    } catch (error) {
+      return Promise.reject('获取数据失败', error)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (location?.length && curProvince)
+      setCurArea(
+        location.find((item) => item.province === curProvince)?.area[0]
+      )
+  }, [location, curProvince])
+
+  const handleChange = (area) => setCurArea(area)
+
+  const curClinics = useMemo(() => {
+    const curProvinceClinic = (clinics && clinics[curProvince]) || []
+    return groupBy(curProvinceClinic, 'area')
+  }, [clinics, curProvince])
 
   return (
     <>
@@ -159,45 +216,48 @@ const Map = ({ from }) => {
                 <ArrowIcon className={classes.arrowIcon}></ArrowIcon>
               </Box>
               <Hidden xsDown>
-                <Box className={classes.selectors}>
-                  <Box mr={2.5}>地區</Box>
-                  <Box mr={2}>
-                    <Select
-                      labelId='region-select-label'
-                      id='region-type-select'
-                      name='region'
-                      value={region}
-                      onChange={handleRegion}
+                {location?.length > 0 && (
+                  <Box className={classes.selectors}>
+                    <Box mr={2.5}>地區</Box>
+                    <Box mr={2}>
+                      <ESelect
+                        labelId='region-select-label'
+                        id='region-type-select'
+                        name='region'
+                        value={curProvince}
+                        onChange={handleProvince}
+                        placeholder='请选择'
+                        variant='outlined'
+                      >
+                        {location.map((item) => (
+                          <MenuItem key={item.province} value={item.province}>
+                            {item.province}
+                          </MenuItem>
+                        ))}
+                      </ESelect>
+                    </Box>
+                    <ESelect
+                      labelId='district-select-label'
+                      id='district-type-select'
+                      name='district'
+                      value={curArea}
+                      onChange={handleArea}
                       placeholder='请选择'
                       variant='outlined'
-                      MenuProps={menuProps}
-                      input={<EInputBase />}
                     >
-                      {REGIONS.map((region) => (
-                        <MenuItem key={region.value} value={region.value}>
-                          {region.label}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </Box>
-                  <Select
-                    labelId='district-select-label'
-                    id='district-type-select'
-                    name='district'
-                    value={district}
-                    onChange={handleDistrict}
-                    placeholder='请选择'
-                    variant='outlined'
-                    MenuProps={menuProps}
-                    input={<EInputBase />}
-                  >
-                    {REGIONS[region]?.districts?.map((district) => (
-                      <MenuItem key={district.value} value={district.value}>
-                        {district.label}
+                      <MenuItem key='' value=''>
+                        所有地區
                       </MenuItem>
-                    ))}
-                  </Select>
-                </Box>
+                      {location
+                        ?.find((item) => item.province === curProvince)
+                        ?.area.map((areaItem) => (
+                          <MenuItem key={areaItem} value={areaItem}>
+                            {areaItem}
+                          </MenuItem>
+                        ))}
+                    </ESelect>
+                  </Box>
+                )}
               </Hidden>
               <Box className={classes.buttonGroupWrapper}>
                 <Hidden xsDown>
@@ -223,49 +283,50 @@ const Map = ({ from }) => {
               </Box>
             </Box>
             <Hidden smUp>
-              <Box className={classes.toolBarBottom}>
-                <Box mb={1.5}>地區</Box>
-                <Box display='flex'>
-                  <Box mr={2} width='100%'>
-                    <Select
-                      labelId='region-select-label'
-                      id='region-type-select'
-                      name='region'
-                      value={region}
-                      onChange={handleRegion}
+              {location?.length > 0 && (
+                <Box className={classes.toolBarBottom}>
+                  <Box mb={1.5}>地區</Box>
+                  <Box display='flex'>
+                    <Box mr={2} width='100%'>
+                      <ESelect
+                        labelId='region-select-label'
+                        id='region-type-select'
+                        name='region'
+                        value={curProvince}
+                        onChange={handleProvince}
+                        placeholder='请选择'
+                        variant='outlined'
+                      >
+                        {location.map((item) => (
+                          <MenuItem key={item.province} value={item.province}>
+                            {item.province}
+                          </MenuItem>
+                        ))}
+                      </ESelect>
+                    </Box>
+                    <ESelect
+                      labelId='district-select-label'
+                      id='district-type-select'
+                      name='district'
+                      value={curArea}
+                      onChange={handleArea}
                       placeholder='请选择'
                       variant='outlined'
-                      MenuProps={menuProps}
-                      input={<EInputBase />}
-                      fullWidth
                     >
-                      {REGIONS.map((region) => (
-                        <MenuItem key={region.value} value={region.value}>
-                          {region.label}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </Box>
-                  <Select
-                    labelId='district-select-label'
-                    id='district-type-select'
-                    name='district'
-                    value={district}
-                    onChange={handleDistrict}
-                    placeholder='请选择'
-                    variant='outlined'
-                    MenuProps={menuProps}
-                    input={<EInputBase />}
-                    fullWidth
-                  >
-                    {REGIONS[region]?.districts?.map((district) => (
-                      <MenuItem key={district.value} value={district.value}>
-                        {district.label}
+                      <MenuItem key='' value=''>
+                        所有地區
                       </MenuItem>
-                    ))}
-                  </Select>
+                      {location
+                        ?.find((item) => item.province === curProvince)
+                        ?.area.map((areaItem) => (
+                          <MenuItem key={areaItem} value={areaItem}>
+                            {areaItem}
+                          </MenuItem>
+                        ))}
+                    </ESelect>
+                  </Box>
                 </Box>
-              </Box>
+              )}
             </Hidden>
           </Container>
         </Box>
@@ -274,8 +335,9 @@ const Map = ({ from }) => {
         {viewType === 'list' && from !== 'homepage' ? (
           <Container maxWidth='md'>
             <ClinicList
-              region={region}
-              district={district}
+              clinics={curClinics}
+              curProvince={curProvince}
+              curArea={curArea}
               onChange={handleChange}
             ></ClinicList>
           </Container>
