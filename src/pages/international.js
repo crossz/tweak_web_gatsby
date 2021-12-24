@@ -30,6 +30,7 @@ import {
   CancelButton,
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
+import ReCaptcha from '@components/ReCaptcha'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -275,8 +276,9 @@ const International = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [loading, setLoading] = useState(false)
+  const [reCapStatus, setReCapStatus] = useState(0)
 
-  const handleSubmit = async (values) => {
+  const handleFetch = async (values) => {
     try {
       const res = await fetch(
         `${process.env.GATSBY_API_URL}/applyPartner/add`,
@@ -410,15 +412,19 @@ const International = () => {
                   initialValues={initialValues}
                   validationSchema={schema}
                   onSubmit={throttle(async (values) => {
+                    if (!reCapStatus) {
+                      return setReCapStatus(1)
+                    }
                     if (loading) return
                     try {
                       setLoading(true)
-                      await handleSubmit(values)
+                      await handleFetch(values)
                       toast.success('已成功提交')
                     } catch (error) {
                       toast.error(error)
                     }
                     setLoading(false)
+                    setReCapStatus(0)
                   }, 1000)}
                 >
                   {(props) => {
@@ -597,6 +603,7 @@ const International = () => {
                           variant='contained'
                           color='secondary'
                           className={classes.submitBtn}
+                          disabled={reCapStatus === 1}
                         >
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
@@ -604,6 +611,11 @@ const International = () => {
                             '提交'
                           )}
                         </Button>
+                        {reCapStatus > 0 && (
+                          <ReCaptcha
+                            onChange={(value) => setReCapStatus(value)}
+                          ></ReCaptcha>
+                        )}
                       </form>
                     )
                   }}

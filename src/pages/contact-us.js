@@ -34,6 +34,7 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
+import ReCaptcha from '@components/ReCaptcha'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -187,6 +188,7 @@ const ContactUs = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [activeTab, setActiveTab] = useState(0)
   const [loading, setLoading] = useState(false)
+  const [reCapStatus, setReCapStatus] = useState(0)
   const { whatsapp, email, phone, messenger } = useSiteMetadata()
 
   const contactTypes = [
@@ -222,7 +224,7 @@ const ContactUs = () => {
 
   const handleTabChange = (event, newValue) => setActiveTab(newValue)
 
-  const handleSubmit = async (values) => {
+  const handleFetch = async (values) => {
     try {
       const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs/add`, {
         method: 'POST',
@@ -239,6 +241,7 @@ const ContactUs = () => {
       return Promise.reject('提交失敗')
     }
   }
+
   const getHref = (type, link) => {
     switch (type) {
       case 'phone':
@@ -331,15 +334,19 @@ const ContactUs = () => {
                   initialValues={initialValues}
                   validationSchema={schema}
                   onSubmit={throttle(async (values) => {
+                    if (!reCapStatus) {
+                      return setReCapStatus(1)
+                    }
                     if (loading) return
                     try {
                       setLoading(true)
-                      await handleSubmit(values)
+                      await handleFetch(values)
                       toast.success('已成功提交')
                     } catch (error) {
                       toast.error(error)
                     }
                     setLoading(false)
+                    setReCapStatus(0)
                   }, 1000)}
                 >
                   {(props) => {
@@ -491,6 +498,7 @@ const ContactUs = () => {
                           fullWidth
                           variant='contained'
                           color='secondary'
+                          disabled={reCapStatus === 1}
                         >
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
@@ -498,6 +506,11 @@ const ContactUs = () => {
                             '提交'
                           )}
                         </Button>
+                        {reCapStatus > 0 && (
+                          <ReCaptcha
+                            onChange={(value) => setReCapStatus(value)}
+                          ></ReCaptcha>
+                        )}
                       </form>
                     )
                   }}

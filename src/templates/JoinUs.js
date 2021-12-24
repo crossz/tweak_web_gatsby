@@ -32,6 +32,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import ArrowIcon from '@images/icons/arrow.svg'
 import classnames from 'classnames'
 import Search from '@components/Search'
+import ReCaptcha from '@components/ReCaptcha'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -208,8 +209,9 @@ const JoinUs = ({ data, pageContext, location }) => {
   const [searching, setSearching] = useState(false)
   const allCareer = data?.allCareer?.nodes || []
   const [loading, setLoading] = useState(false)
+  const [reCapStatus, setReCapStatus] = useState(0)
 
-  const handleSubmit = async (values) => {
+  const handleFetch = async (values) => {
     try {
       const res = await fetch(`${process.env.GATSBY_API_URL}/joinUs/add`, {
         method: 'POST',
@@ -336,15 +338,19 @@ const JoinUs = ({ data, pageContext, location }) => {
                   initialValues={initialValues}
                   validationSchema={schema}
                   onSubmit={throttle(async (values) => {
+                    if (!reCapStatus) {
+                      return setReCapStatus(1)
+                    }
                     if (loading) return
                     try {
                       setLoading(true)
-                      await handleSubmit(values)
+                      await handleFetch(values)
                       toast.success('已成功提交')
                     } catch (error) {
                       toast.error(error)
                     }
                     setLoading(false)
+                    setReCapStatus(0)
                   }, 1000)}
                 >
                   {(props) => {
@@ -485,6 +491,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                           variant='contained'
                           color='secondary'
                           className={classes.submitBtn}
+                          disabled={reCapStatus === 1}
                         >
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
@@ -492,6 +499,11 @@ const JoinUs = ({ data, pageContext, location }) => {
                             '提交'
                           )}
                         </Button>
+                        {reCapStatus > 0 && (
+                          <ReCaptcha
+                            onChange={(value) => setReCapStatus(value)}
+                          ></ReCaptcha>
+                        )}
                       </form>
                     )
                   }}

@@ -15,6 +15,7 @@ import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import Search from '@components/Search'
+import ReCaptcha from '@components/ReCaptcha'
 
 const useStyles = makeStyles((theme) => ({
   root: {},

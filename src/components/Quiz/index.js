@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { Formik, FieldArray } from 'formik'
-import { throttle } from 'lodash-es'
+import { throttle, omit } from 'lodash-es'
 import { oriSchema } from '@utils/schema'
 import { StaticImage } from 'gatsby-plugin-image'
 import {
@@ -38,9 +38,10 @@ import { padStartNum } from '@utils'
 import FlagIcon from '@images/icons/flag.svg'
 import BackIcon from '@images/icons/back.svg'
 import classnames from 'classnames'
-// import CircularProgress from '@material-ui/core/CircularProgress'
-// import { toast } from 'react-toastify'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import { toast } from 'react-toastify'
 import useSiteMetadata from '@hooks/useSiteMetadata'
+import ReCaptcha from '@components/ReCaptcha'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -317,11 +318,33 @@ const Quiz = () => {
   const [step, setStep] = useState(0)
   const [finishQuiz, setFinishQuiz] = useState(false)
   const { platformUrl } = useSiteMetadata()
+  const [reCapStatus, setReCapStatus] = useState(0)
+  const [loading, setLoading] = useState(false)
 
   const progressValue = useMemo(
     () => Math.round(((step - 1) / QUIZ.length) * 100),
     [step]
   )
+
+  const handleFetch = async (values) => {
+    values.quiz = values.quiz?.map((item) => item.value)
+
+    try {
+      const res = await fetch(`${process.env.GATSBY_API_URL}/quiz/add`, {
+        method: 'POST',
+        body: JSON.stringify(omit(values, 'agreeTC')), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
+      const resData = await res.json()
+      if (resData?.code !== 1000)
+        return Promise.reject(resData?.message || '提交失敗')
+      return
+    } catch (error) {
+      return Promise.reject('提交失敗')
+    }
+  }
 
   return (
     <Box className={classes.root}>
@@ -345,8 +368,20 @@ const Quiz = () => {
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={throttle(async (values) => {
-          console.log('pl')
+          if (!reCapStatus) {
+            return setReCapStatus(1)
+          }
+          if (loading) return
+          setLoading(true)
+          try {
+            await handleFetch(values)
+            toast.success('已成功提交')
+          } catch (error) {
+            toast.error(error)
+          }
+          setLoading(false)
           setStep(8)
+          setReCapStatus(0)
         }, 1000)}
       >
         {(props) => {
@@ -774,6 +809,7 @@ const Quiz = () => {
                           variant='contained'
                           color='secondary'
                           fullWidth={matches}
+                          disabled={reCapStatus === 1}
                         >
                           提交
                         </Button>
@@ -785,6 +821,11 @@ const Quiz = () => {
                           直接登記 得易健康服務平台
                         </MuiLink>
                       </Box>
+                      {reCapStatus > 0 && (
+                        <ReCaptcha
+                          onChange={(value) => setReCapStatus(value)}
+                        ></ReCaptcha>
+                      )}
                     </Box>
                   </Grid>
                 </Grid>
