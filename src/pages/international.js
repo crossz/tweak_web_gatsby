@@ -259,7 +259,7 @@ const initialValues = {
   name: '',
   phone: '',
   email: '',
-  area: '',
+  // area: '',
 }
 
 const schema = oriSchema().pick([
@@ -268,7 +268,7 @@ const schema = oriSchema().pick([
   'name',
   'phone',
   'email',
-  'area',
+  // 'area',
 ])
 
 const International = () => {
@@ -487,11 +487,7 @@ const International = () => {
                           </FormControl>
                         </Box>
                         <Box className={classes.formControlLine}>
-                          <FormControl
-                            fullWidth
-                            error={isError('name')}
-                            className={classes.formControl}
-                          >
+                          <FormControl fullWidth error={isError('name')}>
                             <EFormLabel>聯絡人姓名</EFormLabel>
                             <EInputBase
                               id='contact-name'
@@ -504,7 +500,7 @@ const International = () => {
                             />
                             {errorText('name')}
                           </FormControl>
-                          <FormControl
+                          {/* <FormControl
                             fullWidth
                             error={isError('area')}
                             className={classes.formControl}
@@ -528,7 +524,7 @@ const International = () => {
                               ))}
                             </ESelect>
                             {errorText('area')}
-                          </FormControl>
+                          </FormControl> */}
                         </Box>
                         <Box className={classes.formControlLine}>
                           <FormControl

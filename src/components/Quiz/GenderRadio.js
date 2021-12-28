@@ -7,29 +7,40 @@ import FemaleIcon from '@images/icons/female.svg'
 
 const useStyle = makeStyles((theme) => ({
   root: {
-    border: `1px solid #E8E8E8`,
+    boxShadow: `0 0 0 1px #E8E8E8`,
     borderRadius: theme.spacing(1.25),
     backgroundColor: alpha(theme.palette.background.paper, 0.5),
-    transition: 'transform 0.3s ease',
+    transition: theme.transitions.create(['transform', 'box-shadow'], {
+      duration: theme.transitions.duration.standard,
+    }),
     fontSize: theme.typography.body1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.primary.main,
     padding: theme.spacing(1.375),
-    boxSizing: 'border-box',
     justifyContent: 'left',
-    height: theme.spacing(7),
+    height: theme.spacing(6.75),
     [theme.breakpoints.down('xs')]: {
       width: '100% ',
       fontSize: theme.typography.body2.fontSize,
-      height: theme.spacing(6),
+      height: theme.spacing(5.75),
       padding: theme.spacing(1.25, 1.5),
     },
   },
   checked: {
-    border: `3px solid ${theme.palette.primary.main}`,
     backgroundColor: `${theme.palette.background.paper} !important`,
-    transform: `translateY(-6px)`,
-    boxShadow: `0 2px 10px 0 ${alpha(theme.palette.common.black, 0.15)}`,
+    transform: `translateY(-2px)`,
+    boxShadow: `0 2px 10px 0 ${alpha(
+      theme.palette.common.black,
+      0.15
+    )},0 0 0 3px ${theme.palette.primary.main}`,
+    height: theme.spacing(6.25),
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(5.5),
+      boxShadow: `0 2px 10px 0 ${alpha(
+        theme.palette.common.black,
+        0.15
+      )},0 0 0 2px ${theme.palette.primary.main}`,
+    },
   },
   icon: {
     width: theme.spacing(4.25),

@@ -115,7 +115,7 @@ export const QUIZ = [
   },
 ]
 
-export const AGES = ['1~10', '11~20']
+export const AGES = ['20或以下', '21-30', '31-40', '41-50', '51-60', '61或以上']
 
 export const DEPARTMENTS = [
   {

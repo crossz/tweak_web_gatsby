@@ -90,9 +90,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     marginRight: theme.spacing(6),
+    [theme.breakpoints.down('sm')]: {
+      marginRight: theme.spacing(4),
+    },
   },
   select: {
     height: theme.spacing(5.5),
+  },
+  selectRoot: {
+    height: theme.spacing(5.625),
+    minWidth: theme.spacing(19.5),
+    [theme.breakpoints.down('sm')]: {
+      minWidth: theme.spacing(15),
+    },
   },
   buttonGroupWrapper: {
     display: 'flex',
@@ -228,6 +238,7 @@ const Map = ({ from }) => {
                         onChange={handleProvince}
                         placeholder='请选择'
                         variant='outlined'
+                        className={classes.selectRoot}
                       >
                         {location.map((item) => (
                           <MenuItem key={item.province} value={item.province}>
@@ -244,6 +255,7 @@ const Map = ({ from }) => {
                       onChange={handleArea}
                       placeholder='请选择'
                       variant='outlined'
+                      className={classes.selectRoot}
                     >
                       <MenuItem key='' value=''>
                         所有地區

@@ -286,6 +286,11 @@ const useStyle = makeStyles((theme) => ({
       fontSize: theme.typography.caption.fontSize,
     },
   },
+  ageFormControl: {
+    [theme.breakpoints.up('sm')]: {
+      minWidth: 158,
+    },
+  },
 }))
 
 const initialValues = {
@@ -503,6 +508,7 @@ const Quiz = () => {
                       </Box>
                       <Box mb={matches ? 3 : 5.75}>
                         <FormControl
+                          className={classes.ageFormControl}
                           fullWidth={matches}
                           required
                           error={isError('age')}

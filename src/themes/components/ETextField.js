@@ -15,12 +15,19 @@ import CheckCircleIcon from '@images/icons/check_circle.svg'
 
 const useStyles = makeStyles((theme) => ({
   selectRoot: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingTop: 0,
+    paddingBottom: 0,
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(1),
       paddingBottom: theme.spacing(1),
     },
+  },
+  selectInputBaseRoot: {
+    paddingTop: `0 !important`,
+    paddingBottom: `0 !important`,
   },
   cancelIcon: {
     display: 'flex',
@@ -124,7 +131,7 @@ export const ESelect = (props) => {
         root: classes.selectRoot,
       }}
       MenuProps={menuProps}
-      input={<EInputBase />}
+      input={<EInputBase classes={{ root: classes.selectInputBaseRoot }} />}
       displayEmpty
       {...props}
     >
