@@ -168,7 +168,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
           </MapAccordionSummary>
           <MapAccordionDetails>
             <Box className={classes.list}>
-              {clinics?.[curArea]?.map((clinic, index) => (
+              {clinics?.[area]?.map((clinic, index) => (
                 <Box className={classes.item} key={index}>
                   <Grid container spacing={0}>
                     <Grid item xs={1}>

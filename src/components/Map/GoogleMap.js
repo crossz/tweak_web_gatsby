@@ -1,6 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import GoogleMapReact from 'google-map-react'
+import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
+import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Marker = ({ text }) => <div style={{ color: 'red' }}>{text}</div>
+const Marker = () => <MarkerFalseIcon />
 const GoogleMap = (props) => {
   const classes = useStyles()
   const defaultProps = {
@@ -41,17 +43,21 @@ const GoogleMap = (props) => {
         options={{
           mapId: 'd6895a26c12adb4e',
         }}
-        onGoogleApiLoaded={({ map, maps }) => {
-          // Use google default marker style
-          const marker = new maps.Marker({
-            position: defaultProps.center,
-            map: map,
-          })
+        // onGoogleApiLoaded={({ map, maps }) => {
+        //   // Use google default marker style
+        //   const marker = new maps.Marker({
+        //     position: defaultProps.center,
+        //     map: map,
+        //   })
 
-          return marker
-        }}
+        //   return marker
+        // }}
       >
-        <Marker lat={22.3193} lng={114.1694} text='marker' />
+        {Object.keys(props.clinics)?.map((area) =>
+          props.clinics?.[area]?.map((clinic) => (
+            <Marker key={clinic.id} lat={clinic.lat} lng={clinic.lng} />
+          ))
+        )}
       </GoogleMapReact>
     </div>
   )

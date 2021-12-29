@@ -143,9 +143,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Map = ({ from }) => {
   const classes = useStyles()
-  const [viewType, setViewType] = useState('list')
-  const [region, setRegion] = useState(0)
-  const [district, setDistrict] = useState(0)
+  const [viewType, setViewType] = useState('map')
   const [location, setLocation] = useState([])
   const [clinics, setClinics] = useState(null)
   const [curProvince, setCurProvince] = useState('')
@@ -354,7 +352,7 @@ const Map = ({ from }) => {
             ></ClinicList>
           </Container>
         ) : (
-          <GoogleMap></GoogleMap>
+          <GoogleMap clinics={curClinics} curArea={curArea}></GoogleMap>
         )}
       </Box>
     </>
