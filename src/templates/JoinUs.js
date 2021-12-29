@@ -325,7 +325,6 @@ const JoinUs = ({ data, pageContext, location }) => {
                 >
                   加入我們
                 </Typography>
-
                 <Typography
                   variant={matches ? 'body2' : 'body1'}
                   color='textPrimary'

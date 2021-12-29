@@ -20,10 +20,6 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: theme.spacing(1),
-      paddingBottom: theme.spacing(1),
-    },
   },
   selectInputBaseRoot: {
     paddingTop: `0 !important`,

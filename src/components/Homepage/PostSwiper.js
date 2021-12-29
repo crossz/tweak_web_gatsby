@@ -52,25 +52,35 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 24,
         fontWeight: 'bolder',
         color: theme.palette.primary.main,
+        [theme.breakpoints.down('xs')]: {
+          fontSize: 16,
+        },
+      },
+      [theme.breakpoints.down('xs')]: {
+        bottom: theme.spacing(9.75),
       },
     },
     '& .swiper-button-prev': {
-      left: ({ progressRightWidth }) =>
-        `calc(100% - ${progressRightWidth}px + 24px)`,
+      left: ({ progressRightWidth, matches }) =>
+        `calc(100% - ${progressRightWidth}px + ${matches ? 16 : 24}px)`,
     },
     '& .swiper-button-next': {
-      left: ({ progressRightWidth }) =>
-        `calc(100% - ${progressRightWidth}px + 72px)`,
+      left: ({ progressRightWidth, matches }) =>
+        `calc(100% - ${progressRightWidth}px + ${matches ? 48 : 72}px)`,
     },
   },
   linearProgressWrapper: {
     display: 'flex',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   linearProgressRoot: {
     width: ({ progressRightWidth }) => `calc(100% - ${progressRightWidth}px)`,
     borderRadius: 5,
     backgroundColor: alpha(theme.palette.primary.main, 0.1),
+    [theme.breakpoints.down('xs')]: {
+      height: 2,
+    },
   },
   linearProgressBar: {
     borderRadius: 5,
@@ -78,10 +88,17 @@ const useStyles = makeStyles((theme) => ({
   viewBtnLink: {
     marginLeft: 'auto',
     textDecoration: 'none',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(6),
+      marginRight: 'auto',
+    },
   },
   viewBtn: {
     padding: theme.spacing(1.25, 3),
     paddingRight: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(1.5, 6),
+    },
   },
 }))
 
@@ -89,7 +106,10 @@ const PostSwiper = ({ nodes }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
-  const classes = useStyles({ progressRightWidth: isSm ? 256 : 316 })
+  const classes = useStyles({
+    progressRightWidth: matches ? 80 : isSm ? 256 : 316,
+    matches,
+  })
 
   const [activeSlide, setActiveSlide] = useState(0)
 
@@ -137,7 +157,7 @@ const PostSwiper = ({ nodes }) => {
               variant='outlined'
               color='primary'
               size='small'
-              endIcon={<RightIcon />}
+              endIcon={!matches && <RightIcon />}
             >
               瀏覽更多
             </Button>

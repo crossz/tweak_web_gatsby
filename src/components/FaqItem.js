@@ -126,9 +126,9 @@ const FaqItem = ({ question, content, onChange, id, activePanel }) => {
         <FaqAccordionSummary
           expandIcon={
             activePanel === id ? (
-              <ExpandIcon className={classes.expandIcon} />
-            ) : (
               <CollapseIcon className={classes.collapseIcon} />
+            ) : (
+              <ExpandIcon className={classes.expandIcon} />
             )
           }
         >

@@ -33,7 +33,6 @@ const GoogleMap = (props) => {
         bootstrapURLKeys={{
           key: 'AIzaSyAoh4HnMsiqw-s4hdFoiz0zEseqn6o97hA',
           language: 'zh-HK',
-          libraries: ['places'],
         }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
@@ -41,7 +40,6 @@ const GoogleMap = (props) => {
         // MapId for styling google map
         options={{
           mapId: 'd6895a26c12adb4e',
-          streetViewControl: true,
         }}
         onGoogleApiLoaded={({ map, maps }) => {
           // Use google default marker style
