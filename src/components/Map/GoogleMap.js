@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { Box, makeStyles, Typography, Button } from '@material-ui/core'
 import GoogleMapReact from 'google-map-react'
 import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
@@ -7,6 +7,7 @@ import classnames from 'classnames'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
 import useSiteMetadata from '@hooks/useSiteMetadata'
+import { minBy, maxBy } from 'lodash-es'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,6 +91,8 @@ const InfoWindow = (props) => {
   const classes = useStyles()
   const { platformUrl } = useSiteMetadata()
 
+  if (!props?.info) return null
+
   const { nameHk, phone, clinicType, id, addressHk } = props?.info
   return (
     <Box className={classes.infoWindow}>
@@ -123,6 +126,7 @@ const InfoWindow = (props) => {
 
 const GoogleMap = (props) => {
   const classes = useStyles()
+  const mapRef = useRef()
   const [activeKey, setActiveKey] = useState(null)
 
   const defaultProps = {
@@ -130,12 +134,21 @@ const GoogleMap = (props) => {
       lat: 22.3193,
       lng: 114.1694,
     },
-    defaultCenter: {
-      lat: 22.3193,
-      lng: 114.1694,
-    },
-    zoom: 15,
+    zoom: 14,
   }
+
+  useEffect(() => {
+    if (!mapRef.current || !curClinics?.length) return
+    const minLat = Number(minBy(curClinics, 'lat')?.lat)
+    const minLng = Number(minBy(curClinics, 'lng')?.lng)
+    const maxLat = Number(maxBy(curClinics, 'lat')?.lat)
+    const maxLng = Number(maxBy(curClinics, 'lng')?.lng)
+    mapRef.current?.panTo({
+      lat: minLat + (maxLat - minLat) / 2,
+      lng: minLng + (maxLng - minLng) / 2,
+    })
+    mapRef.current?.setZoom(props.curArea ? 15 : 14)
+  }, [props.curArea, props.clinics])
 
   const activeInfo = useMemo(() => {
     const { clinics } = props
@@ -153,8 +166,24 @@ const GoogleMap = (props) => {
     return info
   }, [props.clinics, activeKey])
 
-  const _handleChildClick = (key, value) => setActiveKey(value.id)
-  // 点击更新取消active key
+  const curClinics = useMemo(() => {
+    let list = []
+    if (props.curArea) {
+      list = props.clinics?.[props.curArea]
+    } else {
+      Object.values(props.clinics)?.forEach((areaClinics) =>
+        list.push(...areaClinics)
+      )
+    }
+    return list
+  }, [props.curArea, props.clinics])
+
+  const _handleChildClick = (key, value) => {
+    mapRef.current?.setZoom(15)
+    mapRef.current?.panTo({ lat: Number(value.lat), lng: Number(value.lng) })
+    return setActiveKey(value.id)
+  }
+
   const _handleClick = () => setActiveKey(null)
 
   return (
@@ -171,21 +200,18 @@ const GoogleMap = (props) => {
         // MapId for styling google map
         options={{
           mapId: '69e0c419fa67c775',
+          gestureHandling: 'greedy',
+          fullscreenControl: false,
         }}
         onChildClick={_handleChildClick}
         onClick={_handleClick}
-        // onGoogleApiLoaded={({ map, maps }) => {
-        //   // Use google default marker style
-        //   const marker = new maps.Marker({
-        //     position: defaultProps.center,
-        //     map: map,
-        //   })
-
-        //   return marker
-        // }}
+        yesIWantToUseGoogleMapApiInternals
+        onGoogleApiLoaded={({ map }) => {
+          mapRef.current = map
+        }}
       >
-        {Object.keys(props.clinics)?.map((area) =>
-          props.clinics?.[area]?.map((clinic) => (
+        {curClinics?.length &&
+          curClinics?.map((clinic) => (
             <Marker
               activeKey={activeKey}
               id={clinic.id}
@@ -193,8 +219,7 @@ const GoogleMap = (props) => {
               lat={clinic.lat}
               lng={clinic.lng}
             />
-          ))
-        )}
+          ))}
       </GoogleMapReact>
     </div>
   )

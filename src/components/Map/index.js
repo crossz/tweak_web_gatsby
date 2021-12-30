@@ -198,10 +198,7 @@ const Map = ({ from }) => {
   }, [])
 
   useEffect(() => {
-    if (location?.length && curProvince)
-      setCurArea(
-        location.find((item) => item.province === curProvince)?.area[0]
-      )
+    setCurArea('')
   }, [location, curProvince])
 
   const handleChange = (area) => setCurArea(area)
@@ -260,7 +257,7 @@ const Map = ({ from }) => {
                       </MenuItem>
                       {location
                         ?.find((item) => item.province === curProvince)
-                        ?.area.map((areaItem) => (
+                        ?.area?.map((areaItem) => (
                           <MenuItem key={areaItem} value={areaItem}>
                             {areaItem}
                           </MenuItem>
