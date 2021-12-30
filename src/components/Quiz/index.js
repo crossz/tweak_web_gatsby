@@ -217,9 +217,9 @@ const useStyle = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: theme.spacing(12.25),
+    marginTop: 'auto',
+    marginBottom: theme.spacing(10),
     [theme.breakpoints.down('xs')]: {
-      marginTop: 'auto',
       marginBottom: theme.spacing(8.75),
     },
   },

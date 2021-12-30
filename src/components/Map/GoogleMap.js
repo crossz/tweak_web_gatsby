@@ -137,8 +137,6 @@ const GoogleMap = (props) => {
     zoom: 15,
   }
 
-  const _handleChildClick = (key, value) => setActiveKey(value.id)
-
   const activeInfo = useMemo(() => {
     const { clinics } = props
     let info = null
@@ -154,6 +152,10 @@ const GoogleMap = (props) => {
     }
     return info
   }, [props.clinics, activeKey])
+
+  const _handleChildClick = (key, value) => setActiveKey(value.id)
+  // 点击更新取消active key
+  const _handleClick = () => setActiveKey(null)
 
   return (
     <div className={classes.root}>
@@ -171,6 +173,7 @@ const GoogleMap = (props) => {
           mapId: '69e0c419fa67c775',
         }}
         onChildClick={_handleChildClick}
+        onClick={_handleClick}
         // onGoogleApiLoaded={({ map, maps }) => {
         //   // Use google default marker style
         //   const marker = new maps.Marker({
