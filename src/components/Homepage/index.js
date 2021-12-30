@@ -60,7 +60,7 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
             本港篩查服務點
           </Typography>
         </Box>
-        <Map from='homepage'></Map>
+        <Map></Map>
       </Container>
       <Container disableGutters maxWidth='lg'>
         <Box className={classes.healthTipsBanner} />

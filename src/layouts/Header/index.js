@@ -72,7 +72,7 @@ const Header = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const { platformUrl } = useSiteMetadata()
-  const matchHomepage = useMatch('/')
+  const isHomepage = useMatch('/')
   const [withBg, setWithBg] = useState(true)
   // TODO homepage scroll leave banner show header background.
   // const handleWaypoint = (status) => {
@@ -85,8 +85,8 @@ const Header = () => {
         id='header'
         className={classnames(classes.root, {
           [classes.withBg]: !matches && withBg,
-          [classes.homepageRoot]: !matches && matchHomepage,
-          [classes.withoutShadow]: !matches && matchHomepage && withBg,
+          [classes.homepageRoot]: !matches && isHomepage,
+          [classes.withoutShadow]: !matches && isHomepage && withBg,
         })}
       >
         <Container className={classes.wrapper} maxWidth='lg'>
@@ -120,7 +120,7 @@ const Header = () => {
         onEnter={() => handleWaypoint(false)}
       ></Waypoint> */}
       </Box>
-      {matchHomepage && (
+      {isHomepage && (
         <Waypoint
           onEnter={() => setWithBg(false)}
           onLeave={() => setWithBg(true)}

@@ -15,6 +15,8 @@ import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
+import { useMatch } from '@reach/router'
+import classNames from 'classnames'
 
 const switchButtons = [
   {
@@ -26,18 +28,6 @@ const switchButtons = [
     Icon: ListIcon,
   },
 ]
-
-const menuProps = {
-  anchorOrigin: {
-    vertical: 'bottom',
-    horizontal: -14,
-  },
-  transformOrigin: {
-    vertical: -8,
-    horizontal: 'left',
-  },
-  getContentAnchorEl: null,
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -104,6 +94,12 @@ const useStyles = makeStyles((theme) => ({
       minWidth: theme.spacing(15),
     },
   },
+  homepageSelector: {
+    position: 'absolute',
+    zIndex: 1,
+    top: theme.spacing(3),
+    right: theme.spacing(3),
+  },
   buttonGroupWrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -141,8 +137,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Map = ({ from }) => {
+const Map = () => {
   const classes = useStyles()
+  const isHomepage = useMatch('/')
   const [viewType, setViewType] = useState('map')
   const [location, setLocation] = useState([])
   const [clinics, setClinics] = useState(null)
@@ -209,8 +206,32 @@ const Map = ({ from }) => {
   }, [clinics, curProvince])
 
   return (
-    <>
-      {from !== 'homepage' && (
+    <Box position='relative'>
+      {isHomepage ? (
+        location?.length && (
+          <ESelect
+            labelId='district-select-label'
+            id='district-type-select'
+            name='district'
+            value={curArea}
+            onChange={handleArea}
+            placeholder='请选择'
+            variant='outlined'
+            className={classNames(classes.selectRoot, classes.homepageSelector)}
+          >
+            <MenuItem key='' value=''>
+              所有地區
+            </MenuItem>
+            {location
+              ?.find((item) => item.province === curProvince)
+              ?.area?.map((areaItem) => (
+                <MenuItem key={areaItem} value={areaItem}>
+                  {areaItem}
+                </MenuItem>
+              ))}
+          </ESelect>
+        )
+      ) : (
         <Box className={classes.toolbarRoot}>
           <Container className={classes.toolbar} maxWidth='md'>
             <Box className={classes.toolBarTop}>
@@ -339,7 +360,7 @@ const Map = ({ from }) => {
         </Box>
       )}
       <Box className={classes.root}>
-        {viewType === 'list' && from !== 'homepage' ? (
+        {viewType === 'list' && !isHomepage ? (
           <Container maxWidth='md'>
             <ClinicList
               clinics={curClinics}
@@ -352,7 +373,7 @@ const Map = ({ from }) => {
           <GoogleMap clinics={curClinics} curArea={curArea}></GoogleMap>
         )}
       </Box>
-    </>
+    </Box>
   )
 }
 
