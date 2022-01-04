@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/office_website',
   siteMetadata: {
     siteUrl: 'https://take2health.net',
     title: 'Take2 Prophecy',

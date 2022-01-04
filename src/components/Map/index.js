@@ -208,7 +208,7 @@ const Map = () => {
   return (
     <Box position='relative'>
       {isHomepage ? (
-        location?.length && (
+        location?.length > 0 && (
           <ESelect
             labelId='district-select-label'
             id='district-type-select'
