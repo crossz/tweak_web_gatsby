@@ -44,8 +44,8 @@ fields:
   config:
     required: false
   label: href
-  description: If href is not empty, post card would open new window for this href
-    but not post detail page.
+  description: If href is not empty, post card will open new window for this href
+    instead of post detail page.
 - name: slug
   type: text
   config:
