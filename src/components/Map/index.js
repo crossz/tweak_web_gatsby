@@ -16,7 +16,6 @@ import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
-import classNames from 'classnames'
 
 const switchButtons = [
   {
@@ -32,8 +31,14 @@ const switchButtons = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
+    position: 'relative',
+  },
+  mapRoot: {
+    [theme.breakpoints.down('xs')]: {
+      margin: theme.spacing(0, -1.5),
+    },
   },
   toolbarRoot: {
     position: 'sticky',
@@ -99,6 +104,10 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     top: theme.spacing(3),
     right: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      top: theme.spacing(1.5),
+      right: theme.spacing(1.5),
+    },
   },
   buttonGroupWrapper: {
     display: 'flex',
@@ -140,7 +149,7 @@ const useStyles = makeStyles((theme) => ({
 const Map = () => {
   const classes = useStyles()
   const isHomepage = useMatch('/')
-  const [viewType, setViewType] = useState('map')
+  const [viewType, setViewType] = useState('list')
   const [location, setLocation] = useState([])
   const [clinics, setClinics] = useState(null)
   const [curProvince, setCurProvince] = useState('')
@@ -153,45 +162,47 @@ const Map = () => {
   const handleViewType = (value) => setViewType(value)
   const clinicsRef = useRef(null)
 
-  useEffect(async () => {
-    try {
-      const res = await fetch(
-        `${process.env.GATSBY_API_URL}/testCenters/list`,
-        {
-          method: 'POST',
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
+  useEffect(() => {
+    const fetchData = async (params) => {
+      try {
+        const res = await fetch(
+          `${process.env.GATSBY_API_URL}/testCenters/list`,
+          {
+            method: 'POST',
+            headers: new Headers({
+              'Content-Type': 'application/json',
+            }),
+          }
+        )
+        const resData = await res.json()
+        if (resData?.code !== 1000) {
+          return console.log('fetch error')
         }
-      )
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '获取数据失败')
-
-      const data = resData?.data || []
-      let location = []
-      const provinceGroup = groupBy(data, 'province')
-      const provinceKeys = Object.keys(provinceGroup)
-      provinceKeys.forEach((province, index) => {
-        const provinceData = provinceGroup[province]
-        const areaGroup = groupBy(provinceData, 'area')
-        const areaKeys = Object.keys(areaGroup)
-        location[index] = {
-          province,
-          area: areaKeys,
+        const data = resData?.data || []
+        let location = []
+        const provinceGroup = groupBy(data, 'province')
+        const provinceKeys = Object.keys(provinceGroup)
+        provinceKeys.forEach((province, index) => {
+          const provinceData = provinceGroup[province]
+          const areaGroup = groupBy(provinceData, 'area')
+          const areaKeys = Object.keys(areaGroup)
+          location[index] = {
+            province,
+            area: areaKeys,
+          }
+        })
+        if (clinicsRef.current) {
+          clinicsRef.current.clinics = provinceGroup
+          clinicsRef.current.location = location
         }
-      })
-      if (clinicsRef.current) {
-        clinicsRef.current.clinics = provinceGroup
-        clinicsRef.current.location = location
+        setClinics(provinceGroup)
+        setLocation(location)
+        setCurProvince('香港')
+      } catch (error) {
+        console.log('fetch error')
       }
-      setClinics(provinceGroup)
-      setLocation(location)
-      setCurProvince('香港')
-      return
-    } catch (error) {
-      return Promise.reject('获取数据失败', error)
     }
+    fetchData()
   }, [])
 
   useEffect(() => {
@@ -206,7 +217,12 @@ const Map = () => {
   }, [clinics, curProvince])
 
   return (
-    <Box position='relative'>
+    <Box
+      position='relative'
+      className={classnames(
+        !(viewType === 'list' && !isHomepage) && classes.mapRoot
+      )}
+    >
       {isHomepage ? (
         location?.length > 0 && (
           <ESelect
@@ -217,7 +233,7 @@ const Map = () => {
             onChange={handleArea}
             placeholder='请选择'
             variant='outlined'
-            className={classNames(classes.selectRoot, classes.homepageSelector)}
+            className={classnames(classes.selectRoot, classes.homepageSelector)}
           >
             <MenuItem key='' value=''>
               所有地區

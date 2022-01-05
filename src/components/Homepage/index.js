@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: `16px 16px 0 0`,
     marginTop: theme.spacing(15),
     marginBottom: -384,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(10),
+    },
   },
   healthTipsWrapper: {
     color: theme.palette.primary.contrastText,

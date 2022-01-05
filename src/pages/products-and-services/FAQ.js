@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useCallback, useState, useEffect, useRef } from 'react'
 import {
   makeStyles,
   Container,
@@ -15,7 +15,6 @@ import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import Search from '@components/Search'
-import ReCaptcha from '@components/ReCaptcha'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -120,31 +119,45 @@ const FAQ = ({ location }) => {
   const [activePanel, setActivePanel] = useState(null)
   const faqListRef = useRef(null)
 
-  useEffect(async () => {
-    try {
-      const res = await fetch(`${process.env.GATSBY_API_URL}/faqs/list`, {
-        method: 'POST',
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      })
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
-      faqListRef.current = resData?.data?.map((item) => {
-        return {
-          id: item.id,
-          question: item.questionHk,
-          content: item.contentHk,
+  useEffect(() => {
+    const fetchData = async (params) => {
+      try {
+        const res = await fetch(`${process.env.GATSBY_API_URL}/faqs/list`, {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        })
+        const resData = await res.json()
+        if (resData?.code !== 1000) {
+          return console.log('fetch error')
         }
-      })
-      return setFaqList(faqListRef.current)
-    } catch (error) {
-      return Promise.reject('提交失敗')
+
+        const list =
+          resData?.data?.map((item) => {
+            return {
+              id: item.id,
+              question: item.questionHk,
+              content: item.contentHk,
+            }
+          }) || []
+
+        faqListRef.current = list
+
+        setFaqList(list)
+      } catch (error) {
+        console.log('fetch error')
+      }
     }
+    fetchData()
   }, [])
 
   const handleChange = (index) => setActivePanel(index)
+  const handleSearchResult = (result) => setFaqList(result)
+  const handlePageList = useCallback(
+    () => setFaqList(faqListRef?.current || []),
+    []
+  )
 
   return (
     <Box className={classes.root}>
@@ -159,8 +172,8 @@ const FAQ = ({ location }) => {
               <Search
                 location={location}
                 data={faqListRef?.current || []}
-                setSearchResult={(result) => setFaqList(result)}
-                setPageList={() => setFaqList(faqListRef?.current || [])}
+                setSearchResult={handleSearchResult}
+                // setPageList={handlePageList}
                 isFAQ
               ></Search>
             </Hidden>
@@ -172,8 +185,8 @@ const FAQ = ({ location }) => {
               <Search
                 location={location}
                 data={faqListRef?.current || []}
-                setSearchResult={(result) => setFaqList(result)}
-                setPageList={() => setFaqList(faqListRef?.current || [])}
+                setSearchResult={handleSearchResult}
+                // setPageList={handlePageList}
                 isFAQ
               ></Search>
             </Hidden>
