@@ -1,7 +1,7 @@
 ---
 type: 公司動向
-date: 2021-11-09T00:00:00+08:00
-title: " Take2 Health invites Eric Cheung to explain his cancer survival story"
+date: 2021-11-09T00:00:00.000+08:00
+title: Take2 Health invites Eric Cheung to explain his cancer survival story
 detail: 'Hong Kong-based healthcare tech startup Take2Health has launched a campaign
   to introduce a product for nasopharynx cancer testing and is featuring actor Eric
   Cheung Tat-ming, who is also a survivor of the cancer.  Titled "Go Live Again",
