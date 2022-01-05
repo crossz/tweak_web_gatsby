@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostSwiper = ({ nodes }) => {
+const PostSwiper = ({ nodes, withViewBtn }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
@@ -110,16 +110,14 @@ const PostSwiper = ({ nodes }) => {
     progressRightWidth: matches ? 80 : isSm ? 256 : 316,
     matches,
   })
-
   const [activeSlide, setActiveSlide] = useState(0)
 
   return (
     <Box className={classes.root}>
       <Swiper
         spaceBetween={matches ? theme.spacing(2) : theme.spacing(3)}
-        // slidesPerView={matches ? 1 : 3}
         slidesPerView={'auto'}
-        loop
+        loop={nodes?.length > (matches ? 1 : 3)}
         navigation
         onSlideChange={(swiper) => {
           setActiveSlide(swiper.realIndex)
@@ -136,6 +134,7 @@ const PostSwiper = ({ nodes }) => {
               <PostCard
                 key={node.id}
                 slug={node.fields.slug}
+                withViewBtn={withViewBtn}
                 {...node.frontmatter}
               />
             </SwiperSlide>

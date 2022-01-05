@@ -56,7 +56,7 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
         <Box fontSize='caption.fontSize' color='text.primary'>
           為了讓你更了解健康狀況，我們會與不同合作夥伴攜手為你帶來產品及服務優惠，助你全面掌握健康。
         </Box>
-        <PostSwiper nodes={promotionNodes}></PostSwiper>
+        <PostSwiper nodes={promotionNodes} withViewBtn></PostSwiper>
         <Box className={classes.title}>
           <TitleDot></TitleDot>
           <Typography variant='h4' color='primary'>

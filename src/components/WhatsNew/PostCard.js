@@ -1,7 +1,7 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Box from '@material-ui/core/Box'
-import { makeStyles, alpha, Hidden } from '@material-ui/core'
+import { makeStyles, alpha } from '@material-ui/core'
 import { Link } from 'gatsby'
 import ViewButton from '@themes/components/ViewButton'
 
@@ -39,8 +39,12 @@ const useStyles = makeStyles((theme) => ({
   info: {
     fontSize: theme.typography.body2.fontSize,
     padding: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(1),
+      paddingBottom: theme.spacing(1.5),
     },
   },
   type: {
@@ -66,11 +70,11 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     color: theme.palette.grey[600],
-    marginTop: theme.spacing(1.5),
+    marginTop: 'auto',
   },
 }))
 
-const PostCard = ({ title, type, date, cover, slug }) => {
+const PostCard = ({ title, type, date, cover, slug, withViewBtn }) => {
   const classes = useStyles()
   const images = cover.map((item) => getImage(item))
 
@@ -85,14 +89,13 @@ const PostCard = ({ title, type, date, cover, slug }) => {
         <Box className={classes.info}>
           <Box className={classes.type}>{type}</Box>
           <Box className={classes.title}>{title}</Box>
-          <Hidden xsDown>
-            <Box className={classes.date}>{date}</Box>
-          </Hidden>
-          <Hidden smUp>
+          {withViewBtn ? (
             <Box mt={3} textAlign='right'>
               <ViewButton slug={slug}></ViewButton>
             </Box>
-          </Hidden>
+          ) : (
+            <Box className={classes.date}>{date}</Box>
+          )}
         </Box>
       </Box>
     </Link>

@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(6),
     padding: theme.spacing(1),
     transition: 'background-color ease 0.3s',
+    boxSizing: 'border-box',
     '&:hover': {
       backgroundColor: theme.palette.primary.main,
     },

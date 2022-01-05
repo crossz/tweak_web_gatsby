@@ -298,7 +298,7 @@ const GoogleMap = (props) => {
           // MapId for styling google map
           options={{
             mapId: '69e0c419fa67c775',
-            gestureHandling: 'greedy',
+            // gestureHandling: 'greedy',
             fullscreenControl: false,
           }}
           onChildClick={_handleChildClick}

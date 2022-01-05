@@ -61,6 +61,7 @@ const PostList = ({ title, caption, nodes }) => {
                 >
                   <PostCard
                     slug={node.fields.slug}
+                    withViewBtn={matches}
                     {...node.frontmatter}
                   ></PostCard>
                 </ImageListItem>

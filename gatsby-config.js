@@ -170,5 +170,6 @@ module.exports = {
         // selfHostedOrigin: 'YOUR_SELF_HOSTED_ORIGIN',
       },
     },
+    `gatsby-env-variables`,
   ],
 }

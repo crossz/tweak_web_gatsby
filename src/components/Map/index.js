@@ -16,6 +16,7 @@ import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
+import { API_URL } from 'gatsby-env-variables'
 
 const switchButtons = [
   {
@@ -67,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
   toolBarBottom: {
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(2),
+    },
   },
   toolbarTitle: {
     display: 'flex',
@@ -165,15 +169,12 @@ const Map = () => {
   useEffect(() => {
     const fetchData = async (params) => {
       try {
-        const res = await fetch(
-          `${process.env.GATSBY_API_URL}/testCenters/list`,
-          {
-            method: 'POST',
-            headers: new Headers({
-              'Content-Type': 'application/json',
-            }),
-          }
-        )
+        const res = await fetch(`${API_URL}/testCenters/list`, {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        })
         const resData = await res.json()
         if (resData?.code !== 1000) {
           return console.log('fetch error')
@@ -219,9 +220,7 @@ const Map = () => {
   return (
     <Box
       position='relative'
-      className={classnames(
-        !(viewType === 'list' && !isHomepage) && classes.mapRoot
-      )}
+      className={classnames(isHomepage && classes.mapRoot)}
     >
       {isHomepage ? (
         location?.length > 0 && (

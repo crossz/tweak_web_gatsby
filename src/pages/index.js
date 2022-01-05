@@ -3,8 +3,8 @@ import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
 
 const Index = ({ data }) => {
-  console.log('process.env.GATSBY_API_URL', process.env.GATSBY_API_URL)
   const { promotionNodes, healthTipsNodes } = data
+  console.log('promotionNodes', promotionNodes)
   return (
     <Homepage
       promotionNodes={promotionNodes?.nodes}

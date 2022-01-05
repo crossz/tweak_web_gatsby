@@ -62,7 +62,11 @@ const MorePosts = ({ title, nodes }) => {
                 }}
                 key={node.id}
               >
-                <PostCard slug={node.fields.slug} {...node.frontmatter} />
+                <PostCard
+                  slug={node.fields.slug}
+                  withViewBtn={matches}
+                  {...node.frontmatter}
+                />
               </ImageListItem>
             ))}
         </ImageList>

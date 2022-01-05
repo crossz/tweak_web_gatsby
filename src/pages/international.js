@@ -31,6 +31,7 @@ import {
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
+import { API_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -280,16 +281,13 @@ const International = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(
-        `${process.env.GATSBY_API_URL}/applyPartner/add`,
-        {
-          method: 'POST',
-          body: JSON.stringify(values), // data can be `string` or {object}!
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        }
-      )
+      const res = await fetch(`${API_URL}/applyPartner/add`, {
+        method: 'POST',
+        body: JSON.stringify(values), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
       const resData = await res.json()
       if (resData?.code !== 1000)
         return Promise.reject(resData?.message || '提交失敗')
