@@ -1,7 +1,7 @@
 ---
 region: 香港
 title: 'Strategic Partnership Specialist   -(copy)'
-type: 商業戰略合作
+type: DITE
 date: 2021-12-22T00:00:00.000+08:00
 
 ---
