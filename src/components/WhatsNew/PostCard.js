@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: 'none',
     color: theme.palette.primary.main,
+    '&:hover': {
+      textDecoration: 'none',
+    },
   },
   image: {
     height: 210,
