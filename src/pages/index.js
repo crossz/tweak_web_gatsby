@@ -30,6 +30,7 @@ export const query = graphql`
           title
           date(formatString: "DD/MM/YYYY")
           type
+          href
           cover {
             childImageSharp {
               gatsbyImageData
@@ -52,6 +53,7 @@ export const query = graphql`
           title
           date(formatString: "DD/MM/YYYY")
           type
+          href
           cover {
             childImageSharp {
               gatsbyImageData

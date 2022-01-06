@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box'
 import { makeStyles, alpha } from '@material-ui/core'
 import { Link } from 'gatsby'
 import ViewButton from '@themes/components/ViewButton'
+import { Link as MuiLink } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,12 +75,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostCard = ({ title, type, date, cover, slug, withViewBtn }) => {
+const LinkWrapper = ({ href, slug, children, ...rest }) =>
+  href ? (
+    <MuiLink href={href} target='_blank' {...rest}>
+      {children}
+    </MuiLink>
+  ) : (
+    <Link to={slug} {...rest}>
+      {children}
+    </Link>
+  )
+
+const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
   const classes = useStyles()
   const images = cover.map((item) => getImage(item))
-
   return (
-    <Link className={classes.link} to={slug}>
+    <LinkWrapper className={classes.link} href={href} slug={slug}>
       <Box className={classes.root}>
         <GatsbyImage
           className={classes.image}
@@ -98,7 +109,7 @@ const PostCard = ({ title, type, date, cover, slug, withViewBtn }) => {
           )}
         </Box>
       </Box>
-    </Link>
+    </LinkWrapper>
   )
 }
 
