@@ -144,7 +144,6 @@ const FAQ = ({ location }) => {
           }) || []
 
         faqListRef.current = list
-
         setFaqList(list)
       } catch (error) {
         console.log('fetch error')
@@ -155,10 +154,7 @@ const FAQ = ({ location }) => {
 
   const handleChange = (index) => setActivePanel(index)
   const handleSearchResult = (result) => setFaqList(result)
-  const handlePageList = useCallback(
-    () => setFaqList(faqListRef?.current || []),
-    []
-  )
+  const handlePageList = () => setFaqList(faqListRef?.current || [])
 
   return (
     <Box className={classes.root}>

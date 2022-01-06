@@ -129,7 +129,7 @@ const Post = ({ data }) => {
           <Box className={classes.header}>
             <Box width={matches ? 100 : 145}>
               <StaticImage
-                src='../../assets/images/common/take2_full_color.png'
+                src='../assets/images/common/take2_full_color.png'
                 alt='Logo'
               />
             </Box>

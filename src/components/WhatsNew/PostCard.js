@@ -22,10 +22,17 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       transform: 'translateY(-8px)',
     },
+    '&:hover $btnWrapper button': {
+      backgroundColor: theme.palette.secondary.main,
+    },
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(31.25),
       marginBottom: theme.spacing(3.75),
     },
+  },
+  btnWrapper: {
+    marginTop: theme.spacing(3),
+    textAlign: 'right',
   },
   link: {
     textDecoration: 'none',
@@ -106,7 +113,7 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
           <Box className={classes.type}>{type}</Box>
           <Box className={classes.title}>{title}</Box>
           {withViewBtn ? (
-            <Box mt={3} textAlign='right'>
+            <Box className={classes.btnWrapper}>
               <ViewButton slug={slug}></ViewButton>
             </Box>
           ) : (
