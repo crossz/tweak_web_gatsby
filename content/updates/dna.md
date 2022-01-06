@@ -1,13 +1,12 @@
 ---
 type: 行業資訊
-date: 2021-02-02T00:00:00.000+08:00
+date: 2022-01-05T00:00:00+08:00
 title: "【醫學科技】本地醫學科技公司　驗DNA篩查鼻咽癌　冀拓海外市場"
 detail: 經過2020年，大眾開始關注自身健康，醫療健康科技技術公司開始湧現。得易健康有限公司（TAKE2 HEALTH LTD）行政總裁翁錦輝表示，去年疫情令大家對健康關注度更高，香港、中國內地及其他地方的醫療健康科技產業發展非常蓬勃。
-href: ''
+href: https://inews.hket.com/article/2868628/?fbclid=IwAR0xpCxJWjui5pzr2XiVcbcwm7rIg4TMM5pfW6ztpZY0y9IrAM7rO3gNpZg
 slug: ''
 cover:
 - "../images/20210202TAKE2HEALTHLTD02.jpeg"
-- "../images/cu_1024.png"
 
 ---
 ![得易健康有限公司（TAKE2 HEALTH LTD）行政總裁翁錦輝表示，公司核心技術源自中文大學，能有效篩查鼻咽癌，未來會研發更多醫學技術。](../images/cu_1024.png)
