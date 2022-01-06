@@ -52,11 +52,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   type: {
+    minHeight: theme.spacing(2.5),
     color: theme.palette.secondary.main,
     marginBottom: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.overline.fontSize,
       marginBottom: theme.spacing(0.5),
+      minHeight: theme.spacing(1.75),
     },
   },
   title: {
