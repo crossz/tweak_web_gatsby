@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 const Index = ({ data }) => {
   const { promotionNodes, healthTipsNodes } = data
-  console.log('promotionNodes', promotionNodes)
   return (
     <Homepage
       promotionNodes={promotionNodes?.nodes}
