@@ -2,9 +2,6 @@
 label: Health Tips Post
 hide_body: true
 fields:
-- type: text
-  name: type
-  label: type
 - type: datetime
   name: date
   label: date
@@ -23,3 +20,17 @@ fields:
 - type: image_gallery
   name: cover
   label: cover
+- name: type
+  type: select
+  default: 健康資訊
+  config:
+    required: true
+    options:
+    - 健康資訊
+    - 專業醫護資訊
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Type
