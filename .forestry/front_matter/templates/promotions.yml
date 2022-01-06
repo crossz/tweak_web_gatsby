@@ -41,4 +41,5 @@ fields:
   label: type
   description: Tag of post.
 pages:
+- content/promotions/take2-health-re-health.md
 - content/promotions/take2.md
