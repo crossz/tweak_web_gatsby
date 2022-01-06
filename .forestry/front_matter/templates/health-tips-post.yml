@@ -1,4 +1,63 @@
 ---
 label: Health Tips Post
 hide_body: false
-fields: []
+fields:
+- name: date
+  type: datetime
+  description: Created date of post.
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: date
+- name: title
+  type: text
+  config:
+    required: true
+  label: title
+  description: Title of post.
+- name: type
+  type: select
+  default: []
+  config:
+    required: true
+    options:
+    - 健康資訊
+    - 專業醫護資訊
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: type
+  description: Tag of post.
+- name: cover
+  type: image_gallery
+  config: {}
+  label: cover
+  description: Cover of post card, in updates list it may be multiple images or empty.
+- name: detail
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: detail
+  description: Detail of post, used by post card.
+- name: href
+  type: text
+  config:
+    required: false
+  label: href
+  description: If href is not empty, post card will open new window for this href
+    instead of post detail page.
+- name: slug
+  type: text
+  config:
+    required: false
+  label: slug
+  description: Path for post detail page, if this is empty, post path would be post
+    title.
