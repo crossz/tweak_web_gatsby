@@ -34,3 +34,4 @@ fields:
       file: 
       path: 
   label: Type
+  description: Tag of post
