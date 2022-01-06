@@ -40,3 +40,5 @@ fields:
       path: 
   label: type
   description: Tag of post.
+pages:
+- content/promotions/take2.md
