@@ -38,7 +38,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
   templates:
-  - updates
+  - promotions
 - type: directory
   path: content/health-tips
   label: Health Tips
