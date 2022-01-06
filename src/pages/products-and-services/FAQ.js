@@ -181,8 +181,8 @@ const FAQ = ({ location }) => {
           </Grid>
         </Grid>
         <Grid className={classes.faqList} container spacing={4}>
-          <Grid item sm={4}>
-            <Hidden xsDown>
+          <Hidden xsDown>
+            <Grid item sm={4}>
               <Search
                 location={location}
                 data={faqListRef?.current || []}
@@ -190,9 +190,9 @@ const FAQ = ({ location }) => {
                 // setPageList={handlePageList}
                 isFAQ
               ></Search>
-            </Hidden>
-          </Grid>
-          <Grid item sm={8}>
+            </Grid>
+          </Hidden>
+          <Grid item xs={12} sm={8}>
             {faqList.length > 0 &&
               faqList.map((faq, index) => (
                 <FaqItem

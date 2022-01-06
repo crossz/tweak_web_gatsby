@@ -232,7 +232,7 @@ const Map = () => {
             name='district'
             value={curArea}
             onChange={handleArea}
-            placeholder='请选择'
+            placeholder='請選擇'
             variant='outlined'
             className={classnames(classes.selectRoot, classes.homepageSelector)}
           >
@@ -269,7 +269,7 @@ const Map = () => {
                         name='region'
                         value={curProvince}
                         onChange={handleProvince}
-                        placeholder='请选择'
+                        placeholder='請選擇'
                         variant='outlined'
                         className={classes.selectRoot}
                       >
@@ -286,7 +286,7 @@ const Map = () => {
                       name='district'
                       value={curArea}
                       onChange={handleArea}
-                      placeholder='请选择'
+                      placeholder='請選擇'
                       variant='outlined'
                       className={classes.selectRoot}
                     >
@@ -339,7 +339,7 @@ const Map = () => {
                         name='region'
                         value={curProvince}
                         onChange={handleProvince}
-                        placeholder='请选择'
+                        placeholder='請選擇'
                         variant='outlined'
                       >
                         {location.map((item) => (
@@ -355,7 +355,7 @@ const Map = () => {
                       name='district'
                       value={curArea}
                       onChange={handleArea}
-                      placeholder='请选择'
+                      placeholder='請選擇'
                       variant='outlined'
                     >
                       <MenuItem key='' value=''>

@@ -20,7 +20,9 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         slug = `/about-us/${relativeDirectory}/${node.id}`
         break
       case 'terms-and-conditions':
-        slug = `/${node.frontmatter.slug || node.frontmatter.title || name}`
+        slug = `/terms-and-conditions/${
+          node.frontmatter.slug || node.frontmatter.title || name
+        }`
         break
       default:
         slug = `/whats-new/${relativeDirectory}/${

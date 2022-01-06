@@ -47,12 +47,10 @@ import { API_URL } from 'gatsby-env-variables'
 const useStyle = makeStyles((theme) => ({
   root: {
     minHeight: theme.spacing(82.5),
-    borderRadius: theme.spacing(4),
     display: 'grid',
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(15),
     color: theme.palette.primary.main,
-    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(-2),
       marginRight: theme.spacing(-2),
@@ -63,6 +61,7 @@ const useStyle = makeStyles((theme) => ({
   quizBg: {
     gridArea: '1/1',
     height: '100%',
+    borderRadius: theme.spacing(4),
   },
   quizBanner: {
     width: 520,
@@ -277,13 +276,24 @@ const useStyle = makeStyles((theme) => ({
   },
   platformLink: {
     textDecoration: 'underline',
+    display: 'flex',
+    alignItems: 'center',
     marginLeft: theme.spacing(4),
     [theme.breakpoints.down('sm')]: {
       marginLeft: theme.spacing(2),
     },
-
     [theme.breakpoints.down('xs')]: {
       marginLeft: 0,
+      fontSize: theme.typography.caption.fontSize,
+    },
+    '&:hover': {
+      color: theme.palette.secondary.main,
+    },
+  },
+  mobilePlatformLink: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(-3.5),
+    '& .MuiButton-text': {
       fontSize: theme.typography.caption.fontSize,
     },
   },
@@ -353,579 +363,609 @@ const Quiz = () => {
   }
 
   return (
-    <Box className={classes.root}>
-      {step > 0 && step <= QUIZ.length ? (
-        <StaticImage
-          className={classes.quizBg}
-          layout='fullWidth'
-          src='../../assets/images/quiz_02.png'
-          alt='quiz bg 02'
-        ></StaticImage>
-      ) : (
-        <StaticImage
-          className={classes.quizBg}
-          layout='fullWidth'
-          src='../../assets/images/quiz_01.png'
-          alt='quiz bg 01'
-          objectPosition='90%'
-        ></StaticImage>
-      )}
-      <Formik
-        initialValues={initialValues}
-        validationSchema={schema}
-        onSubmit={throttle(async (values) => {
-          if (!reCapStatus) {
-            return setReCapStatus(1)
-          }
-          if (loading) return
-          setLoading(true)
-          try {
-            await handleFetch(values)
-            toast.success('已成功提交')
-          } catch (error) {
-            toast.error(error)
-          }
-          setLoading(false)
-          setStep(8)
-          setReCapStatus(0)
-        }, 1000)}
-      >
-        {(props) => {
-          const {
-            values,
-            handleChange,
-            handleSubmit,
-            errors,
-            touched,
-            setFieldTouched,
-            setFieldValue,
-          } = props
+    <>
+      <Box className={classes.root}>
+        {step > 0 && step <= QUIZ.length ? (
+          <StaticImage
+            className={classes.quizBg}
+            layout='fullWidth'
+            src='../../assets/images/quiz_02.png'
+            alt='quiz bg 02'
+          ></StaticImage>
+        ) : (
+          <StaticImage
+            className={classes.quizBg}
+            layout='fullWidth'
+            src='../../assets/images/quiz_01.png'
+            alt='quiz bg 01'
+            objectPosition='90%'
+          ></StaticImage>
+        )}
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={throttle(async (values) => {
+            if (!reCapStatus) {
+              return setReCapStatus(1)
+            }
+            if (loading) return
+            setLoading(true)
+            try {
+              await handleFetch(values)
+              toast.success('已成功提交')
+            } catch (error) {
+              toast.error(error)
+            }
+            setLoading(false)
+            setStep(8)
+            setReCapStatus(0)
+          }, 1000)}
+        >
+          {(props) => {
+            const {
+              values,
+              handleChange,
+              handleSubmit,
+              errors,
+              touched,
+              setFieldTouched,
+              setFieldValue,
+            } = props
 
-          const handleStartQuiz = () => {
-            setFieldTouched('gender')
-            setFieldTouched('age')
-            if (values.gender && values.age) setStep(1)
-          }
+            const handleStartQuiz = () => {
+              setFieldTouched('gender')
+              setFieldTouched('age')
+              if (values.gender && values.age) setStep(1)
+            }
 
-          const handleQuizBack = () =>
-            setStep((oldValue) => Math.max(oldValue - 1, 1))
+            const handleQuizBack = () =>
+              setStep((oldValue) => Math.max(oldValue - 1, 1))
 
-          const handleQuizNext = () =>
-            setStep((oldValue) => {
-              if (oldValue >= QUIZ.length)
-                setTimeout(() => {
-                  setFinishQuiz(true)
-                }, 1500)
-              return Math.min(oldValue + 1, QUIZ.length + 1)
-            })
+            const handleQuizNext = () =>
+              setStep((oldValue) => {
+                if (oldValue >= QUIZ.length)
+                  setTimeout(() => {
+                    setFinishQuiz(true)
+                  }, 1500)
+                return Math.min(oldValue + 1, QUIZ.length + 1)
+              })
 
-          const isError = (field) => touched[field] && Boolean(errors[field])
+            const isError = (field) => touched[field] && Boolean(errors[field])
 
-          const errorText = (field) =>
-            touched[field] &&
-            errors[field] && <FormHelperText>{errors[field]}</FormHelperText>
+            const errorText = (field) =>
+              touched[field] &&
+              errors[field] && <FormHelperText>{errors[field]}</FormHelperText>
 
-          const customErrorText = () =>
-            touched.email &&
-            !errors.email &&
-            touched.phone &&
-            !errors.phone &&
-            !values.email &&
-            !values.phone && (
-              <FormHelperText error>請輸入電話號碼或電郵</FormHelperText>
+            const customErrorText = () =>
+              touched.email &&
+              !errors.email &&
+              touched.phone &&
+              !errors.phone &&
+              !values.email &&
+              !values.phone && (
+                <FormHelperText error>請輸入電話號碼或電郵</FormHelperText>
+              )
+
+            const CusCancelButton = ({ field }) => (
+              <CancelButton
+                values={values}
+                touched={touched}
+                errors={errors}
+                field={field}
+                onCancel={(field) => setFieldValue(field, '')}
+              />
             )
 
-          const CusCancelButton = ({ field }) => (
-            <CancelButton
-              values={values}
-              touched={touched}
-              errors={errors}
-              field={field}
-              onCancel={(field) => setFieldValue(field, '')}
-            />
-          )
-
-          return (
-            <form onSubmit={handleSubmit} className={classes.formRoot}>
-              {step === 0 && (
-                <Grid container>
-                  <Grid item className={classes.quizLeft} xs={12} sm={6}>
-                    <Box className={classes.quizBanner}>
-                      <StaticImage
-                        src='../../assets/images/quiz_cover.png'
-                        alt='quiz cover'
-                      ></StaticImage>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Box className={classes.quizRight}>
-                      <Box mb={matches ? 1 : 3}>
-                        <Typography
-                          variant={matches ? 'h5' : 'h4'}
-                          color='primary'
-                        >
-                          免費測驗 了解健康
-                        </Typography>
+            return (
+              <form onSubmit={handleSubmit} className={classes.formRoot}>
+                {step === 0 && (
+                  <Grid container>
+                    <Grid item className={classes.quizLeft} xs={12} sm={6}>
+                      <Box className={classes.quizBanner}>
+                        <StaticImage
+                          src='../../assets/images/quiz_cover.png'
+                          alt='quiz cover'
+                        ></StaticImage>
                       </Box>
-                      <Box mb={matches ? 3 : 2.5} color='grey.900'>
-                        <Typography variant={matches ? 'body2' : 'body1'}>
-                          來個簡單測驗？可能逆轉一切！
-                          <br />
-                          雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
-                        </Typography>
-                      </Box>
-                      <Box mb={matches ? 2 : 4}>
-                        <FormControl
-                          component='fieldset'
-                          error={isError('gender')}
-                          required
-                          fullWidth={matches}
-                        >
-                          <EFormLabel className={classes.label}>
-                            性別
-                          </EFormLabel>
-                          <RadioGroup
-                            name='gender'
-                            value={values.gender}
-                            onChange={handleChange}
-                            row
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Box className={classes.quizRight}>
+                        <Box mb={matches ? 1 : 3}>
+                          <Typography
+                            variant={matches ? 'h5' : 'h4'}
+                            color='primary'
                           >
-                            <FormControlLabel
-                              className={classes.genderLabel}
-                              value='男性'
-                              control={<GenderRadio />}
-                            />
-                            <FormControlLabel
-                              className={classes.genderLabel}
-                              value='女性'
-                              control={<GenderRadio />}
-                              style={{
-                                marginRight: 0,
-                              }}
-                            />
-                          </RadioGroup>
-                          {errorText('gender')}
-                        </FormControl>
-                      </Box>
-                      <Box mb={matches ? 3 : 5.75}>
-                        <FormControl
-                          className={classes.ageFormControl}
-                          fullWidth={matches}
-                          required
-                          error={isError('age')}
-                        >
-                          <EFormLabel className={classes.label}>
-                            年齡
-                          </EFormLabel>
-                          <ESelect
-                            labelId='age-select-label'
-                            id='age-type-select'
-                            name='age'
-                            value={values.age}
-                            onChange={handleChange}
-                            displayEmpty
-                          >
-                            <MenuItem value='' disabled>
-                              请选择
-                            </MenuItem>
-                            {AGES.map((age) => (
-                              <MenuItem key={age} value={age}>
-                                {age}
-                              </MenuItem>
-                            ))}
-                          </ESelect>
-                          {errorText('age')}
-                        </FormControl>
-                      </Box>
-                      <Box>
-                        <Button
-                          variant='contained'
-                          color='secondary'
-                          onClick={handleStartQuiz}
-                        >
-                          開始免費測驗
-                        </Button>
-                      </Box>
-                    </Box>
-                  </Grid>
-                </Grid>
-              )}
-              {step > 0 && !finishQuiz && step <= QUIZ.length + 1 && (
-                <Container
-                  className={classes.quizWrapper}
-                  disableGutters
-                  maxWidth='sm'
-                >
-                  <Box className={classes.progressWrapper}>
-                    <Box width='100%'>
-                      <Box className={classes.linearProgressInfo}>
-                        <Box
-                          className={classnames(
-                            classes.progressValue,
-                            step - 1 === QUIZ.length && classes.progressEnd
-                          )}
-                          style={{
-                            transform: `translateX(${progressValue}%)`,
-                          }}
-                        >
-                          {progressValue}%
+                            免費測驗 了解健康
+                          </Typography>
                         </Box>
-                        <FlagIcon className={classes.flagIcon}></FlagIcon>
-                      </Box>
-                      <LinearProgress
-                        classes={{
-                          root: classes.linearProgressRoot,
-                          bar: classes.linearProgressBar,
-                        }}
-                        color='primary'
-                        variant='determinate'
-                        value={progressValue}
-                      />
-                    </Box>
-                  </Box>
-                  <FieldArray name='quiz'>
-                    {() =>
-                      QUIZ.length &&
-                      values?.quiz?.map(
-                        (item, index) =>
-                          (index + 1 === step ||
-                            (index + 2 === step &&
-                              step === QUIZ.length + 1)) && (
-                            <FormControl
-                              fullWidth
-                              key={index}
-                              component='fieldset'
-                            >
-                              <Box className={classes.quizTitle}>
-                                <Box
-                                  className={classes.quizNum}
-                                  component='span'
-                                >
-                                  {padStartNum(step)}
-                                  <Box
-                                    className={classes.quizLength}
-                                    component='span'
-                                  >
-                                    /{padStartNum(QUIZ.length)}
-                                  </Box>
-                                </Box>
-                                <Box>{QUIZ[index].question}</Box>
-                              </Box>
-                              {QUIZ[index]?.type === 'slider' ? (
-                                <SliderRadio
-                                  name={`quiz[${index}].value`}
-                                  answers={QUIZ[index]?.answers}
-                                  onChange={handleChange}
-                                />
-                              ) : (
-                                <RadioGroup
-                                  className={classes.quizRadioWrapper}
-                                  name={`quiz[${index}].value`}
-                                  value={item.value}
-                                  onChange={handleChange}
-                                  row
-                                >
-                                  {QUIZ[index]?.answers?.map(
-                                    (answer, answerIndex) => (
-                                      <FormControlLabel
-                                        className={classes.quizRadioLabel}
-                                        key={answer}
-                                        value={answer}
-                                        control={
-                                          <QuizRadio index={answerIndex} />
-                                        }
-                                      />
-                                    )
-                                  )}
-                                </RadioGroup>
-                              )}
-                            </FormControl>
-                          )
-                      )
-                    }
-                  </FieldArray>
-                  {step <= QUIZ.length && (
-                    <Box className={classes.quizBtnWrapper}>
-                      {step !== 1 && (
-                        <Button
-                          className={classes.preBtn}
-                          variant='text'
-                          color='primary'
-                          onClick={handleQuizBack}
-                          startIcon={<BackIcon />}
-                          classes={{
-                            startIcon: classes.preBtnStartIcon,
-                          }}
-                        >
-                          返回上一题
-                        </Button>
-                      )}
-                      {step <= QUIZ.length && values.quiz[step - 1].value && (
-                        <Button
-                          className={classes.nextBtn}
-                          variant='contained'
-                          color='secondary'
-                          onClick={handleQuizNext}
-                        >
-                          下一题
-                        </Button>
-                      )}
-                    </Box>
-                  )}
-                </Container>
-              )}
-              {step === 7 && finishQuiz && (
-                <Grid container>
-                  <Grid className={classes.quizLeft} item xs={12} sm={6}>
-                    <Box className={classes.quizIcon}>
-                      <StaticImage
-                        width={248}
-                        src='../../assets/images/icons/completed.svg'
-                        alt='quiz cover'
-                      ></StaticImage>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Box className={classes.quizRight}>
-                      <Box
-                        textAlign={matches ? 'center' : 'left'}
-                        mb={matches ? 1 : 2}
-                      >
-                        <Typography variant='h4' color='primary'>
-                          最後一個步驟免費獲取結果!
-                        </Typography>
-                      </Box>
-                      <Box
-                        textAlign={matches ? 'center' : 'left'}
-                        mb={matches ? 2 : 2.5}
-                        color='grey.900'
-                      >
-                        <Typography variant={matches ? 'caption' : 'body1'}>
-                          來個簡單測驗？可能逆轉一切！
-                          <br />
-                          請輸入電郵以獲取結果，及後可通過得易健康服務平台網上系統免費登記成為Take2
-                          ExtraCare會員,
-                          或輸入電話號碼與線上註冊護士咨詢服務或產品內容!{' '}
-                        </Typography>
-                      </Box>
-                      <Box className={classes.formWrapper}>
-                        <Box mb={1.5}>
-                          <FormControl fullWidth error={isError('email')}>
-                            <EFormLabel>電郵</EFormLabel>
-                            <EInputBase
-                              id='email'
-                              name='email'
-                              margin='none'
-                              value={values.email}
+                        <Box mb={matches ? 3 : 2.5} color='grey.900'>
+                          <Typography variant={matches ? 'body2' : 'body1'}>
+                            來個簡單測驗？可能逆轉一切！
+                            <br />
+                            雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
+                          </Typography>
+                        </Box>
+                        <Box mb={matches ? 2 : 4}>
+                          <FormControl
+                            component='fieldset'
+                            error={isError('gender')}
+                            required
+                            fullWidth={matches}
+                          >
+                            <EFormLabel className={classes.label}>
+                              性別
+                            </EFormLabel>
+                            <RadioGroup
+                              name='gender'
+                              value={values.gender}
                               onChange={handleChange}
-                              placeholder={
-                                isError('email')
-                                  ? ''
-                                  : 'example@take2health.com'
-                              }
-                              endAdornment={<CusCancelButton field='email' />}
-                            />
-
-                            {errorText('email')}
+                              row
+                            >
+                              <FormControlLabel
+                                className={classes.genderLabel}
+                                value='男性'
+                                control={<GenderRadio />}
+                              />
+                              <FormControlLabel
+                                className={classes.genderLabel}
+                                value='女性'
+                                control={<GenderRadio />}
+                                style={{
+                                  marginRight: 0,
+                                }}
+                              />
+                            </RadioGroup>
+                            {errorText('gender')}
                           </FormControl>
                         </Box>
-                        <Box textAlign='center'>或</Box>
-                        <Box mb={matches ? 2 : 4}>
-                          <Box mb={1}>
-                            <EFormLabel>電話號碼</EFormLabel>
-                          </Box>
-                          <Box display='flex'>
-                            <Box mr={0.5}>
-                              <FormControl
-                                className={classes.dialingCode}
-                                required
-                              >
-                                <ESelect
-                                  labelId='dialingCode-select-label'
-                                  id='dialingCode-type-select'
-                                  name='dialingCode'
-                                  value={values.dialingCode}
-                                  onChange={handleChange}
-                                  input={<EInputBase />}
-                                  disableEmpty
-                                >
-                                  {DIALING_CODES.map((dialingCode) => (
-                                    <MenuItem
-                                      key={dialingCode.value}
-                                      value={dialingCode.value}
-                                    >
-                                      {dialingCode.label}
-                                    </MenuItem>
-                                  ))}
-                                </ESelect>
-                              </FormControl>
-                            </Box>
-                            <FormControl fullWidth error={isError('phone')}>
-                              <EInputBase
-                                id='phone'
-                                name='phone'
-                                margin='none'
-                                value={values.phone}
-                                onChange={handleChange}
-                                placeholder='9876 5432'
-                                endAdornment={<CusCancelButton field='phone' />}
-                              />
-                              {errorText('phone')}
-                            </FormControl>
-                          </Box>
-                          {customErrorText()}
-                        </Box>
-                        <FormControl
-                          className={classes.checkBoxWrapper}
-                          error={isError('agreeTC')}
-                          required
-                        >
-                          <FormControlLabel
-                            control={<Checkbox color='secondary' />}
-                            label={
-                              <Box
-                                fontSize={matches ? 10 : 'caption.fontSize'}
-                                component='span'
-                                lineHeight={1}
-                              >
-                                本人已明白及同意Take2 Health Limited
-                                的網站於take2health.net之網站
-                                <MuiLink href='/' className={classes.link}>
-                                  <Box color='primary.main' component='span'>
-                                    私隱政策
-                                  </Box>
-                                </MuiLink>
-                                及
-                                <MuiLink href='/' className={classes.link}>
-                                  <Box color='primary.main' component='span'>
-                                    個人資料收集聲明
-                                  </Box>
-                                </MuiLink>
-                                。
-                              </Box>
-                            }
-                            onChange={handleChange}
-                            name='agreeTC'
-                          />
-                          {errorText('agreeTC')}
-                        </FormControl>
-                      </Box>
-                      <Box>
-                        <Button
-                          type='submit'
-                          variant='contained'
-                          color='secondary'
-                          fullWidth={matches}
-                          disabled={reCapStatus === 1}
-                        >
-                          {loading ? (
-                            <CircularProgress color='inherit' size={24} />
-                          ) : (
-                            '提交'
-                          )}
-                        </Button>
-                        <MuiLink
-                          className={classes.platformLink}
-                          href={platformUrl}
-                          target='_blank'
-                        >
-                          直接登記 得易健康服務平台
-                        </MuiLink>
-                      </Box>
-                      {reCapStatus > 0 && (
-                        <ReCaptcha
-                          onChange={(value) => setReCapStatus(value)}
-                        ></ReCaptcha>
-                      )}
-                    </Box>
-                  </Grid>
-                </Grid>
-              )}
-              {step === 8 && (
-                <Grid container>
-                  <Grid className={classes.quizLeft} item xs={12} sm={6}>
-                    <Box className={classes.quizIcon}>
-                      <StaticImage
-                        src='../../assets/images/icons/sent.svg'
-                        alt='quiz cover'
-                      ></StaticImage>{' '}
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Box
-                      textAlign={matches ? 'center' : 'left'}
-                      className={classes.quizRight}
-                    >
-                      <Box mb={matches ? 1 : 2}>
-                        <Typography
-                          variant={matches ? 'h5' : 'h4'}
-                          color='primary'
-                        >
-                          多謝參與！
-                        </Typography>
-                      </Box>
-                      <Box
-                        fontSize='body1.fontSize'
-                        color='grey.900'
-                        maxWidth={386}
-                        lineHeight={1.5}
-                      >
-                        <Box fontWeight='fontWeightBold' mb={matches ? 2 : 1.5}>
-                          測驗經已完成！
-                        </Box>
-                        <Box
-                          fontSize={
-                            matches ? 'caption.fontSize' : 'body1.fontSize'
-                          }
-                        >
-                          以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
-                          <br />
-                          <Hidden smUp>
-                            <br />
-                          </Hidden>
-                          你亦可立即登記，免費成為Take2 Extra
-                          Care會員，預約進行檢測，或享用得易健康網上平台的服務。
-                        </Box>
-                      </Box>
-                      <Box
-                        display='flex'
-                        flexWrap={matches ? 'wrap' : 'nowrap'}
-                        maxWidth={482}
-                        mt={5}
-                      >
-                        <Box
-                          flexShrink={0}
-                          width={matches ? '100%' : 'auto'}
-                          mr={matches ? 0 : 2}
-                          mb={matches ? 1 : 0}
-                        >
-                          <Button
-                            size={matches ? 'small' : 'medium'}
-                            variant='outlined'
-                            color='primary'
-                            fullWidth
+                        <Box mb={matches ? 3 : 5.75}>
+                          <FormControl
+                            className={classes.ageFormControl}
+                            fullWidth={matches}
+                            required
+                            error={isError('age')}
                           >
-                            了解更多
+                            <EFormLabel className={classes.label}>
+                              年齡
+                            </EFormLabel>
+                            <ESelect
+                              labelId='age-select-label'
+                              id='age-type-select'
+                              name='age'
+                              value={values.age}
+                              onChange={handleChange}
+                              displayEmpty
+                            >
+                              <MenuItem value='' disabled>
+                                請選擇
+                              </MenuItem>
+                              {AGES.map((age) => (
+                                <MenuItem key={age} value={age}>
+                                  {age}
+                                </MenuItem>
+                              ))}
+                            </ESelect>
+                            {errorText('age')}
+                          </FormControl>
+                        </Box>
+                        <Box>
+                          <Button
+                            variant='contained'
+                            color='secondary'
+                            onClick={handleStartQuiz}
+                            fullWidth={matches}
+                          >
+                            開始免費測驗
                           </Button>
                         </Box>
-                        <Button
-                          size={matches ? 'small' : 'medium'}
-                          fullWidth
-                          variant='contained'
-                          color='secondary'
-                        >
-                          登記成為會員
-                        </Button>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                )}
+                {step > 0 && !finishQuiz && step <= QUIZ.length + 1 && (
+                  <Container
+                    className={classes.quizWrapper}
+                    disableGutters
+                    maxWidth='sm'
+                  >
+                    <Box className={classes.progressWrapper}>
+                      <Box width='100%'>
+                        <Box className={classes.linearProgressInfo}>
+                          <Box
+                            className={classnames(
+                              classes.progressValue,
+                              step - 1 === QUIZ.length && classes.progressEnd
+                            )}
+                            style={{
+                              transform: `translateX(${progressValue}%)`,
+                            }}
+                          >
+                            {progressValue}%
+                          </Box>
+                          <FlagIcon className={classes.flagIcon}></FlagIcon>
+                        </Box>
+                        <LinearProgress
+                          classes={{
+                            root: classes.linearProgressRoot,
+                            bar: classes.linearProgressBar,
+                          }}
+                          color='primary'
+                          variant='determinate'
+                          value={progressValue}
+                        />
                       </Box>
                     </Box>
+                    <FieldArray name='quiz'>
+                      {() =>
+                        QUIZ.length &&
+                        values?.quiz?.map(
+                          (item, index) =>
+                            (index + 1 === step ||
+                              (index + 2 === step &&
+                                step === QUIZ.length + 1)) && (
+                              <FormControl
+                                fullWidth
+                                key={index}
+                                component='fieldset'
+                              >
+                                <Box className={classes.quizTitle}>
+                                  <Box
+                                    className={classes.quizNum}
+                                    component='span'
+                                  >
+                                    {padStartNum(step)}
+                                    <Box
+                                      className={classes.quizLength}
+                                      component='span'
+                                    >
+                                      /{padStartNum(QUIZ.length)}
+                                    </Box>
+                                  </Box>
+                                  <Box>{QUIZ[index].question}</Box>
+                                </Box>
+                                {QUIZ[index]?.type === 'slider' ? (
+                                  <SliderRadio
+                                    name={`quiz[${index}].value`}
+                                    answers={QUIZ[index]?.answers}
+                                    onChange={handleChange}
+                                  />
+                                ) : (
+                                  <RadioGroup
+                                    className={classes.quizRadioWrapper}
+                                    name={`quiz[${index}].value`}
+                                    value={item.value}
+                                    onChange={handleChange}
+                                    row
+                                  >
+                                    {QUIZ[index]?.answers?.map(
+                                      (answer, answerIndex) => (
+                                        <FormControlLabel
+                                          className={classes.quizRadioLabel}
+                                          key={answer}
+                                          value={answer}
+                                          control={
+                                            <QuizRadio index={answerIndex} />
+                                          }
+                                        />
+                                      )
+                                    )}
+                                  </RadioGroup>
+                                )}
+                              </FormControl>
+                            )
+                        )
+                      }
+                    </FieldArray>
+                    {step <= QUIZ.length && (
+                      <Box className={classes.quizBtnWrapper}>
+                        {step !== 1 && (
+                          <Button
+                            className={classes.preBtn}
+                            variant='text'
+                            color='primary'
+                            onClick={handleQuizBack}
+                            startIcon={<BackIcon />}
+                            classes={{
+                              startIcon: classes.preBtnStartIcon,
+                            }}
+                          >
+                            返回上一题
+                          </Button>
+                        )}
+                        {step <= QUIZ.length && values.quiz[step - 1].value && (
+                          <Button
+                            className={classes.nextBtn}
+                            variant='contained'
+                            color='secondary'
+                            onClick={handleQuizNext}
+                          >
+                            下一题
+                          </Button>
+                        )}
+                      </Box>
+                    )}
+                  </Container>
+                )}
+                {step === 7 && finishQuiz && (
+                  <Grid container>
+                    <Grid className={classes.quizLeft} item xs={12} sm={6}>
+                      <Box className={classes.quizIcon}>
+                        <StaticImage
+                          width={248}
+                          src='../../assets/images/icons/completed.svg'
+                          alt='quiz cover'
+                        ></StaticImage>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Box className={classes.quizRight}>
+                        <Box
+                          textAlign={matches ? 'center' : 'left'}
+                          mb={matches ? 1 : 2}
+                        >
+                          <Typography variant='h4' color='primary'>
+                            最後一個步驟免費獲取結果!
+                          </Typography>
+                        </Box>
+                        <Box
+                          textAlign={matches ? 'center' : 'left'}
+                          mb={matches ? 2 : 2.5}
+                          color='grey.900'
+                        >
+                          <Typography variant={matches ? 'caption' : 'body1'}>
+                            來個簡單測驗？可能逆轉一切！
+                            <br />
+                            請輸入電郵以獲取結果，及後可通過得易健康服務平台網上系統免費登記成為Take2
+                            ExtraCare會員,
+                            或輸入電話號碼與線上註冊護士咨詢服務或產品內容!{' '}
+                          </Typography>
+                        </Box>
+                        <Box className={classes.formWrapper}>
+                          <Box mb={1.5}>
+                            <FormControl fullWidth error={isError('email')}>
+                              <EFormLabel>電郵</EFormLabel>
+                              <EInputBase
+                                id='email'
+                                name='email'
+                                margin='none'
+                                value={values.email}
+                                onChange={handleChange}
+                                placeholder={
+                                  isError('email')
+                                    ? ''
+                                    : 'example@take2health.com'
+                                }
+                                endAdornment={<CusCancelButton field='email' />}
+                              />
+
+                              {errorText('email')}
+                            </FormControl>
+                          </Box>
+                          <Box textAlign='center'>或</Box>
+                          <Box mb={matches ? 2 : 4}>
+                            <Box mb={1}>
+                              <EFormLabel>電話號碼</EFormLabel>
+                            </Box>
+                            <Box display='flex'>
+                              <Box mr={0.5}>
+                                <FormControl
+                                  className={classes.dialingCode}
+                                  required
+                                >
+                                  <ESelect
+                                    labelId='dialingCode-select-label'
+                                    id='dialingCode-type-select'
+                                    name='dialingCode'
+                                    value={values.dialingCode}
+                                    onChange={handleChange}
+                                    input={<EInputBase />}
+                                    disableEmpty
+                                  >
+                                    {DIALING_CODES.map((dialingCode) => (
+                                      <MenuItem
+                                        key={dialingCode.value}
+                                        value={dialingCode.value}
+                                      >
+                                        {dialingCode.label}
+                                      </MenuItem>
+                                    ))}
+                                  </ESelect>
+                                </FormControl>
+                              </Box>
+                              <FormControl fullWidth error={isError('phone')}>
+                                <EInputBase
+                                  id='phone'
+                                  name='phone'
+                                  margin='none'
+                                  value={values.phone}
+                                  onChange={handleChange}
+                                  placeholder='9876 5432'
+                                  endAdornment={
+                                    <CusCancelButton field='phone' />
+                                  }
+                                />
+                                {errorText('phone')}
+                              </FormControl>
+                            </Box>
+                            {customErrorText()}
+                          </Box>
+                          <FormControl
+                            className={classes.checkBoxWrapper}
+                            error={isError('agreeTC')}
+                            required
+                          >
+                            <FormControlLabel
+                              control={<Checkbox color='secondary' />}
+                              label={
+                                <Box
+                                  fontSize={matches ? 10 : 'caption.fontSize'}
+                                  component='span'
+                                  lineHeight={1}
+                                >
+                                  本人已明白及同意Take2 Health Limited
+                                  的網站於take2health.net之網站
+                                  <MuiLink
+                                    href='/terms-and-conditions/私隱政策'
+                                    className={classes.link}
+                                  >
+                                    <Box color='primary.main' component='span'>
+                                      私隱政策
+                                    </Box>
+                                  </MuiLink>
+                                  及
+                                  <MuiLink href='/' className={classes.link}>
+                                    <Box color='primary.main' component='span'>
+                                      個人資料收集聲明
+                                    </Box>
+                                  </MuiLink>
+                                  。
+                                </Box>
+                              }
+                              onChange={handleChange}
+                              name='agreeTC'
+                            />
+                            {errorText('agreeTC')}
+                          </FormControl>
+                        </Box>
+                        <Box
+                          display='flex'
+                          flexDirection={matches ? 'column' : 'row'}
+                        >
+                          <Button
+                            type='submit'
+                            variant='contained'
+                            color='secondary'
+                            fullWidth={matches}
+                            disabled={reCapStatus === 1}
+                          >
+                            {loading ? (
+                              <CircularProgress color='inherit' size={24} />
+                            ) : (
+                              '提交'
+                            )}
+                          </Button>
+                          <Hidden xsDown>
+                            <MuiLink
+                              className={classes.platformLink}
+                              href={platformUrl}
+                              target='_blank'
+                            >
+                              直接登記 得易健康服務平台
+                            </MuiLink>
+                          </Hidden>
+                          <Hidden smUp>
+                            <MuiLink
+                              className={classnames(
+                                classes.platformLink,
+                                classes.mobilePlatformLink
+                              )}
+                              href={platformUrl}
+                              target='_blank'
+                            >
+                              <Button fullWidth variant='text' color='primary'>
+                                直接登記 得易健康服務平台
+                              </Button>
+                            </MuiLink>
+                          </Hidden>
+                        </Box>
+                        {reCapStatus > 0 && (
+                          <ReCaptcha
+                            onChange={(value) => setReCapStatus(value)}
+                          ></ReCaptcha>
+                        )}
+                      </Box>
+                    </Grid>
                   </Grid>
-                </Grid>
-              )}
-            </form>
-          )
-        }}
-      </Formik>
-    </Box>
+                )}
+                {step === 8 && (
+                  <Grid container>
+                    <Grid className={classes.quizLeft} item xs={12} sm={6}>
+                      <Box className={classes.quizIcon}>
+                        <StaticImage
+                          src='../../assets/images/icons/sent.svg'
+                          alt='quiz cover'
+                        ></StaticImage>{' '}
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <Box
+                        textAlign={matches ? 'center' : 'left'}
+                        className={classes.quizRight}
+                      >
+                        <Box mb={matches ? 1 : 2}>
+                          <Typography
+                            variant={matches ? 'h5' : 'h4'}
+                            color='primary'
+                          >
+                            多謝參與！
+                          </Typography>
+                        </Box>
+                        <Box
+                          fontSize='body1.fontSize'
+                          color='grey.900'
+                          maxWidth={386}
+                          lineHeight={1.5}
+                        >
+                          <Box
+                            fontWeight='fontWeightBold'
+                            mb={matches ? 2 : 1.5}
+                          >
+                            測驗經已完成！
+                          </Box>
+                          <Box
+                            fontSize={
+                              matches ? 'caption.fontSize' : 'body1.fontSize'
+                            }
+                          >
+                            以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
+                            <br />
+                            <Hidden smUp>
+                              <br />
+                            </Hidden>
+                            你亦可立即登記，免費成為Take2 Extra
+                            Care會員，預約進行檢測，或享用得易健康網上平台的服務。
+                          </Box>
+                        </Box>
+                        <Box
+                          display='flex'
+                          flexWrap={matches ? 'wrap' : 'nowrap'}
+                          maxWidth={482}
+                          mt={5}
+                        >
+                          <Box
+                            flexShrink={0}
+                            width={matches ? '100%' : 'auto'}
+                            mr={matches ? 0 : 2}
+                            mb={matches ? 1 : 0}
+                          >
+                            <Button
+                              size={matches ? 'small' : 'medium'}
+                              variant='outlined'
+                              color='primary'
+                              fullWidth
+                            >
+                              了解更多
+                            </Button>
+                          </Box>
+                          <Button
+                            size={matches ? 'small' : 'medium'}
+                            fullWidth
+                            variant='contained'
+                            color='secondary'
+                          >
+                            登記成為會員
+                          </Button>
+                        </Box>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                )}
+              </form>
+            )
+          }}
+        </Formik>
+      </Box>
+    </>
   )
 }
 

@@ -168,16 +168,25 @@ const Footer = () => {
       >
         ©2021 Take2 Health 版權所有
       </Box>
-      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+      <Link
+        className={classnames(classes.link, classes.copyRightLink)}
+        to='/terms-and-conditions/私隱政策'
+      >
         私隱政策
       </Link>
       <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         服務條款
       </Link>
-      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+      <Link
+        className={classnames(classes.link, classes.copyRightLink)}
+        to='/terms-and-conditions/免責聲明'
+      >
         免責聲明
       </Link>
-      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+      <Link
+        className={classnames(classes.link, classes.copyRightLink)}
+        to='/terms-and-conditions/網站使用條款'
+      >
         網站使用條款
       </Link>
     </Box>
