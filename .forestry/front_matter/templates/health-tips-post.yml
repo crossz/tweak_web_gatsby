@@ -62,4 +62,5 @@ fields:
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/health-tips/24-parents.md
 - content/health-tips/test-test-test.md
