@@ -1,3 +1,3 @@
 module.exports = {
-  API_URL: 'http://1.13.159.75:28080/api/v1/app',
+  API_URL: 'https://take2health.net/api/v1/app',
 }
