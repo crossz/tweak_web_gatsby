@@ -35,3 +35,5 @@ fields:
       path: 
   label: Type
   description: Tag of post
+pages:
+- content/health-tips/take2.md
