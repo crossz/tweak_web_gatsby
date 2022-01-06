@@ -187,8 +187,10 @@ const InfoWindow = (props) => {
         {phone}
       </Box>
       <Button
-        href={clinicType === 1 ? `${platformUrl}/clinic/${id}` : `tel:${phone}`}
-        target={clinicType === 1 ? '_blank' : ''}
+        // href={clinicType === 1 ? `${platformUrl}/clinic/${id}` : `tel:${phone}`}
+        // target={clinicType === 1 ? '_blank' : ''}
+        href={`${platformUrl}/clinic/${id}`}
+        target='_blank'
         className={classes.infoBtn}
         variant='contained'
         color='secondary'
@@ -227,7 +229,7 @@ const GoogleMap = (props) => {
       lat: 22.3193,
       lng: 114.1694,
     },
-    zoom: 14,
+    zoom: 11,
   }
 
   useEffect(() => {
@@ -240,7 +242,7 @@ const GoogleMap = (props) => {
       lat: minLat + (maxLat - minLat) / 2,
       lng: minLng + (maxLng - minLng) / 2,
     })
-    mapRef.current?.setZoom(props.curArea ? 15 : 14)
+    mapRef.current?.setZoom(props.curArea ? 13 : 11)
   }, [props.curArea, props.clinics])
 
   const activeInfo = useMemo(() => {
@@ -272,7 +274,7 @@ const GoogleMap = (props) => {
   }, [props.curArea, props.clinics])
 
   const _handleChildClick = (key, value) => {
-    mapRef.current?.setZoom(15)
+    mapRef.current?.setZoom(13)
     mapRef.current?.panTo({ lat: Number(value.lat), lng: Number(value.lng) })
     return setActiveKey(value.id)
   }

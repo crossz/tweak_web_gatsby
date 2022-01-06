@@ -16,6 +16,7 @@ import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
+import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -143,6 +144,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { platformUrl } = useSiteMetadata()
 
   const _handleChange = (activeArea) => (e, isExpanded) => {
     onChange && onChange(isExpanded ? activeArea : '')
@@ -211,7 +213,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                       </Box>
                     </Grid>
                     <Grid className={classes.btnCell} xs={12} item sm={3}>
-                      {clinic.clinicType === 1 && (
+                      {/* {clinic.clinicType === 1 && (
                         <Button
                           className={classes.btn}
                           variant='outlined'
@@ -220,7 +222,17 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                         >
                           立即預約
                         </Button>
-                      )}
+                      )} */}
+                      <Button
+                        className={classes.btn}
+                        variant='outlined'
+                        size='small'
+                        color='primary'
+                        href={`${platformUrl}/clinic/${clinic.id}`}
+                        target='_blank'
+                      >
+                        立即預約
+                      </Button>
                     </Grid>
                   </Grid>
                 </Box>
