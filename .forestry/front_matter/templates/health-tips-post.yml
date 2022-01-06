@@ -61,3 +61,5 @@ fields:
   label: slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
+pages:
+- content/health-tips/test-test-test.md
