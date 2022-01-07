@@ -33,7 +33,7 @@ import {
   EInputBase,
   CancelButton,
 } from '@themes/components/ETextField'
-import { AGES, QUIZ } from '@utils/constant'
+import { AGE_OPTIONS, QUIZ, GENDER_OPTIONS } from '@utils/constant'
 import { padStartNum } from '@utils'
 import FlagIcon from '@images/icons/flag.svg'
 import BackIcon from '@images/icons/back.svg'
@@ -321,6 +321,7 @@ const initialValues = {
 const schema = oriSchema({ emailOrPhone: true }).pick([
   'gender',
   'age',
+  'quiz',
   'email',
   'dialingCode',
   'phone',
@@ -411,7 +412,7 @@ const Quiz = () => {
               setFieldTouched,
               setFieldValue,
             } = props
-
+            console.log('errors', values)
             const handleStartQuiz = () => {
               setFieldTouched('gender')
               setFieldTouched('age')

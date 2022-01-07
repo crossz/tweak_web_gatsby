@@ -222,31 +222,30 @@ const partners = [
     name: 'Pantai Premier Pathology',
     intro:
       '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: '',
+    link: 'https://www.premierpathology.com.my',
   },
   {
-    country: '馬來西亞',
-    name: 'Pantai Premier Pathology',
+    country: '印尼',
+    name: 'Prodia',
+    intro: '印尼最大的上市醫學診斷企業，於全國104個城市共設有128個實驗室地點。',
+    link: 'https://prodia.co.id/en',
+  },
+  {
+    country: '台灣',
+    name: 'Yourgene Health',
     intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: '',
+      '一家總部設於英國且於倫敦證交所上市的分子診斷公司，主要從事基因測序技術開發和商業化，其業務遍佈台灣、新加坡、美國及加拿大等地區。',
+    link: 'https://www.yourgene-health.com',
   },
   {
-    country: '馬來西亞',
-    name: 'Pantai Premier Pathology',
+    country: '新加坡',
+    name: 'Lifestrands Genomics',
     intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
+      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室',
     link: '',
   },
   {
-    country: '馬來西亞',
-    name: 'Pantai Premier Pathology',
-    intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: '',
-  },
-  {
-    country: '馬來西亞',
+    country: '菲律賓',
     name: 'Pantai Premier Pathology',
     intro:
       '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',

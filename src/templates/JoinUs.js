@@ -15,12 +15,12 @@ import {
   Button,
   IconButton,
 } from '@material-ui/core'
-import { throttle } from 'lodash-es'
+import { throttle, omit } from 'lodash-es'
 import { graphql, Link } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
-import { DEPARTMENTS, REGIONS } from '@utils/constant'
+import { DEPARTMENT_OPTIONS, AREA_OPTIONS } from '@utils/constant'
 import {
   EInputBase,
   EFormLabel,
@@ -344,7 +344,9 @@ const JoinUs = ({ data, pageContext, location }) => {
                     if (loading) return
                     try {
                       setLoading(true)
-                      await handleFetch(values)
+                      await handleFetch(
+                        omit(values, ['requiredArea', 'requiredName'])
+                      )
                       toast.success('已成功提交')
                     } catch (error) {
                       toast.error(error)
@@ -445,13 +447,13 @@ const JoinUs = ({ data, pageContext, location }) => {
                               value={values.area}
                               onChange={handleChange}
                             >
-                              {REGIONS[0]?.districts?.map((district) => (
+                              {AREA_OPTIONS?.map((area) => (
                                 <MenuItem
-                                  key={district.value}
-                                  value={district.value}
-                                  disabled={!Boolean(district.value)}
+                                  key={area.value}
+                                  value={area.value}
+                                  disabled={!area.value}
                                 >
-                                  {district.label}
+                                  {area.label}
                                 </MenuItem>
                               ))}
                             </ESelect>
@@ -472,11 +474,11 @@ const JoinUs = ({ data, pageContext, location }) => {
                               value={values.department}
                               onChange={handleChange}
                             >
-                              {DEPARTMENTS?.map((department) => (
+                              {DEPARTMENT_OPTIONS?.map((department) => (
                                 <MenuItem
                                   key={department.value}
                                   value={department.value}
-                                  disabled={!Boolean(department.value)}
+                                  disabled={!department.value}
                                 >
                                   {department.label}
                                 </MenuItem>

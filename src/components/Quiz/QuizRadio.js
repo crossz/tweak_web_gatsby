@@ -1,6 +1,7 @@
 import React from 'react'
 import Radio from '@material-ui/core/Radio'
 import { makeStyles, alpha } from '@material-ui/core'
+import { QUIZ_ANSWER_KEYS } from '@utils/constant'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -45,7 +46,8 @@ const LETTERS = 'ABCD'
 
 const QuizRadio = (props) => {
   const classes = useStyle()
-  const RadioIcon = () => `${LETTERS[props.index]}  ${props.value}`
+  const RadioIcon = () =>
+    `${LETTERS[props.index]}  ${QUIZ_ANSWER_KEYS[props.value]?.label}`
 
   return (
     <Radio

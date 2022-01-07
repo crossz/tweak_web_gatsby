@@ -173,10 +173,10 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
               {clinics?.[area]?.map((clinic, index) => (
                 <Box className={classes.item} key={index}>
                   <Grid container spacing={0}>
-                    <Grid item xs={1}>
+                    <Grid item xs={3} sm={1}>
                       {clinic.province}
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={9} sm={2}>
                       {clinic.area}
                     </Grid>
                     <Grid item xs={12} sm={6}>

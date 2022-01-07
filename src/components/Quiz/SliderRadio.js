@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import Slider from '@material-ui/core/Slider'
+import { QUIZ_ANSWER_KEYS } from '@utils/constant'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -76,7 +77,7 @@ const SliderRadio = ({ onChange, answers, name }) => {
   const marks = answers?.map((answer, index) => {
     return {
       value: index,
-      label: answer,
+      label: QUIZ_ANSWER_KEYS[answer].label,
     }
   })
   const handleCommittedChange = (e, newValue) => {
