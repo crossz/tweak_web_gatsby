@@ -187,10 +187,8 @@ const InfoWindow = (props) => {
         {phone}
       </Box>
       <Button
-        // href={clinicType === 1 ? `${platformUrl}/clinic/${id}` : `tel:${phone}`}
-        // target={clinicType === 1 ? '_blank' : ''}
-        href={`${platformUrl}/clinic/${id}`}
-        target='_blank'
+        href={clinicType === 1 ? `${platformUrl}/clinic/${id}` : `tel:${phone}`}
+        target={clinicType === 1 ? '_blank' : ''}
         className={classes.infoBtn}
         variant='contained'
         color='secondary'

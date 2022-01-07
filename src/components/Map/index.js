@@ -16,6 +16,7 @@ import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
+import { API_URL } from 'gatsby-env-variables'
 
 const switchButtons = [
   {
@@ -168,15 +169,12 @@ const Map = () => {
   useEffect(() => {
     const fetchData = async (params) => {
       try {
-        const res = await fetch(
-          `https://take2health.net/api/v1/app/testCenters/list`,
-          {
-            method: 'POST',
-            headers: new Headers({
-              'Content-Type': 'application/json',
-            }),
-          }
-        )
+        const res = await fetch(`${API_URL}/testCenters/list`, {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        })
         const resData = await res.json()
         if (resData?.code !== 1000) {
           return console.log('fetch error')

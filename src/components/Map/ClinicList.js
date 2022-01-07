@@ -213,26 +213,18 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                       </Box>
                     </Grid>
                     <Grid className={classes.btnCell} xs={12} item sm={3}>
-                      {/* {clinic.clinicType === 1 && (
+                      {clinic.clinicType === 1 && (
                         <Button
                           className={classes.btn}
                           variant='outlined'
                           size='small'
                           color='primary'
+                          href={`${platformUrl}/clinic/${clinic.id}`}
+                          target='_blank'
                         >
                           立即預約
                         </Button>
-                      )} */}
-                      <Button
-                        className={classes.btn}
-                        variant='outlined'
-                        size='small'
-                        color='primary'
-                        href={`${platformUrl}/clinic/${clinic.id}`}
-                        target='_blank'
-                      >
-                        立即預約
-                      </Button>
+                      )}
                     </Grid>
                   </Grid>
                 </Box>
