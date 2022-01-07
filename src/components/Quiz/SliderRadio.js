@@ -84,7 +84,7 @@ const SliderRadio = ({ onChange, answers, name }) => {
     onChange({
       target: {
         name,
-        value: marks.find((mark) => mark.value === newValue)?.label,
+        value: answers[newValue],
       },
     })
   }

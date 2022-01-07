@@ -412,7 +412,7 @@ const Quiz = () => {
               setFieldTouched,
               setFieldValue,
             } = props
-            console.log('errors', values)
+            console.log('errors', errors, values)
             const handleStartQuiz = () => {
               setFieldTouched('gender')
               setFieldTouched('age')
@@ -540,9 +540,9 @@ const Quiz = () => {
                               <MenuItem value='' disabled>
                                 請選擇
                               </MenuItem>
-                              {AGES.map((age) => (
-                                <MenuItem key={age} value={age}>
-                                  {age}
+                              {AGE_OPTIONS.map((age) => (
+                                <MenuItem key={age.value} value={age.value}>
+                                  {age.label}
                                 </MenuItem>
                               ))}
                             </ESelect>
