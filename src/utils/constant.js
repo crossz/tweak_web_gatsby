@@ -254,3 +254,59 @@ export const DEPARTMENT_OPTIONS = [
     value: 'dite',
   },
 ]
+
+export const PARTNERS = [
+  {
+    country: '馬來西亞',
+    name: 'Pantai Premier Pathology',
+    intro:
+      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
+    link: 'https://www.premierpathology.com.my',
+    lat: 3.8124274936333666,
+    lng: 101.60320871733128,
+  },
+  {
+    country: '印尼',
+    name: 'Prodia',
+    intro: '印尼最大的上市醫學診斷企業，於全國104個城市共設有128個實驗室地點。',
+    link: 'https://prodia.co.id/en',
+    lat: -6.200375806341185,
+    lng: 106.84667434188609,
+  },
+  {
+    country: '台灣',
+    name: 'Yourgene Health',
+    intro:
+      '一家總部設於英國且於倫敦證交所上市的分子診斷公司，主要從事基因測序技術開發和商業化，其業務遍佈台灣、新加坡、美國及加拿大等地區。',
+    link: 'https://www.yourgene-health.com',
+    lat: 24.007028114876242,
+    lng: 121.07166512736177,
+  },
+  {
+    country: '新加坡',
+    name: 'Lifestrands Genomics',
+    intro:
+      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室',
+    link: '',
+    lat: 1.3579294889776585,
+    lng: 103.86964607814394,
+  },
+  {
+    country: '菲律賓',
+    name: 'Pascific Laboratories',
+    intro:
+      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
+    link: '',
+    lat: 14.622741230780443,
+    lng: 120.9678862363281,
+  },
+  {
+    country: '卡塔爾',
+    name: 'Tempcon',
+    intro:
+      '一家總部位於多哈的醫療器械供應商，致力為當地的私人醫療機構、公立醫療服務、連鎖診所及大型企業提供從日常消費品、試劑到高端科技型的醫療器械。',
+    link: 'https://www.tempconqatar.com/index',
+    lat: 25.310775003022403,
+    lng: 51.195632901833974,
+  },
+]

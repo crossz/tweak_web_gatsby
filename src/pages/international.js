@@ -22,7 +22,7 @@ import RightIcon from '@images/icons/right.svg'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
 import { throttle } from 'lodash-es'
-import { DIALING_CODES, REGIONS } from '@utils/constant'
+import { DIALING_CODES, PARTNERS } from '@utils/constant'
 import {
   EInputBase,
   EFormLabel,
@@ -32,6 +32,7 @@ import {
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import { API_URL } from 'gatsby-env-variables'
+import SimpleGoogleMap from '@components/Map/SimpleGoogleMap'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -42,6 +43,13 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(0, 1),
       paddingTop: theme.spacing(6.25),
       paddingBottom: theme.spacing(5.5),
+    },
+  },
+  titleWrapper: {
+    margin: theme.spacing(0, 2),
+    marginBottom: theme.spacing(9.5),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(5.5),
     },
   },
   box01Title: {
@@ -102,6 +110,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'initial',
   },
   partnerItem: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: 248,
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.spacing(1),
     padding: theme.spacing(2),
@@ -137,12 +148,7 @@ const useStyles = makeStyles((theme) => ({
   },
   partnerBtnWrapper: {
     textAlign: 'right',
-    marginTop: theme.spacing(3),
-    minHeight: theme.spacing(7),
-    [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(2.5),
-      minHeight: theme.spacing(5.5),
-    },
+    marginTop: 'auto',
   },
   viewBtn: {
     width: theme.spacing(15),
@@ -216,50 +222,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const partners = [
-  {
-    country: '馬來西亞',
-    name: 'Pantai Premier Pathology',
-    intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: 'https://www.premierpathology.com.my',
-  },
-  {
-    country: '印尼',
-    name: 'Prodia',
-    intro: '印尼最大的上市醫學診斷企業，於全國104個城市共設有128個實驗室地點。',
-    link: 'https://prodia.co.id/en',
-  },
-  {
-    country: '台灣',
-    name: 'Yourgene Health',
-    intro:
-      '一家總部設於英國且於倫敦證交所上市的分子診斷公司，主要從事基因測序技術開發和商業化，其業務遍佈台灣、新加坡、美國及加拿大等地區。',
-    link: 'https://www.yourgene-health.com',
-  },
-  {
-    country: '新加坡',
-    name: 'Lifestrands Genomics',
-    intro:
-      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室',
-    link: '',
-  },
-  {
-    country: '菲律賓',
-    name: 'Pantai Premier Pathology',
-    intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: '',
-  },
-]
-
 const initialValues = {
   companyName: '',
   dialingCode: '852',
   name: '',
   phone: '',
   email: '',
-  // area: '',
 }
 
 const schema = oriSchema().pick([
@@ -268,7 +236,6 @@ const schema = oriSchema().pick([
   'name',
   'phone',
   'email',
-  // 'area',
 ])
 
 const International = () => {
@@ -299,7 +266,7 @@ const International = () => {
   return (
     <Box className={classes.root}>
       <Container className={classes.box01} maxWidth='lg'>
-        <Box mx={2}>
+        <Box className={classes.titleWrapper}>
           <Typography
             className={classes.box01Title}
             variant='h4'
@@ -314,6 +281,9 @@ const International = () => {
           >
             作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
           </Typography>
+        </Box>
+        <Box>
+          <SimpleGoogleMap></SimpleGoogleMap>
         </Box>
       </Container>
       <Container disableGutters className={classes.bannerWrapper} maxWidth='lg'>
@@ -336,7 +306,7 @@ const International = () => {
             cols={matches ? 1 : 3}
             gap={matches ? 16 : 24}
           >
-            {partners.map(({ country, name, intro, link }, index) => (
+            {PARTNERS.map(({ country, name, intro, link }, index) => (
               <ImageListItem
                 key={name + index}
                 classes={{
@@ -344,8 +314,8 @@ const International = () => {
                 }}
                 className={classes.imageListItem}
               >
-                <Box className={classes.partnerItem}>
-                  <Link href={link || null} target='_blank'>
+                <Link href={link || null} target='_blank' underline='none'>
+                  <Box className={classes.partnerItem}>
                     <Box className={classes.country}>{country}</Box>
                     <Typography
                       className={classes.name}
@@ -372,8 +342,8 @@ const International = () => {
                         </Button>
                       )}
                     </Box>
-                  </Link>
-                </Box>
+                  </Box>
+                </Link>
               </ImageListItem>
             ))}
           </ImageList>
@@ -497,31 +467,6 @@ const International = () => {
                             />
                             {errorText('name')}
                           </FormControl>
-                          {/* <FormControl
-                            fullWidth
-                            error={isError('area')}
-                            className={classes.formControl}
-                          >
-                            <EFormLabel>所在地區</EFormLabel>
-                            <ESelect
-                              displayEmpty
-                              labelId='area-label'
-                              id='area'
-                              name='area'
-                              value={values.area}
-                              onChange={handleChange}
-                            >
-                              {REGIONS[0]?.districts?.map((district) => (
-                                <MenuItem
-                                  key={district.value}
-                                  value={district.value}
-                                >
-                                  {district.label}
-                                </MenuItem>
-                              ))}
-                            </ESelect>
-                            {errorText('area')}
-                          </FormControl> */}
                         </Box>
                         <Box className={classes.formControlLine}>
                           <FormControl

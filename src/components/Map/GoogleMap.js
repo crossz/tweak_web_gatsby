@@ -30,31 +30,26 @@ const useStyles = makeStyles((theme) => ({
   marker: {
     width: theme.spacing(6),
     height: theme.spacing(6),
-    transform: `translate(-50%,-50%)`,
-    position: 'relative',
+    transform: `translate(-50%,-90%)`,
+    transformOrigin: 'bottom',
+    transition: theme.transitions.create(['transform'], {
+      duration: theme.transitions.duration.standard,
+    }),
     [theme.breakpoints.down('xs')]: {
       width: theme.spacing(3.125),
       height: theme.spacing(3.125),
     },
   },
   markerIcon: {
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    transform: `translate(-50%,-50%)`,
     width: '100%',
     height: '100%',
   },
   activeMarkerIcon: {
+    transform: 'translate(-50%,-90%) scale(1.35)',
     zIndex: 1,
+    position: 'relative',
     '& $markerIcon': {
-      width: theme.spacing(8),
-      height: theme.spacing(8),
       filter: `drop-shadow(0px 5px 20px rgba(109, 209, 255, 0.4))`,
-      [theme.breakpoints.down('xs')]: {
-        width: theme.spacing(4.25),
-        height: theme.spacing(4.25),
-      },
     },
   },
   isHomepageInfo: {
