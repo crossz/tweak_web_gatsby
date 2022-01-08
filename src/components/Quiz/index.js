@@ -307,12 +307,7 @@ const useStyle = makeStyles((theme) => ({
 const initialValues = {
   gender: '',
   age: '',
-  quiz: QUIZ.map((quiz, index) => {
-    return {
-      label: `quiz${index + 1}`,
-      value: '',
-    }
-  }),
+  quiz: QUIZ.map((quiz, index) => ''),
   email: '',
   phone: '',
   dialingCode: '852',
@@ -344,8 +339,6 @@ const Quiz = () => {
   )
 
   const handleFetch = async (values) => {
-    values.quiz = values.quiz?.map((item) => item.value)
-
     try {
       const res = await fetch(`${API_URL}/quiz/add`, {
         method: 'POST',
@@ -412,7 +405,6 @@ const Quiz = () => {
               setFieldTouched,
               setFieldValue,
             } = props
-            console.log('errors', errors, values)
             const handleStartQuiz = () => {
               setFieldTouched('gender')
               setFieldTouched('age')
@@ -614,7 +606,7 @@ const Quiz = () => {
                                     className={classes.quizNum}
                                     component='span'
                                   >
-                                    {padStartNum(step)}
+                                    {padStartNum(Math.min(step, QUIZ.length))}
                                     <Box
                                       className={classes.quizLength}
                                       component='span'
@@ -626,14 +618,14 @@ const Quiz = () => {
                                 </Box>
                                 {QUIZ[index]?.type === 'slider' ? (
                                   <SliderRadio
-                                    name={`quiz[${index}].value`}
+                                    name={`quiz.${index}`}
                                     answers={QUIZ[index]?.answers}
                                     onChange={handleChange}
                                   />
                                 ) : (
                                   <RadioGroup
                                     className={classes.quizRadioWrapper}
-                                    name={`quiz[${index}].value`}
+                                    name={`quiz.${index}`}
                                     value={item.value}
                                     onChange={handleChange}
                                     row
@@ -673,7 +665,7 @@ const Quiz = () => {
                             返回上一题
                           </Button>
                         )}
-                        {step <= QUIZ.length && values.quiz[step - 1].value && (
+                        {step <= QUIZ.length && values.quiz[step - 1] && (
                           <Button
                             className={classes.nextBtn}
                             variant='contained'
@@ -760,7 +752,6 @@ const Quiz = () => {
                                     value={values.dialingCode}
                                     onChange={handleChange}
                                     input={<EInputBase />}
-                                    disableEmpty
                                   >
                                     {DIALING_CODES.map((dialingCode) => (
                                       <MenuItem

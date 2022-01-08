@@ -104,11 +104,13 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
   return (
     <LinkWrapper className={classes.link} href={href} slug={slug}>
       <Box className={classes.root}>
-        <GatsbyImage
-          className={classes.image}
-          image={images[0]}
-          alt={title}
-        ></GatsbyImage>
+        {images[0] && (
+          <GatsbyImage
+            className={classes.image}
+            image={images[0]}
+            alt={title}
+          ></GatsbyImage>
+        )}
         <Box className={classes.info}>
           <Box className={classes.type}>{type}</Box>
           <Box className={classes.title}>{title}</Box>
