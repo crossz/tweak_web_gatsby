@@ -12,6 +12,7 @@ import { EInputBase } from '@themes/components/ETextField'
 import SearchIcon from '@images/icons/search.svg'
 import { navigate } from 'gatsby'
 import { CAREER_REGIONS } from '@utils/constant'
+import { useLocation } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -34,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Search = ({
   data,
-  location,
   setSearchResult,
   setSearching,
   setPageList,
@@ -44,6 +44,8 @@ const Search = ({
   const { search } = useJsSearch(data, isFAQ)
   const [query, setQuery] = useState('')
   const [region, setRegion] = useState('')
+  const location = useLocation()
+
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const q = params.get('q') || ''

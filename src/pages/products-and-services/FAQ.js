@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   makeStyles,
   Container,
@@ -113,12 +113,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const FAQ = ({ location }) => {
+const FAQ = () => {
   const classes = useStyles()
   const { whatsapp, phone } = useSiteMetadata()
+  const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
   const [activePanel, setActivePanel] = useState(null)
-  const faqListRef = useRef(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -141,7 +141,7 @@ const FAQ = ({ location }) => {
               content: item.contentHk,
             }
           }) || []
-        faqListRef.current = list
+        setAllFaqList(list)
         setFaqList(list)
       } catch (error) {
         console.log('fetch error')
@@ -152,8 +152,7 @@ const FAQ = ({ location }) => {
 
   const handleChange = (index) => setActivePanel(index)
   const handleSearchResult = (result) => setFaqList(result)
-  const handlePageList = () => setFaqList(faqListRef?.current || [])
-
+  const handlePageList = () => setFaqList(allFaqList)
   return (
     <Box className={classes.root}>
       <Container className={classes.contentRoot} disableGutters maxWidth='md'>
@@ -165,10 +164,9 @@ const FAQ = ({ location }) => {
             </Typography>
             <Hidden smUp>
               <Search
-                location={location}
-                data={faqListRef?.current || []}
+                data={allFaqList}
                 setSearchResult={handleSearchResult}
-                // setPageList={handlePageList}
+                setPageList={handlePageList}
                 isFAQ
               ></Search>
             </Hidden>
@@ -178,17 +176,16 @@ const FAQ = ({ location }) => {
           <Hidden xsDown>
             <Grid item sm={4}>
               <Search
-                location={location}
-                data={faqListRef?.current || []}
+                data={allFaqList}
                 setSearchResult={handleSearchResult}
-                // setPageList={handlePageList}
+                setPageList={handlePageList}
                 isFAQ
               ></Search>
             </Grid>
           </Hidden>
           <Grid item xs={12} sm={8}>
             {faqList.length > 0 &&
-              faqList.map((faq, index) => (
+              faqList.map((faq) => (
                 <FaqItem
                   key={faq.id}
                   id={faq.id}
