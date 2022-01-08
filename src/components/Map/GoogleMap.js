@@ -187,7 +187,7 @@ const InfoWindow = (props) => {
         className={classes.infoBtn}
         variant='contained'
         color='secondary'
-        fullWidth={isHomepage}
+        fullWidth={Boolean(isHomepage)}
         size={isHomepage ? 'small' : 'medium'}
       >
         立即預約
@@ -196,7 +196,7 @@ const InfoWindow = (props) => {
         <Box className={classes.moreClinicsBtn}>
           <Link to='/service-location'>
             <Button
-              fullWidth={isHomepage}
+              fullWidth={Boolean(isHomepage)}
               size={isHomepage ? 'small' : 'medium'}
               variant='text'
               color='primary'

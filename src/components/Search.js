@@ -44,7 +44,6 @@ const Search = ({
   const { search } = useJsSearch(data, isFAQ)
   const [query, setQuery] = useState('')
   const [region, setRegion] = useState('')
-
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const q = params.get('q') || ''
@@ -71,9 +70,7 @@ const Search = ({
     }
   }
 
-  const handleRegionChange = (e) => {
-    setRegion(e.target.value)
-  }
+  const handleRegionChange = (e) => setRegion(e.target.value)
 
   return (
     <form noValidate onSubmit={handleSearchSubmit}>
@@ -90,11 +87,7 @@ const Search = ({
       ></EInputBase>
       {!isFAQ && (
         <Box className={classes.regionWrapper}>
-          <RadioGroup
-            aria-label='gender'
-            value={region}
-            onChange={handleRegionChange}
-          >
+          <RadioGroup value={region} onChange={handleRegionChange}>
             {CAREER_REGIONS.map((region) => (
               <FormControlLabel
                 className={classes.regionItem}

@@ -4,7 +4,6 @@ import {
   bool as yBool,
   array as yArray,
   date as yDate,
-  number as yNumber,
 } from 'yup'
 
 import { DIALING_CODES, QUIZ } from '@utils/constant'

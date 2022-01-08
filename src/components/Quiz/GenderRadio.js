@@ -58,15 +58,15 @@ const GenderRadio = (props) => {
   const classes = useStyle()
 
   const RadioIcon = () =>
-    props.value === '男性' ? (
+    props.value === 'male' ? (
       <>
         <MaleIcon className={classes.icon} />
-        <Box>{props.value}</Box>
+        <Box>{props.label}</Box>
       </>
     ) : (
       <>
         <FemaleIcon className={classes.icon} />
-        <Box>{props.value}</Box>
+        <Box>{props.label}</Box>
       </>
     )
 

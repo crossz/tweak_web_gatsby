@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import {
   makeStyles,
   Container,
@@ -133,7 +133,6 @@ const FAQ = ({ location }) => {
         if (resData?.code !== 1000) {
           return console.log('fetch error')
         }
-
         const list =
           resData?.data?.map((item) => {
             return {
@@ -142,7 +141,6 @@ const FAQ = ({ location }) => {
               content: item.contentHk,
             }
           }) || []
-
         faqListRef.current = list
         setFaqList(list)
       } catch (error) {

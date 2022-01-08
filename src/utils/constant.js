@@ -146,11 +146,11 @@ export const CAREER_REGIONS = [
   },
   {
     label: '香港',
-    value: 0,
+    value: '香港',
   },
   {
     label: '海外地區',
-    value: 1,
+    value: '海外地區',
   },
 ]
 

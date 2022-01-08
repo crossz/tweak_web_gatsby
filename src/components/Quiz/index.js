@@ -104,6 +104,9 @@ const useStyle = makeStyles((theme) => ({
   },
   genderLabel: {
     marginLeft: 0,
+    '&:last-child': {
+      marginRight: 0,
+    },
     [theme.breakpoints.down('xs')]: {
       flexGrow: 1,
     },
@@ -494,19 +497,13 @@ const Quiz = () => {
                               onChange={handleChange}
                               row
                             >
-                              <FormControlLabel
-                                className={classes.genderLabel}
-                                value='男性'
-                                control={<GenderRadio />}
-                              />
-                              <FormControlLabel
-                                className={classes.genderLabel}
-                                value='女性'
-                                control={<GenderRadio />}
-                                style={{
-                                  marginRight: 0,
-                                }}
-                              />
+                              {GENDER_OPTIONS.map((gender) => (
+                                <FormControlLabel
+                                  className={classes.genderLabel}
+                                  value={gender.value}
+                                  control={<GenderRadio label={gender.label} />}
+                                />
+                              ))}
                             </RadioGroup>
                             {errorText('gender')}
                           </FormControl>

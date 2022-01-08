@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(5),
       paddingBottom: theme.spacing(19.5),
-      paddingBottom: theme.spacing(19.5),
     },
   },
   box01Title: {
