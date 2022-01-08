@@ -1,8 +1,7 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core'
-import Box from '@material-ui/core/Box'
-import Slider from '@material-ui/core/Slider'
+import { makeStyles, Box, Slider } from '@material-ui/core'
 import { QUIZ_ANSWER_KEYS } from '@utils/constant'
+import { indexOf } from 'lodash-es'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -71,7 +70,7 @@ const useStyle = makeStyles((theme) => ({
   },
 }))
 
-const SliderRadio = ({ onChange, answers, name }) => {
+const SliderRadio = ({ onChange, answers, name, value }) => {
   const classes = useStyle()
   const stepValue = answers?.length - 1 || 0
   const marks = answers?.map((answer, index) => {
@@ -88,11 +87,10 @@ const SliderRadio = ({ onChange, answers, name }) => {
       },
     })
   }
-
   return (
     <Box className={classes.root}>
       <Slider
-        defaultValue={0}
+        value={indexOf(answers, value, 0) || 0}
         aria-labelledby='quiz-slider'
         step={1}
         marks={marks}

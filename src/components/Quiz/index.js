@@ -499,6 +499,7 @@ const Quiz = () => {
                             >
                               {GENDER_OPTIONS.map((gender) => (
                                 <FormControlLabel
+                                  key={gender.value}
                                   className={classes.genderLabel}
                                   value={gender.value}
                                   control={<GenderRadio label={gender.label} />}
@@ -618,12 +619,13 @@ const Quiz = () => {
                                     name={`quiz.${index}`}
                                     answers={QUIZ[index]?.answers}
                                     onChange={handleChange}
+                                    value={item}
                                   />
                                 ) : (
                                   <RadioGroup
                                     className={classes.quizRadioWrapper}
                                     name={`quiz.${index}`}
-                                    value={item.value}
+                                    value={item}
                                     onChange={handleChange}
                                     row
                                   >

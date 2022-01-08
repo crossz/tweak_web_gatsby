@@ -121,7 +121,7 @@ const FAQ = ({ location }) => {
   const faqListRef = useRef(null)
 
   useEffect(() => {
-    const fetchData = async (params) => {
+    const fetchData = async () => {
       try {
         const res = await fetch(`${API_URL}/faqs/list`, {
           method: 'POST',
