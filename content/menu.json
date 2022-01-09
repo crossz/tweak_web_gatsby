@@ -8,15 +8,15 @@
     "sections": [
       {
         "title": "最新推廣優惠",
-        "path": "/whats-new/promotions"
+        "path": "/whats-new/promotions/"
       },
       {
         "title": "健康及專業醫護資訊",
-        "path": "/whats-new/health-tips"
+        "path": "/whats-new/health-tips/"
       },
       {
         "title": "最新動態",
-        "path": "/whats-new/updates"
+        "path": "/whats-new/updates/"
       }
     ]
   },
@@ -29,15 +29,15 @@
     "sections": [
       {
         "title": "認識早期鼻咽癌篩查",
-        "path": "/our-technologies/early-cancer-detection"
+        "path": "/our-technologies/early-cancer-detection/"
       },
       {
         "title": "了解NGS技術",
-        "path": "/our-technologies/NGS"
+        "path": "/our-technologies/NGS/"
       },
       {
         "title": "相關研究報告",
-        "path": "/our-technologies/clinical-papers"
+        "path": "/our-technologies/clinical-papers/"
       }
     ]
   },
@@ -50,15 +50,15 @@
     "sections": [
       {
         "title": "Take2 Prophecy™ 早期鼻咽癌篩查",
-        "path": "/products-and-services/take2-prophecy"
+        "path": "/products-and-services/take2-prophecy/"
       },
       {
         "title": "Take2 Extra Care會員計劃",
-        "path": "/products-and-services/take2-extra-care"
+        "path": "/products-and-services/take2-extra-care/"
       },
       {
         "title": "常見問題",
-        "path": "/products-and-services/FAQ"
+        "path": "/products-and-services/FAQ/"
       }
     ]
   },
@@ -85,11 +85,11 @@
     "sections": [
       {
         "title": "信念和使命",
-        "path": "/about-us/mission"
+        "path": "/about-us/mission/"
       },
       {
         "title": "加入我們",
-        "path": "/about-us/join-us"
+        "path": "/about-us/join-us/"
       }
     ]
   },

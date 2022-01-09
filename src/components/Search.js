@@ -13,6 +13,7 @@ import SearchIcon from '@images/icons/search.svg'
 import { navigate } from 'gatsby'
 import { CAREER_REGIONS } from '@utils/constant'
 import { useLocation } from '@reach/router'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -50,6 +51,7 @@ const Search = ({
     const params = new URLSearchParams(location.search)
     const q = params.get('q') || ''
     setSearching && setSearching(Boolean(q || region))
+    if (q) scrollTo('#search-box', 'center')
     if (!q && !region) return setPageList && setPageList()
     const results = (q ? search(q) : data) || []
     setSearchResult &&
@@ -66,7 +68,7 @@ const Search = ({
   const handleSearchSubmit = async (e) => {
     e.preventDefault()
     try {
-      await navigate(`${location.pathname}${query ? `?q=${query}` : ''}`)
+      await navigate(`${query ? `?q=${query}` : location.pathname}`)
     } catch (err) {
       console.error(err)
     }
@@ -75,7 +77,7 @@ const Search = ({
   const handleRegionChange = (e) => setRegion(e.target.value)
 
   return (
-    <form noValidate onSubmit={handleSearchSubmit}>
+    <form id='search-box' noValidate onSubmit={handleSearchSubmit}>
       <EInputBase
         className={classes.searchInput}
         placeholder='Search'

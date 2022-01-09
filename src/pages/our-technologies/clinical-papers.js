@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Box, Container, Link } from '@material-ui/core'
+import { makeStyles, Box, Container } from '@material-ui/core'
 import ClinicPaperItem from '@components/ClinicPaperItem'
 import { StaticImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'

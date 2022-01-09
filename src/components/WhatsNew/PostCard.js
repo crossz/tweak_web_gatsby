@@ -109,12 +109,14 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
     <LinkWrapper className={classes.link} href={href} slug={slug}>
       <Box className={classes.root}>
         <Box className={classes.imageWrapper}>
-          <GatsbyImage
-            className={classes.image}
-            image={images[0] || ''}
-            placeholder='blurred'
-            alt={title}
-          ></GatsbyImage>
+          {images[0] && (
+            <GatsbyImage
+              className={classes.image}
+              image={images[0]}
+              placeholder='blurred'
+              alt={title}
+            ></GatsbyImage>
+          )}
         </Box>
         <Box className={classes.info}>
           <Box className={classes.type}>{type}</Box>
