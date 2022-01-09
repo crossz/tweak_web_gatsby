@@ -1,7 +1,6 @@
 'use strict'
 const { resolve } = require('path')
 const { paginate } = require('gatsby-awesome-pagination')
-// const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const formatEndsPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
 const formatStartsPath = (path) => (path?.startsWith('/') ? path : `/${path}`)

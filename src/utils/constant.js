@@ -16,6 +16,7 @@ export const LABEL_WIDTH = 20
 export const MOBILE_LABEL_WIDTH = 12
 export const INPUT_WIDTH = 30
 export const MOBILE_INPUT_WIDTH = 24
+export const POST_PAGE_SIZE = 6
 
 export const DATE_FORMAT = 'yyyy-MM-dd'
 export const DATE_FORMAT_WITHOUT_CONNECT = 'yyyyMMdd'

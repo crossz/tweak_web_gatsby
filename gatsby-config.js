@@ -98,12 +98,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    // {
-    //   resolve: `gatsby-transformer-json`,
-    //   options: {
-    //     typeName: `Json`, // a fixed string
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import PostCard from './PostCard'
-import Box from '@material-ui/core/Box'
 import {
+  Box,
   makeStyles,
   Container,
   alpha,
   Typography,
   useTheme,
   useMediaQuery,
+  Button,
+  ImageList,
+  ImageListItem,
 } from '@material-ui/core'
-import ImageList from '@material-ui/core/ImageList'
-import ImageListItem from '@material-ui/core/ImageListItem'
+import { POST_PAGE_SIZE } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,12 +27,49 @@ const useStyles = makeStyles((theme) => ({
   },
   imageListItemItem: {
     overflow: 'initial',
+    paddingBottom: theme.spacing(2.25),
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(3.5),
+    },
+  },
+  moreBtnWrapper: {
+    marginTop: theme.spacing(12.5),
+    textAlign: 'right',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(0.5),
+      textAlign: 'center',
+    },
+  },
+  moreBtn: {
+    paddingLeft: theme.spacing(3.25),
+    paddingRight: theme.spacing(3.25),
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(6),
+      paddingRight: theme.spacing(6),
+    },
+  },
+  bottomSpace: {
+    height: 550,
+    marginTop: -350,
+    backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.down('xs')]: {
+      height: 0,
+      marginTop: theme.spacing(10),
+    },
   },
 }))
 const PostList = ({ title, caption, nodes }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const numberOfPages = Math.ceil(nodes?.length / POST_PAGE_SIZE)
+  const [humanPageNumber, setHumanPageNumber] = useState(1)
+  const curNodes = useMemo(
+    () => nodes.slice(0, humanPageNumber * POST_PAGE_SIZE),
+    [humanPageNumber, nodes]
+  )
+
+  const handleMoreViews = () => setHumanPageNumber((status) => status + 1)
 
   return (
     <Box className={classes.root}>
@@ -50,8 +89,8 @@ const PostList = ({ title, caption, nodes }) => {
             cols={matches ? 1 : 3}
             gap={matches ? 0 : 24}
           >
-            {nodes?.length &&
-              nodes.map((node) => (
+            {curNodes?.length > 0 &&
+              curNodes.map((node) => (
                 <ImageListItem
                   className={classes.imageListItem}
                   classes={{
@@ -68,8 +107,21 @@ const PostList = ({ title, caption, nodes }) => {
               ))}
           </ImageList>
         </Box>
+        {numberOfPages > 1 && humanPageNumber < numberOfPages && (
+          <Box className={classes.moreBtnWrapper}>
+            <Button
+              className={classes.moreBtn}
+              size='small'
+              variant='outlined'
+              color='primary'
+              onClick={handleMoreViews}
+            >
+              瀏覽更多
+            </Button>
+          </Box>
+        )}
       </Container>
-      <Box height={550} bgcolor='background.paper' mt={-29.25}></Box>
+      <Box className={classes.bottomSpace}></Box>
     </Box>
   )
 }

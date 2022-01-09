@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(31.25),
-      marginBottom: theme.spacing(3.75),
     },
   },
   btnWrapper: {
@@ -41,11 +40,16 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
-  image: {
+  imageWrapper: {
     height: 210,
+    backgroundColor: theme.palette.background.default,
     [theme.breakpoints.down('xs')]: {
       height: 118,
     },
+  },
+  image: {
+    height: '100%',
+    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
   },
   info: {
     fontSize: theme.typography.body2.fontSize,
@@ -104,13 +108,14 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
   return (
     <LinkWrapper className={classes.link} href={href} slug={slug}>
       <Box className={classes.root}>
-        {images[0] && (
+        <Box className={classes.imageWrapper}>
           <GatsbyImage
             className={classes.image}
-            image={images[0]}
+            image={images[0] || ''}
+            placeholder='blurred'
             alt={title}
           ></GatsbyImage>
-        )}
+        </Box>
         <Box className={classes.info}>
           <Box className={classes.type}>{type}</Box>
           <Box className={classes.title}>{title}</Box>
