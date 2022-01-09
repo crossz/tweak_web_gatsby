@@ -108,7 +108,7 @@ export default function HTML(props) {
             fbq('init', '437103407310894');
             
             
-            
+          
             fbq('track', 'PageView');           
               `,
           }}
@@ -128,10 +128,9 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
-            if (!window.location.href.includes('/whats-new/campaign')) return
             window.fbAsyncInit = function () {
               FB.init({
                 appId: '{your-app-id}',
@@ -154,7 +153,7 @@ export default function HTML(props) {
             })(document, 'script', 'facebook-jssdk')      
             `,
           }}
-        />
+        /> */}
         {/* Google Tag Manager (noscript) */}
         {/* <noscript>
           <iframe
