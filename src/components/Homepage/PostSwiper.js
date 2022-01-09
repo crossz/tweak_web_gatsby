@@ -122,11 +122,7 @@ const PostSwiper = ({ nodes, withViewBtn }) => {
         onSlideChange={(swiper) => {
           setActiveSlide(swiper.realIndex)
         }}
-        // className={classes.swiper}
         initialSlide={0}
-        // onInit={(swiper) => {
-        //   setActiveSlide(swiper.realIndex)
-        // }}
       >
         {nodes?.map((node, index) => {
           return (

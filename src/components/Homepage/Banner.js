@@ -89,7 +89,6 @@ const Banner = () => {
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
           objectPosition='center top'
           src={'../../assets/images/homepage_banner_mobile.jpg'}
-          formats={['auto', 'webp', 'avif']}
         />
       ) : (
         <StaticImage

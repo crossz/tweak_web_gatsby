@@ -78,10 +78,6 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
           <PostSwiper nodes={healthTipsNodes}></PostSwiper>
         </Container>
       </Container>
-      {/* <Box className={classes.healthTipsWrapper}>
-        <Container maxWidth='lg'></Container>
-
-      </Box> */}
       <Consult></Consult>
     </>
   )

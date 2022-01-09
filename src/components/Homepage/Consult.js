@@ -139,11 +139,6 @@ const Consult = () => {
                 立即登記
               </Button>
             </Box>
-            {/* <Box mt={5} textAlign={matches ? 'center' : 'left'}>
-              <Link className={classes.blueLink} to='/'>
-                了解更多我們的產品
-              </Link>
-            </Box> */}
           </Box>
         </Grid>
       </Grid>

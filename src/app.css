@@ -20,3 +20,10 @@ a[href^="https://maps.google.com/maps"]
 .gmnoprint div {
   background: none !important;
 }
+
+div[id^='gb-widget'] {
+  bottom: 86px !important;
+}
+div[id^='gb-widget'] > a {
+  display: none;
+}

@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import SectionBanner from './SectionBanner'
 import { makeStyles } from '@material-ui/core'
+import { useMatch } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,13 +16,24 @@ const useStyles = makeStyles((theme) => ({
 
 const Layout = ({ children }) => {
   const classes = useStyles()
+  const isPromotions = useMatch('/promotions/consumption-voucher')
+  const isRehealthPrevaccinationPlans = useMatch(
+    '/whats-new/campaign/rehealth-prevaccination-plans'
+  )
+  const isCampaign = useMatch('/whats-new/campaign')
 
   return (
     <main id='main' className={classes.root}>
-      <Header></Header>
-      <SectionBanner></SectionBanner>
-      {children}
-      <Footer></Footer>
+      {isPromotions || isRehealthPrevaccinationPlans || isCampaign ? (
+        children
+      ) : (
+        <>
+          <Header></Header>
+          <SectionBanner></SectionBanner>
+          {children}
+          <Footer></Footer>
+        </>
+      )}
     </main>
   )
 }
