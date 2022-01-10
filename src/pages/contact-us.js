@@ -334,7 +334,7 @@ const ContactUs = () => {
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
-                  onSubmit={throttle(async (values) => {
+                  onSubmit={throttle(async (values, { resetForm }) => {
                     if (!reCapStatus) {
                       return setReCapStatus(1)
                     }
@@ -343,6 +343,7 @@ const ContactUs = () => {
                       setLoading(true)
                       await handleFetch(values)
                       toast.success('已成功提交')
+                      resetForm()
                     } catch (error) {
                       toast.error(error)
                     }

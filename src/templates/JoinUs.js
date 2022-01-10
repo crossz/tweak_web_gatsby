@@ -336,7 +336,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
-                  onSubmit={throttle(async (values) => {
+                  onSubmit={throttle(async (values, { resetForm }) => {
                     if (!reCapStatus) {
                       return setReCapStatus(1)
                     }
@@ -347,6 +347,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                         omit(values, ['requiredArea', 'requiredName'])
                       )
                       toast.success('已成功提交')
+                      resetForm()
                     } catch (error) {
                       toast.error(error)
                     }

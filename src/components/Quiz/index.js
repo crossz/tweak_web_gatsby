@@ -381,7 +381,7 @@ const Quiz = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={schema}
-          onSubmit={throttle(async (values) => {
+          onSubmit={throttle(async (values, { resetForm }) => {
             if (!reCapStatus) {
               return setReCapStatus(1)
             }
@@ -390,11 +390,12 @@ const Quiz = () => {
             try {
               await handleFetch(values)
               toast.success('已成功提交')
+              resetForm()
+              setStep(8)
             } catch (error) {
               toast.error(error)
             }
             setLoading(false)
-            setStep(8)
             setReCapStatus(0)
           }, 1000)}
         >
