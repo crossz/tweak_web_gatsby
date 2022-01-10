@@ -250,15 +250,12 @@ const Footer = () => {
                     expanded={!matches || item.path === panel}
                     square
                     onChange={handleChange(
-                      !matches || !(item.sections && item.sections?.length)
-                        ? ''
-                        : item.path
+                      !matches || !item.sections?.length ? '' : item.path
                     )}
                   >
                     <EAccordionSummary
                       expandIcon={
                         matches &&
-                        item.sections &&
                         item.sections?.length && (
                           <ArrowIcon className={classes.arrowIcon} />
                         )
@@ -270,25 +267,16 @@ const Footer = () => {
                         content: classes.accordionSummaryContent,
                       }}
                     >
-                      {!(item.sections && item.sections?.length) ? (
-                        <Link className={classes.link} to={item.path}>
-                          <Box
-                            fontSize='body1.fontSize'
-                            fontWeight='fontWeightBold'
-                          >
-                            {item.title}
-                          </Box>
-                        </Link>
-                      ) : (
+                      <Link className={classes.link} to={item.path}>
                         <Box
                           fontSize='body1.fontSize'
                           fontWeight='fontWeightBold'
                         >
                           {item.title}
                         </Box>
-                      )}
+                      </Link>
                     </EAccordionSummary>
-                    {item.sections && item.sections?.length && (
+                    {item.sections?.length && (
                       <EAccordionDetails
                         classes={{
                           root: classes.accordionDetailsRoot,

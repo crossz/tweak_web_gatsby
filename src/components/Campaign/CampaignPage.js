@@ -798,13 +798,12 @@ const CampaignPage = () => {
                     href={item.href}
                     target='_blank'
                   >
-                    <img src={item.image} alt='case male image' />
+                    <img src={item.image} alt='case male' />
                   </Link>
                 ))}
               </Box>
             </Container>
           </Box>
-
           <Container maxWidth='lg'>
             <Box
               width='100%'
