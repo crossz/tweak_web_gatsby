@@ -274,6 +274,9 @@ const useStyle = makeStyles((theme) => ({
       marginBottom: theme.spacing(3),
     },
   },
+  notice: {
+    marginRight: theme.spacing(0)
+  },
   link: {
     textDecoration: 'underline',
   },
@@ -788,6 +791,7 @@ const Quiz = () => {
                           >
                             <FormControlLabel
                               control={<Checkbox color='secondary' />}
+                              className={classes.notice}
                               label={
                                 <Box
                                   fontSize={matches ? 10 : 'caption.fontSize'}
