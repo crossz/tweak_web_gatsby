@@ -442,7 +442,7 @@ const Take2Prophecy = () => {
                   </Box>
                 </Typography>
                 <Grid className={classes.btnWrapper} container spacing={2}>
-                  <Grid item xs={matches ? 6 : 0}>
+                  <Grid item xs={matches ? 6 : 'auto'}>
                     <Button
                       variant='outlined'
                       color='primary'
@@ -453,7 +453,7 @@ const Take2Prophecy = () => {
                       立即預約
                     </Button>
                   </Grid>
-                  <Grid item xs={matches ? 6 : 0}>
+                  <Grid item xs={matches ? 6 : 'auto'}>
                     <Link to='/service-location/'>
                       <Button
                         variant='contained'

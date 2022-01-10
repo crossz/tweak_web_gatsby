@@ -79,7 +79,7 @@ const Consult = () => {
           ></StaticImage>
         </Grid>
         <Grid className={classes.rightWrapper} item xs={12} sm={6}>
-          <Box maxWidth={matches ? 'auto' : 560}>
+          <Box maxWidth={matches ? 'none' : 560}>
             <Typography variant='h5' color='primary' component='div'>
               <Box mt={matches ? 3 : 0}>立即登記 線上專業諮詢</Box>
               <Box className={classes.content}>
@@ -93,7 +93,7 @@ const Consult = () => {
               </Box>
             </Typography>
             <Grid className={classes.btnWrapper} container spacing={2}>
-              <Grid item xs={matches ? 6 : 0}>
+              <Grid item xs={matches ? 6 : 'auto'}>
                 <Link
                   className={classes.btnLink}
                   to='/products-and-services/take2-extra-care'
@@ -107,7 +107,7 @@ const Consult = () => {
                   </Button>
                 </Link>
               </Grid>
-              <Grid item xs={matches ? 6 : 0}>
+              <Grid item xs={matches ? 6 : 'auto'}>
                 <Button
                   variant='contained'
                   color='secondary'

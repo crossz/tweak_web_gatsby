@@ -123,14 +123,14 @@ const Banner = () => {
             </Box>
           </Typography>
           <Grid className={classes.btnWrapper} container spacing={2}>
-            <Grid item xs={matches ? 6 : 0}>
+            <Grid item xs={matches ? 6 : 'auto'}>
               <Link to='/products-and-services/take2-prophecy'>
                 <Button variant='outlined' color='primary' fullWidth={matches}>
                   了解更多
                 </Button>
               </Link>
             </Grid>
-            <Grid item xs={matches ? 6 : 0}>
+            <Grid item xs={matches ? 6 : 'auto'}>
               <Button
                 variant='contained'
                 color='secondary'
