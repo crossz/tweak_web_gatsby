@@ -3,7 +3,6 @@ import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
-// import ConsultImage from '@images/homepage_consult.jpg'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'gatsby'
 import Button from '@material-ui/core/Button'
@@ -30,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     [theme.breakpoints.down('xs')]: {
-      paddingRight: theme.spacing(3),
+      padding: theme.spacing(0, 3),
     },
   },
   contentWrapper: {
@@ -47,18 +46,6 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: 1.5,
     },
   },
-  // bg: {
-  //   width: '100%',
-  //   height: theme.spacing(66),
-  //   backgroundImage: `url(${ConsultImage})`,
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center right',
-  //   borderRadius: `0 6px 6px 0`,
-  //   [theme.breakpoints.down('xs')]: {
-  //     height: theme.spacing(33.25),
-  //   },
-  // },
   greyLink: {
     color: theme.palette.grey[600],
   },
@@ -68,18 +55,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   btnWrapper: {
-    display: 'flex',
     marginTop: theme.spacing(4),
     '& a': {
       textDecoration: 'none',
-    },
-  },
-  btnLink: {
-    marginRight: theme.spacing(2),
-    flexShrink: 0,
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      flexShrink: 1,
     },
   },
 }))
@@ -114,31 +92,33 @@ const Consult = () => {
                 </Link>
               </Box>
             </Typography>
-            <Box className={classes.btnWrapper}>
-              <Link
-                className={classes.btnLink}
-                to='/products-and-services/take2-extra-care'
-              >
+            <Grid className={classes.btnWrapper} container spacing={2}>
+              <Grid item xs={matches ? 6 : 0}>
+                <Link
+                  className={classes.btnLink}
+                  to='/products-and-services/take2-extra-care'
+                >
+                  <Button
+                    variant='outlined'
+                    color='primary'
+                    fullWidth={matches}
+                  >
+                    了解更多
+                  </Button>
+                </Link>
+              </Grid>
+              <Grid item xs={matches ? 6 : 0}>
                 <Button
-                  variant='outlined'
-                  color='primary'
-                  size={matches ? 'small' : 'medium'}
+                  variant='contained'
+                  color='secondary'
+                  href={platformUrl}
+                  target='_blank'
                   fullWidth={matches}
                 >
-                  了解更多
+                  立即登記
                 </Button>
-              </Link>
-              <Button
-                variant='contained'
-                color='secondary'
-                size={matches ? 'small' : 'medium'}
-                fullWidth={matches}
-                href={platformUrl}
-                target='_blank'
-              >
-                立即登記
-              </Button>
-            </Box>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
       </Grid>

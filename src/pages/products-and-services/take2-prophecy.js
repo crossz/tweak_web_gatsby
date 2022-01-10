@@ -275,15 +275,13 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 0,
     },
   },
-  btn: {
-    marginRight: theme.spacing(2),
-  },
-  link: {
-    textDecoration: 'none',
+  btnWrapper: {
+    marginTop: theme.spacing(4),
+    '& a': {
+      textDecoration: 'none',
+    },
     [theme.breakpoints.down('xs')]: {
-      width: '50%',
-      flexGrow: 1,
-      flexShrink: 0,
+      marginTop: theme.spacing(2),
     },
   },
 }))
@@ -443,29 +441,30 @@ const Take2Prophecy = () => {
                     </Typography>
                   </Box>
                 </Typography>
-                <Box display='flex' mt={matches ? 2 : 4}>
-                  <Button
-                    className={classes.btn}
-                    variant='outlined'
-                    color='primary'
-                    size={matches ? 'small' : 'medium'}
-                    fullWidth={matches}
-                    href={platformUrl}
-                    target='_blank'
-                  >
-                    立即預約
-                  </Button>
-                  <Link className={classes.link} to='/service-location/'>
+                <Grid className={classes.btnWrapper} container spacing={2}>
+                  <Grid item xs={matches ? 6 : 0}>
                     <Button
-                      variant='contained'
-                      color='secondary'
-                      size={matches ? 'small' : 'medium'}
+                      variant='outlined'
+                      color='primary'
+                      href={platformUrl}
+                      target='_blank'
                       fullWidth={matches}
                     >
-                      篩查服務點
+                      立即預約
                     </Button>
-                  </Link>
-                </Box>
+                  </Grid>
+                  <Grid item xs={matches ? 6 : 0}>
+                    <Link to='/service-location/'>
+                      <Button
+                        variant='contained'
+                        color='secondary'
+                        fullWidth={matches}
+                      >
+                        篩查服務點
+                      </Button>
+                    </Link>
+                  </Grid>
+                </Grid>
               </Box>
             </Grid>
           </Grid>
