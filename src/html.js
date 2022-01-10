@@ -54,11 +54,11 @@ export default function HTML(props) {
         {/* End Google Tag Manager */}
 
         {/* Global site tag (gtag.js) - Google Ads: 339029822 */}
-        <script
+        {/* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=AW-339029822'
-        ></script>
-        <script
+        ></script> */}
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -68,7 +68,7 @@ export default function HTML(props) {
             gtag('config', 'AW-339029822');
             `,
           }}
-        />
+        /> */}
         {/* Facebook Pixel Code */}
         <script
           dangerouslySetInnerHTML={{

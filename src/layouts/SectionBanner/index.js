@@ -124,7 +124,7 @@ const SectionBanner = () => {
                       {curMenuItem?.title}
                     </Box>
                   </Typography>
-                  {pathname.includes('/contact-us') && (
+                  {/* {pathname.includes('/contact-us') && (
                     <Box
                       mt={3}
                       fontSize='body1.fontSize'
@@ -132,7 +132,7 @@ const SectionBanner = () => {
                     >
                       如有任何意見或查詢，歡迎透過下列方式與我們聯繫
                     </Box>
-                  )}
+                  )} */}
                 </Box>
               </Container>
             </Container>

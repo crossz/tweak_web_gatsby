@@ -98,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.body1.fontSize,
     justifyContent: 'flex-start',
     textTransform: 'none',
+    borderRadius: theme.spacing(1.5),
     '& svg': {
       width: theme.spacing(5),
       height: theme.spacing(5),
@@ -194,18 +195,18 @@ const ContactUs = () => {
 
   const contactTypes = [
     {
-      label: 'info@take2.health',
-      Icon: EmailIcon,
-      tabLabel: '一般查詢',
-      type: 'email',
-      link: email,
-    },
-    {
       label: '+852 3613 0533',
       Icon: PhoneIcon,
       tabLabel: '客戶服務專線',
       type: 'phone',
       link: phone,
+    },
+    {
+      label: 'info@take2.health',
+      Icon: EmailIcon,
+      tabLabel: '一般查詢',
+      type: 'email',
+      link: email,
     },
     {
       label: 'WhatsApp',
@@ -266,7 +267,15 @@ const ContactUs = () => {
           <Container disableGutters maxWidth='md'>
             <Grid container spacing={0}>
               <Grid className={classes.leftWrapper} item xs={12} sm={7}>
-                <Tabs
+                <Box
+                  mt={1.5}
+                  px={matches ? 3 : 0}
+                  fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
+                  color='primary.contrastText'
+                >
+                  如有任何意見或查詢，歡迎透過下列方式與我們聯繫
+                </Box>
+                {/* <Tabs
                   scrollButtons='off'
                   variant='scrollable'
                   indicatorColor='secondary'
@@ -288,8 +297,8 @@ const ContactUs = () => {
                       }}
                     ></Tab>
                   ))}
-                </Tabs>
-                <Box px={matches ? 3 : 0} mt={matches ? 4 : 3.75}>
+                </Tabs> */}
+                <Box px={matches ? 3 : 0} mt={matches ? 2 : 1.5}>
                   <ImageList
                     className={classes.imageList}
                     rowHeight='auto'
@@ -309,8 +318,8 @@ const ContactUs = () => {
                           classes={{
                             startIcon: classes.startIcon,
                           }}
-                          variant='contained'
-                          color={index === activeTab ? 'secondary' : 'default'}
+                          variant={index ? 'outlined' : 'contained'}
+                          color={index === activeTab ? 'secondary' : 'primary'}
                           startIcon={
                             <Icon
                               className={classnames(
