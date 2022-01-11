@@ -275,7 +275,7 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   notice: {
-    marginRight: theme.spacing(0)
+    marginRight: theme.spacing(0),
   },
   link: {
     textDecoration: 'underline',
@@ -311,15 +311,17 @@ const useStyle = makeStyles((theme) => ({
 }))
 
 const initialValues = {
+  requiredEmailOrPhone: true,
   gender: '',
   age: '',
-  quiz: QUIZ.map((quiz, index) => ''),
+  quiz: QUIZ.map(() => ''),
   email: '',
   phone: '',
   dialingCode: '852',
   agreeTC: false,
 }
-const schema = oriSchema({ emailOrPhone: true }).pick([
+const schema = oriSchema().pick([
+  'requiredEmailOrPhone',
   'gender',
   'age',
   'quiz',
@@ -348,7 +350,7 @@ const Quiz = () => {
     try {
       const res = await fetch(`${API_URL}/quiz/add`, {
         method: 'POST',
-        body: JSON.stringify(omit(values, 'agreeTC')), // data can be `string` or {object}!
+        body: JSON.stringify(omit(values, 'agreeTC', 'requiredEmailOrPhone')), // data can be `string` or {object}!
         headers: new Headers({
           'Content-Type': 'application/json',
         }),
@@ -435,16 +437,6 @@ const Quiz = () => {
             const errorText = (field) =>
               touched[field] &&
               errors[field] && <FormHelperText>{errors[field]}</FormHelperText>
-
-            const customErrorText = () =>
-              touched.email &&
-              !errors.email &&
-              touched.phone &&
-              !errors.phone &&
-              !values.email &&
-              !values.phone && (
-                <FormHelperText error>請輸入電話號碼或電郵</FormHelperText>
-              )
 
             const CusCancelButton = ({ field }) => (
               <CancelButton
@@ -782,7 +774,6 @@ const Quiz = () => {
                                 {errorText('phone')}
                               </FormControl>
                             </Box>
-                            {customErrorText()}
                           </Box>
                           <FormControl
                             className={classes.checkBoxWrapper}

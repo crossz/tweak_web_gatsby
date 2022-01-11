@@ -141,7 +141,6 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const { date, title, type, cover } = data?.mdx?.frontmatter
   const image = getImage(cover)
   const morePostsNodes = data?.morePosts?.nodes
-
   const middlePath = `/whats-new/${slug.split('/')[0]}`
   const middleTitle = menu[0].sections?.find((section) =>
     section.path.includes(slug.split('/')[0])

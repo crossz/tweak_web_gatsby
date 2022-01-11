@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       textDecoration: 'none',
     },
+    '&:last-child $root': {
+      border: 'none',
+    },
   },
   top: {
     display: 'flex',
