@@ -10,9 +10,8 @@ import {
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
 import classNames from 'classnames'
-import { EInputBase } from '@themes/components/ETextField'
+import { ESelect } from '@themes/components/ETextField'
 import { POST_TYPES } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
@@ -38,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
   },
   activeType: {
     color: theme.palette.primary.main,
+  },
+  select: {
+    width: '100%',
   },
 }))
 
@@ -70,21 +72,19 @@ const Updates = ({ data }) => {
     <Box className={classes.root}>
       <Container disableGutters maxWidth='md'>
         <Grid container spacing={0}>
-          <Grid item sm={4}>
+          <Grid item xs={12} sm={4}>
             {matches ? (
-              <Select
-                labelId='type-select-label'
-                id='type-select'
+              <ESelect
                 value={activeType}
                 onChange={handleMobileChange}
-                input={<EInputBase />}
+                className={classes.select}
               >
                 {POST_TYPES.map((type, index) => (
                   <MenuItem key={index} value={index}>
                     {type.label}
                   </MenuItem>
                 ))}
-              </Select>
+              </ESelect>
             ) : (
               <Box className={classes.types} onClick={handleChange}>
                 {POST_TYPES.map((type, index) => (
@@ -102,7 +102,7 @@ const Updates = ({ data }) => {
               </Box>
             )}
           </Grid>
-          <Grid item sm={8}>
+          <Grid item xs={12} sm={8}>
             {list?.length
               ? list.map((node) => (
                   <UpdateItem
