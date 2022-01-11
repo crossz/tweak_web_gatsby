@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
+    paddingRight: theme.spacing(4),
   },
   linearProgressRoot: {
     width: ({ progressRightWidth }) => `calc(100% - ${progressRightWidth}px)`,

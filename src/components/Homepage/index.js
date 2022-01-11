@@ -38,6 +38,24 @@ const useStyles = makeStyles((theme) => ({
   healthTipsWrapper: {
     color: theme.palette.primary.contrastText,
   },
+  containerWrapper: {
+    padding: theme.spacing(0, 4),
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+    },
+  },
+  promotionsSwiperWrapper: {
+    marginRight: theme.spacing(-4),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: theme.spacing(-3),
+    },
+  },
+  swiperWrapper: {
+    paddingLeft: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(3),
+    },
+  },
 }))
 
 const Homepage = ({ promotionNodes, healthTipsNodes }) => {
@@ -45,38 +63,49 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
   return (
     <>
       <Banner></Banner>
-      <Container className={classes.root} maxWidth='md'>
-        <Quiz></Quiz>
-        <Box className={classes.title}>
-          <TitleDot></TitleDot>
-          <Typography variant='h4' color='primary'>
-            最新推廣優惠
-          </Typography>
-        </Box>
-        <Box fontSize='caption.fontSize' color='text.primary'>
-          為了讓你更了解健康狀況，我們會與不同合作夥伴攜手為你帶來產品及服務優惠，助你全面掌握健康。
-        </Box>
-        <PostSwiper nodes={promotionNodes} withViewBtn></PostSwiper>
-        <Box className={classes.title}>
-          <TitleDot></TitleDot>
-          <Typography variant='h4' color='primary'>
-            本港篩查服務點
-          </Typography>
-        </Box>
-        <Map></Map>
-      </Container>
-      <Container disableGutters maxWidth='lg'>
-        <Box className={classes.healthTipsBanner} />
-        <Container maxWidth='md' className={classes.healthTipsWrapper}>
+      <Box className={classes.containerWrapper}>
+        <Container disableGutters className={classes.root} maxWidth='md'>
+          <Quiz></Quiz>
           <Box className={classes.title}>
             <TitleDot></TitleDot>
-            <Typography variant='h4'>健康及專業醫護資訊</Typography>
+            <Typography variant='h4' color='primary'>
+              最新推廣優惠
+            </Typography>
           </Box>
-          <Box fontSize='caption.fontSize'>
-            為了守護你的健康，我們在此為你提供實用健康資訊， 緊隨你的生活步伐。
+          <Box fontSize='caption.fontSize' color='text.primary'>
+            為了讓你更了解健康狀況，我們會與不同合作夥伴攜手為你帶來產品及服務優惠，助你全面掌握健康。
           </Box>
-          <PostSwiper nodes={healthTipsNodes}></PostSwiper>
+          <Box className={classes.promotionsSwiperWrapper}>
+            <PostSwiper nodes={promotionNodes} withViewBtn></PostSwiper>
+          </Box>
+          <Box className={classes.title}>
+            <TitleDot></TitleDot>
+            <Typography variant='h4' color='primary'>
+              本港篩查服務點
+            </Typography>
+          </Box>
+          <Map></Map>
         </Container>
+      </Box>
+      <Container disableGutters maxWidth='lg'>
+        <Box className={classes.healthTipsBanner} />
+        <Box className={classes.swiperWrapper}>
+          <Container
+            disableGutters
+            maxWidth='md'
+            className={classes.healthTipsWrapper}
+          >
+            <Box className={classes.title}>
+              <TitleDot></TitleDot>
+              <Typography variant='h4'>健康及專業醫護資訊</Typography>
+            </Box>
+            <Box fontSize='caption.fontSize'>
+              為了守護你的健康，我們在此為你提供實用健康資訊，
+              緊隨你的生活步伐。
+            </Box>
+            <PostSwiper nodes={healthTipsNodes}></PostSwiper>
+          </Container>
+        </Box>
       </Container>
       <Consult></Consult>
     </>
