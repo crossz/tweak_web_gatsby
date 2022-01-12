@@ -20,7 +20,7 @@ import {
   EAccordionDetails,
 } from '@themes/components/EAccordion'
 import ArrowIcon from '@images/icons/arrow.svg'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'

@@ -12,8 +12,8 @@ import PhoneIcon from '@images/icons/phone.svg'
 import WhatsappIcon from '@images/icons/whatsapp.svg'
 import EmailIcon from '@images/icons/mail.svg'
 import MessengerIcon from '@images/icons/messenger.svg'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
+// import Tabs from '@material-ui/core/Tabs'
+// import Tab from '@material-ui/core/Tab'
 import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize'
@@ -224,7 +224,7 @@ const ContactUs = () => {
     },
   ]
 
-  const handleTabChange = (event, newValue) => setActiveTab(newValue)
+  // const handleTabChange = (event, newValue) => setActiveTab(newValue)
 
   const handleFetch = async (values) => {
     try {
