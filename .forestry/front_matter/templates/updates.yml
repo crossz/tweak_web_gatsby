@@ -57,7 +57,8 @@ fields:
   type: image_gallery
   config: {}
   label: " cover"
-  description: Cover of post card, in updates list it may be multiple images or empty.
+  description: 'Cover of post card, in updates list it may be multiple images or empty.<br><em>Aspect
+    ratio: 2 (width / height)</em><br><em>Recommend size</em>: 300 * 150'
 pages:
 - content/updates/company-announcements-yourgene-health-plc-partnership-with-take2-health-limited-1.md
 - content/updates/dna-1.md
