@@ -257,7 +257,6 @@ const JoinUs = ({ data, pageContext, location }) => {
           <Grid container>
             <Grid item xs={12} sm={4}>
               <Search
-                location={location}
                 data={allCareer}
                 setSearchResult={(result) => setCareers(result)}
                 setSearching={(status) => setSearching(status)}

@@ -141,7 +141,7 @@ const FAQ = () => {
               content: item.contentHk,
             }
           }) || []
-        setAllFaqList(list)
+        // setAllFaqList(list)
         setFaqList(list)
       } catch (error) {
         console.log('fetch error')
