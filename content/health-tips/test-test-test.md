@@ -6,6 +6,6 @@ detail: 'Take2 Prophecy™ '
 href: https://unwire.hk/2021/12/14/take2-prophecy-ngs/life-tech/health/
 slug: ''
 cover:
-- "../images/80-1.png"
+- "../images/untitled-design-10.png"
 
 ---
