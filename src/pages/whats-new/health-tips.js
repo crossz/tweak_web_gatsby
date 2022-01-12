@@ -34,7 +34,7 @@ export const query = graphql`
           href
           cover {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
         }

@@ -251,7 +251,7 @@ export const query = graphql`
         frontmatter {
           cover {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
           date(formatString: "DD/MM/YYYY")
