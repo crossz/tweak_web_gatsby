@@ -1,9 +1,10 @@
 ---
 type: 行業資訊
 cover: []
-date: 2021-03-15T05:00:00+08:00
+date: 2021-03-15T05:00:00.000+08:00
 title: Take2 Prophecy™ 進駐滙豐保險「全方位僱員褔利」平台
-detail: 服務超過2萬名計劃用戶
+detail: Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2021年3月正式進駐滙豐保險「全方位僱員褔利」 (HSBC Life Benefits+)
+  平台，在服務上線的首階段，更成功獲得不少用戶的關注。
 href: ''
 slug: ''
 
