@@ -135,16 +135,16 @@ const morePostTitle = {
 }
 
 const Post = ({ data, pageContext, location: { href } }) => {
+  const { sectionPath, regex } = pageContext
   const classes = useStyles()
   const menu = useMenu()
   const mdx = data?.mdx?.body
-  const { slug } = pageContext
   const { date, title, type, cover } = data?.mdx?.frontmatter
   const image = getImage(cover)
   const morePostsNodes = data?.morePosts?.nodes
-  const middlePath = `/whats-new/${slug.split('/')[0]}`
+  const middlePath = `/whats-new/${sectionPath}`
   const middleTitle = menu[0].sections?.find((section) =>
-    section.path.includes(slug.split('/')[0])
+    section.path.includes(regex)
   )?.title
 
   return (
