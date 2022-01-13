@@ -93,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
   contentWrapper: {
     position: 'relative',
     padding: theme.spacing(0, 3),
+    minHeight: theme.spacing(80),
   },
   content: {
     paddingBottom: theme.spacing(30),
@@ -110,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   },
   postBg: {
     width: '100%',
-    height: 980,
+    height: 800,
     position: 'absolute',
     bottom: 0,
     left: 0,
