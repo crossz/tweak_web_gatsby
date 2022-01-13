@@ -228,7 +228,7 @@ const Mission = () => {
                 </Typography>
               </Box>
             </Box>
-            <Typography variant={matches ? 'body2' : 'body1'} component='div'>
+            <Typography variant='body2' component='div'>
               <Box color='text.primary' fontWeight='fontWeightBold' mb={0.5}>
                 背景及創辦人
               </Box>
@@ -236,6 +236,7 @@ const Mission = () => {
               <br />
               <br />
               有關三位教授創辦得易健康並發佈公司首項產品的資訊，請參閱以下新聞連結：
+              <br />
               <Link
                 className={classes.link}
                 href='https://www.businesswire.com/news/home/20190506005296/zh-HK/'

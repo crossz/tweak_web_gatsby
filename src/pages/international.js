@@ -127,7 +127,8 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
-      paddingBottom: theme.spacing(1.25),
+      paddingBottom: theme.spacing(1),
+      minHeight: 'auto',
     },
   },
   country: {
@@ -136,6 +137,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1.5),
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(0.5),
+    },
+  },
+  partnerContent: {
+    color: theme.palette.text.primary,
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(1),
     },
   },
   name: {
@@ -282,14 +289,12 @@ const International = () => {
             作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
           </Typography>
         </Box>
-        <Box>
-          <SimpleGoogleMap></SimpleGoogleMap>
-        </Box>
+        <SimpleGoogleMap></SimpleGoogleMap>
       </Container>
       <Container disableGutters className={classes.bannerWrapper} maxWidth='lg'>
         <StaticImage
           className={classes.bannerBg}
-          src='../assets/images/international_banner_bg.jpg'
+          src='../assets/images/international_section_banner.jpg'
           alt='international banner'
           objectPosition='left'
         ></StaticImage>
@@ -324,10 +329,7 @@ const International = () => {
                     >
                       {name}
                     </Typography>
-                    <Typography
-                      variant={matches ? 'body2' : 'body1'}
-                      color='textPrimary'
-                    >
+                    <Typography className={classes.partnerContent}>
                       {intro}
                     </Typography>
                     <Box className={classes.partnerBtnWrapper}>

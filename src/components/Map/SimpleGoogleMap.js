@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.spacing(3),
     overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
-      height: 548,
+      height: 382,
+      borderRadius: theme.spacing(1.5),
     },
     position: 'relative',
   },

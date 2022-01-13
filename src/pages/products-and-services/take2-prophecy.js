@@ -419,7 +419,7 @@ const Take2Prophecy = () => {
             <Grid item xs={12} sm={6}>
               <StaticImage
                 className={classes.prophecyImage}
-                src='../../assets/images/take2_prophecy_01.png'
+                src='../../assets/images/take2_prophecy_01.jpg'
                 alt='take2 prophecy 01'
               ></StaticImage>
             </Grid>
