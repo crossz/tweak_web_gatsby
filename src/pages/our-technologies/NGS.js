@@ -86,6 +86,10 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     borderRadius: theme.spacing(0.75),
     overflow: 'hidden',
+    [theme.breakpoints.down('xs')]: {
+      borderRadius: 0,
+      height: 184,
+    },
   },
 }))
 
@@ -204,7 +208,7 @@ const NGS = () => {
                 >
                   <TitleDot
                     bgcolor={index !== activeNote && '#e8e8e8'}
-                    left={-2}
+                    left={-3}
                   ></TitleDot>
                   {note.title}
                   {activeNote !== index && '(閱讀全文）'}
@@ -217,10 +221,10 @@ const NGS = () => {
               (!matches || index === activeNote) && (
                 <Box key={index} className={classes.noteItem}>
                   <Grid container spacing={0}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                       <Box className={classes.noteImage}>{note.image}</Box>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} sm={9}>
                       <Box className={classes.noteContent}>
                         <Box mb={1.25}>
                           <Typography variant='h4' color='primary'>
