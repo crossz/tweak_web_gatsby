@@ -190,7 +190,7 @@ const useStyles = makeStyles((theme) => ({
   },
   stepOneArrow: {
     right: theme.spacing(-3),
-    bottom: theme.spacing(-5),
+    top: theme.spacing(-9),
   },
   stepTwoArrow: {
     left: '50%',
@@ -200,6 +200,7 @@ const useStyles = makeStyles((theme) => ({
   stepThreeArrow: {
     right: theme.spacing(-3),
     transform: `rotate(180deg)`,
+    top: theme.spacing(-9),
   },
   arrowIcon: {
     flexShrink: 0,

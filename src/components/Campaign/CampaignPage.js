@@ -35,6 +35,7 @@ import IconArrow from './images/svg/icon_arrow.svg'
 import Header from './Header'
 import Annotate from './Annotate'
 import FlipCardsSwiper from './FlipCardsSwiper'
+import { Link as GatsbyLink } from 'gatsby'
 
 import {
   menuListData,
@@ -492,6 +493,12 @@ const useStyles = makeStyles((theme) =>
       '& img': {
         display: 'block',
         width: '100%',
+      },
+    },
+    goHomeBtn: {
+      marginTop: theme.spacing(2),
+      '& a': {
+        textDecoration: 'none',
       },
     },
   })
@@ -1305,6 +1312,14 @@ const CampaignPage = () => {
                   <br />
                 </Box>
               </Typography>
+              <Box className={classes.goHomeBtn}>
+                <GatsbyLink to='/'>
+                  <Button size='large' variant='outlined' color='primary'>
+                    返回官網
+                  </Button>
+                </GatsbyLink>
+              </Box>
+
               <Box
                 my={matches ? 4 : 6}
                 bgcolor='text.disabled'
