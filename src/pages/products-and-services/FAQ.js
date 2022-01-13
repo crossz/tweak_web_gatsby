@@ -15,7 +15,7 @@ import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import Search from '@components/Search'
-import { API_URL } from 'gatsby-env-variables'
+import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -123,7 +123,7 @@ const FAQ = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${API_URL}/faqs/list`, {
+        const res = await fetch(`${GATSBY_API_URL}/faqs/list`, {
           method: 'POST',
           headers: new Headers({
             'Content-Type': 'application/json',

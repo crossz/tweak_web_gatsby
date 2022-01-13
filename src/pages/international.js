@@ -31,7 +31,7 @@ import {
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
-import { API_URL } from 'gatsby-env-variables'
+import { GATSBY_API_URL } from 'gatsby-env-variables'
 import SimpleGoogleMap from '@components/Map/SimpleGoogleMap'
 
 const useStyles = makeStyles((theme) => ({
@@ -247,7 +247,7 @@ const International = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${API_URL}/applyPartner/add`, {
+      const res = await fetch(`${GATSBY_API_URL}/applyPartner/add`, {
         method: 'POST',
         body: JSON.stringify(values), // data can be `string` or {object}!
         headers: new Headers({

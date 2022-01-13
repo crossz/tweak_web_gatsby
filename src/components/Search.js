@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import {
   makeStyles,
   InputAdornment,
@@ -46,6 +46,12 @@ const Search = ({
   const [query, setQuery] = useState('')
   const [region, setRegion] = useState('')
   const location = useLocation()
+  const searchRef = useRef(null)
+
+  useEffect(() => {
+    if (!search) return
+    searchRef.current = search
+  }, [search])
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
@@ -53,7 +59,8 @@ const Search = ({
     setSearching && setSearching(Boolean(q || region))
     if (q) scrollTo('#search-box', 'center')
     if (!q && !region) return setPageList && setPageList()
-    const results = (q ? search(q) : data) || []
+    const results =
+      (q && searchRef.current ? searchRef?.current(q) : data) || []
     setSearchResult &&
       setSearchResult(
         !isFAQ && region && results.length

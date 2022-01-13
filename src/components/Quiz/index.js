@@ -42,7 +42,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import ReCaptcha from '@components/ReCaptcha'
-import { API_URL } from 'gatsby-env-variables'
+import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -348,7 +348,7 @@ const Quiz = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${API_URL}/quiz/add`, {
+      const res = await fetch(`${GATSBY_API_URL}/quiz/add`, {
         method: 'POST',
         body: JSON.stringify(omit(values, 'agreeTC', 'requiredEmailOrPhone')), // data can be `string` or {object}!
         headers: new Headers({
