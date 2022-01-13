@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import { graphql } from 'gatsby'
 import UpdateItem from '@components/WhatsNew/UpdateItem'
 import {
@@ -46,28 +46,21 @@ const useStyles = makeStyles((theme) => ({
 const Updates = ({ data }) => {
   const classes = useStyles()
   const nodes = data.allMdx.nodes
-  const [activeType, setActiveType] = useState(0)
-  const [list, setList] = useState([])
+  const [activeType, setActiveType] = useState('')
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
-  useEffect(() => {
-    if (!nodes?.length) return
-    setList(
-      !activeType
-        ? nodes
-        : nodes.filter(
-            (node) => node.frontmatter?.type === POST_TYPES[activeType]?.label
-          ) || []
-    )
-  }, [activeType, nodes])
+  const curNodes = useMemo(
+    () =>
+      activeType
+        ? nodes?.filter((node) => node.frontmatter?.type === activeType)
+        : nodes,
+    [activeType, nodes]
+  )
 
-  const handleChange = (e) =>
-    e.target.dataset?.value && setActiveType(Number(e.target.dataset?.value))
+  const handleChange = (e) => setActiveType(e.target.dataset?.value)
 
-  const handleMobileChange = (e) =>
-    e.target?.value && setActiveType(e.target?.value)
-
+  const handleMobileChange = (e) => setActiveType(e.target?.value)
   return (
     <Box className={classes.root}>
       <Container disableGutters maxWidth='md'>
@@ -78,9 +71,10 @@ const Updates = ({ data }) => {
                 value={activeType}
                 onChange={handleMobileChange}
                 className={classes.select}
+                displayEmpty
               >
                 {POST_TYPES.map((type, index) => (
-                  <MenuItem key={index} value={index}>
+                  <MenuItem key={index} value={type.value}>
                     {type.label}
                   </MenuItem>
                 ))}
@@ -91,10 +85,10 @@ const Updates = ({ data }) => {
                   <Box
                     className={classNames(
                       classes.type,
-                      activeType === index && classes.activeType
+                      activeType === type.value && classes.activeType
                     )}
                     key={index}
-                    data-value={index}
+                    data-value={type.value}
                   >
                     {type.label}
                   </Box>
@@ -103,15 +97,14 @@ const Updates = ({ data }) => {
             )}
           </Grid>
           <Grid item xs={12} sm={8}>
-            {list?.length
-              ? list.map((node) => (
-                  <UpdateItem
-                    key={node.id}
-                    slug={`${node.fields.slug}`}
-                    {...node.frontmatter}
-                  />
-                ))
-              : null}
+            {curNodes?.length > 0 &&
+              curNodes?.map((node) => (
+                <UpdateItem
+                  key={node.id}
+                  slug={`${node.fields.slug}`}
+                  {...node.frontmatter}
+                />
+              ))}
           </Grid>
         </Grid>
       </Container>

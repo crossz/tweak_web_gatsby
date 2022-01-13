@@ -6,7 +6,6 @@ import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
 import classnames from 'classnames'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
@@ -155,7 +154,6 @@ const Marker = (props) => {
 const InfoWindow = (props) => {
   const classes = useStyles()
   const isHomepage = useMatch('/')
-  const { platformUrl } = useSiteMetadata()
 
   if (!props?.info) return null
 

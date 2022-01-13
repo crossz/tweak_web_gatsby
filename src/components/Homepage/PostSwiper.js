@@ -108,10 +108,13 @@ const PostSwiper = ({ nodes, withViewBtn }) => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const classes = useStyles({
-    progressRightWidth: matches ? 80 : isSm ? 256 : 316,
+    progressRightWidth: matches ? 80 : 316,
     matches,
   })
   const [activeSlide, setActiveSlide] = useState(0)
+
+  const showNavigation =
+    (matches && nodes?.length > 1) || (!matches && nodes?.length > 2)
 
   return (
     <Box className={classes.root}>
@@ -119,7 +122,7 @@ const PostSwiper = ({ nodes, withViewBtn }) => {
         spaceBetween={matches ? theme.spacing(2) : theme.spacing(3)}
         slidesPerView={'auto'}
         loop={nodes?.length > (matches ? 1 : 3)}
-        navigation
+        navigation={showNavigation}
         onSlideChange={(swiper) => {
           setActiveSlide(swiper.realIndex)
         }}
@@ -137,28 +140,30 @@ const PostSwiper = ({ nodes, withViewBtn }) => {
             </SwiperSlide>
           )
         })}
-        <Box className={classes.linearProgressWrapper}>
-          <LinearProgress
-            classes={{
-              root: classes.linearProgressRoot,
-              bar: classes.linearProgressBar,
-            }}
-            color='primary'
-            variant='determinate'
-            value={Math.round(((activeSlide + 1) / nodes?.length) * 100)}
-          />
-          <Link className={classes.viewBtnLink} to='/whats-new/promotions'>
-            <Button
-              className={classes.viewBtn}
-              variant='outlined'
+        {showNavigation && (
+          <Box className={classes.linearProgressWrapper}>
+            <LinearProgress
+              classes={{
+                root: classes.linearProgressRoot,
+                bar: classes.linearProgressBar,
+              }}
               color='primary'
-              size='small'
-              endIcon={!matches && <RightIcon />}
-            >
-              瀏覽更多
-            </Button>
-          </Link>
-        </Box>
+              variant='determinate'
+              value={Math.round(((activeSlide + 1) / nodes?.length) * 100)}
+            />
+            <Link className={classes.viewBtnLink} to='/whats-new/promotions'>
+              <Button
+                className={classes.viewBtn}
+                variant='outlined'
+                color='primary'
+                size='small'
+                endIcon={!matches && <RightIcon />}
+              >
+                瀏覽更多
+              </Button>
+            </Link>
+          </Box>
+        )}
       </Swiper>
     </Box>
   )

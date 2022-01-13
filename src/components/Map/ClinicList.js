@@ -16,7 +16,6 @@ import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import { GATSBY_SITE_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
@@ -145,7 +144,6 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const { platformUrl } = useSiteMetadata()
 
   const _handleChange = (activeArea) => (e, isExpanded) => {
     onChange && onChange(isExpanded ? activeArea : '')

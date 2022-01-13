@@ -74,7 +74,7 @@
     "banner": "international_section_banner",
     "mobileBanner": "international_section_banner_mobile",
     "path": "/international/",
-    "titleColor": "common.white"
+    "titleColor": "primary.main"
   },
   {
     "title": "關於 Take2 Health",

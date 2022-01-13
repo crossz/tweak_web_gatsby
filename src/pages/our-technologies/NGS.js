@@ -167,7 +167,7 @@ const NGS = () => {
             <Box mb={2} pl={matches ? 2 : 0}>
               {matches && <TitleDot left={-2}></TitleDot>}
               <Typography variant='h4' color='primary'>
-                什麼是NGS?
+                甚麼是NGS?
               </Typography>
             </Box>
             <Box>

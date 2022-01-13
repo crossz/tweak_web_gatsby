@@ -84,6 +84,7 @@ const useStyle = makeStyles((theme) => ({
     position: 'relative',
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 2),
+      paddingBottom: theme.spacing(4),
     },
   },
   quizLeft: {
@@ -96,11 +97,15 @@ const useStyle = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     height: '100%',
-    paddingRight: theme.spacing(5),
+    paddingRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       padding: 0,
       justifyContent: 'flex-start',
     },
+  },
+  quizTip: {
+    marginBottom: theme.spacing(3),
+    color: '#818181',
   },
   genderLabel: {
     marginLeft: 0,
@@ -223,7 +228,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: 'auto',
     marginBottom: theme.spacing(10),
     [theme.breakpoints.down('xs')]: {
-      marginBottom: theme.spacing(8.75),
+      marginBottom: theme.spacing(4.75),
     },
   },
   preBtn: {
@@ -297,8 +302,10 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   mobilePlatformLink: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(-3.5),
+    textAlign: 'center',
+    display: 'block',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(-2),
     '& .MuiButton-text': {
       fontSize: theme.typography.caption.fontSize,
     },
@@ -470,14 +477,24 @@ const Quiz = () => {
                             免費測驗 了解健康
                           </Typography>
                         </Box>
-                        <Box mb={matches ? 3 : 2.5} color='grey.900'>
+                        <Box mb={matches ? 1 : 2.5} color='grey.900'>
                           <Typography variant={matches ? 'body2' : 'body1'}>
                             來個簡單測驗？可能逆轉一切！
-                            <br />
+                            <Hidden xsDown>
+                              <br />
+                            </Hidden>
                             雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
                           </Typography>
                         </Box>
-                        <Box mb={matches ? 2 : 4}>
+                        <Typography
+                          className={classes.quizTip}
+                          variant='caption'
+                        >
+                          分析僅屬參考性質。
+                          <br />
+                          引致鼻咽癌的成因有很多，而且徵狀因人而異，詳情請向醫護人員查詢或與我們的專業醫護團隊聯絡。
+                        </Typography>
+                        <Box mb={matches ? 2 : 2}>
                           <FormControl
                             component='fieldset'
                             error={isError('gender')}
@@ -505,7 +522,7 @@ const Quiz = () => {
                             {errorText('gender')}
                           </FormControl>
                         </Box>
-                        <Box mb={matches ? 3 : 5.75}>
+                        <Box mb={matches ? 3 : 4.5}>
                           <FormControl
                             className={classes.ageFormControl}
                             fullWidth={matches}
@@ -849,9 +866,7 @@ const Quiz = () => {
                               href={platformUrl}
                               target='_blank'
                             >
-                              <Button fullWidth variant='text' color='primary'>
-                                直接登記 得易健康服務平台
-                              </Button>
+                              直接登記 得易健康服務平台
                             </MuiLink>
                           </Hidden>
                         </Box>

@@ -290,7 +290,7 @@ const EarlyCancerDetection = () => {
             </Hidden>
             <Box textAlign='center' mb={matches ? 3 : 4.5}>
               <Typography variant='h4' color='primary'>
-                什麼是早期鼻咽癌篩查？
+                甚麼是早期鼻咽癌篩查？
               </Typography>
             </Box>
             <Box
