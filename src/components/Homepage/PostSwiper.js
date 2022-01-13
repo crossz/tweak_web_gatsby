@@ -103,10 +103,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostSwiper = ({ nodes, withViewBtn }) => {
+const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const classes = useStyles({
     progressRightWidth: matches ? 80 : 316,
     matches,
@@ -151,7 +150,7 @@ const PostSwiper = ({ nodes, withViewBtn }) => {
               variant='determinate'
               value={Math.round(((activeSlide + 1) / nodes?.length) * 100)}
             />
-            <Link className={classes.viewBtnLink} to='/whats-new/promotions'>
+            <Link className={classes.viewBtnLink} to={morePath}>
               <Button
                 className={classes.viewBtn}
                 variant='outlined'

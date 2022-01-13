@@ -76,7 +76,11 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
             我們與不同夥伴合作，推出各項優惠，讓你以更優惠的價錢進行體檢及享用多元化的健康服務。
           </Box>
           <Box className={classes.promotionsSwiperWrapper}>
-            <PostSwiper nodes={promotionNodes} withViewBtn></PostSwiper>
+            <PostSwiper
+              nodes={promotionNodes}
+              morePath='/whats-new/promotions/'
+              withViewBtn
+            ></PostSwiper>
           </Box>
           <Box className={classes.title}>
             <TitleDot></TitleDot>
@@ -102,7 +106,10 @@ const Homepage = ({ promotionNodes, healthTipsNodes }) => {
             <Box fontSize='caption.fontSize'>
               為了守護你和家人的健康，我們將持續為你提供實用的資訊，緊貼你的健康需要。
             </Box>
-            <PostSwiper nodes={healthTipsNodes}></PostSwiper>
+            <PostSwiper
+              nodes={healthTipsNodes}
+              morePath='/whats-new/health-tips/'
+            ></PostSwiper>
           </Container>
         </Box>
       </Container>
