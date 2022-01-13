@@ -190,7 +190,7 @@ const FAQ = () => {
                   key={faq.id}
                   id={faq.id}
                   question={faq.question}
-                  content={faq.question}
+                  content={faq.content}
                   onChange={handleChange}
                   activePanel={activePanel}
                 ></FaqItem>

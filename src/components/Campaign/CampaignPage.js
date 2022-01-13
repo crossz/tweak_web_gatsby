@@ -1319,7 +1319,6 @@ const CampaignPage = () => {
                   </Button>
                 </GatsbyLink>
               </Box>
-
               <Box
                 my={matches ? 4 : 6}
                 bgcolor='text.disabled'
