@@ -179,7 +179,7 @@ const Map = () => {
         if (resData?.code !== 1000) {
           return console.log('fetch error')
         }
-        const data = resData?.data || []
+        const data = resData?.data?.filter((item) => item.status) || []
         let location = []
         const provinceGroup = groupBy(data, 'province')
         const provinceKeys = Object.keys(provinceGroup)

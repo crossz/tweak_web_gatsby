@@ -10,6 +10,7 @@ import useSiteMetadata from '@hooks/useSiteMetadata'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
+import { GATSBY_SITE_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -182,7 +183,9 @@ const InfoWindow = (props) => {
         {phone}
       </Box>
       <Button
-        href={clinicType === 1 ? `${platformUrl}/clinic/${id}` : `tel:${phone}`}
+        href={
+          clinicType === 1 ? `${GATSBY_SITE_URL}/clinic/${id}` : `tel:${phone}`
+        }
         target={clinicType === 1 ? '_blank' : ''}
         className={classes.infoBtn}
         variant='contained'
