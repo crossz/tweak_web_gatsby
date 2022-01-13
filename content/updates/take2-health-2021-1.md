@@ -9,7 +9,7 @@ href: ''
 slug: ''
 
 ---
-![](../images/test1-png.JPG)
+![](../images/untitled-design-19.png)
 
 Take2 Health（下稱：我司） 於2021年12月5日參與由德勤  (Deloitte) 主辦的「香港高科技高成長及明日之星」頒獎典禮，並於同日成功獲得「2021德勤香港明日之星」這項殊榮。
 
