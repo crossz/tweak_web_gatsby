@@ -42,7 +42,7 @@ const steps = [
     ),
   },
   {
-    label: '送到實驗室\n進行分析',
+    label: '送到本港實驗室\n進行分析',
     icon: (
       <StaticImage
         src='../../assets/images/icons/prophecy/step_03.svg'
@@ -86,8 +86,11 @@ const useStyles = makeStyles((theme) => ({
   },
   wrapper: {
     marginTop: -370,
-    marginBottom: -455,
+    marginBottom: -500,
     padding: theme.spacing(0, 3),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: -420,
+    },
   },
   content: {
     marginTop: theme.spacing(9.5),
@@ -136,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
     gridArea: '1/1',
   },
   sectionOneWrapper: {
-    marginBottom: theme.spacing(19),
+    marginBottom: theme.spacing(7),
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(4),
     },
@@ -285,6 +288,16 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
   },
+  reportTip: {
+    color: '#818181',
+    fontSize: theme.typography.caption.fontSize,
+    marginTop: theme.spacing(3),
+    padding: theme.spacing(0, 6),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(2),
+      padding: 0,
+    },
+  },
 }))
 
 const Take2Prophecy = () => {
@@ -318,7 +331,7 @@ const Take2Prophecy = () => {
                 src='../../assets/images/products_services_banner_bg.jpg'
                 alt='homepage banner mobile'
               ></StaticImage>
-              <Box className={classes.sectionOneBanner}>篩查四部曲</Box>
+              <Box className={classes.sectionOneBanner}>篩查五部曲</Box>
             </Box>
             <Box className={classes.sectionOneContent}>
               <Box className={classes.stepsWrapper}>
@@ -413,6 +426,11 @@ const Take2Prophecy = () => {
                   </ImageListItem>
                 ))}
               </ImageList>
+              <Box className={classes.reportTip}>
+                注意事項 <br />
+                此篩查不建議已經進行器官移植人士、已患有其他癌症、自身免疫系統疾病、正接受全身性糖皮質激素及免疫抑制治療的人士使用，詳情請向醫護人員查詢。
+                如有任何疑問，請向專業醫護人員查詢。
+              </Box>
             </Box>
           </Box>
           <Grid container>

@@ -106,6 +106,7 @@ const useStyle = makeStyles((theme) => ({
   quizTip: {
     marginBottom: theme.spacing(3),
     color: '#818181',
+    fontSize: theme.spacing(1.5),
   },
   genderLabel: {
     marginLeft: 0,
@@ -283,7 +284,7 @@ const useStyle = makeStyles((theme) => ({
     marginRight: theme.spacing(0),
   },
   link: {
-    textDecoration: 'underline',
+    textDecoration: 'none',
   },
   platformLink: {
     textDecoration: 'underline',
@@ -479,17 +480,14 @@ const Quiz = () => {
                         </Box>
                         <Box mb={matches ? 1 : 2.5} color='grey.900'>
                           <Typography variant={matches ? 'body2' : 'body1'}>
-                            來個簡單測驗？可能逆轉一切！
+                            來個簡單測驗，人生可能從此變得不一樣。
                             <Hidden xsDown>
                               <br />
                             </Hidden>
-                            雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
+                            雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解有關鼻咽癌的徵狀。
                           </Typography>
                         </Box>
-                        <Typography
-                          className={classes.quizTip}
-                          variant='caption'
-                        >
+                        <Typography className={classes.quizTip}>
                           分析僅屬參考性質。
                           <br />
                           引致鼻咽癌的成因有很多，而且徵狀因人而異，詳情請向醫護人員查詢或與我們的專業醫護團隊聯絡。
@@ -720,9 +718,8 @@ const Quiz = () => {
                           <Typography variant={matches ? 'caption' : 'body1'}>
                             來個簡單測驗？可能逆轉一切！
                             <br />
-                            請輸入電郵以獲取結果，及後可通過得易健康服務平台網上系統免費登記成為Take2
-                            ExtraCare會員,
-                            或輸入電話號碼與線上註冊護士咨詢服務或產品內容!{' '}
+                            請即輸入你的資料，以透過電郵獲取測驗結果；或與線上註冊護士聯絡，以諮詢服務或產品內容！你亦可直接登記，免費成為Take2
+                            ExtraCare會員。
                           </Typography>
                         </Box>
                         <Box className={classes.formWrapper}>
@@ -854,7 +851,7 @@ const Quiz = () => {
                               href={platformUrl}
                               target='_blank'
                             >
-                              直接登記 得易健康服務平台
+                              直接登記為 Take2 Extra Care會員
                             </MuiLink>
                           </Hidden>
                           <Hidden smUp>
@@ -912,20 +909,21 @@ const Quiz = () => {
                             fontWeight='fontWeightBold'
                             mb={matches ? 2 : 1.5}
                           >
-                            測驗經已完成！
+                            你已完成了測驗！
                           </Box>
                           <Box
                             fontSize={
                               matches ? 'caption.fontSize' : 'body1.fontSize'
                             }
                           >
-                            以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
+                            以上問題均與鼻咽癌息息相關，如你持續出現上述病徵，建議你儘快向醫生查詢。
                             <br />
                             <Hidden smUp>
                               <br />
                             </Hidden>
-                            你亦可立即登記，免費成為Take2 Extra
-                            Care會員，預約進行檢測，或享用得易健康網上平台的服務。
+                            立即登記，免費成為Take2 Extra
+                            Care會員，以優惠價預約進行檢測，並享用Take2 Health
+                            得易健康服務平台的各項服務。
                           </Box>
                         </Box>
                         <Box

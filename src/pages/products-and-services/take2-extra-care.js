@@ -441,7 +441,7 @@ const Take2ExtraCare = () => {
               參加Take2 Extra Care會員計劃有甚麼好處？
             </Box>
             <Box>
-              不需繳交任何會費的情況，就可成為永久會員，享用Take2 Extra
+              免費成為永久會員，享用Take2 Extra
               Care會員計劃轄下一切服務，包括即時查詢、健康資訊、獨家優惠和年度篩查提醒等。{' '}
               <br />
               <Hidden xsDown>

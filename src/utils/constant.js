@@ -107,7 +107,7 @@ export const QUIZ = [
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你有否出現鼻水帶血或流鼻血情況？',
+    question: '你有否經常出現鼻水帶血或流鼻血情況？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
@@ -116,17 +116,17 @@ export const QUIZ = [
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你是否經常出現頭痛或單側頭痛？',
+    question: '你有否經常出現頭痛或單側頭痛？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你是否經常受耳鳴困擾？',
+    question: '你有否經常受耳鳴困擾？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有沒有吸煙習慣？',
+    question: '你有否經常吸煙？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
@@ -181,7 +181,7 @@ const QUIZ_ANSWER_OPTIONS = [
     value: 'no',
   },
   {
-    label: '不清楚',
+    label: '不确定',
     value: 'unclear',
   },
   {
