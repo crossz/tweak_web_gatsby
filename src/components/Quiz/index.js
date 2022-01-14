@@ -812,7 +812,10 @@ const Quiz = () => {
                                     </Box>
                                   </MuiLink>
                                   及
-                                  <MuiLink href='/' className={classes.link}>
+                                  <MuiLink
+                                    href='/terms-and-conditions/個人資料收集聲明'
+                                    className={classes.link}
+                                  >
                                     <Box color='primary.main' component='span'>
                                       個人資料收集聲明
                                     </Box>
