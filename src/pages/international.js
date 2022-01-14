@@ -294,7 +294,7 @@ const International = () => {
       <Container disableGutters className={classes.bannerWrapper} maxWidth='lg'>
         <StaticImage
           className={classes.bannerBg}
-          src='../assets/images/international_section_banner.jpg'
+          src='../assets/images/international_banner_bg.jpg'
           alt='international banner'
           objectPosition='left'
         ></StaticImage>
