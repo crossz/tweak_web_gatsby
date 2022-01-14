@@ -3,7 +3,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { makeStyles, alpha, Box, Link as MuiLink } from '@material-ui/core'
 import { Link } from 'gatsby'
 import ViewButton from '@themes/components/ViewButton'
-import { POST_ASPECT_RATIO } from '@utils/constant'
 const useStyles = makeStyles((theme) => ({
   root: {
     boxShadow: `0px 15px 40px -10px ${alpha(theme.palette.common.black, 0.05)}`,

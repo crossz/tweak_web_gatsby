@@ -6,7 +6,6 @@ import {
   alpha,
   useTheme,
   useMediaQuery,
-  Hidden,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import TitleDot from '@themes/components/TitleDot'
@@ -278,16 +277,6 @@ const EarlyCancerDetection = () => {
         </Typography>
         <Box className={classes.sectionTwo}>
           <Container disableGutters maxWidth='sm'>
-            {/* <Hidden smUp>
-              <Box
-                textAlign='center'
-                fontWeight='fontWeightBold'
-                fontSize='body2.fontSize'
-                color='secondary.main'
-              >
-                Take2™
-              </Box>
-            </Hidden> */}
             <Box textAlign='center' mb={matches ? 3 : 4.5}>
               <Typography variant='h4' color='primary'>
                 甚麼是早期鼻咽癌篩查？

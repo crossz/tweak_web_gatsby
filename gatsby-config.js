@@ -132,7 +132,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-svg',
-    `gatsby-env-variables`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
