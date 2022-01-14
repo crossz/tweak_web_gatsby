@@ -22,7 +22,8 @@ fields:
   config:
     required: true
   label: title
-  description: Title of post.
+  description: 'Title of post.<br><strong>If slug is empty should follow forbidden
+    characters rule.</strong><br><em>Forbidden characters: "$","%",":","/",Tab</em>'
 - name: detail
   type: textarea
   default: ''
