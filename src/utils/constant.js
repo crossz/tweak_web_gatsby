@@ -55,7 +55,7 @@ export const POST_TYPES = [
     value: '行業資訊',
     color: 'prophecySupporting.supporting01',
   },
-  { label: '商業合作', value: '商業合作', color: 'prophecyPrimary.main' },
+  // { label: '商業合作', value: '商業合作', color: 'prophecyPrimary.main' },
   {
     label: '行政總裁分享',
     value: '行政總裁分享',
