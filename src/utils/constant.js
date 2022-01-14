@@ -306,8 +306,8 @@ export const PARTNERS = [
     country: '菲律賓',
     name: 'Pascific Laboratories',
     intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: '',
+      '一家業務橫跨菲律賓、新加坡及印度的病理診斷集團，主要業務為以精準醫療為方針的病理學及分子診斷。',
+    link: 'https://www.pascific.com/',
     lat: 14.622741230780443,
     lng: 120.9678862363281,
   },

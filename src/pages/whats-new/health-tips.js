@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 const HealthTips = ({ data }) => {
   return (
     <PostList
-      title='健康資訊 為您更新'
+      title='健康資訊 為你更新'
       caption='為了守護你和家人的健康，我們將持續為你提供實用的資訊，緊貼你的健康需要。'
       nodes={data.allMdx.nodes}
     ></PostList>

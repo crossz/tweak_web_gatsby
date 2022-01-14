@@ -278,7 +278,7 @@ const EarlyCancerDetection = () => {
         </Typography>
         <Box className={classes.sectionTwo}>
           <Container disableGutters maxWidth='sm'>
-            <Hidden smUp>
+            {/* <Hidden smUp>
               <Box
                 textAlign='center'
                 fontWeight='fontWeightBold'
@@ -287,7 +287,7 @@ const EarlyCancerDetection = () => {
               >
                 Take2™
               </Box>
-            </Hidden>
+            </Hidden> */}
             <Box textAlign='center' mb={matches ? 3 : 4.5}>
               <Typography variant='h4' color='primary'>
                 甚麼是早期鼻咽癌篩查？

@@ -298,6 +298,11 @@ const useStyles = makeStyles((theme) => ({
       padding: 0,
     },
   },
+  btn: {
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 3),
+    },
+  },
 }))
 
 const Take2Prophecy = () => {
@@ -428,8 +433,7 @@ const Take2Prophecy = () => {
               </ImageList>
               <Box className={classes.reportTip}>
                 注意事項 <br />
-                此篩查不建議已經進行器官移植人士、已患有其他癌症、自身免疫系統疾病、正接受全身性糖皮質激素及免疫抑制治療的人士使用，詳情請向醫護人員查詢。
-                如有任何疑問，請向專業醫護人員查詢。
+                此篩查不建議已經進行器官移植人士、已患有其他癌症、自身免疫系統疾病、正接受全身性糖皮質激素及免疫抑制治療的人士使用。如有任何疑問，請向專業醫護人員內詢。
               </Box>
             </Box>
           </Box>
@@ -475,6 +479,7 @@ const Take2Prophecy = () => {
                   <Grid item xs={matches ? 6 : 'auto'}>
                     <Link to='/service-location/'>
                       <Button
+                        className={classes.btn}
                         variant='contained'
                         color='secondary'
                         fullWidth={matches}
