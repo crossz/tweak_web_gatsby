@@ -5,7 +5,11 @@ import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
 import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
 import classnames from 'classnames'
 import { PARTNERS } from '@utils/constant'
-
+import {
+  GATSBY_GOOGLE_MAP_KEY,
+  GATSBY_GOOGLE_MAP_SIMPLE_ID,
+} from 'gatsby-env-variables'
+console.log(GATSBY_GOOGLE_MAP_SIMPLE_ID, GATSBY_GOOGLE_MAP_KEY)
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -133,7 +137,7 @@ const SimpleGoogleMap = (props) => {
       <div className={classes.root}>
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: 'AIzaSyAoh4HnMsiqw-s4hdFoiz0zEseqn6o97hA',
+            key: GATSBY_GOOGLE_MAP_KEY,
             language: 'zh-HK',
           }}
           defaultCenter={defaultProps.center}
@@ -141,7 +145,7 @@ const SimpleGoogleMap = (props) => {
           debounced
           // MapId for styling google map
           options={{
-            mapId: 'ec9cd0e42cca58d',
+            mapId: GATSBY_GOOGLE_MAP_SIMPLE_ID,
             gestureHandling: 'none',
             fullscreenControl: false,
             zoom: 1,

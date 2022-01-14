@@ -9,7 +9,11 @@ import LocationIcon from '@images/icons/location.svg'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
-import { GATSBY_SITE_URL } from 'gatsby-env-variables'
+import {
+  GATSBY_SITE_URL,
+  GATSBY_GOOGLE_MAP_KEY,
+  GATSBY_GOOGLE_MAP_LIGHT_ID,
+} from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -285,7 +289,7 @@ const GoogleMap = (props) => {
       >
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: 'AIzaSyAoh4HnMsiqw-s4hdFoiz0zEseqn6o97hA',
+            key: GATSBY_GOOGLE_MAP_KEY,
             language: 'zh-HK',
           }}
           defaultCenter={defaultProps.center}
@@ -293,7 +297,7 @@ const GoogleMap = (props) => {
           debounced
           // MapId for styling google map
           options={{
-            mapId: '69e0c419fa67c775',
+            mapId: GATSBY_GOOGLE_MAP_LIGHT_ID,
             // gestureHandling: 'greedy',
             fullscreenControl: false,
           }}
