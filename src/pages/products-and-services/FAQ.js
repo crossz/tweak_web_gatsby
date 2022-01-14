@@ -14,7 +14,7 @@ import PhoneIcon from '@images/icons/phone.svg'
 import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
-import Search from '@components/Search'
+import FaqSearch from '@components/FaqSearch'
 import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       paddingBottom: theme.spacing(5),
       marginLeft: 0,
+      boxShadow: 'none',
     },
   },
   titleWrapper: {},
@@ -141,7 +142,7 @@ const FAQ = () => {
               content: item.contentHk,
             }
           }) || []
-        // setAllFaqList(list)
+        setAllFaqList(list)
         setFaqList(list)
       } catch (error) {
         console.log('fetch error')
@@ -152,7 +153,6 @@ const FAQ = () => {
 
   const handleChange = (index) => setActivePanel(index)
   const handleSearchResult = (result) => setFaqList(result)
-  const handlePageList = () => setFaqList(allFaqList)
   return (
     <Box className={classes.root}>
       <Container className={classes.contentRoot} disableGutters maxWidth='md'>
@@ -163,24 +163,20 @@ const FAQ = () => {
               常見問題
             </Typography>
             <Hidden smUp>
-              <Search
+              <FaqSearch
                 data={allFaqList}
                 setSearchResult={handleSearchResult}
-                setPageList={handlePageList}
-                isFAQ
-              ></Search>
+              ></FaqSearch>
             </Hidden>
           </Grid>
         </Grid>
         <Grid className={classes.faqList} container spacing={4}>
           <Hidden xsDown>
             <Grid item sm={4}>
-              <Search
+              <FaqSearch
                 data={allFaqList}
                 setSearchResult={handleSearchResult}
-                setPageList={handlePageList}
-                isFAQ
-              ></Search>
+              ></FaqSearch>
             </Grid>
           </Hidden>
           <Grid item xs={12} sm={8}>
