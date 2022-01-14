@@ -83,7 +83,7 @@ const Consult = () => {
             <Typography variant='h5' color='primary' component='div'>
               <Box mt={matches ? 3 : 0}>立即登記 線上專業諮詢</Box>
               <Box className={classes.content}>
-                只需輸入簡單資料，你就可以接收最新健康資訊、活動推廣及優惠，並可使用線上醫療諮詢及預約測試服務。
+                只需輸入簡單資料，你就可以接收最新健康資訊、活動推廣及優惠，並可享用線上醫療諮詢及預約測試服務。
                 <Link
                   to='/terms-and-conditions/條款及細則'
                   className={classes.greyLink}

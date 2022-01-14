@@ -6,7 +6,7 @@ const promotions = ({ data }) => {
   return (
     <PostList
       title='最新推廣優惠'
-      caption='為了讓您更了解健康狀況，我們會與不同合作夥伴攜手為您帶來產品及服務優惠，助您全面掌握健康。'
+      caption='我們與不同夥伴合作，推出各項優惠，讓你以更優惠的價錢進行體檢及享用多元化的健康服務。'
       nodes={data.allMdx.nodes}
     ></PostList>
   )

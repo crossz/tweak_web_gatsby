@@ -97,7 +97,7 @@ const notes = [
   {
     title: '我們如何應用 NGS技術，以進行早期鼻咽癌篩查？',
     content:
-      'Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，讓醫生能識別出早期鼻咽癌患者，提高患者成功治癒的可能性及存活率³。',
+      'Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，「即使患者未見明顯病徵，也能有效識別出早期鼻咽癌患者，讓其儘早得到治療，提高其治癒的可能性及存活率³。',
     image: (
       <StaticImage
         style={{

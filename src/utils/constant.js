@@ -181,7 +181,7 @@ const QUIZ_ANSWER_OPTIONS = [
     value: 'no',
   },
   {
-    label: '不确定',
+    label: '不確定',
     value: 'unclear',
   },
   {
@@ -277,9 +277,10 @@ export const PARTNERS = [
   },
   {
     country: '印尼',
-    name: 'Prodia',
-    intro: '印尼最大的上市醫學診斷企業，於全國104個城市共設有128個實驗室地點。',
-    link: 'https://prodia.co.id/en',
+    name: 'Global Medical Technologies ',
+    intro:
+      '一家位於菲律賓的醫療技術公司，主要業務為向菲律賓國內引進世界各地的先進技術，以向醫護人員、患者及消費者提供健康測試和診斷技術的選擇。',
+    link: 'https://gmtmanila.com/',
     lat: -6.200375806341185,
     lng: 106.84667434188609,
   },
@@ -296,7 +297,7 @@ export const PARTNERS = [
     country: '新加坡',
     name: 'Lifestrands Genomics',
     intro:
-      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室',
+      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室。',
     link: '',
     lat: 1.3579294889776585,
     lng: 103.86964607814394,

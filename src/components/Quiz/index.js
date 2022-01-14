@@ -707,7 +707,7 @@ const Quiz = () => {
                           mb={matches ? 1 : 2}
                         >
                           <Typography variant='h4' color='primary'>
-                            最後一個步驟免費獲取結果!
+                            最後一個步驟 免費獲取結果!
                           </Typography>
                         </Box>
                         <Box
@@ -716,8 +716,6 @@ const Quiz = () => {
                           color='grey.900'
                         >
                           <Typography variant={matches ? 'caption' : 'body1'}>
-                            來個簡單測驗？可能逆轉一切！
-                            <br />
                             請即輸入你的資料，以透過電郵獲取測驗結果；或與線上註冊護士聯絡，以諮詢服務或產品內容！你亦可直接登記，免費成為Take2
                             ExtraCare會員。
                           </Typography>
@@ -916,7 +914,7 @@ const Quiz = () => {
                               matches ? 'caption.fontSize' : 'body1.fontSize'
                             }
                           >
-                            以上問題均與鼻咽癌息息相關，如你持續出現上述病徵，建議你儘快向醫生查詢。
+                            以上問題均與鼻咽癌息息相關，若你持續出現上述病徵，建議你儘快向醫生查詢。
                             <br />
                             <Hidden smUp>
                               <br />
