@@ -219,6 +219,14 @@ const Map = () => {
     return groupBy(curProvinceClinic, 'area')
   }, [clinics, curProvince])
 
+  const areaOptions = useMemo(
+    () =>
+      location
+        ?.find((item) => item.province === curProvince)
+        ?.area?.map((item) => item || '其他地區') || [],
+    [location, curProvince]
+  )
+
   return (
     <Box
       position='relative'
@@ -239,13 +247,11 @@ const Map = () => {
             <MenuItem key='' value=''>
               所有地區
             </MenuItem>
-            {location
-              ?.find((item) => item.province === curProvince)
-              ?.area?.map((areaItem) => (
-                <MenuItem key={areaItem} value={areaItem}>
-                  {areaItem}
-                </MenuItem>
-              ))}
+            {areaOptions?.map((areaItem) => (
+              <MenuItem key={areaItem} value={areaItem}>
+                {areaItem}
+              </MenuItem>
+            ))}
           </ESelect>
         )
       ) : (
@@ -293,13 +299,11 @@ const Map = () => {
                       <MenuItem key='' value=''>
                         所有地區
                       </MenuItem>
-                      {location
-                        ?.find((item) => item.province === curProvince)
-                        ?.area?.map((areaItem) => (
-                          <MenuItem key={areaItem} value={areaItem}>
-                            {areaItem}
-                          </MenuItem>
-                        ))}
+                      {areaOptions?.map((areaItem) => (
+                        <MenuItem key={areaItem} value={areaItem}>
+                          {areaItem}
+                        </MenuItem>
+                      ))}
                     </ESelect>
                   </Box>
                 )}
@@ -361,13 +365,11 @@ const Map = () => {
                       <MenuItem key='' value=''>
                         所有地區
                       </MenuItem>
-                      {location
-                        ?.find((item) => item.province === curProvince)
-                        ?.area.map((areaItem) => (
-                          <MenuItem key={areaItem} value={areaItem}>
-                            {areaItem}
-                          </MenuItem>
-                        ))}
+                      {areaOptions?.map((areaItem) => (
+                        <MenuItem key={areaItem} value={areaItem}>
+                          {areaItem}
+                        </MenuItem>
+                      ))}
                     </ESelect>
                   </Box>
                 </Box>
