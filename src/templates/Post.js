@@ -37,6 +37,19 @@ const useStyles = makeStyles((theme) => ({
       height: 85,
     },
   },
+  breadcrumbs: {
+    whiteSpace: 'nowrap',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.caption.fontSize,
+      padding: theme.spacing(0, 3),
+    },
+    '& $ol': {
+      flexWrap: 'nowrap',
+    },
+    '& $li:last-child': {
+      overflow: 'hidden',
+    },
+  },
   breadcrumbsTitle: {
     color: theme.palette.primary.contrastText,
     maxWidth: theme.spacing(40),
@@ -160,6 +173,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
           <Hidden xsDown>
             <Container disableGutters maxWidth='sm'>
               <Breadcrumbs
+                className={classes.breadcrumbs}
                 separator={<ArrowIcon className={classes.arrowIcon} />}
                 aria-label='breadcrumb'
               >

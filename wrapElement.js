@@ -1,9 +1,9 @@
 import React from 'react'
+import './src/app.css'
 import Layout from './src/layouts/Layout'
 import { ThemeProvider } from '@material-ui/core/styles'
 import getTheme from './src/themes'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import './src/app.css'
 import { EToastContainer } from './src/themes/components/EToastContainer'
 
 const DEFAULT_THEME = 'light'
