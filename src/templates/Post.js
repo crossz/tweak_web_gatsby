@@ -15,7 +15,7 @@ import {
 import ArrowIcon from '@images/icons/arrow.svg'
 import useMenu from '@hooks/useMenu'
 import Links from '@components/WhatsNew/Links'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
 
@@ -121,8 +121,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     marginTop: theme.spacing(-4),
-    marginBottom: theme.spacing(-5),
-    borderRadius: theme.spacing(1.25),
+    borderRadius: theme.spacing(0.75),
     overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(-6),
@@ -158,8 +157,8 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const classes = useStyles()
   const menu = useMenu()
   const mdx = data?.mdx?.body
-  const { date, title, type, cover } = data?.mdx?.frontmatter
-  const image = getImage(cover)
+  const { date, title, type } = data?.mdx?.frontmatter
+  // const images = cover?.map((item) => getImage(item))
   const morePostsNodes = data?.morePosts?.nodes
   const middlePath = `/whats-new/${sectionPath}`
   const middleTitle = menu[0].sections?.find((section) =>
@@ -186,11 +185,11 @@ const Post = ({ data, pageContext, location: { href } }) => {
         </Box>
         <Box className={classes.contentWrapper}>
           <Container className={classes.content} disableGutters maxWidth='sm'>
-            {image && (
+            {/* {images?.[0] && (
               <Box className={classes.image}>
-                <GatsbyImage image={image} alt={title}></GatsbyImage>
+                <GatsbyImage image={images?.[0]} alt={title}></GatsbyImage>
               </Box>
-            )}
+            )} */}
             <Box className={classes.header}>
               <Box className={classes.top}>
                 <Box className={classes.topLeft}>
@@ -251,11 +250,6 @@ export const query = graphql`
         date(formatString: "YYYY/MM/DD")
         title
         type
-        cover {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
       body
     }

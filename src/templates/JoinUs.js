@@ -20,7 +20,7 @@ import { graphql, Link } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
-import { DEPARTMENT_OPTIONS, CAREER_REGIONS } from '@utils/constant'
+import { CAREER_REGIONS } from '@utils/constant'
 import {
   EInputBase,
   EFormLabel,
@@ -455,35 +455,6 @@ const JoinUs = ({ data, pageContext, location }) => {
                             </ESelect>
                             {errorText('area')}
                           </FormControl>
-                        </Box>
-                        <Box className={classes.formControlLine}>
-                          {/* <FormControl
-                            fullWidth
-                            error={isError('department')}
-                            className={classes.formControl}
-                            required
-                          >
-                            <EFormLabel>部門</EFormLabel>
-                            <ESelect
-                              displayEmpty
-                              labelId='department-label'
-                              id='department'
-                              name='department'
-                              value={values.department}
-                              onChange={handleChange}
-                            >
-                              {DEPARTMENT_OPTIONS?.map((department) => (
-                                <MenuItem
-                                  key={department.value}
-                                  value={department.value}
-                                  disabled={!department.value}
-                                >
-                                  {department.label}
-                                </MenuItem>
-                              ))}
-                            </ESelect>
-                            {errorText('department')}
-                          </FormControl> */}
                         </Box>
                         <Button
                           type='submit'
