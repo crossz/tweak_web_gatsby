@@ -16,7 +16,6 @@ import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
-import { GATSBY_SITE_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -218,7 +217,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                           variant='outlined'
                           size='small'
                           color='primary'
-                          href={`${GATSBY_SITE_URL}/clinic/${clinic.id}`}
+                          href={`${process.env.GATSBY_SITE_URL}/clinic/${clinic.id}`}
                           target='_blank'
                         >
                           立即預約

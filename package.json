@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop --host=0.0.0.0",
     "build": "gatsby build",
-    "build:dev": "STAGING=true gatsby build",
+    "build:dev": "GATSBY_ENV=development gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "mock": "prism mock -d $npm_package_docs_openapi"

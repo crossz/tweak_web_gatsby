@@ -11,7 +11,6 @@ import {
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,7 +75,6 @@ const Banner = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const { platformUrl } = useSiteMetadata()
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -134,7 +132,7 @@ const Banner = () => {
               <Button
                 variant='contained'
                 color='secondary'
-                href={platformUrl}
+                href={`${process.env.GATSBY_SITE_URL}`}
                 target='_blank'
                 fullWidth={matches}
               >

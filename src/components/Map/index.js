@@ -16,7 +16,6 @@ import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
-import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const switchButtons = [
   {
@@ -169,12 +168,15 @@ const Map = () => {
   useEffect(() => {
     const fetchData = async (params) => {
       try {
-        const res = await fetch(`${GATSBY_API_URL}/testCenters/list`, {
-          method: 'POST',
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        })
+        const res = await fetch(
+          `${process.env.GATSBY_API_URL}/testCenters/list`,
+          {
+            method: 'POST',
+            headers: new Headers({
+              'Content-Type': 'application/json',
+            }),
+          }
+        )
         const resData = await res.json()
         if (resData?.code !== 1000) {
           return console.log('fetch error')

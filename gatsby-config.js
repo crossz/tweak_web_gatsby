@@ -1,3 +1,13 @@
+if (process.env.GATSBY_ENV) {
+  require('dotenv').config({
+    path: `.env.${process.env.GATSBY_ENV}`,
+  })
+} else {
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+}
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://take2health.net',
@@ -11,7 +21,7 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/company/take2-health',
     youtube: 'https://youtu.be/BACVA3es0NI',
     campaignPage: 'https://take2health.net/whats-new/campaign/',
-    platformUrl: 'https://take2health.net/health-platform',
+    platformUrl: process.env.GATSBY_SITE_URL,
     email: 'info@take2.health',
     phone: '(852) 3613 0533',
   },

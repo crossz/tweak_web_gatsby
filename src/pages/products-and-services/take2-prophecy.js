@@ -17,7 +17,6 @@ import { Link } from 'gatsby'
 import ArrowIcon from '@images/icons/arrow.svg'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import classnames from 'classnames'
 
 const steps = [
@@ -307,7 +306,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2Prophecy = () => {
   const classes = useStyles()
-  const { platformUrl } = useSiteMetadata()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -469,7 +467,7 @@ const Take2Prophecy = () => {
                     <Button
                       variant='outlined'
                       color='primary'
-                      href={platformUrl}
+                      href={process.env.GATSBY_SITE_URL}
                       target='_blank'
                       fullWidth={matches}
                     >

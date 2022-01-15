@@ -11,7 +11,6 @@ import {
 import { StaticImage } from 'gatsby-plugin-image'
 import ArrowIcon from '@images/icons/arrow.svg'
 import CheckCircleIcon from '@images/icons/check_circle.svg'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import TitleDot from '@themes/components/TitleDot'
 import { padStartNum } from '@utils'
 
@@ -338,7 +337,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2ExtraCare = () => {
   const classes = useStyles()
-  const { platformUrl } = useSiteMetadata()
 
   return (
     <>
@@ -454,7 +452,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='outlined'
                 color='primary'
-                href={`${platformUrl}/signup`}
+                href={`${process.env.GATSBY_SITE_URL}/signup`}
                 target='_blank'
                 className={classes.box04Btn}
               >
@@ -463,7 +461,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='contained'
                 color='secondary'
-                href={`${platformUrl}/signin`}
+                href={`${process.env.GATSBY_SITE_URL}/signin`}
                 target='_blank'
                 className={classes.box04Btn}
               >

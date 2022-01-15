@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-
 const Homepage = ({ promotionNodes, healthTipsNodes }) => {
   const classes = useStyles()
   return (

@@ -154,7 +154,6 @@ const Menu = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
-  const { platformUrl } = useSiteMetadata()
   const [open, setOpen] = useState(false)
   const [panel, setPanel] = useState('')
 
@@ -190,7 +189,7 @@ const Menu = () => {
         </Link>
         <MuiLink
           className={classes.link}
-          href={`${platformUrl}/signin`}
+          href={`${process.env.GATSBY_SITE_URL}/signin`}
           onClick={handleClose}
         >
           登入
@@ -200,7 +199,7 @@ const Menu = () => {
         </Box>
         <MuiLink
           className={classes.link}
-          href={`${platformUrl}/signup`}
+          href={`${process.env.GATSBY_SITE_URL}/signup`}
           onClick={handleClose}
         >
           登記

@@ -33,7 +33,6 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import classnames from 'classnames'
 import Search from '@components/Search'
 import ReCaptcha from '@components/ReCaptcha'
-import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -213,7 +212,7 @@ const JoinUs = ({ data, pageContext, location }) => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${GATSBY_API_URL}/joinUs/add`, {
+      const res = await fetch(`${process.env.GATSBY_API_URL}/joinUs/add`, {
         method: 'POST',
         body: JSON.stringify(values), // data can be `string` or {object}!
         headers: new Headers({

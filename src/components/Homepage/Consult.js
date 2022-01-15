@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography'
 import { Link } from 'gatsby'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,7 +65,6 @@ const Consult = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const { platformUrl } = useSiteMetadata()
 
   return (
     <Container disableGutters className={classes.root} maxWidth='xl'>
@@ -111,7 +109,7 @@ const Consult = () => {
                 <Button
                   variant='contained'
                   color='secondary'
-                  href={platformUrl}
+                  href={process.env.GATSBY_SITE_URL}
                   target='_blank'
                   fullWidth={matches}
                 >

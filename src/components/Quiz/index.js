@@ -40,9 +40,7 @@ import BackIcon from '@images/icons/back.svg'
 import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import ReCaptcha from '@components/ReCaptcha'
-import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -345,7 +343,6 @@ const Quiz = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [step, setStep] = useState(0)
   const [finishQuiz, setFinishQuiz] = useState(false)
-  const { platformUrl } = useSiteMetadata()
   const [reCapStatus, setReCapStatus] = useState(0)
   const [loading, setLoading] = useState(false)
 
@@ -356,7 +353,7 @@ const Quiz = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${GATSBY_API_URL}/quiz/add`, {
+      const res = await fetch(`${process.env.GATSBY_API_URL}/quiz/add`, {
         method: 'POST',
         body: JSON.stringify(omit(values, 'agreeTC', 'requiredEmailOrPhone')), // data can be `string` or {object}!
         headers: new Headers({
@@ -849,7 +846,7 @@ const Quiz = () => {
                           <Hidden xsDown>
                             <MuiLink
                               className={classes.platformLink}
-                              href={platformUrl}
+                              href={process.env.GATSBY_SITE_URL}
                               target='_blank'
                             >
                               直接登記為 Take2 Extra Care會員
@@ -861,7 +858,7 @@ const Quiz = () => {
                                 classes.platformLink,
                                 classes.mobilePlatformLink
                               )}
-                              href={platformUrl}
+                              href={process.env.GATSBY_SITE_URL}
                               target='_blank'
                             >
                               直接登記 得易健康服務平台

@@ -35,7 +35,6 @@ import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
-import { GATSBY_API_URL } from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -228,7 +227,7 @@ const ContactUs = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${GATSBY_API_URL}/contactUs/add`, {
+      const res = await fetch(`${process.env.GATSBY_API_URL}/contactUs/add`, {
         method: 'POST',
         body: JSON.stringify(values), // data can be `string` or {object}!
         headers: new Headers({

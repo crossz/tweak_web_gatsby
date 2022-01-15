@@ -9,11 +9,6 @@ import LocationIcon from '@images/icons/location.svg'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
-import {
-  GATSBY_SITE_URL,
-  GATSBY_GOOGLE_MAP_KEY,
-  GATSBY_GOOGLE_MAP_LIGHT_ID,
-} from 'gatsby-env-variables'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -186,7 +181,9 @@ const InfoWindow = (props) => {
       </Box>
       <Button
         href={
-          clinicType === 1 ? `${GATSBY_SITE_URL}/clinic/${id}` : `tel:${phone}`
+          clinicType === 1
+            ? `${process.env.GATSBY_SITE_URL}/clinic/${id}`
+            : `tel:${phone}`
         }
         target={clinicType === 1 ? '_blank' : ''}
         className={classes.infoBtn}
@@ -289,7 +286,7 @@ const GoogleMap = (props) => {
       >
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: GATSBY_GOOGLE_MAP_KEY,
+            key: process.env.GATSBY_GOOGLE_MAP_KEY,
             language: 'zh-HK',
           }}
           defaultCenter={defaultProps.center}
@@ -297,7 +294,7 @@ const GoogleMap = (props) => {
           debounced
           // MapId for styling google map
           options={{
-            mapId: GATSBY_GOOGLE_MAP_LIGHT_ID,
+            mapId: process.env.GATSBY_GOOGLE_MAP_LIGHT_ID,
             // gestureHandling: 'greedy',
             fullscreenControl: false,
           }}

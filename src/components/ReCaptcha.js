@@ -14,7 +14,7 @@ const ReCaptcha = ({ onChange }) => {
       style={{ margin: '16px 0' }}
       theme='light'
       ref={(current) => (ref.current = current)}
-      sitekey='6LeXc8QdAAAAAGrsWg6HBhEJb7jsl5gZtAO2tMum'
+      sitekey={process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
       onChange={_handleChange}
     />
   )
