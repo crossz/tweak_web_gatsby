@@ -452,7 +452,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='outlined'
                 color='primary'
-                href={`${process.env.GATSBY_SITE_URL}/signup`}
+                href={`${process.env.GATSBY_SITE_URL}signup`}
                 target='_blank'
                 className={classes.box04Btn}
               >
@@ -461,7 +461,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='contained'
                 color='secondary'
-                href={`${process.env.GATSBY_SITE_URL}/signin`}
+                href={`${process.env.GATSBY_SITE_URL}signin`}
                 target='_blank'
                 className={classes.box04Btn}
               >

@@ -8,6 +8,7 @@ import {
   useTheme,
   useMediaQuery,
   Grid,
+  Link as MuiLink,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
@@ -70,11 +71,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-
 const Banner = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+
+  console.log('process.env.GATSBY_SITE_URL', process.env.GATSBY_SITE_URL)
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>

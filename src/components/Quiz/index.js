@@ -941,6 +941,8 @@ const Quiz = () => {
                               variant='outlined'
                               color='primary'
                               fullWidth
+                              href={process.env.GATSBY_SITE_URL}
+                              target='_blank'
                             >
                               了解更多
                             </Button>
@@ -950,6 +952,8 @@ const Quiz = () => {
                             fullWidth
                             variant='contained'
                             color='secondary'
+                            href={process.env.GATSBY_SITE_URL}
+                            target='_blank'
                           >
                             登記成為會員
                           </Button>

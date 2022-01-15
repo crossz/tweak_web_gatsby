@@ -217,7 +217,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                           variant='outlined'
                           size='small'
                           color='primary'
-                          href={`${process.env.GATSBY_SITE_URL}/clinic/${clinic.id}`}
+                          href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
                           target='_blank'
                         >
                           立即預約

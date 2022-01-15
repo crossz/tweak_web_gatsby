@@ -102,7 +102,7 @@ const Header = () => {
             component='span'
           >
             <MuiLink
-              href={`${process.env.GATSBY_SITE_URL}/signin`}
+              href={`${process.env.GATSBY_SITE_URL}signin`}
               target='_blank'
             >
               登入
@@ -111,7 +111,7 @@ const Header = () => {
               /
             </Box>
             <MuiLink
-              href={`${process.env.GATSBY_SITE_URL}/signup`}
+              href={`${process.env.GATSBY_SITE_URL}signup`}
               target='_blank'
             >
               登記

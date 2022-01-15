@@ -189,7 +189,7 @@ const Menu = () => {
         </Link>
         <MuiLink
           className={classes.link}
-          href={`${process.env.GATSBY_SITE_URL}/signin`}
+          href={`${process.env.GATSBY_SITE_URL}signin`}
           onClick={handleClose}
         >
           登入
@@ -199,7 +199,7 @@ const Menu = () => {
         </Box>
         <MuiLink
           className={classes.link}
-          href={`${process.env.GATSBY_SITE_URL}/signup`}
+          href={`${process.env.GATSBY_SITE_URL}signup`}
           onClick={handleClose}
         >
           登記

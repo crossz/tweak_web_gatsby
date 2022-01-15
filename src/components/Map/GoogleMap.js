@@ -182,7 +182,7 @@ const InfoWindow = (props) => {
       <Button
         href={
           clinicType === 1
-            ? `${process.env.GATSBY_SITE_URL}/clinic/${id}`
+            ? `${process.env.GATSBY_SITE_URL}clinic/${id}`
             : `tel:${phone}`
         }
         target={clinicType === 1 ? '_blank' : ''}

@@ -21,7 +21,6 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/company/take2-health',
     youtube: 'https://youtu.be/BACVA3es0NI',
     campaignPage: 'https://take2health.net/whats-new/campaign/',
-    platformUrl: process.env.GATSBY_SITE_URL,
     email: 'info@take2.health',
     phone: '(852) 3613 0533',
   },
