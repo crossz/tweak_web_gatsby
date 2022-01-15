@@ -20,7 +20,7 @@ import { graphql, Link } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
-import { DEPARTMENT_OPTIONS, AREA_OPTIONS } from '@utils/constant'
+import { DEPARTMENT_OPTIONS, CAREER_REGIONS } from '@utils/constant'
 import {
   EInputBase,
   EFormLabel,
@@ -410,6 +410,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                             fullWidth
                             error={isError('email')}
                             required
+                            className={classes.formControl}
                           >
                             <EFormLabel>電郵</EFormLabel>
                             <EInputBase
@@ -427,14 +428,11 @@ const JoinUs = ({ data, pageContext, location }) => {
                             />
                             {errorText('email')}
                           </FormControl>
-                        </Box>
-
-                        <Box className={classes.formControlLine}>
                           <FormControl
                             fullWidth
                             error={isError('area')}
-                            className={classes.formControl}
                             required
+                            className={classes.formControl}
                           >
                             <EFormLabel>地區</EFormLabel>
                             <ESelect
@@ -445,19 +443,21 @@ const JoinUs = ({ data, pageContext, location }) => {
                               value={values.area}
                               onChange={handleChange}
                             >
-                              {AREA_OPTIONS?.map((area) => (
+                              {CAREER_REGIONS?.map((region) => (
                                 <MenuItem
-                                  key={area.value}
-                                  value={area.value}
-                                  disabled={!area.value}
+                                  key={region.value}
+                                  value={region.value}
+                                  disabled={!region.value}
                                 >
-                                  {area.label}
+                                  {region.label}
                                 </MenuItem>
                               ))}
                             </ESelect>
                             {errorText('area')}
                           </FormControl>
-                          <FormControl
+                        </Box>
+                        <Box className={classes.formControlLine}>
+                          {/* <FormControl
                             fullWidth
                             error={isError('department')}
                             className={classes.formControl}
@@ -483,7 +483,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                               ))}
                             </ESelect>
                             {errorText('department')}
-                          </FormControl>
+                          </FormControl> */}
                         </Box>
                         <Button
                           type='submit'

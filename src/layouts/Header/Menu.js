@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import useMenu from '@hooks/useMenu'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import MenuIcon from '@images/icons/menu.svg'
 import IconButton from '@material-ui/core/IconButton'
 import Box from '@material-ui/core/Box'

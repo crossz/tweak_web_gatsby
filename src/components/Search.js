@@ -64,7 +64,11 @@ const Search = ({
     setSearchResult &&
       setSearchResult(
         !isFAQ && region && results.length
-          ? results.filter((item) => item.frontmatter?.region === region)
+          ? results.filter(
+              (item) =>
+                item.frontmatter?.region ===
+                CAREER_REGIONS.find((item) => item.value === region)?.label
+            )
           : results
       )
     setQuery(q)
@@ -102,7 +106,7 @@ const Search = ({
             {CAREER_REGIONS.map((region) => (
               <FormControlLabel
                 className={classes.regionItem}
-                key={region.value}
+                key={region.label}
                 value={region.value}
                 control={<Radio />}
                 label={region.label}

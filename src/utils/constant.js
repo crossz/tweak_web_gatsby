@@ -134,33 +134,18 @@ export const QUIZ = [
 
 export const AGES = ['20或以下', '21-30', '31-40', '41-50', '51-60', '61或以上']
 
-export const DEPARTMENTS = [
-  {
-    label: '所有部門',
-    value: '',
-  },
-  {
-    label: '商業戰略合作',
-    value: 0,
-  },
-  {
-    label: 'DITE',
-    value: 1,
-  },
-]
-
 export const CAREER_REGIONS = [
   {
     label: '所有地區',
     value: '',
   },
   {
-    label: '香港',
-    value: '香港',
+    label: '香港特別行政區',
+    value: 'hongkong',
   },
   {
-    label: '海外地區',
-    value: '海外地區',
+    label: '中國內地',
+    value: 'mainland_china',
   },
 ]
 
