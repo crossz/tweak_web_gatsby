@@ -12,6 +12,7 @@ import useMenu from '@hooks/useMenu'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
 import Image from '@components/Image'
+import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -38,11 +39,15 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'sticky',
+    zIndex: 1,
+    top: theme.spacing(HEADER_HEIGHT),
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(5.75),
       padding: 0,
       backgroundColor: theme.palette.grey[100],
       borderBottom: `1px solid ${theme.palette.grey[400]}`,
+      top: theme.spacing(MOBILE_HEADER_HEIGHT),
     },
   },
   tab: {
@@ -101,7 +106,7 @@ const SectionBanner = () => {
     <Match path={curMenuItemPath}>
       {(props) =>
         props.match ? (
-          <Box className={classes.root}>
+          <>
             <Container
               className={classes.bannerWrapper}
               disableGutters
@@ -151,7 +156,7 @@ const SectionBanner = () => {
                 ))}
               </Box>
             )}
-          </Box>
+          </>
         ) : null
       }
     </Match>

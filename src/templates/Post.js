@@ -54,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
   header: {
     paddingTop: theme.spacing(8),
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(1),
+    },
   },
   top: {
     display: 'flex',
@@ -99,6 +102,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(30),
     position: 'relative',
     zIndex: 2,
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(15),
+    },
   },
   image: {
     marginTop: theme.spacing(-4),

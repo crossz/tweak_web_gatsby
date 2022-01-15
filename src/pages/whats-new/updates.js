@@ -10,9 +10,9 @@ import {
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MenuItem from '@material-ui/core/MenuItem'
-import classNames from 'classnames'
+import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
-import { POST_TYPES } from '@utils/constant'
+import { POST_TYPES, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +41,13 @@ const useStyles = makeStyles((theme) => ({
   select: {
     width: '100%',
   },
+  selectWrapper: {
+    position: 'sticky',
+    zIndex: 1,
+    top: theme.spacing(MOBILE_HEADER_HEIGHT + 5.75),
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(1, 0),
+  },
 }))
 
 const Updates = ({ data }) => {
@@ -65,7 +72,12 @@ const Updates = ({ data }) => {
     <Box className={classes.root}>
       <Container disableGutters maxWidth='md'>
         <Grid container spacing={0}>
-          <Grid item xs={12} sm={4}>
+          <Grid
+            className={classnames(matches && classes.selectWrapper)}
+            item
+            xs={12}
+            sm={4}
+          >
             {matches ? (
               <ESelect
                 value={activeType}
@@ -83,7 +95,7 @@ const Updates = ({ data }) => {
               <Box className={classes.types} onClick={handleChange}>
                 {POST_TYPES.map((type, index) => (
                   <Box
-                    className={classNames(
+                    className={classnames(
                       classes.type,
                       activeType === type.value && classes.activeType
                     )}
