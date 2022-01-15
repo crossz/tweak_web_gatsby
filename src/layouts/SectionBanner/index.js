@@ -107,7 +107,7 @@ const SectionBanner = () => {
   // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
   useEffect(() => {
     if (!belowSectionTabs) scrollTo('#section-tabs')
-  }, [pathname, belowSectionTabs])
+  }, [pathname])
 
   const curMenuItem = useMemo(
     () => menu?.find((item) => pathname.includes(item.path)),
