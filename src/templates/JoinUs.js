@@ -33,6 +33,7 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import classnames from 'classnames'
 import Search from '@components/Search'
 import ReCaptcha from '@components/ReCaptcha'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -191,12 +192,11 @@ const initialValues = {
   name: '',
   email: '',
   area: '',
-  department: '',
 }
 
-const schema = oriSchema().pick(['name', 'email', 'area', 'department'])
+const schema = oriSchema().pick(['name', 'email', 'area'])
 
-const JoinUs = ({ data, pageContext, location }) => {
+const JoinUs = ({ data, pageContext }) => {
   const classes = useStyles()
   const { totalCount } = data?.allMdx?.pageInfo
   const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
@@ -212,16 +212,10 @@ const JoinUs = ({ data, pageContext, location }) => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${process.env.GATSBY_API_URL}/joinUs/add`, {
-        method: 'POST',
-        body: JSON.stringify(values), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
+      const res = await fetchWithTimeout(`/joinUs/add`, {
+        values, // data can be `string` or {object}!
       })
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
+      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
       return
     } catch (error) {
       return Promise.reject('提交失敗')

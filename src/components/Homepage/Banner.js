@@ -28,11 +28,14 @@ const useStyles = makeStyles((theme) => ({
   },
   wrapper: {
     position: 'relative',
-    height: '100%',
     gridArea: '1/1',
     display: 'grid',
+    height: 877,
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 3),
+      minHeight: 'auto',
+      height: 'calc((502 / 375) * 100vw)',
+      maxHeight: 877,
     },
   },
   contentWrapper: {

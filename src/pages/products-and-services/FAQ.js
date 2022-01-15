@@ -15,6 +15,7 @@ import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import FaqSearch from '@components/FaqSearch'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -123,18 +124,12 @@ const FAQ = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.GATSBY_API_URL}/faqs/list`, {
-          method: 'POST',
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        })
-        const resData = await res.json()
-        if (resData?.code !== 1000) {
+        const res = await fetchWithTimeout(`/faqs/list`)
+        if (res?.code !== 1000) {
           return console.log('fetch error')
         }
         const list =
-          resData?.data?.map((item) => {
+          res?.data?.map((item) => {
             return {
               id: item.id,
               question: item.questionHk,

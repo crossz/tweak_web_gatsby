@@ -16,6 +16,7 @@ import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const switchButtons = [
   {
@@ -168,20 +169,11 @@ const Map = () => {
   useEffect(() => {
     const fetchData = async (params) => {
       try {
-        const res = await fetch(
-          `${process.env.GATSBY_API_URL}/testCenters/list`,
-          {
-            method: 'POST',
-            headers: new Headers({
-              'Content-Type': 'application/json',
-            }),
-          }
-        )
-        const resData = await res.json()
-        if (resData?.code !== 1000) {
+        const res = await fetchWithTimeout('/testCenters/list')
+        if (res?.code !== 1000) {
           return console.log('fetch error')
         }
-        const data = resData?.data?.filter((item) => item.status) || []
+        const data = res?.data?.filter((item) => item.status) || []
         let location = []
         const provinceGroup = groupBy(data, 'province')
         const provinceKeys = Object.keys(provinceGroup)

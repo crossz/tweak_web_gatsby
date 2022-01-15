@@ -32,6 +32,7 @@ import {
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import SimpleGoogleMap from '@components/Map/SimpleGoogleMap'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -253,19 +254,10 @@ const International = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(
-        `${process.env.GATSBY_API_URL}/applyPartner/add`,
-        {
-          method: 'POST',
-          body: JSON.stringify(values), // data can be `string` or {object}!
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        }
-      )
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
+      const res = await fetchWithTimeout(`/applyPartner/add`, {
+        values, // data can be `string` or {object}!
+      })
+      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
       return
     } catch (error) {
       return Promise.reject('提交失敗')
