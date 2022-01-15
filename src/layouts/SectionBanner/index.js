@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import {
   makeStyles,
   useTheme,
@@ -13,6 +13,8 @@ import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
 import Image from '@components/Image'
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
+import scrollTo from 'gatsby-plugin-smoothscroll'
+import { Waypoint } from 'react-waypoint'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(33.125),
     },
     display: 'grid',
+    position: 'relative',
   },
   banner: {
     gridArea: '1/1',
@@ -32,6 +35,15 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     position: 'relative',
     flexDirection: 'column',
+  },
+  sectionTabsId: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    bottom: 0,
+    height: theme.spacing(HEADER_HEIGHT),
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(MOBILE_HEADER_HEIGHT),
+    },
   },
   tabsWrapper: {
     height: theme.spacing(7.5),
@@ -89,7 +101,14 @@ const SectionBanner = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
+  const [belowSectionTabs, setBelowSectionTabs] = useState(true)
   const { pathname } = useLocation()
+
+  // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
+  useEffect(() => {
+    if (!belowSectionTabs) scrollTo('#section-tabs')
+  }, [pathname, belowSectionTabs])
+
   const curMenuItem = useMemo(
     () => menu?.find((item) => pathname.includes(item.path)),
     [menu, pathname]
@@ -140,6 +159,11 @@ const SectionBanner = () => {
                   )} */}
                 </Box>
               </Container>
+              <Waypoint
+                onEnter={() => setBelowSectionTabs(true)}
+                onLeave={() => setBelowSectionTabs(false)}
+              ></Waypoint>
+              <Box className={classes.sectionTabsId} id='section-tabs'></Box>
             </Container>
             {curMenuItem?.sections && curMenuItem?.sections?.length && (
               <Box className={classes.tabsWrapper}>
