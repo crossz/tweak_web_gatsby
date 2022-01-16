@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useRef, useState, useEffect, useMemo } from 'react'
 import {
   makeStyles,
   useTheme,
@@ -102,11 +102,14 @@ const SectionBanner = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
   const [belowSectionTabs, setBelowSectionTabs] = useState(true)
+  const prePathnameRef = useRef(null)
   const { pathname } = useLocation()
 
   // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
   useEffect(() => {
-    if (!belowSectionTabs) scrollTo('#section-tabs')
+    if (!belowSectionTabs && prePathnameRef?.current == curMenuItem.path)
+      scrollTo('#section-tabs')
+    prePathnameRef.current = curMenuItem?.path
   }, [pathname])
 
   const curMenuItem = useMemo(
