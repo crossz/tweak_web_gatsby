@@ -12,24 +12,27 @@ body {
   max-width: 570px;
   margin: 0 auto;
 }
-
-a[href^="http://maps.google.com/maps"]
+/* No should is it legal to hide these info*/
+/* Reference: https://stackoverflow.com/questions/2553904/removing-the-google-maps-api-premier-terms-of-use-logo-etc-links  */
+/* hide google map terms-of-user/logo */
+/* a[href^="http://maps.google.com/maps"]
 {
   display: none !important;
 }
 a[href^="https://maps.google.com/maps"]
 {
   display: none !important;
-}
+} */
 
-.gmnoprint a,
+/* .gmnoprint a,
 .gmnoprint span,
 .gm-style-cc {
   display: none;
 }
 .gmnoprint div {
   background: none !important;
-}
+} */
+/* hide google map terms-of-user/logo */
 
 div[id^='gb-widget'] {
   bottom: 86px !important;

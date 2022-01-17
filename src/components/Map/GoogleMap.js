@@ -1,5 +1,12 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'
-import { Box, makeStyles, Typography, Button } from '@material-ui/core'
+import {
+  Box,
+  makeStyles,
+  Typography,
+  Button,
+  useTheme,
+  useMediaQuery,
+} from '@material-ui/core'
 import GoogleMapReact from 'google-map-react'
 import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
 import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
@@ -9,6 +16,7 @@ import LocationIcon from '@images/icons/location.svg'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -159,6 +167,7 @@ const InfoWindow = (props) => {
   const { nameHk, phone, clinicType, id, addressHk } = props?.info
   return (
     <Box
+      id='map-info-window'
       className={classnames(
         classes.infoWindow,
         isHomepage && classes.isHomepageInfo
@@ -215,6 +224,8 @@ const InfoWindow = (props) => {
 const GoogleMap = (props) => {
   const classes = useStyles()
   const mapRef = useRef()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isHomepage = useMatch('/')
 
   const [activeKey, setActiveKey] = useState(null)
@@ -271,6 +282,7 @@ const GoogleMap = (props) => {
   const _handleChildClick = (key, value) => {
     mapRef.current?.setZoom(13)
     mapRef.current?.panTo({ lat: Number(value.lat), lng: Number(value.lng) })
+    matches && scrollTo('#map-info-window', 'end')
     return setActiveKey(value.id)
   }
 
