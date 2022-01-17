@@ -11,8 +11,11 @@ if (process.env.GATSBY_ENV) {
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://take2health.net',
-    title: 'Take2 Prophecy',
-    description: 'Details of Take2 Prophecy',
+    defaultTitle: 'Take2 Health',
+    defaultImage: '/src/assets/images/favicon.png',
+    titleTemplate: '%s · 早期鼻咽癌篩查',
+    defaultDescription:
+      'Take2 Prophecy™ 以次世代DNA測序技術進行早期鼻咽癌篩查，讓患者透過年度體檢儘早發現癌症，從而提高治癒機會。',
     messenger: 'https://www.facebook.com/messages/t/100757495628023',
     whatsappAccount: '(852) 5377 0823',
     whatsapp:
