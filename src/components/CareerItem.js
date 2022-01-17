@@ -70,7 +70,7 @@ const CareerItem = ({ title, type, region, date, slug }) => {
   return (
     <Box className={classes.root}>
       <Box className={classes.type}>
-        {type}
+        {/* {type} */}
         <Hidden smUp>
           <Box className={classes.date}>{date}</Box>
         </Hidden>

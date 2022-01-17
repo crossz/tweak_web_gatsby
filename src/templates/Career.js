@@ -144,9 +144,9 @@ const Post = ({ data }) => {
           <Box px={3}>
             <Container disableGutters maxWidth='sm'>
               <Box className={classes.infoWrapper}>
-                <Typography className={classes.type} variant='caption'>
+                {/* <Typography className={classes.type} variant='caption'>
                   {type}
-                </Typography>
+                </Typography> */}
                 <Typography
                   className={classes.title}
                   variant='h4'
@@ -155,7 +155,7 @@ const Post = ({ data }) => {
                   {title}
                 </Typography>
                 <Typography className={classes.company} variant='body1'>
-                  得以健康
+                  得易健康
                 </Typography>
                 <Typography className={classes.date} color='primary'>
                   發布日期:
