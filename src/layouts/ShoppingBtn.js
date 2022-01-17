@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   shopBtnTooltip: {
     position: 'absolute',
-    backgroundColor: theme.palette.prophecySupporting.supporting01,
+    backgroundColor: theme.palette.secondary.main,
     color: theme.palette.secondary.contrastText,
     fontSize: 13,
     boxShadow: 'rgb(0 0 0 / 20%) 2px 2px 5px',
@@ -28,11 +28,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     borderRadius: theme.spacing(1),
     top: `calc(50% - ${theme.spacing(4 / 2)}px)`,
-  },
-  icon: {
-    '& path': {
-      fill: theme.palette.prophecySupporting.supporting01,
-    },
   },
 }))
 
@@ -46,7 +41,7 @@ const ShoppingBtn = () => {
       target='_blank'
       variant='contain'
     >
-      <ShoppingBasketIcon className={classes.icon}></ShoppingBasketIcon>
+      <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
       <Box className={classes.shopBtnTooltip}>
         網上預約
         <br />
