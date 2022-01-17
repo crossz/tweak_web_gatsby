@@ -11,7 +11,6 @@ import {
 import { StaticImage } from 'gatsby-plugin-image'
 import ArrowIcon from '@images/icons/arrow.svg'
 import CheckCircleIcon from '@images/icons/check_circle.svg'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import TitleDot from '@themes/components/TitleDot'
 import { padStartNum } from '@utils'
 
@@ -338,7 +337,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2ExtraCare = () => {
   const classes = useStyles()
-  const { platformUrl } = useSiteMetadata()
 
   return (
     <>
@@ -366,7 +364,7 @@ const Take2ExtraCare = () => {
                 ></StaticImage>
                 <Box className={classes.box01Content}>
                   <Box className={classes.box01Title}>
-                    什麼是Take2 Extra Care計劃？
+                    甚麼是Take2 Extra Care計劃？
                   </Box>
                   這是一項由專業醫護人員團隊制訂的全面健康管理計劃，任何人士均可登記成爲會員。
                 </Box>
@@ -438,11 +436,11 @@ const Take2ExtraCare = () => {
         <Box mx={3}>
           <Container disableGutters className={classes.box04Wrapper}>
             <Box className={classes.box04Title}>
-              參加Take2 Extra Care會員計劃有什麼好處？
+              參加Take2 Extra Care會員計劃有甚麼好處？
             </Box>
             <Box>
-              不需繳交任何會費的情況，就可成為永久會員，享用Take2 Extra
-              Care會員計劃轄下一切服務，包括即時查詢、健康資訊、獨家優惠、年度篩查提醒等。{' '}
+              免費成為永久會員，享用Take2 Extra
+              Care會員計劃轄下一切服務，包括即時查詢、健康資訊、獨家優惠和年度篩查提醒等。{' '}
               <br />
               <Hidden xsDown>
                 <br />
@@ -454,7 +452,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='outlined'
                 color='primary'
-                href={`${platformUrl}/signup`}
+                href={`${process.env.GATSBY_SITE_URL}signup`}
                 target='_blank'
                 className={classes.box04Btn}
               >
@@ -463,7 +461,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='contained'
                 color='secondary'
-                href={`${platformUrl}/signin`}
+                href={`${process.env.GATSBY_SITE_URL}signin`}
                 target='_blank'
                 className={classes.box04Btn}
               >

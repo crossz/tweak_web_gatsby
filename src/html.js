@@ -32,7 +32,7 @@ export default function HTML(props) {
           }}
         />
         {/* Google Tag Manager */}
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             (function (w, d, s, l, i) {
@@ -50,7 +50,7 @@ export default function HTML(props) {
             })(window, document, 'script', 'dataLayer', 'GTM-TK5V677');
               `,
           }}
-        /> */}
+        />
         {/* End Google Tag Manager */}
 
         {/* Global site tag (gtag.js) - Google Ads: 339029822 */}
@@ -108,7 +108,7 @@ export default function HTML(props) {
             fbq('init', '437103407310894');
             
             
-          
+            
             fbq('track', 'PageView');           
               `,
           }}
@@ -128,7 +128,7 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             window.fbAsyncInit = function () {
@@ -153,9 +153,9 @@ export default function HTML(props) {
             })(document, 'script', 'facebook-jssdk')      
             `,
           }}
-        /> */}
+        />
         {/* Google Tag Manager (noscript) */}
-        {/* <noscript>
+        <noscript>
           <iframe
             src='https://www.googletagmanager.com/ns.html?id=GTM-TK5V677'
             height='0'
@@ -165,7 +165,7 @@ export default function HTML(props) {
               visibility: 'hidden',
             }}
           ></iframe>
-        </noscript> */}
+        </noscript>
         {props.preBodyComponents}
         <div
           key={`body`}
@@ -181,9 +181,9 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{
             __html: `
             (function () {
-              if (!window.location.href.includes('/whats-new/campaign')) return
+              if (window.location.href.includes('/rehealth-prevaccination-plans')) return
               var options = {
-                  facebook: "100757495628023", // Facebook page ID
+                  // facebook: "100757495628023", // Facebook page ID
                   whatsapp: "+(852)53770823", // WhatsApp number
                   call_to_action: "Message us", // Call to action
                   button_color: "#4FCE5D", // Color of button

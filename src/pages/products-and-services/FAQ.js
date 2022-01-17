@@ -14,8 +14,8 @@ import PhoneIcon from '@images/icons/phone.svg'
 import WhatsappIcon from '@images/icons/whatsapp.svg'
 import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
-import Search from '@components/Search'
-import { API_URL } from 'gatsby-env-variables'
+import FaqSearch from '@components/FaqSearch'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       paddingBottom: theme.spacing(5),
       marginLeft: 0,
+      boxShadow: 'none',
     },
   },
   titleWrapper: {},
@@ -123,18 +124,12 @@ const FAQ = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${API_URL}/faqs/list`, {
-          method: 'POST',
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        })
-        const resData = await res.json()
-        if (resData?.code !== 1000) {
+        const res = await fetchWithTimeout(`/faqs/list`)
+        if (res?.code !== 1000) {
           return console.log('fetch error')
         }
         const list =
-          resData?.data?.map((item) => {
+          res?.data?.map((item) => {
             return {
               id: item.id,
               question: item.questionHk,
@@ -152,7 +147,6 @@ const FAQ = () => {
 
   const handleChange = (index) => setActivePanel(index)
   const handleSearchResult = (result) => setFaqList(result)
-  const handlePageList = () => setFaqList(allFaqList)
   return (
     <Box className={classes.root}>
       <Container className={classes.contentRoot} disableGutters maxWidth='md'>
@@ -163,24 +157,20 @@ const FAQ = () => {
               常見問題
             </Typography>
             <Hidden smUp>
-              <Search
+              <FaqSearch
                 data={allFaqList}
                 setSearchResult={handleSearchResult}
-                setPageList={handlePageList}
-                isFAQ
-              ></Search>
+              ></FaqSearch>
             </Hidden>
           </Grid>
         </Grid>
         <Grid className={classes.faqList} container spacing={4}>
           <Hidden xsDown>
             <Grid item sm={4}>
-              <Search
+              <FaqSearch
                 data={allFaqList}
                 setSearchResult={handleSearchResult}
-                setPageList={handlePageList}
-                isFAQ
-              ></Search>
+              ></FaqSearch>
             </Grid>
           </Hidden>
           <Grid item xs={12} sm={8}>
@@ -190,7 +180,7 @@ const FAQ = () => {
                   key={faq.id}
                   id={faq.id}
                   question={faq.question}
-                  content={faq.question}
+                  content={faq.content}
                   onChange={handleChange}
                   activePanel={activePanel}
                 ></FaqItem>

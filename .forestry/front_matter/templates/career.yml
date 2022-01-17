@@ -35,9 +35,9 @@ fields:
   config:
     required: true
     options:
-    - 香港
-    - 海外地區
     - 所有地區
+    - 香港特別行政區
+    - 中國內地
     source:
       type: simple
       section: 
@@ -45,6 +45,4 @@ fields:
       path: 
   label: region
 pages:
-- content/join-us/strategic-partnership-specialist-copy-copy.md
-- content/join-us/strategic-partnership-specialist-copy.md
-- content/join-us/strategic-partnership-specialist.md
+- content/join-us/customer-service-specialist.md

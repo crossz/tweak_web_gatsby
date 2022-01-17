@@ -86,6 +86,10 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     borderRadius: theme.spacing(0.75),
     overflow: 'hidden',
+    [theme.breakpoints.down('xs')]: {
+      borderRadius: 0,
+      height: 184,
+    },
   },
 }))
 
@@ -93,7 +97,7 @@ const notes = [
   {
     title: '我們如何應用 NGS技術，以進行早期鼻咽癌篩查？',
     content:
-      'Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，讓醫生能識別出早期鼻咽癌患者，提高患者成功治癒的可能性及存活率³。',
+      'Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，即使患者未見明顯病徵，也能有效識別出早期鼻咽癌患者，讓其儘早得到治療，提高其治癒的可能性及存活率³。',
     image: (
       <StaticImage
         style={{
@@ -163,7 +167,7 @@ const NGS = () => {
             <Box mb={2} pl={matches ? 2 : 0}>
               {matches && <TitleDot left={-2}></TitleDot>}
               <Typography variant='h4' color='primary'>
-                什麼是NGS?
+                甚麼是NGS?
               </Typography>
             </Box>
             <Box>
@@ -204,7 +208,7 @@ const NGS = () => {
                 >
                   <TitleDot
                     bgcolor={index !== activeNote && '#e8e8e8'}
-                    left={-2}
+                    left={-3}
                   ></TitleDot>
                   {note.title}
                   {activeNote !== index && '(閱讀全文）'}
@@ -217,10 +221,10 @@ const NGS = () => {
               (!matches || index === activeNote) && (
                 <Box key={index} className={classes.noteItem}>
                   <Grid container spacing={0}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                       <Box className={classes.noteImage}>{note.image}</Box>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} sm={9}>
                       <Box className={classes.noteContent}>
                         <Box mb={1.25}>
                           <Typography variant='h4' color='primary'>

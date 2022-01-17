@@ -1,3 +1,13 @@
+if (process.env.GATSBY_ENV) {
+  require('dotenv').config({
+    path: `.env.${process.env.GATSBY_ENV}`,
+  })
+} else {
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+}
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://take2health.net',
@@ -11,7 +21,6 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/company/take2-health',
     youtube: 'https://youtu.be/BACVA3es0NI',
     campaignPage: 'https://take2health.net/whats-new/campaign/',
-    platformUrl: 'https://take2health.net/health-platform',
     email: 'info@take2.health',
     phone: '(852) 3613 0533',
   },
@@ -30,7 +39,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/assets/images/icon.png',
+        icon: 'src/assets/images/favicon.png',
       },
     },
     {
@@ -133,62 +142,31 @@ module.exports = {
     },
     'gatsby-plugin-react-svg',
     {
-      resolve: 'gatsby-plugin-google-tagmanager',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        id: 'GTM-TK5V677',
-
-        // Include GTM in development.
-        //
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
-
-        // datalayer to be set before GTM is loaded
-        // should be an object or a function that is executed in the browser
-        //
-        // Defaults to null
-        // defaultDataLayer: { platform: 'gatsby' },
-
-        // Specify optional GTM environment details.
-        // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING',
-        // gtmPreview: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME',
-        // dataLayerName: 'YOUR_DATA_LAYER_NAME',
-
-        // Name of the event that is triggered
-        // on every Gatsby route change.
-        //
-        // Defaults to gatsby-route-change
-        // routeChangeEventName: 'YOUR_ROUTE_CHANGE_EVENT_NAME',
-        // Defaults to false
-        // enableWebVitalsTracking: true,
-        // Defaults to https://www.googletagmanager.com
-        // selfHostedOrigin: 'YOUR_SELF_HOSTED_ORIGIN',
+        path: `${__dirname}/src/assets/locales`,
+        name: `locale`,
       },
     },
-    `gatsby-env-variables`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/assets/locales`,
-    //     name: `locale`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-react-i18next`,
-    //   options: {
-    //     localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-    //     languages: [`zh`, `sc`, `en`],
-    //     defaultLanguage: `zh`,
-    //     // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-    //     // siteUrl: `https://example.com/`,
-    //     // you can pass any i18next options
-    //     i18nextOptions: {
-    //       interpolation: {
-    //         escapeValue: false, // not needed for react as it escapes by default
-    //       },
-    //       keySeparator: false,
-    //       nsSeparator: false,
-    //     },
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`zh`],
+        // defaultLanguage: `zh`,
+        redirect: false,
+        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+        // siteUrl: `https://example.com/`,
+        // you can pass any i18next options
+        generateDefaultLanguagePage: true,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+      },
+    },
   ],
 }

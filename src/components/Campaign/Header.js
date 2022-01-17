@@ -15,6 +15,7 @@ import IconClose from './images/icon_close.png'
 import { gsap } from './utils/initGsap'
 import Container from '@material-ui/core/Container'
 import Hidden from '@material-ui/core/Hidden'
+import { Link as GatsbyLink } from 'gatsby'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -265,7 +266,9 @@ const Header = (props) => {
       <Box className={classnames('root', classes.root)}>
         <Container className={classes.container} maxWidth='xl'>
           <Box className={classes.logoContainer}>
-            <img className={classes.logo} src={Logo} alt='take2 logo' />
+            <GatsbyLink to='/'>
+              <img className={classes.logo} src={Logo} alt='take2 logo' />
+            </GatsbyLink>
           </Box>
           <Hidden xsDown>
             <Box className={classes.promoWrapper}>

@@ -12,8 +12,8 @@ import PhoneIcon from '@images/icons/phone.svg'
 import WhatsappIcon from '@images/icons/whatsapp.svg'
 import EmailIcon from '@images/icons/mail.svg'
 import MessengerIcon from '@images/icons/messenger.svg'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
+// import Tabs from '@material-ui/core/Tabs'
+// import Tab from '@material-ui/core/Tab'
 import Button from '@material-ui/core/Button'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize'
@@ -35,7 +35,7 @@ import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
-import { API_URL } from 'gatsby-env-variables'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -98,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.body1.fontSize,
     justifyContent: 'flex-start',
     textTransform: 'none',
+    borderRadius: theme.spacing(1.5),
     '& svg': {
       width: theme.spacing(5),
       height: theme.spacing(5),
@@ -194,18 +195,18 @@ const ContactUs = () => {
 
   const contactTypes = [
     {
-      label: 'info@take2.health',
-      Icon: EmailIcon,
-      tabLabel: '一般查詢',
-      type: 'email',
-      link: email,
-    },
-    {
       label: '+852 3613 0533',
       Icon: PhoneIcon,
       tabLabel: '客戶服務專線',
       type: 'phone',
       link: phone,
+    },
+    {
+      label: 'info@take2.health',
+      Icon: EmailIcon,
+      tabLabel: '一般查詢',
+      type: 'email',
+      link: email,
     },
     {
       label: 'WhatsApp',
@@ -223,20 +224,12 @@ const ContactUs = () => {
     },
   ]
 
-  const handleTabChange = (event, newValue) => setActiveTab(newValue)
+  // const handleTabChange = (event, newValue) => setActiveTab(newValue)
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${API_URL}/contactUs/add`, {
-        method: 'POST',
-        body: JSON.stringify(values), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      })
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
+      const res = await fetchWithTimeout('/contactUs/add', { values })
+      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
       return
     } catch (error) {
       return Promise.reject('提交失敗')
@@ -266,7 +259,15 @@ const ContactUs = () => {
           <Container disableGutters maxWidth='md'>
             <Grid container spacing={0}>
               <Grid className={classes.leftWrapper} item xs={12} sm={7}>
-                <Tabs
+                <Box
+                  mt={1.5}
+                  px={matches ? 3 : 0}
+                  fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
+                  color='primary.contrastText'
+                >
+                  如有任何意見或查詢，歡迎透過下列方式與我們聯繫
+                </Box>
+                {/* <Tabs
                   scrollButtons='off'
                   variant='scrollable'
                   indicatorColor='secondary'
@@ -288,8 +289,8 @@ const ContactUs = () => {
                       }}
                     ></Tab>
                   ))}
-                </Tabs>
-                <Box px={matches ? 3 : 0} mt={matches ? 4 : 3.75}>
+                </Tabs> */}
+                <Box px={matches ? 3 : 0} mt={matches ? 2 : 1.5}>
                   <ImageList
                     className={classes.imageList}
                     rowHeight='auto'
@@ -309,8 +310,8 @@ const ContactUs = () => {
                           classes={{
                             startIcon: classes.startIcon,
                           }}
-                          variant='contained'
-                          color={index === activeTab ? 'secondary' : 'default'}
+                          variant={index ? 'outlined' : 'contained'}
+                          color={index === activeTab ? 'secondary' : 'primary'}
                           startIcon={
                             <Icon
                               className={classnames(
@@ -334,7 +335,7 @@ const ContactUs = () => {
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
-                  onSubmit={throttle(async (values) => {
+                  onSubmit={throttle(async (values, { resetForm }) => {
                     if (!reCapStatus) {
                       return setReCapStatus(1)
                     }
@@ -343,6 +344,7 @@ const ContactUs = () => {
                       setLoading(true)
                       await handleFetch(values)
                       toast.success('已成功提交')
+                      resetForm()
                     } catch (error) {
                       toast.error(error)
                     }

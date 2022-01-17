@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import useMenu from '@hooks/useMenu'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import MenuIcon from '@images/icons/menu.svg'
 import IconButton from '@material-ui/core/IconButton'
 import Box from '@material-ui/core/Box'
@@ -154,7 +153,6 @@ const Menu = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
-  const { platformUrl } = useSiteMetadata()
   const [open, setOpen] = useState(false)
   const [panel, setPanel] = useState('')
 
@@ -190,7 +188,7 @@ const Menu = () => {
         </Link>
         <MuiLink
           className={classes.link}
-          href={`${platformUrl}/signin`}
+          href={`${process.env.GATSBY_SITE_URL}signin`}
           onClick={handleClose}
         >
           登入
@@ -200,7 +198,7 @@ const Menu = () => {
         </Box>
         <MuiLink
           className={classes.link}
-          href={`${platformUrl}/signup`}
+          href={`${process.env.GATSBY_SITE_URL}signup`}
           onClick={handleClose}
         >
           登記

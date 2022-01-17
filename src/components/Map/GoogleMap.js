@@ -1,15 +1,22 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'
-import { Box, makeStyles, Typography, Button } from '@material-ui/core'
+import {
+  Box,
+  makeStyles,
+  Typography,
+  Button,
+  useTheme,
+  useMediaQuery,
+} from '@material-ui/core'
 import GoogleMapReact from 'google-map-react'
 import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
 import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
 import classnames from 'classnames'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -154,13 +161,13 @@ const Marker = (props) => {
 const InfoWindow = (props) => {
   const classes = useStyles()
   const isHomepage = useMatch('/')
-  const { platformUrl } = useSiteMetadata()
 
   if (!props?.info) return null
 
   const { nameHk, phone, clinicType, id, addressHk } = props?.info
   return (
     <Box
+      id='map-info-window'
       className={classnames(
         classes.infoWindow,
         isHomepage && classes.isHomepageInfo
@@ -182,7 +189,11 @@ const InfoWindow = (props) => {
         {phone}
       </Box>
       <Button
-        href={clinicType === 1 ? `${platformUrl}/clinic/${id}` : `tel:${phone}`}
+        href={
+          clinicType === 1
+            ? `${process.env.GATSBY_SITE_URL}clinic/${id}`
+            : `tel:${phone}`
+        }
         target={clinicType === 1 ? '_blank' : ''}
         className={classes.infoBtn}
         variant='contained'
@@ -213,6 +224,8 @@ const InfoWindow = (props) => {
 const GoogleMap = (props) => {
   const classes = useStyles()
   const mapRef = useRef()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isHomepage = useMatch('/')
 
   const [activeKey, setActiveKey] = useState(null)
@@ -269,6 +282,7 @@ const GoogleMap = (props) => {
   const _handleChildClick = (key, value) => {
     mapRef.current?.setZoom(13)
     mapRef.current?.panTo({ lat: Number(value.lat), lng: Number(value.lng) })
+    matches && scrollTo('#map-info-window', 'end')
     return setActiveKey(value.id)
   }
 
@@ -284,7 +298,7 @@ const GoogleMap = (props) => {
       >
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: 'AIzaSyAoh4HnMsiqw-s4hdFoiz0zEseqn6o97hA',
+            key: process.env.GATSBY_GOOGLE_MAP_KEY,
             language: 'zh-HK',
           }}
           defaultCenter={defaultProps.center}
@@ -292,7 +306,7 @@ const GoogleMap = (props) => {
           debounced
           // MapId for styling google map
           options={{
-            mapId: '69e0c419fa67c775',
+            mapId: process.env.GATSBY_GOOGLE_MAP_LIGHT_ID,
             // gestureHandling: 'greedy',
             fullscreenControl: false,
           }}

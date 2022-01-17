@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import { graphql } from 'gatsby'
 import UpdateItem from '@components/WhatsNew/UpdateItem'
 import {
@@ -10,10 +10,9 @@ import {
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
-import classNames from 'classnames'
-import { EInputBase } from '@themes/components/ETextField'
-import { POST_TYPES } from '@utils/constant'
+import classnames from 'classnames'
+import { ESelect } from '@themes/components/ETextField'
+import { POST_TYPES, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,62 +38,69 @@ const useStyles = makeStyles((theme) => ({
   activeType: {
     color: theme.palette.primary.main,
   },
+  select: {
+    width: '100%',
+  },
+  selectWrapper: {
+    position: 'sticky',
+    zIndex: 1,
+    top: theme.spacing(MOBILE_HEADER_HEIGHT + 5.75),
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(1, 0),
+  },
 }))
 
 const Updates = ({ data }) => {
   const classes = useStyles()
   const nodes = data.allMdx.nodes
-  const [activeType, setActiveType] = useState(0)
-  const [list, setList] = useState([])
+  const [activeType, setActiveType] = useState('')
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
-  useEffect(() => {
-    if (!nodes?.length) return
-    setList(
-      !activeType
-        ? nodes
-        : nodes.filter(
-            (node) => node.frontmatter?.type === POST_TYPES[activeType]?.label
-          ) || []
-    )
-  }, [activeType, nodes])
+  const curNodes = useMemo(
+    () =>
+      activeType
+        ? nodes?.filter((node) => node.frontmatter?.type === activeType)
+        : nodes,
+    [activeType, nodes]
+  )
 
-  const handleChange = (e) =>
-    e.target.dataset?.value && setActiveType(Number(e.target.dataset?.value))
+  const handleChange = (e) => setActiveType(e.target.dataset?.value)
 
-  const handleMobileChange = (e) =>
-    e.target?.value && setActiveType(e.target?.value)
-
+  const handleMobileChange = (e) => setActiveType(e.target?.value)
   return (
     <Box className={classes.root}>
       <Container disableGutters maxWidth='md'>
         <Grid container spacing={0}>
-          <Grid item sm={4}>
+          <Grid
+            className={classnames(matches && classes.selectWrapper)}
+            item
+            xs={12}
+            sm={4}
+          >
             {matches ? (
-              <Select
-                labelId='type-select-label'
-                id='type-select'
+              <ESelect
                 value={activeType}
                 onChange={handleMobileChange}
-                input={<EInputBase />}
+                className={classes.select}
+                displayEmpty
               >
                 {POST_TYPES.map((type, index) => (
-                  <MenuItem key={index} value={index}>
+                  <MenuItem key={index} value={type.value}>
                     {type.label}
                   </MenuItem>
                 ))}
-              </Select>
+              </ESelect>
             ) : (
               <Box className={classes.types} onClick={handleChange}>
                 {POST_TYPES.map((type, index) => (
                   <Box
-                    className={classNames(
+                    className={classnames(
                       classes.type,
-                      activeType === index && classes.activeType
+                      activeType === type.value && classes.activeType
                     )}
                     key={index}
-                    data-value={index}
+                    data-value={type.value}
                   >
                     {type.label}
                   </Box>
@@ -102,16 +108,15 @@ const Updates = ({ data }) => {
               </Box>
             )}
           </Grid>
-          <Grid item sm={8}>
-            {list?.length
-              ? list.map((node) => (
-                  <UpdateItem
-                    key={node.id}
-                    slug={`${node.fields.slug}`}
-                    {...node.frontmatter}
-                  />
-                ))
-              : null}
+          <Grid item xs={12} sm={8}>
+            {curNodes?.length > 0 &&
+              curNodes?.map((node) => (
+                <UpdateItem
+                  key={node.id}
+                  slug={`${node.fields.slug}`}
+                  {...node.frontmatter}
+                />
+              ))}
           </Grid>
         </Grid>
       </Container>
@@ -138,7 +143,7 @@ export const query = graphql`
           href
           cover {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
         }

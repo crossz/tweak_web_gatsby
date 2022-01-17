@@ -20,7 +20,7 @@ import { graphql, Link } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
-import { DEPARTMENT_OPTIONS, AREA_OPTIONS } from '@utils/constant'
+import { CAREER_REGIONS } from '@utils/constant'
 import {
   EInputBase,
   EFormLabel,
@@ -33,7 +33,7 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import classnames from 'classnames'
 import Search from '@components/Search'
 import ReCaptcha from '@components/ReCaptcha'
-import { API_URL } from 'gatsby-env-variables'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -192,12 +192,11 @@ const initialValues = {
   name: '',
   email: '',
   area: '',
-  department: '',
 }
 
-const schema = oriSchema().pick(['name', 'email', 'area', 'department'])
+const schema = oriSchema().pick(['name', 'email', 'area'])
 
-const JoinUs = ({ data, pageContext, location }) => {
+const JoinUs = ({ data, pageContext }) => {
   const classes = useStyles()
   const { totalCount } = data?.allMdx?.pageInfo
   const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
@@ -213,16 +212,10 @@ const JoinUs = ({ data, pageContext, location }) => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${API_URL}/joinUs/add`, {
-        method: 'POST',
-        body: JSON.stringify(values), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
+      const res = await fetchWithTimeout(`/joinUs/add`, {
+        values, // data can be `string` or {object}!
       })
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
+      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
       return
     } catch (error) {
       return Promise.reject('提交失敗')
@@ -257,7 +250,6 @@ const JoinUs = ({ data, pageContext, location }) => {
           <Grid container>
             <Grid item xs={12} sm={4}>
               <Search
-                location={location}
                 data={allCareer}
                 setSearchResult={(result) => setCareers(result)}
                 setSearching={(status) => setSearching(status)}
@@ -336,7 +328,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
-                  onSubmit={throttle(async (values) => {
+                  onSubmit={throttle(async (values, { resetForm }) => {
                     if (!reCapStatus) {
                       return setReCapStatus(1)
                     }
@@ -347,6 +339,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                         omit(values, ['requiredArea', 'requiredName'])
                       )
                       toast.success('已成功提交')
+                      resetForm()
                     } catch (error) {
                       toast.error(error)
                     }
@@ -411,6 +404,7 @@ const JoinUs = ({ data, pageContext, location }) => {
                             fullWidth
                             error={isError('email')}
                             required
+                            className={classes.formControl}
                           >
                             <EFormLabel>電郵</EFormLabel>
                             <EInputBase
@@ -428,14 +422,11 @@ const JoinUs = ({ data, pageContext, location }) => {
                             />
                             {errorText('email')}
                           </FormControl>
-                        </Box>
-
-                        <Box className={classes.formControlLine}>
                           <FormControl
                             fullWidth
                             error={isError('area')}
-                            className={classes.formControl}
                             required
+                            className={classes.formControl}
                           >
                             <EFormLabel>地區</EFormLabel>
                             <ESelect
@@ -446,44 +437,17 @@ const JoinUs = ({ data, pageContext, location }) => {
                               value={values.area}
                               onChange={handleChange}
                             >
-                              {AREA_OPTIONS?.map((area) => (
+                              {CAREER_REGIONS?.map((region) => (
                                 <MenuItem
-                                  key={area.value}
-                                  value={area.value}
-                                  disabled={!area.value}
+                                  key={region.value}
+                                  value={region.value}
+                                  disabled={!region.value}
                                 >
-                                  {area.label}
+                                  {region.label}
                                 </MenuItem>
                               ))}
                             </ESelect>
                             {errorText('area')}
-                          </FormControl>
-                          <FormControl
-                            fullWidth
-                            error={isError('department')}
-                            className={classes.formControl}
-                            required
-                          >
-                            <EFormLabel>部門</EFormLabel>
-                            <ESelect
-                              displayEmpty
-                              labelId='department-label'
-                              id='department'
-                              name='department'
-                              value={values.department}
-                              onChange={handleChange}
-                            >
-                              {DEPARTMENT_OPTIONS?.map((department) => (
-                                <MenuItem
-                                  key={department.value}
-                                  value={department.value}
-                                  disabled={!department.value}
-                                >
-                                  {department.label}
-                                </MenuItem>
-                              ))}
-                            </ESelect>
-                            {errorText('department')}
                           </FormControl>
                         </Box>
                         <Button

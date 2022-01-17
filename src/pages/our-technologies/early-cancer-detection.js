@@ -6,7 +6,6 @@ import {
   alpha,
   useTheme,
   useMediaQuery,
-  Hidden,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import TitleDot from '@themes/components/TitleDot'
@@ -163,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
 const centerData = [
   '20-44 歲男士頭號癌症¹',
   '50-60歲女士也會出現的癌症 (除乳癌、子宮頸癌等常見癌症)²',
-  '普遍見於較年輕的「金齡一族」(50至65歲之間) 的癌症，有別於大腸癌、肝癌和前列腺癌患者，這些癌症逾8成發病期常見於較高齡的「銀髮期」(65-80歲之間)³',
+  '有別其他常見於較年長「銀齡族」（65-80歲之間）的癌症如大腸癌和肝癌³，逾8成鼻咽癌患者年齡普遍見於較年輕的「金齡族」（50至65歲之間）',
 ]
 
 const references = [
@@ -228,7 +227,7 @@ const EarlyCancerDetection = () => {
                 </Typography>
               </Box>
               <Box className={classes.rightLine}>
-                其實，任何年紀的人都有可能患上鼻咽癌！
+                其實任何年紀的人都有可能患上鼻咽癌！
               </Box>
               <Box
                 fontSize='body1.fontSize'
@@ -259,7 +258,7 @@ const EarlyCancerDetection = () => {
                 color='text.primary'
                 mx={matches ? -1 : 0}
               >
-                許多人聞癌色變，因為患癌可能會為人生帶來很多變數，但是隨著科技發達，我們雖然不能直接「預防」癌症，卻能「提防」患癌，例如定期進行早期癌症篩查，就是一個及時了解自己身體狀況的好習慣。
+                許多人聞癌色變，但只要定期進行早期鼻咽癌篩查，及時了解自己的身體狀況，即使確診也能儘早接受治療，增加治癒機會，繼續享受美好人生。
               </Box>
               <Box
                 fontSize={matches ? 10 : 'caption.fontSize'}
@@ -278,19 +277,9 @@ const EarlyCancerDetection = () => {
         </Typography>
         <Box className={classes.sectionTwo}>
           <Container disableGutters maxWidth='sm'>
-            <Hidden smUp>
-              <Box
-                textAlign='center'
-                fontWeight='fontWeightBold'
-                fontSize='body2.fontSize'
-                color='secondary.main'
-              >
-                Take2™
-              </Box>
-            </Hidden>
             <Box textAlign='center' mb={matches ? 3 : 4.5}>
               <Typography variant='h4' color='primary'>
-                什麼是早期鼻咽癌篩查？
+                甚麼是早期鼻咽癌篩查？
               </Typography>
             </Box>
             <Box
@@ -299,12 +288,12 @@ const EarlyCancerDetection = () => {
               color='text.primary'
             >
               <TitleDot left={matches ? -2 : -4.75}></TitleDot>
-              在醫學中，篩查是一種用於尋找尚未發現的疾病的策略。受測者可能沒有徵狀或者只有輕微徵狀，而這些徵狀本身並不能確定診斷。受測者可以透過篩查去確定自己的身體狀況有沒有潛在風險，會否在將來某個時候轉變為疾病，從而能夠及早進行干預和管理，以降低死亡率和患病痛苦。篩查程序中使用的測試還必須具有良好的靈敏度及特異性，以減少出現誤診和產生錯誤的安全感。
+              在醫學中，篩查是一種用於尋找尚未發現的疾病的策略。受測者可能沒有徵狀或者只有輕微徵狀，而這些徵狀本身並不能用作確定診斷。受測者可以透過篩查去確定自己的身體狀況有沒有潛在風險，或會否在將來某個時候轉變為疾病，從而能夠及早干預和管理，以降低死亡率和患病所帶來的痛苦。篩查程序中使用的測試須具有良好的靈敏度及特異性，以減少出現誤診和因不準確的結果所帶來的焦慮不安。
               <br />
               <br />
-              早期鼻咽癌篩查一般適用於還沒有或病徵不明顯的人群。新式早期鼻咽癌篩查以抽血方式，配合嶄新的次世代DNA測序技術
+              早期鼻咽癌篩查一般適用於還沒有或病徵不明顯的人群。篩查過程簡單，只需抽血，屬無創方式，配合嶄新的次世代DNA測序技術
               (Next-generation
-              Sequencing)，來分析血漿中是否帶有鼻咽癌特徵的DNA，從而有效找出早期鼻咽癌患者，讓患者能在發病初期確診並接受治療，能大大增加成功治癒的機會及減少治療帶來的副作用。
+              Sequencing)，來分析血漿中是否帶有鼻咽癌特徵的DNA，從而有效找出早期鼻咽癌患者，有助病人於患病早期確診並接受治療，增加治癒機會及減少治療帶來的副作用。
             </Box>
           </Container>
         </Box>
@@ -340,7 +329,7 @@ const EarlyCancerDetection = () => {
               color='primary.contrastText'
               borderRadius={12}
             >
-              我們期望透過推廣早期癌症篩查，建立市民的健康意識，如提升對癌症、檢測技術、個人健康管理的認知，並致力推動醫學創新研究，讓患者更有效進行健康管理，從而自信地活出精彩人生。
+              我們期望透過推廣早期癌症篩查，建立市民的健康意識，提升大眾對癌症、檢測技術、個人健康管理的認知，並致力推動醫學創新研究，讓患者更有效進行健康管理，從而自信地活出精彩人生。
             </Box>
           </Container>
         </Box>

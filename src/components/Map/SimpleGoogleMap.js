@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.spacing(3),
     overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
-      height: 548,
+      height: 382,
+      borderRadius: theme.spacing(1.5),
     },
     position: 'relative',
   },
@@ -132,7 +133,7 @@ const SimpleGoogleMap = (props) => {
       <div className={classes.root}>
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: 'AIzaSyAoh4HnMsiqw-s4hdFoiz0zEseqn6o97hA',
+            key: process.env.GATSBY_GOOGLE_MAP_KEY,
             language: 'zh-HK',
           }}
           defaultCenter={defaultProps.center}
@@ -140,7 +141,7 @@ const SimpleGoogleMap = (props) => {
           debounced
           // MapId for styling google map
           options={{
-            mapId: 'ec9cd0e42cca58d',
+            mapId: process.env.GATSBY_GOOGLE_MAP_SIMPLE_ID,
             gestureHandling: 'none',
             fullscreenControl: false,
             zoom: 1,

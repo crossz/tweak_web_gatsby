@@ -110,6 +110,7 @@ theme = createTheme(theme, {
       },
       outlined: {
         padding: theme.spacing(2, 6),
+        backgroundColor: theme.palette.background.paper,
       },
       sizeSmall: {
         height: theme.spacing(5.5),

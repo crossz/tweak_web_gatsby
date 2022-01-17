@@ -174,7 +174,7 @@ const Footer = () => {
       >
         私隱政策
       </Link>
-      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+      {/* <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         服務條款
       </Link>
       <Link
@@ -182,12 +182,18 @@ const Footer = () => {
         to='/terms-and-conditions/免責聲明'
       >
         免責聲明
-      </Link>
+      </Link> */}
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
         to='/terms-and-conditions/網站使用條款'
       >
         網站使用條款
+      </Link>
+      <Link
+        className={classnames(classes.link, classes.copyRightLink)}
+        to='/terms-and-conditions/個人資料收集聲明'
+      >
+        個人資料收集聲明
       </Link>
     </Box>
   )
@@ -250,15 +256,12 @@ const Footer = () => {
                     expanded={!matches || item.path === panel}
                     square
                     onChange={handleChange(
-                      !matches || !(item.sections && item.sections?.length)
-                        ? ''
-                        : item.path
+                      !matches || !item.sections?.length ? '' : item.path
                     )}
                   >
                     <EAccordionSummary
                       expandIcon={
                         matches &&
-                        item.sections &&
                         item.sections?.length && (
                           <ArrowIcon className={classes.arrowIcon} />
                         )
@@ -270,25 +273,16 @@ const Footer = () => {
                         content: classes.accordionSummaryContent,
                       }}
                     >
-                      {!(item.sections && item.sections?.length) ? (
-                        <Link className={classes.link} to={item.path}>
-                          <Box
-                            fontSize='body1.fontSize'
-                            fontWeight='fontWeightBold'
-                          >
-                            {item.title}
-                          </Box>
-                        </Link>
-                      ) : (
+                      <Link className={classes.link} to={item.path}>
                         <Box
                           fontSize='body1.fontSize'
                           fontWeight='fontWeightBold'
                         >
                           {item.title}
                         </Box>
-                      )}
+                      </Link>
                     </EAccordionSummary>
-                    {item.sections && item.sections?.length && (
+                    {item.sections?.length && (
                       <EAccordionDetails
                         classes={{
                           root: classes.accordionDetailsRoot,

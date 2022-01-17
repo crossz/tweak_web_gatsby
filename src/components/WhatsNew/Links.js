@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
 import { makeStyles } from '@material-ui/core'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { toast } from 'react-toastify'
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -45,6 +46,8 @@ const Links = ({ href }) => {
     },
   ]
 
+  const handleCopy = () => toast.success('成功複製文章鏈接！')
+
   return (
     <Box display='flex' mr={-1.5}>
       {links.map(({ Icon, type, link }, index) => (
@@ -57,7 +60,7 @@ const Links = ({ href }) => {
             </Link>
           )}
           {type === 'copy' && (
-            <CopyToClipboard text={link}>
+            <CopyToClipboard text={link} onCopy={handleCopy}>
               <IconButton className={classes.btn}>
                 <Icon></Icon>
               </IconButton>

@@ -228,7 +228,7 @@ const Mission = () => {
                 </Typography>
               </Box>
             </Box>
-            <Typography variant={matches ? 'body2' : 'body1'} component='div'>
+            <Typography variant='body2' component='div'>
               <Box color='text.primary' fontWeight='fontWeightBold' mb={0.5}>
                 背景及創辦人
               </Box>
@@ -236,6 +236,7 @@ const Mission = () => {
               <br />
               <br />
               有關三位教授創辦得易健康並發佈公司首項產品的資訊，請參閱以下新聞連結：
+              <br />
               <Link
                 className={classes.link}
                 href='https://www.businesswire.com/news/home/20190506005296/zh-HK/'
@@ -248,7 +249,6 @@ const Mission = () => {
               <Box mb={0.5} color='text.primary' fontWeight='fontWeightBold'>
                 我們的工作團隊
               </Box>
-              我們的工作團隊
               得易健康的工作團隊來自世界不同地方，團結於公司的使命，並日益壯大成長。對於公司未來發展方向，得易健康行政總裁翁錦輝先生表示︰「能夠將世界一流學者的研究成果付諸民生應用、影響社會，我們深感自豪。我們的員工有理想、有活力、有朝氣，致力成為醫療界別的開拓者，秉持積極創新、一絲不苟的理念和風格，勇於嘗試、突破傳統醫學科技的界限，努力為人類健康帶來切實、根本的改變。」
             </Typography>
           </Box>

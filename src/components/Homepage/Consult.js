@@ -3,12 +3,10 @@ import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
-// import ConsultImage from '@images/homepage_consult.jpg'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'gatsby'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     [theme.breakpoints.down('xs')]: {
-      paddingRight: theme.spacing(3),
+      padding: theme.spacing(0, 3),
     },
   },
   contentWrapper: {
@@ -47,18 +45,6 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: 1.5,
     },
   },
-  // bg: {
-  //   width: '100%',
-  //   height: theme.spacing(66),
-  //   backgroundImage: `url(${ConsultImage})`,
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center right',
-  //   borderRadius: `0 6px 6px 0`,
-  //   [theme.breakpoints.down('xs')]: {
-  //     height: theme.spacing(33.25),
-  //   },
-  // },
   greyLink: {
     color: theme.palette.grey[600],
   },
@@ -68,18 +54,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   btnWrapper: {
-    display: 'flex',
     marginTop: theme.spacing(4),
     '& a': {
       textDecoration: 'none',
-    },
-  },
-  btnLink: {
-    marginRight: theme.spacing(2),
-    flexShrink: 0,
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      flexShrink: 1,
     },
   },
 }))
@@ -88,7 +65,6 @@ const Consult = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const { platformUrl } = useSiteMetadata()
 
   return (
     <Container disableGutters className={classes.root} maxWidth='xl'>
@@ -101,11 +77,11 @@ const Consult = () => {
           ></StaticImage>
         </Grid>
         <Grid className={classes.rightWrapper} item xs={12} sm={6}>
-          <Box maxWidth={matches ? 'auto' : 560}>
+          <Box maxWidth={matches ? 'none' : 560}>
             <Typography variant='h5' color='primary' component='div'>
               <Box mt={matches ? 3 : 0}>立即登記 線上專業諮詢</Box>
               <Box className={classes.content}>
-                只需輸入簡單資料，便可與我們保持聯繫，你亦可享用線上醫療諮詢服務或特快預約測試，接收專業資訊、測試提示、活動推廣及首輪優惠等。
+                只需輸入簡單資料，你就可以接收最新健康資訊、活動推廣及優惠，並可享用線上醫療諮詢及預約測試服務。
                 <Link
                   to='/terms-and-conditions/條款及細則'
                   className={classes.greyLink}
@@ -114,31 +90,33 @@ const Consult = () => {
                 </Link>
               </Box>
             </Typography>
-            <Box className={classes.btnWrapper}>
-              <Link
-                className={classes.btnLink}
-                to='/products-and-services/take2-extra-care'
-              >
+            <Grid className={classes.btnWrapper} container spacing={2}>
+              <Grid item xs={matches ? 6 : 'auto'}>
+                <Link
+                  className={classes.btnLink}
+                  to='/products-and-services/take2-extra-care'
+                >
+                  <Button
+                    variant='outlined'
+                    color='primary'
+                    fullWidth={matches}
+                  >
+                    了解更多
+                  </Button>
+                </Link>
+              </Grid>
+              <Grid item xs={matches ? 6 : 'auto'}>
                 <Button
-                  variant='outlined'
-                  color='primary'
-                  size={matches ? 'small' : 'medium'}
+                  variant='contained'
+                  color='secondary'
+                  href={process.env.GATSBY_SITE_URL}
+                  target='_blank'
                   fullWidth={matches}
                 >
-                  了解更多
+                  立即登記
                 </Button>
-              </Link>
-              <Button
-                variant='contained'
-                color='secondary'
-                size={matches ? 'small' : 'medium'}
-                fullWidth={matches}
-                href={platformUrl}
-                target='_blank'
-              >
-                立即登記
-              </Button>
-            </Box>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
       </Grid>

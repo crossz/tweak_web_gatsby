@@ -1,11 +1,8 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Box from '@material-ui/core/Box'
-import { makeStyles, alpha } from '@material-ui/core'
+import { makeStyles, alpha, Box, Link as MuiLink } from '@material-ui/core'
 import { Link } from 'gatsby'
 import ViewButton from '@themes/components/ViewButton'
-import { Link as MuiLink } from '@material-ui/core'
-
 const useStyles = makeStyles((theme) => ({
   root: {
     boxShadow: `0px 15px 40px -10px ${alpha(theme.palette.common.black, 0.05)}`,
@@ -13,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
     textDecoration: 'none',
-    height: theme.spacing(41.25),
+    minHeight: theme.spacing(41.25),
     display: 'flex',
     flexDirection: 'column',
     transition: theme.transitions.create('transform', {
@@ -26,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.secondary.main,
     },
     [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(31.25),
+      minHeight: theme.spacing(31.25),
     },
   },
   btnWrapper: {
@@ -41,14 +38,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   imageWrapper: {
-    height: 210,
+    width: '100%',
     backgroundColor: theme.palette.background.default,
-    [theme.breakpoints.down('xs')]: {
-      height: 118,
-    },
   },
   image: {
-    height: '100%',
+    // width: '100%',
+    // height: `calc(100% / ${POST_ASPECT_RATIO})`,
     WebkitMaskImage: '-webkit-radial-gradient(white, black)',
   },
   info: {

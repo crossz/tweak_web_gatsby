@@ -15,7 +15,7 @@ import {
 import ArrowIcon from '@images/icons/arrow.svg'
 import useMenu from '@hooks/useMenu'
 import Links from '@components/WhatsNew/Links'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
 
@@ -37,6 +37,19 @@ const useStyles = makeStyles((theme) => ({
       height: 85,
     },
   },
+  breadcrumbs: {
+    whiteSpace: 'nowrap',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.caption.fontSize,
+      padding: theme.spacing(0, 3),
+    },
+    '& $ol': {
+      flexWrap: 'nowrap',
+    },
+    '& $li:last-child': {
+      overflow: 'hidden',
+    },
+  },
   breadcrumbsTitle: {
     color: theme.palette.primary.contrastText,
     maxWidth: theme.spacing(40),
@@ -54,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
   header: {
     paddingTop: theme.spacing(8),
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: theme.spacing(1),
+    },
   },
   top: {
     display: 'flex',
@@ -93,16 +109,19 @@ const useStyles = makeStyles((theme) => ({
   contentWrapper: {
     position: 'relative',
     padding: theme.spacing(0, 3),
+    minHeight: theme.spacing(80),
   },
   content: {
     paddingBottom: theme.spacing(30),
     position: 'relative',
     zIndex: 2,
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(15),
+    },
   },
   image: {
     marginTop: theme.spacing(-4),
-    marginBottom: theme.spacing(-5),
-    borderRadius: theme.spacing(1.25),
+    borderRadius: theme.spacing(0.75),
     overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(-6),
@@ -110,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
   },
   postBg: {
     width: '100%',
-    height: 980,
+    height: 800,
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -134,17 +153,16 @@ const morePostTitle = {
 }
 
 const Post = ({ data, pageContext, location: { href } }) => {
+  const { sectionPath, regex } = pageContext
   const classes = useStyles()
   const menu = useMenu()
   const mdx = data?.mdx?.body
-  const { slug } = pageContext
-  const { date, title, type, cover } = data?.mdx?.frontmatter
-  const image = getImage(cover)
+  const { date, title, type } = data?.mdx?.frontmatter
+  // const images = cover?.map((item) => getImage(item))
   const morePostsNodes = data?.morePosts?.nodes
-
-  const middlePath = `/whats-new/${slug.split('/')[0]}`
+  const middlePath = `/whats-new/${sectionPath}`
   const middleTitle = menu[0].sections?.find((section) =>
-    section.path.includes(slug.split('/')[0])
+    section.path.includes(regex)
   )?.title
 
   return (
@@ -154,6 +172,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
           <Hidden xsDown>
             <Container disableGutters maxWidth='sm'>
               <Breadcrumbs
+                className={classes.breadcrumbs}
                 separator={<ArrowIcon className={classes.arrowIcon} />}
                 aria-label='breadcrumb'
               >
@@ -166,11 +185,11 @@ const Post = ({ data, pageContext, location: { href } }) => {
         </Box>
         <Box className={classes.contentWrapper}>
           <Container className={classes.content} disableGutters maxWidth='sm'>
-            {image && (
+            {/* {images?.[0] && (
               <Box className={classes.image}>
-                <GatsbyImage image={image} alt={title}></GatsbyImage>
+                <GatsbyImage image={images?.[0]} alt={title}></GatsbyImage>
               </Box>
-            )}
+            )} */}
             <Box className={classes.header}>
               <Box className={classes.top}>
                 <Box className={classes.topLeft}>
@@ -231,11 +250,6 @@ export const query = graphql`
         date(formatString: "YYYY/MM/DD")
         title
         type
-        cover {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
       body
     }
@@ -252,13 +266,14 @@ export const query = graphql`
         frontmatter {
           cover {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
           date(formatString: "DD/MM/YYYY")
           title
           type
           detail
+          href
         }
       }
     }

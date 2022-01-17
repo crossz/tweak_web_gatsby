@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useRef, useState, useEffect, useMemo } from 'react'
 import {
   makeStyles,
   useTheme,
@@ -12,6 +12,9 @@ import useMenu from '@hooks/useMenu'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
 import Image from '@components/Image'
+import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
+import scrollTo from 'gatsby-plugin-smoothscroll'
+import { Waypoint } from 'react-waypoint'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -21,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(33.125),
     },
     display: 'grid',
+    position: 'relative',
   },
   banner: {
     gridArea: '1/1',
@@ -32,17 +36,30 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     flexDirection: 'column',
   },
+  sectionTabsId: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    bottom: 0,
+    height: theme.spacing(HEADER_HEIGHT),
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(MOBILE_HEADER_HEIGHT),
+    },
+  },
   tabsWrapper: {
     height: theme.spacing(7.5),
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'sticky',
+    zIndex: 1,
+    top: theme.spacing(HEADER_HEIGHT),
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(5.75),
       padding: 0,
       backgroundColor: theme.palette.grey[100],
       borderBottom: `1px solid ${theme.palette.grey[400]}`,
+      top: theme.spacing(MOBILE_HEADER_HEIGHT),
     },
   },
   tab: {
@@ -84,7 +101,17 @@ const SectionBanner = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
+  const [belowSectionTabs, setBelowSectionTabs] = useState(true)
+  const prePathnameRef = useRef(null)
   const { pathname } = useLocation()
+
+  // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
+  useEffect(() => {
+    if (!belowSectionTabs && prePathnameRef?.current === curMenuItem?.path)
+      scrollTo('#section-tabs')
+    prePathnameRef.current = curMenuItem?.path
+  }, [pathname])
+
   const curMenuItem = useMemo(
     () => menu?.find((item) => pathname.includes(item.path)),
     [menu, pathname]
@@ -101,7 +128,7 @@ const SectionBanner = () => {
     <Match path={curMenuItemPath}>
       {(props) =>
         props.match ? (
-          <Box className={classes.root}>
+          <>
             <Container
               className={classes.bannerWrapper}
               disableGutters
@@ -124,7 +151,7 @@ const SectionBanner = () => {
                       {curMenuItem?.title}
                     </Box>
                   </Typography>
-                  {pathname.includes('/contact-us') && (
+                  {/* {pathname.includes('/contact-us') && (
                     <Box
                       mt={3}
                       fontSize='body1.fontSize'
@@ -132,9 +159,14 @@ const SectionBanner = () => {
                     >
                       如有任何意見或查詢，歡迎透過下列方式與我們聯繫
                     </Box>
-                  )}
+                  )} */}
                 </Box>
               </Container>
+              <Waypoint
+                onEnter={() => setBelowSectionTabs(true)}
+                onLeave={() => setBelowSectionTabs(false)}
+              ></Waypoint>
+              <Box className={classes.sectionTabsId} id='section-tabs'></Box>
             </Container>
             {curMenuItem?.sections && curMenuItem?.sections?.length && (
               <Box className={classes.tabsWrapper}>
@@ -151,7 +183,7 @@ const SectionBanner = () => {
                 ))}
               </Box>
             )}
-          </Box>
+          </>
         ) : null
       }
     </Match>

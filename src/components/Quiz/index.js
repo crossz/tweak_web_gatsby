@@ -40,9 +40,8 @@ import BackIcon from '@images/icons/back.svg'
 import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 import ReCaptcha from '@components/ReCaptcha'
-import { API_URL } from 'gatsby-env-variables'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -84,6 +83,7 @@ const useStyle = makeStyles((theme) => ({
     position: 'relative',
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 2),
+      paddingBottom: theme.spacing(4),
     },
   },
   quizLeft: {
@@ -96,11 +96,16 @@ const useStyle = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     height: '100%',
-    paddingRight: theme.spacing(5),
+    paddingRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       padding: 0,
       justifyContent: 'flex-start',
     },
+  },
+  quizTip: {
+    marginBottom: theme.spacing(3),
+    color: '#818181',
+    fontSize: theme.spacing(1.5),
   },
   genderLabel: {
     marginLeft: 0,
@@ -223,7 +228,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: 'auto',
     marginBottom: theme.spacing(10),
     [theme.breakpoints.down('xs')]: {
-      marginBottom: theme.spacing(8.75),
+      marginBottom: theme.spacing(4.75),
     },
   },
   preBtn: {
@@ -274,8 +279,8 @@ const useStyle = makeStyles((theme) => ({
       marginBottom: theme.spacing(3),
     },
   },
-  link: {
-    textDecoration: 'underline',
+  notice: {
+    marginRight: theme.spacing(0),
   },
   platformLink: {
     textDecoration: 'underline',
@@ -294,8 +299,10 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   mobilePlatformLink: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(-3.5),
+    textAlign: 'center',
+    display: 'block',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(-2),
     '& .MuiButton-text': {
       fontSize: theme.typography.caption.fontSize,
     },
@@ -308,15 +315,17 @@ const useStyle = makeStyles((theme) => ({
 }))
 
 const initialValues = {
+  requiredEmailOrPhone: true,
   gender: '',
   age: '',
-  quiz: QUIZ.map((quiz, index) => ''),
+  quiz: QUIZ.map(() => ''),
   email: '',
   phone: '',
   dialingCode: '852',
   agreeTC: false,
 }
-const schema = oriSchema({ emailOrPhone: true }).pick([
+const schema = oriSchema().pick([
+  'requiredEmailOrPhone',
   'gender',
   'age',
   'quiz',
@@ -332,7 +341,6 @@ const Quiz = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [step, setStep] = useState(0)
   const [finishQuiz, setFinishQuiz] = useState(false)
-  const { platformUrl } = useSiteMetadata()
   const [reCapStatus, setReCapStatus] = useState(0)
   const [loading, setLoading] = useState(false)
 
@@ -343,16 +351,10 @@ const Quiz = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${API_URL}/quiz/add`, {
-        method: 'POST',
-        body: JSON.stringify(omit(values, 'agreeTC')), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
+      const res = await fetchWithTimeout(`/quiz/add`, {
+        values: omit(values, 'agreeTC', 'requiredEmailOrPhone'), // data can be `string` or {object}!
       })
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
+      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
       return
     } catch (error) {
       return Promise.reject('提交失敗')
@@ -381,7 +383,7 @@ const Quiz = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={schema}
-          onSubmit={throttle(async (values) => {
+          onSubmit={throttle(async (values, { resetForm }) => {
             if (!reCapStatus) {
               return setReCapStatus(1)
             }
@@ -390,11 +392,12 @@ const Quiz = () => {
             try {
               await handleFetch(values)
               toast.success('已成功提交')
+              resetForm()
+              setStep(8)
             } catch (error) {
               toast.error(error)
             }
             setLoading(false)
-            setStep(8)
             setReCapStatus(0)
           }, 1000)}
         >
@@ -432,16 +435,6 @@ const Quiz = () => {
               touched[field] &&
               errors[field] && <FormHelperText>{errors[field]}</FormHelperText>
 
-            const customErrorText = () =>
-              touched.email &&
-              !errors.email &&
-              touched.phone &&
-              !errors.phone &&
-              !values.email &&
-              !values.phone && (
-                <FormHelperText error>請輸入電話號碼或電郵</FormHelperText>
-              )
-
             const CusCancelButton = ({ field }) => (
               <CancelButton
                 values={values}
@@ -474,14 +467,21 @@ const Quiz = () => {
                             免費測驗 了解健康
                           </Typography>
                         </Box>
-                        <Box mb={matches ? 3 : 2.5} color='grey.900'>
+                        <Box mb={matches ? 1 : 2.5} color='grey.900'>
                           <Typography variant={matches ? 'body2' : 'body1'}>
-                            來個簡單測驗？可能逆轉一切！
-                            <br />
-                            雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解鼻咽癌的徵狀。
+                            來個簡單測驗，人生可能從此變得不一樣。
+                            <Hidden xsDown>
+                              <br />
+                            </Hidden>
+                            雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解有關鼻咽癌的徵狀。
                           </Typography>
                         </Box>
-                        <Box mb={matches ? 2 : 4}>
+                        <Typography className={classes.quizTip}>
+                          分析僅屬參考性質。
+                          <br />
+                          引致鼻咽癌的成因有很多，而且徵狀因人而異，詳情請向醫護人員查詢或與我們的專業醫護團隊聯絡。
+                        </Typography>
+                        <Box mb={matches ? 2 : 2}>
                           <FormControl
                             component='fieldset'
                             error={isError('gender')}
@@ -509,7 +509,7 @@ const Quiz = () => {
                             {errorText('gender')}
                           </FormControl>
                         </Box>
-                        <Box mb={matches ? 3 : 5.75}>
+                        <Box mb={matches ? 3 : 4.5}>
                           <FormControl
                             className={classes.ageFormControl}
                             fullWidth={matches}
@@ -696,7 +696,7 @@ const Quiz = () => {
                           mb={matches ? 1 : 2}
                         >
                           <Typography variant='h4' color='primary'>
-                            最後一個步驟免費獲取結果!
+                            最後一個步驟 免費獲取結果!
                           </Typography>
                         </Box>
                         <Box
@@ -705,11 +705,8 @@ const Quiz = () => {
                           color='grey.900'
                         >
                           <Typography variant={matches ? 'caption' : 'body1'}>
-                            來個簡單測驗？可能逆轉一切！
-                            <br />
-                            請輸入電郵以獲取結果，及後可通過得易健康服務平台網上系統免費登記成為Take2
-                            ExtraCare會員,
-                            或輸入電話號碼與線上註冊護士咨詢服務或產品內容!{' '}
+                            請即輸入你的資料，以透過電郵獲取測驗結果；或與線上註冊護士聯絡，以諮詢服務或產品內容！你亦可直接登記，免費成為Take2
+                            ExtraCare會員。
                           </Typography>
                         </Box>
                         <Box className={classes.formWrapper}>
@@ -778,7 +775,6 @@ const Quiz = () => {
                                 {errorText('phone')}
                               </FormControl>
                             </Box>
-                            {customErrorText()}
                           </Box>
                           <FormControl
                             className={classes.checkBoxWrapper}
@@ -787,6 +783,7 @@ const Quiz = () => {
                           >
                             <FormControlLabel
                               control={<Checkbox color='secondary' />}
+                              className={classes.notice}
                               label={
                                 <Box
                                   fontSize={matches ? 10 : 'caption.fontSize'}
@@ -797,14 +794,17 @@ const Quiz = () => {
                                   的網站於take2health.net之網站
                                   <MuiLink
                                     href='/terms-and-conditions/私隱政策'
-                                    className={classes.link}
+                                    underline='always'
                                   >
                                     <Box color='primary.main' component='span'>
                                       私隱政策
                                     </Box>
                                   </MuiLink>
                                   及
-                                  <MuiLink href='/' className={classes.link}>
+                                  <MuiLink
+                                    href='/terms-and-conditions/個人資料收集聲明'
+                                    underline='always'
+                                  >
                                     <Box color='primary.main' component='span'>
                                       個人資料收集聲明
                                     </Box>
@@ -838,10 +838,10 @@ const Quiz = () => {
                           <Hidden xsDown>
                             <MuiLink
                               className={classes.platformLink}
-                              href={platformUrl}
+                              href={process.env.GATSBY_SITE_URL}
                               target='_blank'
                             >
-                              直接登記 得易健康服務平台
+                              直接登記為 Take2 Extra Care會員
                             </MuiLink>
                           </Hidden>
                           <Hidden smUp>
@@ -850,12 +850,10 @@ const Quiz = () => {
                                 classes.platformLink,
                                 classes.mobilePlatformLink
                               )}
-                              href={platformUrl}
+                              href={process.env.GATSBY_SITE_URL}
                               target='_blank'
                             >
-                              <Button fullWidth variant='text' color='primary'>
-                                直接登記 得易健康服務平台
-                              </Button>
+                              直接登記 得易健康服務平台
                             </MuiLink>
                           </Hidden>
                         </Box>
@@ -901,20 +899,21 @@ const Quiz = () => {
                             fontWeight='fontWeightBold'
                             mb={matches ? 2 : 1.5}
                           >
-                            測驗經已完成！
+                            你已完成了測驗！
                           </Box>
                           <Box
                             fontSize={
                               matches ? 'caption.fontSize' : 'body1.fontSize'
                             }
                           >
-                            以上問題都與鼻咽癌息息相關，如持續出現上述一項或以上病徵，建議儘快向醫生諮詢。
+                            以上問題均與鼻咽癌息息相關，若你持續出現上述病徵，建議你儘快向醫生查詢。
                             <br />
                             <Hidden smUp>
                               <br />
                             </Hidden>
-                            你亦可立即登記，免費成為Take2 Extra
-                            Care會員，預約進行檢測，或享用得易健康網上平台的服務。
+                            立即登記，免費成為Take2 Extra
+                            Care會員，以優惠價預約進行檢測，並享用Take2 Health
+                            得易健康服務平台的各項服務。
                           </Box>
                         </Box>
                         <Box
@@ -934,6 +933,8 @@ const Quiz = () => {
                               variant='outlined'
                               color='primary'
                               fullWidth
+                              href={process.env.GATSBY_SITE_URL}
+                              target='_blank'
                             >
                               了解更多
                             </Button>
@@ -943,6 +944,8 @@ const Quiz = () => {
                             fullWidth
                             variant='contained'
                             color='secondary'
+                            href={process.env.GATSBY_SITE_URL}
+                            target='_blank'
                           >
                             登記成為會員
                           </Button>

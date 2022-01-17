@@ -3,6 +3,7 @@ import { keyBy } from 'lodash-es'
 
 export const HEADER_HEIGHT = 10.5
 export const MOBILE_HEADER_HEIGHT = 7.5
+export const POST_ASPECT_RATIO = 471 / 228
 export const LOGO_TYPE = {
   take2FullColor: 'take2_full_color',
   take2White: 'take2_white',
@@ -46,12 +47,20 @@ export const DIALING_CODES = [
 ]
 
 export const POST_TYPES = [
-  { label: '所有最新動態', color: '' },
-  { label: '公司動向', color: 'supporting.supporting01' },
-  { label: '公司獎項與成就', color: 'secondary.main' },
-  { label: '行業資訊', color: 'prophecySupporting.supporting01' },
-  { label: '商業合作', color: 'prophecyPrimary.main' },
-  { label: '行政總裁分享', color: 'prophecySupporting.supporting02' },
+  { label: '所有最新動態', value: '', color: '' },
+  { label: '公司動向', value: '公司動向', color: 'supporting.supporting01' },
+  { label: '公司獎項與成就', value: '公司獎項與成就', color: 'secondary.main' },
+  {
+    label: '行業資訊',
+    value: '行業資訊',
+    color: 'prophecySupporting.supporting01',
+  },
+  // { label: '商業合作', value: '商業合作', color: 'prophecyPrimary.main' },
+  {
+    label: '行政總裁分享',
+    value: '行政總裁分享',
+    color: 'prophecySupporting.supporting02',
+  },
 ]
 
 export const REGIONS = [
@@ -98,7 +107,7 @@ export const QUIZ = [
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你有否出現鼻水帶血或流鼻血情況？',
+    question: '你有否經常出現鼻水帶血或流鼻血情況？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
@@ -107,17 +116,17 @@ export const QUIZ = [
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你是否經常出現頭痛或單側頭痛？',
+    question: '你有否經常出現頭痛或單側頭痛？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你是否經常受耳鳴困擾？',
+    question: '你有否經常受耳鳴困擾？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有沒有吸煙習慣？',
+    question: '你有否經常吸煙？',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
@@ -125,33 +134,18 @@ export const QUIZ = [
 
 export const AGES = ['20或以下', '21-30', '31-40', '41-50', '51-60', '61或以上']
 
-export const DEPARTMENTS = [
-  {
-    label: '所有部門',
-    value: '',
-  },
-  {
-    label: '商業戰略合作',
-    value: 0,
-  },
-  {
-    label: 'DITE',
-    value: 1,
-  },
-]
-
 export const CAREER_REGIONS = [
   {
     label: '所有地區',
     value: '',
   },
   {
-    label: '香港',
-    value: '香港',
+    label: '香港特別行政區',
+    value: 'hongkong',
   },
   {
-    label: '海外地區',
-    value: '海外地區',
+    label: '中國內地',
+    value: 'mainland_china',
   },
 ]
 
@@ -172,7 +166,7 @@ const QUIZ_ANSWER_OPTIONS = [
     value: 'no',
   },
   {
-    label: '不清楚',
+    label: '不確定',
     value: 'unclear',
   },
   {
@@ -268,9 +262,10 @@ export const PARTNERS = [
   },
   {
     country: '印尼',
-    name: 'Prodia',
-    intro: '印尼最大的上市醫學診斷企業，於全國104個城市共設有128個實驗室地點。',
-    link: 'https://prodia.co.id/en',
+    name: 'Global Medical Technologies ',
+    intro:
+      '一家位於菲律賓的醫療技術公司，主要業務為向菲律賓國內引進世界各地的先進技術，以向醫護人員、患者及消費者提供健康測試和診斷技術的選擇。',
+    link: 'https://gmtmanila.com/',
     lat: -6.200375806341185,
     lng: 106.84667434188609,
   },
@@ -287,7 +282,7 @@ export const PARTNERS = [
     country: '新加坡',
     name: 'Lifestrands Genomics',
     intro:
-      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室',
+      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室。',
     link: '',
     lat: 1.3579294889776585,
     lng: 103.86964607814394,
@@ -296,8 +291,8 @@ export const PARTNERS = [
     country: '菲律賓',
     name: 'Pascific Laboratories',
     intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: '',
+      '一家業務橫跨菲律賓、新加坡及印度的病理診斷集團，主要業務為以精準醫療為方針的病理學及分子診斷。',
+    link: 'https://www.pascific.com/',
     lat: 14.622741230780443,
     lng: 120.9678862363281,
   },
@@ -309,5 +304,14 @@ export const PARTNERS = [
     link: 'https://www.tempconqatar.com/index',
     lat: 25.310775003022403,
     lng: 51.195632901833974,
+  },
+  {
+    country: '澳門',
+    name: 'Catalyst Bioscience',
+    intro:
+      '一家位於澳門的生物科技經銷商，致力為當地的醫療機構提供高端科技測試。',
+    link: '',
+    lat: 22.158991865767508,
+    lng: 113.57665634534713,
   },
 ]

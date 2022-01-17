@@ -16,7 +16,6 @@ import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -144,7 +143,6 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const { platformUrl } = useSiteMetadata()
 
   const _handleChange = (activeArea) => (e, isExpanded) => {
     onChange && onChange(isExpanded ? activeArea : '')
@@ -219,7 +217,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                           variant='outlined'
                           size='small'
                           color='primary'
-                          href={`${platformUrl}/clinic/${clinic.id}`}
+                          href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
                           target='_blank'
                         >
                           立即預約

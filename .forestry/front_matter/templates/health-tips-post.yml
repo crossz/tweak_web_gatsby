@@ -2,6 +2,12 @@
 label: Health Tips Post
 hide_body: false
 fields:
+- name: cover
+  type: image_gallery
+  config: {}
+  label: cover
+  description: 'Cover of post card, in updates list it may be multiple images or empty.<br><em>Aspect
+    ratio: 2 (width / height)</em><br><em>Recommend size</em>: 300 * 150'
 - name: date
   type: datetime
   description: Created date of post.
@@ -16,7 +22,18 @@ fields:
   config:
     required: true
   label: title
-  description: Title of post.
+  description: 'Title of post. <br>If slug and href is empty should forbidden these
+    characters: <em>"$","%",":","/",Tab</em>'
+- name: detail
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: detail
+  description: Detail of post, used by post card.
 - name: type
   type: select
   default: []
@@ -32,21 +49,6 @@ fields:
       path: 
   label: type
   description: Tag of post.
-- name: cover
-  type: image_gallery
-  config: {}
-  label: cover
-  description: Cover of post card, in updates list it may be multiple images or empty.
-- name: detail
-  type: textarea
-  default: ''
-  config:
-    required: true
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: detail
-  description: Detail of post, used by post card.
 - name: href
   type: text
   config:
@@ -63,6 +65,12 @@ fields:
     title.
 pages:
 - content/health-tips/24-parents.md
+- content/health-tips/80.md
+- content/health-tips/97-dna.md
+- content/health-tips/am730.md
+- content/health-tips/choosing-the-right-plan-doctor-shares-insights-on-specific-cancer-screening-in-health-checks.md
 - content/health-tips/hk01.md
+- content/health-tips/med-cuhk-cuhk-completes-a-20-000-person-plasma-dna-screening-study-of-nasopharyngeal-cancer-and-finds-a-dramatic-shift-to-early-stage-cancers.md
 - content/health-tips/test-test-test.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後出現的言語困難.md
+- content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後會面對的吞嚥問題.md

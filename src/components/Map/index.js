@@ -16,7 +16,7 @@ import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
-import { API_URL } from 'gatsby-env-variables'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const switchButtons = [
   {
@@ -169,17 +169,11 @@ const Map = () => {
   useEffect(() => {
     const fetchData = async (params) => {
       try {
-        const res = await fetch(`${API_URL}/testCenters/list`, {
-          method: 'POST',
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        })
-        const resData = await res.json()
-        if (resData?.code !== 1000) {
+        const res = await fetchWithTimeout('/testCenters/list')
+        if (res?.code !== 1000) {
           return console.log('fetch error')
         }
-        const data = resData?.data || []
+        const data = res?.data?.filter((item) => item.status) || []
         let location = []
         const provinceGroup = groupBy(data, 'province')
         const provinceKeys = Object.keys(provinceGroup)
@@ -217,6 +211,14 @@ const Map = () => {
     return groupBy(curProvinceClinic, 'area')
   }, [clinics, curProvince])
 
+  const areaOptions = useMemo(
+    () =>
+      location
+        ?.find((item) => item.province === curProvince)
+        ?.area?.map((item) => item || '其他地區') || [],
+    [location, curProvince]
+  )
+
   return (
     <Box
       position='relative'
@@ -237,13 +239,11 @@ const Map = () => {
             <MenuItem key='' value=''>
               所有地區
             </MenuItem>
-            {location
-              ?.find((item) => item.province === curProvince)
-              ?.area?.map((areaItem) => (
-                <MenuItem key={areaItem} value={areaItem}>
-                  {areaItem}
-                </MenuItem>
-              ))}
+            {areaOptions?.map((areaItem) => (
+              <MenuItem key={areaItem} value={areaItem}>
+                {areaItem}
+              </MenuItem>
+            ))}
           </ESelect>
         )
       ) : (
@@ -291,13 +291,11 @@ const Map = () => {
                       <MenuItem key='' value=''>
                         所有地區
                       </MenuItem>
-                      {location
-                        ?.find((item) => item.province === curProvince)
-                        ?.area?.map((areaItem) => (
-                          <MenuItem key={areaItem} value={areaItem}>
-                            {areaItem}
-                          </MenuItem>
-                        ))}
+                      {areaOptions?.map((areaItem) => (
+                        <MenuItem key={areaItem} value={areaItem}>
+                          {areaItem}
+                        </MenuItem>
+                      ))}
                     </ESelect>
                   </Box>
                 )}
@@ -359,13 +357,11 @@ const Map = () => {
                       <MenuItem key='' value=''>
                         所有地區
                       </MenuItem>
-                      {location
-                        ?.find((item) => item.province === curProvince)
-                        ?.area.map((areaItem) => (
-                          <MenuItem key={areaItem} value={areaItem}>
-                            {areaItem}
-                          </MenuItem>
-                        ))}
+                      {areaOptions?.map((areaItem) => (
+                        <MenuItem key={areaItem} value={areaItem}>
+                          {areaItem}
+                        </MenuItem>
+                      ))}
                     </ESelect>
                   </Box>
                 </Box>

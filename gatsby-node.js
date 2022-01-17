@@ -20,12 +20,12 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         break
       case 'terms-and-conditions':
         slug = `/terms-and-conditions/${
-          node.frontmatter.slug || node.frontmatter.title || name
+          node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
       default:
         slug = `/whats-new/${relativeDirectory}/${
-          node.frontmatter.slug || node.frontmatter.title || name
+          node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
     }
@@ -146,7 +146,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     createPage({
-      path: decodeURIComponent(path),
+      path,
       component: template,
       context: {
         slug: mdx.fields.slug,

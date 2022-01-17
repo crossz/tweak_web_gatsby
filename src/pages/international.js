@@ -31,8 +31,8 @@ import {
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
-import { API_URL } from 'gatsby-env-variables'
 import SimpleGoogleMap from '@components/Map/SimpleGoogleMap'
+import fetchWithTimeout from '@utils/fetchWithTimeout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -127,7 +127,8 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
-      paddingBottom: theme.spacing(1.25),
+      paddingBottom: theme.spacing(1),
+      minHeight: 'auto',
     },
   },
   country: {
@@ -136,6 +137,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1.5),
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(0.5),
+    },
+  },
+  partnerContent: {
+    color: theme.palette.text.primary,
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(1),
     },
   },
   name: {
@@ -247,16 +254,10 @@ const International = () => {
 
   const handleFetch = async (values) => {
     try {
-      const res = await fetch(`${API_URL}/applyPartner/add`, {
-        method: 'POST',
-        body: JSON.stringify(values), // data can be `string` or {object}!
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
+      const res = await fetchWithTimeout(`/applyPartner/add`, {
+        values, // data can be `string` or {object}!
       })
-      const resData = await res.json()
-      if (resData?.code !== 1000)
-        return Promise.reject(resData?.message || '提交失敗')
+      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
       return
     } catch (error) {
       return Promise.reject('提交失敗')
@@ -282,9 +283,7 @@ const International = () => {
             作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
           </Typography>
         </Box>
-        <Box>
-          <SimpleGoogleMap></SimpleGoogleMap>
-        </Box>
+        <SimpleGoogleMap></SimpleGoogleMap>
       </Container>
       <Container disableGutters className={classes.bannerWrapper} maxWidth='lg'>
         <StaticImage
@@ -324,10 +323,7 @@ const International = () => {
                     >
                       {name}
                     </Typography>
-                    <Typography
-                      variant={matches ? 'body2' : 'body1'}
-                      color='textPrimary'
-                    >
+                    <Typography className={classes.partnerContent}>
                       {intro}
                     </Typography>
                     <Box className={classes.partnerBtnWrapper}>
@@ -378,7 +374,7 @@ const International = () => {
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
-                  onSubmit={throttle(async (values) => {
+                  onSubmit={throttle(async (values, { resetForm }) => {
                     if (!reCapStatus) {
                       return setReCapStatus(1)
                     }
@@ -387,6 +383,7 @@ const International = () => {
                       setLoading(true)
                       await handleFetch(values)
                       toast.success('已成功提交')
+                      resetForm()
                     } catch (error) {
                       toast.error(error)
                     }

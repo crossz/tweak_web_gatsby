@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       textDecoration: 'none',
     },
+    '&:last-child $root': {
+      border: 'none',
+    },
   },
   top: {
     display: 'flex',
@@ -78,10 +81,10 @@ const useStyles = makeStyles((theme) => ({
 
   imageListItemItem: {
     overflow: 'initial',
-    height: theme.spacing(12),
+    // height: theme.spacing(12),
   },
   coverItem: {
-    height: '100%',
+    // height: '100%',
     borderRadius: theme.spacing(0.5),
   },
 }))

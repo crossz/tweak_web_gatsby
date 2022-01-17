@@ -4,14 +4,13 @@ import {
   Typography,
   Container,
   Button,
-  Hidden,
   Box,
   useTheme,
   useMediaQuery,
+  Grid,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-import useSiteMetadata from '@hooks/useSiteMetadata'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,15 +23,19 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       minHeight: 'auto',
       height: 'calc((502 / 375) * 100vw)',
+      maxHeight: 877,
     },
   },
   wrapper: {
     position: 'relative',
-    height: '100%',
     gridArea: '1/1',
     display: 'grid',
+    height: 877,
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 3),
+      minHeight: 'auto',
+      height: 'calc((502 / 375) * 100vw)',
+      maxHeight: 877,
     },
   },
   contentWrapper: {
@@ -43,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     [theme.breakpoints.down('xs')]: {
+      maxWidth: 'none',
       paddingTop: theme.spacing(3),
       paddingBottom: 0,
     },
@@ -55,26 +59,24 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       fontSize: 6,
       marginBottom: theme.spacing(-3),
+      marginTop: theme.spacing(4),
     },
   },
   btnWrapper: {
+    display: 'flex',
     marginTop: theme.spacing(8),
     '& a': {
       textDecoration: 'none',
     },
-  },
-  btnLink: {
-    marginRight: theme.spacing(2),
-    flexShrink: 0,
-    textDecoration: 'none',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 'auto',
+    },
   },
 }))
-
 const Banner = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const { platformUrl } = useSiteMetadata()
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -117,34 +119,29 @@ const Banner = () => {
               textAlign='justify'
             >
               超越既有，引領醫學，Take2 Prophecy™
-              早期鼻咽癌篩查結合PCR及次世代DNA測序技術，能有效檢測到早期鼻咽癌。數據顯示，越早發現癌症，治療效果與存活率都能大幅提升¹。早期鼻咽癌沒有明顯病徵，許多患者未有及時檢測，因而未能了解身體狀況，錯失治療的黃金期。懂得準備，便沒有跨不過的難關。
+              早期鼻咽癌篩查結合PCR及次世代DNA測序技術，能有效檢測到早期鼻咽癌。數據顯示，越早發現癌症，治療的效果就會越好，而存活率也能大幅提升¹。早期鼻咽癌沒有明顯病徵，許多患者未有及時檢測，因而未能了解身體狀況，錯失治療的黃金期。懂得準備，便沒有跨不過的難關。
             </Box>
           </Typography>
-          <Hidden xsDown>
-            <Box className={classes.btnWrapper}>
-              <Link
-                className={classes.btnLink}
-                to='/products-and-services/take2-prophecy'
-              >
-                <Button
-                  className={classes.btn}
-                  variant='outlined'
-                  color='primary'
-                >
+          <Grid className={classes.btnWrapper} container spacing={2}>
+            <Grid item xs={matches ? 6 : 'auto'}>
+              <Link to='/products-and-services/take2-prophecy'>
+                <Button variant='outlined' color='primary' fullWidth={matches}>
                   了解更多
                 </Button>
               </Link>
-
+            </Grid>
+            <Grid item xs={matches ? 6 : 'auto'}>
               <Button
                 variant='contained'
                 color='secondary'
-                href={platformUrl}
+                href={`${process.env.GATSBY_SITE_URL}`}
                 target='_blank'
+                fullWidth={matches}
               >
                 立即預約
               </Button>
-            </Box>
-          </Hidden>
+            </Grid>
+          </Grid>
           <Box className={classes.marks}>
             ¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus
             DNA to Screen for Nasopharyngeal Cancer.”{' '}

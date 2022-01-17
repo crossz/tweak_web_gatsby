@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "BUILD_ENV=development gatsby build",
-    "build:pro": "gatsby build",
+    "start": "gatsby develop --host=0.0.0.0",
+    "build": "gatsby build",
+    "build:dev": "GATSBY_ENV=development gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "mock": "prism mock -d $npm_package_docs_openapi"
@@ -30,9 +30,7 @@
     "formik": "^2.2.9",
     "gatsby": "3.14.0",
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-env-variables": "^2.0.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-google-tagmanager": "3.14.0",
     "gatsby-plugin-image": "1.14.1",
     "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-material-ui": "3.0.1",
