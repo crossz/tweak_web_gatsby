@@ -51,8 +51,6 @@ import {
   caseListData,
 } from './utils/constant'
 import { gsap, ScrollTrigger } from './utils/initGsap'
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
-import IconButton from '@material-ui/core/IconButton'
 import Hidden from '@material-ui/core/Hidden'
 
 const useStyles = makeStyles((theme) =>
@@ -439,39 +437,12 @@ const useStyles = makeStyles((theme) =>
         marginBottom: theme.spacing(8),
       },
     },
-    shopBtn: {
-      position: 'fixed',
-      zIndex: theme.zIndex.snackbar,
-      right: theme.spacing(3),
-      bottom: theme.spacing(2.75),
-      backgroundColor: theme.palette.background.paper,
-      boxShadow: theme.shadows[4],
-      transition: `background-color ease 0.3s`,
-      '&:hover': {
-        backgroundColor: theme.palette.grey[100],
-      },
-    },
     postLink: {
       fontSize: theme.typography.body1.fontSize,
       marginBottom: theme.spacing(2),
       color: theme.palette.primary.contrastText,
       textDecoration: 'underline',
       fontWeight: theme.typography.fontWeightLight,
-    },
-    shopBtnTooltip: {
-      position: 'absolute',
-      backgroundColor: theme.palette.secondary.main,
-      color: theme.palette.secondary.contrastText,
-      fontSize: 13,
-      boxShadow: 'rgb(0 0 0 / 20%) 2px 2px 5px',
-      right: `calc(100% + ${theme.spacing(1.75)}px)`,
-      whiteSpace: 'nowrap',
-      height: theme.spacing(5),
-      padding: theme.spacing(0, 1.5),
-      display: 'flex',
-      alignItems: 'center',
-      borderRadius: theme.spacing(1),
-      top: `calc(50% - ${theme.spacing(3.5 / 2)}px)`,
     },
     caseTitle: {
       fontSize: theme.typography.h4.fontSize,
@@ -704,20 +675,6 @@ const CampaignPage = () => {
 
   return (
     <div ref={el}>
-      <IconButton
-        className={classes.shopBtn}
-        aria-label='show button'
-        href={E_HEALTH_LINK}
-        target='_blank'
-        variant='contain'
-      >
-        <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
-        <Box className={classes.shopBtnTooltip}>
-          網上預約
-          <br />
-          迎新優惠碼NEW330
-        </Box>
-      </IconButton>
       <Header active={activeSection}>{activeSection}</Header>
       <Box className={classes.root}>
         <Box className={classnames(classes.sectionOne, 'section-one')}>

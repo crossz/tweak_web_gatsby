@@ -35,7 +35,7 @@ a[href^="https://maps.google.com/maps"]
 /* hide google map terms-of-user/logo */
 
 div[id^='gb-widget'] {
-  bottom: 86px !important;
+  bottom: 88px !important;
 }
 div[id^='gb-widget'] > a {
   display: none;

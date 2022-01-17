@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import SectionBanner from './SectionBanner'
+import ShoppingBtn from './ShoppingBtn'
 import { makeStyles } from '@material-ui/core'
 import { useMatch } from '@reach/router'
 
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
           <Footer></Footer>
         </>
       )}
+      <ShoppingBtn></ShoppingBtn>
     </main>
   )
 }
