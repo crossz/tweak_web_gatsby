@@ -7,16 +7,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 const SEO = ({ title, description, image, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
-
   const {
     defaultTitle,
     titleTemplate,
     defaultDescription,
     siteUrl,
     defaultImage,
-    twitterUsername,
   } = site.siteMetadata
-
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
@@ -47,9 +44,9 @@ const SEO = ({ title, description, image, article }) => {
 
       <meta name='twitter:card' content='summary_large_image' />
 
-      {twitterUsername && (
+      {/* {twitterUsername && (
         <meta name='twitter:creator' content={twitterUsername} />
-      )}
+      )} */}
 
       {seo.title && <meta name='twitter:title' content={seo.title} />}
 
@@ -82,11 +79,11 @@ const query = graphql`
   query SEO {
     site {
       siteMetadata {
-        title
-        description
+        defaultTitle
+        titleTemplate
+        defaultDescription
         siteUrl
-        # defaultImage: image
-        # twitterUsername
+        defaultImage
       }
     }
   }
