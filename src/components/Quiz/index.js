@@ -282,9 +282,6 @@ const useStyle = makeStyles((theme) => ({
   notice: {
     marginRight: theme.spacing(0),
   },
-  link: {
-    textDecoration: 'none',
-  },
   platformLink: {
     textDecoration: 'underline',
     display: 'flex',
@@ -797,7 +794,7 @@ const Quiz = () => {
                                   的網站於take2health.net之網站
                                   <MuiLink
                                     href='/terms-and-conditions/私隱政策'
-                                    className={classes.link}
+                                    underline='always'
                                   >
                                     <Box color='primary.main' component='span'>
                                       私隱政策
@@ -806,7 +803,7 @@ const Quiz = () => {
                                   及
                                   <MuiLink
                                     href='/terms-and-conditions/個人資料收集聲明'
-                                    className={classes.link}
+                                    underline='always'
                                   >
                                     <Box color='primary.main' component='span'>
                                       個人資料收集聲明

@@ -174,7 +174,7 @@ const Footer = () => {
       >
         私隱政策
       </Link>
-      <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
+      {/* <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         服務條款
       </Link>
       <Link
@@ -182,12 +182,18 @@ const Footer = () => {
         to='/terms-and-conditions/免責聲明'
       >
         免責聲明
-      </Link>
+      </Link> */}
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
         to='/terms-and-conditions/網站使用條款'
       >
         網站使用條款
+      </Link>
+      <Link
+        className={classnames(classes.link, classes.copyRightLink)}
+        to='/terms-and-conditions/個人資料收集聲明'
+      >
+        個人資料收集聲明
       </Link>
     </Box>
   )
