@@ -2,7 +2,7 @@
 region: 香港特別行政區
 title: Customer Service Specialist
 type: 商業戰略合作
-date: 2022-01-17T00:00:00+08:00
+date: 2022-01-17T00:00:00.000+08:00
 
 ---
 # Customer Service Specialist
@@ -63,7 +63,7 @@ Full Time, Permanent
 
 Job Functions
 
-[Sales, CS & Business Devpt](https://hk.jobsdb.com/hk/jobs/sales-cs-business-devpt/1 "Limit results to Sales, CS & Business Devpt"), [Customer Service - Supervisor / Officer](https://hk.jobsdb.com/hk/job-list/sales-cs-business-devpt/customer-service-supervisor-officer/1 "Limit results to Customer Service - Supervisor / Officer")
+Sales, CS & Business Devpt, Customer Service - Supervisor / Officer
 
 #### Company Overview
 

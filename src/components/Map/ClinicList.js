@@ -16,6 +16,7 @@ import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
+import { orderBy } from 'lodash-es'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -168,65 +169,68 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
           </MapAccordionSummary>
           <MapAccordionDetails>
             <Box className={classes.list}>
-              {clinics?.[area]?.map((clinic, index) => (
-                <Box className={classes.item} key={index}>
-                  <Grid container spacing={0}>
-                    <Grid item xs={3} sm={1}>
-                      {clinic.province}
-                    </Grid>
-                    <Grid item xs={9} sm={2}>
-                      {clinic.area}
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Box width='100%'>
-                        <Box
-                          fontWeight='fontWeightBold'
-                          mt={matches ? 1.5 : 0}
-                          mb={matches ? 1 : 1.5}
-                        >
-                          {clinic.nameHk}
-                        </Box>
-                        <Box
-                          color='text.primary'
-                          display={matches ? 'block' : 'flex'}
-                        >
+              {orderBy(clinics?.[area], ['clinicType'])?.map(
+                (clinic, index) => (
+                  <Box className={classes.item} key={index}>
+                    {clinic.clinicType}
+                    <Grid container spacing={0}>
+                      <Grid item xs={3} sm={1}>
+                        {clinic.province}
+                      </Grid>
+                      <Grid item xs={9} sm={2}>
+                        {clinic.area}
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Box width='100%'>
                           <Box
-                            className={classes.info}
-                            mr={matches ? 0 : 3}
-                            mb={matches ? 1 : 0}
-                            flexShrink={0}
+                            fontWeight='fontWeightBold'
+                            mt={matches ? 1.5 : 0}
+                            mb={matches ? 1 : 1.5}
                           >
-                            <Box className={classes.infoIcon}>
-                              <PhoneIcon></PhoneIcon>
-                            </Box>
-                            {clinic.phone}
+                            {clinic.nameHk}
                           </Box>
-                          <Box className={classes.info}>
-                            <Box className={classes.infoIcon}>
-                              <LocationIcon></LocationIcon>
+                          <Box
+                            color='text.primary'
+                            display={matches ? 'block' : 'flex'}
+                          >
+                            <Box
+                              className={classes.info}
+                              mr={matches ? 0 : 3}
+                              mb={matches ? 1 : 0}
+                              flexShrink={0}
+                            >
+                              <Box className={classes.infoIcon}>
+                                <PhoneIcon></PhoneIcon>
+                              </Box>
+                              {clinic.phone}
                             </Box>
-                            <Box>{clinic.addressHk}</Box>
+                            <Box className={classes.info}>
+                              <Box className={classes.infoIcon}>
+                                <LocationIcon></LocationIcon>
+                              </Box>
+                              <Box>{clinic.addressHk}</Box>
+                            </Box>
                           </Box>
                         </Box>
-                      </Box>
+                      </Grid>
+                      <Grid className={classes.btnCell} xs={12} item sm={3}>
+                        {clinic.clinicType === 1 && (
+                          <Button
+                            className={classes.btn}
+                            variant='outlined'
+                            size='small'
+                            color='primary'
+                            href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
+                            target='_blank'
+                          >
+                            立即預約
+                          </Button>
+                        )}
+                      </Grid>
                     </Grid>
-                    <Grid className={classes.btnCell} xs={12} item sm={3}>
-                      {clinic.clinicType === 1 && (
-                        <Button
-                          className={classes.btn}
-                          variant='outlined'
-                          size='small'
-                          color='primary'
-                          href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
-                          target='_blank'
-                        >
-                          立即預約
-                        </Button>
-                      )}
-                    </Grid>
-                  </Grid>
-                </Box>
-              ))}
+                  </Box>
+                )
+              )}
             </Box>
           </MapAccordionDetails>
         </MapAccordion>
