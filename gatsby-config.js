@@ -28,6 +28,8 @@ module.exports = {
     phone: '(852) 3613 0533',
   },
   plugins: [
+    // TODO: Fix SSR FOUC
+    // https://github.com/hupe1980/gatsby-theme-material-ui/pull/8
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
