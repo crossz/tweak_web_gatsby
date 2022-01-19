@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  radioLabel: {
+    fontSize: theme.typography.body2.fontSize,
+  },
 }))
 
 const Search = ({
@@ -124,7 +127,10 @@ const Search = ({
           >
             {CAREER_REGIONS.map((region) => (
               <FormControlLabel
-                className={classes.regionItem}
+                classes={{
+                  root: classes.regionItem,
+                  label: classes.radioLabel,
+                }}
                 key={region.label}
                 value={region.value}
                 control={<Radio />}

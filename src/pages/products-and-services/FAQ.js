@@ -8,6 +8,7 @@ import {
   Button,
   Box,
   Grid,
+  MenuItem,
 } from '@material-ui/core'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import PhoneIcon from '@images/icons/phone.svg'
@@ -16,20 +17,21 @@ import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import FaqSearch from '@components/FaqSearch'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { groupBy } from 'lodash-es'
+import scrollTo from 'gatsby-plugin-smoothscroll'
+import { ESelect } from '@themes/components/ETextField'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   title: {
     paddingLeft: theme.spacing(6),
     paddingBottom: theme.spacing(8),
-    boxShadow: `0 1px 0 0 #E8E8E8`,
     marginLeft: theme.spacing(1.5),
     [theme.breakpoints.down('xs')]: {
       paddingLeft: 0,
       textAlign: 'center',
       paddingBottom: theme.spacing(5),
       marginLeft: 0,
-      boxShadow: 'none',
     },
   },
   titleWrapper: {},
@@ -113,6 +115,33 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.primary.main,
     },
   },
+  types: {
+    fontSize: theme.typography.h6.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
+    color: theme.palette.grey[600],
+    paddingTop: theme.spacing(3),
+  },
+  type: {
+    padding: theme.spacing(1, 0),
+    cursor: 'pointer',
+  },
+  activeType: {
+    color: theme.palette.primary.main,
+  },
+  formWrapper: {
+    position: 'sticky',
+    top: theme.spacing(20),
+    zIndex: 1,
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      top: theme.spacing(13.25),
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(1.5, 0),
+    },
+  },
+  select: {
+    width: '100%',
+  },
 }))
 const FAQ = () => {
   const classes = useStyles()
@@ -120,6 +149,8 @@ const FAQ = () => {
   const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
   const [activePanel, setActivePanel] = useState(null)
+  const [faqTypes, setFaqTypes] = useState([''])
+  const [activeType, setActiveType] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -134,10 +165,19 @@ const FAQ = () => {
               id: item.id,
               question: item.questionHk,
               content: item.contentHk,
+              status: item.status,
+              typeName: item.typeName,
             }
           }) || []
         setAllFaqList(list)
         setFaqList(list)
+        const groupType = groupBy(
+          list?.filter((item) => item.status),
+          'typeName'
+        )
+        setFaqTypes((status) =>
+          status.concat(...(Object.keys(groupType) || []))
+        )
       } catch (error) {
         console.log('fetch error')
       }
@@ -147,6 +187,14 @@ const FAQ = () => {
 
   const handleChange = (index) => setActivePanel(index)
   const handleSearchResult = (result) => setFaqList(result)
+
+  const handleTypeChange = (e) => {
+    scrollTo('#section-tabs')
+    return setActiveType(e.target.dataset?.value)
+  }
+
+  const handleMobileTypeChange = (e) => setActiveType(e.target?.value)
+
   return (
     <Box className={classes.root}>
       <Container className={classes.contentRoot} disableGutters maxWidth='md'>
@@ -155,36 +203,74 @@ const FAQ = () => {
           <Grid className={classes.titleWrapper} item xs={12} sm={8}>
             <Typography className={classes.title} variant='h4' color='primary'>
               常見問題
+              {activeType && (
+                <Typography
+                  component='span'
+                  variant='h5'
+                >{` #${activeType}`}</Typography>
+              )}
             </Typography>
-            <Hidden smUp>
-              <FaqSearch
-                data={allFaqList}
-                setSearchResult={handleSearchResult}
-              ></FaqSearch>
-            </Hidden>
           </Grid>
         </Grid>
         <Grid className={classes.faqList} container spacing={4}>
           <Hidden xsDown>
             <Grid item sm={4}>
+              <Box className={classes.formWrapper}>
+                <FaqSearch
+                  data={allFaqList}
+                  setSearchResult={handleSearchResult}
+                ></FaqSearch>
+                <Box className={classes.types} onClick={handleTypeChange}>
+                  {faqTypes?.map((type, index) => (
+                    <Box
+                      className={classnames(
+                        classes.type,
+                        activeType === type && classes.activeType
+                      )}
+                      key={index}
+                      data-value={type}
+                    >
+                      {type || '所有問題'}
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            </Grid>
+          </Hidden>
+          <Hidden smUp>
+            <Box className={classes.formWrapper}>
               <FaqSearch
                 data={allFaqList}
                 setSearchResult={handleSearchResult}
               ></FaqSearch>
-            </Grid>
+              <ESelect
+                value={activeType}
+                onChange={handleMobileTypeChange}
+                className={classes.select}
+                displayEmpty
+              >
+                {faqTypes.map((type, index) => (
+                  <MenuItem key={index} value={type}>
+                    {type || '所有問題'}
+                  </MenuItem>
+                ))}
+              </ESelect>
+            </Box>
           </Hidden>
           <Grid item xs={12} sm={8}>
-            {faqList.length > 0 &&
-              faqList.map((faq) => (
-                <FaqItem
-                  key={faq.id}
-                  id={faq.id}
-                  question={faq.question}
-                  content={faq.content}
-                  onChange={handleChange}
-                  activePanel={activePanel}
-                ></FaqItem>
-              ))}
+            {faqList?.length > 0 &&
+              faqList
+                ?.filter((faq) => faq.typeName === activeType || !activeType)
+                ?.map((faq) => (
+                  <FaqItem
+                    key={faq.id}
+                    id={faq.id}
+                    question={faq.question}
+                    content={faq.content}
+                    onChange={handleChange}
+                    activePanel={activePanel}
+                  ></FaqItem>
+                ))}
           </Grid>
         </Grid>
       </Container>

@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 273,
     [theme.breakpoints.down('xs')]: {
       maxWidth: 'none',
-      marginBottom: theme.spacing(4),
+      marginBottom: theme.spacing(1.5),
     },
   },
   regionWrapper: {

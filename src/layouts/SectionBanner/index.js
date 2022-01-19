@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'sticky',
-    zIndex: 1,
+    zIndex: 10,
     top: theme.spacing(HEADER_HEIGHT),
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(5.75),

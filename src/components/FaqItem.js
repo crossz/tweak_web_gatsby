@@ -13,6 +13,9 @@ import CollapseIcon from '@images/icons/collapse.svg'
 const useStyles = makeStyles((theme) => ({
   root: {
     boxShadow: `0 1px 0 0 #E8E8E8`,
+    '&:first-child': {
+      borderTop: '1px solid #E8E8E8',
+    },
   },
   collapseIcon: {
     '& rect': {

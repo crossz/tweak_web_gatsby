@@ -172,7 +172,6 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
               {orderBy(clinics?.[area], ['clinicType'])?.map(
                 (clinic, index) => (
                   <Box className={classes.item} key={index}>
-                    {clinic.clinicType}
                     <Grid container spacing={0}>
                       <Grid item xs={3} sm={1}>
                         {clinic.province}
