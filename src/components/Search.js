@@ -6,6 +6,8 @@ import {
   RadioGroup,
   FormControlLabel,
   Box,
+  useTheme,
+  useMediaQuery,
 } from '@material-ui/core'
 import useJsSearch from '@hooks/useJsSearch'
 import { EInputBase } from '@themes/components/ETextField'
@@ -22,15 +24,25 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 273,
     [theme.breakpoints.down('xs')]: {
       maxWidth: 'none',
-      marginBottom: theme.spacing(4),
     },
   },
   regionWrapper: {
     marginTop: theme.spacing(4),
     marginLeft: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(3),
+      marginLeft: 0,
+      marginBottom: theme.spacing(5),
+    },
   },
   regionItem: {
     color: theme.palette.primary.main,
+  },
+  radioGroup: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      width: '100%',
+    },
   },
 }))
 
@@ -47,6 +59,8 @@ const Search = ({
   const [region, setRegion] = useState('')
   const location = useLocation()
   const searchRef = useRef(null)
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   useEffect(() => {
     if (!search) return
@@ -102,7 +116,12 @@ const Search = ({
       ></EInputBase>
       {!isFAQ && (
         <Box className={classes.regionWrapper}>
-          <RadioGroup value={region} onChange={handleRegionChange}>
+          <RadioGroup
+            className={classes.radioGroup}
+            value={region}
+            onChange={handleRegionChange}
+            row={matches}
+          >
             {CAREER_REGIONS.map((region) => (
               <FormControlLabel
                 className={classes.regionItem}
