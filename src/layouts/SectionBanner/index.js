@@ -165,8 +165,9 @@ const SectionBanner = () => {
               <Waypoint
                 onEnter={() => setBelowSectionTabs(true)}
                 onLeave={() => setBelowSectionTabs(false)}
-              ></Waypoint>
-              <Box className={classes.sectionTabsId} id='section-tabs'></Box>
+              >
+                <Box className={classes.sectionTabsId} id='section-tabs'></Box>
+              </Waypoint>
             </Container>
             {curMenuItem?.sections && curMenuItem?.sections?.length && (
               <Box className={classes.tabsWrapper}>
