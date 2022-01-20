@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(6),
     paddingBottom: theme.spacing(8),
     marginLeft: theme.spacing(1.5),
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       paddingLeft: 0,
       textAlign: 'center',
@@ -136,7 +139,8 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       top: theme.spacing(13.25),
       backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(1.5, 0),
+      padding: theme.spacing(1.5, 2),
+      paddingBottom: 0,
     },
   },
   select: {
@@ -239,22 +243,28 @@ const FAQ = () => {
           </Hidden>
           <Hidden smUp>
             <Box className={classes.formWrapper}>
-              <FaqSearch
-                data={allFaqList}
-                setSearchResult={handleSearchResult}
-              ></FaqSearch>
-              <ESelect
-                value={activeType}
-                onChange={handleMobileTypeChange}
-                className={classes.select}
-                displayEmpty
-              >
-                {faqTypes.map((type, index) => (
-                  <MenuItem key={index} value={type}>
-                    {type || '所有問題'}
-                  </MenuItem>
-                ))}
-              </ESelect>
+              <Grid container spacing={1}>
+                <Grid item xs={7}>
+                  <FaqSearch
+                    data={allFaqList}
+                    setSearchResult={handleSearchResult}
+                  ></FaqSearch>
+                </Grid>
+                <Grid item xs={5}>
+                  <ESelect
+                    value={activeType}
+                    onChange={handleMobileTypeChange}
+                    className={classes.select}
+                    displayEmpty
+                  >
+                    {faqTypes.map((type, index) => (
+                      <MenuItem key={index} value={type}>
+                        {type || '所有問題'}
+                      </MenuItem>
+                    ))}
+                  </ESelect>
+                </Grid>
+              </Grid>
             </Box>
           </Hidden>
           <Grid item xs={12} sm={8}>

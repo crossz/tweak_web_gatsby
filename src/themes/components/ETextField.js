@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   selectInputBaseRoot: {
     paddingTop: `0 !important`,
     paddingBottom: `0 !important`,
+    paddingRight: `${theme.spacing(3)}px !important`,
   },
   cancelIcon: {
     display: 'flex',
