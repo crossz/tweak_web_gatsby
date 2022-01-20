@@ -5,7 +5,7 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: document
-  path: content/heros
+  path: content/heroes
   label: Hero Banners
   match: "**/*"
 - type: directory
