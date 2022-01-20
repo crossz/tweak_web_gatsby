@@ -197,7 +197,10 @@ const FAQ = () => {
     return setActiveType(e.target.dataset?.value)
   }
 
-  const handleMobileTypeChange = (e) => setActiveType(e.target?.value)
+  const handleMobileTypeChange = (e) => {
+    scrollTo('#section-tabs')
+    return setActiveType(e.target?.value)
+  }
 
   return (
     <Box className={classes.root}>
