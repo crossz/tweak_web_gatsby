@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core'
 import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
+import replaceURLs from '@utils/replaceURLs'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
   expandIcon: {
     '& rect': {
       fill: theme.palette.secondary.main,
+    },
+  },
+  list: {
+    '& a': {
+      color: theme.palette.primary.main,
     },
   },
 }))
@@ -138,7 +144,11 @@ const FaqItem = ({ question, content, onChange, id, activePanel }) => {
           {question}
         </FaqAccordionSummary>
         <FaqAccordionDetails>
-          <Box className={classes.list}>{content}</Box>
+          <Box className={classes.list}>
+            <div
+              dangerouslySetInnerHTML={{ __html: replaceURLs(content) }}
+            ></div>
+          </Box>
         </FaqAccordionDetails>
       </FaqAccordion>
     </Box>
