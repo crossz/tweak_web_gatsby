@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: document
+  path: content/heroes
+  label: Hero Banners
+  match: "**/*"
 - type: directory
   path: content/join-us
   label: Careers
