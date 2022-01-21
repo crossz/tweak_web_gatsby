@@ -3,6 +3,7 @@ import { makeStyles, InputAdornment, IconButton } from '@material-ui/core'
 import { EInputBase } from '@themes/components/ETextField'
 import SearchIcon from '@images/icons/search.svg'
 import CancelIcon from '@images/icons/cancel.svg'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -40,11 +41,15 @@ const Search = ({ data, setSearchResult, isFAQ }) => {
 
   const handleSearchSubmit = async (e) => {
     e.preventDefault()
+    scrollTo('#section-tabs')
+
+    const regex = new RegExp(query, 'i')
+
     try {
       const result = query
         ? data?.filter(
-            (item) =>
-              item.question.includes(query) || item.content.includes(query)
+            (item) => regex?.test(item.question) || regex?.test(item.content)
+            // item.question.includes(query) || item.content.includes(query)
           ) || []
         : data
       setSearchResult(result)
