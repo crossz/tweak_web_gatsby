@@ -20,16 +20,14 @@ const SEO = ({ title, description, image, article }) => {
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
   }
-
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name='description' content={seo.description} />
       <meta name='image' content={seo.image} />
-      <meta
+      {/* <meta
         httpEquiv='Content-Security-Policy'
         content='upgrade-insecure-requests'
-      ></meta>
-
+      ></meta> */}
       {seo.url && <meta property='og:url' content={seo.url} />}
 
       {(article ? true : null) && <meta property='og:type' content='article' />}
