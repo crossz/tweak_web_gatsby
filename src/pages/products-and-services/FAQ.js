@@ -20,6 +20,7 @@ import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { groupBy } from 'lodash-es'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { ESelect } from '@themes/components/ETextField'
+import Loading from '@components/Loading'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -155,8 +156,9 @@ const FAQ = () => {
   const [activePanel, setActivePanel] = useState(null)
   const [faqTypes, setFaqTypes] = useState([''])
   const [activeType, setActiveType] = useState('')
+  const [faqListStatus, setFaqListStatus] = useState('')
 
-  useEffect(() => {
+  useEffect(async () => {
     const fetchData = async () => {
       try {
         const res = await fetchWithTimeout(`/faqs/list`)
@@ -182,11 +184,14 @@ const FAQ = () => {
         setFaqTypes((status) =>
           status.concat(...(Object.keys(groupType) || []))
         )
+        setFaqListStatus('fulfilled')
       } catch (error) {
+        setFaqListStatus('rejected')
         console.log('fetch error')
       }
     }
-    fetchData()
+    setFaqListStatus('pending')
+    await fetchData()
   }, [])
 
   const handleChange = (index) => setActivePanel(index)
@@ -271,7 +276,7 @@ const FAQ = () => {
             </Box>
           </Hidden>
           <Grid item xs={12} sm={8}>
-            {faqList?.length > 0 &&
+            {faqList?.length > 0 && faqListStatus !== 'pending' ? (
               faqList
                 ?.filter((faq) => faq.typeName === activeType || !activeType)
                 ?.map((faq) => (
@@ -283,7 +288,10 @@ const FAQ = () => {
                     onChange={handleChange}
                     activePanel={activePanel}
                   ></FaqItem>
-                ))}
+                ))
+            ) : (
+              <Loading status={faqListStatus}></Loading>
+            )}
           </Grid>
         </Grid>
       </Container>
