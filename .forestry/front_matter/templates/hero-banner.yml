@@ -7,5 +7,10 @@ fields:
   config:
     required: false
   label: Title
+- name: banners
+  type: include
+  config: {}
+  template: hero-banner
+  label: Banners
 pages:
 - content/heroBanners.json
