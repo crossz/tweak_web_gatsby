@@ -41,9 +41,13 @@ fields:
     max: 3
   label: Buttons
 - name: reference
-  type: text
+  type: textarea
+  default: ''
   config:
     required: true
+    wysiwyg: false
+    schema:
+      format: markdown
     min: 1
     max: 500
   label: Reference
