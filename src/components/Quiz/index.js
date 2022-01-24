@@ -56,6 +56,7 @@ const useStyle = makeStyles((theme) => ({
       marginRight: theme.spacing(-2),
       borderRadius: theme.spacing(2),
       minHeight: theme.spacing(75),
+      marginTop: theme.spacing(3),
     },
   },
   quizBg: {

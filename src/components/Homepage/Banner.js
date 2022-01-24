@@ -8,6 +8,8 @@ import {
   useTheme,
   useMediaQuery,
   Grid,
+  alpha,
+  Hidden,
 } from '@material-ui/core'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
@@ -37,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     gridArea: '1/1',
     display: 'grid',
     height: 877,
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(0, 6),
+    },
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 3),
       minHeight: 'auto',
@@ -64,8 +69,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       color: theme.palette.primary.main,
       fontSize: 6,
-      marginBottom: theme.spacing(-3),
       marginTop: 'auto',
+      padding: theme.spacing(0, 3),
+      paddingTop: theme.spacing(1),
     },
   },
   btnWrapper: {
@@ -75,20 +81,41 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(9),
+      marginTop: 0,
+      position: 'absolute',
+      top: 314,
+      left: theme.spacing(3),
+    },
+  },
+  btn: {
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(2, 3.5),
     },
   },
   heroBannerWrapper: {
     display: 'grid',
   },
   swiperWrapper: {
+    width: '100%',
     '& .swiper-button-prev,.swiper-button-next': {
       '&:after': {
-        fontSize: theme.spacing(6),
-        color: theme.palette.common.white,
+        fontSize: theme.spacing(5),
+        color: alpha(theme.palette.common.black, 0.1),
         [theme.breakpoints.down('xs')]: {
-          fontSize: theme.spacing(4),
+          fontSize: theme.spacing(3),
         },
+      },
+    },
+    '& .swiper-slide': {
+      width: '100%',
+    },
+    '& .swiper-pagination-bullet-active': {
+      background: alpha(theme.palette.common.white, 0.8),
+    },
+    '& .swiper-pagination': {
+      [theme.breakpoints.down('xs')]: {
+        bottom: 'auto',
+        top: `calc( 100% - ${theme.spacing(9)}px)`,
       },
     },
   },
@@ -101,11 +128,9 @@ const Banner = ({ nodes }) => {
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
       <Swiper
-        slidesPerView={'auto'}
         loop={nodes?.length > 1}
         navigation={nodes?.length > 1}
-        pagination={true}
-        initialSlide={0}
+        pagination={{ clickable: true }}
         className={classes.swiperWrapper}
       >
         {nodes?.length > 0 &&
@@ -142,6 +167,7 @@ const Banner = ({ nodes }) => {
                         dangerouslySetInnerHTML={{
                           __html: node?.frontmatter?.title,
                         }}
+                        whiteSpace='nowrap'
                       ></Box>
                       <Box
                         fontSize={
@@ -150,9 +176,10 @@ const Banner = ({ nodes }) => {
                         fontWeight='fontWeightLight'
                         lineHeight='1.5'
                         textAlign='justify'
-                      >
-                        {node?.frontmatter?.detail}
-                      </Box>
+                        dangerouslySetInnerHTML={{
+                          __html: node?.frontmatter?.detail,
+                        }}
+                      ></Box>
                     </Typography>
                     <Grid className={classes.btnWrapper} container spacing={2}>
                       {node?.frontmatter?.buttons?.length > 0 &&
@@ -160,13 +187,24 @@ const Banner = ({ nodes }) => {
                           <Grid
                             key={button.name}
                             item
-                            xs={matches ? 12 : 'auto'}
+                            xs={
+                              matches
+                                ? 12
+                                : node?.frontmatter?.buttons?.length === 1
+                                ? 12
+                                : 'auto'
+                            }
                           >
                             {button.internal ? (
                               <Link to={button.link}>
                                 <Button
                                   variant={button.variant}
                                   color={button.color}
+                                  className={classes.btn}
+                                  fullWidth={
+                                    !matches &&
+                                    node?.frontmatter?.buttons?.length === 1
+                                  }
                                 >
                                   {button.name}
                                 </Button>
@@ -177,6 +215,11 @@ const Banner = ({ nodes }) => {
                                 color={button.color}
                                 href={button.link}
                                 target='_blank'
+                                className={classes.btn}
+                                fullWidth={
+                                  !matches &&
+                                  node?.frontmatter?.buttons?.length === 1
+                                }
                               >
                                 {button.name}
                               </Button>
@@ -184,15 +227,25 @@ const Banner = ({ nodes }) => {
                           </Grid>
                         ))}
                     </Grid>
-                    <Box
-                      className={classes.reference}
-                      dangerouslySetInnerHTML={{
-                        __html: node?.frontmatter?.reference,
-                      }}
-                    ></Box>
+                    <Hidden xsDown>
+                      <Box
+                        className={classes.reference}
+                        dangerouslySetInnerHTML={{
+                          __html: node?.frontmatter?.reference,
+                        }}
+                      ></Box>
+                    </Hidden>
                   </Box>
                 </Container>
               </Box>
+              <Hidden smUp>
+                <Box
+                  className={classes.reference}
+                  dangerouslySetInnerHTML={{
+                    __html: node?.frontmatter?.reference,
+                  }}
+                ></Box>
+              </Hidden>
             </SwiperSlide>
           ))}
       </Swiper>
