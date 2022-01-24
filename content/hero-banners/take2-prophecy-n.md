@@ -9,5 +9,7 @@ buttons:
   color: primary
   buttonText: 了解更多
   href: products-and-services/take2-prophecy
+  link: products-and-services/take2-prophecy
+  internal: true
 
 ---
