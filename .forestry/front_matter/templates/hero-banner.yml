@@ -14,13 +14,13 @@ fields:
   config:
     maxSize: 64
   label: Image
-  description: "<em>Recommend Size: 4320 * 2631</em>"
+  description: "<em>Recommend Size: 4320 * 2631 (figma 3x)<br>Recommend Type: .jpg</em>"
 - name: mobile_image
   type: file
   config:
     maxSize: 64
   label: Mobile Image
-  description: "<em>Recommend Size: 1125 * 1506</em>"
+  description: "<em>Recommend Size: 1125 * 1506 (figma 3x)<br>Recommend Type: .jpg<br></em>"
 - name: detail
   type: textarea
   default: ''
@@ -40,5 +40,12 @@ fields:
     min: 1
     max: 3
   label: Buttons
+- name: reference
+  type: text
+  config:
+    required: true
+    min: 1
+    max: 500
+  label: Reference
 pages:
 - content/hero-banners/take2-prophecy-n.md
