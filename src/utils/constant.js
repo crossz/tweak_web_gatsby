@@ -261,13 +261,13 @@ export const PARTNERS = [
     lng: 101.60320871733128,
   },
   {
-    country: '印尼',
+    country: '菲律賓',
     name: 'Global Medical Technologies ',
     intro:
       '一家位於菲律賓的醫療技術公司，主要業務為向菲律賓國內引進世界各地的先進技術，以向醫護人員、患者及消費者提供健康測試和診斷技術的選擇。',
     link: 'https://gmtmanila.com/',
-    lat: -6.200375806341185,
-    lng: 106.84667434188609,
+    lat: 14.622741230780443,
+    lng: 120.9678862363281,
   },
   {
     country: '台灣',

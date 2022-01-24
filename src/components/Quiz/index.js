@@ -154,6 +154,7 @@ const useStyle = makeStyles((theme) => ({
   },
   linearProgressInfo: {
     position: 'relative',
+    overflow: 'hidden',
   },
   flagIcon: {
     position: 'absolute',

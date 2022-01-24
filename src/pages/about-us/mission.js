@@ -8,6 +8,7 @@ import {
   useMediaQuery,
   Link,
   Box,
+  Grid,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import classnames from 'classnames'
@@ -100,34 +101,35 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(5.25),
     },
   },
-  founderContent: {
-    margin: '0 auto',
-    maxWidth: 966,
-  },
   founderCard: {
-    padding: theme.spacing(0, 5),
-    paddingTop: theme.spacing(7.5),
-    paddingBottom: theme.spacing(3.5),
+    padding: theme.spacing(5, 4),
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.spacing(1.5),
-    color: theme.palette.text.primary,
-    fontSize: theme.typography.body1.fontSize,
-    display: 'flex',
     [theme.breakpoints.down('xs')]: {
-      display: 'block',
-      padding: theme.spacing(0, 3),
-      paddingTop: theme.spacing(0),
       fontSize: theme.typography.body2.fontSize,
+      padding: theme.spacing(4, 3),
+    },
+  },
+  founderDetailWrapper: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  founderImageWrapper: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(-10),
     },
   },
   founderImage: {
-    width: 170,
+    width: '100%',
+    borderRadius: theme.spacing(1.25),
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
-      width: 118,
-      marginRight: theme.spacing(2),
-      borderRadius: theme.spacing(0.75),
-      overflow: 'hidden',
-      marginTop: theme.spacing(-6),
+      maxWidth: theme.spacing(35),
     },
   },
   link: {
@@ -198,61 +200,64 @@ const Mission = () => {
         ))}
       </Container>
       <Box className={classes.founderWrapper}>
-        <Box className={classes.founderContent}>
-          <Box textAlign='center' mb={matches ? 10.75 : 4.75}>
+        <Container disableGutters maxWidth='md'>
+          <Box textAlign='center' mb={matches ? 16 : 4.75}>
             <Typography variant='h4' color='primary'>
-              創辦人及行政總裁
+              創始團隊
             </Typography>
           </Box>
           <Box className={classes.founderCard}>
-            <Box mr={5.5} display={matches ? 'flex' : 'block'}>
-              <Box
-                className={classes.founderImage}
-                width={matches ? 118 : 170}
-                mb={matches ? 3.75 : 2.75}
-              >
-                <StaticImage
-                  src='../../assets/images/founder_01.jpg'
-                  alt='founder 01'
-                ></StaticImage>
-              </Box>
-              <Box flexShrink={0} mt={matches ? 1 : 0}>
-                <Typography variant='h6' color='primary'>
-                  翁錦輝先生
-                </Typography>
-                <Typography
-                  variant={matches ? 'body2' : 'body1'}
-                  color='secondary'
-                >
-                  行政總裁
-                </Typography>
-              </Box>
-            </Box>
-            <Typography variant='body2' component='div'>
-              <Box color='text.primary' fontWeight='fontWeightBold' mb={0.5}>
-                背景及創辦人
-              </Box>
-              得易健康奠基於亞洲區頂尖大學的科研成果，是將一流學術成果轉化為商業應用並發揚光大的一所典範企業。我們的創辦人是來自香港中文大學醫學院化學病理學系的三位教授，二十多年來紮根香港、影響世界，在基因及疾病檢測領域深耕研究、成果豐碩。2019年，教授團隊正式創建得易健康，並宣佈公司首項工作為開發早期鼻咽癌檢測產品，以此為公司的根基，謀求未來更多的發展和貢獻社會的機會。
-              <br />
-              <br />
-              有關三位教授創辦得易健康並發佈公司首項產品的資訊，請參閱以下新聞連結：
-              <br />
-              <Link
-                className={classes.link}
-                href='https://www.businesswire.com/news/home/20190506005296/zh-HK/'
-                target='_blank'
-              >
-                https://www.businesswire.com/news/home/20190506005296/zh-HK/
-              </Link>
-              <br />
-              <br />
-              <Box mb={0.5} color='text.primary' fontWeight='fontWeightBold'>
-                我們的工作團隊
-              </Box>
-              得易健康的工作團隊來自世界不同地方，團結於公司的使命，並日益壯大成長。對於公司未來發展方向，得易健康行政總裁翁錦輝先生表示︰「能夠將世界一流學者的研究成果付諸民生應用、影響社會，我們深感自豪。我們的員工有理想、有活力、有朝氣，致力成為醫療界別的開拓者，秉持積極創新、一絲不苟的理念和風格，勇於嘗試、突破傳統醫學科技的界限，努力為人類健康帶來切實、根本的改變。」
-            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={4}>
+                <Box className={classes.founderImageWrapper}>
+                  <StaticImage
+                    className={classes.founderImage}
+                    src='../../assets/images/team_01.jpg'
+                    alt='team 01'
+                  ></StaticImage>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={8}>
+                <Box className={classes.founderDetailWrapper}>
+                  <Typography
+                    variant='caption'
+                    color='textPrimary'
+                    component='div'
+                  >
+                    <Box fontWeight='fontWeightBold' mb={0.5}>
+                      背景及創辦人
+                    </Box>
+                    得易健康奠基於亞洲區頂尖大學的科研成果，是將一流學術成果轉化為商業應用並發揚光大的一所典範企業。我們的創辦人是來自香港中文大學醫學院化學病理學系的三位教授，二十多年來紮根香港、影響世界，在基因及疾病檢測領域深耕研究、成果豐碩。2019年，教授團隊正式創建得易健康，並宣佈公司首項工作為開發早期鼻咽癌檢測產品，以此為公司的根基，謀求未來更多的發展和貢獻社會的機會。
+                    <br />
+                    <br />
+                    有關三位教授創辦得易健康並發佈公司首項產品的資訊，請參閱以下新聞連結：
+                    <br />
+                    <Link
+                      className={classes.link}
+                      href='https://www.businesswire.com/news/home/20190506005296/zh-HK/'
+                      target='_blank'
+                    >
+                      https://www.businesswire.com/news/home/20190506005296/zh-HK/
+                    </Link>
+                    <br />
+                    <br />
+                    <Box
+                      mb={0.5}
+                      color='text.primary'
+                      fontWeight='fontWeightBold'
+                    >
+                      我們的工作團隊
+                    </Box>
+                    得易健康的工作團隊來自世界不同地方，團結於公司的使命，並日益壯大成長。對於公司未來發展方向，得易健康行政總裁翁錦輝先生表示︰「能夠將世界一流學者的研究成果付諸民生應用、影響社會，我們深感自豪。我們的員工有理想、有活力、有朝氣，致力成為醫療界別的開拓者，秉持積極創新、一絲不苟的理念和風格，勇於嘗試、突破傳統醫學科技的界限，努力為人類健康帶來切實、根本的改變。」
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
+            {/* <Box mr={5.5} display={matches ? 'flex' : 'block'}>
+
+            </Box> */}
           </Box>
-        </Box>
+        </Container>
       </Box>
     </Box>
   )
