@@ -75,6 +75,7 @@ fields:
     min: 
     max: 
     step: 
+    required: true
   label: Sort
 pages:
 - content/hero-banners/br.md
