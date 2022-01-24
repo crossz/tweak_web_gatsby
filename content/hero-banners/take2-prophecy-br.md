@@ -23,5 +23,6 @@ reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Departm
   Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.”
   CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424."
 theme: dark
+sort: 1
 
 ---
