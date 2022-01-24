@@ -49,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(2.5),
     },
   },
+  isDark: {
+    '& rect': {
+      fill: theme.palette.primary.contrastText,
+    },
+  },
   header: {
     height: theme.spacing(HEADER_HEIGHT),
     padding: theme.spacing(0, 6),
@@ -148,7 +153,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction='down' ref={ref} {...props} />
 })
 
-const Menu = () => {
+const Menu = (props) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
@@ -214,7 +219,9 @@ const Menu = () => {
         aria-label='menu'
         onClick={handleOpen}
       >
-        <MenuIcon className={classes.icon}></MenuIcon>
+        <MenuIcon
+          className={classnames(classes.icon, { [classes.isDark]: props.dark })}
+        ></MenuIcon>
       </IconButton>
       <Dialog
         className={classes.root}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   makeStyles,
   Typography,
@@ -14,11 +14,12 @@ import {
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Pagination, Navigation } from 'swiper/core'
+import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
-SwiperCore.use([Pagination, Navigation])
+import { HeroThemeContext } from '@layouts/context'
+SwiperCore.use([Autoplay, Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -120,10 +121,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Banner = ({ nodes }) => {
+const Banner = ({ nodes, changeHeroTheme }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const context = useContext(HeroThemeContext)
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -132,6 +134,13 @@ const Banner = ({ nodes }) => {
         navigation={nodes?.length > 1}
         pagination={{ clickable: true }}
         className={classes.swiperWrapper}
+        autoplay={{ delay: 5000 }}
+        onSlideChange={(swiper) => {
+          return (
+            context?.toggleTheme &&
+            context?.toggleTheme(swiper.realIndex === 1 ? 'dark' : 'light')
+          )
+        }}
       >
         {nodes?.length > 0 &&
           nodes?.map((node) => (

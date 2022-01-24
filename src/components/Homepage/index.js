@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Map from '@components/Map'
 import { makeStyles } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'
@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
   const classes = useStyles()
+
   return (
     <>
       <Banner nodes={heroBannerNodes}></Banner>
