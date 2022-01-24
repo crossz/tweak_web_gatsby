@@ -5,10 +5,33 @@ fields:
 - name: title
   type: text
   config:
-    required: false
+    required: true
+    min: 1
+    max: 50
   label: Title
 - name: image
   type: file
   config:
     maxSize: 64
   label: Image
+- name: mobile_image
+  type: file
+  config:
+    maxSize: 64
+  label: Mobile Image
+- name: detail
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+    min: 1
+    max: 200
+  label: Detail
+- name: buttons
+  type: include
+  config: {}
+  template: hero-button
+  label: Buttons
