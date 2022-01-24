@@ -45,8 +45,12 @@ fields:
       file: 
       path: 
   label: Button Text
-- name: href
+- name: link
   type: text
   config:
     required: false
-  label: Href
+  label: link
+- name: internal
+  type: boolean
+  label: Internal
+  default: true
