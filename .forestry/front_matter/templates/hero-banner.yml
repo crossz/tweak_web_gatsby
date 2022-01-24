@@ -66,6 +66,13 @@ fields:
       file: 
       path: 
   label: Theme
+- name: sort
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Sort
 pages:
 - content/hero-banners/br.md
 - content/hero-banners/take2-prophecy-br.md
