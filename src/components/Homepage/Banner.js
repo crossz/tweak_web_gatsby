@@ -9,7 +9,7 @@ import {
   useMediaQuery,
   Grid,
 } from '@material-ui/core'
-import { StaticImage } from 'gatsby-plugin-image'
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 const useStyles = makeStyles((theme) => ({
@@ -72,84 +72,85 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 'auto',
     },
   },
+  heroBannerWrapper: {
+    display: 'grid',
+  },
 }))
-const Banner = () => {
+const Banner = ({ nodes }) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
-      {matches ? (
-        <StaticImage
-          className={classes.staticImage}
-          layout='fullWidth'
-          // You can optionally force an aspect ratio for the generated image
-          // aspectRatio={3 / 1}
-          // This is a presentational image, so the alt should be an empty string
-          alt='Homepage'
-          // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
-          objectPosition='center top'
-          src={'../../assets/images/homepage_banner_mobile.jpg'}
-        />
-      ) : (
-        <StaticImage
-          className={classes.staticImage}
-          layout='fullWidth'
-          // You can optionally force an aspect ratio for the generated image
-          // aspectRatio={3 / 1}
-          // This is a presentational image, so the alt should be an empty string
-          alt='Homepage'
-          objectPosition='center top'
-          // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
-          src={'../../assets/images/homepage_banner.jpg'}
-        />
-      )}
-      <Container className={classes.wrapper} maxWidth='md'>
-        <Box className={classes.contentWrapper}>
-          <Typography variant='h2' color='primary' component='div'>
-            <Box mb={matches ? 1 : 2} lineHeight={1.5}>
-              Take2 Prophecy™ <br />
-              早期鼻咽癌篩查
-            </Box>
-            <Box
-              fontSize={matches ? 'caption.fontSize' : 'body1.fontSize'}
-              fontWeight='fontWeightLight'
-              lineHeight='1.5'
-              textAlign='justify'
-            >
-              超越既有，引領醫學，Take2 Prophecy™
-              早期鼻咽癌篩查結合PCR及次世代DNA測序技術，能有效檢測到早期鼻咽癌。數據顯示，越早發現癌症，治療的效果就會越好，而存活率也能大幅提升¹。早期鼻咽癌沒有明顯病徵，許多患者未有及時檢測，因而未能了解身體狀況，錯失治療的黃金期。懂得準備，便沒有跨不過的難關。
-            </Box>
-          </Typography>
-          <Grid className={classes.btnWrapper} container spacing={2}>
-            <Grid item xs={matches ? 6 : 'auto'}>
-              <Link to='/products-and-services/take2-prophecy'>
-                <Button variant='outlined' color='primary' fullWidth={matches}>
-                  了解更多
-                </Button>
-              </Link>
-            </Grid>
-            <Grid item xs={matches ? 6 : 'auto'}>
-              <Button
-                variant='contained'
-                color='secondary'
-                href={`${process.env.GATSBY_SITE_URL}`}
-                target='_blank'
-                fullWidth={matches}
-              >
-                立即預約
-              </Button>
-            </Grid>
-          </Grid>
-          <Box className={classes.marks}>
-            ¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus
-            DNA to Screen for Nasopharyngeal Cancer.”{' '}
-            <i>New England Journal of Medicine</i>, vol. 377, no. 6, 2017, pp.
-            513–22.
+      {nodes?.length > 0 &&
+        nodes?.map((node) => (
+          <Box className={classes.heroBannerWrapper} key={node.id}>
+            <GatsbyImage
+              className={classes.staticImage}
+              image={
+                node?.frontmatter?.image && getImage(node?.frontmatter?.image)
+              }
+              placeholder='blurred'
+              alt={node?.frontmatter?.title}
+            ></GatsbyImage>
+            <Container className={classes.wrapper} maxWidth='md'>
+              <Box className={classes.contentWrapper}>
+                <Typography variant='h2' color='primary' component='div'>
+                  <Box
+                    mb={matches ? 1 : 2}
+                    lineHeight={1.5}
+                    dangerouslySetInnerHTML={{
+                      __html: node?.frontmatter?.title,
+                    }}
+                  ></Box>
+                  <Box
+                    fontSize={matches ? 'caption.fontSize' : 'body1.fontSize'}
+                    fontWeight='fontWeightLight'
+                    lineHeight='1.5'
+                    textAlign='justify'
+                  >
+                    {node?.frontmatter?.detail}
+                  </Box>
+                </Typography>
+                <Grid className={classes.btnWrapper} container spacing={2}>
+                  {node?.frontmatter?.buttons?.length > 0 &&
+                    node?.frontmatter?.buttons?.map((button) => (
+                      <Grid key={button.name} item xs={matches ? 6 : 'auto'}>
+                        {button.internal ? (
+                          <Link to={button.link}>
+                            <Button
+                              variant={button.variant}
+                              color={button.color}
+                              fullWidth={matches}
+                            >
+                              {button.name}
+                            </Button>
+                          </Link>
+                        ) : (
+                          <Button
+                            variant={button.variant}
+                            color={button.color}
+                            href={button.link}
+                            target='_blank'
+                            fullWidth={matches}
+                          >
+                            {button.name}
+                          </Button>
+                        )}
+                      </Grid>
+                    ))}
+                </Grid>
+                <Box
+                  className={classes.marks}
+                  dangerouslySetInnerHTML={{
+                    __html: node?.frontmatter?.reference,
+                  }}
+                ></Box>
+              </Box>
+            </Container>
           </Box>
-        </Box>
-      </Container>
+        ))}
     </Container>
   )
 }

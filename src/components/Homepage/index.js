@@ -57,11 +57,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Homepage = ({ promotionNodes, healthTipsNodes }) => {
+const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
   const classes = useStyles()
   return (
     <>
-      <Banner></Banner>
+      <Banner nodes={heroBannerNodes}></Banner>
       <Box className={classes.containerWrapper}>
         <Container disableGutters className={classes.root} maxWidth='md'>
           <Quiz></Quiz>
