@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/heroes.json
   label: Hero Banners
-  match: "**/*"
 - type: directory
   path: content/join-us
   label: Careers
