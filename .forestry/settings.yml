@@ -7,6 +7,7 @@ sections:
 - type: document
   path: content/heroes.json
   label: Hero Banners
+  match: "**/*"
 - type: directory
   path: content/join-us
   label: Careers
@@ -34,7 +35,6 @@ sections:
 - type: document
   path: content/menu.json
   label: Menu
-  read_only: false
 - type: directory
   path: content/promotions
   label: Promotions
