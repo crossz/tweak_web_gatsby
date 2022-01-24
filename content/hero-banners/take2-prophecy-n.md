@@ -11,7 +11,7 @@ buttons:
   link: products-and-services/take2-prophecy
   internal: true
   button_text: 了解更多
-  name: ''
+  name: 了解更多
 - template: hero-button
   variant: contained
   color: secondary
