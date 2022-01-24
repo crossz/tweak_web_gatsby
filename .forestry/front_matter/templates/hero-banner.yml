@@ -14,11 +14,13 @@ fields:
   config:
     maxSize: 64
   label: Image
+  description: "<em>Recommend Size: 4320 * 2631</em>"
 - name: mobile_image
   type: file
   config:
     maxSize: 64
   label: Mobile Image
+  description: "<em>Recommend Size: 1125 * 1506</em>"
 - name: detail
   type: textarea
   default: ''
