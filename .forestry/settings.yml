@@ -9,7 +9,7 @@ sections:
   label: Hero Banners
   create: documents
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
   templates:
   - hero-banner
 - type: directory
