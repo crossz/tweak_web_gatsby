@@ -50,6 +50,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(15),
     color: theme.palette.primary.main,
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(-2),
       marginRight: theme.spacing(-2),
@@ -154,7 +155,6 @@ const useStyle = makeStyles((theme) => ({
   },
   linearProgressInfo: {
     position: 'relative',
-    overflow: 'hidden',
   },
   flagIcon: {
     position: 'absolute',
