@@ -67,13 +67,14 @@ fields:
       path: 
   label: Theme
 - name: sort
-  type: list
+  type: number
+  description: ''
+  default: 0
+  required: true
   config:
-    use_select: false
     min: 
     max: 
-    source:
-      type: simple
+    step: 
   label: Sort
 pages:
 - content/hero-banners/br.md
