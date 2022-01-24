@@ -10,5 +10,12 @@ buttons:
   buttonText: 了解更多
   link: products-and-services/take2-prophecy
   internal: true
+  button_text: 了解更多
+- template: hero-button
+  variant: contained
+  color: secondary
+  internal: false
+  button_text: 立即預約
+  link: https://take2health.net/health-platform/
 
 ---
