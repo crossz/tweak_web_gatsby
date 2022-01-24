@@ -13,6 +13,6 @@ buttons:
   link: https://take2health.net/health-platform/
 reference: "*優惠受條款及細則約束"
 theme: light
-sort: 3
+sort: 2
 
 ---
