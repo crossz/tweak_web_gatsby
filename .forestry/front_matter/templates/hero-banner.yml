@@ -72,6 +72,8 @@ fields:
     use_select: false
     min: 
     max: 
+    source:
+      type: simple
   label: Sort
 pages:
 - content/hero-banners/br.md
