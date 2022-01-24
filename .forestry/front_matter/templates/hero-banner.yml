@@ -51,6 +51,20 @@ fields:
     min: 1
     max: 500
   label: Reference
+- name: theme
+  type: select
+  default: light
+  config:
+    required: true
+    options:
+    - light
+    - dark
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Theme
 pages:
 - content/hero-banners/br.md
 - content/hero-banners/take2-prophecy-br.md

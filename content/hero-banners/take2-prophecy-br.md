@@ -22,5 +22,6 @@ reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Departm
   accessed 23 July 2021.<br/>² Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN
   Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.”
   CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424."
+theme: dark
 
 ---
