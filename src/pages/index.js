@@ -19,6 +19,7 @@ export const query = graphql`
   {
     heroBannerNodes: allMdx(
       filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
+      sort: { fields: frontmatter___sort, order: ASC }
     ) {
       nodes {
         id
@@ -36,6 +37,8 @@ export const query = graphql`
             }
           }
           reference
+          sort
+          theme
           buttons {
             variant
             color

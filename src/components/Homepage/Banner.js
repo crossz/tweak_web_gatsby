@@ -138,7 +138,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
         onSlideChange={(swiper) => {
           return (
             context?.toggleTheme &&
-            context?.toggleTheme(swiper.realIndex === 1 ? 'dark' : 'light')
+            context?.toggleTheme(nodes[swiper.realIndex]?.frontmatter?.theme)
           )
         }}
       >
