@@ -31,7 +31,7 @@ fields:
       file: 
       path: 
   label: Color
-- name: buttonText
+- name: button_text
   type: select
   default: ''
   config:
