@@ -116,8 +116,8 @@ const Banner = ({ nodes }) => {
                   <GatsbyImage
                     className={classes.staticImage}
                     image={
-                      node?.frontmatter?.mobile_image &&
-                      getImage(node?.frontmatter?.mobile_image)
+                      node?.frontmatter?.mobileImage &&
+                      getImage(node?.frontmatter?.mobileImage)
                     }
                     placeholder='blurred'
                     alt={node?.frontmatter?.title}

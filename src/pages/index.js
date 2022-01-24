@@ -30,7 +30,7 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH)
             }
           }
-          mobile_image {
+          mobileImage {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)
             }

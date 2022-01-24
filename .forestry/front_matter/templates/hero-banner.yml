@@ -15,7 +15,7 @@ fields:
     maxSize: 64
   label: Image
   description: "<em>Recommend Size: 4320 * 2631 (figma 3x)<br>Recommend Type: .jpg</em>"
-- name: mobile_image
+- name: mobileImage
   type: file
   config:
     maxSize: 64
