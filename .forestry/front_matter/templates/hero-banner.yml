@@ -1,6 +1,7 @@
 ---
 label: Hero Banner
 hide_body: true
+display_field: title
 fields:
 - name: title
   type: text
@@ -65,6 +66,17 @@ fields:
       file: 
       path: 
   label: Theme
+- name: sort
+  type: number
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+  label: Sort
 pages:
 - content/hero-banners/br.md
 - content/hero-banners/take2-prophecy-br.md

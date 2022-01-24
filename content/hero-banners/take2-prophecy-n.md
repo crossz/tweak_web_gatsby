@@ -24,4 +24,6 @@ reference:
   to Screen for Nasopharyngeal Cancer.”<i>New England Journal of Medicine</i>, vol.
   377, no. 6, 2017, pp. 513–22.'
 mobileImage: '../images/mobile_hero_01.jpg'
+theme: light
+sort: 0
 ---
