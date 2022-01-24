@@ -30,3 +30,8 @@ fields:
     min: 1
     max: 200
   label: Detail
+- name: buttons
+  type: include
+  config: {}
+  template: hero-button
+  label: Buttons

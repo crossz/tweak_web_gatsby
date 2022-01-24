@@ -4,9 +4,14 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
-- type: document
-  path: content/heroes.json
+- type: directory
+  path: content/hero-banners
   label: Hero Banners
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - hero-banner
 - type: directory
   path: content/join-us
   label: Careers
@@ -34,7 +39,6 @@ sections:
 - type: document
   path: content/menu.json
   label: Menu
-  read_only: true
 - type: directory
   path: content/promotions
   label: Promotions

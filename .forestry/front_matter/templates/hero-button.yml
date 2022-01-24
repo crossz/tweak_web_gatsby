@@ -1,4 +1,56 @@
 ---
 label: Hero Button
 hide_body: true
-fields: []
+fields:
+- name: variant
+  type: select
+  default: contained
+  config:
+    required: false
+    options:
+    - text
+    - outlined
+    - contained
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Variant
+- name: color
+  type: select
+  default: secondary
+  config:
+    required: false
+    options:
+    - primary
+    - secondary
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Color
+- name: button_text
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - 了解更多
+    - 立即預約
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Button Text
+- name: link
+  type: text
+  config:
+    required: false
+  label: link
+- name: internal
+  type: boolean
+  label: Internal
+  default: true
