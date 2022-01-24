@@ -39,7 +39,7 @@ export const query = graphql`
           buttons {
             variant
             color
-            button_text
+            name
             link
             internal
           }

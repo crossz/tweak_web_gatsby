@@ -9,8 +9,14 @@ import {
   useMediaQuery,
   Grid,
 } from '@material-ui/core'
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Pagination, Navigation } from 'swiper/core'
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+import 'swiper/components/navigation/navigation.min.css'
+SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: 0,
     },
   },
-  marks: {
+  reference: {
     fontSize: 9,
     lineHeight: 1,
     marginTop: 'auto',
@@ -59,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       fontSize: 6,
       marginBottom: theme.spacing(-3),
-      marginTop: theme.spacing(4),
+      marginTop: 'auto',
     },
   },
   btnWrapper: {
@@ -69,11 +75,22 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: 'auto',
+      marginTop: theme.spacing(9),
     },
   },
   heroBannerWrapper: {
     display: 'grid',
+  },
+  swiperWrapper: {
+    '& .swiper-button-prev,.swiper-button-next': {
+      '&:after': {
+        fontSize: theme.spacing(6),
+        color: theme.palette.common.white,
+        [theme.breakpoints.down('xs')]: {
+          fontSize: theme.spacing(4),
+        },
+      },
+    },
   },
 }))
 const Banner = ({ nodes }) => {
@@ -83,74 +100,102 @@ const Banner = ({ nodes }) => {
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
-      {nodes?.length > 0 &&
-        nodes?.map((node) => (
-          <Box className={classes.heroBannerWrapper} key={node.id}>
-            <GatsbyImage
-              className={classes.staticImage}
-              image={
-                node?.frontmatter?.image && getImage(node?.frontmatter?.image)
-              }
-              placeholder='blurred'
-              alt={node?.frontmatter?.title}
-            ></GatsbyImage>
-            <Container className={classes.wrapper} maxWidth='md'>
-              <Box className={classes.contentWrapper}>
-                <Typography variant='h2' color='primary' component='div'>
-                  <Box
-                    mb={matches ? 1 : 2}
-                    lineHeight={1.5}
-                    dangerouslySetInnerHTML={{
-                      __html: node?.frontmatter?.title,
-                    }}
-                  ></Box>
-                  <Box
-                    fontSize={matches ? 'caption.fontSize' : 'body1.fontSize'}
-                    fontWeight='fontWeightLight'
-                    lineHeight='1.5'
-                    textAlign='justify'
-                  >
-                    {node?.frontmatter?.detail}
-                  </Box>
-                </Typography>
-                <Grid className={classes.btnWrapper} container spacing={2}>
-                  {node?.frontmatter?.buttons?.length > 0 &&
-                    node?.frontmatter?.buttons?.map((button) => (
-                      <Grid key={button.name} item xs={matches ? 6 : 'auto'}>
-                        {button.internal ? (
-                          <Link to={button.link}>
-                            <Button
-                              variant={button.variant}
-                              color={button.color}
-                              fullWidth={matches}
-                            >
-                              {button.name}
-                            </Button>
-                          </Link>
-                        ) : (
-                          <Button
-                            variant={button.variant}
-                            color={button.color}
-                            href={button.link}
-                            target='_blank'
-                            fullWidth={matches}
+      <Swiper
+        slidesPerView={'auto'}
+        loop={nodes?.length > 1}
+        navigation={nodes?.length > 1}
+        pagination={true}
+        initialSlide={0}
+        className={classes.swiperWrapper}
+      >
+        {nodes?.length > 0 &&
+          nodes?.map((node) => (
+            <SwiperSlide key={node.id}>
+              <Box className={classes.heroBannerWrapper}>
+                {matches ? (
+                  <GatsbyImage
+                    className={classes.staticImage}
+                    image={
+                      node?.frontmatter?.mobile_image &&
+                      getImage(node?.frontmatter?.mobile_image)
+                    }
+                    placeholder='blurred'
+                    alt={node?.frontmatter?.title}
+                  ></GatsbyImage>
+                ) : (
+                  <GatsbyImage
+                    className={classes.staticImage}
+                    image={
+                      node?.frontmatter?.image &&
+                      getImage(node?.frontmatter?.image)
+                    }
+                    placeholder='blurred'
+                    alt={node?.frontmatter?.title}
+                  ></GatsbyImage>
+                )}
+                <Container className={classes.wrapper} maxWidth='md'>
+                  <Box className={classes.contentWrapper}>
+                    <Typography variant='h2' color='primary' component='div'>
+                      <Box
+                        mb={matches ? 1 : 2}
+                        lineHeight={1.5}
+                        dangerouslySetInnerHTML={{
+                          __html: node?.frontmatter?.title,
+                        }}
+                      ></Box>
+                      <Box
+                        fontSize={
+                          matches ? 'caption.fontSize' : 'body1.fontSize'
+                        }
+                        fontWeight='fontWeightLight'
+                        lineHeight='1.5'
+                        textAlign='justify'
+                      >
+                        {node?.frontmatter?.detail}
+                      </Box>
+                    </Typography>
+                    <Grid className={classes.btnWrapper} container spacing={2}>
+                      {node?.frontmatter?.buttons?.length > 0 &&
+                        node?.frontmatter?.buttons?.map((button) => (
+                          <Grid
+                            key={button.name}
+                            item
+                            xs={matches ? 12 : 'auto'}
                           >
-                            {button.name}
-                          </Button>
-                        )}
-                      </Grid>
-                    ))}
-                </Grid>
-                <Box
-                  className={classes.marks}
-                  dangerouslySetInnerHTML={{
-                    __html: node?.frontmatter?.reference,
-                  }}
-                ></Box>
+                            {button.internal ? (
+                              <Link to={button.link}>
+                                <Button
+                                  variant={button.variant}
+                                  color={button.color}
+                                >
+                                  {button.name}
+                                </Button>
+                              </Link>
+                            ) : (
+                              <Button
+                                variant={button.variant}
+                                color={button.color}
+                                href={button.link}
+                                target='_blank'
+                              >
+                                {button.name}
+                              </Button>
+                            )}
+                          </Grid>
+                        ))}
+                    </Grid>
+                    <Box
+                      className={classes.reference}
+                      dangerouslySetInnerHTML={{
+                        __html: node?.frontmatter?.reference,
+                      }}
+                    ></Box>
+                  </Box>
+                </Container>
               </Box>
-            </Container>
-          </Box>
-        ))}
+            </SwiperSlide>
+          ))}
+      </Swiper>
     </Container>
   )
 }
