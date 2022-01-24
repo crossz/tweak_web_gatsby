@@ -11,12 +11,14 @@ buttons:
   link: products-and-services/take2-prophecy
   internal: true
   button_text: 了解更多
+  name: ''
 - template: hero-button
   variant: contained
   color: secondary
   internal: false
   button_text: 立即預約
   link: https://take2health.net/health-platform/
+  name: 立即預約
 reference: "¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA
   to Screen for Nasopharyngeal Cancer.”<i>New England Journal of Medicine</i>, vol.
   377, no. 6, 2017, pp. 513–22."
