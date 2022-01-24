@@ -52,5 +52,6 @@ fields:
     max: 500
   label: Reference
 pages:
+- content/hero-banners/br.md
 - content/hero-banners/take2-prophecy-br.md
 - content/hero-banners/take2-prophecy-n.md
