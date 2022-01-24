@@ -16,6 +16,34 @@ export default Index
 
 export const query = graphql`
   {
+    heroBannerNodes: allMdx(
+      filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          detail
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          mobile_image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          buttons {
+            variant
+            color
+            button_text
+            link
+            internal
+          }
+        }
+      }
+    }
     promotionNodes: allMdx(
       limit: 6
       filter: { fileAbsolutePath: { regex: "/promotions/" } }
