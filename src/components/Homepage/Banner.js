@@ -101,17 +101,21 @@ const useStyles = makeStyles((theme) => ({
     '& .swiper-button-prev,.swiper-button-next': {
       '&:after': {
         fontSize: theme.spacing(5),
-        color: alpha(theme.palette.common.black, 0.1),
+        color: alpha(theme.palette.common.black, 0.25),
         [theme.breakpoints.down('xs')]: {
           fontSize: theme.spacing(3),
         },
       },
     },
     '& .swiper-slide': {
-      width: '100%',
+      // width: '100%',
+    },
+    '& .swiper-pagination-bullet': {
+      opacity: 0.3,
     },
     '& .swiper-pagination-bullet-active': {
-      background: alpha(theme.palette.common.white, 0.8),
+      opacity: 1,
+      background: alpha(theme.palette.common.white, 0.9),
     },
     '& .swiper-pagination': {
       [theme.breakpoints.down('xs')]: {
@@ -129,22 +133,22 @@ const Banner = ({ nodes, changeHeroTheme }) => {
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
-      <Swiper
-        loop={nodes?.length > 1}
-        navigation={nodes?.length > 1}
-        pagination={{ clickable: true }}
-        className={classes.swiperWrapper}
-        autoplay={{ delay: 5000 }}
-        onSlideChange={(swiper) => {
-          return (
-            context?.toggleTheme &&
-            context?.toggleTheme(nodes[swiper.realIndex]?.frontmatter?.theme)
-          )
-        }}
-        initialSlide={0}
-      >
-        {nodes?.length > 0 &&
-          nodes?.map((node) => (
+      {nodes?.length > 0 && (
+        <Swiper
+          loop={nodes?.length > 1}
+          navigation={nodes?.length > 1}
+          pagination={{ clickable: true }}
+          className={classes.swiperWrapper}
+          autoplay={{ delay: 5000 }}
+          onSlideChange={(swiper) => {
+            return (
+              context?.toggleTheme &&
+              context?.toggleTheme(nodes[swiper.realIndex]?.frontmatter?.theme)
+            )
+          }}
+          initialSlide={0}
+        >
+          {nodes?.map((node) => (
             <SwiperSlide key={node.id}>
               <Box className={classes.heroBannerWrapper}>
                 {matches ? (
@@ -258,7 +262,8 @@ const Banner = ({ nodes, changeHeroTheme }) => {
               </Hidden>
             </SwiperSlide>
           ))}
-      </Swiper>
+        </Swiper>
+      )}
     </Container>
   )
 }
