@@ -6,6 +6,6 @@ detail: "Circulating cell-free Epstein–Barr virus (EBV) DNA is a biomarker for
   \ncarcinoma. We conducted a prospective study to investigate whether EBV DNA in
   plasma samples would be useful to screen for early nasopharyngeal carcinoma in asymptomatic
   \npersons."
-href: ''
+href: https://pubmed.ncbi.nlm.nih.gov/28792880/
 
 ---
