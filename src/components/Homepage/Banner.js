@@ -25,11 +25,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'grid',
   },
-  staticImage: {
+  heroImgWrapper: {
     gridArea: '1/1',
-    // height: 'calc((877 / 1440) * 100vw)',
     height: 877,
-    WebkitBackfaceVisibility: 'hidden',
     [theme.breakpoints.down('xs')]: {
       minHeight: 'auto',
       height: 'calc((502 / 375) * 100vw)',
@@ -41,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     gridArea: '1/1',
     display: 'grid',
     height: 877,
+    transform: `translateZ(0px)`,
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(0, 6),
     },
@@ -160,7 +159,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
               <Box className={classes.heroBannerWrapper}>
                 {matches ? (
                   <GatsbyImage
-                    className={classes.staticImage}
+                    className={classes.heroImgWrapper}
                     image={
                       node?.frontmatter?.mobileImage &&
                       getImage(node?.frontmatter?.mobileImage)
@@ -170,7 +169,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                   ></GatsbyImage>
                 ) : (
                   <GatsbyImage
-                    className={classes.staticImage}
+                    className={classes.heroImgWrapper}
                     image={
                       node?.frontmatter?.image &&
                       getImage(node?.frontmatter?.image)
