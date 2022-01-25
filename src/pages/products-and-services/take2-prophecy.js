@@ -270,13 +270,15 @@ const useStyles = makeStyles((theme) => ({
   imageListItemItem: {
     overflow: 'initial',
   },
-  prophecyImage: {
-    borderRadius: theme.spacing(1.5),
+  prophecyImgWrapper: {
     overflow: 'hidden',
     marginRight: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {
       marginRight: 0,
     },
+  },
+  prophecyImg: {
+    borderRadius: theme.spacing(1.5),
   },
   btnWrapper: {
     marginTop: theme.spacing(4),
@@ -438,7 +440,8 @@ const Take2Prophecy = () => {
           <Grid container>
             <Grid item xs={12} sm={6}>
               <StaticImage
-                className={classes.prophecyImage}
+                className={classes.prophecyImgWrapper}
+                imgClassName={classes.prophecyImg}
                 src='../../assets/images/take2_prophecy_01.jpg'
                 alt='take2 prophecy 01'
               ></StaticImage>

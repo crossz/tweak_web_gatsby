@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   image: {
     // width: '100%',
     // height: `calc(100% / ${POST_ASPECT_RATIO})`,
-    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+    borderRadius: `10px 10px 0 0 `,
   },
   info: {
     fontSize: theme.typography.body2.fontSize,
@@ -106,7 +106,7 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
         <Box className={classes.imageWrapper}>
           {images[0] && (
             <GatsbyImage
-              className={classes.image}
+              imgClassName={classes.image}
               image={images[0]}
               placeholder='blurred'
               alt={title}

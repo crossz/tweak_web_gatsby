@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     gridArea: '1/1',
     // height: 'calc((877 / 1440) * 100vw)',
     height: 877,
+    WebkitBackfaceVisibility: 'hidden',
     [theme.breakpoints.down('xs')]: {
       minHeight: 'auto',
       height: 'calc((502 / 375) * 100vw)',
@@ -95,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroBannerWrapper: {
     display: 'grid',
+    position: 'relative',
   },
   swiperWrapper: {
     width: '100%',
@@ -107,8 +109,10 @@ const useStyles = makeStyles((theme) => ({
         },
       },
     },
+    WebkitBackfaceVisibility: 'hidden',
     '& .swiper-slide': {
       // width: '100%',
+      WebkitBackfaceVisibility: 'hidden',
     },
     '& .swiper-pagination-bullet': {
       opacity: 0.3,
@@ -148,6 +152,8 @@ const Banner = ({ nodes, changeHeroTheme }) => {
           }}
           initialSlide={0}
           speed={700}
+          watchOverflow={true}
+          watchSlidesVisibility={true}
         >
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>

@@ -71,7 +71,7 @@ const Consult = () => {
       <Grid container>
         <Grid className={classes.leftWrapper} item xs={12} sm={6}>
           <StaticImage
-            className={classes.leftImage}
+            imgClassName={classes.leftImage}
             src='../../assets/images/homepage_consult.jpg'
             alt='homepage consult'
           ></StaticImage>

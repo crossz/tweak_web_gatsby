@@ -191,14 +191,16 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 'none',
     },
   },
-  sideImg: {
-    borderRadius: `0 12px 12px 0`,
+  sideImgWrapper: {
     marginTop: theme.spacing(-9),
     width: `93%`,
     [theme.breakpoints.down('xs')]: {
       width: `calc(100% - ${theme.spacing(3)}px)`,
       marginTop: theme.spacing(-26),
     },
+  },
+  sideImg: {
+    borderRadius: `0 12px 12px 0`,
   },
   formControl: {
     '&:last-child': {
@@ -350,7 +352,8 @@ const International = () => {
           <Grid container>
             <Grid item xs={12} sm={6}>
               <StaticImage
-                className={classes.sideImg}
+                className={classes.sideImgWrapper}
+                imgClassName={classes.sideImg}
                 src='../assets/images/international_01.jpg'
                 alt='international img 01'
                 objectFit='fill'

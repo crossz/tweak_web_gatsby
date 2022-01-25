@@ -62,6 +62,8 @@ const useStyle = makeStyles((theme) => ({
   quizBg: {
     gridArea: '1/1',
     height: '100%',
+  },
+  quizBgImg: {
     borderRadius: theme.spacing(4),
   },
   quizBanner: {
@@ -369,6 +371,7 @@ const Quiz = () => {
         {step > 0 && step <= QUIZ.length ? (
           <StaticImage
             className={classes.quizBg}
+            imgClassName={classes.quizBgImg}
             layout='fullWidth'
             src='../../assets/images/quiz_02.png'
             alt='quiz bg 02'
@@ -376,6 +379,7 @@ const Quiz = () => {
         ) : (
           <StaticImage
             className={classes.quizBg}
+            imgClassName={classes.quizBgImg}
             layout='fullWidth'
             src='../../assets/images/quiz_01.png'
             alt='quiz bg 01'
