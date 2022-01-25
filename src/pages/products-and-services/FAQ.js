@@ -167,15 +167,17 @@ const FAQ = () => {
           return console.log('fetch error')
         }
         const list =
-          res?.data?.map((item) => {
-            return {
-              id: item.id,
-              question: item.questionHk,
-              content: item.contentHk,
-              status: item.status,
-              typeName: item.typeName,
-            }
-          }) || []
+          res?.data
+            ?.filter((item) => item.status)
+            ?.map((item) => {
+              return {
+                id: item.id,
+                question: item.questionHk,
+                content: item.contentHk,
+                status: item.status,
+                typeName: item.typeName,
+              }
+            }) || []
         setAllFaqList(list)
         setFaqList(list)
         const groupType = groupBy(

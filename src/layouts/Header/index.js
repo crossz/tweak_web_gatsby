@@ -72,9 +72,6 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.contrastText,
       },
     },
-    '& $icon rect': {
-      fill: theme.palette.primary.contrastText,
-    },
   },
 }))
 
