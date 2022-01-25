@@ -23,6 +23,7 @@ fields:
     maxSize: 64
   label: pdf
   description: Pdf path of clinical paper.
+  default: "../images/chan-kc_nejm_2017_screening.pdf"
 - name: detail
   type: textarea
   default: ''
