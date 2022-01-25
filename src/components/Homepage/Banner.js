@@ -141,6 +141,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
             context?.toggleTheme(nodes[swiper.realIndex]?.frontmatter?.theme)
           )
         }}
+        initialSlide={0}
       >
         {nodes?.length > 0 &&
           nodes?.map((node) => (
