@@ -33,6 +33,12 @@ fields:
       format: markdown
   label: detail
   description: Detail of clinical paper.
+- name: href
+  type: text
+  config:
+    required: false
+  label: Href
+  default: ''
 pages:
 - content/clinical-papers/analysis-of-plasma-epstein-barr-virus-dna-to-screen-for-nasopharyngeal-cancer.md
 - content/clinical-papers/sequencing-based-counting-and-size-profiling-of-plasma-epstein-barr-virus-dna-enhance-population-screening-of-nasopharyngeal-carcinoma.md
