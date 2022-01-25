@@ -17,6 +17,7 @@ import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import Loading from '@components/Loading'
 
 const switchButtons = [
   {
@@ -158,6 +159,7 @@ const Map = () => {
   const [clinics, setClinics] = useState(null)
   const [curProvince, setCurProvince] = useState('')
   const [curArea, setCurArea] = useState('')
+  const [loadingStatus, setLoadingStatus] = useState('')
   const handleProvince = (e) => {
     const value = e.target.value
     setCurProvince(value)
@@ -169,6 +171,7 @@ const Map = () => {
   useEffect(() => {
     const fetchData = async (params) => {
       try {
+        setLoadingStatus('pending')
         const res = await fetchWithTimeout('/testCenters/list')
         if (res?.code !== 1000) {
           return console.log('fetch error')
@@ -193,7 +196,9 @@ const Map = () => {
         setClinics(provinceGroup)
         setLocation(location)
         setCurProvince('香港')
+        setLoadingStatus('fulfilled')
       } catch (error) {
+        setLoadingStatus('rejected')
         console.log('fetch error')
       }
     }
@@ -370,20 +375,24 @@ const Map = () => {
           </Container>
         </Box>
       )}
-      <Box className={classes.root}>
-        {viewType === 'list' && !isHomepage ? (
-          <Container maxWidth='md'>
-            <ClinicList
-              clinics={curClinics}
-              curProvince={curProvince}
-              curArea={curArea}
-              onChange={handleChange}
-            ></ClinicList>
-          </Container>
-        ) : (
-          <GoogleMap clinics={curClinics} curArea={curArea}></GoogleMap>
-        )}
-      </Box>
+      {curClinics && loadingStatus !== 'pending' ? (
+        <Box className={classes.root}>
+          {viewType === 'list' && !isHomepage ? (
+            <Container maxWidth='md'>
+              <ClinicList
+                clinics={curClinics}
+                curProvince={curProvince}
+                curArea={curArea}
+                onChange={handleChange}
+              ></ClinicList>
+            </Container>
+          ) : (
+            <GoogleMap clinics={curClinics} curArea={curArea}></GoogleMap>
+          )}
+        </Box>
+      ) : (
+        <Loading status={loadingStatus}></Loading>
+      )}
     </Box>
   )
 }

@@ -110,6 +110,7 @@ export const query = graphql`
           title
           detail
           date(formatString: "YYYY年MM月DD日")
+          href
           pdf {
             publicURL
           }

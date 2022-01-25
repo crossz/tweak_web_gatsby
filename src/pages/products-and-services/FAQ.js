@@ -156,11 +156,12 @@ const FAQ = () => {
   const [activePanel, setActivePanel] = useState(null)
   const [faqTypes, setFaqTypes] = useState([''])
   const [activeType, setActiveType] = useState('')
-  const [faqListStatus, setFaqListStatus] = useState('')
+  const [loadingStatus, setLoadingStatus] = useState('')
 
-  useEffect(async () => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoadingStatus('pending')
         const res = await fetchWithTimeout(`/faqs/list`)
         if (res?.code !== 1000) {
           return console.log('fetch error')
@@ -184,14 +185,13 @@ const FAQ = () => {
         setFaqTypes((status) =>
           status.concat(...(Object.keys(groupType) || []))
         )
-        setFaqListStatus('fulfilled')
+        setLoadingStatus('fulfilled')
       } catch (error) {
-        setFaqListStatus('rejected')
+        setLoadingStatus('rejected')
         console.log('fetch error')
       }
     }
-    setFaqListStatus('pending')
-    await fetchData()
+    fetchData()
   }, [])
 
   const handleChange = (index) => setActivePanel(index)
@@ -276,7 +276,7 @@ const FAQ = () => {
             </Box>
           </Hidden>
           <Grid item xs={12} sm={8}>
-            {faqList?.length > 0 && faqListStatus !== 'pending' ? (
+            {faqList?.length > 0 && loadingStatus !== 'pending' ? (
               faqList
                 ?.filter((faq) => faq.typeName === activeType || !activeType)
                 ?.map((faq) => (
@@ -290,7 +290,7 @@ const FAQ = () => {
                   ></FaqItem>
                 ))
             ) : (
-              <Loading status={faqListStatus}></Loading>
+              <Loading status={loadingStatus}></Loading>
             )}
           </Grid>
         </Grid>

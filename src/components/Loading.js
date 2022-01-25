@@ -13,7 +13,7 @@ const Loading = (props) => {
   const classes = useStyles()
 
   return (
-    <Box display='flex' flexDirection='column' alignItems='center' my={4}>
+    <Box display='flex' flexDirection='column' alignItems='center' my={8}>
       {props.status === 'pending' || !props.status ? (
         <LoadingIcon />
       ) : (
@@ -27,7 +27,7 @@ const Loading = (props) => {
             <StaticImage
               className={classes.img}
               src='../assets/images/common/empty.png'
-              alt='empty image'
+              alt='empty'
             ></StaticImage>
           )}
         </>

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) =>
 const LoadingIcon = () => {
   const classes = useStyles()
 
-  return <img className={classes.loading} src={Loading} alt='loading image' />
+  return <img className={classes.loading} src={Loading} alt='loading' />
 }
 
 export default LoadingIcon
