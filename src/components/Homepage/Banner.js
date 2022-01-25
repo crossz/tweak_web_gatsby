@@ -139,7 +139,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
           navigation={nodes?.length > 1}
           pagination={{ clickable: true }}
           className={classes.swiperWrapper}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return (
               context?.toggleTheme &&
@@ -147,6 +147,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
             )
           }}
           initialSlide={0}
+          speed={700}
         >
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>
