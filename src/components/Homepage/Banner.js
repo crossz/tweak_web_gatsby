@@ -63,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: 0,
     },
   },
+  titleWrapper: {
+    marginRight: '-100%',
+  },
   reference: {
     fontSize: 9,
     lineHeight: 1,
@@ -182,12 +185,12 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                   <Box className={classes.contentWrapper}>
                     <Typography variant='h2' color='primary' component='div'>
                       <Box
+                        className={classes.titleWrapper}
                         mb={matches ? 1 : 2}
                         lineHeight={1.5}
                         dangerouslySetInnerHTML={{
                           __html: node?.frontmatter?.title,
                         }}
-                        whiteSpace='nowrap'
                       ></Box>
                       <Box
                         fontSize={
