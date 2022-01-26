@@ -50,16 +50,20 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(15),
     color: theme.palette.primary.main,
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(-2),
       marginRight: theme.spacing(-2),
       borderRadius: theme.spacing(2),
       minHeight: theme.spacing(75),
+      marginTop: theme.spacing(3),
     },
   },
   quizBg: {
     gridArea: '1/1',
     height: '100%',
+  },
+  quizBgImg: {
     borderRadius: theme.spacing(4),
   },
   quizBanner: {
@@ -154,7 +158,6 @@ const useStyle = makeStyles((theme) => ({
   },
   linearProgressInfo: {
     position: 'relative',
-    overflow: 'hidden',
   },
   flagIcon: {
     position: 'absolute',
@@ -368,6 +371,7 @@ const Quiz = () => {
         {step > 0 && step <= QUIZ.length ? (
           <StaticImage
             className={classes.quizBg}
+            imgClassName={classes.quizBgImg}
             layout='fullWidth'
             src='../../assets/images/quiz_02.png'
             alt='quiz bg 02'
@@ -375,6 +379,7 @@ const Quiz = () => {
         ) : (
           <StaticImage
             className={classes.quizBg}
+            imgClassName={classes.quizBgImg}
             layout='fullWidth'
             src='../../assets/images/quiz_01.png'
             alt='quiz bg 01'

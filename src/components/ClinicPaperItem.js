@@ -91,31 +91,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const ClinicPaperItem = ({ date, title, detail, pdf }) => {
+const ClinicPaperItem = ({ date, title, detail, href, pdf }) => {
   const classes = useStyles()
 
   return (
     <Box className={classes.root}>
-      <Link href={pdf?.publicURL} className={classes.link} target='_blank'>
+      <Link
+        href={href || pdf?.publicURL}
+        className={classes.link}
+        target='_blank'
+      >
         <Grid container>
           <Grid item sm={3}>
-            <Box>
-              <Box className={classes.date}>{date}</Box>
-              <Box className={classes.pdfWrapper}>
-                <PdfIcon className={classes.pdfIcon}></PdfIcon>PDF
-              </Box>
+            <Box className={classes.date}>{date}</Box>
+            <Box className={classes.pdfWrapper}>
+              <PdfIcon className={classes.pdfIcon}></PdfIcon>PDF
             </Box>
           </Grid>
           <Grid item sm={9}>
-            <Box>
-              <Box>
-                <Box className={classes.title}>{title}</Box>
-                <Box className={classes.detailWrapper}>
-                  <Box className={classes.detail}>{detail}</Box>
-                  <Box className={classes.arrowIcon}>
-                    <ArrowIcon></ArrowIcon>
-                  </Box>
-                </Box>
+            <Box className={classes.title}>{title}</Box>
+            <Box className={classes.detailWrapper}>
+              <Box className={classes.detail}>{detail}</Box>
+              <Box className={classes.arrowIcon}>
+                <ArrowIcon></ArrowIcon>
               </Box>
             </Box>
           </Grid>

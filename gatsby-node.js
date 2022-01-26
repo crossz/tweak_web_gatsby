@@ -23,18 +23,23 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
-      default:
+      case 'health-tips':
+      case 'promotions':
+      case 'updates':
         slug = `/whats-new/${relativeDirectory}/${
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
+      default:
+        break
     }
 
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
+    slug &&
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug,
+      })
   }
 }
 
@@ -128,7 +133,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const allMdxList = allMdxQuery.data.allMdx.nodes
 
   allMdxList?.forEach((mdx) => {
-    let path = mdx.fields.slug
+    let path = mdx.fields?.slug
     if (!path) return
 
     let template = null

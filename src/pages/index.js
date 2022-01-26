@@ -3,9 +3,10 @@ import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
 
 const Index = ({ data }) => {
-  const { promotionNodes, healthTipsNodes } = data
+  const { heroBannerNodes, promotionNodes, healthTipsNodes } = data
   return (
     <Homepage
+      heroBannerNodes={heroBannerNodes?.nodes}
       promotionNodes={promotionNodes?.nodes}
       healthTipsNodes={healthTipsNodes?.nodes}
     ></Homepage>
@@ -16,6 +17,38 @@ export default Index
 
 export const query = graphql`
   {
+    heroBannerNodes: allMdx(
+      filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
+      sort: { fields: frontmatter___sort, order: ASC }
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          detail
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          mobileImage {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          reference
+          sort
+          theme
+          buttons {
+            variant
+            color
+            name
+            link
+            internal
+          }
+        }
+      }
+    }
     promotionNodes: allMdx(
       limit: 6
       filter: { fileAbsolutePath: { regex: "/promotions/" } }

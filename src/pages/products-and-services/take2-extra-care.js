@@ -39,7 +39,7 @@ const steps = [
     label: '直接於Take2 Health得易健康服務平台登記成為會員',
     icon: (
       <StaticImage
-        src='../../assets/images/icons/take2Care/step_03.svg'
+        src='../../assets/images/icons/take2Care/step_03.png'
         placeholder='tracedSVG'
         alt='step 03'
       ></StaticImage>

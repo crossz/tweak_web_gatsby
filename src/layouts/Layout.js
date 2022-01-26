@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import SectionBanner from './SectionBanner'
 import ShoppingBtn from './ShoppingBtn'
 import { makeStyles } from '@material-ui/core'
 import { useMatch } from '@reach/router'
+import { HeroThemeContext } from '@layouts/context'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,26 +18,35 @@ const useStyles = makeStyles((theme) => ({
 
 const Layout = ({ children }) => {
   const classes = useStyles()
+  const [heroTheme, setHeroTheme] = useState('light')
   const isPromotions = useMatch('/promotions/consumption-voucher')
   const isRehealthPrevaccinationPlans = useMatch(
     '/whats-new/campaign/rehealth-prevaccination-plans'
   )
   const isCampaign = useMatch('/whats-new/campaign')
 
+  const handleChangeHeroTheme = (theme) => {
+    return setHeroTheme(theme)
+  }
+
   return (
-    <main id='main' className={classes.root}>
-      {isPromotions || isRehealthPrevaccinationPlans || isCampaign ? (
-        children
-      ) : (
-        <>
-          <Header></Header>
-          <SectionBanner></SectionBanner>
-          {children}
-          <Footer></Footer>
-        </>
-      )}
-      <ShoppingBtn></ShoppingBtn>
-    </main>
+    <HeroThemeContext.Provider
+      value={{ theme: heroTheme, toggleTheme: handleChangeHeroTheme }}
+    >
+      <main id='main' className={classes.root}>
+        {isPromotions || isRehealthPrevaccinationPlans || isCampaign ? (
+          children
+        ) : (
+          <>
+            <Header></Header>
+            <SectionBanner></SectionBanner>
+            {children}
+            <Footer></Footer>
+          </>
+        )}
+        <ShoppingBtn></ShoppingBtn>
+      </main>
+    </HeroThemeContext.Provider>
   )
 }
 

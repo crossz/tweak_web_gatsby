@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Box from '@material-ui/core/Box'
 import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
@@ -10,6 +10,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import { Link as MuiLink } from '@material-ui/core'
 import { Waypoint } from 'react-waypoint'
+import { HeroThemeContext } from '@layouts/context'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,18 +65,23 @@ const useStyles = makeStyles((theme) => ({
   withoutShadow: {
     boxShadow: 'none',
   },
+  darkHeroTheme: {
+    '& $authBtn': {
+      color: theme.palette.primary.contrastText,
+      '& a': {
+        color: theme.palette.primary.contrastText,
+      },
+    },
+  },
 }))
 
-const Header = () => {
+const Header = (props) => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isHomepage = useMatch('/')
   const [withBg, setWithBg] = useState(true)
-  // TODO homepage scroll leave banner show header background.
-  // const handleWaypoint = (status) => {
-  //   if (status !== withBg) setWithBg(status)
-  // }
+  const context = useContext(HeroThemeContext)
 
   return (
     <>
@@ -85,6 +91,8 @@ const Header = () => {
           [classes.withBg]: !matches && withBg,
           [classes.homepageRoot]: !matches && isHomepage,
           [classes.withoutShadow]: !matches && isHomepage && withBg,
+          [classes.darkHeroTheme]:
+            !matches && isHomepage && !withBg && context?.theme === 'dark',
         })}
       >
         <Container className={classes.wrapper} maxWidth='lg'>
@@ -117,7 +125,11 @@ const Header = () => {
               登記
             </MuiLink>
           </Box>
-          <Menu></Menu>
+          <Menu
+            dark={
+              !matches && isHomepage && !withBg && context?.theme === 'dark'
+            }
+          ></Menu>
         </Container>
         {/* <Waypoint
         onLeave={() => handleWaypoint(true)}

@@ -25,12 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
   banner: {
     height: 353,
-    borderRadius: `12px 0 0 12px`,
     marginTop: theme.spacing(-3),
     [theme.breakpoints.down('xs')]: {
       height: 228,
       marginTop: theme.spacing(-5),
     },
+  },
+  bannerImg: {
+    borderRadius: `12px 0 0 12px`,
   },
   bannerContent: {
     position: 'absolute',
@@ -71,6 +73,7 @@ const ClinicalPapers = ({ data }) => {
         <Box className={classes.bannerWrapper}>
           <StaticImage
             className={classes.banner}
+            imgClassName={classes.bannerImg}
             src='../../assets/images/clinical_papers_banner.jpg'
             alt='clinical papers banner'
           ></StaticImage>
@@ -110,6 +113,7 @@ export const query = graphql`
           title
           detail
           date(formatString: "YYYY年MM月DD日")
+          href
           pdf {
             publicURL
           }

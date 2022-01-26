@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(0, 3),
     },
   },
-  beliefImage: {
+  beliefImgWrapper: {
     width: `calc(50% - ${theme.spacing(4)}px)`,
     flexShrink: 0,
     borderRadius: theme.spacing(1.5),
@@ -60,6 +60,12 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
       marginTop: theme.spacing(-7),
       marginBottom: theme.spacing(3),
+      borderRadius: theme.spacing(1),
+    },
+  },
+  beliefImg: {
+    borderRadius: theme.spacing(1.5),
+    [theme.breakpoints.down('xs')]: {
       borderRadius: theme.spacing(1),
     },
   },
@@ -115,22 +121,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
-  founderImageWrapper: {
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(-10),
-    },
-  },
-  founderImage: {
+
+  founderImgWrapper: {
     width: '100%',
-    borderRadius: theme.spacing(1.25),
     overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       maxWidth: theme.spacing(35),
     },
+  },
+  founderImg: {
+    borderRadius: theme.spacing(1.25),
   },
   link: {
     wordBreak: 'break-all',
@@ -145,6 +145,7 @@ const Mission = () => {
     {
       image: (
         <StaticImage
+          imgClassName={classes.beliefImg}
           src='../../assets/images/belief_01.jpg'
           alt='belief 01'
         ></StaticImage>
@@ -157,6 +158,7 @@ const Mission = () => {
     {
       image: (
         <StaticImage
+          imgClassName={classes.beliefImg}
           src='../../assets/images/belief_02.jpg'
           alt='belief 02'
         ></StaticImage>
@@ -184,7 +186,7 @@ const Mission = () => {
               index % 2 && classes.beliefReverseItem
             )}
           >
-            <Box className={classes.beliefImage}>{belief.image}</Box>
+            <Box className={classes.beliefImgWrapper}>{belief.image}</Box>
             <Box className={classes.beliefContent}>
               <Box className={classes.beliefType}>{belief.type}</Box>
               <Typography
@@ -209,13 +211,12 @@ const Mission = () => {
           <Box className={classes.founderCard}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={4}>
-                <Box className={classes.founderImageWrapper}>
-                  <StaticImage
-                    className={classes.founderImage}
-                    src='../../assets/images/team_01.jpg'
-                    alt='team 01'
-                  ></StaticImage>
-                </Box>
+                <StaticImage
+                  className={classes.founderImgWrapper}
+                  imgClassName={classes.founderImg}
+                  src='../../assets/images/team_01.jpg'
+                  alt='team 01'
+                ></StaticImage>
               </Grid>
               <Grid item xs={12} sm={8}>
                 <Box className={classes.founderDetailWrapper}>

@@ -5,7 +5,7 @@ detail: 期間限定、欲購從速！
 href: https://take2health.net/whats-new/campaign/rehealth-prevaccination-plans/
 slug: ''
 cover:
-- "../images/untitled-design-13.png"
+- "../images/health-promotion.png"
 type: ''
 
 ---
