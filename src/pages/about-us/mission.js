@@ -127,6 +127,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       maxWidth: theme.spacing(35),
+      marginTop: theme.spacing(-16),
     },
   },
   founderImg: {
