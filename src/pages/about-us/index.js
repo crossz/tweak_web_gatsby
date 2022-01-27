@@ -1,7 +1,8 @@
 import React from 'react'
+import Mission from './mission'
 
-const index = () => {
-  return null
+const Index = () => {
+  return <Mission />
 }
 
-export default index
+export default Index
