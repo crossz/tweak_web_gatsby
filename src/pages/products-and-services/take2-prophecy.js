@@ -301,7 +301,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(0, 3),
+      padding: theme.spacing(2, 0),
     },
   },
 }))
@@ -473,6 +473,7 @@ const Take2Prophecy = () => {
                       href={process.env.GATSBY_SITE_URL}
                       target='_blank'
                       fullWidth={matches}
+                      className={classes.btn}
                     >
                       立即預約
                     </Button>
