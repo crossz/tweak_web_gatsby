@@ -439,7 +439,7 @@ const ContactUs = () => {
                                 </ESelect>
                               </FormControl>
                             </Box>
-                            <FormControl error={isError('phone')}>
+                            <FormControl fullWidth error={isError('phone')}>
                               <EInputBase
                                 id='phone'
                                 name='phone'
