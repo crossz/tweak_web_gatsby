@@ -159,12 +159,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         regex: `/${mdx.parent.relativeDirectory}/`,
       },
     })
-    const fromPath = path + '.html'
-    createRedirect({
-      fromPath,
-      redirectInBrowser: true,
-      toPath: path,
-    })
+    // const fromPath = path + '.html'
+    // createRedirect({
+    //   fromPath,
+    //   redirectInBrowser: true,
+    //   toPath: path,
+    // })
   })
 
   createRedirect({
