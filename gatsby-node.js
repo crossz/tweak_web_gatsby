@@ -46,40 +46,40 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createRedirect, createPage } = actions
 
-  const menuQuery = await graphql(`
-    {
-      allMenuJson {
-        nodes {
-          banner
-          mobileBanner
-          path
-          title
-          titleColor
-          sections {
-            path
-            title
-          }
-        }
-      }
-    }
-  `)
+  // const menuQuery = await graphql(`
+  //   {
+  //     allMenuJson {
+  //       nodes {
+  //         banner
+  //         mobileBanner
+  //         path
+  //         title
+  //         titleColor
+  //         sections {
+  //           path
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  if (menuQuery.errors)
-    return reporter.panicOnBuild(`Error while running GraphQL query.`)
+  // if (menuQuery.errors)
+  //   return reporter.panicOnBuild(`Error while running GraphQL query.`)
 
-  const menuList = menuQuery.data.allMenuJson.nodes
+  // const menuList = menuQuery.data.allMenuJson.nodes
 
-  menuList?.forEach((menu) => {
-    if (menu?.sections?.length) {
-      const fromPath = formatEndsPath(menu?.path)
-      const toPath = formatEndsPath(menu?.sections[0]?.path)
-      createRedirect({
-        fromPath,
-        redirectInBrowser: true,
-        toPath,
-      })
-    }
-  })
+  // menuList?.forEach((menu) => {
+  //   if (menu?.sections?.length) {
+  //     const fromPath = formatEndsPath(menu?.path)
+  //     const toPath = formatEndsPath(menu?.sections[0]?.path)
+  //     createRedirect({
+  //       fromPath,
+  //       redirectInBrowser: true,
+  //       toPath,
+  //     })
+  //   }
+  // })
 
   const careers = await graphql(`
     {

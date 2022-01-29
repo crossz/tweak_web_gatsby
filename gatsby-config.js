@@ -137,6 +137,7 @@ module.exports = {
           '@pages': 'src/pages',
           '@images': 'src/assets/images',
           '@templates': 'src/templates',
+          '@views': 'src/views',
           '@content': 'content',
           '@themes': 'src/themes',
           '@hooks': 'src/hooks',
