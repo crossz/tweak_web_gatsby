@@ -102,7 +102,6 @@ const SectionBanner = ({ pageContext }) => {
     i18n: { originalPath, routed },
     language,
   } = pageContext
-
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
@@ -129,10 +128,11 @@ const SectionBanner = ({ pageContext }) => {
             originalPath.includes(child.path)
           )
         : curMenuItem
+
     return routed
       ? `/${language}${curMenuItemChild?.path}`
       : curMenuItemChild?.path
-  }, [curMenuItem, originalPath])
+  }, [curMenuItem, routed, language, originalPath])
 
   return curMenuItemPath && !curMenuItem?.path?.includes('service-location') ? (
     <Match path={curMenuItemPath}>
