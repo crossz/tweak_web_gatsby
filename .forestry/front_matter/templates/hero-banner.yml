@@ -66,6 +66,8 @@ fields:
       file: 
       path: 
   label: Theme
+  description: 'Theme color of hero image, this is for header content color setting,  there
+    are two type of themes: dark and light.'
 - name: sort
   type: number
   default: 0
