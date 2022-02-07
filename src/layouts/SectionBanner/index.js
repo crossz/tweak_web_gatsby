@@ -7,7 +7,7 @@ import {
   Box,
   Typography,
 } from '@material-ui/core'
-import { useLocation, Match } from '@reach/router'
+import { Match } from '@reach/router'
 import useMenu from '@hooks/useMenu'
 import { Link } from 'gatsby'
 import TitleDot from '@themes/components/TitleDot'
@@ -15,7 +15,7 @@ import Image from '@components/Image'
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { Waypoint } from 'react-waypoint'
-
+import classnames from 'classnames'
 const useStyles = makeStyles((theme) => ({
   root: {},
   bannerWrapper: {
@@ -96,33 +96,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const SectionBanner = () => {
+const SectionBanner = ({ pageContext }) => {
   const classes = useStyles()
+  const {
+    i18n: { originalPath, routed },
+    language,
+  } = pageContext
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
   const [belowSectionTabs, setBelowSectionTabs] = useState(true)
   const prePathnameRef = useRef(null)
-  const { pathname } = useLocation()
-
   // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
   useEffect(() => {
     if (!belowSectionTabs && prePathnameRef?.current === curMenuItem?.path)
       scrollTo('#section-tabs')
     prePathnameRef.current = curMenuItem?.path
-  }, [pathname])
+  }, [originalPath])
 
   const curMenuItem = useMemo(
-    () => menu?.find((item) => pathname.includes(item.path)),
-    [menu, pathname]
+    () => menu?.find((item) => originalPath.includes(item.path)),
+    [menu, originalPath]
   )
 
   const curMenuItemPath = useMemo(() => {
-    const curMenuItemChild = curMenuItem?.sections?.length
-      ? curMenuItem?.sections?.find((child) => pathname.includes(child.path))
-      : curMenuItem
-    return curMenuItemChild?.path
-  }, [curMenuItem, pathname])
+    const curMenuItemChild =
+      curMenuItem?.path === originalPath
+        ? curMenuItem
+        : curMenuItem?.sections?.length
+        ? curMenuItem?.sections?.find((child) =>
+            originalPath.includes(child.path)
+          )
+        : curMenuItem
+
+    return routed
+      ? `/${language}${curMenuItemChild?.path}`
+      : curMenuItemChild?.path
+  }, [curMenuItem, routed, language, originalPath])
 
   return curMenuItemPath && !curMenuItem?.path?.includes('service-location') ? (
     <Match path={curMenuItemPath}>
@@ -171,10 +181,14 @@ const SectionBanner = () => {
             </Container>
             {curMenuItem?.sections && curMenuItem?.sections?.length && (
               <Box className={classes.tabsWrapper}>
-                {curMenuItem?.sections.map((item) => (
+                {curMenuItem?.sections.map((item, index) => (
                   <Link
                     to={item.path}
-                    className={classes.tab}
+                    className={classnames(classes.tab, {
+                      [classes.activeTab]:
+                        (curMenuItem?.path === originalPath && !index) ||
+                        item?.path === originalPath,
+                    })}
                     activeClassName={classes.activeTab}
                     key={item.title}
                     partiallyActive={true}
