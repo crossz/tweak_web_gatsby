@@ -76,6 +76,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4.25),
     color: theme.palette.text.primary,
     fontSize: theme.typography.body1.fontSize,
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: theme.spacing(8),
+    },
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(3),
       fontSize: theme.typography.body2.fontSize,
@@ -84,11 +87,16 @@ const useStyles = makeStyles((theme) => ({
   noteImgWrapper: {
     height: '100%',
     overflow: 'hidden',
+    [theme.breakpoints.up('sm')]: {
+      minHeight: 270,
+    },
     [theme.breakpoints.down('xs')]: {
       height: 184,
+      minHeight: 'auto',
     },
   },
   noteImg: {
+    height: '100%',
     borderRadius: theme.spacing(0.75),
     [theme.breakpoints.down('xs')]: {
       borderRadius: `6px 6px 0 0`,
@@ -109,9 +117,11 @@ const NGS = () => {
         'Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，即使患者未見明顯病徵，也能有效識別出早期鼻咽癌患者，讓其儘早得到治療，提高其治癒的可能性及存活率³。',
       image: (
         <StaticImage
+          className={classes.noteImgWrapper}
           imgClassName={classes.noteImg}
           src='../../assets/images/1_how_do_we_use_ngs.jpg'
           alt='how do we use ngs'
+          objectPosition='top'
         ></StaticImage>
       ),
     },
@@ -121,9 +131,11 @@ const NGS = () => {
         '組織活檢為癌症臨床診斷的金標準，由受過專業訓練的醫生以鼻內視鏡抽取鼻腔組織，再進行細胞分析。這類方法具入侵性，不易用於所有身體部位；加上腫瘤細胞會隨著時間變化，而組織活檢只能代表檢測當下取得的腫瘤細胞的情況，故僅能提供有限的腫瘤資料；再者，組織活檢不能頻繁、重覆地使用以監測疾病的進展；有凝血障礙的人士在抽取組織的過程中也有較高的出血風險。因此，組織活檢存在不同方面的缺陷。',
       image: (
         <StaticImage
+          className={classes.noteImgWrapper}
           imgClassName={classes.noteImg}
           src='../../assets/images/2_endoscopy.png'
           alt='endoscopy'
+          objectPosition='top'
         ></StaticImage>
       ),
     },
@@ -133,9 +145,11 @@ const NGS = () => {
         '除了透過鼻內視鏡進行組織活檢外，抽血驗EB病毒 (Epstein-Barr Virus) 也是常見的鼻咽癌檢測手段，因為鼻咽癌與EB病毒關係非常密切。兩種最常用的檢測方法包括血清學檢測和通過定量PCR測量血漿中的EB病毒DNA數值，然而EB病毒感染非常普遍，病毒或抗體的存在可能僅代表短暫感染，並不一定代表患有鼻咽癌，所以兩種方法都難以區分僅感染EB病毒的人和實際患有鼻咽癌的人。',
       image: (
         <StaticImage
+          className={classes.noteImgWrapper}
           imgClassName={classes.noteImg}
           src='../../assets/images/3_traditional_ebv_test.jpg'
           alt='traditional ebv test'
+          objectPosition='top'
         ></StaticImage>
       ),
     },
@@ -218,7 +232,7 @@ const NGS = () => {
                 <Box key={index} className={classes.noteItem}>
                   <Grid container spacing={0}>
                     <Grid item xs={12} sm={3}>
-                      <Box className={classes.noteImgWrapper}>{note.image}</Box>
+                      {note.image}
                     </Grid>
                     <Grid item xs={12} sm={9}>
                       <Box className={classes.noteContent}>
