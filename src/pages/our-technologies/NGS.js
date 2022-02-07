@@ -149,7 +149,6 @@ const NGS = () => {
           imgClassName={classes.noteImg}
           src='../../assets/images/3_traditional_ebv_test.jpg'
           alt='traditional ebv test'
-          objectPosition='top'
         ></StaticImage>
       ),
     },
