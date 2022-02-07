@@ -68,7 +68,6 @@ fields:
   label: Theme
 - name: sort
   type: number
-  description: ''
   default: 0
   required: true
   config:
@@ -77,6 +76,7 @@ fields:
     step: 
     required: true
   label: Sort
+  description: Order of hero banner, smaller number is closer to the left.
 pages:
 - content/hero-banners/br.md
 - content/hero-banners/take2-prophecy-br.md
