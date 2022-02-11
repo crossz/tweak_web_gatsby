@@ -60,6 +60,16 @@ const steps = [
       ></StaticImage>
     ),
   },
+  {
+    label: '醫生為病人分析報告',
+    icon: (
+      <StaticImage
+        src='../assets/images/icons/prophecy/step_05.svg'
+        placeholder='tracedSVG'
+        alt='step 05'
+      ></StaticImage>
+    ),
+  },
 ]
 
 const reports = [
@@ -144,8 +154,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sectionOneContent: {
-    maxWidth: 969,
-    margin: `0 auto`,
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(0, 2),
+    },
   },
   stepsWrapper: {
     width: '100%',
@@ -166,6 +177,13 @@ const useStyles = makeStyles((theme) => ({
       width: '50%',
       marginBottom: theme.spacing(6),
       padding: theme.spacing(0, 2),
+    },
+  },
+  stepFiveItem: {
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: 0,
+      marginLeft: 'auto',
+      marginRight: 'auto',
     },
   },
   stepIcon: {
@@ -203,6 +221,11 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(-3),
     transform: `rotate(180deg)`,
     top: theme.spacing(-9),
+  },
+  stepFourArrow: {
+    left: theme.spacing(-2),
+    bottom: theme.spacing(-5),
+    transform: `rotate(90deg) translateY(50%)`,
   },
   arrowIcon: {
     flexShrink: 0,
@@ -336,7 +359,7 @@ const Take2Prophecy = () => {
                 src='../assets/images/products_services_banner_bg.jpg'
                 alt='homepage banner mobile'
               ></StaticImage>
-              <Box className={classes.sectionOneBanner}>篩查五部曲</Box>
+              <Box className={classes.sectionOneBanner}>篩查流程</Box>
             </Box>
             <Box className={classes.sectionOneContent}>
               <Box className={classes.stepsWrapper}>
@@ -359,10 +382,14 @@ const Take2Prophecy = () => {
                   }
                   return (
                     <React.Fragment key={index}>
-                      <Box className={classes.stepItem}>
+                      <Box
+                        className={classnames(classes.stepItem, {
+                          [classes.stepFiveItem]: index === 4,
+                        })}
+                      >
                         <Box className={classes.stepIcon}>{curStep.icon}</Box>
                         <Box className={classes.stepLabel}>
-                          {curStep.label}
+                          {!(index === 4 && matches) && curStep.label}
                           <Hidden smUp>
                             {index < steps?.length - 1 && (
                               <ArrowIcon
@@ -370,6 +397,7 @@ const Take2Prophecy = () => {
                                   [classes.stepOneArrow]: index === 0,
                                   [classes.stepTwoArrow]: index === 1,
                                   [classes.stepThreeArrow]: index === 2,
+                                  [classes.stepFourArrow]: index === 3,
                                 })}
                               ></ArrowIcon>
                             )}
