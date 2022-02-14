@@ -60,6 +60,11 @@ fields:
   label: slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 pages:
 - content/updates/dna-1.md
 - content/updates/dna.md
