@@ -17,6 +17,7 @@ import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
 import { orderBy } from 'lodash-es'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -142,6 +143,7 @@ const MapAccordionDetails = withStyles((theme) => ({
 
 const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -222,7 +224,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                             href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
                             target='_blank'
                           >
-                            立即預約
+                            {t('common.book_now')}
                           </Button>
                         )}
                       </Grid>

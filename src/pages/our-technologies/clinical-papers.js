@@ -3,6 +3,7 @@ import { makeStyles, Box, Container } from '@material-ui/core'
 import ClinicPaperItem from '@components/ClinicPaperItem'
 import { StaticImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,7 +67,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ClinicalPapers = ({ data }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const { nodes } = data?.allMdx
+
   return (
     <Box className={classes.root}>
       <Container className={classes.insideRoot} disableGutters maxWidth='md'>
@@ -78,11 +81,10 @@ const ClinicalPapers = ({ data }) => {
             alt='clinical papers banner'
           ></StaticImage>
           <Box className={classes.bannerContent}>
-            <Box className={classes.bannerTitle}>相關研究報告</Box>
-            <Box>
-              Take2 Prophecy™
-              早期鼻咽癌篩查所使用的技術是由屢獲殊榮的香港中文大學頂尖基因研究團隊發明。團隊曾以該技術為2萬名人士進行鼻咽癌篩查，其臨床研究結果分別於《新英格蘭醫學雜誌》以及《美國國家科學院院刊》刊登，有關詳情請瀏覽以下刊物：
+            <Box className={classes.bannerTitle}>
+              {t('our_technologies.clinical_papers.title')}
             </Box>
+            <Box>{t('our_technologies.clinical_papers.detail')}</Box>
           </Box>
         </Box>
         <Box className={classes.list}>

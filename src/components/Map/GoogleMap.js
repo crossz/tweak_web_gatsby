@@ -9,6 +9,7 @@ import LocationIcon from '@images/icons/location.svg'
 import { minBy, maxBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import { Link } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -152,6 +153,7 @@ const Marker = (props) => {
 
 const InfoWindow = (props) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const isHomepage = useMatch('/')
 
   if (!props?.info) return null
@@ -192,7 +194,7 @@ const InfoWindow = (props) => {
         fullWidth={Boolean(isHomepage)}
         size={isHomepage ? 'small' : 'medium'}
       >
-        立即預約
+        {t('common.book_now')}
       </Button>
       {isHomepage && (
         <Box className={classes.moreClinicsBtn}>
@@ -203,7 +205,7 @@ const InfoWindow = (props) => {
               variant='text'
               color='primary'
             >
-              更多服務覆蓋點
+              {t('service_location.more')}
             </Button>
           </Link>
         </Box>

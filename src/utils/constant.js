@@ -1,6 +1,5 @@
 import { MOBILE_REGEX_HK, MOBILE_REGEX_CN, MOBILE_REGEX_MO } from './regex'
 import { keyBy } from 'lodash-es'
-
 export const HEADER_HEIGHT = 10.5
 export const MOBILE_HEADER_HEIGHT = 7.5
 export const POST_ASPECT_RATIO = 471 / 228
@@ -151,42 +150,42 @@ export const CAREER_REGIONS = [
 
 export const GENDER_OPTIONS = [
   {
-    label: '男性',
+    label: 'options.gender.male',
     value: 'male',
   },
   {
-    label: '女性',
+    label: 'options.gender.female',
     value: 'female',
   },
 ]
 
 const QUIZ_ANSWER_OPTIONS = [
   {
-    label: '沒有',
+    label: 'options.quiz.no',
     value: 'no',
   },
   {
-    label: '不確定',
+    label: 'options.quiz.unclear',
     value: 'unclear',
   },
   {
-    label: '有',
+    label: 'options.quiz.yes',
     value: 'yes',
   },
   {
-    label: '從不',
+    label: 'options.quiz.never',
     value: 'never',
   },
   {
-    label: '很少',
+    label: 'options.quiz.rarely',
     value: 'rarely',
   },
   {
-    label: '間中',
+    label: 'options.quiz.sometimes',
     value: 'sometimes',
   },
   {
-    label: '經常',
+    label: 'options.quiz.often',
     value: 'often',
   },
 ]
@@ -195,7 +194,7 @@ export const QUIZ_ANSWER_KEYS = keyBy(QUIZ_ANSWER_OPTIONS, 'value')
 
 export const AGE_OPTIONS = [
   {
-    label: '20或以下',
+    label: 'options.age.20_or_below',
     value: '20_or_below',
   },
   {
@@ -215,7 +214,7 @@ export const AGE_OPTIONS = [
     value: '51_to_60',
   },
   {
-    label: '61或以上',
+    label: 'options.age.61_or_above',
     value: '61_or_above',
   },
 ]

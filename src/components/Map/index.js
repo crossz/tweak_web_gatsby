@@ -18,6 +18,7 @@ import { groupBy } from 'lodash-es'
 import { useMatch } from '@reach/router'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import Loading from '@components/Loading'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const switchButtons = [
   {
@@ -153,6 +154,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Map = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const isHomepage = useMatch('/')
   const [viewType, setViewType] = useState('list')
   const [location, setLocation] = useState([])
@@ -195,7 +197,7 @@ const Map = () => {
         }
         setClinics(provinceGroup)
         setLocation(location)
-        setCurProvince('香港')
+        setCurProvince(t('form.region.options.hongkong'))
         setLoadingStatus('fulfilled')
       } catch (error) {
         setLoadingStatus('rejected')
@@ -220,7 +222,7 @@ const Map = () => {
     () =>
       location
         ?.find((item) => item.province === curProvince)
-        ?.area?.map((item) => item || '其他地區') || [],
+        ?.area?.map((item) => item || t('form.region.options.other')) || [],
     [location, curProvince]
   )
 
@@ -237,12 +239,12 @@ const Map = () => {
             name='district'
             value={curArea}
             onChange={handleArea}
-            placeholder='請選擇'
+            placeholder={t('form.placeholder.select')}
             variant='outlined'
             className={classnames(classes.selectRoot, classes.homepageSelector)}
           >
             <MenuItem key='' value=''>
-              所有地區
+              {t('form.region.options.all')}
             </MenuItem>
             {areaOptions?.map((areaItem) => (
               <MenuItem key={areaItem} value={areaItem}>
@@ -264,7 +266,7 @@ const Map = () => {
               <Hidden xsDown>
                 {location?.length > 0 && (
                   <Box className={classes.selectors}>
-                    <Box mr={2.5}>地區</Box>
+                    <Box mr={2.5}>{t('form.region.label')}</Box>
                     <Box mr={2}>
                       <ESelect
                         labelId='region-select-label'
@@ -272,7 +274,7 @@ const Map = () => {
                         name='region'
                         value={curProvince}
                         onChange={handleProvince}
-                        placeholder='請選擇'
+                        placeholder={t('form.placeholder.select')}
                         variant='outlined'
                         className={classes.selectRoot}
                       >
@@ -289,12 +291,12 @@ const Map = () => {
                       name='district'
                       value={curArea}
                       onChange={handleArea}
-                      placeholder='請選擇'
+                      placeholder={t('form.placeholder.select')}
                       variant='outlined'
                       className={classes.selectRoot}
                     >
                       <MenuItem key='' value=''>
-                        所有地區
+                        {t('form.region.options.all')}
                       </MenuItem>
                       {areaOptions?.map((areaItem) => (
                         <MenuItem key={areaItem} value={areaItem}>
@@ -307,12 +309,9 @@ const Map = () => {
               </Hidden>
               <Box className={classes.buttonGroupWrapper}>
                 <Hidden xsDown>
-                  <Box mr={2.5}>顯示</Box>
+                  <Box mr={2.5}>{t('common.display')}</Box>
                 </Hidden>
-                <ButtonGroup
-                  className={classes.buttonGroup}
-                  aria-label='outlined primary button group'
-                >
+                <ButtonGroup className={classes.buttonGroup}>
                   {switchButtons.map(({ Icon, value }, index) => (
                     <IconButton
                       key={index}
@@ -331,7 +330,7 @@ const Map = () => {
             <Hidden smUp>
               {location?.length > 0 && (
                 <Box className={classes.toolBarBottom}>
-                  <Box mb={1.5}>地區</Box>
+                  <Box mb={1.5}>{t('form.region.label')}</Box>
                   <Box display='flex'>
                     <Box mr={2} width='100%'>
                       <ESelect
@@ -340,7 +339,7 @@ const Map = () => {
                         name='region'
                         value={curProvince}
                         onChange={handleProvince}
-                        placeholder='請選擇'
+                        placeholder={t('form.placeholder.select')}
                         variant='outlined'
                       >
                         {location.map((item) => (
@@ -356,11 +355,11 @@ const Map = () => {
                       name='district'
                       value={curArea}
                       onChange={handleArea}
-                      placeholder='請選擇'
+                      placeholder={t('form.placeholder.select')}
                       variant='outlined'
                     >
                       <MenuItem key='' value=''>
-                        所有地區
+                        {t('form.region.options.all')}
                       </MenuItem>
                       {areaOptions?.map((areaItem) => (
                         <MenuItem key={areaItem} value={areaItem}>

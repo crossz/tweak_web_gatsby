@@ -1,12 +1,14 @@
 import React from 'react'
 import PostList from '@components/WhatsNew/PostList'
 import { graphql } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const HealthTips = ({ data }) => {
+  const { t } = useI18next()
   return (
     <PostList
-      title='健康資訊 為你更新'
-      caption='為了守護你和家人的健康，我們將持續為你提供實用的資訊，緊貼你的健康需要。'
+      title={t('whats_new.health_tips.title')}
+      caption={t('whats_new.health_tips.detail')}
       nodes={data.allMdx.nodes}
     ></PostList>
   )

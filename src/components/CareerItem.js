@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles, Box, alpha, Button, Hidden } from '@material-ui/core'
 import { Link } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const CareerItem = ({ title, type, region, date, slug }) => {
   const classes = useStyles()
+  const { t } = useI18next()
 
   return (
     <Box className={classes.root}>
@@ -90,7 +92,7 @@ const CareerItem = ({ title, type, region, date, slug }) => {
             variant='outlined'
             color='primary'
           >
-            查看詳情
+            {t('common.view_details')}
           </Button>
         </Link>
       </Box>

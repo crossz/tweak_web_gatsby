@@ -12,6 +12,7 @@ import TitleDot from '@themes/components/TitleDot'
 import { StaticImage } from 'gatsby-plugin-image'
 import AlertIcon from '@images/icons/alert.svg'
 import classnames from 'classnames'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -160,19 +161,20 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const centerData = [
-  '20-44 歲男士頭號癌症¹',
-  '在女人當中較常發病於50-60歲的癌症（乳癌、子宮體癌等常見癌症亦然）²',
-  '有別其他常見於較年長「銀齡族」（65-80歲之間）的癌症如大腸癌和肝癌³，逾8成鼻咽癌患者年齡普遍見於較年輕的「金齡族」（50至65歲之間）',
+  'our_technologies.early_cancer_detection.center_data.0',
+  'our_technologies.early_cancer_detection.center_data.1',
+  'our_technologies.early_cancer_detection.center_data.2',
 ]
 
 const references = [
-  '<sup>1</sup><i>Overview of Hong Kong Cancer Statistics of 2018.</i> Hong Kong Hospital Authority, October 2020.',
-  '<sup>2</sup><i>Hong Kong Cancer Registry.</i> Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
-  '<sup>3</sup>認識癌症：鼻咽癌. Hong Kong Cancer Fund, 2021, www.cancer-fund.org/wp-content/uploads/2021/03/NPC-20C-Revamp-Web_s.pdf.',
+  'our_technologies.early_cancer_detection.references.0',
+  'our_technologies.early_cancer_detection.references.1',
+  'our_technologies.early_cancer_detection.references.2',
 ]
 
 const EarlyCancerDetection = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -184,8 +186,8 @@ const EarlyCancerDetection = () => {
           alt='symptoms'
         ></StaticImage>
       ),
-      title: '鼻咽癌不易察覺',
-      content: '鼻咽位置較「隱蔽」，難以被察覺，部分徵狀容易與感冒或炎症混淆',
+      title: t('our_technologies.early_cancer_detection.reasions.0.title'),
+      content: t('our_technologies.early_cancer_detection.reasions.0.content'),
     },
     {
       icon: (
@@ -194,8 +196,8 @@ const EarlyCancerDetection = () => {
           alt='vaccine'
         ></StaticImage>
       ),
-      title: '鼻咽癌不能預防',
-      content: '目前尚無疫苗預防鼻咽癌',
+      title: t('our_technologies.early_cancer_detection.reasions.1.title'),
+      content: t('our_technologies.early_cancer_detection.reasions.1.content'),
     },
     {
       icon: (
@@ -204,9 +206,8 @@ const EarlyCancerDetection = () => {
           alt='pills'
         ></StaticImage>
       ),
-      title: '沒有特效藥',
-      content:
-        '目前並未有專門針對鼻咽癌的治療和特效藥（根據癌症不同期數，電療和化療為主要治療方式）',
+      title: t('our_technologies.early_cancer_detection.reasions.2.title'),
+      content: t('our_technologies.early_cancer_detection.reasions.2.content'),
     },
   ]
   return (
@@ -215,7 +216,7 @@ const EarlyCancerDetection = () => {
         <Typography component='div'>
           <Box textAlign='center' mb={6}>
             <Typography variant='h4' color='primary'>
-              認識早期鼻咽癌篩查
+              {t('our_technologies.early_cancer_detection.title')}
             </Typography>
           </Box>
           <Box className={classes.sectionOneBg}></Box>
@@ -223,18 +224,20 @@ const EarlyCancerDetection = () => {
             <Container disableGutters maxWidth='sm'>
               <Box mb={matches ? 2 : 2.5}>
                 <Typography variant='h6' color='secondary'>
-                  你知道嗎？
+                  {t('our_technologies.early_cancer_detection.do_you_know')}
                 </Typography>
               </Box>
               <Box className={classes.rightLine}>
-                其實任何年紀的人都有可能患上鼻咽癌！
+                {t(
+                  'our_technologies.early_cancer_detection.do_you_know_content'
+                )}
               </Box>
               <Box
                 fontSize='body1.fontSize'
                 color='primary.contrastText'
                 mb={matches ? 3 : 4.5}
               >
-                根據香港癌症資料統計中心數據顯示，鼻咽癌是：
+                {t('our_technologies.early_cancer_detection.center_data_title')}
               </Box>
               <Box className={classes.centerDataWrapper}>
                 {centerData.map((item, index) => (
@@ -247,7 +250,7 @@ const EarlyCancerDetection = () => {
                     key={index}
                   >
                     <AlertIcon className={classes.icon}></AlertIcon>
-                    {item}
+                    {t(item)}
                   </Box>
                 ))}
               </Box>
@@ -258,7 +261,9 @@ const EarlyCancerDetection = () => {
                 color='text.primary'
                 mx={matches ? -1 : 0}
               >
-                許多人聞癌色變，但只要定期進行早期鼻咽癌篩查，及時了解自己的身體狀況，即使確診也能儘早接受治療，增加治癒機會，繼續享受美好人生。
+                {t(
+                  'our_technologies.early_cancer_detection.content_data_detail'
+                )}
               </Box>
               <Box
                 fontSize={matches ? 10 : 'caption.fontSize'}
@@ -268,7 +273,7 @@ const EarlyCancerDetection = () => {
                 {references.map((reference, index) => (
                   <Box
                     key={index}
-                    dangerouslySetInnerHTML={{ __html: reference }}
+                    dangerouslySetInnerHTML={{ __html: t(reference) }}
                   ></Box>
                 ))}
               </Box>
@@ -279,7 +284,9 @@ const EarlyCancerDetection = () => {
           <Container disableGutters maxWidth='sm'>
             <Box textAlign='center' mb={matches ? 3 : 4.5}>
               <Typography variant='h4' color='primary'>
-                甚麼是早期鼻咽癌篩查？
+                {t(
+                  'our_technologies.early_cancer_detection.whats_is_early_cancer_detection'
+                )}
               </Typography>
             </Box>
             <Box
@@ -288,12 +295,7 @@ const EarlyCancerDetection = () => {
               color='text.primary'
             >
               <TitleDot left={matches ? -2 : -4.75}></TitleDot>
-              在醫學中，篩查是一種用於尋找尚未發現的疾病的策略。受測者可能沒有徵狀或者只有輕微徵狀，而這些徵狀本身並不能用作確定診斷。受測者可以透過篩查去確定自己的身體狀況有沒有潛在風險，或會否在將來某個時候轉變為疾病，從而能夠及早干預和管理，以降低死亡率和患病所帶來的痛苦。篩查程序中使用的測試須具有良好的靈敏度及特異性，以減少出現誤診和因不準確的結果所帶來的焦慮不安。
-              <br />
-              <br />
-              早期鼻咽癌篩查一般適用於還沒有或病徵不明顯的人群。篩查過程簡單，只需抽血，屬無創方式，配合嶄新的次世代DNA測序技術
-              (Next-generation
-              Sequencing)，來分析血漿中是否帶有鼻咽癌特徵的DNA，從而有效找出早期鼻咽癌患者，有助病人於患病早期確診並接受治療，增加治癒機會及減少治療帶來的副作用。
+              <Trans i18nKey='our_technologies.early_cancer_detection.whats_is_early_cancer_detection_content'></Trans>
             </Box>
           </Container>
         </Box>

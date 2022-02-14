@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton'
 import { makeStyles } from '@material-ui/core'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Links = ({ href }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const { whatsapp, facebook } = useSiteMetadata()
 
   const links = [
@@ -46,7 +48,7 @@ const Links = ({ href }) => {
     },
   ]
 
-  const handleCopy = () => toast.success('成功複製文章鏈接！')
+  const handleCopy = () => toast.success(t('status.copy.success'))
 
   return (
     <Box display='flex' mr={-1.5}>

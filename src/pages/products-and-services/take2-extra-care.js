@@ -13,6 +13,7 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import CheckCircleIcon from '@images/icons/check_circle.svg'
 import TitleDot from '@themes/components/TitleDot'
 import { padStartNum } from '@utils'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const steps = [
   {
@@ -337,11 +338,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2ExtraCare = () => {
   const classes = useStyles()
+  const { t } = useI18next()
 
   return (
     <>
       <Typography className={classes.title} variant='h4' color='primary'>
-        Take2 Prophecy™ 早期鼻咽癌篩查
+        {t('products_and_services.extra_care.title')}
       </Typography>
       <Box className={classes.root}>
         <Container className={classes.contentRoot} disableGutters maxWidth='lg'>

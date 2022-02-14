@@ -1,287 +1,182 @@
 {
-  "are_you_sure": {
-    "cancel_appointment": "您是否確認取消以下預約？",
-    "common": "您確定要{{action}}{{field}}嗎？",
-    "do_not_have_an_account": "沒有賬號？{{action}}",
-    "forget_your_password": "忘記密碼？",
-    "you_have_unsaved_form": "資料還未保存，您確定要離開嗎？"
+  "whats_new": {
+    "promotions": {
+      "title": "最新推廣優惠",
+      "detail": "我們與不同夥伴合作，推出各項優惠，讓你以更優惠的價錢進行體檢及享用多元化的健康服務。"
+    },
+    "health_tips": {
+      "title": "健康資訊 為你更新",
+      "detail": "為了守護你和家人的健康，我們將持續為你提供實用的資訊，緊貼你的健康需要。"
+    }
+  },
+  "service_location": {
+    "title": "本港篩查服務點",
+    "more": "更多服務覆蓋點"
+  },
+  "homepage": {
+    "sign_up": {
+      "title": "立即登記 線上專業諮詢",
+      "detail": "只需輸入簡單資料，你就可以接收最新健康資訊、活動推廣及優惠，並可享用線上醫療諮詢及預約測試服務。"
+    }
   },
   "common": {
-    "action": "更多選項",
-    "apply": "申請",
-    "back": "返回",
-    "bind": "登記",
-    "cancel": "取消{{field}}",
-    "change": "修改{{field}}",
-    "changed_successfully": "修改{{field}}成功!",
-    "confirm": "確定",
-    "date": "日期",
-    "detail": "{{field}}詳情",
-    "edit": "編輯{{field}}",
-    "enter": "輸入{{field}}",
-    "find": "找{{field}}",
-    "hour": "小時",
-    "info": "{{field}}信息",
-    "intro": "{{field}}簡介",
-    "list": "{{field}}列表",
-    "minute": "分",
-    "next": "下一步",
-    "pay": "付款",
-    "refund": "退款",
-    "reset": "重置",
-    "save": "保存",
-    "second": "秒",
-    "set": "設置{{field}}",
-    "sign_in": "登入",
-    "sign_out": "登出",
-    "sign_up": "登記",
-    "status": "{{field}}狀態",
+    "sign_up": "立即登記",
+    "learn_more": "了解更多",
+    "view_more": "瀏覽更多",
+    "view_details": "查看詳情",
+    "book_now": "立即預約",
+    "display": "顯示",
     "submit": "提交",
-    "time": "時間",
-    "view": "查看",
-    "copy": "複製",
-    "promotion": "【迎新優惠】首次登記成為會員，預約早期鼻咽癌篩查即減$330"
+    "sign_up_as_menber": "登記成為會員",
+    "or": "或"
+  },
+  "t_and_c": {
+    "terms_and_conditions": "條款及細則",
+    "privacy_policy": "私隱政策",
+    "personal_infomation_collection_statement": "個人資料收集聲明"
+  },
+  "status": {
+    "copy": {
+      "success": "成功複製文章鏈接！"
+    },
+    "request": {
+      "empty_data": "暫時沒有常見問題數據"
+    },
+    "submit": {
+      "fail": "提交失敗",
+      "success": "已成功提交"
+    }
   },
   "form": {
-    "account": "賬戶",
-    "add_user_info": "添加用戶信息",
-    "address": "地址",
-    "agree_to_receive_news": "我同意獲取Take2 Health所提供的最新推廣優惠和健康資訊。",
-    "birthday": "出生日期",
-    "confirm_password": "確認密碼",
-    "dialing_code": "區號",
-    "email": "電郵",
-    "en_name": "英文全名",
-    "en_name_placeholder": "請輸入身份證上的英文全名（例：Li Kin Hong）",
-    "female": "女",
-    "gender": "性別",
-    "get_v_code": "獲取驗證碼",
-    "id_info": "身份證信息",
-    "id_number": "身份證號碼",
-    "id_type": "證件選項",
-    "id_type_list": {
-      "0": "中國大陸身份證",
-      "1": "香港身份證號碼",
-      "2": "澳門身份證",
-      "3": "護照號碼"
+    "placeholder": {
+      "search": "搜尋",
+      "select": "請選擇"
     },
-    "language": "語言",
-    "male": "男",
-    "name": "姓名",
-    "new_password": "新密碼",
-    "old_password": "目前密碼",
-    "passport": "護照",
-    "passport_type": "護照選項",
-    "password": "密碼",
-    "phone": "電話號碼",
-    "phone_type_list": {
-      "0": "香港手機號碼",
-      "1": "中國內地手機號碼",
-      "2": "澳門手機號碼"
+    "region": {
+      "label": "地區",
+      "options": {
+        "all": "所有地區",
+        "other": "其他地區",
+        "hongkong": "香港"
+      }
     },
-    "place_of_issue": "簽發地",
-    "sign_in_type": "登入方式",
-    "test_requisition_answer_list": {
-      "0": "是",
-      "1": "否",
-      "2": "不知道"
+    "gender": {
+      "label": "性別"
     },
-    "test_requisition_list": {
-      "0": "在您的家族成員裡面，是否現有或曾有人患上鼻咽癌？（近親親屬如：父母、兄弟姐妹、子女、祖父母和叔伯等。) ",
-      "1": "您有曾經接受過鼻咽癌相關的檢查嗎？（如鼻內窺鏡、EB病毒DNA或血清學測試）",
-      "2": "你現時有以下徵狀嗎？（如：頸部出現腫塊、聽力下降、臉部疼痛或麻痺、頭痛、流鼻血、視力模糊或視覺重影等。）",
-      "3": "您是否有吸煙習慣？"
+    "age": {
+      "label": "年齡"
     },
-    "user": "用戶",
-    "username": "用戶姓名",
-    "v_code": "驗證碼",
-    "verification_type": "驗證方式",
-    "wechat": "微信號",
-    "zh_name": "中文全名",
-    "zh_name_placeholder": "請輸入身份證上的中文全名（例：李健康）",
-    "confirm_new_password": "確認新密碼",
-    "mobile_phone": "手機號碼",
-    "area": "地區"
+    "email": {
+      "label": "電郵"
+    },
+    "phone": {
+      "label": "電話號碼",
+      "placeholder": "9876 5432"
+    }
   },
-  "glossary": {
-    "account_info": "賬戶信息",
-    "account_setting": "賬戶設定",
-    "agreement": "條款及細則",
-    "all_rights_reserved": "版權所有",
-    "amount": "金額",
-    "apply_refund": "申請退款",
-    "appointment": "預約{{field}}",
-    "appointment_detail": "預約詳情",
-    "appointment_info": "預約信息",
-    "appointment_of_clinic": "按診所預約檢測",
-    "appointment_of_doctor": "按醫生預約檢測",
-    "appointment_order": "預約訂單",
-    "appointment_person": "預約人",
-    "appointment_process": "預約流程",
-    "appointment_process_list": {
-      "0": "選擇診所/醫生",
-      "1": "請選擇預約日期和時間",
-      "2": "確認預約信息",
-      "3": "網上支付",
-      "4": "預約成功"
+  "quiz": {
+    "pre": "返回上一题",
+    "next": "下一题",
+    "start": {
+      "button": "開始免費測驗",
+      "title": "免費測驗 了解健康",
+      "detail": "來個簡單測驗，人生可能從此變得不一樣。<1></1>雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解有關鼻咽癌的徵狀。",
+      "reference": "分析僅屬參考性質。                         <br />                           引致鼻咽癌的成因有很多，而且徵狀因人而異，詳情請向醫護人員查詢或與我們的專業醫護團隊聯絡。"
     },
-    "appointment_statement": "預約聲明",
-    "appointment_summary": "預約訂單詳情",
-    "appointment_time": "預約時間",
-    "ask_clinic": "到診所進行抽血",
-    "book_test": "預約檢測",
-    "cancel_refund": "取消退款",
-    "change_language": "切換語言",
-    "charge": "價格",
-    "choose_clinics": "選擇診所",
-    "clinic": "診所",
-    "clinic_intro": "诊所簡介",
-    "clinic_open_time": "診所營業時間",
-    "clinic_plural": "診所",
-    "confirm_appointment": "確定預約",
-    "confirm_your_booking_details": "確認預約信息",
-    "consent_form": "同意書",
-    "create_order_time": "下單時間",
-    "current_order_status": "目前訂單狀態",
-    "day_off": "休息",
-    "doctor": "醫生",
-    "doctor_intro": "醫生簡介",
-    "doctor_open_time": "醫生營業時間",
-    "electronic_report": "電子報告",
-    "fail_reason": "失敗原因",
-    "faq": "常見問題",
-    "few_steps_to_finish_your_booking": "只需簡單幾個步驟就能完成預約",
-    "follow_us": "關注我們",
-    "go_to_pay": "付款",
-    "know_more_about_prophecy": "了解更多Take2 Prophecy™ 篩查技術",
-    "options": "選項",
-    "order": "訂單",
-    "order_error": "訂單異常",
-    "order_id": "訂單編號",
-    "order_status": "訂單狀態",
-    "order_status_list": {
-      "0": "未付款",
-      "1": "已付款",
-      "2": "已失效",
-      "3": "退款中",
-      "4": "已退款",
-      "5": "已取消",
-      "6": "退款失敗"
+    "last": {
+      "title": "最後一個步驟 免費獲取結果!",
+      "detail": "請即輸入你的資料，以透過電郵獲取測驗結果；或與線上註冊護士聯絡，以諮詢服務或產品內容！你亦可直接登記，免費成為Take2 ExtraCare會員。"
     },
-    "pay_amount": "付款金額",
-    "pay_later": "稍後付款",
-    "price": "費用",
-    "privacy_policy": "私隱政策",
-    "process_of_online_test_appointment": "網上預約流程",
-    "professional_qualifications": "專業資格",
-    "prophecy": "Take2 Prophecy™ 早期鼻咽癌篩查",
-    "public_holiday": "公眾假期",
-    "qty": "數量",
-    "refund_amount": "退款金額",
-    "screening": "篩查",
-    "service_charge": "服務費用",
-    "submit_order": "提交訂單",
-    "take2_club_plan": "Take2 Extra Care 會員計劃",
-    "test_center": "檢測中心",
-    "test_center_phone": "診所電話",
-    "test_requisition_form": "測試申請表",
-    "view_order_list": "查看訂單列表",
-    "view_clinic_doctor_list": "瀏覽此診所的醫生列表",
-    "edit_your_profile": "修改賬戶設定",
-    "policy_and_agreement_list": {
-      "0": "Take2 Extra Care會員計劃私隱政策",
-      "3": "條款及細則",
-      "4": "私隱政策",
-      "1": "條款及細則",
-      "2": "Platform 個人資料收集聲明",
-      "5": "個人資料收集聲明",
-      "6": "同意書"
-    },
-    "book_clinic_suits_you": "尋找最接近您的篩查地點",
-    "booking_four_steps": "預約五部曲",
-    "limited_time_offer": "會員獨家優惠價",
-    "view_all_clinic_doctor_list": "診所列表",
-    "order_info": "訂單信息",
-    "available_date_time": "可供預約日期和時間",
-    "please_select_available_date_time": "請選擇預約日期及時段",
-    "price_after_discount": "折後價",
-    "promotion_code": "優惠碼",
-    "original_price": "原價"
+    "agreement": "本人已明白及同意Take2 Health Limited的網站於take2health.net之網站<1></>及<2></2>。",
+    "direct_sign_up": "直接登記為 Take2 Extra Care會員",
+    "final": {
+      "title": "多謝參與！",
+      "subtitle": "你已完成了測驗！",
+      "detail_1": "以上問題均與鼻咽癌息息相關，若你持續出現上述病徵，建議你儘快向醫生查詢。",
+      "detail_2": "立即登記，免費成為Take2 Extra Care會員，以優惠價預約進行檢測，並享用Take2 Health 得易健康服務平台的各項服務。"
+    }
   },
-  "tips": {
-    "account_verification": "賬號驗證",
-    "appointment_success": "預約成功的短訊將發送到手機：{{phone}}",
-    "appointment_tips_list": {
-      "0": "您可隨時前往<1>預約訂單</1>查閱或更改預約。",
-      "1": "接受測試當天請出示預約時使用的身份證明文件，以及成功預約電郵以核實個人身份。",
-      "2": "抽血前無需空腹，可如常飲食及服用常服藥物。",
-      "3": "如已預約診所或體檢中心未能在預約的日子提供服務，我們將以電話方式與閣下聯絡。",
-      "4": "如有任何疑問，歡迎致電{{phone}}與我們的客户服務主任聯絡。"
+  "options": {
+    "gender": {
+      "male": "男性",
+      "female": "女性"
     },
-    "before_appointment": "此篩查不建議已經進行器官移植人士、已患有其他癌症、自身免疫系統疾病、正接受全身性糖皮質激素及免疫抑制治療的人使用。",
-    "can_not_booking": "該時間段已被約滿，請重新選擇時間",
-    "can_not_get_data": "獲取不到數據",
-    "change_email": "在您修改電郵後，請使用新電郵以登入賬戶。",
-    "change_info_successfully": "成功修改信息！",
-    "change_password_successfully": "已成功修改密碼，請重新登入。",
-    "change_phone": "在您修改手機號碼後，請使用新號碼以登入賬戶。",
-    "charges": "檢測費用包括Take2 Prophecy™ 早期鼻咽癌篩查及醫生診金，請留意總費用可能隨所選醫生而變更。",
-    "confirm_your_new_password": "確認新密碼",
-    "disclaimer": "免責聲明",
-    "empty_data": "暫時沒有{{field}}數據",
-    "en_name": "中國內地身份證上英文拼音全寫",
-    "enter_your_phone_or_email": "請輸入您的手機號碼或電郵",
-    "friendly_reminder": "溫馨提示",
-    "get_back_password": "找回密碼",
-    "get_start": "立即登記成為會員，尊享獨家優惠",
-    "have_read_confirm_consent_form": "我已閱讀並確認以上同意書。",
-    "hello": "歡迎",
-    "i_agree_join": "我已閱讀及同意{{field}}",
-    "i_know_appointment_immediately": "我已知悉，現可開始預約",
-    "lets_set_your_new_password": "請設置您的新密碼",
-    "main_tips": "注意事項",
-    "order_time_out": "訂單支付已失效",
-    "pay_success": "成功付款後，預約成功的短訊將發送到手機{{phone}}和電郵{{email}}，請注意查收。",
-    "please_complete_user_info": "請填寫個人信息",
-    "pull_off": "該{{field}}暫未能提供服務，請選擇其他{{field}}。",
-    "refund_request_been_refused": "很抱歉！退款申請未能通過。原因：{{reason}}，如有任何疑問，請致電{{phone}}與我們的客戶服務主任聯絡。",
-    "refund_tips_list": {
-      "0": "退款手續所需時間約為10個工作日，通過審批後，款項將扣除銀行手續費後到賬，實際情況視乎個別銀行而定。",
-      "1": "我們將於10個工作天內處理您的退款申請，敬請耐心等候。"
+    "quiz": {
+      "no": "沒有",
+      "unclear": "不確定",
+      "yes": "有",
+      "never": "從不",
+      "rarely": "很少",
+      "sometimes": "間中",
+      "often": "經常"
     },
-    "sign_up_successfully": "登記成功！",
-    "thank_your_for_your_purchase": "感謝您的惠顧！",
-    "time_out_close_order_automatically": "{{hour}}小時{{minute}}分{{second}}秒内未能完成支付，訂單會自動取消。",
-    "update_user_info": "請謹慎填寫賬戶信息，若資料有誤，請致電客戶服務熱線{{phone}}以進行修改。",
-    "verification_account_to_get_start": "從驗證賬號開始。",
-    "zh_name": "若外國護照沒有中文名字則無需填寫。",
-    "check_after_login": "請先登入再查看",
-    "not_variable_appointment_time": "暫無可預約時間",
-    "welcome_back": "歡迎回來！",
-    "no_appointment_available": "此時段已約滿，請選擇其他時段",
-    "and_agree_join": "並同意加入",
-    "sort_by_name": "依姓氏筆劃排序",
-    "sort_by_area": "依地區筆劃排序",
-    "mobile_dialog": "手機版即將推出！現時請您使用電腦瀏覽桌面版網頁，或按<1>＂一般查詢＂</1>向客戶服務主任查詢。謝謝！",
-    "clinic_promotion_detail": "付款時輸入優惠碼即享優惠價",
-    "select_clinic_tips_before_signin": "<1>請先登入</1>，在付款頁面輸入優惠碼以查看折後價",
-    "select_doctor_tips_before_signin": "<1>請先登入</1>，在付款頁面輸入優惠碼以查看折後價",
-    "doctor_promotion_detail": "付款時輸入優惠碼即享優惠價",
-    "go_to_top": "回到頂部",
-    "questions": "我們希望了解您的個人狀況以協助此測試之分析。請簡單回答以下問題，確認預約後即到付款頁面。"
+    "age": {
+      "20_or_below": "20或以下",
+      "61_or_above": "61或以上"
+    }
   },
-  "validation": {
-    "can_not_find_this_page": "无法找到该页面",
-    "cannot_be_empty": "請務必填寫{{field}}",
-    "consistent": "{{field}}一致",
-    "inconsistent": "{{field}}不一致",
-    "must_be_checked": "請勾選{{field}}",
-    "new_password_match": "舊密碼和新密碼不能一致",
-    "password_match": "密碼長度至少8位數，不超過15位數，當中必須包含數字(0-9)、大寫(A-Z)及大小寫(a-z)英文字母。",
-    "please_confirm_first": "請先確認",
-    "please_enter": "請輸入{{field}}",
-    "please_enter_correct_format_of": "請輸入正確{{field}}",
-    "please_select": "請選擇{{field}}",
-    "form_with_mark_required": "*以上帶星號為必須填寫項目"
+  "our_technologies": {
+    "clinical_papers": {
+      "title": "相關研究報告",
+      "detail": "Take2 Prophecy™ 早期鼻咽癌篩查所使用的技術是由屢獲殊榮的香港中文大學頂尖基因研究團隊發明。團隊曾以該技術為2萬名人士進行鼻咽癌篩查，其臨床研究結果分別於《新英格蘭醫學雜誌》以及《美國國家科學院院刊》刊登，有關詳情請瀏覽以下刊物："
+    },
+    "ngs": {
+      "title": "了解NGS技術",
+      "what_is_ngs": "甚麼是NGS?",
+      "intro": "NGS全名為 Next-generation Sequencing(中文即次世代測序技術)。NGS利用高通量和大規模平行測序，與過往第一代測序技術(即Sanger測序，每次只能針對一條DNA片段進行測序)相比，能讓結果維持在高準確性的同時，大幅提升整體測序的效率和降低所需成本，實在是一大突破。<br /><br />從整體處理效率而言，NGS測序通量較高(即能同時為數百到數千個基因或基因區域進行分析)，在提升測試速度的同時，大幅降低測序成本，以完成一個人類基因組的測序為例，所需時間從過往10年大幅縮短至只需1天時間，測序成本亦可從約30億美元大幅降至約1000美元。此外，NGS還可以透過「深度測序」，以更高靈敏度來檢測基因組目標區域的多個新型或罕見變異。因此，NGS能夠做到第一代測序技術無法提供的多重分析，例如進行大規模全基因組測序(Whole Genome Sequencing) 來分析完整的人類基因，或利用轉錄體定序(Transcriptome Sequencing) 進行 mRNA、miRNA 表現量分析、RNAsplicing 研究等。<br /><br />有了NGS的超高通量、可擴展性和速度，在生物資訊學與基因數據相結合下，研究人員就能以前所未有的水準來開展生物系統研究，為疾病研究和群體基因組學研究提供有價值的資訊；在臨床應用方面，還能對癌症樣本進行測序，分析稀有體細胞變異及表觀遺傳學因素，以揭示疾病相關的等位基因。",
+      "notes": {
+        "0": {
+          "title": "我們如何應用 NGS技術，以進行早期鼻咽癌篩查？",
+          "content": "Take2 Prophecy™ 早期鼻咽癌篩查結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing) 來檢測血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，並利用精密的演算法進行數據分析，即使患者未見明顯病徵，也能有效識別出早期鼻咽癌患者，讓其儘早得到治療，提高其治癒的可能性及存活率³。"
+        },
+        "1": {
+          "title": "以組織活檢檢測鼻咽癌的局限",
+          "content": "組織活檢為癌症臨床診斷的金標準，由受過專業訓練的醫生以鼻內視鏡抽取鼻腔組織，再進行細胞分析。這類方法具入侵性，不易用於所有身體部位；加上腫瘤細胞會隨著時間變化，而組織活檢只能代表檢測當下取得的腫瘤細胞的情況，故僅能提供有限的腫瘤資料；再者，組織活檢不能頻繁、重覆地使用以監測疾病的進展；有凝血障礙的人士在抽取組織的過程中也有較高的出血風險。因此，組織活檢存在不同方面的缺陷。"
+        },
+        "2": {
+          "title": "傳統EB病毒檢測難以準確檢測出鼻咽癌",
+          "content": "除了透過鼻內視鏡進行組織活檢外，抽血驗EB病毒 (Epstein-Barr Virus) 也是常見的鼻咽癌檢測手段，因為鼻咽癌與EB病毒關係非常密切。兩種最常用的檢測方法包括血清學檢測和通過定量PCR測量血漿中的EB病毒DNA數值，然而EB病毒感染非常普遍，病毒或抗體的存在可能僅代表短暫感染，並不一定代表患有鼻咽癌，所以兩種方法都難以區分僅感染EB病毒的人和實際患有鼻咽癌的人。"
+        }
+      },
+      "read_full_article": "(閱讀全文）"
+    },
+    "early_cancer_detection": {
+      "title": "認識早期鼻咽癌篩查",
+      "reasions": {
+        "0": {
+          "title": "鼻咽癌不易察覺",
+          "content": "鼻咽位置較「隱蔽」，難以被察覺，部分徵狀容易與感冒或炎症混淆"
+        },
+        "1": {
+          "title": "鼻咽癌不能預防",
+          "content": "目前尚無疫苗預防鼻咽癌"
+        },
+        "2": {
+          "title": "沒有特效藥",
+          "content": "目前並未有專門針對鼻咽癌的治療和特效藥（根據癌症不同期數，電療和化療為主要治療方式）"
+        }
+      },
+      "center_data": {
+        "0": "20-44 歲男士頭號癌症¹",
+        "1": "在女人當中較常發病於50-60歲的癌症（乳癌、子宮體癌等常見癌症亦然）²",
+        "2": "有別其他常見於較年長「銀齡族」（65-80歲之間）的癌症如大腸癌和肝癌³，逾8成鼻咽癌患者年齡普遍見於較年輕的「金齡族」（50至65歲之間）"
+      },
+      "references": {
+        "0": "<sup>1</sup><i>Overview of Hong Kong Cancer Statistics of 2018.</i> Hong Kong Hospital Authority, October 2020.",
+        "1": "<sup>2</sup><i>Hong Kong Cancer Registry.</i> Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.",
+        "2": "<sup>3</sup>認識癌症：鼻咽癌. Hong Kong Cancer Fund, 2021, www.cancer-fund.org/wp-content/uploads/2021/03/NPC-20C-Revamp-Web_s.pdf."
+      },
+      "do_you_know": "你知道嗎？",
+      "do_you_know_content": "其實任何年紀的人都有可能患上鼻咽癌！",
+      "center_data_title": "根據香港癌症資料統計中心數據顯示，鼻咽癌是：",
+      "content_data_detail": "許多人聞癌色變，但只要定期進行早期鼻咽癌篩查，及時了解自己的身體狀況，即使確診也能儘早接受治療，增加治癒機會，繼續享受美好人生。",
+      "whats_is_early_cancer_detection": "甚麼是早期鼻咽癌篩查？",
+      "whats_is_early_cancer_detection_content": "在醫學中，篩查是一種用於尋找尚未發現的疾病的策略。受測者可能沒有徵狀或者只有輕微徵狀，而這些徵狀本身並不能用作確定診斷。受測者可以透過篩查去確定自己的身體狀況有沒有潛在風險，或會否在將來某個時候轉變為疾病，從而能夠及早干預和管理，以降低死亡率和患病所帶來的痛苦。篩查程序中使用的測試須具有良好的靈敏度及特異性，以減少出現誤診和因不準確的結果所帶來的焦慮不安。<br /><br />早期鼻咽癌篩查一般適用於還沒有或病徵不明顯的人群。篩查過程簡單，只需抽血，屬無創方式，配合嶄新的次世代DNA測序技術(Next-generationSequencing)，來分析血漿中是否帶有鼻咽癌特徵的DNA，從而有效找出早期鼻咽癌患者，有助病人於患病早期確診並接受治療，增加治癒機會及減少治療帶來的副作用。"
+    }
+  },
+  "products_and_services": {
+    "take2_extra_care": {
+      "title": "Take2 Prophecy™ 早期鼻咽癌篩查"
+    }
   }
 }

@@ -18,6 +18,7 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import classnames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const steps = [
   {
@@ -331,6 +332,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2Prophecy = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
