@@ -1,8 +1,13 @@
 ---
-label: Post
+label: Updates Post
 hide_body: false
 display_field: title
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: cover
   type: image_gallery
   config: {}
