@@ -65,6 +65,10 @@ fields:
   label: slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
+- name: test
+  type: boolean
+  label: test
+  default: true
 pages:
 - content/updates/dna-1.md
 - content/updates/dna.md
