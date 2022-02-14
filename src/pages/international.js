@@ -33,6 +33,7 @@ import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import SimpleGoogleMap from '@components/Map/SimpleGoogleMap'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -249,6 +250,7 @@ const schema = oriSchema().pick([
 
 const International = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [loading, setLoading] = useState(false)
@@ -259,10 +261,11 @@ const International = () => {
       const res = await fetchWithTimeout(`/applyPartner/add`, {
         values, // data can be `string` or {object}!
       })
-      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
+      if (res?.code !== 1000)
+        return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
-      return Promise.reject('提交失敗')
+      return Promise.reject(t('status.submit.fail'))
     }
   }
 
@@ -275,14 +278,14 @@ const International = () => {
             variant='h4'
             color='primary'
           >
-            開拓邊界，引領改變
+            {t('international.title')}
           </Typography>
           <Typography
             className={classes.box01Content}
             variant='body1'
             color='textPrimary'
           >
-            作為一家立足中國香港，連接大灣區，面向全球各地的醫療科技企業，我們致力於結合早期癌症篩查的力量及當地醫護人員的專業服務，打造便利大眾的服務網絡，將影響力帶到世界各地。
+            {t('international.detail')}
           </Typography>
         </Box>
         <SimpleGoogleMap></SimpleGoogleMap>
@@ -299,7 +302,7 @@ const International = () => {
       <Box className={classes.box02}>
         <Container maxWidth='md'>
           <Typography className={classes.box02Title} variant='h6'>
-            我們的合作夥伴
+            {t('international.our_partners')}
           </Typography>
           <ImageList
             className={classes.imageList}
@@ -336,7 +339,7 @@ const International = () => {
                           color='primary'
                           endIcon={<RightIcon />}
                         >
-                          了解更多
+                          {t('common.learn_more')}
                         </Button>
                       )}
                     </Box>
@@ -366,13 +369,13 @@ const International = () => {
                   variant='h4'
                   color='primary'
                 >
-                  成為合作夥伴
+                  {t('international.become_a_partner')}
                 </Typography>
                 <Typography
                   variant={matches ? 'body2' : 'body1'}
                   color='textPrimary'
                 >
-                  如閣下期望與我們一起透過創新科技，推廣早期鼻咽癌篩查服務，歡迎填妥以下資料，我們將會儘快與你聯絡。
+                  {t('international.become_a_partner_content')}
                 </Typography>
                 <Formik
                   initialValues={initialValues}
@@ -385,7 +388,7 @@ const International = () => {
                     try {
                       setLoading(true)
                       await handleFetch(values)
-                      toast.success('已成功提交')
+                      toast.success(t('status.submit.success'))
                       resetForm()
                     } catch (error) {
                       toast.error(error)
@@ -433,7 +436,7 @@ const International = () => {
                             error={isError('companyName')}
                             required
                           >
-                            <EFormLabel>公司名稱/姓名</EFormLabel>
+                            <EFormLabel>{t('form.company.label')}</EFormLabel>
                             <EInputBase
                               id='company-ame'
                               name='companyName'
@@ -443,7 +446,7 @@ const International = () => {
                               placeholder={
                                 isError('companyName')
                                   ? ''
-                                  : '請輸入公司名稱/姓名'
+                                  : t('form.company.placeholder')
                               }
                               type='text'
                               endAdornment={
@@ -455,7 +458,7 @@ const International = () => {
                         </Box>
                         <Box className={classes.formControlLine}>
                           <FormControl fullWidth error={isError('name')}>
-                            <EFormLabel>聯絡人姓名</EFormLabel>
+                            <EFormLabel>{t('form.contact.label')}</EFormLabel>
                             <EInputBase
                               id='contact-name'
                               name='name'
@@ -475,7 +478,7 @@ const International = () => {
                             required
                             className={classes.formControl}
                           >
-                            <EFormLabel>電郵</EFormLabel>
+                            <EFormLabel>{t('form.email.label')}</EFormLabel>
                             <EInputBase
                               id='email'
                               name='email'
@@ -499,7 +502,7 @@ const International = () => {
                             <FormControl
                               className={classes.dialingCodeFormControl}
                             >
-                              <EFormLabel>電話號碼</EFormLabel>
+                              <EFormLabel>{t('form.phone.label')}</EFormLabel>
                               <ESelect
                                 labelId='dialingCode-select-label'
                                 id='dialingCode-type-select'
@@ -528,7 +531,7 @@ const International = () => {
                                 margin='none'
                                 value={values.phone}
                                 onChange={handleChange}
-                                placeholder='9876 5432'
+                                placeholder={t('form.phone.placeholder')}
                                 endAdornment={<CusCancelButton field='phone' />}
                               />
                               {errorText('phone')}
@@ -546,7 +549,7 @@ const International = () => {
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
                           ) : (
-                            '提交'
+                            t('common.submit')
                           )}
                         </Button>
                         {reCapStatus > 0 && (

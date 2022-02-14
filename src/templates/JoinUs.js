@@ -34,6 +34,7 @@ import classnames from 'classnames'
 import Search from '@components/Search'
 import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -200,6 +201,7 @@ const schema = oriSchema().pick(['name', 'email', 'area'])
 
 const JoinUs = ({ data, pageContext }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const { totalCount } = data?.allMdx?.pageInfo
   const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
     pageContext
@@ -217,10 +219,11 @@ const JoinUs = ({ data, pageContext }) => {
       const res = await fetchWithTimeout(`/joinUs/add`, {
         values, // data can be `string` or {object}!
       })
-      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
+      if (res?.code !== 1000)
+        return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
-      return Promise.reject('提交失敗')
+      return Promise.reject(t('status.submit.fail'))
     }
   }
 
@@ -233,19 +236,15 @@ const JoinUs = ({ data, pageContext }) => {
             variant='h4'
             color='primary'
           >
-            加入我們
+            {t('about_us.join_us.title')}
           </Typography>
           <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
-            作為一家初創企業，我們期待與更多生物科技行業的專才，及各行業的專業人士合作，攜手帶領
-            Take2 Health在本地及海外市場拓展，改寫人類健康。
-            <br />
-            <br />
-            誠邀閣下加入我們團隊，成為我們一份子，一起為人類健康努力，共同發掘無限可能。
+            <Trans i18nKey='about_us.join_us.detail'></Trans>
           </Typography>
         </Container>
         <Box className={classes.countWrapper}>
           <Typography variant='h5' color='primary'>
-            瀏覽現有空缺 ({totalCount})
+            {t('about_us.join_us.open_positions', { count: totalCount })}
           </Typography>
         </Box>
         <Box className={classes.careersWrapper}>
@@ -277,10 +276,7 @@ const JoinUs = ({ data, pageContext }) => {
                     to={previousPagePath}
                     disabled
                   >
-                    <IconButton
-                      className={classes.prePageBtn}
-                      aria-label='previous page'
-                    >
+                    <IconButton className={classes.prePageBtn}>
                       <ArrowIcon></ArrowIcon>
                     </IconButton>
                   </Link>
@@ -289,7 +285,7 @@ const JoinUs = ({ data, pageContext }) => {
                     <Box>of {numberOfPages}</Box>
                   </Box>
                   <Link to={nextPagePath}>
-                    <IconButton aria-label='previous page'>
+                    <IconButton>
                       <ArrowIcon></ArrowIcon>
                     </IconButton>
                   </Link>
@@ -318,15 +314,13 @@ const JoinUs = ({ data, pageContext }) => {
                   variant='h4'
                   color='primary'
                 >
-                  加入我們
+                  {t('about_us.join_us.title')}
                 </Typography>
                 <Typography
                   variant={matches ? 'body2' : 'body1'}
                   color='textPrimary'
                 >
-                  如現時未有合適空缺，歡迎留下聯絡方法，
-                  <br />
-                  第一時間獲取最新空缺資料：
+                  <Trans i18nKey='about_us.join_us.form_detail'></Trans>
                 </Typography>
                 <Formik
                   initialValues={initialValues}
@@ -341,7 +335,7 @@ const JoinUs = ({ data, pageContext }) => {
                       await handleFetch(
                         omit(values, ['requiredArea', 'requiredName'])
                       )
-                      toast.success('已成功提交')
+                      toast.success(t('status.submit.success'))
                       resetForm()
                     } catch (error) {
                       toast.error(error)
@@ -389,7 +383,7 @@ const JoinUs = ({ data, pageContext }) => {
                             error={isError('name')}
                             required
                           >
-                            <EFormLabel>聯絡人姓名</EFormLabel>
+                            <EFormLabel>{t('form.contact.label')}</EFormLabel>
                             <EInputBase
                               id='contact-name'
                               name='name'
@@ -409,7 +403,7 @@ const JoinUs = ({ data, pageContext }) => {
                             required
                             className={classes.formControl}
                           >
-                            <EFormLabel>電郵</EFormLabel>
+                            <EFormLabel>{t('form.email.label')}</EFormLabel>
                             <EInputBase
                               id='email'
                               name='email'
@@ -431,7 +425,7 @@ const JoinUs = ({ data, pageContext }) => {
                             required
                             className={classes.formControl}
                           >
-                            <EFormLabel>地區</EFormLabel>
+                            <EFormLabel>{t('form.region.label')}</EFormLabel>
                             <ESelect
                               displayEmpty
                               labelId='area-label'
@@ -464,7 +458,7 @@ const JoinUs = ({ data, pageContext }) => {
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
                           ) : (
-                            '提交'
+                            t('common.submit')
                           )}
                         </Button>
                         {reCapStatus > 0 && (
