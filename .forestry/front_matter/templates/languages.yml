@@ -20,3 +20,18 @@ fields:
     default: true
   label: Languages
   hidden: false
+- name: test_languages
+  type: select
+  default: en
+  config:
+    required: true
+    options:
+    - en
+    - zh-HK
+    - zh-CN
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Test Languages
