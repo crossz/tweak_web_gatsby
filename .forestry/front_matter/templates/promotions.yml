@@ -50,4 +50,5 @@ fields:
   name: slug
   label: slug
 pages:
+- content/promotions/take2-health-re-health-copy.md
 - content/promotions/take2-health-re-health.md
