@@ -1,4 +1,12 @@
 ---
 label: Languages
 hide_body: true
-fields: []
+fields:
+- name: languages
+  type: tag_list
+  default:
+  - en
+  - zh-HK
+  - zh-CN
+  label: Languages
+  description: Show the node in matching language.
