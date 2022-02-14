@@ -2,6 +2,11 @@
 label: Career
 hide_body: false
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: title
   type: text
   config:
