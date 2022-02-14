@@ -7,5 +7,11 @@ href: https://inews.hket.com/article/2868628/?fbclid=IwAR0xpCxJWjui5pzr2XiVcbcwm
 slug: ''
 cover:
 - "../images/20210202TAKE2HEALTHLTD02.jpeg"
+languages:
+  en: false
+  zh-HK: false
+  zh-CN: false
+test_languages:
+- en
 
 ---
