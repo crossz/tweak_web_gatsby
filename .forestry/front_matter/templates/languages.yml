@@ -20,10 +20,3 @@ fields:
     default: true
   label: Languages
   hidden: false
-- name: test_languages
-  type: tag_list
-  default:
-  - en
-  - zh-HK
-  - zh-CN
-  label: Test Languages
