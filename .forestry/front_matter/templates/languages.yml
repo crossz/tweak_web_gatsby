@@ -19,3 +19,4 @@ fields:
     label: zh-CN
     default: true
   label: Languages
+  hidden: false
