@@ -35,3 +35,8 @@ fields:
   config: {}
   template: hero-button
   label: Buttons
+- name: titleEn
+  type: text
+  config:
+    required: false
+  label: En Title
