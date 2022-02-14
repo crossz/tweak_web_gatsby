@@ -3,10 +3,19 @@ label: Languages
 hide_body: true
 fields:
 - name: languages
-  type: tag_list
-  default:
-  - en
-  - zh-HK
-  - zh-CN
+  type: field_group
+  config: {}
+  fields:
+  - name: en
+    type: boolean
+    label: en
+    default: true
+  - name: zh-HK
+    type: boolean
+    label: zh-HK
+    default: true
+  - name: zh-CN
+    type: boolean
+    label: zh-CN
+    default: true
   label: Languages
-  description: Show the node in matching language.
