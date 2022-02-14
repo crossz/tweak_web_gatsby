@@ -10,6 +10,16 @@ fields:
     min: 1
     max: 50
   label: Title
+- name: cn_title
+  type: text
+  config:
+    required: false
+  label: Cn Title
+- name: en_title
+  type: text
+  config:
+    required: false
+  label: En Title
 - name: image
   type: file
   config:
@@ -33,6 +43,24 @@ fields:
     min: 1
     max: 200
   label: Detail
+- name: cn_detail
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Cn Detail
+- name: en_detail
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: En Detail
 - name: buttons
   type: blocks
   template_types:
