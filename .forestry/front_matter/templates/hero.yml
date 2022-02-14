@@ -19,6 +19,16 @@ fields:
     min: 1
     max: 50
   label: Title
+- name: titleEn
+  type: text
+  config:
+    required: false
+  label: En Title
+- name: titleCn
+  type: text
+  config:
+    required: false
+  label: Cn Title
 - name: detail
   type: textarea
   default: ''
@@ -30,13 +40,26 @@ fields:
     min: 1
     max: 200
   label: Detail
+- name: detailEn
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: En Detail
+- name: detailCn
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Cn Detail
 - name: buttons
   type: include
   config: {}
   template: hero-button
   label: Buttons
-- name: titleEn
-  type: text
-  config:
-    required: false
-  label: En Title
