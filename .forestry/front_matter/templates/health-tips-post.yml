@@ -2,11 +2,6 @@
 label: Health Tips Post
 hide_body: false
 fields:
-- name: languages
-  type: include
-  config: {}
-  template: languages
-  label: Languages
 - name: cover
   type: image_gallery
   config: {}

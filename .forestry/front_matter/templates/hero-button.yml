@@ -45,34 +45,6 @@ fields:
       file: 
       path: 
   label: Name
-- name: cn_name
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - 了解更多
-    - 立即预约
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Cn Name
-- name: en_name
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - Learn More
-    - Book Now
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: En Name
 - name: link
   type: text
   config:
