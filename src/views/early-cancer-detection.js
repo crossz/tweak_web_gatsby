@@ -186,8 +186,8 @@ const EarlyCancerDetection = () => {
           alt='symptoms'
         ></StaticImage>
       ),
-      title: t('our_technologies.early_cancer_detection.reasions.0.title'),
-      content: t('our_technologies.early_cancer_detection.reasions.0.content'),
+      title: t('our_technologies.early_cancer_detection.reasons.0.title'),
+      content: t('our_technologies.early_cancer_detection.reasons.0.content'),
     },
     {
       icon: (
@@ -196,8 +196,8 @@ const EarlyCancerDetection = () => {
           alt='vaccine'
         ></StaticImage>
       ),
-      title: t('our_technologies.early_cancer_detection.reasions.1.title'),
-      content: t('our_technologies.early_cancer_detection.reasions.1.content'),
+      title: t('our_technologies.early_cancer_detection.reasons.1.title'),
+      content: t('our_technologies.early_cancer_detection.reasons.1.content'),
     },
     {
       icon: (
@@ -206,8 +206,8 @@ const EarlyCancerDetection = () => {
           alt='pills'
         ></StaticImage>
       ),
-      title: t('our_technologies.early_cancer_detection.reasions.2.title'),
-      content: t('our_technologies.early_cancer_detection.reasions.2.content'),
+      title: t('our_technologies.early_cancer_detection.reasons.2.title'),
+      content: t('our_technologies.early_cancer_detection.reasons.2.content'),
     },
   ]
   return (
@@ -302,7 +302,7 @@ const EarlyCancerDetection = () => {
         <Box mt={matches ? 8 : 12.5} px={matches ? 1.5 : 2.5}>
           <Box textAlign='center' mb={matches ? 3 : 8}>
             <Typography variant='h5' color='primary'>
-              及早進行早期鼻咽癌篩查的三大原因
+              {t('our_technologies.early_cancer_detection.reason_title')}
             </Typography>
           </Box>
           <Container disableGutters maxWidth='sm'>

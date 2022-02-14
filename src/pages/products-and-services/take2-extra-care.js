@@ -343,7 +343,7 @@ const Take2ExtraCare = () => {
   return (
     <>
       <Typography className={classes.title} variant='h4' color='primary'>
-        {t('products_and_services.extra_care.title')}
+        {t('products_and_services.take2_extra_care.title')}
       </Typography>
       <Box className={classes.root}>
         <Container className={classes.contentRoot} disableGutters maxWidth='lg'>
