@@ -331,7 +331,7 @@ const EarlyCancerDetection = () => {
               color='primary.contrastText'
               borderRadius={12}
             >
-              我們期望透過推廣早期癌症篩查，建立市民的健康意識，提升大眾對癌症、檢測技術、個人健康管理的認知，並致力推動醫學創新研究，讓患者更有效進行健康管理，從而自信地活出精彩人生。
+              {t('our_technologies.early_cancer_detection.expect')}
             </Box>
           </Container>
         </Box>

@@ -1,11 +1,14 @@
 import React from 'react'
 import PostList from '@components/WhatsNew/PostList'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const Promotions = ({ data }) => {
+  const { t } = useI18next()
+
   return (
     <PostList
-      title='最新推廣優惠'
-      caption='我們與不同夥伴合作，推出各項優惠，讓你以更優惠的價錢進行體檢及享用多元化的健康服務。'
+      title={t('whats_new.promotions.title')}
+      caption={t('whats_new.promotions.detail')}
       nodes={data?.allMdx?.nodes}
     ></PostList>
   )

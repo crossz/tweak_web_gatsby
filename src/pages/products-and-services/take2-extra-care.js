@@ -13,11 +13,11 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import CheckCircleIcon from '@images/icons/check_circle.svg'
 import TitleDot from '@themes/components/TitleDot'
 import { padStartNum } from '@utils'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 
 const steps = [
   {
-    label: '進行Take2 Prophecy™ 早期鼻咽癌篩查服務',
+    label: 'products_and_services.take2_extra_care.steps.0',
     icon: (
       <StaticImage
         src='../../assets/images/icons/take2Care/step_01.svg'
@@ -27,7 +27,7 @@ const steps = [
     ),
   },
   {
-    label: '於篩查服務點填寫表格',
+    label: 'products_and_services.take2_extra_care.steps.1',
     icon: (
       <StaticImage
         src='../../assets/images/icons/take2Care/step_02.svg'
@@ -37,7 +37,7 @@ const steps = [
     ),
   },
   {
-    label: '直接於Take2 Health得易健康服務平台登記成為會員',
+    label: 'products_and_services.take2_extra_care.steps.2',
     icon: (
       <StaticImage
         src='../../assets/images/icons/take2Care/step_03.png'
@@ -48,7 +48,12 @@ const steps = [
   },
 ]
 
-const clubPlans = ['即時查詢', '獨家優惠', '健康資訊', '年度篩查提醒']
+const clubPlans = [
+  'products_and_services.take2_extra_care.club_plans.0',
+  'products_and_services.take2_extra_care.club_plans.1',
+  'products_and_services.take2_extra_care.club_plans.2',
+  'products_and_services.take2_extra_care.club_plans.3',
+]
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -366,9 +371,13 @@ const Take2ExtraCare = () => {
                 ></StaticImage>
                 <Box className={classes.box01Content}>
                   <Box className={classes.box01Title}>
-                    甚麼是Take2 Extra Care計劃？
+                    {t(
+                      'products_and_services.take2_extra_care.what_is_extra_care'
+                    )}
                   </Box>
-                  這是一項由專業醫護人員團隊制訂的全面健康管理計劃，任何人士均可登記成爲會員。
+                  {t(
+                    'products_and_services.take2_extra_care.what_is_extra_care_content'
+                  )}
                 </Box>
               </Box>
               <Box className={classes.downArrow}>
@@ -379,22 +388,28 @@ const Take2ExtraCare = () => {
               <Box className={classes.box02}>
                 <Hidden xsDown>
                   <Box className={classes.box02Title}>
-                    甚麼是Take2 Extra Care會員計劃？
+                    {t(
+                      'products_and_services.take2_extra_care.what_is_extra_care'
+                    )}
                   </Box>
-                  這是一項由專業醫護人員團隊制訂的全面健康管理計劃，任何人士均可登記成爲會員。
+                  {t(
+                    'products_and_services.take2_extra_care.what_is_extra_care_content'
+                  )}
                 </Hidden>
                 <Box className={classes.clubPlansWrapper}>
                   {clubPlans.map((clubPlan, index) => (
                     <Box className={classes.clubPlanItem} key={index}>
                       <CheckCircleIcon></CheckCircleIcon>
-                      {clubPlan}
+                      {t(clubPlan)}
                     </Box>
                   ))}
                 </Box>
               </Box>
               <Box className={classes.box03}>
                 <Box className={classes.box03Title}>
-                  如何參加Take2 Extra Care計劃？
+                  {t(
+                    'products_and_services.take2_extra_care.how_to_join_extra_care'
+                  )}
                 </Box>
                 <Box className={classes.stepsWrapper}>
                   {steps.map(({ icon, label }, index) => (
@@ -408,7 +423,7 @@ const Take2ExtraCare = () => {
                               {padStartNum(index + 1)}
                             </Box>
                           )}
-                          {label}
+                          {t(label)}
                         </Box>
                       </Box>
                       {index === 0 && (
@@ -423,7 +438,7 @@ const Take2ExtraCare = () => {
                           color='primary'
                           key='or'
                         >
-                          或
+                          {t('common.or')}
                         </Typography>
                       )}
                     </React.Fragment>
@@ -438,18 +453,19 @@ const Take2ExtraCare = () => {
         <Box mx={3}>
           <Container disableGutters className={classes.box04Wrapper}>
             <Box className={classes.box04Title}>
-              參加Take2 Extra Care會員計劃有甚麼好處？
+              {t(
+                'products_and_services.take2_extra_care.benefit_of_extra_care'
+              )}
             </Box>
-            <Box>
+            <Trans i18nKey='products_and_services.take2_extra_care.benefit_of_extra_care_content'>
               免費成為永久會員，享用Take2 Extra
-              Care會員計劃轄下一切服務，包括即時查詢、健康資訊、獨家優惠和年度篩查提醒等。{' '}
-              <br />
+              Care會員計劃轄下一切服務，包括即時查詢、健康資訊、獨家優惠和年度篩查提醒等。
               <Hidden xsDown>
                 <br />
               </Hidden>
               長遠而言，透過參加Take2 Extra
               Care會員計劃，你可更有效運用健康管理所需時間及金錢，透過現今科技和醫療專業意見協助你更早為健康做好準備。
-            </Box>
+            </Trans>
             <Box className={classes.box04BtnWrapper}>
               <Button
                 variant='outlined'
@@ -458,7 +474,7 @@ const Take2ExtraCare = () => {
                 target='_blank'
                 className={classes.box04Btn}
               >
-                立即登記
+                t('common.sign_up')
               </Button>
               <Button
                 variant='contained'
@@ -467,7 +483,7 @@ const Take2ExtraCare = () => {
                 target='_blank'
                 className={classes.box04Btn}
               >
-                登入
+                {t('common.sign_in')}
               </Button>
             </Box>
           </Container>

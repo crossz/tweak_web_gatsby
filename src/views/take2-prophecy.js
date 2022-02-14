@@ -22,7 +22,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const steps = [
   {
-    label: '諮詢醫生意見',
+    label: 'products-and-services.take2_prophecy.process.0',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_01.svg'
@@ -32,7 +32,7 @@ const steps = [
     ),
   },
   {
-    label: '採集血液樣本',
+    label: 'products-and-services.take2_prophecy.process.1',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_02.svg'
@@ -42,7 +42,7 @@ const steps = [
     ),
   },
   {
-    label: '送到本港實驗室\n進行分析',
+    label: 'products-and-services.take2_prophecy.process.2',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_03.svg'
@@ -52,7 +52,7 @@ const steps = [
     ),
   },
   {
-    label: '3-7個工作天內有\n篩查結果',
+    label: 'products-and-services.take2_prophecy.process.3',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_04.svg'
@@ -62,7 +62,7 @@ const steps = [
     ),
   },
   {
-    label: '醫生為病人分析報告',
+    label: 'products-and-services.take2_prophecy.process.4',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_05.svg'
@@ -75,15 +75,15 @@ const steps = [
 
 const reports = [
   {
-    result: '結果為陽性*',
-    suggestion: '諮詢耳鼻喉科專家',
-    mark: '*陽性： 檢測到血漿中存在「人類和EB病毒的DNA與鼻咽癌相關之特徵」，詳情請向醫護人員查詢。',
+    result: 'products-and-services.take2_prophecy.reports.0.result',
+    suggestion: 'products-and-services.take2_prophecy.reports.0.suggestion',
+    mark: 'products-and-services.take2_prophecy.reports.0.mark',
     color: '#C8002E',
   },
   {
-    result: '結果為陰性**',
-    suggestion: '進行年度檢查',
-    mark: '**陰性： 檢測不到血漿中存在「人類和EB病毒的DNA與鼻咽癌相關之特徵」，詳情請向醫護人員查詢。',
+    result: 'products-and-services.take2_prophecy.reports.1.result',
+    suggestion: 'products_and_services.take2_prophecy.reports.1.suggestion',
+    mark: 'products_and_services.take2_prophecy.reports.1.mark',
     color: '#00AA82',
   },
 ]
@@ -342,15 +342,14 @@ const Take2Prophecy = () => {
         <Container className={classes.content} disableGutters maxWidth='md'>
           <Box className={classes.title}>
             <Typography variant='h4' color='primary'>
-              Take2 Prophecy™ 早期鼻咽癌篩查
+              {t('products-and-services.take2_prophecy.title')}
             </Typography>
             <Box mt={matches ? 2.5 : 3}>
               <Typography
                 variant={matches ? 'body2' : 'body1'}
                 color='textPrimary'
               >
-                Take2 Prophecy™
-                早期鼻咽癌篩查，適用群體包括常規體檢者、無徵狀人士及有疑似徵狀人士等。
+                {t('products-and-services.take2_prophecy.detail')}
               </Typography>
             </Box>
           </Box>
@@ -361,7 +360,9 @@ const Take2Prophecy = () => {
                 src='../assets/images/products_services_banner_bg.jpg'
                 alt='homepage banner mobile'
               ></StaticImage>
-              <Box className={classes.sectionOneBanner}>篩查流程</Box>
+              <Box className={classes.sectionOneBanner}>
+                {t('products-and-services.take2_prophecy.detection_process')}
+              </Box>
             </Box>
             <Box className={classes.sectionOneContent}>
               <Box className={classes.stepsWrapper}>
@@ -391,7 +392,7 @@ const Take2Prophecy = () => {
                       >
                         <Box className={classes.stepIcon}>{curStep.icon}</Box>
                         <Box className={classes.stepLabel}>
-                          {!(index === 4 && matches) && curStep.label}
+                          {!(index === 4 && matches) && t(curStep.label)}
                           <Hidden smUp>
                             {index < steps?.length - 1 && (
                               <ArrowIcon
@@ -423,7 +424,7 @@ const Take2Prophecy = () => {
                 color='primary.main'
                 fontSize='body1.fontSize'
               >
-                醫生為病人分析報告：
+                {t('products_and_services.take2_prophecy.process.4')}:
               </Box>
               <ImageList
                 rowHeight='auto'
@@ -446,7 +447,7 @@ const Take2Prophecy = () => {
                             color: report.color,
                           }}
                         >
-                          {report.result}
+                          {t(report.result)}
                           <RightIcon
                             className={classnames(
                               classes.rightIcon,
@@ -454,16 +455,16 @@ const Take2Prophecy = () => {
                             )}
                           ></RightIcon>
                         </Box>
-                        {report.suggestion}
+                        {t(report.suggestion)}
                       </Box>
-                      {report.mark}
+                      {t(report.mark)}
                     </Box>
                   </ImageListItem>
                 ))}
               </ImageList>
               <Box className={classes.reportTip}>
-                注意事項 <br />
-                此篩查不建議已經進行器官移植人士、已患有其他癌症、自身免疫系統疾病、正接受全身性糖皮質激素及免疫抑制治療的人士使用。如有任何疑問，請向專業醫護人員內詢。
+                {t('common.notice')} <br />
+                {t('products_and_services.take2_prophecy.notice')}
               </Box>
             </Box>
           </Box>
@@ -480,18 +481,18 @@ const Take2Prophecy = () => {
               <Box ml={matches ? 0 : 5}>
                 <Typography variant='h5' component='div'>
                   <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
-                    預約篩查
+                    {t('common.book_detection')}
                   </Box>
                   <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
                     <Typography
                       variant={matches ? 'body2' : 'body1'}
                       color='textPrimary'
                     >
-                      想知道自己有沒有患上鼻咽癌？
+                      {t('products_and_services.take2_prophecy.do_you_have')}
                       <Hidden smUp>
                         <br />
                       </Hidden>
-                      不要猶豫，立即行動！
+                      {t('products_and_services.take2_prophecy.action')}
                     </Typography>
                   </Box>
                 </Typography>
@@ -505,7 +506,7 @@ const Take2Prophecy = () => {
                       fullWidth={matches}
                       className={classes.btn}
                     >
-                      立即預約
+                      {t('common.book_now')}
                     </Button>
                   </Grid>
                   <Grid item xs={matches ? 6 : 'auto'}>
@@ -516,7 +517,7 @@ const Take2Prophecy = () => {
                         color='secondary'
                         fullWidth={matches}
                       >
-                        篩查服務點
+                        {t('common.service_location')}
                       </Button>
                     </Link>
                   </Grid>

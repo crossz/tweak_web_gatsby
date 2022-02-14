@@ -21,6 +21,7 @@ import { groupBy } from 'lodash-es'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { ESelect } from '@themes/components/ETextField'
 import Loading from '@components/Loading'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -150,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const FAQ = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const { whatsapp, phone } = useSiteMetadata()
   const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
@@ -216,7 +218,7 @@ const FAQ = () => {
           <Grid item xs={12} sm={4}></Grid>
           <Grid className={classes.titleWrapper} item xs={12} sm={8}>
             <Typography className={classes.title} variant='h4' color='primary'>
-              常見問題
+              {t('common.faq')}
               {activeType && (
                 <Typography
                   component='span'
@@ -244,7 +246,8 @@ const FAQ = () => {
                       key={index}
                       data-value={type}
                     >
-                      {type || '所有問題'}
+                      {type ||
+                        t('products_and_services.take2_extra_care.all_faq')}
                     </Box>
                   ))}
                 </Box>
@@ -269,7 +272,8 @@ const FAQ = () => {
                   >
                     {faqTypes.map((type, index) => (
                       <MenuItem key={index} value={type}>
-                        {type || '所有問題'}
+                        {type ||
+                          t('products_and_services.take2_extra_care.all_faq')}
                       </MenuItem>
                     ))}
                   </ESelect>
@@ -299,7 +303,7 @@ const FAQ = () => {
       </Container>
       <Box className={classes.contactRoot}>
         <Box className={classes.contactTitle}>
-          如有其他問題，歡迎向我們查詢：
+          {t('products_and_services.take2_extra_care.faq.welcome_contact')}
         </Box>
         <Box className={classes.contactBtnWrapper}>
           <Button
