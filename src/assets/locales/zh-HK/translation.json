@@ -33,7 +33,11 @@
     "service_location": "篩查服務點",
     "notice": "注意事項",
     "sign_in": "登入",
-    "faq": "常見問題"
+    "faq": "常見問題",
+    "register": "登記",
+    "follow_us": "關注我們",
+    "take2_copy_right": "©2021 Take2 Health 版權所有",
+    "online_promotion_code": "網上預約<br />優惠碼{{PROMOTION_CODE}}"
   },
   "t_and_c": {
     "terms_and_conditions": "條款及細則",
@@ -84,6 +88,13 @@
     "company": {
       "label": "公司名稱/姓名",
       "placeholder": "請輸入公司名稱/姓名"
+    },
+    "message": {
+      "label": "訊息",
+      "placeholder": "請輸入你的訊息",
+      "validation": {
+        "required": "*必填資料"
+      }
     }
   },
   "quiz": {
@@ -274,5 +285,34 @@
     "our_partners": "我們的合作夥伴",
     "become_a_partner": "成為合作夥伴",
     "become_a_partner_content": "如閣下期望與我們一起透過創新科技，推廣早期鼻咽癌篩查服務，歡迎填妥以下資料，我們將會儘快與你聯絡。"
+  },
+  "contact_us": {
+    "title": "如有任何意見或查詢，歡迎透過下列方式與我們聯繫",
+    "form_title": "提交意見或查詢",
+    "types": {
+      "0": "客戶服務專線",
+      "1": "一般查詢",
+      "2": "公關及傳訊",
+      "3": "商務合作"
+    }
+  },
+  "menu": {
+    "whats_new": "最新動態及推廣",
+    "promotions": "最新推廣優惠",
+    "health_tips": "健康及專業醫護資訊",
+    "updates": "最新動態",
+    "our_technologies": "革新技術",
+    "early_cancer_detection": "認識早期鼻咽癌篩查",
+    "ngs": "了解NGS技術",
+    "clinical_papers": "相關研究報告",
+    "products_and_services": "產品及服務",
+    "take2_prophecy": "Take2 Prophecy™ 早期鼻咽癌篩查",
+    "take2_extra_care": "Take2 Prophecy™ 會員計劃",
+    "service_location": "本港篩查服務點",
+    "international": "商業合作",
+    "about_us": "關於 Take2 Health",
+    "mission": "信念和使命",
+    "join_us": "加入我們",
+    "contact_us": "聯絡我們"
   }
 }

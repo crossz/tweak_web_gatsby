@@ -26,6 +26,7 @@ import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
 import GoToTop from './GoToTop'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -150,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
@@ -166,7 +168,7 @@ const Footer = () => {
         width={matches ? '100%' : 'auto'}
         mb={matches ? 2 : 0}
       >
-        ©2021 Take2 Health 版權所有
+        {t('common.take2_copy_right')}
       </Box>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
@@ -238,7 +240,7 @@ const Footer = () => {
             </Box>
             <Box mb={matches ? 5 : 0} display='inline-block'>
               <Divider className={classes.divider} />
-              <Box mb={0.5}>關注我們</Box>
+              <Box mb={0.5}>{t('common.follow_us')}</Box>
               <SocialLinks></SocialLinks>
             </Box>
           </Grid>

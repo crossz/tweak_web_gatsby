@@ -11,6 +11,7 @@ import { Link } from 'gatsby'
 import { Link as MuiLink } from '@material-ui/core'
 import { Waypoint } from 'react-waypoint'
 import { HeroThemeContext } from '@layouts/context'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,6 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (props) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const isHomepage = useMatch('/')
@@ -113,7 +115,7 @@ const Header = (props) => {
               href={`${process.env.GATSBY_SITE_URL}signin`}
               target='_blank'
             >
-              登入
+              {t('common.sign_in')}
             </MuiLink>
             <Box component='span' mx={1}>
               /
@@ -122,7 +124,7 @@ const Header = (props) => {
               href={`${process.env.GATSBY_SITE_URL}signup`}
               target='_blank'
             >
-              登記
+              {t('common.register')}
             </MuiLink>
           </Box>
           <Menu

@@ -1,6 +1,9 @@
 import React from 'react'
 import { makeStyles, IconButton, Box } from '@material-ui/core'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
+import { PROMOTION_CODE } from '@utils/constant'
+import { Trans } from 'gatsby-plugin-react-i18next'
+
 const useStyles = makeStyles((theme) => ({
   shopBtn: {
     position: 'fixed',
@@ -36,16 +39,17 @@ const ShoppingBtn = () => {
   return (
     <IconButton
       className={classes.shopBtn}
-      aria-label='show button'
       href={process.env.GATSBY_SITE_URL}
       target='_blank'
       variant='contain'
     >
       <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
       <Box className={classes.shopBtnTooltip}>
-        網上預約
-        <br />
-        優惠碼NEW330
+        <Trans i18nKey='common.online_promotion_code'>
+          網上預約
+          <br />
+          優惠碼{PROMOTION_CODE}
+        </Trans>
       </Box>
     </IconButton>
   )

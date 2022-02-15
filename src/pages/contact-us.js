@@ -36,6 +36,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -186,6 +187,7 @@ const schema = oriSchema().pick([
 
 const ContactUs = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [activeTab, setActiveTab] = useState(0)
@@ -197,28 +199,28 @@ const ContactUs = () => {
     {
       label: '+852 3613 0533',
       Icon: PhoneIcon,
-      tabLabel: '客戶服務專線',
+      tabLabel: t('contact_us.types.0'),
       type: 'phone',
       link: phone,
     },
     {
       label: 'info@take2.health',
       Icon: EmailIcon,
-      tabLabel: '一般查詢',
+      tabLabel: t('contact_us.types.1'),
       type: 'email',
       link: email,
     },
     {
       label: 'WhatsApp',
       Icon: WhatsappIcon,
-      tabLabel: '公關及傳訊',
+      tabLabel: t('contact_us.types.2'),
       type: 'link',
       link: whatsapp,
     },
     {
       label: 'Messenger',
       Icon: MessengerIcon,
-      tabLabel: '商務合作',
+      tabLabel: t('contact_us.types.3'),
       type: 'link',
       link: messenger,
     },
@@ -229,10 +231,11 @@ const ContactUs = () => {
   const handleFetch = async (values) => {
     try {
       const res = await fetchWithTimeout('/contactUs/add', { values })
-      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
+      if (res?.code !== 1000)
+        return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
-      return Promise.reject('提交失敗')
+      return Promise.reject(t('status.submit.fail'))
     }
   }
 
@@ -265,7 +268,7 @@ const ContactUs = () => {
                   fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
                   color='primary.contrastText'
                 >
-                  如有任何意見或查詢，歡迎透過下列方式與我們聯繫
+                  {t('contact_us.title')}
                 </Box>
                 {/* <Tabs
                   scrollButtons='off'
@@ -331,7 +334,9 @@ const ContactUs = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={5}>
-                <Box className={classes.formTitle}>提交意見或查詢</Box>
+                <Box className={classes.formTitle}>
+                  {t('contact_us.form_title')}
+                </Box>
                 <Formik
                   initialValues={initialValues}
                   validationSchema={schema}
@@ -343,7 +348,7 @@ const ContactUs = () => {
                     try {
                       setLoading(true)
                       await handleFetch(values)
-                      toast.success('已成功提交')
+                      toast.success(t('status.submit.success'))
                       resetForm()
                     } catch (error) {
                       toast.error(error)
@@ -390,7 +395,7 @@ const ContactUs = () => {
                             error={isError('companyName')}
                             required
                           >
-                            <EFormLabel>公司名稱/姓名</EFormLabel>
+                            <EFormLabel>{t('form.company.label')}</EFormLabel>
                             <EInputBase
                               id='company-ame'
                               name='companyName'
@@ -400,7 +405,7 @@ const ContactUs = () => {
                               placeholder={
                                 isError('companyName')
                                   ? ''
-                                  : '請輸入公司名稱/姓名'
+                                  : t('form.company.placeholder')
                               }
                               type='text'
                               endAdornment={
@@ -412,7 +417,7 @@ const ContactUs = () => {
                         </Box>
                         <Box mb={4}>
                           <Box mb={1}>
-                            <EFormLabel>電話號碼</EFormLabel>
+                            <EFormLabel>{t('form.phone.label')}</EFormLabel>
                           </Box>
                           <Box display='flex'>
                             <Box mr={0.5}>
@@ -446,7 +451,7 @@ const ContactUs = () => {
                                 margin='none'
                                 value={values.phone}
                                 onChange={handleChange}
-                                placeholder='9876 5432'
+                                placeholder={t('form.phone.placeholder')}
                                 endAdornment={<CusCancelButton field='phone' />}
                               />
                               {errorText('phone')}
@@ -459,7 +464,7 @@ const ContactUs = () => {
                             error={isError('email')}
                             required
                           >
-                            <EFormLabel>電郵</EFormLabel>
+                            <EFormLabel>{t('form.email.label')}</EFormLabel>
                             <EInputBase
                               id='email'
                               name='email'
@@ -479,7 +484,7 @@ const ContactUs = () => {
                         </Box>
                         <Box mb={4}>
                           <FormControl fullWidth>
-                            <EFormLabel>訊息</EFormLabel>
+                            <EFormLabel>{t('form.message.label')}</EFormLabel>
                             <TextareaAutosize
                               className={classes.textarea}
                               minRows={6}
@@ -487,12 +492,12 @@ const ContactUs = () => {
                               name='message'
                               onChange={handleChange}
                               value={values.message}
-                              placeholder='請輸入你的訊息'
+                              placeholder={t('form.message.placeholder')}
                             />
                           </FormControl>
                           <FormHelperText>
                             <Box color='primary.main' component='span'>
-                              *必填資料
+                              {t('form.message.validation.required')}
                             </Box>
                           </FormHelperText>
                         </Box>
@@ -506,7 +511,7 @@ const ContactUs = () => {
                           {loading ? (
                             <CircularProgress color='inherit' size={24} />
                           ) : (
-                            '提交'
+                            t('common.submit')
                           )}
                         </Button>
                         {reCapStatus > 0 && (

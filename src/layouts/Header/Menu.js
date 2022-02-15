@@ -29,6 +29,7 @@ import TitleDot from '@themes/components/TitleDot'
 import Divider from '@material-ui/core/Divider'
 import Hidden from '@material-ui/core/Hidden'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -155,6 +156,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const Menu = (props) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
@@ -196,7 +198,7 @@ const Menu = (props) => {
           href={`${process.env.GATSBY_SITE_URL}signin`}
           onClick={handleClose}
         >
-          登入
+          {t('common.sign_in')}
         </MuiLink>
         <Box component='span' mx={1} color='primary.contrastText'>
           /
@@ -206,7 +208,7 @@ const Menu = (props) => {
           href={`${process.env.GATSBY_SITE_URL}signup`}
           onClick={handleClose}
         >
-          登記
+          {t('common.register')}
         </MuiLink>
       </Box>
     )
