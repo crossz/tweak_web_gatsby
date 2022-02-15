@@ -103,30 +103,30 @@ const QUIZ_ANSWERS = {
 
 export const QUIZ = [
   {
-    question: '家族成員曾否患上鼻咽癌？',
+    question: 'quiz.questions.0',
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你有否經常出現鼻水帶血或流鼻血情況？',
+    question: 'quiz.questions.1',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有否出現頸部淋巴脹大？',
+    question: 'quiz.questions.2',
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你有否經常出現頭痛或單側頭痛？',
+    question: 'quiz.questions.3',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有否經常受耳鳴困擾？',
+    question: 'quiz.questions.4',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有否經常吸煙？',
+    question: 'quiz.questions.5',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },

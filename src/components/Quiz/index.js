@@ -627,7 +627,7 @@ const Quiz = () => {
                                       /{padStartNum(QUIZ.length)}
                                     </Box>
                                   </Box>
-                                  <Box>{QUIZ[index].question}</Box>
+                                  <Box>{t(QUIZ[index].question)}</Box>
                                 </Box>
                                 {QUIZ[index]?.type === 'slider' ? (
                                   <SliderRadio
