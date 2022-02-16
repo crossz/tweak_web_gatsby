@@ -5,13 +5,3 @@ fields:
 - name: have_languages
   type: boolean
   label: Have Languages
-- name: languages
-  type: tag_list
-  default:
-  - zh-HK
-  - en
-  - zh-CN
-  label: Languages
-  showOnly:
-    field: have_languages
-    value: true
