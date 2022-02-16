@@ -6,6 +6,7 @@ import ShoppingBtn from './ShoppingBtn'
 import { makeStyles } from '@material-ui/core'
 import { useMatch } from '@reach/router'
 import { HeroThemeContext } from '@layouts/context'
+import Seo from './Seo'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +34,7 @@ const Layout = ({ children, pageContext }) => {
     <HeroThemeContext.Provider
       value={{ theme: heroTheme, toggleTheme: handleChangeHeroTheme }}
     >
+      <Seo></Seo>
       <main id='main' className={classes.root}>
         {isPromotions || isRehealthPrevaccinationPlans || isCampaign ? (
           children

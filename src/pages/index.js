@@ -1,22 +1,34 @@
 import * as React from 'react'
 import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
+import Layout from '@layouts/Layout'
 
 const Index = ({ data }) => {
   const { heroBannerNodes, promotionNodes, healthTipsNodes } = data
   return (
-    <Homepage
-      heroBannerNodes={heroBannerNodes?.nodes}
-      promotionNodes={promotionNodes?.nodes}
-      healthTipsNodes={healthTipsNodes?.nodes}
-    ></Homepage>
+    <Layout>
+      <Homepage
+        heroBannerNodes={heroBannerNodes?.nodes}
+        promotionNodes={promotionNodes?.nodes}
+        healthTipsNodes={healthTipsNodes?.nodes}
+      ></Homepage>
+    </Layout>
   )
 }
 
 export default Index
 
 export const query = graphql`
-  {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     heroBannerNodes: allMdx(
       filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
       sort: { fields: frontmatter___sort, order: ASC }

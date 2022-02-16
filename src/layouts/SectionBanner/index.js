@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react'
+import React, { useRef, useState, useEffect, useMemo, useContext } from 'react'
 import {
   makeStyles,
   useTheme,
@@ -16,6 +16,8 @@ import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { Waypoint } from 'react-waypoint'
 import classnames from 'classnames'
+import { I18nextContext } from 'gatsby-plugin-react-i18next'
+
 const useStyles = makeStyles((theme) => ({
   root: {},
   bannerWrapper: {
@@ -96,12 +98,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const SectionBanner = ({ pageContext }) => {
+const SectionBanner = () => {
   const classes = useStyles()
-  const {
-    i18n: { originalPath, routed },
-    language,
-  } = pageContext
+  const { originalPath, routed, language } = useContext(I18nextContext)
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()

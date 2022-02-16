@@ -1,4 +1,4 @@
-import { wrapPageElement, wrapRootElement } from './wrapElement'
+import { wrapRootElement } from './wrapElement'
 import MenuData from './content/menu.json'
 
 const shouldUpdateScroll = ({ prevRouterProps, pathname }) => {
@@ -14,4 +14,4 @@ const shouldUpdateScroll = ({ prevRouterProps, pathname }) => {
   return !Boolean(betweenSectionPage)
 }
 
-export { wrapPageElement, wrapRootElement, shouldUpdateScroll }
+export { wrapRootElement, shouldUpdateScroll }
