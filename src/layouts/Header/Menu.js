@@ -184,14 +184,14 @@ const Menu = (props) => {
           to={contactUsItem.path}
           onClick={handleClose}
         >
-          {contactUsItem.title}
+          {t(contactUsItem.title)}
         </Link>
         <Link
           className={classnames(classes.link, classes.contactLink)}
           to={joinUsItem.path}
           onClick={handleClose}
         >
-          {joinUsItem.title}
+          {t(joinUsItem.title)}
         </Link>
         <MuiLink
           className={classes.link}
@@ -289,14 +289,16 @@ const Menu = (props) => {
                         {item.sections &&
                         item.sections?.length &&
                         index !== 5 ? (
-                          <Typography variant='h4'>{item.title}</Typography>
+                          <Typography variant='h4'>{t(item.title)}</Typography>
                         ) : (
                           <Link
                             className={classes.link}
                             to={item.path}
                             onClick={handleClose}
                           >
-                            <Typography variant='h4'>{item.title}</Typography>
+                            <Typography variant='h4'>
+                              {t(item.title)}
+                            </Typography>
                           </Link>
                         )}
                       </EAccordionSummary>
@@ -313,7 +315,7 @@ const Menu = (props) => {
                                   className={classes.link}
                                   onClick={handleClose}
                                 >
-                                  {tab.title}
+                                  {t(tab.title)}
                                 </Link>
                               </Box>
                             ))}

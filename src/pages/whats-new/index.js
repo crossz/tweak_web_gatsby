@@ -9,7 +9,16 @@ const PromotionsPage = ({ data }) => {
 export default PromotionsPage
 
 export const query = graphql`
-  {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMdx(
       limit: 1000
       filter: { fileAbsolutePath: { regex: "/promotions/" } }

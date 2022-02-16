@@ -8,7 +8,6 @@ import { useI18next, Link as I18nLink } from 'gatsby-plugin-react-i18next'
 // pass it only to GatsbyLink
 const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
   const { language, routed } = useI18next()
-  console.log('routed', routed)
   // Tailor the following test to your environment.
   // This example assumes that any internal link (intended for Gatsby)
   // will start with exactly one slash, and that anything else is external.

@@ -280,7 +280,7 @@ const Footer = () => {
                           fontSize='body1.fontSize'
                           fontWeight='fontWeightBold'
                         >
-                          {item.title}
+                          {t(item.title)}
                         </Box>
                       </Link>
                     </EAccordionSummary>
@@ -294,7 +294,7 @@ const Footer = () => {
                           {item.sections.map((tab) => (
                             <Box mt={1} key={tab.title}>
                               <Link to={tab.path} className={classes.link}>
-                                {tab.title}
+                                {t(tab.title)}
                               </Link>
                             </Box>
                           ))}
