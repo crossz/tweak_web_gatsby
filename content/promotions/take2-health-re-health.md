@@ -7,5 +7,9 @@ slug: ''
 cover:
 - "../images/health-promotion.png"
 type: ''
+languages:
+  en: true
+  zh-HK: true
+  zh-CN: false
 
 ---
