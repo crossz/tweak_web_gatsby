@@ -8,7 +8,6 @@ detail: Take2 Prophecy™ 早期鼻咽癌篩查於2021年12月正式進駐中銀
 href: ''
 slug: ''
 languages:
-- en
 - zh-CN
 - zh-HK
 
