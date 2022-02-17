@@ -25,7 +25,6 @@ const Layout = ({ children, pageContext }) => {
     '/whats-new/campaign/rehealth-prevaccination-plans'
   )
   const isCampaign = useMatch('/whats-new/campaign')
-
   const handleChangeHeroTheme = (theme) => {
     return setHeroTheme(theme)
   }

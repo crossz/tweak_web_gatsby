@@ -15,7 +15,6 @@ import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
 import { ESelect } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
-import { useMatch } from '@reach/router'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import Loading from '@components/Loading'
 import { useI18next } from 'gatsby-plugin-react-i18next'
@@ -154,8 +153,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Map = () => {
   const classes = useStyles()
-  const { t } = useI18next()
-  const isHomepage = useMatch('/')
+  const { t, originalPath } = useI18next()
+  const isHomepage = originalPath === '/'
   const [viewType, setViewType] = useState('list')
   const [location, setLocation] = useState([])
   const [clinics, setClinics] = useState(null)
