@@ -8,8 +8,8 @@ cover:
 - "../images/health-promotion.png"
 type: ''
 languages:
-  en: true
-  zh-HK: true
-  zh-CN: false
+- en
+- zh-HK
+have_languages: true
 
 ---
