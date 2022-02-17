@@ -7,3 +7,12 @@ fields:
   config: {}
   template: t-c
   label: en
+- name: zh-hk
+  type: blocks
+  template_types:
+  - t-c
+  - t-c
+  config:
+    min: 
+    max: 
+  label: zh-HK
