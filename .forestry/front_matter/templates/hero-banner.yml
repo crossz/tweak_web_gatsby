@@ -43,7 +43,7 @@ fields:
     schema:
       format: markdown
     min: 1
-    max: 500
+    max: 1000
   label: HK Detail
 - name: en_detail
   type: textarea
@@ -53,7 +53,7 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-    max: 500
+    max: 1000
   label: EN Detail
 - name: cn_detail
   type: textarea
@@ -63,7 +63,7 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-    max: 500
+    max: 1000
   label: CN Detail
 - name: buttons
   type: blocks
