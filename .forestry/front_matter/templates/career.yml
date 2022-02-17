@@ -11,7 +11,7 @@ fields:
   type: text
   config:
     required: true
-  label: career
+  label: Career
 - name: type
   type: select
   default: ''
@@ -25,10 +25,10 @@ fields:
       section: 
       file: 
       path: 
-  label: department
+  label: Department
 - name: date
   type: datetime
-  label: date
+  label: Date
   config:
     required: true
     date_format: 
@@ -48,6 +48,6 @@ fields:
       section: 
       file: 
       path: 
-  label: region
+  label: Region
 pages:
 - content/join-us/customer-service-specialist.md
