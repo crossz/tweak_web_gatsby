@@ -1,8 +1,12 @@
 ---
-region: 香港特別行政區
+region: hongkong_special_administrative_region
 title: Customer Service Specialist
-type: 商業戰略合作
+type: business_strategic_cooperation
 date: 2022-01-17T00:00:00.000+08:00
+languages:
+- zh-CN
+- zh-HK
+- en
 
 ---
 # Customer Service Specialist

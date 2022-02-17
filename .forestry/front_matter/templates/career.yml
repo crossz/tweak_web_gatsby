@@ -6,24 +6,24 @@ fields:
   type: text
   config:
     required: true
-  label: career
+  label: Career
 - name: type
   type: select
   default: ''
   config:
     required: true
     options:
-    - 商業戰略合作
-    - DITE
+    - business_strategic_cooperation
+    - dite
     source:
       type: simple
       section: 
       file: 
       path: 
-  label: department
+  label: Department
 - name: date
   type: datetime
-  label: date
+  label: Date
   config:
     required: true
     date_format: 
@@ -35,14 +35,14 @@ fields:
   config:
     required: true
     options:
-    - 所有地區
-    - 香港特別行政區
-    - 中國內地
+    - all
+    - mainland_china
+    - hongkong_special_administrative_region
     source:
       type: simple
       section: 
       file: 
       path: 
-  label: region
+  label: Region
 pages:
 - content/join-us/customer-service-specialist.md

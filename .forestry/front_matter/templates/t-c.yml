@@ -2,14 +2,35 @@
 label: T&C
 hide_body: false
 fields:
+- name: slug
+  type: select
+  default: personal-infomation-collection-statement
+  config:
+    required: true
+    options:
+    - personal-infomation-collection-statement
+    - terms-and-conditions
+    - privacy-policy
+    - website-terms-of-use
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Slug
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: title
   type: text
   config:
     required: true
-  label: title
+  label: Title
 - name: date
   type: datetime
-  label: date
+  label: Date
   description: ''
   config:
     required: true

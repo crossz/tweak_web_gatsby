@@ -9,7 +9,7 @@ buttons:
   variant: contained
   color: secondary
   internal: false
-  name: 立即預約
+  name: common.book_now
   link: https://take2health.net/health-platform/
   cn_name: ''
   en_name: ''

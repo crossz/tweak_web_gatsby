@@ -8,14 +8,14 @@ buttons:
   variant: outlined
   color: primary
   internal: true
-  name: 了解更多
+  name: common.learn_more
   link: "/whats-new/campaign/"
 - template: hero-button
   variant: contained
   color: secondary
   internal: false
   link: https://take2health.net/health-platform/
-  name: 立即預約
+  name: common.book_now
 reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Department of
   Health, The Government of the Hong Kong Special Administrative Region, 2021, www.chp.gov.hk/en/healthtopics/content/25/54.html,
   accessed 23 July 2021.<br/>² Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN
@@ -23,5 +23,9 @@ reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Departm
   CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424."
 theme: dark
 sort: 1
+cn_title: ''
+en_title: ''
+cn_detail: ''
+en_detail: ''
 
 ---
