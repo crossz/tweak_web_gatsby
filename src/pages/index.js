@@ -38,8 +38,12 @@ export const query = graphql`
       nodes {
         id
         frontmatter {
-          title
-          detail
+          hk_title
+          en_title
+          cn_title
+          hk_detail
+          en_detail
+          cn_detail
           image {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)

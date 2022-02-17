@@ -205,7 +205,7 @@ const Banner = ({ nodes }) => {
                         lineHeight='1.5'
                         textAlign='justify'
                         dangerouslySetInnerHTML={{
-                          __html: node?.frontmatter?.detail,
+                          __html: tB('detail', node?.frontmatter),
                         }}
                       ></Box>
                     </Typography>
