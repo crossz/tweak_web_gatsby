@@ -3,13 +3,25 @@ label: Hero Banner
 hide_body: true
 display_field: title
 fields:
-- name: title
+- name: hk_title
   type: text
   config:
     required: true
     min: 1
     max: 50
-  label: Title
+  label: HK Title
+- name: en_title
+  type: text
+  config:
+    required: false
+    max: 50
+  label: EN Title
+- name: cn_title
+  type: text
+  config:
+    required: false
+    max: 50
+  label: CN Title
 - name: image
   type: file
   config:
@@ -22,7 +34,7 @@ fields:
     maxSize: 64
   label: Mobile Image
   description: "<em>Recommend Size: 1125 * 1506 (figma 3x)<br>Recommend Type: .jpg<br></em>"
-- name: detail
+- name: hk_detail
   type: textarea
   default: ''
   config:
@@ -32,7 +44,27 @@ fields:
       format: markdown
     min: 1
     max: 200
-  label: Detail
+  label: HK Detail
+- name: en_detail
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+    max: 200
+  label: EN Detail
+- name: cn_detail
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+    max: 200
+  label: CN Detail
 - name: buttons
   type: blocks
   template_types:
