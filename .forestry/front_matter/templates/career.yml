@@ -40,9 +40,9 @@ fields:
   config:
     required: true
     options:
-    - options.career_regions.all
-    - options.career_regions.mainland_china
-    - options.career_regions. hongkong_special_administrative_region
+    - all
+    - mainland_china
+    - hongkong_special_administrative_region
     source:
       type: simple
       section: 
