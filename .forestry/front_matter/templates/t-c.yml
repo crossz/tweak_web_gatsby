@@ -2,6 +2,11 @@
 label: T&C
 hide_body: false
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: title
   type: text
   config:
@@ -16,6 +21,22 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: slug
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - personal-infomation-collection-statement
+    - terms-and-conditions
+    - privacy-policy
+    - website-terms-of-use
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: slug
 pages:
 - content/terms-and-conditions/條款及細則.md
 - content/terms-and-conditions/私隱政策.md
