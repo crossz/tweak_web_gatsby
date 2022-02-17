@@ -12,6 +12,7 @@ import { Link as MuiLink } from '@material-ui/core'
 import { Waypoint } from 'react-waypoint'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import LanguageButton from './LanguageButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -127,6 +128,11 @@ const Header = (props) => {
               {t('common.register')}
             </MuiLink>
           </Box>
+          <LanguageButton
+            dark={
+              !matches && isHomepage && !withBg && context?.theme === 'dark'
+            }
+          ></LanguageButton>
           <Menu
             dark={
               !matches && isHomepage && !withBg && context?.theme === 'dark'

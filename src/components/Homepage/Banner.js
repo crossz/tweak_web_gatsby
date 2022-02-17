@@ -20,6 +20,7 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -136,6 +137,7 @@ const useStyles = makeStyles((theme) => ({
 const Banner = ({ nodes }) => {
   const classes = useStyles()
   const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const context = useContext(HeroThemeContext)
@@ -192,7 +194,7 @@ const Banner = ({ nodes }) => {
                         mb={matches ? 1 : 2}
                         lineHeight={1.5}
                         dangerouslySetInnerHTML={{
-                          __html: node?.frontmatter?.title,
+                          __html: tB('title', node?.frontmatter),
                         }}
                       ></Box>
                       <Box

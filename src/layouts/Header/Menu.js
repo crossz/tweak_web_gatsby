@@ -36,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
   },
   btn: {
-    marginLeft: theme.spacing(8),
+    marginLeft: theme.spacing(2),
     marginRight: theme.spacing(-1.5),
     [theme.breakpoints.down('xs')]: {
-      marginLeft: theme.spacing(4.25),
+      // marginLeft: theme.spacing(2),
     },
   },
   icon: {
