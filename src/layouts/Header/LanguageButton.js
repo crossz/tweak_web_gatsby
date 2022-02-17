@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.common.white,
     },
   },
+  item: {
+    color: theme.palette.primary.main,
+  },
 }))
 
 const LanguageButton = (props) => {
@@ -56,11 +59,14 @@ const LanguageButton = (props) => {
         }}
       >
         {languages.map((lang) => (
-          <MenuItem key={lang} onClick={handleClose}>
-            <Link to={originalPath} language={lang}>
-              {t(`languages.${lang}`)}
-            </Link>
-          </MenuItem>
+          <Link
+            className={classes.item}
+            key={lang}
+            to={originalPath}
+            language={lang}
+          >
+            <MenuItem onClick={handleClose}>{t(`languages.${lang}`)}</MenuItem>
+          </Link>
         ))}
       </Menu>
     </>

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Layout = ({ children, pageContext }) => {
+const Layout = ({ children }) => {
   const classes = useStyles()
   const [heroTheme, setHeroTheme] = useState('light')
   const isPromotions = useMatch('/promotions/consumption-voucher')
@@ -40,7 +40,7 @@ const Layout = ({ children, pageContext }) => {
         ) : (
           <>
             <Header></Header>
-            <SectionBanner pageContext={pageContext}></SectionBanner>
+            <SectionBanner></SectionBanner>
             {children}
             <Footer></Footer>
           </>

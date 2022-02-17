@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo, useContext } from 'react'
+import React, { useRef, useState, useEffect, useMemo } from 'react'
 import {
   makeStyles,
   useTheme,
@@ -9,14 +9,14 @@ import {
 } from '@material-ui/core'
 import { Match } from '@reach/router'
 import useMenu from '@hooks/useMenu'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import TitleDot from '@themes/components/TitleDot'
 import Image from '@components/Image'
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { Waypoint } from 'react-waypoint'
 import classnames from 'classnames'
-import { I18nextContext, useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -100,14 +100,14 @@ const useStyles = makeStyles((theme) => ({
 
 const SectionBanner = () => {
   const classes = useStyles()
-  const { t } = useI18next()
-  const { originalPath, routed, language } = useContext(I18nextContext)
+  const { t, originalPath, routed, language } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
   const [belowSectionTabs, setBelowSectionTabs] = useState(true)
   const prePathnameRef = useRef(null)
   // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
+  // #TODO Layout change, scroll to tabs fail.
   useEffect(() => {
     if (!belowSectionTabs && prePathnameRef?.current === curMenuItem?.path)
       scrollTo('#section-tabs')

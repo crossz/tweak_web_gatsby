@@ -2,12 +2,13 @@ import React from 'react'
 import { makeStyles, Link as MuiLink } from '@material-ui/core'
 import { Link as GatsbyLink } from 'gatsby'
 import { useI18next, Link as I18nLink } from 'gatsby-plugin-react-i18next'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     textDecoration: 'none',
     '&:hover': {
-      textDecoration: 'underline',
+      textDecoration: 'none',
     },
   },
 }))
@@ -20,6 +21,7 @@ const Link = ({
   activeClassName,
   partiallyActive,
   language,
+  className,
   ...other
 }) => {
   const classes = useStyles()
@@ -34,7 +36,7 @@ const Link = ({
   if (internal) {
     return routed || language ? (
       <I18nLink
-        className={classes.root}
+        className={classnames(classes.root, className)}
         to={to}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
@@ -45,6 +47,7 @@ const Link = ({
       </I18nLink>
     ) : (
       <GatsbyLink
+        className={classnames(classes.root, className)}
         to={to}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
@@ -56,7 +59,7 @@ const Link = ({
   }
   return (
     <MuiLink
-      underline='hover'
+      className={className}
       href={to}
       target='_blank'
       rel='noopener noreferrer'

@@ -12,7 +12,7 @@ import {
   Hidden,
 } from '@material-ui/core'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
@@ -223,26 +223,10 @@ const Banner = ({ nodes }) => {
                                 : 'auto'
                             }
                           >
-                            {button.internal ? (
-                              <Link to={button.link}>
-                                <Button
-                                  variant={button.variant}
-                                  color={button.color}
-                                  className={classes.btn}
-                                  fullWidth={
-                                    !matches &&
-                                    node?.frontmatter?.buttons?.length === 1
-                                  }
-                                >
-                                  {t(button.name)}
-                                </Button>
-                              </Link>
-                            ) : (
+                            <Link underline='none' to={button.link}>
                               <Button
                                 variant={button.variant}
                                 color={button.color}
-                                href={button.link}
-                                target='_blank'
                                 className={classes.btn}
                                 fullWidth={
                                   !matches &&
@@ -251,7 +235,7 @@ const Banner = ({ nodes }) => {
                               >
                                 {t(button.name)}
                               </Button>
-                            )}
+                            </Link>
                           </Grid>
                         ))}
                     </Grid>

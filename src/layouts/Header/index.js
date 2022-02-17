@@ -6,8 +6,7 @@ import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
-import { Link as MuiLink } from '@material-ui/core'
+import Link from '@components/Link'
 import { Waypoint } from 'react-waypoint'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
@@ -111,21 +110,15 @@ const Header = (props) => {
             color='primary.main'
             component='span'
           >
-            <MuiLink
-              href={`${process.env.GATSBY_SITE_URL}signin`}
-              target='_blank'
-            >
+            <Link to={`${process.env.GATSBY_SITE_URL}signin`}>
               {t('common.sign_in')}
-            </MuiLink>
+            </Link>
             <Box component='span' mx={1}>
               /
             </Box>
-            <MuiLink
-              href={`${process.env.GATSBY_SITE_URL}signup`}
-              target='_blank'
-            >
+            <Link to={`${process.env.GATSBY_SITE_URL}signup`}>
               {t('common.register')}
-            </MuiLink>
+            </Link>
           </Box>
           <LanguageButton
             dark={
