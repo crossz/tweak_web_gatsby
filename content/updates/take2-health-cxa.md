@@ -7,7 +7,6 @@ detail: Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2020年11月正
 href: ''
 slug: ''
 languages:
-- en
 - zh-CN
 - zh-HK
 
