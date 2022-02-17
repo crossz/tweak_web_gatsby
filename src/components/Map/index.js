@@ -196,7 +196,7 @@ const Map = () => {
         }
         setClinics(provinceGroup)
         setLocation(location)
-        setCurProvince(t('form.region.options.hongkong'))
+        setCurProvince('香港')
         setLoadingStatus('fulfilled')
       } catch (error) {
         setLoadingStatus('rejected')
