@@ -1,4 +1,9 @@
 ---
 label: Test T&C
 hide_body: true
-fields: []
+fields:
+- name: en
+  type: include
+  config: {}
+  template: t-c
+  label: en
