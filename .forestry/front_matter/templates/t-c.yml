@@ -23,9 +23,9 @@ fields:
     display_utc: false
 - name: slug
   type: select
-  default: []
+  default: personal-infomation-collection-statement
   config:
-    required: false
+    required: true
     options:
     - personal-infomation-collection-statement
     - terms-and-conditions
