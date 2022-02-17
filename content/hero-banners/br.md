@@ -20,5 +20,9 @@ cn_title: ''
 en_title: ''
 cn_detail: ''
 en_detail: ''
+hk_title: 早期鼻咽癌篩查<br/>會員迎新優惠
+hk_detail: |-
+  登記成為會員，在得易健康服務平台預約Take2 Prophecy™ 早期鼻咽癌篩查，輸入迎新優惠碼<strong>「NEW330」</strong>，即可享會員價$1,870*
+    （原價$2,200）！
 
 ---
