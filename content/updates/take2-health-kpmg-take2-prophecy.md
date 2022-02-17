@@ -1,11 +1,15 @@
 ---
-type: 行業資訊
+type: industry_information
 cover: []
 date: 2021-10-02T02:00:00.000+08:00
 title: Take2 Health與畢馬威會計師事務所 (KPMG) 達成合作　Take2 Prophecy™　獲納入員工體檢計劃
 detail: 自2021年10月1日起，KPMG的員工可於其體檢計劃內，選擇進行Take2 Prophecy™ 早期鼻咽癌篩查，並在完成後申請報銷。
 href: ''
 slug: ''
+languages:
+- en
+- zh-CN
+- zh-HK
 
 ---
 自2021年10月1日起，KPMG的員工可於其體檢計劃內，選擇進行Take2 Prophecy™ 早期鼻咽癌篩查，並在完成後申請報銷。是次合作不僅體現了跨國大型企業對創新醫療科技的認可，也是對保障員工健康和早期癌症篩查的重視。
