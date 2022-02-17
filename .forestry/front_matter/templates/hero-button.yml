@@ -49,4 +49,4 @@ fields:
   type: text
   config:
     required: false
-  label: link
+  label: Link
