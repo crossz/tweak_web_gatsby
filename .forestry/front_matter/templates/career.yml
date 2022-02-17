@@ -18,8 +18,8 @@ fields:
   config:
     required: true
     options:
-    - 商業戰略合作
-    - DITE
+    - business_strategic_cooperation
+    - dite
     source:
       type: simple
       section: 
