@@ -19,6 +19,8 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { HeroThemeContext } from '@layouts/context'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
@@ -131,8 +133,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Banner = ({ nodes, changeHeroTheme }) => {
+const Banner = ({ nodes }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const context = useContext(HeroThemeContext)
@@ -229,7 +232,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                                     node?.frontmatter?.buttons?.length === 1
                                   }
                                 >
-                                  {button.name}
+                                  {t(button.name)}
                                 </Button>
                               </Link>
                             ) : (
@@ -244,7 +247,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                                   node?.frontmatter?.buttons?.length === 1
                                 }
                               >
-                                {button.name}
+                                {t(button.name)}
                               </Button>
                             )}
                           </Grid>

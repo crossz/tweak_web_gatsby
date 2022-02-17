@@ -37,7 +37,9 @@
     "register": "登記",
     "follow_us": "關注我們",
     "take2_copy_right": "©2021 Take2 Health 版權所有",
-    "online_promotion_code": "網上預約<br />優惠碼{{PROMOTION_CODE}}"
+    "online_promotion_code": "網上預約<br />優惠碼{{PROMOTION_CODE}}",
+    "release_date": "發布日期",
+    "take2_health": "得易健康"
   },
   "t_and_c": {
     "terms_and_conditions": "條款及細則",
@@ -110,7 +112,7 @@
       "title": "最後一個步驟 免費獲取結果!",
       "detail": "請即輸入你的資料，以透過電郵獲取測驗結果；或與線上註冊護士聯絡，以諮詢服務或產品內容！你亦可直接登記，免費成為Take2 ExtraCare會員。"
     },
-    "agreement": "本人已明白及同意Take2 Health Limited的網站於take2health.net之網站<1></>及<2></2>。",
+    "agreement": "本人已明白及同意Take2 Health Limited的網站於take2health.net之網站<1>私隱政策</>及<2>個人資料收集聲明</2>。",
     "direct_sign_up": "直接登記為 Take2 Extra Care會員",
     "final": {
       "title": "多謝參與！",
@@ -147,8 +149,8 @@
     },
     "career_regions": {
       "all": "所有地區",
-      "business_strategic_cooperation": "香港特別行政區",
-      "mainland_china": "中國內地"
+      "mainland_china": "中國內地",
+      "hongkong_special_administrative_region": "香港特別行政區"
     },
     "update_post_types": {
       "all": "所有最新動態",

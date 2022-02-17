@@ -14,6 +14,8 @@ import CheckCircleIcon from '@images/icons/check_circle.svg'
 import TitleDot from '@themes/components/TitleDot'
 import { padStartNum } from '@utils'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
+import { graphql } from 'gatsby'
+import Layout from '@layouts/Layout'
 
 const steps = [
   {
@@ -346,7 +348,7 @@ const Take2ExtraCare = () => {
   const { t } = useI18next()
 
   return (
-    <>
+    <Layout>
       <Typography className={classes.title} variant='h4' color='primary'>
         {t('products_and_services.take2_extra_care.title')}
       </Typography>
@@ -489,8 +491,22 @@ const Take2ExtraCare = () => {
           </Container>
         </Box>
       </Box>
-    </>
+    </Layout>
   )
 }
 
 export default Take2ExtraCare
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

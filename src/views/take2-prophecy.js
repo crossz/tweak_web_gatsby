@@ -19,6 +19,7 @@ import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import Layout from '@layouts/Layout'
 
 const steps = [
   {
@@ -337,197 +338,201 @@ const Take2Prophecy = () => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
-    <Container className={classes.root} disableGutters maxWidth='xl'>
-      <Box className={classes.wrapper}>
-        <Container className={classes.content} disableGutters maxWidth='md'>
-          <Box className={classes.title}>
-            <Typography variant='h4' color='primary'>
-              {t('products-and-services.take2_prophecy.title')}
-            </Typography>
-            <Box mt={matches ? 2.5 : 3}>
-              <Typography
-                variant={matches ? 'body2' : 'body1'}
-                color='textPrimary'
-              >
-                {t('products-and-services.take2_prophecy.detail')}
+    <Layout>
+      <Container className={classes.root} disableGutters maxWidth='xl'>
+        <Box className={classes.wrapper}>
+          <Container className={classes.content} disableGutters maxWidth='md'>
+            <Box className={classes.title}>
+              <Typography variant='h4' color='primary'>
+                {t('products-and-services.take2_prophecy.title')}
               </Typography>
-            </Box>
-          </Box>
-          <Box className={classes.sectionOneWrapper}>
-            <Box className={classes.bannerWrapper}>
-              <StaticImage
-                className={classes.bannerBg}
-                src='../assets/images/products_services_banner_bg.jpg'
-                alt='homepage banner mobile'
-              ></StaticImage>
-              <Box className={classes.sectionOneBanner}>
-                {t('products-and-services.take2_prophecy.detection_process')}
-              </Box>
-            </Box>
-            <Box className={classes.sectionOneContent}>
-              <Box className={classes.stepsWrapper}>
-                {steps.map((step, index) => {
-                  let curStep
-                  if (matches) {
-                    switch (index) {
-                      case 2:
-                        curStep = steps[3]
-                        break
-                      case 3:
-                        curStep = steps[2]
-                        break
-                      default:
-                        curStep = step
-                        break
-                    }
-                  } else {
-                    curStep = step
-                  }
-                  return (
-                    <React.Fragment key={index}>
-                      <Box
-                        className={classnames(classes.stepItem, {
-                          [classes.stepFiveItem]: index === 4,
-                        })}
-                      >
-                        <Box className={classes.stepIcon}>{curStep.icon}</Box>
-                        <Box className={classes.stepLabel}>
-                          {!(index === 4 && matches) && t(curStep.label)}
-                          <Hidden smUp>
-                            {index < steps?.length - 1 && (
-                              <ArrowIcon
-                                className={classnames(classes.arrowIcon, {
-                                  [classes.stepOneArrow]: index === 0,
-                                  [classes.stepTwoArrow]: index === 1,
-                                  [classes.stepThreeArrow]: index === 2,
-                                  [classes.stepFourArrow]: index === 3,
-                                })}
-                              ></ArrowIcon>
-                            )}
-                          </Hidden>
-                        </Box>
-                      </Box>
-                      <Hidden xsDown>
-                        {index < steps?.length - 1 && (
-                          <ArrowIcon className={classes.arrowIcon}></ArrowIcon>
-                        )}
-                      </Hidden>
-                    </React.Fragment>
-                  )
-                })}
-              </Box>
-              <Box
-                fontWeight={matches ? 'fontWeightBold' : 'fontWeightMedium'}
-                textAlign='center'
-                mb={matches ? 4 : 3}
-                mt={matches ? 1 : 8}
-                color='primary.main'
-                fontSize='body1.fontSize'
-              >
-                {t('products_and_services.take2_prophecy.process.4')}:
-              </Box>
-              <ImageList
-                rowHeight='auto'
-                cols={matches ? 1 : 2}
-                gap={matches ? 16 : 24}
-              >
-                {reports.map((report, index) => (
-                  <ImageListItem
-                    key={index}
-                    classes={{
-                      item: classes.imageListItemItem,
-                    }}
-                    className={classes.imageListItem}
-                  >
-                    <Box className={classes.reportItem}>
-                      <Box className={classes.reportTop}>
-                        <Box
-                          className={classes.reportType}
-                          style={{
-                            color: report.color,
-                          }}
-                        >
-                          {t(report.result)}
-                          <RightIcon
-                            className={classnames(
-                              classes.rightIcon,
-                              index === 1 && classes.greenRightIcon
-                            )}
-                          ></RightIcon>
-                        </Box>
-                        {t(report.suggestion)}
-                      </Box>
-                      {t(report.mark)}
-                    </Box>
-                  </ImageListItem>
-                ))}
-              </ImageList>
-              <Box className={classes.reportTip}>
-                {t('common.notice')} <br />
-                {t('products_and_services.take2_prophecy.notice')}
-              </Box>
-            </Box>
-          </Box>
-          <Grid container>
-            <Grid item xs={12} sm={6}>
-              <StaticImage
-                className={classes.prophecyImgWrapper}
-                imgClassName={classes.prophecyImg}
-                src='../assets/images/take2_prophecy_01.jpg'
-                alt='take2 prophecy 01'
-              ></StaticImage>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box ml={matches ? 0 : 5}>
-                <Typography variant='h5' component='div'>
-                  <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
-                    {t('common.book_detection')}
-                  </Box>
-                  <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
-                    <Typography
-                      variant={matches ? 'body2' : 'body1'}
-                      color='textPrimary'
-                    >
-                      {t('products_and_services.take2_prophecy.do_you_have')}
-                      <Hidden smUp>
-                        <br />
-                      </Hidden>
-                      {t('products_and_services.take2_prophecy.action')}
-                    </Typography>
-                  </Box>
+              <Box mt={matches ? 2.5 : 3}>
+                <Typography
+                  variant={matches ? 'body2' : 'body1'}
+                  color='textPrimary'
+                >
+                  {t('products-and-services.take2_prophecy.detail')}
                 </Typography>
-                <Grid className={classes.btnWrapper} container spacing={2}>
-                  <Grid item xs={matches ? 6 : 'auto'}>
-                    <Button
-                      variant='outlined'
-                      color='primary'
-                      href={process.env.GATSBY_SITE_URL}
-                      target='_blank'
-                      fullWidth={matches}
-                      className={classes.btn}
-                    >
-                      {t('common.book_now')}
-                    </Button>
-                  </Grid>
-                  <Grid item xs={matches ? 6 : 'auto'}>
-                    <Link to='/service-location/'>
-                      <Button
-                        className={classes.btn}
-                        variant='contained'
-                        color='secondary'
-                        fullWidth={matches}
-                      >
-                        {t('common.service_location')}
-                      </Button>
-                    </Link>
-                  </Grid>
-                </Grid>
               </Box>
+            </Box>
+            <Box className={classes.sectionOneWrapper}>
+              <Box className={classes.bannerWrapper}>
+                <StaticImage
+                  className={classes.bannerBg}
+                  src='../assets/images/products_services_banner_bg.jpg'
+                  alt='homepage banner mobile'
+                ></StaticImage>
+                <Box className={classes.sectionOneBanner}>
+                  {t('products-and-services.take2_prophecy.detection_process')}
+                </Box>
+              </Box>
+              <Box className={classes.sectionOneContent}>
+                <Box className={classes.stepsWrapper}>
+                  {steps.map((step, index) => {
+                    let curStep
+                    if (matches) {
+                      switch (index) {
+                        case 2:
+                          curStep = steps[3]
+                          break
+                        case 3:
+                          curStep = steps[2]
+                          break
+                        default:
+                          curStep = step
+                          break
+                      }
+                    } else {
+                      curStep = step
+                    }
+                    return (
+                      <React.Fragment key={index}>
+                        <Box
+                          className={classnames(classes.stepItem, {
+                            [classes.stepFiveItem]: index === 4,
+                          })}
+                        >
+                          <Box className={classes.stepIcon}>{curStep.icon}</Box>
+                          <Box className={classes.stepLabel}>
+                            {!(index === 4 && matches) && t(curStep.label)}
+                            <Hidden smUp>
+                              {index < steps?.length - 1 && (
+                                <ArrowIcon
+                                  className={classnames(classes.arrowIcon, {
+                                    [classes.stepOneArrow]: index === 0,
+                                    [classes.stepTwoArrow]: index === 1,
+                                    [classes.stepThreeArrow]: index === 2,
+                                    [classes.stepFourArrow]: index === 3,
+                                  })}
+                                ></ArrowIcon>
+                              )}
+                            </Hidden>
+                          </Box>
+                        </Box>
+                        <Hidden xsDown>
+                          {index < steps?.length - 1 && (
+                            <ArrowIcon
+                              className={classes.arrowIcon}
+                            ></ArrowIcon>
+                          )}
+                        </Hidden>
+                      </React.Fragment>
+                    )
+                  })}
+                </Box>
+                <Box
+                  fontWeight={matches ? 'fontWeightBold' : 'fontWeightMedium'}
+                  textAlign='center'
+                  mb={matches ? 4 : 3}
+                  mt={matches ? 1 : 8}
+                  color='primary.main'
+                  fontSize='body1.fontSize'
+                >
+                  {t('products_and_services.take2_prophecy.process.4')}:
+                </Box>
+                <ImageList
+                  rowHeight='auto'
+                  cols={matches ? 1 : 2}
+                  gap={matches ? 16 : 24}
+                >
+                  {reports.map((report, index) => (
+                    <ImageListItem
+                      key={index}
+                      classes={{
+                        item: classes.imageListItemItem,
+                      }}
+                      className={classes.imageListItem}
+                    >
+                      <Box className={classes.reportItem}>
+                        <Box className={classes.reportTop}>
+                          <Box
+                            className={classes.reportType}
+                            style={{
+                              color: report.color,
+                            }}
+                          >
+                            {t(report.result)}
+                            <RightIcon
+                              className={classnames(
+                                classes.rightIcon,
+                                index === 1 && classes.greenRightIcon
+                              )}
+                            ></RightIcon>
+                          </Box>
+                          {t(report.suggestion)}
+                        </Box>
+                        {t(report.mark)}
+                      </Box>
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+                <Box className={classes.reportTip}>
+                  {t('common.notice')} <br />
+                  {t('products_and_services.take2_prophecy.notice')}
+                </Box>
+              </Box>
+            </Box>
+            <Grid container>
+              <Grid item xs={12} sm={6}>
+                <StaticImage
+                  className={classes.prophecyImgWrapper}
+                  imgClassName={classes.prophecyImg}
+                  src='../assets/images/take2_prophecy_01.jpg'
+                  alt='take2 prophecy 01'
+                ></StaticImage>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Box ml={matches ? 0 : 5}>
+                  <Typography variant='h5' component='div'>
+                    <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
+                      {t('common.book_detection')}
+                    </Box>
+                    <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
+                      <Typography
+                        variant={matches ? 'body2' : 'body1'}
+                        color='textPrimary'
+                      >
+                        {t('products_and_services.take2_prophecy.do_you_have')}
+                        <Hidden smUp>
+                          <br />
+                        </Hidden>
+                        {t('products_and_services.take2_prophecy.action')}
+                      </Typography>
+                    </Box>
+                  </Typography>
+                  <Grid className={classes.btnWrapper} container spacing={2}>
+                    <Grid item xs={matches ? 6 : 'auto'}>
+                      <Button
+                        variant='outlined'
+                        color='primary'
+                        href={process.env.GATSBY_SITE_URL}
+                        target='_blank'
+                        fullWidth={matches}
+                        className={classes.btn}
+                      >
+                        {t('common.book_now')}
+                      </Button>
+                    </Grid>
+                    <Grid item xs={matches ? 6 : 'auto'}>
+                      <Link to='/service-location/'>
+                        <Button
+                          className={classes.btn}
+                          variant='contained'
+                          color='secondary'
+                          fullWidth={matches}
+                        >
+                          {t('common.service_location')}
+                        </Button>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
-    </Container>
+          </Container>
+        </Box>
+      </Container>
+    </Layout>
   )
 }
 

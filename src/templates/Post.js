@@ -18,6 +18,7 @@ import Links from '@components/WhatsNew/Links'
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
+import Layout from '@layouts/Layout'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -166,84 +167,95 @@ const Post = ({ data, pageContext, location: { href } }) => {
   )?.title
 
   return (
-    <Box className={classes.root}>
-      <Container disableGutters maxWidth='xl'>
-        <Box className={classes.breadcrumbsWrapper}>
-          <Hidden xsDown>
-            <Container disableGutters maxWidth='sm'>
-              <Breadcrumbs
-                className={classes.breadcrumbs}
-                separator={<ArrowIcon className={classes.arrowIcon} />}
-                aria-label='breadcrumb'
-              >
-                <Link to='/'>Take2 Health</Link>
-                <Link to={middlePath}>{middleTitle}</Link>
-                <Box className={classes.breadcrumbsTitle}>{title}</Box>
-              </Breadcrumbs>
-            </Container>
-          </Hidden>
-        </Box>
-        <Box className={classes.contentWrapper}>
-          <Container className={classes.content} disableGutters maxWidth='sm'>
-            {/* {images?.[0] && (
+    <Layout>
+      <Box className={classes.root}>
+        <Container disableGutters maxWidth='xl'>
+          <Box className={classes.breadcrumbsWrapper}>
+            <Hidden xsDown>
+              <Container disableGutters maxWidth='sm'>
+                <Breadcrumbs
+                  className={classes.breadcrumbs}
+                  separator={<ArrowIcon className={classes.arrowIcon} />}
+                  aria-label='breadcrumb'
+                >
+                  <Link to='/'>Take2 Health</Link>
+                  <Link to={middlePath}>{middleTitle}</Link>
+                  <Box className={classes.breadcrumbsTitle}>{title}</Box>
+                </Breadcrumbs>
+              </Container>
+            </Hidden>
+          </Box>
+          <Box className={classes.contentWrapper}>
+            <Container className={classes.content} disableGutters maxWidth='sm'>
+              {/* {images?.[0] && (
               <Box className={classes.image}>
                 <GatsbyImage image={images?.[0]} alt={title}></GatsbyImage>
               </Box>
             )} */}
-            <Box className={classes.header}>
-              <Box className={classes.top}>
-                <Box className={classes.topLeft}>
-                  <Box className={classes.date}>{date}</Box>
-                  <Box
-                    className={classes.mark}
-                    bgcolor={
-                      POST_TYPES.find((item) => item.label === type)?.color ||
-                      'secondary.main'
-                    }
-                  >
-                    {type}
+              <Box className={classes.header}>
+                <Box className={classes.top}>
+                  <Box className={classes.topLeft}>
+                    <Box className={classes.date}>{date}</Box>
+                    <Box
+                      className={classes.mark}
+                      bgcolor={
+                        POST_TYPES.find((item) => item.label === type)?.color ||
+                        'secondary.main'
+                      }
+                    >
+                      {type}
+                    </Box>
+                  </Box>
+                  <Box ml='auto'>
+                    <Links href={href}></Links>
                   </Box>
                 </Box>
-                <Box ml='auto'>
-                  <Links href={href}></Links>
-                </Box>
+                <Typography variant='h5' color='primary'>
+                  {title}
+                </Typography>
               </Box>
-              <Typography variant='h5' color='primary'>
-                {title}
-              </Typography>
-            </Box>
-            <MdxLayout>{mdx}</MdxLayout>
-          </Container>
-          <StaticImage
-            className={classes.postBg}
-            src='../assets/images/post_bg.png'
-            alt='post background'
-          ></StaticImage>
-        </Box>
-        <Box className={classes.moreWrapper}>
-          <Container disableGutters maxWidth='md'>
-            {pageContext?.sectionPath === 'updates' ? (
-              <MoreUpdates
-                title={morePostTitle[pageContext?.sectionPath]}
-                nodes={morePostsNodes}
-              ></MoreUpdates>
-            ) : (
-              <MorePosts
-                title={morePostTitle[pageContext?.sectionPath]}
-                nodes={morePostsNodes}
-              ></MorePosts>
-            )}
-          </Container>
-        </Box>
-      </Container>
-    </Box>
+              <MdxLayout>{mdx}</MdxLayout>
+            </Container>
+            <StaticImage
+              className={classes.postBg}
+              src='../assets/images/post_bg.png'
+              alt='post background'
+            ></StaticImage>
+          </Box>
+          <Box className={classes.moreWrapper}>
+            <Container disableGutters maxWidth='md'>
+              {pageContext?.sectionPath === 'updates' ? (
+                <MoreUpdates
+                  title={morePostTitle[pageContext?.sectionPath]}
+                  nodes={morePostsNodes}
+                ></MoreUpdates>
+              ) : (
+                <MorePosts
+                  title={morePostTitle[pageContext?.sectionPath]}
+                  nodes={morePostsNodes}
+                ></MorePosts>
+              )}
+            </Container>
+          </Box>
+        </Container>
+      </Box>
+    </Layout>
   )
 }
 
 export default Post
 
 export const query = graphql`
-  query ($slug: String!, $regex: String!) {
+  query ($slug: String!, $regex: String!, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx: mdx(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {

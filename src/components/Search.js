@@ -16,6 +16,7 @@ import { navigate } from 'gatsby'
 import { CAREER_REGIONS } from '@utils/constant'
 import { useLocation } from '@reach/router'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -57,6 +58,7 @@ const Search = ({
   isFAQ,
 }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const { search } = useJsSearch(data, isFAQ)
   const [query, setQuery] = useState('')
   const [region, setRegion] = useState('')
@@ -81,11 +83,7 @@ const Search = ({
     setSearchResult &&
       setSearchResult(
         !isFAQ && region && results.length
-          ? results.filter(
-              (item) =>
-                item.frontmatter?.region ===
-                CAREER_REGIONS.find((item) => item.value === region)?.label
-            )
+          ? results.filter((item) => item.frontmatter?.region === region)
           : results
       )
     setQuery(q)
@@ -134,7 +132,7 @@ const Search = ({
                 key={region.label}
                 value={region.value}
                 control={<Radio />}
-                label={region.label}
+                label={t(region.label)}
               />
             ))}
           </RadioGroup>

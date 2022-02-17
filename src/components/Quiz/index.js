@@ -547,7 +547,7 @@ const Quiz = () => {
                               </MenuItem>
                               {AGE_OPTIONS.map((age) => (
                                 <MenuItem key={age.value} value={age.value}>
-                                  {age.label}
+                                  {t(age.label)}
                                 </MenuItem>
                               ))}
                             </ESelect>
@@ -815,7 +815,7 @@ const Quiz = () => {
                                         color='primary.main'
                                         component='span'
                                       >
-                                        {t('t_and_c.privacy_policy')}
+                                        私隱政策
                                       </Box>
                                     </MuiLink>
                                     及
@@ -827,9 +827,7 @@ const Quiz = () => {
                                         color='primary.main'
                                         component='span'
                                       >
-                                        {t(
-                                          't_and_c.personal_infomation_collection_statement'
-                                        )}
+                                        個人資料收集聲明
                                       </Box>
                                     </MuiLink>
                                     。

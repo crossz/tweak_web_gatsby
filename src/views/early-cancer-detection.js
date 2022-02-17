@@ -13,6 +13,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import AlertIcon from '@images/icons/alert.svg'
 import classnames from 'classnames'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
+import Layout from '@layouts/Layout'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -211,132 +212,136 @@ const EarlyCancerDetection = () => {
     },
   ]
   return (
-    <Box bgcolor='background.paper'>
-      <Container className={classes.root} maxWidth='md'>
-        <Typography component='div'>
-          <Box textAlign='center' mb={6}>
-            <Typography variant='h4' color='primary'>
-              {t('our_technologies.early_cancer_detection.title')}
-            </Typography>
-          </Box>
-          <Box className={classes.sectionOneBg}></Box>
-          <Box px={3}>
+    <Layout>
+      <Box bgcolor='background.paper'>
+        <Container className={classes.root} maxWidth='md'>
+          <Typography component='div'>
+            <Box textAlign='center' mb={6}>
+              <Typography variant='h4' color='primary'>
+                {t('our_technologies.early_cancer_detection.title')}
+              </Typography>
+            </Box>
+            <Box className={classes.sectionOneBg}></Box>
+            <Box px={3}>
+              <Container disableGutters maxWidth='sm'>
+                <Box mb={matches ? 2 : 2.5}>
+                  <Typography variant='h6' color='secondary'>
+                    {t('our_technologies.early_cancer_detection.do_you_know')}
+                  </Typography>
+                </Box>
+                <Box className={classes.rightLine}>
+                  {t(
+                    'our_technologies.early_cancer_detection.do_you_know_content'
+                  )}
+                </Box>
+                <Box
+                  fontSize='body1.fontSize'
+                  color='primary.contrastText'
+                  mb={matches ? 3 : 4.5}
+                >
+                  {t(
+                    'our_technologies.early_cancer_detection.center_data_title'
+                  )}
+                </Box>
+                <Box className={classes.centerDataWrapper}>
+                  {centerData.map((item, index) => (
+                    <Box
+                      className={classnames(
+                        classes.centerDataItem,
+                        index === centerData.length - 1 &&
+                          classes.lastCenterDataItem
+                      )}
+                      key={index}
+                    >
+                      <AlertIcon className={classes.icon}></AlertIcon>
+                      {t(item)}
+                    </Box>
+                  ))}
+                </Box>
+                <Box
+                  mt={matches ? 3 : 6}
+                  mb={matches ? 3 : 10}
+                  fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
+                  color='text.primary'
+                  mx={matches ? -1 : 0}
+                >
+                  {t(
+                    'our_technologies.early_cancer_detection.content_data_detail'
+                  )}
+                </Box>
+                <Box
+                  fontSize={matches ? 10 : 'caption.fontSize'}
+                  color='grey.600'
+                  mx={matches ? -1 : 0}
+                >
+                  {references.map((reference, index) => (
+                    <Box
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: t(reference) }}
+                    ></Box>
+                  ))}
+                </Box>
+              </Container>
+            </Box>
+          </Typography>
+          <Box className={classes.sectionTwo}>
             <Container disableGutters maxWidth='sm'>
-              <Box mb={matches ? 2 : 2.5}>
-                <Typography variant='h6' color='secondary'>
-                  {t('our_technologies.early_cancer_detection.do_you_know')}
+              <Box textAlign='center' mb={matches ? 3 : 4.5}>
+                <Typography variant='h4' color='primary'>
+                  {t(
+                    'our_technologies.early_cancer_detection.whats_is_early_cancer_detection'
+                  )}
                 </Typography>
               </Box>
-              <Box className={classes.rightLine}>
-                {t(
-                  'our_technologies.early_cancer_detection.do_you_know_content'
-                )}
-              </Box>
               <Box
-                fontSize='body1.fontSize'
-                color='primary.contrastText'
-                mb={matches ? 3 : 4.5}
-              >
-                {t('our_technologies.early_cancer_detection.center_data_title')}
-              </Box>
-              <Box className={classes.centerDataWrapper}>
-                {centerData.map((item, index) => (
-                  <Box
-                    className={classnames(
-                      classes.centerDataItem,
-                      index === centerData.length - 1 &&
-                        classes.lastCenterDataItem
-                    )}
-                    key={index}
-                  >
-                    <AlertIcon className={classes.icon}></AlertIcon>
-                    {t(item)}
-                  </Box>
-                ))}
-              </Box>
-              <Box
-                mt={matches ? 3 : 6}
-                mb={matches ? 3 : 10}
+                pl={matches ? 1 : 4}
                 fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
                 color='text.primary'
-                mx={matches ? -1 : 0}
               >
-                {t(
-                  'our_technologies.early_cancer_detection.content_data_detail'
-                )}
-              </Box>
-              <Box
-                fontSize={matches ? 10 : 'caption.fontSize'}
-                color='grey.600'
-                mx={matches ? -1 : 0}
-              >
-                {references.map((reference, index) => (
-                  <Box
-                    key={index}
-                    dangerouslySetInnerHTML={{ __html: t(reference) }}
-                  ></Box>
-                ))}
+                <TitleDot left={matches ? -2 : -4.75}></TitleDot>
+                <Trans i18nKey='our_technologies.early_cancer_detection.whats_is_early_cancer_detection_content'></Trans>
               </Box>
             </Container>
           </Box>
-        </Typography>
-        <Box className={classes.sectionTwo}>
-          <Container disableGutters maxWidth='sm'>
-            <Box textAlign='center' mb={matches ? 3 : 4.5}>
-              <Typography variant='h4' color='primary'>
-                {t(
-                  'our_technologies.early_cancer_detection.whats_is_early_cancer_detection'
-                )}
+          <Box mt={matches ? 8 : 12.5} px={matches ? 1.5 : 2.5}>
+            <Box textAlign='center' mb={matches ? 3 : 8}>
+              <Typography variant='h5' color='primary'>
+                {t('our_technologies.early_cancer_detection.reason_title')}
               </Typography>
             </Box>
-            <Box
-              pl={matches ? 1 : 4}
-              fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
-              color='text.primary'
-            >
-              <TitleDot left={matches ? -2 : -4.75}></TitleDot>
-              <Trans i18nKey='our_technologies.early_cancer_detection.whats_is_early_cancer_detection_content'></Trans>
-            </Box>
-          </Container>
-        </Box>
-        <Box mt={matches ? 8 : 12.5} px={matches ? 1.5 : 2.5}>
-          <Box textAlign='center' mb={matches ? 3 : 8}>
-            <Typography variant='h5' color='primary'>
-              {t('our_technologies.early_cancer_detection.reason_title')}
-            </Typography>
+            <Container disableGutters maxWidth='sm'>
+              <Box className={classes.reasonsWrapper}>
+                {reasons.map((reason) => (
+                  <Box className={classes.reasonItem} key={reason.title}>
+                    <Box width={matches ? 108 : 146}>{reason.icon}</Box>
+                    <Box
+                      fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
+                      fontWeight='fontWeightBold'
+                      color='primary.main'
+                      mt={matches ? 1.25 : 2.5}
+                      mb={matches ? 1.25 : 2}
+                    >
+                      {reason.title}
+                    </Box>
+                    <Box fontSize='body2.fontSize' textAlign='center'>
+                      {reason.content}
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
+              <Box
+                className={classes.tips}
+                bgcolor='primary.main'
+                color='primary.contrastText'
+                borderRadius={12}
+              >
+                {t('our_technologies.early_cancer_detection.expect')}
+              </Box>
+            </Container>
           </Box>
-          <Container disableGutters maxWidth='sm'>
-            <Box className={classes.reasonsWrapper}>
-              {reasons.map((reason) => (
-                <Box className={classes.reasonItem} key={reason.title}>
-                  <Box width={matches ? 108 : 146}>{reason.icon}</Box>
-                  <Box
-                    fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
-                    fontWeight='fontWeightBold'
-                    color='primary.main'
-                    mt={matches ? 1.25 : 2.5}
-                    mb={matches ? 1.25 : 2}
-                  >
-                    {reason.title}
-                  </Box>
-                  <Box fontSize='body2.fontSize' textAlign='center'>
-                    {reason.content}
-                  </Box>
-                </Box>
-              ))}
-            </Box>
-            <Box
-              className={classes.tips}
-              bgcolor='primary.main'
-              color='primary.contrastText'
-              borderRadius={12}
-            >
-              {t('our_technologies.early_cancer_detection.expect')}
-            </Box>
-          </Container>
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </Layout>
   )
 }
 

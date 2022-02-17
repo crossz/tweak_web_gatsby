@@ -80,7 +80,9 @@ const CareerItem = ({ title, type, region, date, slug }) => {
       <Box className={classes.title}>{title}</Box>
       <Box display='flex' justifyContent='space-between' alignItems='flex-end'>
         <Box>
-          <Box className={classes.region}>{region}</Box>
+          <Box className={classes.region}>
+            {t(`options.career_regions.${region}`)}
+          </Box>
           <Hidden xsDown>
             <Box className={classes.date}>{date}</Box>
           </Hidden>

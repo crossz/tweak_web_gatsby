@@ -15,6 +15,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import CloseIcon from '@images/icons/close.svg'
 import classnames from 'classnames'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -110,6 +111,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Post = ({ data }) => {
   const classes = useStyles()
+  const { t } = useTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const mdx = data?.mdx?.body
@@ -155,15 +157,17 @@ const Post = ({ data }) => {
                   {title}
                 </Typography>
                 <Typography className={classes.company} variant='body1'>
-                  得易健康
+                  {t('common.take2_health')}
                 </Typography>
                 <Typography className={classes.date} color='primary'>
-                  發布日期:
+                  {t('common.release_date')}:
                   <Box fontWeight='fontWeightBold' component='span'>
                     {date}
                   </Box>
                 </Typography>
-                <Box className={classes.region}>{region}</Box>
+                <Box className={classes.region}>
+                  {t(`options.career_regions.${region}`)}
+                </Box>
               </Box>
               <Box pb={3}>
                 <MdxLayout>{mdx}</MdxLayout>
@@ -179,7 +183,16 @@ const Post = ({ data }) => {
 export default Post
 
 export const query = graphql`
-  query ($slug: String!) {
+  query ($slug: String!, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx: mdx(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {

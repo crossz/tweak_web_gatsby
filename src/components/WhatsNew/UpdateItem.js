@@ -3,12 +3,12 @@ import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
-import { Link as MuiLink } from '@material-ui/core'
 import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
 import ViewButton from '@themes/components/ViewButton'
 import { POST_TYPES } from '@utils/constant'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -89,36 +89,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const LinkWrapper = ({ href, slug, children, ...rest }) =>
-  href ? (
-    <MuiLink href={href} target='_blank' {...rest}>
-      {children}
-    </MuiLink>
-  ) : (
-    <Link to={slug} {...rest}>
-      {children}
-    </Link>
-  )
-
 const UpdateItem = ({ title, type, date, detail, href, slug, cover }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const images = cover.map((item) => getImage(item))
 
   return (
-    <LinkWrapper href={href} slug={slug} className={classes.link}>
+    <Link to={href || slug} className={classes.link}>
       <Box className={classes.root}>
         <Box className={classes.top}>
           <Box className={classes.date}>{date}</Box>
           <Box
             className={classes.mark}
             bgcolor={
-              POST_TYPES.find((item) => item.label === type)?.color ||
+              POST_TYPES.find((item) => item.value === type)?.color ||
               'secondary.main'
             }
           >
-            {type}
+            {t(`options.update_post_types.${type}`)}
           </Box>
         </Box>
         <Typography className={classes.title} variant='h6' color='primary'>
@@ -156,7 +146,7 @@ const UpdateItem = ({ title, type, date, detail, href, slug, cover }) => {
           <ViewButton></ViewButton>
         </Box>
       </Box>
-    </LinkWrapper>
+    </Link>
   )
 }
 
