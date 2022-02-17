@@ -2,15 +2,12 @@
 label: Languages
 hide_body: true
 fields:
-- name: have_languages
-  type: boolean
-  label: Have Other Languages
 - name: languages
   type: list
   config:
     use_select: true
     min: 1
-    max: 2
+    max: 3
     source:
       type: simple
     options:
@@ -19,5 +16,4 @@ fields:
     - en
   label: Languages
   showOnly:
-    field: have_languages
     value: true
