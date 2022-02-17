@@ -173,7 +173,7 @@ const Banner = ({ nodes }) => {
                       getImage(node?.frontmatter?.mobileImage)
                     }
                     placeholder='blurred'
-                    alt={node?.frontmatter?.title}
+                    alt={tB('title', node?.frontmatter)}
                   ></GatsbyImage>
                 ) : (
                   <GatsbyImage
@@ -183,7 +183,7 @@ const Banner = ({ nodes }) => {
                       getImage(node?.frontmatter?.image)
                     }
                     placeholder='blurred'
-                    alt={node?.frontmatter?.title}
+                    alt={tB('title', node?.frontmatter)}
                   ></GatsbyImage>
                 )}
                 <Container className={classes.wrapper} maxWidth='md'>
