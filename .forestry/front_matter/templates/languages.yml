@@ -21,10 +21,3 @@ fields:
   showOnly:
     field: have_languages
     value: true
-- name: test
-  type: tag_list
-  default:
-  - zh-HK
-  - zh-CN
-  - en
-  label: Test
