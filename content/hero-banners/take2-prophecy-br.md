@@ -8,7 +8,7 @@ buttons:
   variant: outlined
   color: primary
   internal: true
-  name: 了解更多
+  name: common.learn_more
   link: "/whats-new/campaign/"
 - template: hero-button
   variant: contained
@@ -23,5 +23,9 @@ reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Departm
   CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424."
 theme: dark
 sort: 1
+cn_title: ''
+en_title: ''
+cn_detail: ''
+en_detail: ''
 
 ---
