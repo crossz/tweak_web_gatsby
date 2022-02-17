@@ -11,7 +11,7 @@ buttons:
   link: products-and-services/take2-prophecy
   internal: true
   button_text: 了解更多
-  name: 了解更多
+  name: common.learn_more
 - template: hero-button
   variant: contained
   color: secondary
@@ -25,5 +25,9 @@ reference: "¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Vir
 mobileImage: "../images/mobile_hero_01.jpg"
 theme: light
 sort: 2
+cn_title: ''
+en_title: ''
+cn_detail: ''
+en_detail: ''
 
 ---
