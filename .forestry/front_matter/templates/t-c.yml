@@ -16,16 +16,6 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
-- name: tandc_test
-  type: field_group
-  config: {}
-  fields:
-  - name: test
-    type: include
-    config: {}
-    template: t-c
-    label: test
-  label: T&C test
 pages:
 - content/terms-and-conditions/條款及細則.md
 - content/terms-and-conditions/私隱政策.md
