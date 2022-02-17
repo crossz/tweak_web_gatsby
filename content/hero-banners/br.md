@@ -11,8 +11,14 @@ buttons:
   internal: false
   name: 立即預約
   link: https://take2health.net/health-platform/
+  cn_name: ''
+  en_name: ''
 reference: "*優惠受條款及細則約束"
 theme: light
 sort: 3
+cn_title: ''
+en_title: ''
+cn_detail: ''
+en_detail: ''
 
 ---
