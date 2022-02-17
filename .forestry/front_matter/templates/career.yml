@@ -40,9 +40,9 @@ fields:
   config:
     required: true
     options:
-    - 所有地區
-    - 香港特別行政區
-    - 中國內地
+    - all
+    - main_china
+    - hongkong_special_administrative_region
     source:
       type: simple
       section: 
