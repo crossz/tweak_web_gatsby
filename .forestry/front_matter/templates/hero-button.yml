@@ -50,7 +50,3 @@ fields:
   config:
     required: false
   label: link
-- name: internal
-  type: boolean
-  label: Internal
-  default: true
