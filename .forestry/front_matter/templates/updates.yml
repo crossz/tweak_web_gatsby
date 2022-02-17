@@ -39,11 +39,11 @@ fields:
   config:
     required: false
     options:
-    - 公司動向
-    - 公司獎項與成就
-    - 行業資訊
-    - 商業合作
-    - 行政總裁分享
+    - company_trends
+    - industry_information
+    - company_awards_and_achievements
+    - ceo_sharing
+    - business_cooperation
     source:
       type: simple
       section: 
