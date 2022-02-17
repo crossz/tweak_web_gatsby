@@ -3,15 +3,15 @@ type: industry_information
 cover: []
 date: 2021-11-01T00:00:00.000+08:00
 title: Take2 Health Collaborating with CXA To Provide Innovative Employee Benefits
-detail: Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2020年11月正式進駐CXA員工福利平台，為本港用戶提供全新的身體檢查服務。
+detail: Starting from November 2020, the Take2 Prophecy™ Test for Nasopharyngeal Cancer
+  and other health assessment services officially joined the CXA’s wellness provider
+  network, providing the innovative medical solution to Hong Kong users.
 href: ''
 slug: ''
 languages:
 - en
-- zh-CN
-- zh-HK
 
 ---
-Take2 Prophecy**™** 早期鼻咽癌篩查及相關套餐於2020年11月正式進駐CXA員工福利平台，為本港用戶提供全新的身體檢查服務。
+Starting from November 2020, the Take2 Prophecy™ Test for Nasopharyngeal Cancer and other health assessment services officially joined the CXA’s wellness provider network, providing the innovative medical solution to Hong Kong users.
 
-成立於2013年的CXA是亞太區內規模最大和應用最廣泛的員工福利平台，為超過500家企業約70萬的員工提供服務，其中包括國際大型品牌星巴克 (Starbucks) 和萊雅集團 (L'Oréal Group) 等。符合資格的員工現時能透過簡單易用的網上平台，以其在企業所獲得的福利額度免費兌換早期癌症篩查服務。透過是次合作，Take2 Health期望為企業創造更健康、更具競爭力的團隊。長遠而言，我司有望推動早期癌症篩查普及化，進一步鼓勵企業員工和大眾將之列入常規體檢的項目。
+Established in 2013, CXA Group has gradually become Asia’s largest and most widely adopted employee benefits platform. Its clients include world-renowned brands Starbucks, L'Oréal Group and so on. Currently, eligible employees could redeem the complimentary test with their welfare credits through the platform. Through the collaboration, Take2 Health and CXA jointly create a healthier and stronger team of talents for the business, and set the basis to encourage the public to include early cancer detection test as part of medical check-ups.
