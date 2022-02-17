@@ -5,6 +5,7 @@ import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
 import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
 import classnames from 'classnames'
 import { PARTNERS } from '@utils/constant'
+import useBusinessPartners from '@hooks/useBusinessPartners'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,7 +74,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Marker = (props) => {
   const classes = useStyles()
-  const info = PARTNERS?.find((partner) => partner.name === props.id)
+  const businessPartners = useBusinessPartners()
+  const info = businessPartners?.find((partner) => partner.name === props.id)
 
   return (
     <>
@@ -111,7 +113,7 @@ const InfoWindow = (props) => {
 const SimpleGoogleMap = (props) => {
   const classes = useStyles()
   const mapRef = useRef()
-
+  const businessPartners = useBusinessPartners()
   const [activeKey, setActiveKey] = useState(null)
 
   const defaultProps = {
@@ -159,8 +161,8 @@ const SimpleGoogleMap = (props) => {
             mapRef.current = map
           }}
         >
-          {PARTNERS?.length > 0 &&
-            PARTNERS?.map((partner) => (
+          {businessPartners?.length > 0 &&
+            businessPartners?.map((partner) => (
               <Marker
                 activeKey={activeKey}
                 id={partner.name}

@@ -144,6 +144,33 @@
     "age": {
       "20_or_below": "20或以下",
       "61_or_above": "61或以上"
+    },
+    "career_regions": {
+      "all": "所有地區",
+      "business_strategic_cooperation": "香港特別行政區",
+      "mainland_china": "中國內地"
+    },
+    "update_post_types": {
+      "all": "所有最新動態",
+      "company_trends": "公司動向",
+      "company_awards_and_achievements": "公司獎項與成就",
+      "industry_information": "行業資訊",
+      "ceo_sharing": "行政總裁分享",
+      "business_cooperation": "商業合作"
+    },
+    "hongkong_regions": {
+      "all": "所有地區",
+      "hongkong": "香港",
+      "kowloon": "九龍",
+      "new_territories_east": "新界東",
+      "new_territories_west": "新界西"
+    },
+    "department": {
+      "all": "所有部門",
+      "business_strategic_cooperation": "商業戰略合作"
+    },
+    "macao_regions": {
+      "macao": "澳門"
     }
   },
   "our_technologies": {

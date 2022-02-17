@@ -22,7 +22,8 @@ import RightIcon from '@images/icons/right.svg'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
 import { throttle } from 'lodash-es'
-import { DIALING_CODES, PARTNERS } from '@utils/constant'
+import { DIALING_CODES } from '@utils/constant'
+import { graphql } from 'gatsby'
 import {
   EInputBase,
   EFormLabel,
@@ -34,6 +35,7 @@ import ReCaptcha from '@components/ReCaptcha'
 import SimpleGoogleMap from '@components/Map/SimpleGoogleMap'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useBusinessPartners from '@hooks/useBusinessPartners'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -253,6 +255,7 @@ const International = () => {
   const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const businessPartners = useBusinessPartners()
   const [loading, setLoading] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
 
@@ -310,7 +313,7 @@ const International = () => {
             cols={matches ? 1 : 3}
             gap={matches ? 16 : 24}
           >
-            {PARTNERS.map(({ country, name, intro, link }, index) => (
+            {businessPartners?.map(({ country, name, intro, link }, index) => (
               <ImageListItem
                 key={name + index}
                 classes={{
@@ -571,3 +574,17 @@ const International = () => {
 }
 
 export default International
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

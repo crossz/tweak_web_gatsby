@@ -81,7 +81,9 @@ const Consult = () => {
         <Grid className={classes.rightWrapper} item xs={12} sm={6}>
           <Box maxWidth={matches ? 'none' : 560}>
             <Typography variant='h5' color='primary' component='div'>
-              <Box mt={matches ? 3 : 0}>{t('homepage.sign_up.title')}</Box>
+              <Box fontWeight='fontSize.body1' mt={matches ? 3 : 0}>
+                {t('homepage.sign_up.title')}
+              </Box>
               <Box className={classes.content}>
                 {t('homepage.sign_up.detail')}
                 <Link

@@ -47,49 +47,61 @@ export const DIALING_CODES = [
 ]
 
 export const POST_TYPES = [
-  { label: '所有最新動態', value: '', color: '' },
-  { label: '公司動向', value: '公司動向', color: 'supporting.supporting01' },
-  { label: '公司獎項與成就', value: '公司獎項與成就', color: 'secondary.main' },
+  { label: 'options.update_post_types.all', value: '', color: '' },
   {
-    label: '行業資訊',
-    value: '行業資訊',
+    label: 'options.update_post_types.company_trends',
+    value: 'company_trends',
+    color: 'supporting.supporting01',
+  },
+  {
+    label: 'options.update_post_types.company_awards_and_achievements',
+    value: 'company_awards_and_achievements',
+    color: 'secondary.main',
+  },
+  {
+    label: 'options.update_post_types.industry_information',
+    value: 'industry_information',
     color: 'prophecySupporting.supporting01',
   },
-  // { label: '商業合作', value: '商業合作', color: 'prophecyPrimary.main' },
+  // {
+  //   label: 'options.update_post_types.business_cooperation',
+  //   value: 'business_cooperation',
+  //   color: 'prophecyPrimary.main',
+  // },
   {
-    label: '行政總裁分享',
-    value: '行政總裁分享',
+    label: 'options.update_post_types.ceo_sharing',
+    value: 'ceo_sharing',
     color: 'prophecySupporting.supporting02',
   },
 ]
 
 export const REGIONS = [
   {
-    label: '香港',
+    label: 'options.hongkong_regions.hongkong',
     value: 0,
     districts: [
       {
-        label: '所有地區',
+        label: 'options.hongkong_regions.all',
         value: '',
       },
       {
-        label: '香港',
+        label: 'options.hongkong_regions.hongkong',
         value: 0,
       },
       {
-        label: '九龍',
+        label: 'options.hongkong_regions.kowloon',
         value: 1,
       },
       {
-        label: '新界東',
+        label: 'options.hongkong_regions.new_territories_east',
         value: 2,
       },
       {
-        label: '新界西',
+        label: 'options.hongkong_regions.new_territories_west',
         value: 3,
       },
       {
-        label: '澳門',
+        label: 'options.macao_regions.macao',
         value: 4,
       },
     ],
@@ -132,19 +144,26 @@ export const QUIZ = [
   },
 ]
 
-export const AGES = ['20或以下', '21-30', '31-40', '41-50', '51-60', '61或以上']
+export const AGES = [
+  'options.age.20_or_below',
+  '21-30',
+  '31-40',
+  '41-50',
+  '51-60',
+  'options.age.61_or_above',
+]
 
 export const CAREER_REGIONS = [
   {
-    label: '所有地區',
+    label: 'options.career_regions.all',
     value: '',
   },
   {
-    label: '香港特別行政區',
-    value: 'hongkong',
+    label: 'options.career_regions.hongkong_special_administrative_region',
+    value: 'hongkong_special_administrative_region',
   },
   {
-    label: '中國內地',
+    label: 'options.career_regions.mainland_china',
     value: 'mainland_china',
   },
 ]
@@ -222,96 +241,30 @@ export const AGE_OPTIONS = [
 
 export const AREA_OPTIONS = [
   {
-    label: '所有地區',
+    label: 'options.hongkong_regions.all',
     value: '',
   },
   {
-    label: '香港',
+    label: 'options.hongkong_regions.hongkong',
     value: 'hongkong',
   },
   {
-    label: '九龍',
+    label: 'options.hongkong_regions.kowloon',
     value: 'kowloon',
   },
 ]
 
 export const DEPARTMENT_OPTIONS = [
   {
-    label: '所有部門',
+    label: 'options.department.all',
     value: '',
   },
   {
-    label: '商業戰略合作',
+    label: 'options.department.business_strategic_cooperation',
     value: 'business_strategic_cooperation',
   },
   {
     label: 'DITE',
     value: 'dite',
-  },
-]
-
-export const PARTNERS = [
-  {
-    country: '馬來西亞',
-    name: 'Pantai Premier Pathology',
-    intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: 'https://www.premierpathology.com.my',
-    lat: 3.8124274936333666,
-    lng: 101.60320871733128,
-  },
-  {
-    country: '菲律賓',
-    name: 'Global Medical Technologies ',
-    intro:
-      '一家位於菲律賓的醫療技術公司，主要業務為向菲律賓國內引進世界各地的先進技術，以向醫護人員、患者及消費者提供健康測試和診斷技術的選擇。',
-    link: 'https://gmtmanila.com/',
-    lat: 14.622741230780443,
-    lng: 120.9678862363281,
-  },
-  {
-    country: '台灣',
-    name: 'Yourgene Health',
-    intro:
-      '一家總部設於英國且於倫敦證交所上市的分子診斷公司，主要從事基因測序技術開發和商業化，其業務遍佈台灣、新加坡、美國及加拿大等地區。',
-    link: 'https://www.yourgene-health.com',
-    lat: 24.007028114876242,
-    lng: 121.07166512736177,
-  },
-  {
-    country: '新加坡',
-    name: 'Lifestrands Genomics',
-    intro:
-      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室。',
-    link: '',
-    lat: 1.3579294889776585,
-    lng: 103.86964607814394,
-  },
-  {
-    country: '菲律賓',
-    name: 'Pascific Laboratories',
-    intro:
-      '一家業務橫跨菲律賓、新加坡及印度的病理診斷集團，主要業務為以精準醫療為方針的病理學及分子診斷。',
-    link: 'https://www.pascific.com/',
-    lat: 14.622741230780443,
-    lng: 120.9678862363281,
-  },
-  {
-    country: '卡塔爾',
-    name: 'Tempcon',
-    intro:
-      '一家總部位於多哈的醫療器械供應商，致力為當地的私人醫療機構、公立醫療服務、連鎖診所及大型企業提供從日常消費品、試劑到高端科技型的醫療器械。',
-    link: 'https://www.tempconqatar.com/index',
-    lat: 25.310775003022403,
-    lng: 51.195632901833974,
-  },
-  {
-    country: '澳門',
-    name: 'Catalyst Bioscience',
-    intro:
-      '一家位於澳門的生物科技經銷商，致力為當地的醫療機構提供高端科技測試。',
-    link: '',
-    lat: 22.158991865767508,
-    lng: 113.57665634534713,
   },
 ]
