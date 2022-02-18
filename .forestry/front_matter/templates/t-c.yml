@@ -18,6 +18,7 @@ fields:
       file: 
       path: 
   label: Slug
+  description: Slug for T&amp;C url.
 - name: languages
   type: include
   config: {}

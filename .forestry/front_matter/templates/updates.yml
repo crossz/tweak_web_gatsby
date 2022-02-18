@@ -25,8 +25,9 @@ fields:
   label: Title
   config:
     required: true
-  description: 'Title of post. <br>If slug and href is empty should forbidden these
-    characters: <em>"$","%",":","/",Tab<br></em>'
+    max: 100
+  description: 'This will be used as slug for url when slug and href is empty;<br><em>Forbidden
+    characters: "$","%",":","/",Tab<br></em>'
 - type: textarea
   name: detail
   label: Detail
