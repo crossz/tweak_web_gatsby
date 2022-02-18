@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Map from '@components/Map'
 import { makeStyles } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'

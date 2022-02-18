@@ -115,7 +115,7 @@ const Post = ({ data }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const mdx = data?.mdx?.body
-  const { title, type, region, date } = data?.mdx?.frontmatter
+  const { title, region, date } = data?.mdx?.frontmatter
   const handleClose = (params) => navigate(-1)
 
   return (

@@ -172,7 +172,7 @@ const Footer = () => {
       </Box>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/私隱政策'
+        to='/terms-and-conditions/privacy-policy/'
       >
         私隱政策
       </Link>
@@ -187,13 +187,13 @@ const Footer = () => {
       </Link> */}
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/網站使用條款'
+        to='/terms-and-conditions/website-terms-of-use/'
       >
         網站使用條款
       </Link>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/個人資料收集聲明'
+        to='/terms-and-conditions/personal-information-collection-statement/'
       >
         個人資料收集聲明
       </Link>

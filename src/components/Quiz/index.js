@@ -22,7 +22,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Checkbox from '@material-ui/core/Checkbox'
-import { Link as MuiLink } from '@material-ui/core'
+// import { Link as MuiLink } from '@material-ui/core'
+import Link from '@components/Link'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import GenderRadio from './GenderRadio'
 import QuizRadio from './QuizRadio'
@@ -316,6 +317,9 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       minWidth: 158,
     },
+  },
+  link: {
+    color: theme.palette.primary.main,
   },
 }))
 
@@ -807,29 +811,20 @@ const Quiz = () => {
                                   <Trans i18nKey='quiz.agreement'>
                                     本人已明白及同意Take2 Health Limited
                                     的網站於take2health.net之網站
-                                    <MuiLink
-                                      href='/terms-and-conditions/私隱政策'
+                                    <Link
+                                      className={classes.link}
+                                      to='/terms-and-conditions/privacy-policy/'
                                       underline='always'
                                     >
-                                      <Box
-                                        color='primary.main'
-                                        component='span'
-                                      >
-                                        私隱政策
-                                      </Box>
-                                    </MuiLink>
-                                    及
-                                    <MuiLink
-                                      href='/terms-and-conditions/個人資料收集聲明'
+                                      私隱政策
+                                    </Link>
+                                    <Link
+                                      className={classes.link}
+                                      to='/terms-and-conditions/personal-information-collection-statement/'
                                       underline='always'
                                     >
-                                      <Box
-                                        color='primary.main'
-                                        component='span'
-                                      >
-                                        個人資料收集聲明
-                                      </Box>
-                                    </MuiLink>
+                                      個人資料收集聲明
+                                    </Link>
                                     。
                                   </Trans>
                                 </Box>
@@ -858,25 +853,23 @@ const Quiz = () => {
                             )}
                           </Button>
                           <Hidden xsDown>
-                            <MuiLink
+                            <Link
                               className={classes.platformLink}
-                              href={process.env.GATSBY_SITE_URL}
-                              target='_blank'
+                              to={process.env.GATSBY_SITE_URL}
                             >
                               {t('quiz.direct_sign_up')}
-                            </MuiLink>
+                            </Link>
                           </Hidden>
                           <Hidden smUp>
-                            <MuiLink
+                            <Link
                               className={classnames(
                                 classes.platformLink,
                                 classes.mobilePlatformLink
                               )}
-                              href={process.env.GATSBY_SITE_URL}
-                              target='_blank'
+                              to={process.env.GATSBY_SITE_URL}
                             >
                               {t('quiz.direct_sign_up')}
-                            </MuiLink>
+                            </Link>
                           </Hidden>
                         </Box>
                         {reCapStatus > 0 && (

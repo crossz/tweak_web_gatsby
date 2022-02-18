@@ -10,6 +10,24 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       textDecoration: 'none',
     },
+    '&.none': {
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'none',
+      },
+    },
+    '&.hover': {
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
+    '&.always': {
+      textDecoration: 'underline',
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
   },
 }))
 // Since DOM elements <a> cannot receive activeClassName
@@ -22,6 +40,7 @@ const Link = ({
   partiallyActive,
   language,
   className,
+  underline,
   ...other
 }) => {
   const classes = useStyles()
@@ -36,7 +55,7 @@ const Link = ({
   if (internal) {
     return routed || language ? (
       <I18nLink
-        className={classnames(classes.root, className)}
+        className={classnames(classes.root, className, underline)}
         to={to}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
@@ -47,7 +66,7 @@ const Link = ({
       </I18nLink>
     ) : (
       <GatsbyLink
-        className={classnames(classes.root, className)}
+        className={classnames(classes.root, className, underline)}
         to={to}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
@@ -63,6 +82,7 @@ const Link = ({
       href={to}
       target='_blank'
       rel='noopener noreferrer'
+      underline={underline}
       {...other}
     >
       {children}

@@ -4,7 +4,6 @@ import GoogleMapReact from 'google-map-react'
 import MarkerFalseIcon from '@images/icons/map_marker_false.svg'
 import MarkerTrueIcon from '@images/icons/map_marker_true.svg'
 import classnames from 'classnames'
-import { PARTNERS } from '@utils/constant'
 import useBusinessPartners from '@hooks/useBusinessPartners'
 
 const useStyles = makeStyles((theme) => ({

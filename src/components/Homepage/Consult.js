@@ -87,7 +87,8 @@ const Consult = () => {
               <Box className={classes.content}>
                 {t('homepage.sign_up.detail')}
                 <Link
-                  to='/terms-and-conditions/條款及細則'
+                  to='/terms-and-conditions'
+                  underline='always'
                   className={classes.greyLink}
                 >
                   {t('t_and_c.terms_and_conditions')}
