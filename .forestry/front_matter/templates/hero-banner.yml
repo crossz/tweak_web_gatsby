@@ -1,7 +1,7 @@
 ---
 label: Hero Banner
 hide_body: true
-display_field: title
+display_field: titleHk
 fields:
 - name: titleHk
   type: text
