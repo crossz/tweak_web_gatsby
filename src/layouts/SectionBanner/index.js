@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react'
+import React, { useRef, useEffect, useMemo } from 'react'
 import {
   makeStyles,
   useTheme,
@@ -13,8 +13,8 @@ import Link from '@components/Link'
 import TitleDot from '@themes/components/TitleDot'
 import Image from '@components/Image'
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
+import { getDomTop } from '@utils'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { Waypoint } from 'react-waypoint'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
@@ -104,14 +104,11 @@ const SectionBanner = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const menu = useMenu()
-  const [belowSectionTabs, setBelowSectionTabs] = useState(true)
-  const prePathnameRef = useRef(null)
+  const pointerRef = useRef(null)
   // When user navigates between section pages and content been scrolled beyond banner , should scroll page up to section tabs.
-  // #TODO Layout change, scroll to tabs fail.
   useEffect(() => {
-    if (!belowSectionTabs && prePathnameRef?.current === curMenuItem?.path)
+    if (getDomTop(pointerRef.current) < document.documentElement.scrollTop)
       scrollTo('#section-tabs')
-    prePathnameRef.current = curMenuItem?.path
   }, [originalPath])
 
   const curMenuItem = useMemo(
@@ -172,12 +169,11 @@ const SectionBanner = () => {
                   )} */}
                 </Box>
               </Container>
-              <Waypoint
-                onEnter={() => setBelowSectionTabs(true)}
-                onLeave={() => setBelowSectionTabs(false)}
-              >
-                <Box className={classes.sectionTabsId} id='section-tabs'></Box>
-              </Waypoint>
+              <Box
+                ref={pointerRef}
+                className={classes.sectionTabsId}
+                id='section-tabs'
+              ></Box>
             </Container>
             {curMenuItem?.sections && curMenuItem?.sections?.length && (
               <Box className={classes.tabsWrapper}>

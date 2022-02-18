@@ -24,7 +24,6 @@ const shouldUpdateScroll = ({ prevRouterProps, pathname }) => {
           section.path === getOriginalPath(prevRouterProps?.location?.pathname)
       )
   )
-  console.log('!Boolean(betweenSectionPage)', !Boolean(betweenSectionPage))
   return !Boolean(betweenSectionPage)
 }
 
