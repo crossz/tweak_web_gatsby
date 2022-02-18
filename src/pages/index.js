@@ -37,12 +37,12 @@ export const query = graphql`
       nodes {
         id
         frontmatter {
-          hk_title
-          en_title
-          cn_title
-          hk_detail
-          en_detail
-          cn_detail
+          titleHk
+          titleEn
+          titleCn
+          detailHk
+          detailEn
+          detailCn
           image {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)

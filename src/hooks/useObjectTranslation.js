@@ -5,7 +5,7 @@ const { languagePrefixes } = require('../../languages')
 const useObjectTranslation = () => {
   const { language } = useI18next()
   const tB = (key, obj) => {
-    const finalKey = `${languagePrefixes[language]}_${key}`
+    const finalKey = `${key}${languagePrefixes[language]}`
     const finalValue = obj[finalKey]
     if (finalValue) return finalValue
 
@@ -14,7 +14,7 @@ const useObjectTranslation = () => {
 
     for (let index = 0; index < restLanguages.length; index++) {
       const lang = restLanguages[index]
-      const curKey = `${languagePrefixes[lang]}_${key}`
+      const curKey = `${key}${languagePrefixes[lang]}`
       const value = obj[curKey]
       if (value) defaultValue = value
       break

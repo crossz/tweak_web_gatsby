@@ -5,13 +5,13 @@ const useBusinessPartners = () => {
     {
       allBusinessPartnersJson {
         nodes {
-          country
-          cn_country
-          en_country
+          countryHk
+          countryCn
+          countryEn
           name
-          intro
-          cn_intro
-          en_intro
+          introHk
+          introCn
+          introEn
           link
           lat
           lng
