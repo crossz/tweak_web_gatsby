@@ -16,7 +16,7 @@ fields:
     required: false
     max: 100
   label: EN Title
-- name: cn_title
+- name: titleCn
   type: text
   config:
     required: false
@@ -34,7 +34,7 @@ fields:
     maxSize: 64
   label: Mobile Image
   description: "<em>Recommend Size: 1125 * 1506 (figma 3x)<br>Recommend Type: .jpg<br></em>"
-- name: hk_detail
+- name: detailHk
   type: textarea
   default: ''
   config:
@@ -45,7 +45,7 @@ fields:
     min: 1
     max: 1000
   label: HK Detail
-- name: en_detail
+- name: detailEn
   type: textarea
   default: ''
   config:
@@ -55,7 +55,7 @@ fields:
       format: markdown
     max: 1000
   label: EN Detail
-- name: cn_detail
+- name: detailCn
   type: textarea
   default: ''
   config:
