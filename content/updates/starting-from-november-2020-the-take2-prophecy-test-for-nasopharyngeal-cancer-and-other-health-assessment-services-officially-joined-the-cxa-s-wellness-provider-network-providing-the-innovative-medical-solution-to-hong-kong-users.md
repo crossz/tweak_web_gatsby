@@ -3,9 +3,8 @@ type: industry_information
 cover:
 - "../images/untitled-design-30.png"
 date: 2021-12-07T00:00:00.000+08:00
-title: Starting from November 2020, the Take2 Prophecy™ Test for Nasopharyngeal Cancer
-  and other health assessment services officially joined the CXA’s wellness provider
-  network, providing the innovative medical solution to Hong Kong users.
+title: Take2 Health in Alliance with BOC Life to Become the First Brand Providing
+  Early Cancer Detection on “Live Young”
 detail: The Take2 Prophecy™ Test for Nasopharyngeal Cancer is officially launched
   on BOC Life membership platform“Live Young”. From December 2021 onwards, BOC Life
   insurance clients can earn points through their health metrics for different rewards,

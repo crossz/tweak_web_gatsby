@@ -8,7 +8,6 @@ detail: 爲配合公司的長遠發展方向和滿足業務需要，Take2 Health
 href: ''
 slug: ''
 languages:
-- en
 - zh-CN
 - zh-HK
 
