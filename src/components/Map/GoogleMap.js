@@ -153,8 +153,8 @@ const Marker = (props) => {
 
 const InfoWindow = (props) => {
   const classes = useStyles()
-  const { t } = useI18next()
-  const isHomepage = useMatch('/')
+  const { t, originalPath } = useI18next()
+  const isHomepage = originalPath === '/'
 
   if (!props?.info) return null
 
@@ -217,7 +217,8 @@ const InfoWindow = (props) => {
 const GoogleMap = (props) => {
   const classes = useStyles()
   const mapRef = useRef()
-  const isHomepage = useMatch('/')
+  const { originalPath } = useI18next()
+  const isHomepage = originalPath === '/'
 
   const [activeKey, setActiveKey] = useState(null)
 

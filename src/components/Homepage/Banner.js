@@ -12,7 +12,7 @@ import {
   Hidden,
 } from '@material-ui/core'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
@@ -20,6 +20,7 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -136,6 +137,7 @@ const useStyles = makeStyles((theme) => ({
 const Banner = ({ nodes }) => {
   const classes = useStyles()
   const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const context = useContext(HeroThemeContext)
@@ -171,7 +173,7 @@ const Banner = ({ nodes }) => {
                       getImage(node?.frontmatter?.mobileImage)
                     }
                     placeholder='blurred'
-                    alt={node?.frontmatter?.title}
+                    alt={tB('title', node?.frontmatter)}
                   ></GatsbyImage>
                 ) : (
                   <GatsbyImage
@@ -181,7 +183,7 @@ const Banner = ({ nodes }) => {
                       getImage(node?.frontmatter?.image)
                     }
                     placeholder='blurred'
-                    alt={node?.frontmatter?.title}
+                    alt={tB('title', node?.frontmatter)}
                   ></GatsbyImage>
                 )}
                 <Container className={classes.wrapper} maxWidth='md'>
@@ -192,7 +194,7 @@ const Banner = ({ nodes }) => {
                         mb={matches ? 1 : 2}
                         lineHeight={1.5}
                         dangerouslySetInnerHTML={{
-                          __html: node?.frontmatter?.title,
+                          __html: tB('title', node?.frontmatter),
                         }}
                       ></Box>
                       <Box
@@ -203,7 +205,7 @@ const Banner = ({ nodes }) => {
                         lineHeight='1.5'
                         textAlign='justify'
                         dangerouslySetInnerHTML={{
-                          __html: node?.frontmatter?.detail,
+                          __html: tB('detail', node?.frontmatter),
                         }}
                       ></Box>
                     </Typography>
@@ -221,26 +223,10 @@ const Banner = ({ nodes }) => {
                                 : 'auto'
                             }
                           >
-                            {button.internal ? (
-                              <Link to={button.link}>
-                                <Button
-                                  variant={button.variant}
-                                  color={button.color}
-                                  className={classes.btn}
-                                  fullWidth={
-                                    !matches &&
-                                    node?.frontmatter?.buttons?.length === 1
-                                  }
-                                >
-                                  {t(button.name)}
-                                </Button>
-                              </Link>
-                            ) : (
+                            <Link underline='none' to={button.link}>
                               <Button
                                 variant={button.variant}
                                 color={button.color}
-                                href={button.link}
-                                target='_blank'
                                 className={classes.btn}
                                 fullWidth={
                                   !matches &&
@@ -249,7 +235,7 @@ const Banner = ({ nodes }) => {
                               >
                                 {t(button.name)}
                               </Button>
-                            )}
+                            </Link>
                           </Grid>
                         ))}
                     </Grid>

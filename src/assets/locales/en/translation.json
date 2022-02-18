@@ -1,187 +1,354 @@
 {
-  "whats_new": {
-    "promotions": {
-      "title": "",
-      "detail": ""
+    "whats_new": {
+        "promotions": {
+            "title": "Latest Promotions",
+            "detail": "Check out the latest promotions from our collaborating healthcare service providers for more exclusive offers and discounts."
+        },
+        "health_tips": {
+            "title": "Health Tips",
+            "detail": "We value the health of you and your family. Please stay tuned for the latest updates on our health tips!"
+        }
     },
-    "health_tips": {
-      "title": "",
-      "detail": ""
-    }
-  },
-  "service_location": {
-    "title": "",
-    "more": ""
-  },
-  "homepage": {
-    "sign_up": {
-      "title": "",
-      "detail": ""
-    }
-  },
-  "common": {
-    "sign_up": "",
-    "learn_more": "",
-    "view_more": "",
-    "view_details": "",
-    "book_now": "",
-    "display": "",
-    "submit": "",
-    "sign_up_as_menber": "",
-    "or": ""
-  },
-  "t_and_c": {
-    "terms_and_conditions": "",
-    "privacy_policy": "",
-    "personal_infomation_collection_statement": ""
-  },
-  "status": {
-    "copy": {
-      "success": ""
+    "service_location": {
+        "title": "",
+        "more": ""
     },
-    "request": {
-      "empty_data": ""
+    "homepage": {
+        "sign_up": {
+            "title": "Register Now to Enjoy Exclusive Privileges!",
+            "detail": "Register now as a member to stay connected! You will also be able to receive exclusive promotions, the latest health tips, and gain access to the Take2 Health Platform for scheduling an appointment."
+        }
     },
-    "submit": {
-      "fail": "",
-      "success": ""
-    }
-  },
-  "form": {
-    "placeholder": {
-      "search": "",
-      "select": ""
+    "common": {
+        "sign_up": "",
+        "learn_more": "Learn More",
+        "view_more": "",
+        "view_details": "",
+        "book_now": "",
+        "display": "",
+        "submit": "",
+        "sign_up_as_menber": "",
+        "or": "",
+        "book_detection": "",
+        "service_location": "",
+        "notice": "",
+        "sign_in": "Sign In",
+        "faq": "",
+        "register": "Register",
+        "follow_us": "",
+        "take2_copy_right": "",
+        "online_promotion_code": ""
     },
-    "region": {
-      "label": "",
-      "options": {
-        "all": "",
-        "other": "",
-        "hongkong": ""
-      }
+    "t_and_c": {
+        "terms_and_conditions": "Terms and conditions",
+        "privacy_policy": "",
+        "personal_infomation_collection_statement": ""
     },
-    "gender": {
-      "label": ""
+    "status": {
+        "copy": {
+            "success": ""
+        },
+        "request": {
+            "empty_data": ""
+        },
+        "submit": {
+            "fail": "",
+            "success": ""
+        }
     },
-    "age": {
-      "label": ""
-    },
-    "email": {
-      "label": ""
-    },
-    "phone": {
-      "label": "",
-      "placeholder": ""
-    }
-  },
-  "quiz": {
-    "pre": "",
-    "next": "",
-    "start": {
-      "button": "",
-      "title": "",
-      "detail": "",
-      "reference": ""
-    },
-    "last": {
-      "title": "",
-      "detail": ""
-    },
-    "agreement": "",
-    "direct_sign_up": "",
-    "final": {
-      "title": "",
-      "subtitle": "",
-      "detail_1": "",
-      "detail_2": ""
-    }
-  },
-  "options": {
-    "gender": {
-      "male": "",
-      "female": ""
+    "form": {
+        "placeholder": {
+            "search": "",
+            "select": ""
+        },
+        "region": {
+            "label": "",
+            "options": {
+                "all": "",
+                "other": "",
+                "hongkong": ""
+            }
+        },
+        "gender": {
+            "label": ""
+        },
+        "age": {
+            "label": ""
+        },
+        "email": {
+            "label": ""
+        },
+        "phone": {
+            "label": "",
+            "placeholder": ""
+        },
+        "contact": {
+            "label": ""
+        },
+        "company": {
+            "label": "",
+            "placeholder": ""
+        },
+        "message": {
+            "label": "",
+            "placeholder": "",
+            "validation": {
+                "required": ""
+            }
+        }
     },
     "quiz": {
-      "no": "",
-      "unclear": "",
-      "yes": "",
-      "never": "",
-      "rarely": "",
-      "sometimes": "",
-      "often": ""
-    },
-    "age": {
-      "20_or_below": "",
-      "61_or_above": ""
-    }
-  },
-  "our_technologies": {
-    "clinical_papers": {
-      "title": "",
-      "detail": ""
-    },
-    "ngs": {
-      "title": "",
-      "what_is_ngs": "",
-      "intro": "",
-      "notes": {
-        "0": {
-          "title": "",
-          "content": ""
+        "pre": "",
+        "next": "",
+        "start": {
+            "button": "",
+            "title": "Get Started with Your Free NPC Risk Assessment!",
+            "detail": "Despite the symptoms of NPC are non-specific at early stage, the risk of developing NPC may be predicted through NPC risk factor assessment. \n\nTake the simple assessment now to understand the risk factors and symptoms of NPC. <1></1>The assessment is designed by healthcare professionals to deepen your understanding of the risk factors and related symptoms. \n\nStart taking charge of your health now as the survival rate for patients that diagnosed at late-stage will decrease to below 70% over the next five years.",
+            "reference": "The assessment result above serves as a reference only. There are many factors that cause NPC and the symptoms may vary from person to person. Please consult healthcare professionals for more information, or you may reach out to our professional healthcare team for further support."
         },
-        "1": {
-          "title": "",
-          "content": ""
+        "last": {
+            "title": "",
+            "detail": ""
         },
-        "2": {
-          "title": "",
-          "content": ""
+        "agreement": "",
+        "direct_sign_up": "",
+        "final": {
+            "title": "",
+            "subtitle": "Thank you for completing the risk assessment.",
+            "detail_1": "The risks and symptoms stated in the assessment are highly related to NPC. If you experience these symptoms continuously, it is advised to consult healthcare professionals as soon as possible.",
+            "detail_2": "Join us now to enjoy the exclusive privileges of “Take2 Extra Care” membership and schedule a doctor consultation through Take2 Health Platform."
+        },
+        "questions": {
+            "0": "Have your family members ever been diagnosed with NPC?",
+            "1": "Have you ever suffered from nosebleeds or bloody nasal discharge?",
+            "2": "Have you ever experienced swollen lymph nodes on your neck?",
+            "3": "How often do you suffer from headache or one-sided headache?",
+            "4": "Have you ever suffered from tinnitus (ringing sound in the ear)?",
+            "5": "How often do you smoke?"
         }
-      },
-      "read_full_article": ""
     },
-    "early_cancer_detection": {
-      "title": "",
-      "reasions": {
-        "0": {},
-        "1": {},
-        "2": {}
-      },
-      "center_data": {
-        "0": "",
-        "1": "",
-        "2": ""
-      },
-      "references": {
-        "0": "",
-        "1": "",
-        "2": ""
-      },
-      "do_you_know": "",
-      "do_you_know_content": "",
-      "center_data_title": "",
-      "content_data_detail": "",
-      "whats_is_early_cancer_detection": "",
-      "whats_is_early_cancer_detection_content": "",
-      "reasons": {
-        "0": {
-          "content": "",
-          "title": ""
+    "options": {
+        "gender": {
+            "male": "",
+            "female": ""
         },
-        "1": {
-          "content": "",
-          "title": ""
+        "quiz": {
+            "no": "",
+            "unclear": "",
+            "yes": "",
+            "never": "",
+            "rarely": "",
+            "sometimes": "",
+            "often": ""
         },
-        "2": {
-          "content": "",
-          "title": ""
+        "age": {
+            "20_or_below": "",
+            "61_or_above": ""
+        },
+        "career_regions": {
+            "all": "",
+            "business_strategic_cooperation": "",
+            "mainland_china": ""
+        },
+        "update_post_types": {
+            "all": "",
+            "company_trends": "",
+            "company_awards_and_achievements": "",
+            "industry_information": "",
+            "ceo_sharing": "",
+            "business_cooperation": ""
+        },
+        "hongkong_regions": {
+            "all": "",
+            "hongkong": "",
+            "kowloon": "",
+            "new_territories_east": "",
+            "new_territories_west": ""
+        },
+        "department": {
+            "all": "",
+            "business_strategic_cooperation": ""
+        },
+        "macao_regions": {
+            "macao": ""
         }
-      }
+    },
+    "our_technologies": {
+        "clinical_papers": {
+            "title": "",
+            "detail": ""
+        },
+        "ngs": {
+            "title": "",
+            "what_is_ngs": "",
+            "intro": "",
+            "notes": {
+                "0": {
+                    "title": "",
+                    "content": ""
+                },
+                "1": {
+                    "title": "",
+                    "content": ""
+                },
+                "2": {
+                    "title": "",
+                    "content": ""
+                }
+            },
+            "read_full_article": ""
+        },
+        "early_cancer_detection": {
+            "title": "",
+            "center_data": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "references": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "do_you_know": "",
+            "do_you_know_content": "",
+            "center_data_title": "",
+            "content_data_detail": "",
+            "whats_is_early_cancer_detection": "",
+            "whats_is_early_cancer_detection_content": "",
+            "reason_title": "",
+            "reasons": {
+                "0": {
+                    "content": "",
+                    "title": ""
+                },
+                "1": {
+                    "content": "",
+                    "title": ""
+                },
+                "2": {
+                    "content": "",
+                    "title": ""
+                }
+            },
+            "expect": ""
+        }
+    },
+    "products_and_services": {
+        "take2_extra_care": {
+            "title": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer",
+            "steps": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "what_is_extra_care": "",
+            "what_is_extra_care_content": "",
+            "how_to_join_extra_care": "",
+            "benefit_of_extra_care": "",
+            "benefit_of_extra_care_content": "",
+            "club_plans": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "faq": {
+                "welcome_contact": ""
+            },
+            "all_faq": ""
+        },
+        "take2_prophecy": {
+            "title": "",
+            "detail": "",
+            "detection_process": "",
+            "process": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": ""
+            },
+            "reports": {
+                "0": {
+                    "result": "",
+                    "suggestion": "",
+                    "mark": ""
+                },
+                "1": {
+                    "result": "",
+                    "suggestion": "",
+                    "mark": ""
+                }
+            },
+            "notice": "",
+            "do_you_have": "",
+            "action": ""
+        }
+    },
+    "about_us": {
+        "mission": {
+            "title": "",
+            "team_title": "",
+            "background_founder": "",
+            "team_founder_content": "",
+            "our_team": "",
+            "our_team_content": "",
+            "beliefs": {
+                "0": {
+                    "type": "",
+                    "slogan": "",
+                    "content": ""
+                },
+                "1": {
+                    "type": "",
+                    "slogan": "",
+                    "content": ""
+                }
+            }
+        },
+        "join_us": {
+            "title": "",
+            "detail": "",
+            "open_positions": "",
+            "form_detail": ""
+        }
+    },
+    "international": {
+        "title": "",
+        "detail": "",
+        "our_partners": "",
+        "become_a_partner": "",
+        "become_a_partner_content": ""
+    },
+    "contact_us": {
+        "title": "",
+        "form_title": "",
+        "types": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    "menu": {
+        "whats_new": "Whtas New",
+        "promotions": "Latest Promotions",
+        "health_tips": "",
+        "updates": "",
+        "our_technologies": "",
+        "early_cancer_detection": "",
+        "ngs": "",
+        "clinical_papers": "",
+        "products_and_services": "",
+        "take2_prophecy": "",
+        "take2_extra_care": "",
+        "service_location": "",
+        "international": "",
+        "about_us": "",
+        "mission": "",
+        "join_us": "",
+        "contact_us": "",
+        "faq": ""
     }
-  },
-  "products_and_services": {
-    "take2_extra_care": {
-      "title": ""
-    }
-  }
 }

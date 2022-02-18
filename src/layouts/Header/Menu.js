@@ -15,7 +15,6 @@ import Slide from '@material-ui/core/Slide'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import Typography from '@material-ui/core/Typography'
 import ImageList from '@material-ui/core/ImageList'
-import { Link as MuiLink } from '@material-ui/core'
 import classnames from 'classnames'
 import {
   EAccordion,
@@ -24,7 +23,7 @@ import {
 } from '@themes/components/EAccordion'
 import ArrowIcon from '@images/icons/arrow.svg'
 import SocialLinks from '@layouts/SocialLinks'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import TitleDot from '@themes/components/TitleDot'
 import Divider from '@material-ui/core/Divider'
 import Hidden from '@material-ui/core/Hidden'
@@ -36,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
   },
   btn: {
-    marginLeft: theme.spacing(8),
+    marginLeft: theme.spacing(2),
     marginRight: theme.spacing(-1.5),
     [theme.breakpoints.down('xs')]: {
-      marginLeft: theme.spacing(4.25),
+      // marginLeft: theme.spacing(2),
     },
   },
   icon: {
@@ -193,23 +192,23 @@ const Menu = (props) => {
         >
           {t(joinUsItem.title)}
         </Link>
-        <MuiLink
+        <Link
           className={classes.link}
-          href={`${process.env.GATSBY_SITE_URL}signin`}
+          to={`${process.env.GATSBY_SITE_URL}signin`}
           onClick={handleClose}
         >
           {t('common.sign_in')}
-        </MuiLink>
+        </Link>
         <Box component='span' mx={1} color='primary.contrastText'>
           /
         </Box>
-        <MuiLink
+        <Link
           className={classes.link}
-          href={`${process.env.GATSBY_SITE_URL}signup`}
+          to={`${process.env.GATSBY_SITE_URL}signup`}
           onClick={handleClose}
         >
           {t('common.register')}
-        </MuiLink>
+        </Link>
       </Box>
     )
   }

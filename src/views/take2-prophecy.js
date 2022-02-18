@@ -23,7 +23,7 @@ import Layout from '@layouts/Layout'
 
 const steps = [
   {
-    label: 'products-and-services.take2_prophecy.process.0',
+    label: 'products_and_services.take2_prophecy.process.0',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_01.svg'
@@ -33,7 +33,7 @@ const steps = [
     ),
   },
   {
-    label: 'products-and-services.take2_prophecy.process.1',
+    label: 'products_and_services.take2_prophecy.process.1',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_02.svg'
@@ -43,7 +43,7 @@ const steps = [
     ),
   },
   {
-    label: 'products-and-services.take2_prophecy.process.2',
+    label: 'products_and_services.take2_prophecy.process.2',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_03.svg'
@@ -53,7 +53,7 @@ const steps = [
     ),
   },
   {
-    label: 'products-and-services.take2_prophecy.process.3',
+    label: 'products_and_services.take2_prophecy.process.3',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_04.svg'
@@ -63,7 +63,7 @@ const steps = [
     ),
   },
   {
-    label: 'products-and-services.take2_prophecy.process.4',
+    label: 'products_and_services.take2_prophecy.process.4',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_05.svg'
@@ -76,13 +76,13 @@ const steps = [
 
 const reports = [
   {
-    result: 'products-and-services.take2_prophecy.reports.0.result',
-    suggestion: 'products-and-services.take2_prophecy.reports.0.suggestion',
-    mark: 'products-and-services.take2_prophecy.reports.0.mark',
+    result: 'products_and_services.take2_prophecy.reports.0.result',
+    suggestion: 'products_and_services.take2_prophecy.reports.0.suggestion',
+    mark: 'products_and_services.take2_prophecy.reports.0.mark',
     color: '#C8002E',
   },
   {
-    result: 'products-and-services.take2_prophecy.reports.1.result',
+    result: 'products_and_services.take2_prophecy.reports.1.result',
     suggestion: 'products_and_services.take2_prophecy.reports.1.suggestion',
     mark: 'products_and_services.take2_prophecy.reports.1.mark',
     color: '#00AA82',
@@ -344,14 +344,14 @@ const Take2Prophecy = () => {
           <Container className={classes.content} disableGutters maxWidth='md'>
             <Box className={classes.title}>
               <Typography variant='h4' color='primary'>
-                {t('products-and-services.take2_prophecy.title')}
+                {t('products_and_services.take2_prophecy.title')}
               </Typography>
               <Box mt={matches ? 2.5 : 3}>
                 <Typography
                   variant={matches ? 'body2' : 'body1'}
                   color='textPrimary'
                 >
-                  {t('products-and-services.take2_prophecy.detail')}
+                  {t('products_and_services.take2_prophecy.detail')}
                 </Typography>
               </Box>
             </Box>
@@ -363,7 +363,7 @@ const Take2Prophecy = () => {
                   alt='homepage banner mobile'
                 ></StaticImage>
                 <Box className={classes.sectionOneBanner}>
-                  {t('products-and-services.take2_prophecy.detection_process')}
+                  {t('products_and_services.take2_prophecy.detection_process')}
                 </Box>
               </Box>
               <Box className={classes.sectionOneContent}>

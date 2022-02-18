@@ -13,7 +13,6 @@ const Index = ({ data }) => {
         promotionNodes={promotionNodes?.nodes}
         healthTipsNodes={healthTipsNodes?.nodes}
       ></Homepage>
-      <Link to='/whats-new/promotions/'>test link</Link>
     </Layout>
   )
 }
@@ -38,8 +37,12 @@ export const query = graphql`
       nodes {
         id
         frontmatter {
-          title
-          detail
+          hk_title
+          en_title
+          cn_title
+          hk_detail
+          en_detail
+          cn_detail
           image {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)
