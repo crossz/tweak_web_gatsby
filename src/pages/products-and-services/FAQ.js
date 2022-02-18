@@ -24,6 +24,7 @@ import Loading from '@components/Loading'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -154,6 +155,7 @@ const useStyles = makeStyles((theme) => ({
 const FAQ = () => {
   const classes = useStyles()
   const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const { whatsapp, phone } = useSiteMetadata()
   const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
@@ -170,18 +172,7 @@ const FAQ = () => {
         if (res?.code !== 1000) {
           return console.log('fetch error')
         }
-        const list =
-          res?.data
-            ?.filter((item) => item.status)
-            ?.map((item) => {
-              return {
-                id: item.id,
-                question: item.questionHk,
-                content: item.contentHk,
-                status: item.status,
-                typeName: item.typeName,
-              }
-            }) || []
+        const list = res?.data?.filter((item) => item.status) || []
         setAllFaqList(list)
         setFaqList(list)
         const groupType = groupBy(
@@ -296,8 +287,8 @@ const FAQ = () => {
                     <FaqItem
                       key={faq.id}
                       id={faq.id}
-                      question={faq.question}
-                      content={faq.content}
+                      question={tB('question', faq)}
+                      content={tB('content', faq)}
                       onChange={handleChange}
                       activePanel={activePanel}
                     ></FaqItem>

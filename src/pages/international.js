@@ -37,6 +37,7 @@ import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useBusinessPartners from '@hooks/useBusinessPartners'
 import Layout from '@layouts/Layout'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -254,6 +255,7 @@ const schema = oriSchema().pick([
 const International = () => {
   const classes = useStyles()
   const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const businessPartners = useBusinessPartners()
@@ -319,45 +321,49 @@ const International = () => {
               cols={matches ? 1 : 3}
               gap={matches ? 16 : 24}
             >
-              {businessPartners?.map(
-                ({ country, name, intro, link }, index) => (
-                  <ImageListItem
-                    key={name + index}
-                    classes={{
-                      item: classes.imageListItemItem,
-                    }}
-                    className={classes.imageListItem}
+              {businessPartners?.map((partner, index) => (
+                <ImageListItem
+                  key={partner?.id}
+                  classes={{
+                    item: classes.imageListItemItem,
+                  }}
+                  className={classes.imageListItem}
+                >
+                  <Link
+                    href={partner?.link || null}
+                    target='_blank'
+                    underline='none'
                   >
-                    <Link href={link || null} target='_blank' underline='none'>
-                      <Box className={classes.partnerItem}>
-                        <Box className={classes.country}>{country}</Box>
-                        <Typography
-                          className={classes.name}
-                          variant='subtitle1'
-                          color='primary'
-                        >
-                          {name}
-                        </Typography>
-                        <Typography className={classes.partnerContent}>
-                          {intro}
-                        </Typography>
-                        <Box className={classes.partnerBtnWrapper}>
-                          {link && (
-                            <Button
-                              className={classes.viewBtn}
-                              variant='text'
-                              color='primary'
-                              endIcon={<RightIcon />}
-                            >
-                              {t('common.learn_more')}
-                            </Button>
-                          )}
-                        </Box>
+                    <Box className={classes.partnerItem}>
+                      <Box className={classes.country}>
+                        {tB('country', partner)}
                       </Box>
-                    </Link>
-                  </ImageListItem>
-                )
-              )}
+                      <Typography
+                        className={classes.name}
+                        variant='subtitle1'
+                        color='primary'
+                      >
+                        {partner?.name}
+                      </Typography>
+                      <Typography className={classes.partnerContent}>
+                        {tB('intro', partner)}
+                      </Typography>
+                      <Box className={classes.partnerBtnWrapper}>
+                        {partner?.link && (
+                          <Button
+                            className={classes.viewBtn}
+                            variant='text'
+                            color='primary'
+                            endIcon={<RightIcon />}
+                          >
+                            {t('common.learn_more')}
+                          </Button>
+                        )}
+                      </Box>
+                    </Box>
+                  </Link>
+                </ImageListItem>
+              ))}
             </ImageList>
           </Container>
         </Box>

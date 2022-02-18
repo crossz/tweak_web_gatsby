@@ -7,9 +7,9 @@ import classnames from 'classnames'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
 import { minBy, maxBy } from 'lodash-es'
-import { useMatch } from '@reach/router'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -154,11 +154,12 @@ const Marker = (props) => {
 const InfoWindow = (props) => {
   const classes = useStyles()
   const { t, originalPath } = useI18next()
+  const { tB } = useObjectTranslation()
   const isHomepage = originalPath === '/'
 
   if (!props?.info) return null
 
-  const { nameHk, phone, clinicType, id, addressHk } = props?.info
+  const { phone, clinicType, id } = props?.info
   return (
     <Box
       className={classnames(
@@ -167,13 +168,13 @@ const InfoWindow = (props) => {
       )}
     >
       <Typography className={classes.infoTitle} variant='h6' color='primary'>
-        {nameHk}
+        {tB('name', props?.info)}
       </Typography>
       <Box className={classes.infoItem}>
         <Box className={classes.infoIcon}>
           <LocationIcon></LocationIcon>
         </Box>
-        <Box>{addressHk}</Box>
+        <Box>{tB('address', props?.info)}</Box>
       </Box>
       <Box className={classes.infoItem} flexShrink={0}>
         <Box className={classes.infoIcon}>

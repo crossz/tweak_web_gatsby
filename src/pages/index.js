@@ -2,7 +2,6 @@ import * as React from 'react'
 import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
-import Link from '@components/Link'
 
 const Index = ({ data }) => {
   const { heroBannerNodes, promotionNodes, healthTipsNodes } = data

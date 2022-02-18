@@ -13,7 +13,7 @@ import {
 import Box from '@material-ui/core/Box'
 import { StaticImage } from 'gatsby-plugin-image'
 import RightIcon from '@images/icons/right.svg'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import ArrowIcon from '@images/icons/arrow.svg'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'

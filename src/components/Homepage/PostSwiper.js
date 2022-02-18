@@ -15,7 +15,7 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import Button from '@material-ui/core/Button'
 import RightIcon from '@images/icons/right.svg'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 SwiperCore.use([Pagination, Navigation])
 

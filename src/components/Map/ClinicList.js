@@ -18,6 +18,7 @@ import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
 import { orderBy } from 'lodash-es'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -144,6 +145,7 @@ const MapAccordionDetails = withStyles((theme) => ({
 const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
   const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -188,7 +190,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                             mt={matches ? 1.5 : 0}
                             mb={matches ? 1 : 1.5}
                           >
-                            {clinic.nameHk}
+                            {tB('name', clinic)}
                           </Box>
                           <Box
                             color='text.primary'
@@ -209,7 +211,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                               <Box className={classes.infoIcon}>
                                 <LocationIcon></LocationIcon>
                               </Box>
-                              <Box>{clinic.addressHk}</Box>
+                              <Box>{tB('address', clinic)}</Box>
                             </Box>
                           </Box>
                         </Box>

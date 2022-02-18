@@ -38,7 +38,7 @@ const LanguageButton = (props) => {
       >
         <LanguageIcon
           color={props.dark ? 'inherit' : 'primary'}
-          htmlColor={props.dark && 'white'}
+          htmlColor={props.dark ? 'white' : 'inherit'}
         />
       </IconButton>
       <Menu

@@ -144,15 +144,6 @@ export const QUIZ = [
   },
 ]
 
-export const AGES = [
-  'options.age.20_or_below',
-  '21-30',
-  '31-40',
-  '41-50',
-  '51-60',
-  'options.age.61_or_above',
-]
-
 export const CAREER_REGIONS = [
   {
     label: 'options.career_regions.all',

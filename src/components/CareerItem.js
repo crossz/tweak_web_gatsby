@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Box, alpha, Button, Hidden } from '@material-ui/core'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({

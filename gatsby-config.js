@@ -162,6 +162,7 @@ module.exports = {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages,
         defaultLanguage,
+        redirect: false,
         fallbackLanguage: defaultLanguage,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `https://take2health.net/`,

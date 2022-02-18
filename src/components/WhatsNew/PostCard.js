@@ -1,7 +1,7 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { makeStyles, alpha, Box, Link as MuiLink } from '@material-ui/core'
-import { Link } from 'gatsby'
+import { makeStyles, alpha, Box } from '@material-ui/core'
+import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,22 +86,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const LinkWrapper = ({ href, slug, children, ...rest }) =>
-  href ? (
-    <MuiLink href={href} target='_blank' {...rest}>
-      {children}
-    </MuiLink>
-  ) : (
-    <Link to={slug} {...rest}>
-      {children}
-    </Link>
-  )
-
 const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
   const classes = useStyles()
   const images = cover.map((item) => getImage(item))
   return (
-    <LinkWrapper className={classes.link} href={href} slug={slug}>
+    <Link className={classes.link} to={href || slug}>
       <Box className={classes.root}>
         <Box className={classes.imageWrapper}>
           {images[0] && (
@@ -125,7 +114,7 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
           )}
         </Box>
       </Box>
-    </LinkWrapper>
+    </Link>
   )
 }
 
