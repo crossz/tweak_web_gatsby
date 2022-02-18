@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/business-partners.json
   label: Business Partners
-  match: "**/*"
 - type: directory
   path: content/hero-banners
   label: Hero Banners
