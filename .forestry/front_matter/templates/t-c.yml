@@ -8,10 +8,10 @@ fields:
   config:
     required: true
     options:
-    - personal-infomation-collection-statement
     - terms-and-conditions
     - privacy-policy
     - website-terms-of-use
+    - personal-information-collection-statement
     source:
       type: simple
       section: 
