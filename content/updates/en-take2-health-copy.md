@@ -9,8 +9,6 @@ href: ''
 slug: ''
 languages:
 - en
-- zh-CN
-- zh-HK
 
 ---
 ![](../images/2.jpg)
