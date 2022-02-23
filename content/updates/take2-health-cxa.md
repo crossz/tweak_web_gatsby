@@ -9,6 +9,7 @@ slug: ''
 languages:
 - zh-CN
 - zh-HK
+- en
 
 ---
 Take2 Prophecy**™** 早期鼻咽癌篩查及相關套餐於2020年11月正式進駐CXA員工福利平台，為本港用戶提供全新的身體檢查服務。
