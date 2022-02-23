@@ -2,16 +2,18 @@
 type: industry_information
 cover: []
 date: 2021-12-02T00:00:00.000+08:00
-title: Joining Hands with PwC, Take2 Health is Ready to Provide Early Cancer Detection
-  Test via Employee Benefit Platform
-detail: Take2 Health 與羅兵咸永道會計師事務所 (PwC) 達成合作，自2021年12月2日起，PwC員工可於其公司福利應用程式PwC Wellness
-  Reimagined，以尊享價格到線下指定醫務中心進行Take2 Prophecy™ 早期鼻咽癌篩查。
+title: Joining Hands with PwC, to Provide Early Cancer Detection Test via Employee
+  Benefit Platform
+detail: Take2 Health has reached a collaboration with PwC that starting from 2 December
+  2021, PwC employees can enjoy the privileged price for taking the Take2 Prophecy™
+  Test for Nasopharyngeal Cancer in designated medical service providers through their
+  corporate welfare platform PwC Wellness Reimagined.
 href: ''
 slug: ''
 languages:
-- zh-HK
+- en
 
 ---
-Take2 Health（下稱：我司）與羅兵咸永道會計師事務所 (PwC) 達成合作，自2021年12月2日起，PwC員工可於其公司福利應用程式PwC Wellness Reimagined，以尊享價格到線下指定醫務中心進行Take2 Prophecy™ 早期鼻咽癌篩查。
+Take2 Health has reached a collaboration with PwC that starting from 2 December 2021, PwC employees can enjoy the privileged price for taking the Take2 Prophecy™ Test for Nasopharyngeal Cancer in designated medical service providers through their corporate welfare platform PwC Wellness Reimagined.
 
-PwC Wellness Reimagined是PwC獨家開發予香港、澳門及中國內地所有員工的福利平台，匯集了數碼產品、學習課程、休閒娛樂及健康醫療等多種福利選項。我司期望未來繼續與全球領先企業攜手並行，為更多行業專才提供早期癌症篩查服務，讓他們更全面地掌握自己的健康。
+PwC Wellness Reimagined is a corporate welfare platform exclusively designed for all PwC employees in Hong Kong, Macau and mainland China, which integrates diversified benefit items ranging from digital products, educational courses, entertainment to healthcare. Take2 Health will continue to join hands with the world’s leading companies and provide early cancer detection tests for industry professionals, enabling them to monitor their wellbeing more thoroughly.
