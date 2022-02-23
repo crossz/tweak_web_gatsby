@@ -3,18 +3,20 @@ type: industry_information
 cover:
 - "../images/untitled-design-30.png"
 date: 2021-12-07T00:00:00.000+08:00
-title: 'Take2 Health in Alliance with BOC Life to Become the First Brand Providing
-  Early Cancer Detection on “Live Young” '
-detail: Take2 Prophecy™ 早期鼻咽癌篩查於2021年12月正式進駐中銀人壽「大家減齡」會員福利平台，成為目前為中銀人壽「大家減齡」首家及當前唯一的早期癌症篩查合作品牌。
+title: 'Alliance with BOC Life to Become the First Brand Providing Early Cancer Detection
+  on “Live Young” '
+detail: The Take2 Prophecy™ Test for Nasopharyngeal Cancer is officially launched
+  on BOC Life membership platform“Live Young”. From December 2021 onwards, BOC Life
+  insurance clients can earn points through their health metrics for different rewards,
+  including the Take2 Prophecy™ Test for NPC.
 href: ''
 slug: ''
 languages:
-- zh-CN
-- zh-HK
+- en
 
 ---
 ![](../images/untitled-design-31.png)
 
-Take2 Prophecy™ 早期鼻咽癌篩查於2021年12月正式進駐中銀人壽「大家減齡」會員福利平台，其保險客戶能以「健康積分」換取不同獎賞，當中包括Take2 Health (下稱：我司) 提供的早期鼻咽癌篩查服務。
+The Take2 Prophecy™ Test for Nasopharyngeal Cancer is officially launched on BOC Life membership platform“Live Young”. From December 2021 onwards, BOC Life insurance clients can earn points through their health metrics for different rewards, including the Take2 Prophecy™ Test for NPC.
 
-「大家減齡」是中銀人壽於2021年推出的健康平台，透過與35個精選商戶協作，鼓勵用戶及他們的親友建立健康的生活習慣。我司目前為中銀人壽「大家減齡」首家及當前唯一的早期癌症篩查合作品牌，長遠有望共同打造全方位的健康生態圈。
+Live Young is a wellness platform APP launched by BOC Life in 2021. It engages users to embrace a healthy lifestyle alongside their families and friends and is supported by thirty-five selected merchants. This initiative matches seamlessly with Take2 Health’s belief to improve everyone’s health by harnessing the power of science and technology. Take2 Health is currently the first and sole provider for early cancer detection test on “Live Young”, with a long-term commitment to creating a comprehensive health ecosystem jointly.
