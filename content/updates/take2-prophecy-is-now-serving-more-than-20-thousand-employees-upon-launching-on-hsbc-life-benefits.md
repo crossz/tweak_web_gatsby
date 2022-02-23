@@ -4,14 +4,15 @@ cover: []
 date: 2021-03-15T05:00:00.000+08:00
 title: Take2 Prophecy™ is Now Serving More than 20-thousand Employees Upon Launching
   on HSBC Life Benefits+
-detail: Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2021年3月正式進駐滙豐保險「全方位僱員褔利」 (HSBC Life Benefits+)
-  平台，在服務上線的首階段，更成功獲得不少用戶的關注。
+detail: 'Since March 2021, the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“the
+  Test”) and related health assessment services are available on HSBC Life Benefits+
+  as one of the new employee benefits. '
 href: ''
 slug: ''
 languages:
-- zh-HK
+- en
 
 ---
-Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2021年3月正式進駐滙豐保險「全方位僱員褔利」 (HSBC Life Benefits+) 平台，提供全新的員工福利選項。現時，所有匯豐銀行、恆生銀行及匯豐集團旗下公司的員工，均可通過一站式網絡平台，以優惠價格選購Take2 Prophecy™ 早期鼻咽癌篩查服務。
+Since March 2021, the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“the Test”) and related health assessment services are available on HSBC Life Benefits+ as one of the new employee benefits. At present, all employees of HSBC, Hang Seng Bank and other subsidiaries of the HSBC Group can access the Test with a special offer on their one-stop group medical benefits platform.
 
-Take2 Health（下稱：我司） 期望與擁有龐大員工規模的企業合作，向社區傳遞早期癌症篩查的重要性。在服務上線的首階段，已成功獲得不少用戶的關注，反映市場對於篩查產品有一定需求，未來我司將持續專注於提供更多元化的的早期癌症篩查服務，讓更多人能受惠其中。
+Take2 Health is excited to team up with respectable corporations to raise the awareness of early cancer detection in the local communities. The Test has received noticeable attention from users during the initial phase of the launch, showing the public’s demand for early cancer detection services. Take2 Health will continue devoting its dedication to providing early cancer detection services with varieties, aiming to bring benefit to the public.
