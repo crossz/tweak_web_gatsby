@@ -1,157 +1,249 @@
 ---
-title: Privacy Policy Statement
+title: Privacy Policy
 date: 2022-01-02T00:00:00.000+08:00
 slug: privacy-policy
 languages:
 - en
-- zh-CN
-- zh-HK
 
 ---
-**《網站私隱政策》（「《私隱政策》」）**
+**《**Privacy Policy Statement (“Privacy Policy”)
 
-**1. 引言**
+1\.	Introduction
 
-Take2 Health Limited（「**我們**」或「**我們的**」）非常重視私隱。我們承諾採取適當的行政、技術及實質保障措施，以確保按照《個人資料（私隱）條例》（第 486 章）的規定合理處理和保護閣下的個人資料。
+Here at Take2 Health Limited ("we", "us" or "our"), privacy is a top priority. We are committed to ensure that your personal data is handled and protected in a reasonable manner and in compliance with the requirements of the Personal Data (Privacy) Ordinance (Cap.486) by having in place appropriate administrative, technical and physical safeguards.
 
-我們的《私隱政策》建基於以下關鍵原則：
+Our privacy policy is founded on the following key principles:
 
-1\. **透明度：**我們致力闡清收集所得的資訊類型。
+1\.	Transparency. We strive to be clear about the type of information we collect.
 
-2\. **簡單性：**我們將以簡單易明的語言撰寫政策，以助閣下作出明智決定。
+2\.	Simplicity. We will write in easy-to-understand language to help you make informed decisions.
 
-3\. **控制權：**閣下擁有閣下的個人資料，而我們讓閣下控制箇中使用方式。
+3\.	Control. You own your personal data and we let you control how it can be used.
 
-個人資料是指切實可行地存取或處理下可識別閣下身份的資訊。本《私隱政策》旨在說明我們如何處理在閣下存取或使用我們的網站（[https://take2health.net/](https://take2health.net/ "https://take2health.net/")（「**本網站**」））時從閣下收集所得的個人資料。
+If you are under the age of 18 or are mentally incapacitated, we shall seek consent to collect, use or process your personal data from your parents, lawful guardian, next-of-kin and/or carer before providing you with our services and/or products.
 
-本網站為 18 歲或以上人士而設。我們不會蓄意向未滿 18 歲的任何人士收集資訊。如果我們知道收到此類資訊，我們將會採取合理的措施從我們的記錄尋找和移除該等資訊。若閣下未滿 18 歲，請停止使用本網站；否則請向我們提供閣下父母及／或法定監護人的書面同意，才繼續使用本網站。
+Personal data refers to information that can identify you in a form which access to or processing of it is practicable. This Privacy Policy aims to address how we handle personal data collected in the course of providing our services and products to you.
 
-**2. 個人資料收集**
+2\.	Collection of personal data
 
-就以下第 3 節所列的目的而言，本網站可能向閣下收集以下類型的資訊：
+Generally, our first interaction is when you receive medical services from your healthcare professional (usually at a clinic, hospital or other medical institutions) (collectively as “Healthcare Provider(s)”), and as part of that service, the Healthcare Provider, on your behalf, request us to provide certain services to you.
 
-![](../images/untitled-design-25.png)
-| 資訊類型 | 說明 |
-| 1. 個人資訊 | § 英文及／或中文全名（如有） § 性別 § 年齡 § 地理位置 |
-| 2. 聯絡資訊 | § 電郵地址 § 電話號碼 |
-| 3. 支付資訊 | § 信用卡號碼及姓名 § 記帳及送貨地址 § 儲值支付帳戶詳情 |
-| 4. 其他用戶資訊 | § 閣下在本網站中填寫任何問卷、表格、調查回覆及／或回應或透過即時對話功能與我們的通訊時向我們提供的資訊。 |
-| 5. 有關閣下存取本網站的資料 | § 有關閣下連線狀況及存取本網站所用裝置的資料，例如 IP 地址、流動裝置識別符、作業系統及瀏覽器類型等 § 有關閣下到訪網站的資料，例如閣下的瀏覽時間、點擊活動、轉薦網站、閣下的到訪時間等 |
+Your Healthcare Provider would have provided you with a Take2 Welcome Pack which, among other things, includes forms which we require you and the Health Care Provider to complete in order for us to provide our services and/or products as recommended or ordered by your Healthcare Provider. The table below depicts the type of information that we collect from you and/or from your Healthcare Provider.
 
-**3. 收集目的**
+Whilst your Healthcare Providers would have a separate agreement with you concerning their collection, use and processing of your personal data, you hereby represent to us that all such information provided to us on your behalf (including but not limited to your Healthcare Providers) are true and accurate, and that such third-parties are authorised to provide such information to us.
 
-收集資訊的目的如下：
+Use Descriptions
 
-![](../images/untitled-design-24.png)
+	Type of information
 
-| --- | --- |
-| 資訊類型 | 用途說明 |
-| 1. 個人資訊 | § 處理閣下對我們的產品及／或服務的查詢 § 處理和安排與我們合作的醫務從業員、專業醫護人員、醫院、實驗室、健康檢查中心及／或診所的預約 § 偵測和／或防止錯誤、欺詐、侵權及／或其他罪犯惡意活動 § 提供更新資訊、最新消息、發展動向及推廣活動（得到閣下同意下） § 通知閣下有關產品及／或服務的改動（得到閣下同意下） |
-| 2. 聯絡資訊 |
-| 3. 支付資訊 | § 閣下在我們網站直接購物時，就任何我們的產品及／或服務及／或當中任何退款而產生的款項處理事宜 |
-| 4. 其他用戶資訊 | § 評估我們的推廣活動 § 改善我們的產品及／或服務的功能、特點及／或質素 § 改善閣下使用我們的服務及／或產品的體驗 |
-| 5. 有關閣下對本網站訪問的資料 |
+1\.	Personal Information 
 
-**4. 數碼存根 (Cookies) 政策**
+		full name in English and Chinese (if any)
 
-當閣下正式使用本網站時，這代表閣下同意根據我們的數碼存根 (Cookies) 政策（“Cookies政策”）使用 Cookies。
+	email address
 
-(A) 甚麽是Cookies?
+	contact number 
 
-a. Cookies 是一種小型文字檔案，能透過瀏覽器被儲存於閣下的電腦或流動電子裝置中。Cookies 會就閣下的瀏覽器種類以不同方式呈現，並會包含一些匿名信息，例如唯一識別碼網站域名以及一些數位及數字。
+	contact address
 
-b. Cookies 能協助網站分辨不同用戶的裝置，也能透過協助閣下記錄喜好而令閣下有更佳的綫上體驗。同時，Cookies 更能幫助我們了解在本網站內的瀏覽行為，從而協助我們度身訂製更適合閣下的內容。
+	gender
 
-(B) 我們正在使用哪種Cookies？
+	date of birth
 
-a. 必要性 (Necessary) Cookies
+2\.	Contact Information		full name in English and Chinese (if any)
 
-i. 必要性Cookies使我們能夠在閣下訪問和瀏覽本網站並使用其功能時，為閣下提供最佳體驗。 例如，這些 Cookies可讓我們識別閣下已經創建並登錄該帳戶。
+	email address
 
-b. 功能性 (Functionality) Cookies
+	contact number
 
-i. 功能性 Cookies使我們能夠根據閣下所做的選擇來運營網站。 例如，我們將識別閣下的用戶名稱，並記住閣下日後使用本網站期間的個人設定。
+	WhatsApp number
 
-c. 分析／效能性 (Analytical) Cookies
+	WeChat ID
 
-i. 分析/功能性Cookies使我們和第三方供應商能夠收集總匯數據，用於統計和分析各用戶如何使用本網站。 這些 Cookies旨在幫助我們改善閣下的用戶體驗，並不包含姓名和電子郵件地址等個人信息。此等第三方供應商可能將從本網站收集所得的資訊，及其在其他服務獨立收集所得的個人資訊互相關聯，此將受其各自的私隱政策管限，並將超出我們的控制範圍。
+3\.	Payment Information
 
-(C) 如何移除Cookies？
+(Only applicable to certain individuals)
 
-a. 倘若閣下需要限制或阻截本網站設置的 Cookies，閣下可以透過網頁瀏覽器設置相關設定。閣下亦可以瀏覽 [www.internetcookies.org](http://www.internetcookies.org/)，當中包含有關如何在各種網頁瀏覽器和各種裝置上執行Cookies設定的全面信息。閣下將找到有關 Cookies的一般信息以及如何從閣下的裝置中刪除 Cookies的詳細信息。
+		credit card numbers and name
 
-如閣下對於我們的Cookies政策或對於我們的Cookies 使用有任何問題，歡迎電郵至[info@take2.health](mailto:info@take2.health) 與我們聯絡。
+	billing and shipping address
 
-**5. 第三方連結**
+	stored-value payment account details
 
-本網站載有第三方網站及／或社交媒體平台（包括但不限於 Facebook 及 YouTube 等）的連結。本網站列載此等連結，不構成我們認同、授權或聯繫該等網站。如閣下點擊此等連結或使用該等第三方的服務，將會離開本網站。建議閣下先查閱相關網站的私隱政策，方才與之分享閣下的個人資訊。
+4\.	Additional User Information
 
-本網站亦結合即時對話應用程式，當中的軟件功能讓閣下以第三方軟件應用程式與我們聯絡和對話。該等第三方軟件應用程式可能識別閣下的存取資訊（例如 IP 地址），並可能擷取閣下的資訊（例如電郵地址、用戶 ID、姓名及／或連接所用的電話號碼）。另外請注意，閣下可能在與我們的對話期間自願向對話應用程式提供個人資訊。
+Information that are provided to us:
 
-我們不就該等第三方對閣下個人資訊的使用負上責任，且不保證其設有與我們的相同水平的資料保護政策。
+(i)	by your Healthcare Providers for us to provide our services and/or products; or
 
-**6. 披露與轉移**
+(ii)	by you in your answers and/or response to any questionnaires, forms, surveys offered through our service, Take2 Extra Care or when you make enquires to or contact our customer service team.		personal health information 
 
-我們會將閣下的個人資料保密，惟閣下確認和同意就以上第 3 節所列的目的而言，我們可能按「需知」基礎向以下各方提供資訊，其受與本《私隱政策》及適用法律相若的資料安全性及保密性合約義務規限：
+	disease conditions 
 
-(A) 我們在香港境內及／或境外的控股公司、附屬公司或聯屬公司；
+	medical and clinical history
 
-(B) 閣下透過本網站與預約的相關醫務從業員、專業醫護人員、醫院、實驗室、健康檢查中心及／或診所；
+	physiological data 
 
-(C) 獨立承辦商及／或助其向我們提供服務的其他服務供應商，包括：
+	medication history
 
-– 支付網或其他支付處理服務供應商
+	family medical history
 
-– 醫療服務及／或檢測服務供應商
+	or all other relevant information related or not related to health
 
-– 速遞服務供應商
+5\.	Genetic Information
 
-– 支援我們的資料庫的雲端服務供應商
+As part of our services, we extract your DNA from your biological samples provided to us by your Healthcare Providers and generate reports based on the findings.
 
-– 資料儲存及管理服務供應商
+Both your genotype and DNA Sample (collectively as “Genetic Information”) shall be stored at our facility for future testing and/or medical research purpose. 
 
-– 網站開發商
+		biological samples stored in the form of blood
 
-– 市場研究服務供應商
+	information concerning your genotype, and other genetic and genomic information
 
-(D) 執法機關，以使我們得以遵守法律及／或規例，或任何管轄法院的任何有效命令。
+6\.	Test Results
 
-為了優化閣下的網站體驗，並改善我們的產品及／或服務，閣下的個人資料可能披露和轉移至第三方資訊科技、營銷資料分析及管理服務供應商及相關實體，當中某些可能位於海外。
+		Data and test results generated from your biological samples
 
-**7. 安全性及保留**
+	Test reports
 
-閣下的個人資料只會在所需的時期內予以保留。
+3\.	Purpose of collection
 
-我們將採取商業上爲之合理的措施，以保障閣下的個人資料免遭未經授權和／或意外存取、處理、刪除和／或使用。我們設有全面的安全計劃，以適當的行政、實質及技術保障措施保護閣下的個人資料，而措施水平將因應收集所得資料的敏感程度而定。
+Type of information 
 
-我們亦定期審視安全及私隱措施，並採取所有必需行動以改善我們的做法，從而確保閣下的個人資料免遭濫用、意外遺失或未經授權存取。縱然我們無法保證不會出現此等不利事件，我們承諾採取合理的措施以避免事件發生。
+	Use Description
 
-除非閣下的個人資料如第 6 節所述轉移至第三方，否則只有我們的員工方可存取閣下的個人資料，其獲授權並經培訓處理該等資料，同時負有嚴格保密義務。
+1\.	Personal Information 
 
-**8. 資料存取及更正**
+		creating a unique identifying marker (e.g. a set of unique number / barcode) for each biological sample, such that a person’s identity cannot be readily ascertained by just looking at the label)
 
-閣下有權要求存取和更正我們的所持與閣下相關的個人資料。為了處理該等要求，閣下可能需要支付合理的行政費以作處理個人資料存取之用。
+	storage of Test Results and/or any Additional User Information 
 
-閣下明白自我們收到閣下的要求起，我們可能需時處理修訂、更正和／或刪除閣下的個人資訊。我們致力在切實可行的時段以內儘快處理閣下的要求。
+	providing you with our test services and products
 
-在某些情況下，我們可能以「去識別形式」彙整個人資料。一經彙整，該等資訊就不再被視爲個人資料，而不會受限於刪除要求。
+	in relation to our Take2 Extra Care (if applicable), 
 
-如欲行使第 8 節所列的權利或撤回閣下先前向我們給予的任何同意，請透過郵寄或電郵發送閣下的要求：
+(i)	creating a member account (i.e. Participant Profile) for subscribing you to our Take2 Extra Care
 
-地址：香港九龍九龍灣常悅道 1 號恩浩國際中心 25 樓D室
+(ii)	authenticating access to your Participant Profile
 
-電郵：info@take2.health
+(iii)	following up on the Test Results
 
-**9. 語言**
+(iv)	sending reminders to you in relation to any follow-up tests 
 
-本《私隱政策》的原始英文版本可能翻譯至其他語言版本。一旦對於本《私隱政策》的內容或詮釋有所爭議，或本《私隱政策》英文版本與其他語言版本之間有所抵觸或差異，一概以英文版本為準。
+(v)	providing you with information of our products and services (if applicable)
 
-**10. 管限法律及爭議解決**
+(vi)	issuing surveys and/or questionnaires to collect Additional User Information
 
-本《私隱政策》須受中華人民共和國香港特別行政區（「**香港**」）的法律管限，並據之詮譯。閣下同意受香港法庭的獨有司法管轄權管限。
+(vii)	offering our aftersales services (if applicable)
 
-**11. 修訂**
+	handling your enquiries and/or complaints on our products and/or services
 
-本《私隱政策》可能不時修訂，經更新的政策將在我們的網站發佈。一經到訪或瀏覽本網站，或透過我們的網站提交閣下的個人資訊，即代表閣下確認、接受和同意本《私隱政策》所列的條款。
+	issuing surveys and/or questionnaires to collect Additional User Information for providing test services to you
 
-\[生效日期：2022年1月1日\]
+	delivering to you directly any Test Results and/or reports
+
+	detecting and/or protecting against error, fraud, infringement and/or other criminal malicious activity
+
+	providing updates, news, developments and promotional campaigns (if applicable)
+
+	informing you of products and/or service changes (if applicable)
+
+2\.	Contact Information
+
+	
+
+3\.	Payment Information 
+
+		processing payments for any Take2 products and/or services and/or any refund thereof when you make a purchase directly from us online or offline
+
+4\.	Additional User Information		analysing samples (blood, saliva, urine) or a biopsy; generating a report with or without discussions on the results and delivery of the same
+
+	providing you with insights of what your Genetic Information has revealed about you
+
+	using and sharing de-identified Genetic Information and Test Results with other research collaborators, universities for the purpose of conducting medical research for future discoveries
+
+	improving and developing new reports, tools, technologies, products, services and/or for internal analysis to enhance our user experience, technologies, products, and/or to evaluate our promotional campaigns
+
+	aggregating and collating Genetic Information on an anonymous basis to better understand the population and certain conditions and conducting medical, scientific, technological and statistical research
+
+	improving the functionalities, features and/or quality of our products and/or services
+
+	improving your user experience of our services and/or products
+
+5\.	Genetic Information
+
+	
+
+6\.	Test Results	
+
+If you sign up for Take2 Extra Care, we may use all such information that we received or obtained from the provision of test services for membership account opening and delivery of our health management services under Take2 Extra Care.
+
+ 
+
+4\.	Disclosure and transfer
+
+If the products and/or services are provided to you as part of the Healthcare Providers’ services, we shall provide such Healthcare Providers with your tests results and/or information so that they can use such information in their provision of services to you, which may include health consultations, treatment, diagnosis, follow-up checks, testing and/or such other services as agreed between you and your Healthcare Providers. 
+
+We will keep your personal data confidential, however, you acknowledge and agree that for the purposes set forth in Section 3 above, we may provide information on a need-to-know basis to the following parties who are subject to contractual obligations governing data security and confidentiality comparable to this Privacy Policy and applicable laws:
+
+(A)	  our holding companies, subsidiaries or affiliated companies in and/or outside of Hong Kong;
+
+(B)	independent contractors and/or other service providers for them to provide their services to us, including:
+
+–	third-party laboratory testing services providers
+
+–	courier services providers
+
+–	payment gateways or other payment processors
+
+–	cloud services providers which supports our database
+
+–	data storage and management services providers
+
+–	market research and profiling services providers
+
+(C)	research collaborators, universities, non-profit organisations that conduct and/or support scientific research, and/or research institutions that conduct scientific research with us;
+
+(D)	law enforcement authorities in order for us to comply with laws and/or regulations, or any valid orders of any competent courts. 
+
+For the purposes of optimising your experience and improving our products and/or services, we may also use your personal data for analysing spending patterns and choices and for conducting market surveys, and your personal data may be disclosed, transferred to third-party information technology, marketing data analysis and management services providers and related entities, some of which may be located abroad.
+
+5\.	Security and retention
+
+We will take commercially reasonable steps to ensure that your personal data is protected against unauthorized and/or accidental access, processing, erasure and/or use. In particular, we maintain a comprehensive security program designed to protect your personal data using appropriate administrative, physical and technical safeguards. The level of measures would be proportional to the sensitivity of the personal data collected. 
+
+We shall also review our security and privacy practice regularly and carry out all necessary actions to improve our practice in order to ensure that your personal data will not be subject to misuse, accidental loss or unauthorised access. While it is not possible for us to guarantee that such adverse events will not occur, we pledge to use reasonable efforts to prevent them from happening. 
+
+If you are given a sets of login credentials to access our services, we recommend that you maintain a strong password and do not share such information with anyone. 
+
+Unless your personal data is transferred to other third parties as described in Section 4, access to your personal data will be restricted to our employees, who are authorized and trained to handle such data, and are under strict confidentiality obligations.
+
+Encryption technology will be employed for the transmission of your personal data collected.
+
+Personal data will only be retained for as long as is necessary to fulfil the purpose(s) of collection. 
+
+6\.	Data access and correction
+
+You have the right to request access to and correction of your personal data held by us. A reasonable administration fee for processing your personal data access may be payable by you in order to process such request.
+
+You understand that there may be a slight delay for us to amend, correct, and/or delete your personal information or Genetic Information from the time we receive your request to its completion. We endeavour to process your request as soon as practicable. 
+
+In some cases, we may aggregate personal data in a de-identified form. Once aggregated, this information ceases to be personal and will not be subject to deletion requests.
+
+You have the full rights to ask us to delete or destroy any biological samples provided to us or to be excluded from medical research by sending us an email at: customer.support@take2.health. Please note that it would not be possible for us to delete your Genetic Information in any on-going or completed research projects, but we will not include such information in any new research project upon receipt of your request. 
+
+To exercise the rights set forth in this Section 6 or to withdraw any consent you have previously given to us, please send your request by post or by email:
+
+Mailing address: Unit D, 25/F, YHC Tower, 1 Sheung Yuet Road, Kowloon Bay, Kowloon, Hong Kong 
+
+Email address: customer.support@take2.health
+
+7\.	Language
+
+The original English version of this Privacy Policy Statement has been translated into Chinese. In the event of a dispute about the contents or interpretation of this Privacy Policy Statement or inconsistency or discrepancy between the English version and the Chinese version of this Privacy Policy Statement, the English version shall prevail.
+
+8\.	Amendments
+
+This Privacy Policy may be amended from time to time and the updated policy will be published on our website and hard copies will be available for collection at our office. You are recommended to check for any update by assessing our website at www.take2.health or by writing to us. 
+
+If you object to any changes, please inform our customer services to remove your account with us.
