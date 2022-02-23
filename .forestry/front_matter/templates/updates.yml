@@ -27,7 +27,7 @@ fields:
     required: true
     max: 100
   description: 'This will be used as slug for url when slug and href is empty;<br><em>Forbidden
-    characters: "$","%",":","/",Tab<br></em>'
+    characters: "$","%",":","/",Tab<br>Max length: 100<br></em>'
 - type: textarea
   name: detail
   label: Detail
