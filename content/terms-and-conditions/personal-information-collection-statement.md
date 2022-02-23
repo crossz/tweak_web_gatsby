@@ -3,25 +3,21 @@ title: Personal Information Collection Statement
 date: 2021-12-13T00:00:00.000+08:00
 languages:
 - en
-- zh-CN
-- zh-HK
 slug: personal-information-collection-statement
 
 ---
 ![](../images/picture1.png)
 
-得易健康有限公司
+Take2 Health Limited
 
-#### **個人資料收集聲明**
+#### Personal Information Collection Statement
 
-當閣下（a）決定申請訂閲我們的出版刊物，（b）透過綫上表格或在綫聊天室向我們進行查詢，或（c）透過我們的網站預約醫療服務，得易健康有限公司(「**我們**」或「**我們的**」)或會收集閣下的個人資料以（i）發送推廣刊物，（ii）回復閣下查詢，（iii）處理閣下的醫療服務預約，（iv）優化閣下瀏覽我們網站的體驗並改善我們的服務和產品和（v）其他任何合理的目的（統稱「**有關目的**」）。
+When you (a.) submit your application for subscribing to our newsletter or promotional materials, (b.) fill in our enquiry form or talk to us via the live chat function to send your enquiry to us, or (c.) making medical appointments through our website, Take2 Health Limited (“we”, “us”, “our”) may collect personal data from you for the purposes of (i) sending you our newsletter or promotional materials, (ii) responding to your enquiries, (iii) handling and arranging for the medical appointments, (iv) optimising your experience with us and improving our website, products and/or services and (v) any other specific purposes for which your personal data is collected by us (collectively from (i) to (v), the “Purposes”.)
 
-閣下必須根據個別要求提供閣下的個人資料。 假若閣下未能提供此等個人資料，我們可能無法就有關目的提供服務。
+Please note that it is mandatory for you to provide your personal data as requested. In the event that you do not provide such personal data, we may not be able to fulfill the Purposes. 
 
-就上述有關目的，閣下的個人資料可能會被披露、轉移至及/或儲存於我們的關聯企業、第三方資訊科技、市場推廣及數據管理服務供應商及其有關機構，而該等機構可能包括海外機構。
+For these Purposes, your personal data may be disclosed, transferred to and/or stored by our affiliated companies, third-party information technology, marketing and data management service providers and other related entities, some of which may be located abroad. 
 
-閣下有權（i）查閱、更正及/或刪除閣下向我們及/或上述機構提供的個人資料以及（ii）撤回閣下曾經作出的任何同意。如果閣下希望行使這些權利，閣下可以發送電郵至[info@take2.health](mailto:info@take2.health)。
+You have the rights to make requests to us (i) to access, correct and/or delete your personal data held by us, and (ii) to withdraw any consent which you have provided in respect of your personal data. If you wish to exercise such rights, you may make a request by sending an email to us at info@take2.health.
 
-有關我們的私隱政策聲明，歡迎閣下到[https://take2health.net/](https://take2health.net/ "https://take2health.net/")瀏覽或向我們查詢。
-
-\[生效日期：2022年1月1日\]
+Details of our privacy policy are set out in our website. You are welcome to visit [https://take2health.net/](https://take2health.net/ "https://take2health.net/") and to make enquiries with us for more details.
