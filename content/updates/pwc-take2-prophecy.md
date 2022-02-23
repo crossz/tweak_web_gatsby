@@ -8,8 +8,6 @@ detail: Take2 Health 與羅兵咸永道會計師事務所 (PwC) 達成合作，�
 href: ''
 slug: ''
 languages:
-- en
-- zh-CN
 - zh-HK
 
 ---
