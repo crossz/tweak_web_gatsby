@@ -3,127 +3,121 @@ title: Terms of use
 date: 2022-01-02T00:00:00.000+08:00
 languages:
 - en
-- zh-CN
-- zh-HK
 slug: website-terms-of-use
 
 ---
 ![](../images/picture1.png)
 
-得易健康有限公司
+**Terms of Use (“Terms”)**
 
-#### **《使用條款》（「《條款》」）**
+Thank you for accessing [https://take2health.net/](https://take2health.net/ "https://take2health.net/") (the “**Website**”). Please read these Terms of Use carefully before using the Website, which is managed and operated by Take2 Health Limited (“**we**”, “**us**”, “**ours**”), whose registered office is located at 21/F, Edinburgh Tower, The Landmark, 15 Queen’s Road Central, Hong Kong.
 
-感謝存取[https://take2health.net/](https://take2health.net/ "https://take2health.net/")（「**本網站**）。請先細閱本《使用條款》，方才使用本網站；本網站由 Take2 Health Limited（「**我們**」、「**我們的**」）管理和操作，其註冊辦事處位於香港中環皇后大道中 15 號置地廣塲公爵大廈 21 樓。
+YOU ACKNOWLEDGE AND AGREE THAT BY ACCESSING, BROWSING AND/OR USING OUR WEBSITE, YOU HAVE AGREED TO BE BOUND BY THESE TERMS OF USE.
 
-閣下確認和同意一經存取、瀏覽和／或使用本網站，即同意受此等《條款》約束。
+These Terms may be modified by us at any time with or without notice or liability to you. Modifications are effective when posted on this Website and your continued use of the Website constitutes acceptance to those modifications. Please review the Terms each time when you access or use the Website.
 
-此等《條款》可能由我們隨時修改，而不一定向閣下發出通知或負有法律責任。修改一經發佈至本網站便立即生效，而閣下繼續使用本網站即代表接受該等修訂。每當存取或使用本網站時，請查閱此等《條款》。
+If you do not accept these Terms, including any modifications made to them, please refrain from using the Website immediately.
 
-如閣下不接受此等《條款》，包括當中的任何修改，請立即停止使用本網站。
+We may run promotional campaigns via the Website and separate sets of terms and conditions may also be applicable with respect to such campaigns.
 
-我們可能透過本網站舉辦推廣活動，而我們亦可能就該等活動發佈單獨的條款及細則。
+**1. Access to the Website and Website Content**
 
-**1. 存取本網站及本網站內容**
+We reserve the right to change the content or technical specifications of any aspect of the Website or otherwise terminate the Website at any time at our own discretion. You acknowledge that any such change may result in the unavailability or malfunction of the Website. We may also terminate these Terms with or without cause at any time.
 
-我們保留更改本網站任何內容或技術規格的權利，或酌情決定隨時終止本網站。閣下確認任何該等變動可能導致本網站無法使用或出現故障。我們亦可能在不提供原因下隨時終止此等《條款》。
+While we endeavour to ensure the accuracy of the information or materials including images, data, reports, videos and audios or other materials and services including subscription services, communications, transmission and other tangible or intangible items, provided on the Website (“**Information**”), we do not guarantee or give any warranty as to the accuracy, currency or completeness of any such Information.
 
-縱然我們致力確保本網站提供的資料或材料準確，包括圖片、資料、報告、影片及音訊或其他材料及服務（包括訂閱服務、通訊、傳輸及其他有形或無形項目）（「**資訊**」），惟對於有關資訊的準確性、及時性或完整性不作任何擔保或保證。
+The Information is prepared for general use only and does not in any way constitute or replace medical advice or other professional advice and shall not be relied upon as such. The Website is not intended to create any fiduciary duty between you and us. You are advised to seek formal professional advice on any matters that such Information may be related to. In all events, you will exercise and rely solely on your own skill and judgment in your use and interpretation of the Information.
 
-上述資訊僅作一般用途，概不以任何方式構成或取代醫療意見或其他專業建議，因此不應被視為依賴根據。本網站並不旨在與閣下建立任何受信責任。對於該等資訊相關的任何事宜，我們建議閣下尋求正式的專業意見。在任何情況下，閣下將行使且僅依賴個人技能及判斷以使用和詮譯資訊。
+The Information contained in this Website is catered specifically to the Hong Kong market.
 
-本網站載有的是專門針對香港市場的資訊。
+**2. Live Chat**
 
-**2. 即時對話**
+The live chat function available on the Website are software integrated into the Website. It is designed to allow you to contact and speak with us directly via third-party software applications so that we could address enquiries relating to our products and/or services. We endeavour to answer any questions as soon as practicable usually during normal business hours, but no assurance or warranty, express or implied, can be given on the availability and reliability of the live chat function.
 
-本網站融入應用程式軟件以提供即時對話功能，旨在讓閣下透過第三方軟件應用程式與我們聯絡和對話，以便我們回應有關我們的產品及／或服務的查詢。在正常辦公時段内，我們將致力於實際可行範圍內儘快回答任何疑問，但對於該即時對話功能是否正常運作或其可靠性，我們不會給予任何擔保或保證。
+You shall solely be responsible for any questions and/or content posted via the live chat function and shall use the live chat function at your own risk. When we refer to the Website in these Terms, it also includes the live chat function.
 
-閣下須對於透過即時對話功能發佈的任何問題及／或內容全權負責，使用即時對話功能時亦須自行承擔風險。當在此等《條款》提述本網站時，亦涵蓋其即時對話功能。
+**3. Medical Appointments**
 
-**3. 醫療預約**
+We do not provide any medical services but you may make appointments with our partnering healthcare professionals or medical service providers via our Website (“**Appointment Service**”). All such information relating to the identity, location, expertise and appointment availability of the healthcare professionals or medical service providers are provided to us by the relevant practitioners or administrators and we give no warranty as to the accuracy, currency and reliability of such information.
 
-我們並不提供任何醫療服務，但閣下可透過本網站與我們的合作的專業醫護人員或醫療服務供應商預約有關服務（「**預約服務**」）。關於專業醫護人員或醫療服務供應商的身份、地點、專業知識及預約服務的可得性等所有資訊均由相關從業員或行政人員向我們提供，而我們對於有關資料的準確性、及時性和可靠性不作任何保證。
+You will be asked for your personal information, including but not limited to your medical history for us to arrange for the appointment. When providing us your information, you undertake to provide true, accurate, current and complete information about yourself as required for us to provide our Appointment Service.
 
-閣下將要提供個人資料，包括但不限於病歷，以便我們作出預約安排。當閣下向我們提供閣下資料時，閣下承諾給予真實、準確、實時及完整的個人資料，使我們可為閣下提供預約服務。
+We shall determine the method by which we confirm the appointment with you and thereafter, all dealings and communications regarding the appointment, prescriptions, procedures or any treatment arising from the appointment (“**Dealings**”) will be between you and the relevant medical practitioners and/or clinics. We shall not be responsible for any communications and Dealings between you and the relevant medical practitioners and/or clinics. In particular, we are not an agent of any of the medical practitioners and/or clinics and have no responsibility for and no liability whatsoever in respect of the legality, quality and suitability of the conduct or services of such parties.
 
-我們將釐定我們與閣下確認預約的方式，在此之後，所有有關預約、處方、程序或該預約所衍生的任何治療（「**往來**」）都將是閣下與相關專業醫護人員及／或診所去釐定及確立。對於閣下與相關專業醫護人員及／或診所之間的任何通訊和往來，我們概不負責。尤其是，我們並非任何專業醫護人員及／或診所的代理，對於該等各方行為或服務的合法性、質素及適用性概不承擔任何責任及法律責任。
+IF YOU REQUIRE URGENT MEDICAL ATTENTION, PLEASE VISIT A NEARBY HOSPITAL OR ASK FOR THE AMBULANCE SERVICE AND DO NOT USE OUR APPOINTMENT SERVICE FOR ANY EMERGENCY SITUATION.
 
-如果閣下需要緊急診治，請前往附近醫院或尋求救護車服務，而不應在任何緊急情況下使用我們的預約服務。
+**4. External Links**
 
-**4. 外部連結**
+There may be external links that will cause you to leave this Website and access websites of other third-parties. Unless otherwise indicated in writing, all external websites are not under our control and we are not responsible for the content of such external websites or any link contained therein. The existence of links to external websites is not an endorsement by us in favour of such websites or the products or services contained in such websites and we do not provide any warranty or responsibility whosoever for any aspect of them. You are recommended to consult the terms of use and privacy policy of the external website in question to understand your rights and obligations in accessing and using those external websites.
 
-本網站可能載有外部連結，導致閣下離開本網站和存取第三方的網站。除非另有書面指明，否則所有外部網站均不受我們控制，且我們概不對該等外部網站或當中的任何連結負上責任。列載外部網站連結不代表我們認可該等網站，或該等網站載有的產品或服務，而我們亦不對當中任何範疇作出保證或負上責任。爲了更清楚了解閣下在存取和使用該等外部網站時的權利及義務，我們建議閣下查閱該等外部網站的使用條款及私隱政策。
+**5. Intellectual Property**
 
-**5. 知識產權**
+The Website, including (but not limited to) text, content, software, video, music, sound, graphics, photographs, illustrations, artwork, photographs, names, logos, trademarks, service marks and other materials ("**Content**") are protected by copyrights, trademarks and/or other proprietary rights and applicable laws. The Content includes both contents owned or controlled by us and those owned or controlled by third parties and licensed to us. All individual articles, reports, videos, and other elements making up the Website may be copyrighted works. You agree to abide by all copyright notices or restrictions contained in the Website. You agree not to and not to permit anyone else to use any of the Content without our prior express written consent and you acknowledge that you have no ownership rights in the Content. You agree to notify us in writing promptly upon becoming aware of any unauthorised access to or use of the Website by any party or of any claim that the Website or any of the contents of the Website infringes any copyright, trademark, or other contractual, statutory or common law rights of any party.
 
-本網站，包括（但不限於）文本、內容、軟件、影片、音樂、音訊、圖像、照片、插圖、圖稿、名稱、標誌、商標、服務標記及其他材料（「**該等內容**」））等均受版權、商標及／或其他專有權利及適用法律保障。該等內容包括我們擁有或控制的內容，以及第三方擁有或控制而向我們授權轉載的內容。所有個別文章、報告、影片以及構成本網站的其他元素均可能是受版權保護的作品。閣下同意遵循本網站載有的所有版權聲明或限制。未經我們事先書面同意，閣下同意不會亦不允許任何其他人士使用任何該等內容；且閣下確認閣下對該等內容概無擁有權。閣下同意一經知悉任何一方未經授權存取或使用本網站，或有人聲稱本網站或本網站的任何內容侵犯任何一方的任何版權、商標或其他合約、法定或普通法權利，閣下將儘快以書面形式通知我們。
+**6. Licence and Download Rights**
 
-**6. 特許權及下載權**
+You acquire no rights or licences in or to the Website and/or the Content just by accessing our Website other than the limited right to use the Website in accordance with these Terms and to download on the terms set out in this section.
 
-閣下存取本網站時，只可按照此等《條款》獲享使用本網站的有限權利，並按本節所列條款進行下載，而概無對於本網站及／或該等內容獲取任何權利或特許。
+Other than as provided in this section, you may not by yourself or otherwise permit anyone else to copy, reproduce, recompile, decompile, disassemble, reverse engineer, distribute, publish, display, perform, modify, upload to create derivative works from, transmit, or in any other way exploit any part of the Website (including the Content and Information).
 
-除非本節另有規定，否則閣下不得自行或允許任何其他人士複製、重現、重新編譯、反編譯、反匯編、逆向工程操作、分發、發佈、顯示、履行、修訂、為建立衍生作品而上載、傳輸或以任何其他方式利用本網站的任何部分（包括該等內容及資訊）。
+Any download is only permitted on the conditions that:
 
-只有符合以下條件，方可進行任何下載：
+(i) you make no more than one copy of such download and no further copies of such copy (printed or non-printed) are or will be made;
 
-(i) 閣下取得不多於一份下載副本，且並無或不會進一步複製該副本（印刷或非印刷版本）；
+(ii) the download and/or copy is made for personal, non-commercial use only; and
 
-(ii) 下載本及／或複製本僅作非商業的私人用途；及
+(iii) you retain all copyright notices on such download and/or copy and shall remain bound by such notices.
 
-(iii) 閣下保留有關該下載本及／或複製本的所有版權聲明，並須持續受到該等聲明約束。
+In addition, you cannot offer for sale or sell or distribute over any other medium the Content or any part thereof. Further, you agree not to make any part of the Website available as part of another website, whether by hyperlink framing on the internet or otherwise.
 
-此外，閣下不得透過任何其他媒介招售或銷售或分銷該等內容或當中任何部分。此外，閣下同意不會以網上超連結框架或其他方式，在其他網站提供本網站的任何部分。
+If the Website allows you to upload or provide content or information to us (“**Feedback**”), to the extent permitted by laws, you acknowledge and agree to grant us the right to use such Feedback for the purpose for which it is collected without any compensation to you. Any Feedback you send to us on or via the Website will be deemed to be non-confidential and non-proprietary unless it is indicated to be otherwise. You are prohibited from transmitting to or from this Website any unlawful, threatening, libellous, defamatory, obscene, inflammatory, or pornographic materials or other materials that could give rise to any civil or criminal liability under applicable laws.
 
-若然本網站允許閣下向我們上載或提供內容或信息（「**意見回饋**」），則在法律許可範圍內，閣下確認和同意授予我們為收集目的而使用該等意見回饋的權利，而不向閣下給予任何補償。 除非另有說明，否則閣下在本網站或透過本網站向我們發送的任何意見回饋將被視為非機密和非專有的資料。閣下不得將任何非法、威脅性、誹謗、中傷、淫穢、煽動性或色情材料或可能在適用法律下導致任何民事或刑事責任的其他材料傳輸至本網站，或從本網站往外傳輸。
+**7. Limited Liability and Warranty, and Disclaimer**
 
-**7. 有限法律責任與保證以及免責聲明**
+The Website and the Content are provided "as is" excluding any representations or warranties of any kind, either express or implied, to the fullest extent permitted by applicable laws including but not limited to, the exclusion of warranties of title, merchantability, satisfactory quality, fitness for a particular purpose and non-infringement of proprietary or third-party rights. We accept no responsibility or liability for any products, services, features or functions available on the Website.
 
-本網站及該等內容「按現狀」提供，不包括任何類型的明示或隱含申述或保證，而在適用法律許可的最大範圍內包括但不限於對所有權、適銷性、理想質素、特定用途適合性及不侵犯專有或第三方權利的保證。對於本網站上的任何產品、服務、特點或功能，我們概不承擔任何責任或法律責任。
+We do not guarantee, warrant or assume any responsibility that:
 
-我們不對以下各項作出擔保、保證或負起任何責任：
+(i) the Website will always be available for access;
 
-(i) 本網站將時刻可供存取；
+(ii) all Information on the Website is accurate, adequate, current or may be used for any purpose other than for general reference;
 
-(ii) 本網站上的所有資料均屬準確充分的最新資訊，或可能用於一般參考以外的任何目的；
+(iii) the access to our Website will be uninterrupted or free of defect, error, omission or that the Website is free to virus, worms or “Trojan horses” and we shall not be made liable for any damage you may suffer as a result of such destructive outcome; and
 
-(iii) 存取本網站時將不會受阻或毫無缺陷、錯誤、遺漏，或本網站毫無病毒、蠕蟲或「木馬程式」，而我們不對閣下可能因以上所致負面影響而承受的任何損害負上法律責任；以及
+(iv) all data or communications sent through the Website would be free from corruption, loss or interception.
 
-(iv) 透過本網站發送的所有資料或通訊概無任何損毀、遺失或截取問題。
+Further, we do not warrant that the Website is compatible with your computer equipment and/or device. You shall be solely responsible for ensuring that you have the suitable device, internet connections or other ancillary support services for using and accessing the Website and any feature contained therein.
 
-此外，我們並不保證本網站兼容閣下的電腦設備及／或裝置。閣下須全權負責確保閣下擁有適當裝置、網絡連接或其他輔助支援服務，以使用和存取本網站以及當中的任何功能。
+Save in respect of fraud and of personal injury or death to the extent it results from our gross negligence, in no event we shall be liable to you or any other person for any direct, indirect, incidental, special, exemplary, punitive or consequential damages, including any loss of business, revenue or profit and anticipation of the foregoing, arising out of any use, or inability to use, any aspect of the Website, even if we have been advised of the possibility of such damages.
 
-我們概不就使用或無法使用本網站任何方面所致任何直接、間接、附帶、特殊、懲戒性、懲罰性或相應損害賠償（包括任何業務、收入或盈利損失）及以上各項的預期情況，對閣下或任何其他人士負上法律責任，即使我們已獲知可能出現該等損害賠償亦然，除非是由我們的重大疏忽導致的欺詐及人身傷亡。
+**8. Indemnity**
 
-**8. 彌償**
+You agree to defend, indemnify and hold us, our employees, agents, officers, directors, agents, contractors, suppliers and other representatives harmless from and against all liabilities, damages, claims, actions, costs and expenses (including legal fees), in connection with or arising from your breach of these Terms and/or your use of the Website. We may, if necessary, participate in the defence of any claim or action and any negotiations for settlement. No settlement which may adversely affect our rights or obligations shall be made without our prior written approval. We reserve the right, at our own expense and on notice to you, to assume exclusive defence and control of any claim or action.
 
-對於因閣下違反此等《條款》及／或閣下使用本網站而導致或與之相關的所有債務、損害賠償、索償、訟費、費用及開支（包括法律費用），閣下同意向我們、我們的員工、代理、高級人員、董事、承辦商、供應商及其他代表作出辯護、彌償和確保以上各方免受損害。如有需要，我們可能參與任何索償或訴訟辯護，以及任何和解協商。未經我們的事先書面批准，閣下不得作出可能不利於我們的權利或義務的和解。我們保留自行承擔費用並在通知閣下的情況下，對於任何索償或法律行動行使獨有辯護及控制的權利。
+**9. Severability**
 
-**9. 可分割性**
+If any court of law, having jurisdiction to decide on this matter, rules that any provision of these Terms is invalid, then that provision will be removed from these Terms without affecting the rest of the Terms, and the remaining provisions of the Terms will continue to be valid and enforceable.
 
-若然任何對此事具有司法管轄權的法院裁定此等《條款》的任何條文無效，該條文將被視爲不再存在於此等《條款》内，而不影響《條款》中的其他部分，《條款》的餘下條文將繼續維持有效及其可執行性。
+**10. Language**
 
-**10. 語言**
+The original English version of these Terms may be translated into other languages. In the event of a dispute about the contents or interpretation of these Terms or inconsistency or discrepancy between the English version and other language versions, the English version shall prevail.
 
-此等《條款》的原始英文版本可能翻譯至其他語言版本。一旦對於此等《條款》的內容或詮釋有所爭議，或英文版本與其他語言版本之間有所抵觸或差異，一概以英文版本為準。
+**11. MISCELLANEOUS**
 
-**11. 其他**
+No waiver of any breach under these Terms will amount to a waiver of any other breach. The headings in these Terms are for convenience only and do not affect interpretation. No one other than a party to this document, their successors and permitted assignees, shall have any rights under the Contract (Rights of Third Parties) Ordinance (Cap. 623 of the Hong Kong Laws) to enforce any term of this Term.
 
-對於此等《條款》下任何違反事項的權利放棄將不代表對於任何其他違反事項的權利放棄。此等《條款》的標題僅供參考，而不影響詮釋。除了本文當事方、其繼任者及獲許受讓人，任何其他人士均不得享有《合約（第三者權利）條例》（香港法律第 623 章）下的任何權利，以執行此等《條款》的任何條款。
+**12. Governing Law and Dispute Resolution**
 
-**12. 管限法律及爭議解決**
+The Terms shall be governed by, and construed in accordance with, the laws of Hong Kong Special Administrative Region of the People’s Republic of China (“**Hong Kong**”). You agree to submit to the exclusive jurisdiction of the Hong Kong courts.
 
-此等《條款》須受中華人民共和國香港特別行政區（「**香港**」）的法律管限，並據之詮譯。閣下同意受香港法庭的獨有司法管轄權管限。
+**13. Questions or Comments**
 
-**13. 疑問或意見**
+If you have any question or comments in relation to our Website, please feel free to contact us. Our contact details are as follow:
 
-如對本網站有任何疑問或意見，請隨時聯絡我們。我們的聯絡資料如下：
+Mailing address: 25D, YHC Tower, 1 Sheung Yuet Road, Kowloon Bay, Kowloon, Hong Kong
 
-地址：香港九龍九龍灣常悅道 1 號恩浩國際中心 25 樓D室
+Email address: info@take2.health
 
-電郵：info@take2.health
+Telephone number: +852 3613 0533
 
-電話：+852 3613 0533
-
-傳真：+852 3613 0534
-
-\[生效日期：2022年1月1日\]
+Facsimile Number: +852 3613 0534
