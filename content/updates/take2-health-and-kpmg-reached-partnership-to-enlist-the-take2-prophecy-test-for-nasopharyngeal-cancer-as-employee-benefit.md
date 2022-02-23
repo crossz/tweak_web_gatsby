@@ -2,15 +2,19 @@
 type: industry_information
 cover: []
 date: 2021-10-02T02:00:00.000+08:00
-title: Take2 Health and KPMG Reached Partnership to Enlist the Take2 Prophecy™ Test
-  for Nasopharyngeal Cancer as Employee Benefit
-detail: 自2021年10月1日起，KPMG的員工可於其體檢計劃內，選擇進行Take2 Prophecy™ 早期鼻咽癌篩查，並在完成後申請報銷。
+title: Take2 Health and KPMG Reached Partnership to Enlist the Take2 Prophecy™ as
+  Employee Benefit
+detail: From 1 October 2021 onwards, KPMG employees could choose the Take2 Prophecy™
+  Test for Nasopharyngeal Cancer and be eligible for reimbursement under their employees’
+  medical check-up benefit.
 href: ''
 slug: ''
 languages:
-- zh-HK
+- en
 
 ---
-自2021年10月1日起，KPMG的員工可於其體檢計劃內，選擇進行Take2 Prophecy™ 早期鼻咽癌篩查，並在完成後申請報銷。是次合作不僅體現了跨國大型企業對創新醫療科技的認可，也是對保障員工健康和早期癌症篩查的重視。
+From 1 October 2021 onwards, KPMG employees could choose the Take2 Prophecy™ Test for Nasopharyngeal Cancer and be eligible for reimbursement under their employees’ medical check-up benefit.
 
-近年來，越來越多的企業透過創造更人性化的工作環境，並以更貼心的福利保障來吸引人才，包括為員工及其親屬提供全方位的體檢套餐，以及其它健康管理相關的福利。Take2 Health期望協助企業滿足員工需要，以早期鼻咽癌篩查作為員工福利之一，藉此提倡預防醫學的重要性。
+This collaboration not only shows the multination corporations’ recognition for innovative medical technologies, but also stresses the emphasis on employees’ health, as well as the importance of early cancer detection.
+
+In recent years, more and more businesses are creating considerate working environments and offering thoughtful benefits to attract talents, including providing a comprehensive medical check-up for employees and their families, as well as other health management related welfare. Take2 Health is pleased to work with businesses and to contribute to fulfilling employee’s needs by means of including early cancer detection in employee benefit schemes and raising awareness towards the importance of preventive healthcare.
