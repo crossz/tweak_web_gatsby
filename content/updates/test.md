@@ -9,7 +9,5 @@ cover:
 - "../images/20210202TAKE2HEALTHLTD02.jpeg"
 languages:
 - en
-- zh-CN
-- zh-HK
 
 ---
