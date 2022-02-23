@@ -39,6 +39,7 @@ fields:
     time_format: 
     display_utc: false
 pages:
+- content/terms-and-conditions/personal-information-collection-statement-1.md
 - content/terms-and-conditions/privacy-policy-statement.md
 - content/terms-and-conditions/條款及細則.md
 - content/terms-and-conditions/私隱政策.md
