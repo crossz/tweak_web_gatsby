@@ -60,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
+  btn: {
+    padding: theme.spacing(2, 3.5),
+  },
 }))
 
 const Consult = () => {
@@ -105,6 +108,7 @@ const Consult = () => {
                     variant='outlined'
                     color='primary'
                     fullWidth={matches}
+                    className={classes.btn}
                   >
                     {t('common.learn_more')}
                   </Button>
@@ -117,6 +121,7 @@ const Consult = () => {
                   href={process.env.GATSBY_SITE_URL}
                   target='_blank'
                   fullWidth={matches}
+                  className={classes.btn}
                 >
                   {t('common.sign_up')}
                 </Button>

@@ -74,35 +74,31 @@ const useStyles = makeStyles((theme) => ({
   reference: {
     fontSize: 9,
     lineHeight: 1,
-    marginTop: 'auto',
     [theme.breakpoints.down('xs')]: {
       color: theme.palette.primary.main,
       fontSize: 6,
-      marginTop: 'auto',
+      // marginTop: 'auto',
       padding: theme.spacing(0, 3),
       paddingTop: theme.spacing(1),
     },
   },
   btnWrapper: {
     display: 'flex',
-    marginTop: theme.spacing(8),
+    marginTop: 'auto',
     '& a': {
       textDecoration: 'none',
     },
+    marginBottom: theme.spacing(20),
     [theme.breakpoints.down('xs')]: {
-      marginTop: 0,
-      position: 'absolute',
-      top: ({ isEn }) => (isEn ? 'auto' : 314),
-      bottom: ({ isEn }) => (isEn ? theme.spacing(3) : 'auto'),
-      left: theme.spacing(3),
-      right: theme.spacing(3),
+      marginBottom: theme.spacing(8),
     },
   },
   isEnBtnWrapper: {
-    justifyContent: 'space-between',
-    position: 'unset',
-    marginTop: 'auto',
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(10),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(4),
+      justifyContent: 'space-between',
+    },
   },
   btn: {
     [theme.breakpoints.down('xs')]: {
@@ -226,7 +222,7 @@ const Banner = ({ nodes }) => {
                     </Typography>
                     <Grid
                       className={classnames(classes.btnWrapper, {
-                        [classes.isEnBtnWrapper]: matches && isEn,
+                        [classes.isEnBtnWrapper]: isEn,
                       })}
                       container
                       spacing={2}
