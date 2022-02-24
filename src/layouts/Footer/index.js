@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {
   makeStyles,
   useMediaQuery,
-  useTheme,
   Grid,
   Container,
   alpha,
@@ -152,8 +151,7 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles()
   const { t } = useI18next()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const menu = useMenu()
   const { email, phone, whatsapp, whatsappAccount } = useSiteMetadata()
   const [panel, setPanel] = useState('')
@@ -275,14 +273,24 @@ const Footer = () => {
                         content: classes.accordionSummaryContent,
                       }}
                     >
-                      <Link className={classes.link} to={item.path}>
+                      {matches ? (
                         <Box
                           fontSize='body1.fontSize'
                           fontWeight='fontWeightBold'
+                          className={classes.link}
                         >
                           {t(item.title)}
                         </Box>
-                      </Link>
+                      ) : (
+                        <Link className={classes.link} to={item.path}>
+                          <Box
+                            fontSize='body1.fontSize'
+                            fontWeight='fontWeightBold'
+                          >
+                            {t(item.title)}
+                          </Box>
+                        </Link>
+                      )}
                     </EAccordionSummary>
                     {item.sections?.length && (
                       <EAccordionDetails

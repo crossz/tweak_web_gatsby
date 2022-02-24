@@ -3,12 +3,7 @@ import useMenu from '@hooks/useMenu'
 import MenuIcon from '@images/icons/menu.svg'
 import IconButton from '@material-ui/core/IconButton'
 import Box from '@material-ui/core/Box'
-import {
-  makeStyles,
-  Container,
-  useTheme,
-  useMediaQuery,
-} from '@material-ui/core'
+import { makeStyles, Container, useMediaQuery } from '@material-ui/core'
 import Dialog from '@material-ui/core/Dialog'
 import CloseIcon from '@images/icons/close.svg'
 import Slide from '@material-ui/core/Slide'
@@ -156,8 +151,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const Menu = (props) => {
   const classes = useStyles()
   const { t } = useI18next()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const menu = useMenu()
   const [open, setOpen] = useState(false)
   const [panel, setPanel] = useState('')
@@ -285,9 +279,7 @@ const Menu = (props) => {
                           bgcolor='background.paper'
                           size={1.5}
                         ></TitleDot>
-                        {item.sections &&
-                        item.sections?.length &&
-                        index !== 5 ? (
+                        {matches ? (
                           <Typography variant='h4'>{t(item.title)}</Typography>
                         ) : (
                           <Link

@@ -21,6 +21,7 @@ import 'swiper/components/navigation/navigation.min.css'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
+import classnames from 'classnames'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -55,11 +56,12 @@ const useStyles = makeStyles((theme) => ({
   },
   contentWrapper: {
     height: '100%',
-    maxWidth: theme.spacing(60),
+    maxWidth: ({ isEn }) => theme.spacing(isEn ? 80 : 60),
     paddingTop: theme.spacing(29),
     paddingBottom: theme.spacing(5.5),
     display: 'flex',
     flexDirection: 'column',
+    color: theme.palette.primary.main,
     [theme.breakpoints.down('xs')]: {
       maxWidth: 'none',
       paddingTop: theme.spacing(3),
@@ -90,9 +92,17 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       marginTop: 0,
       position: 'absolute',
-      top: 314,
+      top: ({ isEn }) => (isEn ? 'auto' : 314),
+      bottom: ({ isEn }) => (isEn ? theme.spacing(3) : 'auto'),
       left: theme.spacing(3),
+      right: theme.spacing(3),
     },
+  },
+  isEnBtnWrapper: {
+    justifyContent: 'space-between',
+    position: 'unset',
+    marginTop: 'auto',
+    marginBottom: theme.spacing(4),
   },
   btn: {
     [theme.breakpoints.down('xs')]: {
@@ -135,8 +145,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 const Banner = ({ nodes }) => {
-  const classes = useStyles()
-  const { t } = useI18next()
+  const { t, language } = useI18next()
+  const isEn = language === 'en'
+  const classes = useStyles({ isEn })
   const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
@@ -150,7 +161,7 @@ const Banner = ({ nodes }) => {
           navigation={nodes?.length > 1}
           pagination={{ clickable: true }}
           className={classes.swiperWrapper}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          // autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return (
               context?.toggleTheme &&
@@ -188,7 +199,11 @@ const Banner = ({ nodes }) => {
                 )}
                 <Container className={classes.wrapper} maxWidth='md'>
                   <Box className={classes.contentWrapper}>
-                    <Typography variant='h2' color='primary' component='div'>
+                    <Typography
+                      variant={matches && isEn ? 'h3' : 'h2'}
+                      color='primary'
+                      component='div'
+                    >
                       <Box
                         className={classes.titleWrapper}
                         mb={matches ? 1 : 2}
@@ -209,14 +224,20 @@ const Banner = ({ nodes }) => {
                         }}
                       ></Box>
                     </Typography>
-                    <Grid className={classes.btnWrapper} container spacing={2}>
+                    <Grid
+                      className={classnames(classes.btnWrapper, {
+                        [classes.isEnBtnWrapper]: matches && isEn,
+                      })}
+                      container
+                      spacing={2}
+                    >
                       {node?.frontmatter?.buttons?.length > 0 &&
                         node?.frontmatter?.buttons?.map((button) => (
                           <Grid
                             key={button.name}
                             item
                             xs={
-                              matches
+                              matches && !isEn
                                 ? 12
                                 : node?.frontmatter?.buttons?.length === 1
                                 ? 12
