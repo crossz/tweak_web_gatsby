@@ -1,7 +1,13 @@
 import React, { useState, useContext } from 'react'
 import Box from '@material-ui/core/Box'
-import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core'
-import Container from '@material-ui/core/Container'
+import {
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+  Container,
+  Hidden,
+  Button,
+} from '@material-ui/core'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
@@ -47,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   authBtn: {
     cursor: 'pointer',
     marginLeft: 'auto',
+    flexShrink: 0,
     fontSize: theme.typography.body1.fontSize,
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.caption.fontSize,
@@ -59,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   link: {
-    display: 'block',
+    marginLeft: theme.spacing(3.5),
   },
   withoutShadow: {
     boxShadow: 'none',
@@ -71,6 +78,10 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.contrastText,
       },
     },
+  },
+  menuBtn: {
+    marginLeft: theme.spacing(3),
+    marginRight: theme.spacing(-1.5),
   },
 }))
 
@@ -110,20 +121,24 @@ const Header = (props) => {
             component='span'
           >
             <Link to={`${process.env.GATSBY_SITE_URL}signin`}>
-              {t('common.sign_in')}
+              {t('common.book_now')}
             </Link>
-            <Box component='span' mx={1}>
-              /
-            </Box>
-            <Link to={`${process.env.GATSBY_SITE_URL}signup`}>
-              {t('common.register')}
-            </Link>
+            <Hidden xsDown>
+              <Link
+                className={classes.link}
+                to={`${process.env.GATSBY_SITE_URL}signup`}
+              >
+                {t('common.menber_registration')}
+              </Link>
+            </Hidden>
           </Box>
-          <Menu
-            dark={
-              !matches && isHomepage && !withBg && context?.theme === 'dark'
-            }
-          ></Menu>
+          <Box className={classes.menuBtn}>
+            <Menu
+              dark={
+                !matches && isHomepage && !withBg && context?.theme === 'dark'
+              }
+            ></Menu>
+          </Box>
         </Container>
         {/* <Waypoint
         onLeave={() => handleWaypoint(true)}

@@ -179,14 +179,6 @@ const initialValues = {
   message: '',
 }
 
-const schema = oriSchema().pick([
-  'companyName',
-  'message',
-  'dialingCode',
-  'phone',
-  'email',
-])
-
 const ContactUs = () => {
   const classes = useStyles()
   const { t } = useI18next()
@@ -196,6 +188,14 @@ const ContactUs = () => {
   const [loading, setLoading] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
   const { whatsapp, email, phone, messenger } = useSiteMetadata()
+
+  const schema = oriSchema(t).pick([
+    'companyName',
+    'message',
+    'dialingCode',
+    'phone',
+    'email',
+  ])
 
   const contactTypes = [
     {

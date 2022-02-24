@@ -244,14 +244,6 @@ const initialValues = {
   email: '',
 }
 
-const schema = oriSchema().pick([
-  'companyName',
-  'dialingCode',
-  'name',
-  'phone',
-  'email',
-])
-
 const International = () => {
   const classes = useStyles()
   const { t } = useI18next()
@@ -261,6 +253,14 @@ const International = () => {
   const businessPartners = useBusinessPartners()
   const [loading, setLoading] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
+
+  const schema = oriSchema(t).pick([
+    'companyName',
+    'dialingCode',
+    'name',
+    'phone',
+    'email',
+  ])
 
   const handleFetch = async (values) => {
     try {

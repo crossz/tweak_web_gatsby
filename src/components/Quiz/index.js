@@ -333,16 +333,6 @@ const initialValues = {
   dialingCode: '852',
   agreeTC: false,
 }
-const schema = oriSchema().pick([
-  'requiredEmailOrPhone',
-  'gender',
-  'age',
-  'quiz',
-  'email',
-  'dialingCode',
-  'phone',
-  'agreeTC',
-])
 
 const Quiz = () => {
   const classes = useStyle()
@@ -353,6 +343,17 @@ const Quiz = () => {
   const [finishQuiz, setFinishQuiz] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
   const [loading, setLoading] = useState(false)
+
+  const schema = oriSchema(t).pick([
+    'requiredEmailOrPhone',
+    'gender',
+    'age',
+    'quiz',
+    'email',
+    'dialingCode',
+    'phone',
+    'agreeTC',
+  ])
 
   const progressValue = useMemo(
     () => Math.round(((step - 1) / QUIZ.length) * 100),

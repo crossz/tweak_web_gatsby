@@ -34,13 +34,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     color: theme.palette.primary.contrastText,
   },
-  btn: {
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(-1.5),
-    [theme.breakpoints.down('xs')]: {
-      // marginLeft: theme.spacing(2),
-    },
-  },
   icon: {
     width: theme.spacing(3),
     height: theme.spacing(3),
@@ -216,18 +209,14 @@ const Menu = (props) => {
         onClick={handleClose}
         underline='always'
       >
-        {t('common.register')}
+        {t('common.menber_registration')}
       </Link>
     </Box>
   )
 
   return (
     <>
-      <IconButton
-        className={classes.btn}
-        aria-label='menu'
-        onClick={handleOpen}
-      >
+      <IconButton onClick={handleOpen}>
         <MenuIcon
           className={classnames(classes.icon, { [classes.isDark]: props.dark })}
         ></MenuIcon>

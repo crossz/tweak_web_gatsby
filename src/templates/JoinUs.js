@@ -198,8 +198,6 @@ const initialValues = {
   area: '',
 }
 
-const schema = oriSchema().pick(['name', 'email', 'area'])
-
 const JoinUs = ({ data, pageContext }) => {
   const classes = useStyles()
   const { t } = useTranslation()
@@ -214,6 +212,8 @@ const JoinUs = ({ data, pageContext }) => {
   const allCareer = data?.allCareer?.nodes || []
   const [loading, setLoading] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
+
+  const schema = oriSchema(t).pick(['name', 'email', 'area'])
 
   const handleFetch = async (values) => {
     try {

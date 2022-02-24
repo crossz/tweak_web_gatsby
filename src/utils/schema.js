@@ -8,7 +8,7 @@ import {
 
 import { DIALING_CODES, QUIZ } from '@utils/constant'
 
-export const oriSchema = () => {
+export const oriSchema = (t) => {
   return yObject().shape(
     {
       requiredArea: yBool(),
@@ -34,7 +34,9 @@ export const oriSchema = () => {
           ['phone', 'requiredEmailOrPhone'],
           (phoneArg, requiredEmailOrPhoneArg, schema) => {
             if (requiredEmailOrPhoneArg && phoneArg) return schema.notRequired()
-            return schema.required('請輸入電郵')
+            return schema.required(
+              t('form.placeholder.enter', { field: '$t(form.email.label)' })
+            )
           }
         ),
       phone: yString()
