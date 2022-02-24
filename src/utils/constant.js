@@ -21,8 +21,6 @@ export const POST_PAGE_SIZE = 6
 
 export const DATE_FORMAT = 'yyyy-MM-dd'
 export const DATE_FORMAT_WITHOUT_CONNECT = 'yyyyMMdd'
-export const BIRTHDAY_FORMAT = 'yyyy/MM/dd'
-export const OLD_BIRTHDAY_FORMAT = 'MM.dd.yyyy'
 export const DAY_OF_WEEK = 'eeee'
 export const DATE_FORMAT_WITH_WEEK = `yyyy-MM-dd(${DAY_OF_WEEK})`
 export const DATE_FORMAT_WITH_TIME = 'yyyy-MM-dd HH:mm'

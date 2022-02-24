@@ -14,22 +14,42 @@ export const oriSchema = (t) => {
       requiredArea: yBool(),
       requiredName: yBool(),
       requiredEmailOrPhone: yBool(),
-      companyName: yString().nullable().required('請輸入公司名稱/姓名'),
+      companyName: yString()
+        .nullable()
+        .required(
+          t('form.placeholder.enter', { field: '$t(form.company.label)' })
+        ),
       dialingCode: yString().nullable().required(),
-      gender: yString().nullable().required('請選擇性別'),
-      age: yString().nullable().required('請選擇年齡'),
-      quiz: yArray().of(yString()).length(QUIZ.length).required('請完成測驗'),
-      birthday: yDate().nullable().required('請選擇出生日期'),
+      gender: yString()
+        .nullable()
+        .required(
+          t('form.placeholder.select', { field: '$t(form.gender.label)' })
+        ),
+      age: yString()
+        .nullable()
+        .required(
+          t('form.placeholder.select', { field: '$t(form.age.label)' })
+        ),
+      quiz: yArray()
+        .of(yString())
+        .length(QUIZ.length)
+        .required(t('form.validation.finish_quiz')),
       message: yString().nullable(),
       name: yString()
         .nullable()
         .when('requiredName', {
           is: true,
-          then: yString().required('請輸入聯絡人姓名'),
+          then: yString().required(
+            t('form.placeholder.enter', {
+              field: '$t(form.contact.label)',
+            })
+          ),
         }),
       email: yString()
         .nullable()
-        .email('請輸入正確格式')
+        .email(
+          t('form.validation.correct_form', { field: '$(form.email.label)' })
+        )
         .when(
           ['phone', 'requiredEmailOrPhone'],
           (phoneArg, requiredEmailOrPhoneArg, schema) => {
@@ -51,26 +71,33 @@ export const oriSchema = (t) => {
               return schema
                 .matches(
                   new RegExp(activeDialingCode?.regex),
-                  '請輸入正確格式電話號碼'
+                  t('form.validation.correct_form', {
+                    field: '$(form.phone.label)',
+                  })
                 )
-                .required('請輸入電話號碼')
+                .required(
+                  t('form.placeholder.enter', { field: '$t(form.phone.label)' })
+                )
 
             return schema
               .matches(
                 new RegExp(activeDialingCode?.regex),
-                '請輸入正確格式電話號碼'
+                t('form.validation.correct_form', {
+                  field: '$(form.phone.label)',
+                })
               )
               .notRequired()
           }
         ),
-      agreeTC: yBool().isTrue('請勾選同意'),
+      agreeTC: yBool().isTrue(t('form.validation.check_agreement')),
       area: yString()
         .nullable()
         .when('requiredArea', {
           is: true,
-          then: yString().required('請選擇地區'),
+          then: yString().required(
+            t('form.placeholder.select', { field: '$t(form.region.label)' })
+          ),
         }),
-      department: yString().nullable().required('請選擇部門'),
     },
     ['email', 'phone']
   )

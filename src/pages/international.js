@@ -463,7 +463,9 @@ const International = () => {
                                 placeholder={
                                   isError('companyName')
                                     ? ''
-                                    : t('form.company.placeholder')
+                                    : t('form.placeholder.enter', {
+                                        field: '$t(form.company.label)',
+                                      })
                                 }
                                 type='text'
                                 endAdornment={

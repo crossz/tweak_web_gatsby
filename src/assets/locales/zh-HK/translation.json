@@ -63,8 +63,7 @@
             "label": "年齡"
         },
         "company": {
-            "label": "公司名稱/姓名",
-            "placeholder": "請輸入公司名稱/姓名"
+            "label": "公司名稱/姓名"
         },
         "contact": {
             "label": "聯絡人姓名"
@@ -98,6 +97,11 @@
                 "hongkong": "香港",
                 "other": "其他地區"
             }
+        },
+        "validation": {
+            "check_agreement": "請勾選同意",
+            "correct_form": "請輸入正確格式{{field}}",
+            "finish_quiz": "請完成測驗"
         }
     },
     "homepage": {
