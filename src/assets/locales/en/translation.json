@@ -60,7 +60,7 @@
     "form": {
         "placeholder": {
             "search": "Search",
-            "select": "Select",
+            "select": "Select {{field}}",
             "enter": ""
         },
         "region": {
