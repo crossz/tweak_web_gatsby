@@ -1,90 +1,225 @@
 {
+    "whats_new": {
+        "promotions": {
+            "title": "",
+            "detail": ""
+        },
+        "health_tips": {
+            "title": "",
+            "detail": ""
+        }
+    },
+    "service_location": {
+        "title": "",
+        "more": ""
+    },
+    "homepage": {
+        "sign_up": {
+            "title": "",
+            "detail": ""
+        }
+    },
     "common": {
+        "sign_up": "",
+        "learn_more": "",
+        "view_more": "",
+        "view_details": "",
         "book_now": "",
         "display": "",
-        "learn_more": "",
-        "or": "",
-        "sign_up": "",
-        "sign_up_as_menber": "",
         "submit": "",
-        "view_details": "",
-        "view_more": ""
+        "sign_up_as_menber": "",
+        "or": "",
+        "book_detection": "",
+        "service_location": "",
+        "notice": "",
+        "sign_in": "",
+        "faq": "",
+        "register": "",
+        "follow_us": "",
+        "take2_copy_right": "",
+        "online_promotion_code": "",
+        "menber_registration": "",
+        "member_registration": ""
+    },
+    "t_and_c": {
+        "terms_and_conditions": "",
+        "privacy_policy": "",
+        "personal_information_collection_statement": "",
+        "website_trems_of_use": ""
+    },
+    "status": {
+        "copy": {
+            "success": ""
+        },
+        "request": {
+            "empty_data": ""
+        },
+        "submit": {
+            "fail": "",
+            "success": ""
+        }
     },
     "form": {
+        "placeholder": {
+            "search": "",
+            "select": "",
+            "enter": ""
+        },
+        "region": {
+            "label": "",
+            "options": {
+                "all": "",
+                "other": "",
+                "hongkong": ""
+            }
+        },
+        "gender": {
+            "label": ""
+        },
         "age": {
             "label": ""
         },
         "email": {
             "label": ""
         },
-        "gender": {
-            "label": ""
-        },
         "phone": {
             "label": "",
             "placeholder": ""
         },
-        "placeholder": {
-            "search": "",
-            "select": ""
+        "contact": {
+            "label": ""
         },
-        "region": {
+        "company": {
+            "label": ""
+        },
+        "message": {
             "label": "",
-            "options": {
-                "all": "",
-                "hongkong": "",
-                "other": ""
+            "placeholder": "",
+            "validation": {
+                "required": ""
             }
         }
     },
-    "homepage": {
-        "sign_up": {
+    "quiz": {
+        "pre": "",
+        "next": "",
+        "start": {
+            "button": "",
+            "title": "",
             "detail": "",
-            "title": ""
+            "reference": ""
+        },
+        "last": {
+            "title": "",
+            "detail": ""
+        },
+        "agreement": "",
+        "direct_sign_up": "",
+        "final": {
+            "title": "",
+            "subtitle": "",
+            "detail_1": "",
+            "detail_2": ""
+        },
+        "questions": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
         }
     },
     "options": {
+        "gender": {
+            "male": "",
+            "female": ""
+        },
+        "quiz": {
+            "no": "",
+            "unclear": "",
+            "yes": "",
+            "never": "",
+            "rarely": "",
+            "sometimes": "",
+            "often": ""
+        },
         "age": {
             "20_or_below": "",
             "61_or_above": ""
         },
-        "gender": {
-            "female": "",
-            "male": ""
+        "career_regions": {
+            "all": "",
+            "business_strategic_cooperation": "",
+            "mainland_china": ""
         },
-        "quiz": {
-            "never": "",
-            "no": "",
-            "often": "",
-            "rarely": "",
-            "sometimes": "",
-            "unclear": "",
-            "yes": ""
+        "update_post_types": {
+            "all": "",
+            "company_trends": "",
+            "company_awards_and_achievements": "",
+            "industry_information": "",
+            "ceo_sharing": "",
+            "business_cooperation": ""
+        },
+        "hongkong_regions": {
+            "all": "",
+            "hongkong": "",
+            "kowloon": "",
+            "new_territories_east": "",
+            "new_territories_west": ""
+        },
+        "department": {
+            "all": "",
+            "business_strategic_cooperation": ""
+        },
+        "macao_regions": {
+            "macao": ""
         }
     },
     "our_technologies": {
         "clinical_papers": {
-            "detail": "",
-            "title": ""
+            "title": "",
+            "detail": ""
+        },
+        "ngs": {
+            "title": "",
+            "what_is_ngs": "",
+            "intro": "",
+            "notes": {
+                "0": {
+                    "title": "",
+                    "content": ""
+                },
+                "1": {
+                    "title": "",
+                    "content": ""
+                },
+                "2": {
+                    "title": "",
+                    "content": ""
+                }
+            },
+            "read_full_article": ""
         },
         "early_cancer_detection": {
+            "title": "",
             "center_data": {
                 "0": "",
                 "1": "",
                 "2": ""
             },
-            "center_data_title": "",
-            "content_data_detail": "",
+            "references": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
             "do_you_know": "",
             "do_you_know_content": "",
-            "reasions": {
-                "0": {
-                },
-                "1": {
-                },
-                "2": {
-                }
-            },
+            "center_data_title": "",
+            "content_data_detail": "",
+            "whats_is_early_cancer_detection": "",
+            "whats_is_early_cancer_detection_content": "",
+            "reason_title": "",
             "reasons": {
                 "0": {
                     "content": "",
@@ -99,92 +234,124 @@
                     "title": ""
                 }
             },
-            "references": {
-                "0": "",
-                "1": "",
-                "2": ""
-            },
-            "title": "",
-            "whats_is_early_cancer_detection": "",
-            "whats_is_early_cancer_detection_content": ""
-        },
-        "ngs": {
-            "intro": "",
-            "notes": {
-                "0": {
-                    "content": "",
-                    "title": ""
-                },
-                "1": {
-                    "content": "",
-                    "title": ""
-                },
-                "2": {
-                    "content": "",
-                    "title": ""
-                }
-            },
-            "read_full_article": "",
-            "title": "",
-            "what_is_ngs": ""
+            "expect": ""
         }
     },
     "products_and_services": {
         "take2_extra_care": {
-            "title": ""
+            "title": "",
+            "steps": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "what_is_extra_care": "",
+            "what_is_extra_care_content": "",
+            "how_to_join_extra_care": "",
+            "benefit_of_extra_care": "",
+            "benefit_of_extra_care_content": "",
+            "club_plans": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "faq": {
+                "welcome_contact": ""
+            },
+            "all_faq": ""
+        },
+        "take2_prophecy": {
+            "title": "",
+            "detail": "",
+            "detection_process": "",
+            "process": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": ""
+            },
+            "reports": {
+                "0": {
+                    "result": "",
+                    "suggestion": "",
+                    "mark": ""
+                },
+                "1": {
+                    "result": "",
+                    "suggestion": "",
+                    "mark": ""
+                }
+            },
+            "notice": "",
+            "do_you_have": "",
+            "action": ""
         }
     },
-    "quiz": {
-        "agreement": "",
-        "direct_sign_up": "",
-        "final": {
-            "detail_1": "",
-            "detail_2": "",
-            "subtitle": "",
-            "title": ""
+    "about_us": {
+        "mission": {
+            "title": "",
+            "team_title": "",
+            "background_founder": "",
+            "team_founder_content": "",
+            "our_team": "",
+            "our_team_content": "",
+            "beliefs": {
+                "0": {
+                    "type": "",
+                    "slogan": "",
+                    "content": ""
+                },
+                "1": {
+                    "type": "",
+                    "slogan": "",
+                    "content": ""
+                }
+            }
         },
-        "last": {
+        "join_us": {
+            "title": "",
             "detail": "",
-            "title": ""
-        },
-        "next": "",
-        "pre": "",
-        "start": {
-            "button": "",
-            "detail": "",
-            "reference": "",
-            "title": ""
+            "open_positions": "",
+            "form_detail": ""
         }
     },
-    "service_location": {
-        "more": "",
-        "title": ""
+    "international": {
+        "title": "",
+        "detail": "",
+        "our_partners": "",
+        "become_a_partner": "",
+        "become_a_partner_content": ""
     },
-    "status": {
-        "copy": {
-            "success": ""
-        },
-        "request": {
-            "empty_data": ""
-        },
-        "submit": {
-            "fail": "",
-            "success": ""
+    "contact_us": {
+        "title": "",
+        "form_title": "",
+        "types": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
         }
     },
-    "t_and_c": {
-        "personal_information_collection_statement": "",
-        "privacy_policy": "",
-        "terms_and_conditions": ""
-    },
-    "whats_new": {
-        "health_tips": {
-            "detail": "",
-            "title": ""
-        },
-        "promotions": {
-            "detail": "",
-            "title": ""
-        }
+    "menu": {
+        "whats_new": "",
+        "promotions": "",
+        "health_tips": "",
+        "updates": "",
+        "our_technologies": "",
+        "early_cancer_detection": "",
+        "ngs": "",
+        "clinical_papers": "",
+        "products_and_services": "",
+        "take2_prophecy": "",
+        "take2_extra_care": "",
+        "service_location": "",
+        "international": "",
+        "about_us": "",
+        "mission": "",
+        "join_us": "",
+        "contact_us": "",
+        "faq": ""
     }
 }
