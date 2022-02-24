@@ -20,33 +20,33 @@
         }
     },
     "common": {
-        "sign_up": "",
+        "sign_up": "Join us",
         "learn_more": "Learn More",
-        "view_more": "",
-        "view_details": "",
+        "view_more": "Learn More",
+        "view_details": "View Details",
         "book_now": "Book Now",
         "display": "",
-        "submit": "",
+        "submit": "Submit",
         "sign_up_as_menber": "Register in Take2 Health Platform",
-        "or": "",
+        "or": "or",
         "book_detection": "Book our Service Now",
         "service_location": "Service Locations",
         "notice": "Important Note",
         "sign_in": "Sign In",
         "faq": "",
         "register": "Register",
-        "follow_us": "",
-        "take2_copy_right": "",
+        "follow_us": "Follow Us",
+        "take2_copy_right": "©2021 Take2 Health copy right",
         "online_promotion_code": ""
     },
     "t_and_c": {
         "terms_and_conditions": "Terms and conditions",
-        "privacy_policy": "",
-        "personal_infomation_collection_statement": ""
+        "privacy_policy": "Privacy Policy",
+        "personal_infomation_collection_statement": "Personal Information Collection Statement"
     },
     "status": {
         "copy": {
-            "success": ""
+            "success": "Copy the article link successfully!"
         },
         "request": {
             "empty_data": ""
@@ -58,7 +58,7 @@
     },
     "form": {
         "placeholder": {
-            "search": "",
+            "search": "Search",
             "select": ""
         },
         "region": {
@@ -73,14 +73,14 @@
             "label": "Gender"
         },
         "age": {
-            "label": ""
+            "label": "age"
         },
         "email": {
             "label": "Email"
         },
         "phone": {
             "label": "Phone",
-            "placeholder": ""
+            "placeholder": "9876 5432"
         },
         "contact": {
             "label": "Contact person"
@@ -98,8 +98,8 @@
         }
     },
     "quiz": {
-        "pre": "",
-        "next": "",
+        "pre": "Back to previous question",
+        "next": "Next question",
         "start": {
             "button": "Start Now",
             "title": "Get Started with Your Free NPC Risk Assessment!",
@@ -113,7 +113,7 @@
         "agreement": "",
         "direct_sign_up": "",
         "final": {
-            "title": "",
+            "title": "Thanks for participating!",
             "subtitle": "Thank you for completing the risk assessment.",
             "detail_1": "The risks and symptoms stated in the assessment are highly related to NPC. If you experience these symptoms continuously, it is advised to consult healthcare professionals as soon as possible.",
             "detail_2": "Join us now to enjoy the exclusive privileges of “Take2 Extra Care” membership and schedule a doctor consultation through Take2 Health Platform."
@@ -129,48 +129,48 @@
     },
     "options": {
         "gender": {
-            "male": "",
-            "female": ""
+            "male": "Male",
+            "female": "Female"
         },
         "quiz": {
             "no": "No",
             "unclear": "Not sure",
             "yes": "Yes",
-            "never": "",
-            "rarely": "",
-            "sometimes": "",
-            "often": ""
+            "never": "Never",
+            "rarely": "Rarely",
+            "sometimes": "Sometimes",
+            "often": "Often"
         },
         "age": {
-            "20_or_below": "",
-            "61_or_above": ""
+            "20_or_below": "20  years old or above",
+            "61_or_above": "61 years old or above"
         },
         "career_regions": {
             "all": "",
-            "business_strategic_cooperation": "",
-            "mainland_china": ""
+            "business_strategic_cooperation": "Hong Kong",
+            "mainland_china": "China"
         },
         "update_post_types": {
             "all": "",
             "company_trends": "",
             "company_awards_and_achievements": "",
-            "industry_information": "",
+            "industry_information": "Industry Update",
             "ceo_sharing": "",
-            "business_cooperation": ""
+            "business_cooperation": "Corporate Development"
         },
         "hongkong_regions": {
             "all": "",
-            "hongkong": "",
-            "kowloon": "",
-            "new_territories_east": "",
-            "new_territories_west": ""
+            "hongkong": "Hong Kong",
+            "kowloon": "Kowloon",
+            "new_territories_east": "New Territories East",
+            "new_territories_west": "New Territories West"
         },
         "department": {
-            "all": "",
+            "all": "All Departments",
             "business_strategic_cooperation": ""
         },
         "macao_regions": {
-            "macao": ""
+            "macao": "Macau"
         }
     },
     "our_technologies": {
@@ -180,7 +180,7 @@
         },
         "ngs": {
             "title": "What is Next-generation Sequencing (NGS)?",
-            "what_is_ngs": "",
+            "what_is_ngs": "What is Next-generation Sequencing NGS? ",
             "intro": "NGS (Next-generation Sequencing) is a powerful tool that utilises the high-throughput and massively parallel sequencing approach, which has greatly improved sequencing efficiency while maintaining a high level of accuracy. The first-generation sequencing (Sanger sequencing) can only sequence a single DNA fragment at a time, while NGS can sequence and analyse hundreds to thousands of genes simultaneously, this allows scientists to rapidly obtain results that cover the entire human genome. <br/><br/>Compared to the first-generation sequencing, NGS has a significantly higher sequencing throughput and sequencing speed. This has made the whole genome sequencing process less expensive and time-consuming, reducing the cost from nearly 30 billion USD to about 1000 USD and the time required from 10 years to just 1 day. Besides, NGS has a higher sensitivity, which allows new or rare mutations within the target region of the genome to be detected by deep sequencing. Therefore, NGS can perform complex analysis that is beyond the capacity of the first-generation sequencing. For example, performing a large-scale whole-genome sequencing to analyse a complete human genome, or using transcriptome sequencing for mRNA, miRNA expression and RNA splicing analysis.<br/><br/>With the ultra-high throughput, scalability and speed offered by NGS, a wide range of applications can now be performed by scientists to study biological systems at an unprecedented level. Results generated from NGS can be combined with genomic data and bioinformatic studies to provide useful information for diseases and population-wide genomic research. Clinical applications of NGS include sequencing cancer samples to study rare somatic mutations, analysing epigenetic factors and revealing disease-related alleles.",
             "notes": {
                 "0": {
@@ -196,7 +196,7 @@
                     "content": "Other than undergoing nasoendoscopy and tissue samples examination, traditional EBV (Epstein-Barr Virus) tests are commonly used for identifying NPC as EBV is highly associated with NPC. EBV Serology test, and EBV DNA test which adopt PCR technology to determine the EBV DNA quantity in blood plasma, are the common types of traditional EBV tests. However, EBV infection is prevalent, the presence of EBV antibodies or DNA may represent merely a transient infection more than reflecting NPC status. These traditional EBV tests cannot confidently differentiate patients with EBV infection from NPC patients."
                 }
             },
-            "read_full_article": ""
+            "read_full_article": "(Read Full Article)"
         },
         "early_cancer_detection": {
             "title": "Why Early NPC Detection is Vital",
@@ -206,9 +206,9 @@
                 "2": "occurs at a relatively younger age, unlike colon, liver or prostate cancers³, where most patients are aged 65 to 80; over 80% of NPC patients are 50 to 65 years old, for whom are entering their “golden age” and planning for retirement."
             },
             "references": {
-                "0": "",
-                "1": "",
-                "2": ""
+                "0": "<sup>1</sup><i>Overview of Hong Kong Cancer Statistics of 2018.</i> Hong Kong Hospital Authority, October 2020.",
+                "1": "<sup>2</sup><i>Hong Kong Cancer Registry.</i> Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.",
+                "2": "<sup>3</sup>認識癌症：鼻咽癌. Hong Kong Cancer Fund, 2021, www.cancer-fund.org/wp-content/uploads/2021/03/NPC-20C-Revamp-Web_s.pdf."
             },
             "do_you_know": "Do You Know?",
             "do_you_know_content": "NPC can Strike Anyone at Any Age!",
@@ -259,7 +259,7 @@
             "all_faq": ""
         },
         "take2_prophecy": {
-            "title": "",
+            "title": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer",
             "detail": "The Take2 Prophecy™ Test for NPC is suitable for individuals who intend to do routine check-ups, who are asymptomatic and with suspected symptoms.",
             "detection_process": "",
             "process": {
@@ -334,21 +334,21 @@
     "menu": {
         "whats_new": "",
         "promotions": "Latest Promotions",
-        "health_tips": "",
+        "health_tips": "Health Tips",
         "updates": "",
-        "our_technologies": "",
+        "our_technologies": "Our Technologies",
         "early_cancer_detection": "Why Early NPC Detection is Vital",
         "ngs": "What is Next-generation Sequencing (NGS)?",
         "clinical_papers": "Relevant Studies and Literature",
-        "products_and_services": "",
-        "take2_prophecy": "",
+        "products_and_services": "Products and Services",
+        "take2_prophecy": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC)",
         "take2_extra_care": "Take2 Extra Care Membership Program",
         "service_location": "Service Locations – Hong Kong",
         "international": "",
-        "about_us": "",
+        "about_us": "About us",
         "mission": "",
         "join_us": "Join Us",
         "contact_us": "Contact Us",
-        "faq": ""
+        "faq": "FAQ"
     }
 }
