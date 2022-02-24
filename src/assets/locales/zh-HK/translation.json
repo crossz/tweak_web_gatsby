@@ -98,6 +98,11 @@
             "validation": {
                 "required": "*必填資料"
             }
+        },
+        "validation": {
+            "correct_form": "請輸入正確格式{{field}}",
+            "check_agreement": "請勾選同意",
+            "finish_quiz": "請完成測驗"
         }
     },
     "quiz": {
