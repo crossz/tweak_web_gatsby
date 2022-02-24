@@ -8,7 +8,6 @@ import {
   alpha,
   Container,
   useMediaQuery,
-  useTheme,
   Hidden,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
@@ -336,9 +335,9 @@ const initialValues = {
 
 const Quiz = () => {
   const classes = useStyle()
-  const { t } = useI18next()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { language, t } = useI18next()
+  const isEn = language === 'en'
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const [step, setStep] = useState(0)
   const [finishQuiz, setFinishQuiz] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
@@ -473,16 +472,20 @@ const Quiz = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <Box className={classes.quizRight}>
-                        <Box mb={matches ? 1 : 3}>
+                        <Box mb={matches ? 1 : isEn ? 1 : 3}>
                           <Typography
-                            variant={matches ? 'h5' : 'h4'}
+                            variant={matches ? 'h5' : isEn ? 'h5' : 'h4'}
                             color='primary'
                           >
                             {t('quiz.start.title')}
                           </Typography>
                         </Box>
-                        <Box mb={matches ? 1 : 2.5} color='grey.900'>
-                          <Typography variant={matches ? 'body2' : 'body1'}>
+                        <Box mb={matches ? 1 : isEn ? 1 : 2.5} color='grey.900'>
+                          <Typography
+                            variant={
+                              matches ? 'body2' : isEn ? 'body2' : 'body1'
+                            }
+                          >
                             <Trans i18nKey='quiz.start.detail'>
                               來個簡單測驗，人生可能從此變得不一樣。
                               <Hidden xsDown>
@@ -529,7 +532,7 @@ const Quiz = () => {
                             {errorText('gender')}
                           </FormControl>
                         </Box>
-                        <Box mb={matches ? 3 : 4.5}>
+                        <Box mb={matches ? 3 : isEn ? 3 : 4.5}>
                           <FormControl
                             className={classes.ageFormControl}
                             fullWidth={matches}

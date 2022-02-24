@@ -130,6 +130,12 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 'none',
     },
   },
+  isEnMenuWrapper: {
+    maxHeight: theme.spacing(50),
+    [theme.breakpoints.down('xs')]: {
+      maxHeight: 'none',
+    },
+  },
   menuItem: {
     width: `calc(100% / 3)`,
     marginBottom: theme.spacing(4),
@@ -150,7 +156,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
   const classes = useStyles()
-  const { t } = useI18next()
+  const { language, t } = useI18next()
+  const isEn = language === 'en'
   const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const menu = useMenu()
   const { email, phone, whatsapp, whatsappAccount } = useSiteMetadata()
@@ -243,7 +250,11 @@ const Footer = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={9} md={8}>
-            <Box className={classes.menuWrapper}>
+            <Box
+              className={classnames(classes.menuWrapper, {
+                [classes.isEnMenuWrapper]: isEn,
+              })}
+            >
               {menu?.map((item, index) => (
                 <Box
                   key={index}
