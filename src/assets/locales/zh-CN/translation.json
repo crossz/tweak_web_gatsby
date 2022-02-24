@@ -1,187 +1,190 @@
 {
-  "whats_new": {
-    "promotions": {
-      "title": "",
-      "detail": ""
+    "common": {
+        "book_now": "",
+        "display": "",
+        "learn_more": "",
+        "or": "",
+        "sign_up": "",
+        "sign_up_as_menber": "",
+        "submit": "",
+        "view_details": "",
+        "view_more": ""
     },
-    "health_tips": {
-      "title": "",
-      "detail": ""
-    }
-  },
-  "service_location": {
-    "title": "",
-    "more": ""
-  },
-  "homepage": {
-    "sign_up": {
-      "title": "",
-      "detail": ""
-    }
-  },
-  "common": {
-    "sign_up": "",
-    "learn_more": "",
-    "view_more": "",
-    "view_details": "",
-    "book_now": "",
-    "display": "",
-    "submit": "",
-    "sign_up_as_menber": "",
-    "or": ""
-  },
-  "t_and_c": {
-    "terms_and_conditions": "",
-    "privacy_policy": "",
-    "personal_infomation_collection_statement": ""
-  },
-  "status": {
-    "copy": {
-      "success": ""
+    "form": {
+        "age": {
+            "label": ""
+        },
+        "email": {
+            "label": ""
+        },
+        "gender": {
+            "label": ""
+        },
+        "phone": {
+            "label": "",
+            "placeholder": ""
+        },
+        "placeholder": {
+            "search": "",
+            "select": ""
+        },
+        "region": {
+            "label": "",
+            "options": {
+                "all": "",
+                "hongkong": "",
+                "other": ""
+            }
+        }
     },
-    "request": {
-      "empty_data": ""
+    "homepage": {
+        "sign_up": {
+            "detail": "",
+            "title": ""
+        }
     },
-    "submit": {
-      "fail": "",
-      "success": ""
-    }
-  },
-  "form": {
-    "placeholder": {
-      "search": "",
-      "select": ""
+    "options": {
+        "age": {
+            "20_or_below": "",
+            "61_or_above": ""
+        },
+        "gender": {
+            "female": "",
+            "male": ""
+        },
+        "quiz": {
+            "never": "",
+            "no": "",
+            "often": "",
+            "rarely": "",
+            "sometimes": "",
+            "unclear": "",
+            "yes": ""
+        }
     },
-    "region": {
-      "label": "",
-      "options": {
-        "all": "",
-        "other": "",
-        "hongkong": ""
-      }
+    "our_technologies": {
+        "clinical_papers": {
+            "detail": "",
+            "title": ""
+        },
+        "early_cancer_detection": {
+            "center_data": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "center_data_title": "",
+            "content_data_detail": "",
+            "do_you_know": "",
+            "do_you_know_content": "",
+            "reasions": {
+                "0": {
+                },
+                "1": {
+                },
+                "2": {
+                }
+            },
+            "reasons": {
+                "0": {
+                    "content": "",
+                    "title": ""
+                },
+                "1": {
+                    "content": "",
+                    "title": ""
+                },
+                "2": {
+                    "content": "",
+                    "title": ""
+                }
+            },
+            "references": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "title": "",
+            "whats_is_early_cancer_detection": "",
+            "whats_is_early_cancer_detection_content": ""
+        },
+        "ngs": {
+            "intro": "",
+            "notes": {
+                "0": {
+                    "content": "",
+                    "title": ""
+                },
+                "1": {
+                    "content": "",
+                    "title": ""
+                },
+                "2": {
+                    "content": "",
+                    "title": ""
+                }
+            },
+            "read_full_article": "",
+            "title": "",
+            "what_is_ngs": ""
+        }
     },
-    "gender": {
-      "label": ""
-    },
-    "age": {
-      "label": ""
-    },
-    "email": {
-      "label": ""
-    },
-    "phone": {
-      "label": "",
-      "placeholder": ""
-    }
-  },
-  "quiz": {
-    "pre": "",
-    "next": "",
-    "start": {
-      "button": "",
-      "title": "",
-      "detail": "",
-      "reference": ""
-    },
-    "last": {
-      "title": "",
-      "detail": ""
-    },
-    "agreement": "",
-    "direct_sign_up": "",
-    "final": {
-      "title": "",
-      "subtitle": "",
-      "detail_1": "",
-      "detail_2": ""
-    }
-  },
-  "options": {
-    "gender": {
-      "male": "",
-      "female": ""
+    "products_and_services": {
+        "take2_extra_care": {
+            "title": ""
+        }
     },
     "quiz": {
-      "no": "",
-      "unclear": "",
-      "yes": "",
-      "never": "",
-      "rarely": "",
-      "sometimes": "",
-      "often": ""
-    },
-    "age": {
-      "20_or_below": "",
-      "61_or_above": ""
-    }
-  },
-  "our_technologies": {
-    "clinical_papers": {
-      "title": "",
-      "detail": ""
-    },
-    "ngs": {
-      "title": "",
-      "what_is_ngs": "",
-      "intro": "",
-      "notes": {
-        "0": {
-          "title": "",
-          "content": ""
+        "agreement": "",
+        "direct_sign_up": "",
+        "final": {
+            "detail_1": "",
+            "detail_2": "",
+            "subtitle": "",
+            "title": ""
         },
-        "1": {
-          "title": "",
-          "content": ""
+        "last": {
+            "detail": "",
+            "title": ""
         },
-        "2": {
-          "title": "",
-          "content": ""
+        "next": "",
+        "pre": "",
+        "start": {
+            "button": "",
+            "detail": "",
+            "reference": "",
+            "title": ""
         }
-      },
-      "read_full_article": ""
     },
-    "early_cancer_detection": {
-      "title": "",
-      "reasions": {
-        "0": {},
-        "1": {},
-        "2": {}
-      },
-      "center_data": {
-        "0": "",
-        "1": "",
-        "2": ""
-      },
-      "references": {
-        "0": "",
-        "1": "",
-        "2": ""
-      },
-      "do_you_know": "",
-      "do_you_know_content": "",
-      "center_data_title": "",
-      "content_data_detail": "",
-      "whats_is_early_cancer_detection": "",
-      "whats_is_early_cancer_detection_content": "",
-      "reasons": {
-        "0": {
-          "content": "",
-          "title": ""
+    "service_location": {
+        "more": "",
+        "title": ""
+    },
+    "status": {
+        "copy": {
+            "success": ""
         },
-        "1": {
-          "content": "",
-          "title": ""
+        "request": {
+            "empty_data": ""
         },
-        "2": {
-          "content": "",
-          "title": ""
+        "submit": {
+            "fail": "",
+            "success": ""
         }
-      }
+    },
+    "t_and_c": {
+        "personal_information_collection_statement": "",
+        "privacy_policy": "",
+        "terms_and_conditions": ""
+    },
+    "whats_new": {
+        "health_tips": {
+            "detail": "",
+            "title": ""
+        },
+        "promotions": {
+            "detail": "",
+            "title": ""
+        }
     }
-  },
-  "products_and_services": {
-    "take2_extra_care": {
-      "title": ""
-    }
-  }
 }

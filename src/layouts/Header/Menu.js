@@ -209,7 +209,7 @@ const Menu = (props) => {
         onClick={handleClose}
         underline='always'
       >
-        {t('common.menber_registration')}
+        {t('common.member_registration')}
       </Link>
     </Box>
   )

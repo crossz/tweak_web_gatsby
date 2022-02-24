@@ -172,7 +172,7 @@ const Footer = () => {
         className={classnames(classes.link, classes.copyRightLink)}
         to='/terms-and-conditions/privacy-policy/'
       >
-        私隱政策
+        {t('t_and_c.privacy_policy')}
       </Link>
       {/* <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         服務條款
@@ -187,13 +187,13 @@ const Footer = () => {
         className={classnames(classes.link, classes.copyRightLink)}
         to='/terms-and-conditions/website-terms-of-use/'
       >
-        網站使用條款
+        {t('t_and_c.website_trems_of_use')}
       </Link>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
         to='/terms-and-conditions/personal-information-collection-statement/'
       >
-        個人資料收集聲明
+        {t('t_and_c.personal_information_collection_statement')}
       </Link>
     </Box>
   )

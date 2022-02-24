@@ -464,7 +464,7 @@ const International = () => {
                                   isError('companyName')
                                     ? ''
                                     : t('form.placeholder.enter', {
-                                        field: '$t(form.company.label)',
+                                        field: t('form.company.label'),
                                       })
                                 }
                                 type='text'

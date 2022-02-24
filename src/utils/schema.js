@@ -17,19 +17,17 @@ export const oriSchema = (t) => {
       companyName: yString()
         .nullable()
         .required(
-          t('form.placeholder.enter', { field: '$t(form.company.label)' })
+          t('form.placeholder.enter', { field: t('form.company.label') })
         ),
       dialingCode: yString().nullable().required(),
       gender: yString()
         .nullable()
         .required(
-          t('form.placeholder.select', { field: '$t(form.gender.label)' })
+          t('form.placeholder.select', { field: t('form.gender.label') })
         ),
       age: yString()
         .nullable()
-        .required(
-          t('form.placeholder.select', { field: '$t(form.age.label)' })
-        ),
+        .required(t('form.placeholder.select', { field: t('form.age.label') })),
       quiz: yArray()
         .of(yString())
         .length(QUIZ.length)
@@ -41,21 +39,21 @@ export const oriSchema = (t) => {
           is: true,
           then: yString().required(
             t('form.placeholder.enter', {
-              field: '$t(form.contact.label)',
+              field: t('form.contact.label'),
             })
           ),
         }),
       email: yString()
         .nullable()
         .email(
-          t('form.validation.correct_form', { field: '$(form.email.label)' })
+          t('form.validation.correct_form', { field: t('form.email.label') })
         )
         .when(
           ['phone', 'requiredEmailOrPhone'],
           (phoneArg, requiredEmailOrPhoneArg, schema) => {
             if (requiredEmailOrPhoneArg && phoneArg) return schema.notRequired()
             return schema.required(
-              t('form.placeholder.enter', { field: '$t(form.email.label)' })
+              t('form.placeholder.enter', { field: t('form.email.label') })
             )
           }
         ),
@@ -72,18 +70,18 @@ export const oriSchema = (t) => {
                 .matches(
                   new RegExp(activeDialingCode?.regex),
                   t('form.validation.correct_form', {
-                    field: '$(form.phone.label)',
+                    field: t('form.phone.label'),
                   })
                 )
                 .required(
-                  t('form.placeholder.enter', { field: '$t(form.phone.label)' })
+                  t('form.placeholder.enter', { field: t('form.phone.label') })
                 )
 
             return schema
               .matches(
                 new RegExp(activeDialingCode?.regex),
                 t('form.validation.correct_form', {
-                  field: '$(form.phone.label)',
+                  field: t('form.phone.label'),
                 })
               )
               .notRequired()
@@ -95,7 +93,7 @@ export const oriSchema = (t) => {
         .when('requiredArea', {
           is: true,
           then: yString().required(
-            t('form.placeholder.select', { field: '$t(form.region.label)' })
+            t('form.placeholder.select', { field: t('form.region.label') })
           ),
         }),
     },

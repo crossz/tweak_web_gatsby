@@ -128,7 +128,7 @@ const Header = (props) => {
                 className={classes.link}
                 to={`${process.env.GATSBY_SITE_URL}signup`}
               >
-                {t('common.menber_registration')}
+                {t('common.member_registration')}
               </Link>
             </Hidden>
           </Box>

@@ -548,7 +548,9 @@ const Quiz = () => {
                               displayEmpty
                             >
                               <MenuItem value='' disabled>
-                                {t('form.placeholder.select')}
+                                {t('form.placeholder.select', {
+                                  field: t('form.age.label'),
+                                })}
                               </MenuItem>
                               {AGE_OPTIONS.map((age) => (
                                 <MenuItem key={age.value} value={age.value}>
