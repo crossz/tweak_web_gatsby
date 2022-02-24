@@ -37,7 +37,8 @@
         "register": "Register",
         "follow_us": "Follow Us",
         "take2_copy_right": "©2021 Take2 Health copy right",
-        "online_promotion_code": ""
+        "online_promotion_code": "Book Online<br/>Promo Code {{PROMOTION_CODE}}",
+        "menber_registration": ""
     },
     "t_and_c": {
         "terms_and_conditions": "Terms and conditions",
@@ -49,23 +50,24 @@
             "success": "Copy the article link successfully!"
         },
         "request": {
-            "empty_data": ""
+            "empty_data": "No FAQ data yet"
         },
         "submit": {
-            "fail": "",
-            "success": ""
+            "fail": "Submission Failed",
+            "success": "Submitted Successfully"
         }
     },
     "form": {
         "placeholder": {
             "search": "Search",
-            "select": ""
+            "select": "Select",
+            "enter": ""
         },
         "region": {
-            "label": "",
+            "label": "Region",
             "options": {
-                "all": "",
-                "other": "",
+                "all": "All Regions",
+                "other": "Other Regions",
                 "hongkong": "Hong Kong"
             }
         },
@@ -93,7 +95,7 @@
             "label": "",
             "placeholder": "",
             "validation": {
-                "required": ""
+                "required": "*Required information"
             }
         }
     },
@@ -110,8 +112,8 @@
             "title": "",
             "detail": ""
         },
-        "agreement": "",
-        "direct_sign_up": "",
+        "agreement": "I have understood and agreed to Take2 Health Limited's website on take2health.net's website <1></1> and <1></1>.",
+        "direct_sign_up": "Register as a Take2 Extra Care member\n",
         "final": {
             "title": "Thanks for participating!",
             "subtitle": "Thank you for completing the risk assessment.",
@@ -146,20 +148,20 @@
             "61_or_above": "61 years old or above"
         },
         "career_regions": {
-            "all": "",
+            "all": "All Regions",
             "business_strategic_cooperation": "Hong Kong",
             "mainland_china": "China"
         },
         "update_post_types": {
-            "all": "",
-            "company_trends": "",
-            "company_awards_and_achievements": "",
+            "all": "Latest News",
+            "company_trends": "Company Trends",
+            "company_awards_and_achievements": "Company Awards and Achievements",
             "industry_information": "Industry Update",
-            "ceo_sharing": "",
+            "ceo_sharing": "CEO Sharing",
             "business_cooperation": "Corporate Development"
         },
         "hongkong_regions": {
-            "all": "",
+            "all": "All Regions",
             "hongkong": "Hong Kong",
             "kowloon": "Kowloon",
             "new_territories_east": "New Territories East",
@@ -167,7 +169,7 @@
         },
         "department": {
             "all": "All Departments",
-            "business_strategic_cooperation": ""
+            "business_strategic_cooperation": "Business C"
         },
         "macao_regions": {
             "macao": "Macau"
@@ -254,9 +256,9 @@
                 "3": "Annual check-up reminders"
             },
             "faq": {
-                "welcome_contact": ""
+                "welcome_contact": "If you have any other questions, please feel free to contact us:"
             },
-            "all_faq": ""
+            "all_faq": "All FAQ"
         },
         "take2_prophecy": {
             "title": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer",
@@ -288,22 +290,22 @@
     },
     "about_us": {
         "mission": {
-            "title": "",
-            "team_title": "",
-            "background_founder": "",
-            "team_founder_content": "",
-            "our_team": "",
-            "our_team_content": "",
+            "title": "Our Principles and Mission",
+            "team_title": "Founding Team",
+            "background_founder": "Our background and founders",
+            "team_founder_content": "Established by three internationally recognised and respected pathology professors from the renowned Chinese University of Hong in 2019, Take2 Health is an exemplary case of successful commercialisation of leading academic invention.\n\nLeveraging the founders’ proven 20-plus-year track records in Genomics and Diagnostics research, we, an enterprise built from Hong Kong, are providing the Take2 ProphecyTM Test for Nasopharyngeal Cancer as the pioneering product. With the aspiration to expand this service to a much wider community, we aim to radiate positive impacts to people’s lives across Asia.\n\nPlease click the link below for an article about Take2 Health, <br/><br/>our three founders and our first product:<br/><1>https://www.businesswire.com/news/home/20190506005296/zh-HK/</1>",
+            "our_team": "Our team",
+            "our_team_content": "Building a team of brilliant talents from across the globe who stand behind the same vision, we grow stronger day by day to deliver what we envision, “We are proud to deliver positive impact and benefit the community at large by leveraging research achievements from leading scholars worldwide. Made up of young and enthusiastic visionaries, we are meticulous and innovative frontiersmen that believe in pushing boundaries and making things happen. In caring for human health, we will continue to be dedicated and looking for progressive health solutions that change lives.”",
             "beliefs": {
                 "0": {
-                    "type": "",
-                    "slogan": "",
-                    "content": ""
+                    "type": "Our Principles and Mission",
+                    "slogan": "At the frontier of biotechnology, we are dedicated to broadening the horizon of health with ground-breaking innovation.",
+                    "content": "In the era of disruptive technologies and rapidly evolving science, innovation and actionable insights are the keys to sustainable improvement in human health condition.\n\nAt Take2 Health, with a nexus of pioneering minds and technology vanguards, we are eager to provide practical information and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia.\n\nWe firmly believe that knowledge and experience are essential to lead to the well-being of individuals, allowing people to live their lives to the fullest. \n與此同時，我們相信每個人都值得擁有健康無憂的人生，能透過學習、啟發和經驗，掌握健康，創造屬於自己的理想生活。 "
                 },
                 "1": {
                     "type": "",
-                    "slogan": "",
-                    "content": ""
+                    "slogan": "Be the apex for cancer detection that moves people forward with awareness and confidence, through realising the advantages of early cancer detection.",
+                    "content": "Regardless of our age, sex or background, we can never be fully prepared for cancer, which often comes as a bolt out of the blue. \n\nThe power of knowledge is the foundation of our actions, especially\nwhen tackling the uncertainties of cancer. Only if we detect cancer earlier will the uphill battle be overcome much easier.\n\nWith our cutting-edge technologies and knowledgeable professionals, we are dedicated to promoting early cancer detection with actionable insights that could empower people with advantages to surmount the odds of cancer. Early cancer detection allows early interventions and treatments. As such, chances of successful treatment and survival rate could be greatly increased. We are dedicated to helping people realise the importance of taking back the control of their health and live life to its fullest."
                 }
             }
         },
@@ -332,10 +334,10 @@
         }
     },
     "menu": {
-        "whats_new": "",
+        "whats_new": "Latest News and Promotion",
         "promotions": "Latest Promotions",
         "health_tips": "Health Tips",
-        "updates": "",
+        "updates": "Latest News",
         "our_technologies": "Our Technologies",
         "early_cancer_detection": "Why Early NPC Detection is Vital",
         "ngs": "What is Next-generation Sequencing (NGS)?",
@@ -344,9 +346,9 @@
         "take2_prophecy": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC)",
         "take2_extra_care": "Take2 Extra Care Membership Program",
         "service_location": "Service Locations – Hong Kong",
-        "international": "",
+        "international": "Business Cooperation",
         "about_us": "About us",
-        "mission": "",
+        "mission": "Our Mission",
         "join_us": "Join Us",
         "contact_us": "Contact Us",
         "faq": "FAQ"
