@@ -4,8 +4,8 @@ languages:
 - en
 cover: []
 date: 2021-07-06T00:00:00+08:00
-title: Take2 Health Partnering with LifeStrands Genomics to Offer Early NPC Detection
-  Test
+title: Take2 Health Partnering with LifeStrands Genomics to Serve Singapore, Malaysia,
+  and Vietnam
 detail: Take2 Health and LifeStrands Genomics Pte. Ltd, a diagnostic service subsidiary
   wholly owned by the Pathology Asia Holdings Pte. Ltd, have jointly announced a partnership
   to distribute the Take2 Prophecy™ Test for Nasopharyngeal Cancer.
