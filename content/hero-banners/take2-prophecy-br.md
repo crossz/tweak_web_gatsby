@@ -22,17 +22,17 @@ reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Departm
 theme: dark
 sort: 1
 titleCn: ''
-titleEn: Take2 Prophecy™, Cheung Tat-ming’s first choice Let us learn the importance
-  of detecting NPC early
+titleEn: Take2 Prophecy™, Cheung Tat-ming’s First Choice<br/>Learn the Importance
+  of Detecting NPC Early
 detailCn: ''
 detailEn: Mr. Cheung Tat-ming, a Nasopharyngeal Cancer (NPC) survivor, had experienced
   a delay in seeking medical intervention because of lacking cancer awareness, and
   hence he overlooked the warning signs of his health. Through his story, he is sharing
   with everyone his thoughts on the importance of detecting cancer early. According
   to the World Health Organization statistics of 2018, the NPC incidence rate in Hong
-  Kong is 5 to 6 times the world’s average1,2. We should all be reminded not to overlook
-  the risk of NPC. It can strike anyone at any age. Therefore, everyone must be vigilant
-  to NPC and consider taking the early NPC detection test as a precaution.
+  Kong is 5 to 6 times the world’s average<sup>1,2</sup>. We should all be reminded
+  not to overlook the risk of NPC. It can strike anyone at any age. Therefore, everyone
+  must be vigilant to NPC and consider taking the early NPC detection test as a precaution.
 titleHk: 張達明首選Take2 Prophecy™ <br/>親述早期鼻咽癌篩查的重要性
 detailHk: "「鼻咽癌康復者」張達明先生曾因忽略身體警號而延誤求醫，他希望藉着自己的經歷讓大眾關注鼻咽癌。根據世界衛生組織2018年的數據顯示，香港鼻咽癌發病率是全球平均的5-6倍<sup>1,2</sup>。不論年紀、性別及背景，任何人士都有機會患上鼻咽癌，因此，及早進行早期鼻咽癌篩查「提防」鼻咽癌是至關重要的。"
 
