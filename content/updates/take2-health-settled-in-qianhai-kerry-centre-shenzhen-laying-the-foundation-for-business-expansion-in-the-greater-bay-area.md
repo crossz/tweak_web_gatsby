@@ -6,8 +6,7 @@ date: 2021-12-16T00:00:00.000+08:00
 title: Take2 Health Settled in Qianhai Kerry Centre, Shenzhen, Laying the Foundation
   for Business Expansion
 detail: 'In pursuit of following the prudent strategies for long-term business development,
-  Take2 Health (hereinafter referred to as "we" or "our company") has officially settled
-  in Qianhai Kerry Centre, Shenzhen, in 2021 year-end. '
+  Take2 Health has officially settled in Qianhai Kerry Centre, Shenzhen, in 2021 year-end. '
 href: ''
 slug: ''
 languages:
@@ -20,7 +19,7 @@ In pursuit of following the prudent strategies for long-term business developmen
 
 ![](../images/1.jpg)
 
-**Shenzhen office in the prime location equipped with a high standard laboratory capable of serving a large**
+**Shenzhen office in the prime location equipped with a high standard laboratory capable of serving a large population**
 
 Located in the prime area of Qianhai, our office and laboratory is adjacent to the Guangzhou-Shenzhen Yanjiang Expressway, giving our company geographically distinctive and favourable advantages which at the same time attract plenty of high-tech companies and talents. Our state-of-the-art medical laboratory (over 2,000 sq.m.) upholds laboratory quality control standards according to The National Basic Standards and Management Specifications for Medical Laboratory, ISO15189 and CAP. From a long-term perspective, we expect to provide services to the vast population in the GBA and across China with a large-scale operation.
 
