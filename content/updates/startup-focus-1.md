@@ -9,7 +9,6 @@ slug: ''
 cover:
 - "../images/20210202TAKE2HEALTHLTD01.jpeg"
 languages:
-- zh-CN
 - zh-HK
 
 ---
