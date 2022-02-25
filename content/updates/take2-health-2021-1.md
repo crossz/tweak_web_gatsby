@@ -8,7 +8,6 @@ detail: Take2 Health於2021年12月5日參與由德勤  (Deloitte) 主辦的「�
 href: ''
 slug: ''
 languages:
-- en
 - zh-CN
 - zh-HK
 
