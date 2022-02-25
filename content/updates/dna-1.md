@@ -8,8 +8,6 @@ href: https://www.etnet.com.hk/mobile/tc/health/LA70336
 slug: ''
 cover: []
 languages:
-- en
-- zh-CN
 - zh-HK
 
 ---
