@@ -9,7 +9,6 @@ slug: ''
 cover:
 - "../images/244344811_23849084159150722_5937673592520422583_n-png.jpg"
 languages:
-- en
 - zh-CN
 - zh-HK
 
