@@ -9,8 +9,8 @@ detail: Why should we get specific cancer screenings as part of our health check
 href: https://www.scmp.com/presented/news/hong-kong/health-environment/topics/cancer-screenings/article/3106575/choosing-right
 slug: ''
 languages:
+- en
 - zh-CN
 - zh-HK
-- en
 
 ---
