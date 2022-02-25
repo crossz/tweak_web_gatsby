@@ -2,8 +2,8 @@
 type: industry_information
 cover: []
 date: 2021-09-17T03:00:00.000+08:00
-title: Take2 Health夥拍香港保險業聯會　分享無創早期癌症篩查技術
-detail: Take2 Health夥拍香港保險業聯會於2021年9月17日成功舉辦了「如何利用游離DNA分析技術作早期癌症篩查」行業分享會，參與者均非常投入，反應亦相當積極。
+title: Take2 Health 夥拍香港保險業聯會　分享無創早期癌症篩查技術
+detail: Take2 Health 夥拍香港保險業聯會於2021年9月17日成功舉辦了「如何利用游離DNA分析技術作早期癌症篩查」行業分享會，參與者均非常投入，反應亦相當積極。
 href: ''
 slug: ''
 languages:
