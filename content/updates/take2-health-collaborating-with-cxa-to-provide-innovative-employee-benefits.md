@@ -2,7 +2,7 @@
 type: industry_information
 cover: []
 date: 2021-11-01T00:00:00.000+08:00
-title: Take2 Health Collaborating with CXA To Provide Innovative Employee Benefits
+title: Take2 Health Collaborating with CXA to Provide Innovative Employee Benefits
 detail: Starting from November 2020, the Take2 Prophecy™ Test for Nasopharyngeal Cancer
   and other health assessment services officially joined the CXA’s wellness provider
   network, providing the innovative medical solution to Hong Kong users.
