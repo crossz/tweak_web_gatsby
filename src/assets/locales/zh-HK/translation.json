@@ -155,8 +155,8 @@
         },
         "career_regions": {
             "all": "所有地區",
-            "business_strategic_cooperation": "香港特別行政區",
-            "mainland_china": "中國內地"
+            "mainland_china": "中國內地",
+            "hongkong_special_administrative_region": "香港特別行政區"
         },
         "update_post_types": {
             "all": "所有最新動態",

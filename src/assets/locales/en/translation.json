@@ -155,8 +155,8 @@
         },
         "career_regions": {
             "all": "All Regions",
-            "business_strategic_cooperation": "Hong Kong",
-            "mainland_china": "China"
+            "mainland_china": "China",
+            "hongkong_special_administrative_region": "Hong Kong"
         },
         "update_post_types": {
             "all": "Latest News",

@@ -451,7 +451,7 @@ const JoinUs = ({ data, pageContext }) => {
                                     value={region.value}
                                     disabled={!region.value}
                                   >
-                                    {region.label}
+                                    {t(region.label)}
                                   </MenuItem>
                                 ))}
                               </ESelect>
