@@ -3,7 +3,7 @@ type: company_awards_and_achievements
 cover:
 - "../images/untitled-design-16.png"
 date: 2021-12-15T00:00:00.000+08:00
-title: Take2 Health榮獲「2021德勤香港明日之星」得獎企業
+title: Take2 Health 榮獲「2021德勤香港明日之星」得獎企業
 detail: Take2 Health 於2021年12月5日參與由德勤 (Deloitte) 主辦的「香港高科技高成長及明日之星」頒獎典禮，並於同日成功獲得「2021德勤香港明日之星」這項殊榮。
 href: ''
 slug: ''
