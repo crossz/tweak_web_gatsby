@@ -39,7 +39,9 @@
         "take2_copy_right": "©2021 Take2 Health 版權所有",
         "online_promotion_code": "網上預約<br/>優惠碼{{PROMOTION_CODE}}",
         "menber_registration": "",
-        "member_registration": "會員登記"
+        "member_registration": "會員登記",
+        "take2_health": "得意健康",
+        "release_date": "發布日期"
     },
     "t_and_c": {
         "terms_and_conditions": "條款及細則",
