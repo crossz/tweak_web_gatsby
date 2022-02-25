@@ -308,7 +308,7 @@
                 "0": {
                     "type": "Our Principles and Mission",
                     "slogan": "At the frontier of biotechnology, we are dedicated to broadening the horizon of health with ground-breaking innovation.",
-                    "content": "In the era of disruptive technologies and rapidly evolving science, innovation and actionable insights are the keys to sustainable improvement in human health condition.\n\nAt Take2 Health, with a nexus of pioneering minds and technology vanguards, we are eager to provide practical information and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia.\n\nWe firmly believe that knowledge and experience are essential to lead to the well-being of individuals, allowing people to live their lives to the fullest. \n與此同時，我們相信每個人都值得擁有健康無憂的人生，能透過學習、啟發和經驗，掌握健康，創造屬於自己的理想生活。 "
+                    "content": "In the era of disruptive technologies and rapidly evolving science, innovation and actionable insights are the keys to sustainable improvement in human health condition.\n\nAt Take2 Health, with a nexus of pioneering minds and technology vanguards, we are eager to provide practical information and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia.\n\nWe firmly believe that knowledge and experience are essential to lead to the well-being of individuals, allowing people to live their lives to the fullest."
                 },
                 "1": {
                     "type": "Our Mission",
@@ -321,12 +321,12 @@
             "title": "Join Us",
             "detail": "As a forward-thinking startup, we hope to join hands with professionals from biotechnology and many other industries to empower more and more communities and affect the world through positive change.<br /><br />Join us in boldly taking on the challenges of health today and advance the world of tomorrow!",
             "open_positions": "Job Vacancies",
-            "form_detail": ""
+            "form_detail": "Cannot find any position you match with?<br/> Leave your contact and learn the upcoming vacant positions from us:"
         }
     },
     "international": {
         "title": "Beyond the Boundaries",
-        "detail": "connected within the Greater Bay Area, we harness the power of early cancer detection and aim to serve the broader community around the globe. Bringing together the meticulous services from healthcare practitioners in different regions, we are dedicated to creating an extensive network that delivers accessible healthcare services and spreads the impact.",
+        "detail": "Connected within the Greater Bay Area, we harness the power of early cancer detection and aim to serve the broader community around the globe. Bringing together the meticulous services from healthcare practitioners in different regions, we are dedicated to creating an extensive network that delivers accessible healthcare services and spreads the impact.",
         "our_partners": "Our Partners",
         "become_a_partner": "Be our Partner",
         "become_a_partner_content": "Interested in promoting early NPC detection through cutting-edge technologies with us? Please complete the fields below and we will be in touch."
