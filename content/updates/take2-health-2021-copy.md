@@ -3,23 +3,24 @@ type: company_awards_and_achievements
 cover:
 - "../images/untitled-design-15.png"
 date: 2021-09-10T00:00:00.000+08:00
-title: Take2 Health獲選為2021年 凝動香港體育基金《企業「一」起動》嘉許企業-(copy)
-detail: 由凝動香港體育基金主辦的首屆《企業「一」起動》嘉許計劃及年度優秀實踐案例典禮於2021年9月9日假柴灣青年廣場圓滿舉行。Take2 Health獲選為受嘉許企業之一，我司對此感到十分榮幸。
+title: Take2 Health is honoured to be awarded in the 2021 Inaugural SportsHour Company
+  Scheme
+detail: Take2 Health is honoured to receive the Inaugural SportsHour Company Scheme
+  Award which is organised by the InspiringHK Sports Foundation.
 href: ''
 slug: ''
 languages:
-- zh-CN
-- zh-HK
+- en
 
 ---
 ![](../images/award1.jpg)
 
-由凝動香港體育基金主辦的首屆《企業「一」起動》嘉許計劃及年度優秀實踐案例典禮於2021年9月9日假柴灣青年廣場圓滿舉行。Take2 Health（下稱：我司）獲選為受嘉許企業之一，我司對此感到十分榮幸。
+Take2 Health is honoured to receive the Inaugural SportsHour Company Scheme Award which is organised by the InspiringHK Sports Foundation.
 
 ![](../images/award2.jpg)
 
-此計劃旨在鼓勵香港企業和機構響應世界衛生組織的建議，帶領員工進行每天累計至少一小時的中高強度體能活動，推動員工的身心健康從而提升企業效益。讓大眾活得更健康，是我們的願景, 除了鼓勵員工及其家人多做運動外，我司還致力推動大眾關注癌症，從而提升社會的整體健康水平。
+To foster a healthy lifestyle as part of the company culture in which one of the benefits is improving business efficiency, the scheme encourages Hong Kong companies and organisations to advocate to employees and their family members to exercise daily for an hour or more in mid-to-high-intensity as recommended by the World Health Organization. Echoing this initiative, our company encourages all our employees, families and friends to exercise regularly to stay fit. Furthermore, we envision raising citizens’ well-being by advocating health awareness on many aspects, such as cancers.
 
-我司致力成為業界先驅，期望透過提供精準的早期癌症篩查技術，以及癌症相關資訊以宣揚健康意識，為人類長遠的健康生活帶來正面改變。
+To truly achieve our vision and serve, help and protect those we care for, we are determined to provide excellent services with pioneering early cancer detection technologies and supply actionable cancer-related information to safeguard the long-term health of all human beings.
 
 ![](../images/award5.jpg)
