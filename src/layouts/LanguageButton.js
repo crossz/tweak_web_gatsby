@@ -3,6 +3,7 @@ import { makeStyles, Menu, MenuItem, Box } from '@material-ui/core'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
 import CancelIcon from '@images/icons/arrow.svg'
+import classnames from 'classnames'
 const { languageLabels } = require('../../languages')
 
 const useStyles = makeStyles((theme) => ({
@@ -60,7 +61,10 @@ const LanguageButton = (props) => {
   }
   return (
     <>
-      <Box className={classes.root} onClick={handleClick}>
+      <Box
+        className={classnames(classes.root, props.className)}
+        onClick={handleClick}
+      >
         {languageLabels?.map(
           (language, index) =>
             language?.shortLabel +

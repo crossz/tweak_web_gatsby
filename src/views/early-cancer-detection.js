@@ -173,7 +173,8 @@ const references = [
 
 const EarlyCancerDetection = () => {
   const classes = useStyles()
-  const { t } = useI18next()
+  const { language, t } = useI18next()
+  const isEn = language === 'en'
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -322,7 +323,7 @@ const EarlyCancerDetection = () => {
             </Box>
             <Container disableGutters maxWidth='sm'>
               <Box className={classes.reasonsWrapper}>
-                {reasons.map((reason) => (
+                {reasons.map((reason, index) => (
                   <Box className={classes.reasonItem} key={reason.title}>
                     <Box width={matches ? 108 : 146}>{reason.icon}</Box>
                     <Box
@@ -332,11 +333,13 @@ const EarlyCancerDetection = () => {
                       mt={matches ? 1.25 : 2.5}
                       mb={matches ? 1.25 : 2}
                     >
-                      {reason.title}
+                      {index === 1 && isEn ? reason.content : reason.title}
                     </Box>
-                    <Box fontSize='body2.fontSize' textAlign='center'>
-                      {reason.content}
-                    </Box>
+                    {!(index === 1 && isEn) && (
+                      <Box fontSize='body2.fontSize' textAlign='center'>
+                        {reason.content}
+                      </Box>
+                    )}
                   </Box>
                 ))}
               </Box>

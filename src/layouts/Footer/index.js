@@ -26,6 +26,7 @@ import classnames from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
 import GoToTop from './GoToTop'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import LanguageButton from '../LanguageButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     marginTop: 'auto',
     flexWrap: 'wrap',
+    alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(6),
     },
@@ -137,20 +139,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuItem: {
-    width: `calc(100% / 3)`,
+    width: '100%',
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down('xs')]: {
-      width: '100%',
       marginBottom: 0,
     },
   },
-  lastMenuItem: {
-    [theme.breakpoints.up('md')]: {
-      marginTop: theme.spacing(3.5),
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginTop: 0,
-    },
+
+  languageBtn: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
   },
 }))
 
@@ -202,8 +200,79 @@ const Footer = () => {
       >
         {t('t_and_c.personal_information_collection_statement')}
       </Link>
+      <LanguageButton
+        className={classnames(classes.languageBtn, classes.copyRightLink)}
+      ></LanguageButton>
     </Box>
   )
+  const menuItem = (index) => {
+    const item = menu?.[index]
+    return item ? (
+      <Box
+        className={classnames(classes.menuWrapper, {
+          [classes.isEnMenuWrapper]: isEn,
+        })}
+      >
+        <Box key={index} className={classnames(classes.menuItem)}>
+          <EAccordion
+            expanded={!matches || item.path === panel}
+            square
+            onChange={handleChange(
+              !matches || !item.sections?.length ? '' : item.path
+            )}
+          >
+            <EAccordionSummary
+              expandIcon={
+                matches &&
+                item.sections?.length && (
+                  <ArrowIcon className={classes.arrowIcon} />
+                )
+              }
+              aria-controls='panel1a-content'
+              id='panel1a-header'
+              classes={{
+                root: classes.accordionSummaryRoot,
+                content: classes.accordionSummaryContent,
+              }}
+            >
+              {matches && item.sections?.length ? (
+                <Box
+                  fontSize='body1.fontSize'
+                  fontWeight='fontWeightBold'
+                  className={classes.link}
+                >
+                  {t(item.title)}
+                </Box>
+              ) : (
+                <Link className={classes.link} to={item.path}>
+                  <Box fontSize='body1.fontSize' fontWeight='fontWeightBold'>
+                    {t(item.title)}
+                  </Box>
+                </Link>
+              )}
+            </EAccordionSummary>
+            {item.sections?.length && (
+              <EAccordionDetails
+                classes={{
+                  root: classes.accordionDetailsRoot,
+                }}
+              >
+                <Typography variant='body2' component='div'>
+                  {item.sections.map((tab) => (
+                    <Box mt={1} key={tab.title}>
+                      <Link to={tab.path} className={classes.link}>
+                        {t(tab.title)}
+                      </Link>
+                    </Box>
+                  ))}
+                </Typography>
+              </EAccordionDetails>
+            )}
+          </EAccordion>
+        </Box>
+      </Box>
+    ) : null
+  }
 
   return (
     <Box className={classes.root}>
@@ -250,80 +319,29 @@ const Footer = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={9} md={8}>
-            <Box
-              className={classnames(classes.menuWrapper, {
-                [classes.isEnMenuWrapper]: isEn,
-              })}
-            >
-              {menu?.map((item, index) => (
-                <Box
-                  key={index}
-                  className={classnames(
-                    classes.menuItem,
-                    index === menu.length - 1 && classes.lastMenuItem
-                  )}
-                >
-                  <EAccordion
-                    expanded={!matches || item.path === panel}
-                    square
-                    onChange={handleChange(
-                      !matches || !item.sections?.length ? '' : item.path
-                    )}
-                  >
-                    <EAccordionSummary
-                      expandIcon={
-                        matches &&
-                        item.sections?.length && (
-                          <ArrowIcon className={classes.arrowIcon} />
-                        )
-                      }
-                      aria-controls='panel1a-content'
-                      id='panel1a-header'
-                      classes={{
-                        root: classes.accordionSummaryRoot,
-                        content: classes.accordionSummaryContent,
-                      }}
-                    >
-                      {matches && item.sections?.length ? (
-                        <Box
-                          fontSize='body1.fontSize'
-                          fontWeight='fontWeightBold'
-                          className={classes.link}
-                        >
-                          {t(item.title)}
-                        </Box>
-                      ) : (
-                        <Link className={classes.link} to={item.path}>
-                          <Box
-                            fontSize='body1.fontSize'
-                            fontWeight='fontWeightBold'
-                          >
-                            {t(item.title)}
-                          </Box>
-                        </Link>
-                      )}
-                    </EAccordionSummary>
-                    {item.sections?.length && (
-                      <EAccordionDetails
-                        classes={{
-                          root: classes.accordionDetailsRoot,
-                        }}
-                      >
-                        <Typography variant='body2' component='div'>
-                          {item.sections.map((tab) => (
-                            <Box mt={1} key={tab.title}>
-                              <Link to={tab.path} className={classes.link}>
-                                {t(tab.title)}
-                              </Link>
-                            </Box>
-                          ))}
-                        </Typography>
-                      </EAccordionDetails>
-                    )}
-                  </EAccordion>
-                </Box>
-              ))}
-            </Box>
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={4}>
+                {menuItem(0)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(2)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(5)}
+              </Grid>
+            </Grid>
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={4}>
+                {menuItem(1)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(3)}
+                {menuItem(4)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(6)}
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
         <CopyRights></CopyRights>
