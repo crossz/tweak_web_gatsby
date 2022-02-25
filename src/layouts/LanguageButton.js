@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Menu, MenuItem, Box, alpha } from '@material-ui/core'
+import { makeStyles, Menu, MenuItem, Box } from '@material-ui/core'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
 import CancelIcon from '@images/icons/arrow.svg'

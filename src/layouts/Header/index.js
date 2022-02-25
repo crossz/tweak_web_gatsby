@@ -6,7 +6,6 @@ import {
   useMediaQuery,
   Container,
   Hidden,
-  Button,
 } from '@material-ui/core'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'

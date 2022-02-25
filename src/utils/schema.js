@@ -3,7 +3,6 @@ import {
   string as yString,
   bool as yBool,
   array as yArray,
-  date as yDate,
 } from 'yup'
 
 import { DIALING_CODES, QUIZ } from '@utils/constant'

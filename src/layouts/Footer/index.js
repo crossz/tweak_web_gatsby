@@ -284,7 +284,7 @@ const Footer = () => {
                         content: classes.accordionSummaryContent,
                       }}
                     >
-                      {matches ? (
+                      {matches && item.sections?.length ? (
                         <Box
                           fontSize='body1.fontSize'
                           fontWeight='fontWeightBold'
