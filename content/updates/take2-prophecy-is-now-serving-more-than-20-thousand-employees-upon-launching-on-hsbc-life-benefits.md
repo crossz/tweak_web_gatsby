@@ -4,9 +4,9 @@ cover: []
 date: 2021-03-15T05:00:00.000+08:00
 title: Take2 Prophecy™ is Now Serving More than 20-thousand Employees Upon Launching
   on HSBC Life Benefits+
-detail: 'Since March 2021, the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“the
-  Test”) and related health assessment services are available on HSBC Life Benefits+
-  as one of the new employee benefits. '
+detail: 'Since March 2021, the Take2 Prophecy™ Test for Nasopharyngeal Cancer and
+  related health assessment services are available on HSBC Life Benefits+ as one of
+  the new employee benefits. '
 href: ''
 slug: ''
 languages:
