@@ -22,7 +22,7 @@
     "common": {
         "sign_up": "Register Now",
         "learn_more": "Learn More",
-        "view_more": "Learn More",
+        "view_more": "Read More",
         "view_details": "View Details",
         "book_now": "Book Now",
         "display": "Dispaly",
@@ -38,11 +38,9 @@
         "follow_us": "Follow Us",
         "take2_copy_right": "©2021 Take2 Health copy right",
         "online_promotion_code": "Book Online<br/>Promo Code {{PROMOTION_CODE}}",
-        "menber_registration": "Member Registration",
-        "member_registration": "Member registration",
-        "take2_health": "",
-        "release_date": "",
-        "more": "More {{field}}"
+        "member_registration": "Member Registration",
+        "take2_health": "Take2 Health Limited",
+        "release_date": "Job Posting Date"
     },
     "t_and_c": {
         "terms_and_conditions": "Terms and conditions",
@@ -109,19 +107,19 @@
         }
     },
     "quiz": {
-        "pre": "Back to previous question",
+        "pre": "Back to the previous question",
         "next": "Next question",
         "start": {
             "button": "Start Now",
             "title": "Get Started with Your Free NPC Risk Assessment!",
             "detail": "Despite the symptoms of NPC are non-specific at early stage, the risk of developing NPC may be predicted through NPC risk factor assessment. \n\nTake the simple assessment now to understand the risk factors and symptoms of NPC. <1></1>The assessment is designed by healthcare professionals to deepen your understanding of the risk factors and related symptoms. \n\nStart taking charge of your health now as the survival rate for patients that diagnosed at late-stage will decrease to below 70% over the next five years.",
-            "reference": "The assessment result above serves as a reference only.<br/> There are many factors that cause NPC and the symptoms may vary from person to person. Please consult healthcare professionals for more information, or you may reach out to our professional healthcare team for further support."
+            "reference": "The assessment result serves as a reference only.<br/> There are many factors that cause NPC and the symptoms may vary from person to person. Please consult healthcare professionals for more information, or you may reach out to our professional healthcare team for further support."
         },
         "last": {
-            "title": "The final step to get results",
-            "detail": ""
+            "title": "Just one more step to get your free test result!",
+            "detail": "Please type in the following information and receive the test result for free via email. Registered nurses will be in touch with you online and provide additional product and service details. You may also register to become Take2 ExtraCare member for free."
         },
-        "agreement": "I have understood and agreed to Take2 Health Limited's website on take2health.net's website <1></1> and <1></1>.",
+        "agreement": "I acknowledge and agree with the <1><1> and <1><1> listed in take2health.net under Take2 Health Limited.",
         "direct_sign_up": "Register as a Take2 Extra Care member\n",
         "final": {
             "title": "Thanks for participating!",
@@ -153,8 +151,8 @@
             "often": "Often"
         },
         "age": {
-            "20_or_below": "20  years old or above",
-            "61_or_above": "61 years old or above"
+            "20_or_below": "20 or below",
+            "61_or_above": "61 or above"
         },
         "career_regions": {
             "all": "All Regions",
@@ -191,7 +189,7 @@
         },
         "ngs": {
             "title": "What is Next-generation Sequencing (NGS)?",
-            "what_is_ngs": "What is Next-generation Sequencing NGS? ",
+            "what_is_ngs": "What is Next-generation Sequencing NGS?",
             "intro": "NGS (Next-generation Sequencing) is a powerful tool that utilises the high-throughput and massively parallel sequencing approach, which has greatly improved sequencing efficiency while maintaining a high level of accuracy. The first-generation sequencing (Sanger sequencing) can only sequence a single DNA fragment at a time, while NGS can sequence and analyse hundreds to thousands of genes simultaneously, this allows scientists to rapidly obtain results that cover the entire human genome. <br/><br/>Compared to the first-generation sequencing, NGS has a significantly higher sequencing throughput and sequencing speed. This has made the whole genome sequencing process less expensive and time-consuming, reducing the cost from nearly 30 billion USD to about 1000 USD and the time required from 10 years to just 1 day. Besides, NGS has a higher sensitivity, which allows new or rare mutations within the target region of the genome to be detected by deep sequencing. Therefore, NGS can perform complex analysis that is beyond the capacity of the first-generation sequencing. For example, performing a large-scale whole-genome sequencing to analyse a complete human genome, or using transcriptome sequencing for mRNA, miRNA expression and RNA splicing analysis.<br/><br/>With the ultra-high throughput, scalability and speed offered by NGS, a wide range of applications can now be performed by scientists to study biological systems at an unprecedented level. Results generated from NGS can be combined with genomic data and bioinformatic studies to provide useful information for diseases and population-wide genomic research. Clinical applications of NGS include sequencing cancer samples to study rare somatic mutations, analysing epigenetic factors and revealing disease-related alleles.",
             "notes": {
                 "0": {
@@ -213,7 +211,7 @@
             "title": "Why Early NPC Detection is Vital",
             "center_data": {
                 "0": "is the No.1 cancer amongst men aged 20 to 44¹",
-                "1": "is one of the cancers that is more likely to occur between 50 to 60 years old in women, apart from cancers of the breast and uterine²",
+                "1": "is one of the cancers that is more likely to occur between 50 to 60 years old in women, apart from cancers of the breast and uterus²",
                 "2": "occurs at a relatively younger age, unlike colon, liver or prostate cancers³, where most patients are aged 65 to 80; over 80% of NPC patients are 50 to 65 years old, for whom are entering their “golden age” and planning for retirement."
             },
             "references": {
@@ -272,7 +270,7 @@
         "take2_prophecy": {
             "title": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer",
             "detail": "The Take2 Prophecy™ Test for NPC is suitable for individuals who intend to do routine check-ups, who are asymptomatic and with suspected symptoms.",
-            "detection_process": "",
+            "detection_process": "Test Procedures",
             "process": {
                 "0": "Doctor’s consultation",
                 "1": "Collection of blood samples",
@@ -334,7 +332,7 @@
     },
     "contact_us": {
         "title": "We are always happy to hear from you. Please feel free to contact us at:",
-        "form_title": "",
+        "form_title": "Send us an enquiry or provide feedback",
         "types": {
             "0": "Customer Hotline",
             "1": "General Enquiries",
@@ -343,7 +341,7 @@
         }
     },
     "menu": {
-        "whats_new": "Latest News and Promotion",
+        "whats_new": "Latest News and Promotions",
         "promotions": "Latest Promotions",
         "health_tips": "Health Tips",
         "updates": "Latest News",
