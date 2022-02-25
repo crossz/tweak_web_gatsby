@@ -40,7 +40,8 @@
         "online_promotion_code": "Book Online<br/>Promo Code {{PROMOTION_CODE}}",
         "member_registration": "Member Registration",
         "take2_health": "Take2 Health Limited",
-        "release_date": "Job Posting Date"
+        "release_date": "Job Posting Date",
+        "more": "More {{field}}"
     },
     "t_and_c": {
         "terms_and_conditions": "Terms and conditions",

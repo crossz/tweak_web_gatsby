@@ -40,7 +40,8 @@
         "online_promotion_code": "網上預約<br/>優惠碼{{PROMOTION_CODE}}",
         "member_registration": "會員登記",
         "take2_health": "得意健康",
-        "release_date": "發布日期"
+        "release_date": "發布日期",
+        "more": "更多{{field}}"
     },
     "t_and_c": {
         "terms_and_conditions": "條款及細則",
