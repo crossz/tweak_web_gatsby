@@ -1,21 +1,19 @@
 ---
 type: industry_information
 languages:
-- en
+- zh-HK
 cover: []
 date: 2021-07-26T00:00:00+08:00
 title: Take2 Health與Pascific Laboratories達成合作　共同推動早期鼻咽癌篩查
-detail: Take2 Health and Pascific Laboratories are working together to offer the Take2
-  Prophecy™ Test for Nasopharyngeal Cancer(“NPC”) in the Philippines, as the first
-  step of rolling out the operation.
+detail: Take2 Health和Pascific Laboratories成功達成夥伴關係，攜手於菲律賓提供Take2 Prophecy™ 早期鼻咽癌篩查，作為開拓該地區早期癌症篩查業務的第一步。
 href: ''
 slug: ''
 
 ---
-Take2 Health (“Take2”) and Pascific Laboratories are working together to offer the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“NPC”) in the Philippines, as the first step of rolling out the operation.
+Take2 Health（下稱：「我司」）和Pascific Laboratories成功達成夥伴關係，攜手於菲律賓提供Take2 Prophecy™ 早期鼻咽癌篩查，作為開拓該地區早期癌症篩查業務的第一步。
 
-Pascific Laboratories is a healthcare group focusing on improving access to precision healthcare with operations across the Philippines, Singapore, and India. Take2 is honoured to work alongside the distinguished team of researchers and clinicians at Pascific Laboratories who share the same vision with us.
+Pascific Laboratories是一家業務橫跨菲律賓、新加坡及印度的病理診斷集團，主要提供以精準醫療為方針的病理學及分子診斷。我司很榮幸能與其傑出的研究人員和臨床醫護團隊並肩同行，一起實踐彼此的共同目標。
 
-The age-specific NPC incidence rate in the Philippines ranks 7th among all Asian countries(1). By joining hands, it is expected to raise the awareness of early NPC detection and improve the overall health of the local communities through enabling in-time diagnosis and treatment in place.
+菲律賓的鼻咽癌發病率（根據特定年齡群組）於亞洲各國中位列第七\[1\]，透過是次合作，我司期望可進一步推動早期鼻咽癌篩查，讓更多人及早接受診斷和治療，並提升菲律賓民眾對早期癌症篩查的關注，藉此改善當地的整體健康狀況。
 
-(1) Neda M, Mahshid G, Abdollah MH, Bahman K, Hamid S. “Epidemiology and Inequality in the Incidence and Mortality of Nasopharynx Cancer in Asia.” Osong Public Health and Research Perspectives. 2016;7(6):360-372. doi: 10.1016/j.phrp.2016.11.002.
+\[1\] Neda M, Mahshid G, Abdollah MH, Bahman K, Hamid S. “Epidemiology and Inequality in the Incidence and Mortality of Nasopharynx Cancer in Asia.” Osong Public Health and Research Perspectives. 2016;7(6):360-372. doi: 10.1016/j.phrp.2016.11.002.
