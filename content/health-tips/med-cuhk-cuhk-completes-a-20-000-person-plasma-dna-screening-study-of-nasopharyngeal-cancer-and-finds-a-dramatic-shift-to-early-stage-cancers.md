@@ -10,7 +10,6 @@ href: https://www.med.cuhk.edu.hk/press-releases/cuhk-completes-a-20000-person-p
 slug: ''
 languages:
 - en
-- zh-CN
 - zh-HK
 
 ---

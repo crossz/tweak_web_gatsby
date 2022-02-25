@@ -10,7 +10,6 @@ href: https://www.scmp.com/presented/news/hong-kong/health-environment/topics/ca
 slug: ''
 languages:
 - en
-- zh-CN
 - zh-HK
 
 ---
