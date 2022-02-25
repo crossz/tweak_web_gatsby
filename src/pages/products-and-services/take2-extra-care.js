@@ -476,7 +476,7 @@ const Take2ExtraCare = () => {
                 target='_blank'
                 className={classes.box04Btn}
               >
-                t('common.sign_up')
+                {t('common.sign_up')}
               </Button>
               <Button
                 variant='contained'

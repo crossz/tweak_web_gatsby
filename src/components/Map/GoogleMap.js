@@ -217,6 +217,7 @@ const InfoWindow = (props) => {
 
 const GoogleMap = (props) => {
   const classes = useStyles()
+  const { language } = useI18next()
   const mapRef = useRef()
   const { originalPath } = useI18next()
   const isHomepage = originalPath === '/'
@@ -291,7 +292,7 @@ const GoogleMap = (props) => {
         <GoogleMapReact
           bootstrapURLKeys={{
             key: process.env.GATSBY_GOOGLE_MAP_KEY,
-            language: 'zh-HK',
+            language,
           }}
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
