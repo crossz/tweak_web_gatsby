@@ -11,7 +11,7 @@
     },
     "service_location": {
         "title": "Service Locations – Hong Kong",
-        "more": ""
+        "more": "Service Location"
     },
     "homepage": {
         "sign_up": {
@@ -25,7 +25,7 @@
         "view_more": "Learn More",
         "view_details": "View Details",
         "book_now": "Book Now",
-        "display": "",
+        "display": "Dispaly",
         "submit": "Submit",
         "sign_up_as_menber": "Register in Take2 Health Platform",
         "or": "or",
@@ -33,19 +33,19 @@
         "service_location": "Service Locations",
         "notice": "Important Note",
         "sign_in": "Sign In",
-        "faq": "",
+        "faq": "FAQ",
         "register": "Register",
         "follow_us": "Follow Us",
         "take2_copy_right": "©2021 Take2 Health copy right",
         "online_promotion_code": "Book Online<br/>Promo Code {{PROMOTION_CODE}}",
-        "menber_registration": "",
-        "member_registration": ""
+        "menber_registration": "Member Registration",
+        "member_registration": "Member registration"
     },
     "t_and_c": {
         "terms_and_conditions": "Terms and conditions",
         "privacy_policy": "Privacy Policy",
         "personal_information_collection_statement": "Personal Information Collection Statement",
-        "website_trems_of_use": ""
+        "website_trems_of_use": "Terms of Use"
     },
     "status": {
         "copy": {
@@ -63,7 +63,7 @@
         "placeholder": {
             "search": "Search",
             "select": "Select {{field}}",
-            "enter": ""
+            "enter": "Please enter {{field}}"
         },
         "region": {
             "label": "Region",
@@ -100,9 +100,9 @@
             }
         },
         "validation": {
-            "correct_form": "",
-            "check_agreement": "",
-            "finish_quiz": ""
+            "correct_form": "Please enter the correct format {{field}}",
+            "check_agreement": "Tick to agree",
+            "finish_quiz": "Please complete the quiz"
         }
     },
     "quiz": {
@@ -115,7 +115,7 @@
             "reference": "The assessment result above serves as a reference only.<br/> There are many factors that cause NPC and the symptoms may vary from person to person. Please consult healthcare professionals for more information, or you may reach out to our professional healthcare team for further support."
         },
         "last": {
-            "title": "",
+            "title": "The final step to get results",
             "detail": ""
         },
         "agreement": "I have understood and agreed to Take2 Health Limited's website on take2health.net's website <1></1> and <1></1>.",
@@ -309,7 +309,7 @@
                     "content": "In the era of disruptive technologies and rapidly evolving science, innovation and actionable insights are the keys to sustainable improvement in human health condition.\n\nAt Take2 Health, with a nexus of pioneering minds and technology vanguards, we are eager to provide practical information and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia.\n\nWe firmly believe that knowledge and experience are essential to lead to the well-being of individuals, allowing people to live their lives to the fullest. \n與此同時，我們相信每個人都值得擁有健康無憂的人生，能透過學習、啟發和經驗，掌握健康，創造屬於自己的理想生活。 "
                 },
                 "1": {
-                    "type": "",
+                    "type": "Our Mission",
                     "slogan": "Be the apex for cancer detection that moves people forward with awareness and confidence, through realising the advantages of early cancer detection.",
                     "content": "Regardless of our age, sex or background, we can never be fully prepared for cancer, which often comes as a bolt out of the blue. \n\nThe power of knowledge is the foundation of our actions, especially\nwhen tackling the uncertainties of cancer. Only if we detect cancer earlier will the uphill battle be overcome much easier.\n\nWith our cutting-edge technologies and knowledgeable professionals, we are dedicated to promoting early cancer detection with actionable insights that could empower people with advantages to surmount the odds of cancer. Early cancer detection allows early interventions and treatments. As such, chances of successful treatment and survival rate could be greatly increased. We are dedicated to helping people realise the importance of taking back the control of their health and live life to its fullest."
                 }
