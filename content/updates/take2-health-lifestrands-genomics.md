@@ -3,9 +3,9 @@ type: industry_information
 languages:
 - zh-HK
 cover: []
-date: 2021-07-06T00:00:00+08:00
+date: 2021-07-06T00:00:00.000+08:00
 title: Take2 Health 與 LifeStrands Genomics 合作　於新加坡、馬來西亞和越南三地提供早期鼻咽癌篩查
-detail: Take2 Health和LifeStrands Genomics，一家由Pathology Asia Holdings Pte. Ltd全資持有的診斷服務子公司，達成關於提供Take2
+detail: Take2 Health 和 LifeStrands Genomics，一家由Pathology Asia Holdings Pte. Ltd全資持有的診斷服務子公司，達成關於提供Take2
   Prophecy™ 早期鼻咽癌篩查的合作。
 href: ''
 slug: ''
