@@ -8,7 +8,7 @@ buttons:
   internal: false
   name: common.book_now
   link: https://take2health.net/health-platform/
-reference: "*優惠受條款及細則約束"
+reference: "*優惠受條款及細則約束 Terms and conditions apply"
 theme: light
 sort: 3
 titleCn: ''
