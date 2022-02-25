@@ -8,8 +8,6 @@ href: ''
 slug: ''
 cover: []
 languages:
-- en
-- zh-CN
 - zh-HK
 
 ---
