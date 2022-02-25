@@ -11,7 +11,5 @@ href: https://www.marketing-interactive.com/take2-health-invites-eric-cheung-to-
 slug: ''
 languages:
 - en
-- zh-CN
-- zh-HK
 
 ---
