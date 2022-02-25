@@ -3,9 +3,10 @@ type: industry_information
 languages:
 - zh-HK
 cover: []
-date: 2020-10-15T00:00:00+08:00
-title: Take2 Health夥拍Pantai Premier Pathology聯手推廣早期鼻咽癌篩查　助民眾掌握健康
-detail: "Take2 Health與Pantai Premier Pathology達成合作協議，將聯手於馬來西亞提供Take2 Prophecy™ 早期鼻咽癌篩查，\x05以識別出早期鼻咽癌患者，助其及早展開治療並提高其成功治癒的機會。"
+date: 2020-10-15T00:00:00.000+08:00
+title: Take2 Health 夥拍 Pantai Premier Pathology 聯手推廣早期鼻咽癌篩查　助民眾掌握健康
+detail: "Take2 Health 與 Pantai Premier Pathology 達成合作協議，將聯手於馬來西亞提供Take2 Prophecy™
+  早期鼻咽癌篩查，\x05以識別出早期鼻咽癌患者，助其及早展開治療並提高其成功治癒的機會。"
 href: ''
 slug: ''
 
