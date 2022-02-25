@@ -1,5 +1,5 @@
 ---
-type: ''
+type: industry_information
 languages:
 - en
 cover: []

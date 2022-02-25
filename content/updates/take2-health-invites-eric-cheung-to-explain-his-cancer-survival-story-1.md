@@ -10,8 +10,8 @@ detail: 'Hong Kong-based healthcare tech startup Take2 Health has launched a cam
 href: https://www.marketing-interactive.com/take2-health-invites-eric-cheung-to-explain-his-cancer-survival-story
 slug: ''
 languages:
-- en
 - zh-CN
 - zh-HK
+- en
 
 ---
