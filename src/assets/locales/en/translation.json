@@ -273,8 +273,8 @@
             "process": {
                 "0": "Doctor’s consultation",
                 "1": "Collection of blood samples",
-                "2": "Analysis at the \\n laboratory",
-                "3": "Test results ready in \\n 3 - 7 working days",
+                "2": "Analysis at the\nlaboratory",
+                "3": "Test results ready in\n3 - 7 working days",
                 "4": "Test results’ interpretation by doctor"
             },
             "reports": {
