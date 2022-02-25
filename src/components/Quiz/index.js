@@ -193,6 +193,13 @@ const useStyle = makeStyles((theme) => ({
       fontSize: theme.typography.h6.fontSize,
     },
   },
+  isEnQuizTitle: {
+    fontSize: theme.typography.h4.fontSize,
+    lineHeight: 1.4,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.h6.fontSize,
+    },
+  },
   quizNum: {
     marginRight: theme.spacing(3),
     fontSize: theme.typography.h2.fontSize,
@@ -624,7 +631,11 @@ const Quiz = () => {
                                 key={index}
                                 component='fieldset'
                               >
-                                <Box className={classes.quizTitle}>
+                                <Box
+                                  className={classnames(classes.quizTitle, {
+                                    [classes.isEnQuizTitle]: isEn,
+                                  })}
+                                >
                                   <Box
                                     className={classes.quizNum}
                                     component='span'

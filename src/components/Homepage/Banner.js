@@ -71,6 +71,19 @@ const useStyles = makeStyles((theme) => ({
   titleWrapper: {
     marginRight: '-100%',
   },
+  isEnTitleWrapper: {
+    marginRight: 0,
+    lineHeight: 1.2,
+    fontSize: theme.typography.h3.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
+  },
+  isEnDetailWrapper: {
+    [theme.breakpoints.down('xs')]: {
+      lineHeight: 1.4,
+    },
+  },
   reference: {
     fontSize: 9,
     lineHeight: 1,
@@ -201,7 +214,9 @@ const Banner = ({ nodes }) => {
                       component='div'
                     >
                       <Box
-                        className={classes.titleWrapper}
+                        className={classnames(classes.titleWrapper, {
+                          [classes.isEnTitleWrapper]: isEn,
+                        })}
                         mb={matches ? 1 : 2}
                         lineHeight={1.5}
                         dangerouslySetInnerHTML={{
@@ -209,6 +224,9 @@ const Banner = ({ nodes }) => {
                         }}
                       ></Box>
                       <Box
+                        className={classnames({
+                          [classes.isEnDetailWrapper]: isEn,
+                        })}
                         fontSize={
                           matches ? 'caption.fontSize' : 'body1.fontSize'
                         }

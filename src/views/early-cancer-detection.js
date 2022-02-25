@@ -6,6 +6,7 @@ import {
   alpha,
   useTheme,
   useMediaQuery,
+  Grid,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import TitleDot from '@themes/components/TitleDot'
@@ -70,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   centerDataWrapper: {
-    height: theme.spacing(24),
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap',
@@ -83,10 +83,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   centerDataItem: {
-    width: `calc(50% - ${theme.spacing(3)}px)`,
     padding: theme.spacing(3),
     paddingRight: theme.spacing(2),
-    margin: theme.spacing(0, 1.5),
     backgroundColor: theme.palette.primary.contrastText,
     borderRadius: theme.spacing(1.5),
     color: theme.palette.primary.main,
@@ -244,19 +242,32 @@ const EarlyCancerDetection = () => {
                   )}
                 </Box>
                 <Box className={classes.centerDataWrapper}>
-                  {centerData.map((item, index) => (
-                    <Box
-                      className={classnames(
-                        classes.centerDataItem,
-                        index === centerData.length - 1 &&
+                  <Grid container spacing={matches ? 0 : 3}>
+                    <Grid item sm={6}>
+                      <Box
+                        className={classnames(classes.centerDataItem)}
+                        mb={3}
+                      >
+                        <AlertIcon className={classes.icon}></AlertIcon>
+                        {t(centerData[0])}
+                      </Box>
+                      <Box className={classes.centerDataItem}>
+                        <AlertIcon className={classes.icon}></AlertIcon>
+                        {t(centerData[1])}
+                      </Box>
+                    </Grid>
+                    <Grid item sm={6}>
+                      <Box
+                        className={classnames(
+                          classes.centerDataItem,
                           classes.lastCenterDataItem
-                      )}
-                      key={index}
-                    >
-                      <AlertIcon className={classes.icon}></AlertIcon>
-                      {t(item)}
-                    </Box>
-                  ))}
+                        )}
+                      >
+                        <AlertIcon className={classes.icon}></AlertIcon>
+                        {t(centerData[2])}
+                      </Box>
+                    </Grid>
+                  </Grid>
                 </Box>
                 <Box
                   mt={matches ? 3 : 6}
