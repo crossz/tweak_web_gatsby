@@ -20,7 +20,7 @@
         }
     },
     "common": {
-        "sign_up": "Join us",
+        "sign_up": "Register Now",
         "learn_more": "Learn More",
         "view_more": "Learn More",
         "view_details": "View Details",
@@ -93,8 +93,8 @@
             "label": "Company name"
         },
         "message": {
-            "label": "",
-            "placeholder": "",
+            "label": "Message",
+            "placeholder": "Please enter your message",
             "validation": {
                 "required": "*Required information"
             }
@@ -299,7 +299,7 @@
             "title": "Our Principles and Mission",
             "team_title": "Founding Team",
             "background_founder": "Our background and founders",
-            "team_founder_content": "Established by three internationally recognised and respected pathology professors from the renowned Chinese University of Hong in 2019, Take2 Health is an exemplary case of successful commercialisation of leading academic invention.\n\nLeveraging the founders’ proven 20-plus-year track records in Genomics and Diagnostics research, we, an enterprise built from Hong Kong, are providing the Take2 ProphecyTM Test for Nasopharyngeal Cancer as the pioneering product. With the aspiration to expand this service to a much wider community, we aim to radiate positive impacts to people’s lives across Asia.\n\nPlease click the link below for an article about Take2 Health, <br/><br/>our three founders and our first product:<br/><1>https://www.businesswire.com/news/home/20190506005296/zh-HK/</1>",
+            "team_founder_content": "Established by three internationally recognised and respected pathology professors from the renowned Chinese University of Hong in 2019, Take2 Health is an exemplary case of successful commercialisation of leading academic invention.Leveraging the founders’ proven 20-plus-year track records in Genomics and Diagnostics research, we, an enterprise built from Hong Kong, are providing the Take2 ProphecyTM Test for Nasopharyngeal Cancer as the pioneering product. With the aspiration to expand this service to a much wider community, we aim to radiate positive impacts to people’s lives across Asia.<br/><br/>Please click the link below for an article about Take2 Health, our three founders and our first product:<br/><1>https://www.businesswire.com/news/home/20190506005296/zh-HK/</1>",
             "our_team": "Our team",
             "our_team_content": "Building a team of brilliant talents from across the globe who stand behind the same vision, we grow stronger day by day to deliver what we envision, “We are proud to deliver positive impact and benefit the community at large by leveraging research achievements from leading scholars worldwide. Made up of young and enthusiastic visionaries, we are meticulous and innovative frontiersmen that believe in pushing boundaries and making things happen. In caring for human health, we will continue to be dedicated and looking for progressive health solutions that change lives.”",
             "beliefs": {
