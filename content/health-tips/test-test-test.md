@@ -8,8 +8,6 @@ slug: ''
 cover:
 - "../images/untitled-design-10.png"
 languages:
-- en
-- zh-CN
 - zh-HK
 
 ---
