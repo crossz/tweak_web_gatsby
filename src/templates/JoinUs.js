@@ -16,7 +16,7 @@ import {
   IconButton,
 } from '@material-ui/core'
 import { throttle, omit } from 'lodash-es'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
@@ -36,6 +36,7 @@ import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { useTranslation, Trans } from 'gatsby-plugin-react-i18next'
 import Layout from '@layouts/Layout'
+import Link from '@components/Link'
 
 const useStyles = makeStyles((theme) => ({
   root: {},

@@ -1,6 +1,6 @@
 import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
 import MoreUpdates from '@components/WhatsNew/MoreUpdates'
 import {
@@ -19,6 +19,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
 import Layout from '@layouts/Layout'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import Link from '@components/Link'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -148,9 +149,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const morePostTitle = {
-  'health-tips': '更多健康資訊',
-  promotions: '更多推廣優惠',
-  updates: '更多相關動態',
+  'health-tips': 'menu.health_tips',
+  promotions: 'menu.promotions',
+  updates: 'menu.updates',
 }
 
 const Post = ({ data, pageContext, location: { href } }) => {
@@ -198,7 +199,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
                         'secondary.main'
                       }
                     >
-                      {type}
+                      {t(`options.update_post_types.${type}`)}
                     </Box>
                   </Box>
                   <Box ml='auto'>
@@ -221,12 +222,16 @@ const Post = ({ data, pageContext, location: { href } }) => {
             <Container disableGutters maxWidth='md'>
               {pageContext?.sectionPath === 'updates' ? (
                 <MoreUpdates
-                  title={morePostTitle[pageContext?.sectionPath]}
+                  title={t('common.more', {
+                    field: t(morePostTitle[pageContext?.sectionPath]),
+                  })}
                   nodes={morePostsNodes}
                 ></MoreUpdates>
               ) : (
                 <MorePosts
-                  title={morePostTitle[pageContext?.sectionPath]}
+                  title={t('common.more', {
+                    field: t(morePostTitle[pageContext?.sectionPath]),
+                  })}
                   nodes={morePostsNodes}
                 ></MorePosts>
               )}

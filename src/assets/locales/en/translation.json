@@ -41,7 +41,8 @@
         "menber_registration": "Member Registration",
         "member_registration": "Member registration",
         "take2_health": "",
-        "release_date": ""
+        "release_date": "",
+        "more": "More {{field}}"
     },
     "t_and_c": {
         "terms_and_conditions": "Terms and conditions",
