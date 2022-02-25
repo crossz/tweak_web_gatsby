@@ -4,7 +4,7 @@ languages:
 - zh-HK
 cover: []
 date: 2020-11-02T00:00:00.000+08:00
-title: "Take2 Health和Yourgene Health達成合作　將現行服務網絡擴展至台灣\x05地區"
+title: "Take2 Health 和 Yourgene Health 達成合作　將現行服務網絡擴展至台灣\x05地區"
 detail: Take2 Health 和 Yourgene Health 達成合作關係，為台灣地區民眾提供經臨床實證的Take2 Prophecy™ 早期鼻咽癌篩查，並建立採集臨床樣本的醫療網絡。
 href: ''
 slug: ''
