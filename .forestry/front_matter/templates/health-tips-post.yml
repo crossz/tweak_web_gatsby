@@ -55,7 +55,7 @@ fields:
       file: 
       path: 
   label: Type
-  description: Tag of post.<br>* health - 健康資訊<br>* professional_healthcare - 專業醫護資訊
+  description: Tag of post.<br>- health - 健康資訊<br>- professional_healthcare - 專業醫護資訊
 - name: href
   type: text
   config:
