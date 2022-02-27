@@ -228,21 +228,6 @@ export const AGE_OPTIONS = [
   },
 ]
 
-export const AREA_OPTIONS = [
-  {
-    label: 'options.hongkong_regions.all',
-    value: '',
-  },
-  {
-    label: 'options.hongkong_regions.hongkong',
-    value: 'hongkong',
-  },
-  {
-    label: 'options.hongkong_regions.kowloon',
-    value: 'kowloon',
-  },
-]
-
 export const DEPARTMENT_OPTIONS = [
   {
     label: 'options.department.all',
