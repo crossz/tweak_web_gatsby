@@ -1,5 +1,5 @@
 ---
-type: professional_healthcare
+type: professional_healthcare_tip
 cover:
 - "../images/ntitled-design-21.png"
 date: 2021-11-05T00:00:00.000+08:00
