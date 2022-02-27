@@ -18,6 +18,7 @@ import { groupBy } from 'lodash-es'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import Loading from '@components/Loading'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { REGIONS } from '@utils/constant'
 
 const switchButtons = [
   {
@@ -225,6 +226,9 @@ const Map = () => {
     [location, curProvince]
   )
 
+  const translateRegion = (region) =>
+    REGIONS[region] ? t(REGIONS[region]) : region
+
   return (
     <Box
       position='relative'
@@ -243,11 +247,11 @@ const Map = () => {
             className={classnames(classes.selectRoot, classes.homepageSelector)}
           >
             <MenuItem key='' value=''>
-              {t('form.region.options.all')}
+              {t('options.regions.all')}
             </MenuItem>
             {areaOptions?.map((areaItem) => (
               <MenuItem key={areaItem} value={areaItem}>
-                {areaItem}
+                {translateRegion(areaItem)}
               </MenuItem>
             ))}
           </ESelect>
@@ -279,7 +283,7 @@ const Map = () => {
                       >
                         {location.map((item) => (
                           <MenuItem key={item.province} value={item.province}>
-                            {item.province}
+                            {translateRegion(item.province)}
                           </MenuItem>
                         ))}
                       </ESelect>
@@ -299,7 +303,7 @@ const Map = () => {
                       </MenuItem>
                       {areaOptions?.map((areaItem) => (
                         <MenuItem key={areaItem} value={areaItem}>
-                          {areaItem}
+                          {translateRegion(areaItem)}
                         </MenuItem>
                       ))}
                     </ESelect>
@@ -343,7 +347,7 @@ const Map = () => {
                       >
                         {location.map((item) => (
                           <MenuItem key={item.province} value={item.province}>
-                            {item.province}
+                            {translateRegion(item.province)}
                           </MenuItem>
                         ))}
                       </ESelect>
@@ -362,7 +366,7 @@ const Map = () => {
                       </MenuItem>
                       {areaOptions?.map((areaItem) => (
                         <MenuItem key={areaItem} value={areaItem}>
-                          {areaItem}
+                          {translateRegion(areaItem)}
                         </MenuItem>
                       ))}
                     </ESelect>

@@ -160,12 +160,24 @@
             "mainland_china": "中國內地",
             "hongkong_special_administrative_region": "香港特別行政區"
         },
-        "hongkong_regions": {
+        "regions": {
             "all": "所有地區",
             "hongkong": "香港",
             "kowloon": "九龍",
             "new_territories_east": "新界東",
-            "new_territories_west": "新界西"
+            "new_territories_west": "新界西",
+            "macao": "澳門",
+            "kowloon_west": "九龍西",
+            "kowloon_central": "九龍中",
+            "kowloon_east": "九龍東",
+            "west_of_hongkong_island": "香港島西",
+            "east_of_hongkong_island": "香港島東",
+            "new_territories_north": "新界北",
+            "southeast_new_territories": "新界東南",
+            "northwest_new_territories": "新界西北",
+            "northeast_new_territories": "新界東北",
+            "southwest_new_territories": "新界西南",
+            "other": "其他地區"
         },
         "department": {
             "all": "所有部門",

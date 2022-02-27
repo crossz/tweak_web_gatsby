@@ -19,6 +19,7 @@ import LocationIcon from '@images/icons/location.svg'
 import { orderBy } from 'lodash-es'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
+import { REGIONS } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -152,6 +153,9 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const _handleChange = (activeArea) => (e, isExpanded) => {
     onChange && onChange(isExpanded ? activeArea : '')
   }
+  const translateRegion = (region) =>
+    REGIONS[region] ? t(REGIONS[region]) : region
+
   return (
     <Box className={classes.root}>
       {Object.keys(clinics)?.map((area, index) => (
@@ -169,7 +173,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
               )
             }
           >
-            {curProvince}·{area}
+            {translateRegion(curProvince)}·{translateRegion(area)}
           </MapAccordionSummary>
           <MapAccordionDetails>
             <Box className={classes.list}>
@@ -178,10 +182,10 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                   <Box className={classes.item} key={index}>
                     <Grid container spacing={0}>
                       <Grid item xs={3} sm={1}>
-                        {clinic.province}
+                        {translateRegion(clinic.province)}
                       </Grid>
                       <Grid item xs={9} sm={2}>
-                        {clinic.area}
+                        {translateRegion(clinic.area)}
                       </Grid>
                       <Grid item xs={12} sm={6}>
                         <Box width='100%'>

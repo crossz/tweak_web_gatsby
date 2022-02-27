@@ -160,12 +160,24 @@
             "mainland_china": "China",
             "hongkong_special_administrative_region": "Hong Kong"
         },
-        "hongkong_regions": {
+        "regions": {
             "all": "All Regions",
             "hongkong": "Hong Kong",
             "kowloon": "Kowloon",
             "new_territories_east": "New Territories East",
-            "new_territories_west": "New Territories West"
+            "new_territories_west": "New Territories West",
+            "other": "Other Areas",
+            "east_of_hongkong_island": "East of Hong Kong Island",
+            "kowloon_central": "Kowloon Central",
+            "kowloon_east": "Kowloon East",
+            "kowloon_west": "Kowloon West",
+            "macao": "Macao",
+            "new_territories_north": "New Territories North",
+            "northeast_new_territories": "Northeast New Territories",
+            "northwest_new_territories": "Northwest New Territories",
+            "southeast_new_territories": "Southeast New Territories",
+            "southwest_new_territories": "Southwest New Territories",
+            "west_of_hongkong_island": "West of Hong Kong Island"
         },
         "department": {
             "all": "All Departments",

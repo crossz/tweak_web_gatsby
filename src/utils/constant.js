@@ -73,38 +73,22 @@ export const POST_TYPES = [
   },
 ]
 
-export const REGIONS = [
-  {
-    label: 'options.hongkong_regions.hongkong',
-    value: 0,
-    districts: [
-      {
-        label: 'options.hongkong_regions.all',
-        value: '',
-      },
-      {
-        label: 'options.hongkong_regions.hongkong',
-        value: 0,
-      },
-      {
-        label: 'options.hongkong_regions.kowloon',
-        value: 1,
-      },
-      {
-        label: 'options.hongkong_regions.new_territories_east',
-        value: 2,
-      },
-      {
-        label: 'options.hongkong_regions.new_territories_west',
-        value: 3,
-      },
-      {
-        label: 'options.macao_regions.macao',
-        value: 4,
-      },
-    ],
-  },
-]
+export const REGIONS = {
+  所有地區: 'options.regions.all',
+  香港: 'options.regions.hongkong',
+  澳門: 'options.regions.macao',
+  九龍西: 'options.regions.kowloon_west',
+  九龍中: 'options.regions.kowloon_central',
+  九龍東: 'options.regions.kowloon_east',
+  香港島西: 'options.regions.west_of_hongkong_island',
+  香港島東: 'options.regions.east_of_hongkong_island',
+  新界北: 'options.regions.new_territories_north',
+  新界東南: 'options.regions.southeast_new_territories',
+  新界西北: 'options.regions.northwest_new_territories',
+  新界東北: 'options.regions.northeast_new_territories',
+  新界西南: 'options.regions.southwest_new_territories',
+  其他地區: 'options.regions.other',
+}
 
 const QUIZ_ANSWERS = {
   type01: ['no', 'unclear', 'yes'],
