@@ -192,15 +192,17 @@ const Post = ({ data, pageContext, location: { href } }) => {
                 <Box className={classes.top}>
                   <Box className={classes.topLeft}>
                     <Box className={classes.date}>{date}</Box>
-                    <Box
-                      className={classes.mark}
-                      bgcolor={
-                        POST_TYPES.find((item) => item.label === type)?.color ||
-                        'secondary.main'
-                      }
-                    >
-                      {t(`options.update_post_types.${type}`)}
-                    </Box>
+                    {type && (
+                      <Box
+                        className={classes.mark}
+                        bgcolor={
+                          POST_TYPES.find((item) => item.label === type)
+                            ?.color || 'secondary.main'
+                        }
+                      >
+                        {t(`options.post_types.${type}`)}
+                      </Box>
+                    )}
                   </Box>
                   <Box ml='auto'>
                     <Links href={href}></Links>

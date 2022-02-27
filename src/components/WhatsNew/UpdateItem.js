@@ -108,7 +108,7 @@ const UpdateItem = ({ title, type, date, detail, href, slug, cover }) => {
               'secondary.main'
             }
           >
-            {t(`options.update_post_types.${type}`)}
+            {t(`options.post_types.${type}`)}
           </Box>
         </Box>
         <Typography className={classes.title} variant='h6' color='primary'>

@@ -45,29 +45,29 @@ export const DIALING_CODES = [
 ]
 
 export const POST_TYPES = [
-  { label: 'options.update_post_types.all', value: '', color: '' },
+  { label: 'options.post_types.all_updates', value: '', color: '' },
   {
-    label: 'options.update_post_types.company_trends',
+    label: 'options.post_types.company_trends',
     value: 'company_trends',
     color: 'supporting.supporting01',
   },
   {
-    label: 'options.update_post_types.company_awards_and_achievements',
+    label: 'options.post_types.company_awards_and_achievements',
     value: 'company_awards_and_achievements',
     color: 'secondary.main',
   },
   {
-    label: 'options.update_post_types.industry_information',
+    label: 'options.post_types.industry_information',
     value: 'industry_information',
     color: 'prophecySupporting.supporting01',
   },
   // {
-  //   label: 'options.update_post_types.business_cooperation',
+  //   label: 'options.post_types.business_cooperation',
   //   value: 'business_cooperation',
   //   color: 'prophecyPrimary.main',
   // },
   {
-    label: 'options.update_post_types.ceo_sharing',
+    label: 'options.post_types.ceo_sharing',
     value: 'ceo_sharing',
     color: 'prophecySupporting.supporting02',
   },

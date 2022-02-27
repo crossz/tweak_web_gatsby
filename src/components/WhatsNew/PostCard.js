@@ -3,6 +3,8 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { makeStyles, alpha, Box } from '@material-ui/core'
 import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     boxShadow: `0px 15px 40px -10px ${alpha(theme.palette.common.black, 0.05)}`,
@@ -88,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const images = cover.map((item) => getImage(item))
   return (
     <Link className={classes.link} to={href || slug}>
@@ -103,7 +106,9 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
           )}
         </Box>
         <Box className={classes.info}>
-          <Box className={classes.type}>{type}</Box>
+          <Box className={classes.type}>
+            {type && t(`options.post_types.${type}`)}
+          </Box>
           <Box className={classes.title}>{title}</Box>
           {withViewBtn ? (
             <Box className={classes.btnWrapper}>
