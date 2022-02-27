@@ -1,5 +1,5 @@
 ---
-type: 專業醫護資訊
+type: professional_healthcare
 cover:
 - "../images/ntitled-design-12.png"
 date: 2017-08-11T00:00:00.000+08:00

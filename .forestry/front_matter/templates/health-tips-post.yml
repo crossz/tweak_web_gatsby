@@ -45,15 +45,15 @@ fields:
   config:
     required: false
     options:
-    - 健康資訊
-    - 專業醫護資訊
+    - health
+    - professional_healthcare
     source:
       type: simple
       section: 
       file: 
       path: 
   label: Type
-  description: Tag of post.
+  description: Tag of post.<br><em>健康資訊health<br>專業醫護資訊professional_healthcare</em>
 - name: href
   type: text
   config:
