@@ -47,6 +47,7 @@ fields:
     options:
     - 健康資訊
     - 專業醫護資訊
+    - health
     source:
       type: simple
       section: 
