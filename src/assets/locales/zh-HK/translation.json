@@ -181,6 +181,10 @@
         },
         "macao_regions": {
             "macao": "澳門"
+        },
+        "health_tip_post_types": {
+            "health": "健康資訊",
+            "professional_healthcare": "專業醫護資訊"
         }
     },
     "our_technologies": {
