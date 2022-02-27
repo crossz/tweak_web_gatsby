@@ -25,6 +25,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
 import useObjectTranslation from '@hooks/useObjectTranslation'
+import { FAQ_TYPES } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -179,9 +180,7 @@ const FAQ = () => {
           list?.filter((item) => item.status),
           'typeName'
         )
-        setFaqTypes((status) =>
-          status.concat(...(Object.keys(groupType) || []))
-        )
+        setFaqTypes(['', ...Object.keys(groupType)])
         setLoadingStatus('fulfilled')
       } catch (error) {
         setLoadingStatus('rejected')
@@ -203,7 +202,8 @@ const FAQ = () => {
     scrollTo('#section-tabs')
     return setActiveType(e.target?.value)
   }
-
+  const translateFaqType = (type) =>
+    FAQ_TYPES[type] ? t(FAQ_TYPES[type]) : type
   return (
     <Layout>
       <Box className={classes.root}>
@@ -221,7 +221,7 @@ const FAQ = () => {
                   <Typography
                     component='span'
                     variant='h5'
-                  >{` #${activeType}`}</Typography>
+                  >{` #${translateFaqType(activeType)}`}</Typography>
                 )}
               </Typography>
             </Grid>
@@ -244,8 +244,7 @@ const FAQ = () => {
                         key={index}
                         data-value={type}
                       >
-                        {type ||
-                          t('products_and_services.take2_extra_care.all_faq')}
+                        {translateFaqType(type) || t('options.faq_types.all')}
                       </Box>
                     ))}
                   </Box>
@@ -270,8 +269,7 @@ const FAQ = () => {
                     >
                       {faqTypes.map((type, index) => (
                         <MenuItem key={index} value={type}>
-                          {type ||
-                            t('products_and_services.take2_extra_care.all_faq')}
+                          {translateFaqType(type) || t('options.faq_types.all')}
                         </MenuItem>
                       ))}
                     </ESelect>

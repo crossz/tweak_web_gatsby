@@ -195,6 +195,17 @@
             "industry_information": "Industry Update",
             "health_tip": "Health Tip",
             "professional_healthcare_tip": "Professional Healthcare Tip"
+        },
+        "faq_types": {
+            "all": "All FAQ",
+            "about_npc": "About NPC",
+            "book_online_and_pay_process": "Book Online and Pay Process",
+            "detection_service": "Detection Service",
+            "detection_technology": "Detection Technology",
+            "membership_program": "Membership Program",
+            "notes_and_result": "Notes and Result",
+            "price_and_service": "Price and Service",
+            "privacy_and_electronic_records": "Privacy and Electronic Records"
         }
     },
     "our_technologies": {
@@ -279,8 +290,7 @@
             },
             "faq": {
                 "welcome_contact": "If you have any other questions, please feel free to contact us:"
-            },
-            "all_faq": "All FAQ"
+            }
         },
         "take2_prophecy": {
             "title": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer",

@@ -90,6 +90,18 @@ export const REGIONS = {
   其他地區: 'options.regions.other',
 }
 
+export const FAQ_TYPES = {
+  所有問題: 'options.faq_types.all',
+  篩查服務: 'options.faq_types.detection_service',
+  篩查技術: 'options.faq_types.detection_technology',
+  價錢及服務點: 'options.faq_types.price_and_service',
+  網上預約及付款流程: 'options.faq_types.book_online_and_pay_process',
+  測試需知及結果: 'options.faq_types.notes_and_result',
+  有關鼻咽癌: 'options.faq_types.about_npc',
+  'Take2 Extra Care會員計劃': 'options.faq_types.membership_program',
+  私隱及電子紀錄: 'options.faq_types.privacy_and_electronic_records',
+}
+
 const QUIZ_ANSWERS = {
   type01: ['no', 'unclear', 'yes'],
   typeO2: ['never', 'rarely', 'sometimes', 'often'],
