@@ -38,7 +38,10 @@
         "follow_us": "",
         "take2_copy_right": "",
         "online_promotion_code": "",
-        "member_registration": ""
+        "member_registration": "",
+        "take2_health": "",
+        "release_date": "",
+        "more": ""
     },
     "t_and_c": {
         "terms_and_conditions": "",
@@ -97,6 +100,11 @@
             "validation": {
                 "required": ""
             }
+        },
+        "validation": {
+            "correct_form": "",
+            "check_agreement": "",
+            "finish_quiz": ""
         }
     },
     "quiz": {
@@ -152,7 +160,6 @@
             "mainland_china": "",
             "hongkong_special_administrative_region": ""
         },
-        "update_post_types": {},
         "hongkong_regions": {
             "all": "",
             "hongkong": "",
@@ -173,7 +180,9 @@
             "ceo_sharing": "",
             "company_awards_and_achievements": "",
             "company_trends": "",
-            "industry_information": ""
+            "industry_information": "",
+            "health_tip": "",
+            "professional_healthcare_tip": ""
         }
     },
     "our_technologies": {
