@@ -51,7 +51,7 @@ fields:
       file: 
       path: 
   label: Type
-  description: Tag of post.
+  description: Tag of post.<br><em>公司動向company_trends<br>公司獎項與成就company_awards_and_achievements<br>行業資訊industry_information<br>行政總裁分享ceo_sharing<br>商業合作business_cooperation</em>
 - name: href
   type: text
   config:
