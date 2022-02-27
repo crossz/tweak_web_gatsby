@@ -47,13 +47,15 @@ fields:
     options:
     - health
     - professional_healthcare
+    - professional_healthcare_tip
+    - health_tip
     source:
       type: simple
       section: 
       file: 
       path: 
   label: Type
-  description: Tag of post.<br><em>健康資訊health<br>專業醫護資訊professional_healthcare</em>
+  description: Tag of post.<br><em>健康資訊health_tip<br>專業醫護資訊professional_healthcare</em>
 - name: href
   type: text
   config:
