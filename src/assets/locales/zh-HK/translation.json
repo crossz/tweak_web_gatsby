@@ -160,14 +160,7 @@
             "mainland_china": "中國內地",
             "hongkong_special_administrative_region": "香港特別行政區"
         },
-        "update_post_types": {
-            "all": "所有最新動態",
-            "company_trends": "公司動向",
-            "company_awards_and_achievements": "公司獎項與成就",
-            "industry_information": "行業資訊",
-            "ceo_sharing": "行政總裁分享",
-            "business_cooperation": "商業合作"
-        },
+        "update_post_types": {},
         "hongkong_regions": {
             "all": "所有地區",
             "hongkong": "香港",
@@ -182,9 +175,16 @@
         "macao_regions": {
             "macao": "澳門"
         },
-        "health_tip_post_types": {
-            "health": "健康資訊",
-            "professional_healthcare": "專業醫護資訊"
+        "health_tip_post_types": {},
+        "post_types": {
+            "all_updates": "所有最新動態",
+            "business_cooperation": "商業合作",
+            "ceo_sharing": "行政總裁分享",
+            "company_awards_and_achievements": "公司獎項與成就",
+            "company_trends": "公司動向",
+            "industry_information": "行業資訊",
+            "health_tip": "健康資訊",
+            "professional_healthcare_tip": "專業醫護資訊"
         }
     },
     "our_technologies": {

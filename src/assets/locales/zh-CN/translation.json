@@ -152,14 +152,7 @@
             "mainland_china": "",
             "hongkong_special_administrative_region": ""
         },
-        "update_post_types": {
-            "all": "",
-            "company_trends": "",
-            "company_awards_and_achievements": "",
-            "industry_information": "",
-            "ceo_sharing": "",
-            "business_cooperation": ""
-        },
+        "update_post_types": {},
         "hongkong_regions": {
             "all": "",
             "hongkong": "",
@@ -173,6 +166,14 @@
         },
         "macao_regions": {
             "macao": ""
+        },
+        "post_types": {
+            "all_updates": "",
+            "business_cooperation": "",
+            "ceo_sharing": "",
+            "company_awards_and_achievements": "",
+            "company_trends": "",
+            "industry_information": ""
         }
     },
     "our_technologies": {
