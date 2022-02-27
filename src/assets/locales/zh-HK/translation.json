@@ -160,7 +160,6 @@
             "mainland_china": "中國內地",
             "hongkong_special_administrative_region": "香港特別行政區"
         },
-        "update_post_types": {},
         "hongkong_regions": {
             "all": "所有地區",
             "hongkong": "香港",
@@ -175,7 +174,6 @@
         "macao_regions": {
             "macao": "澳門"
         },
-        "health_tip_post_types": {},
         "post_types": {
             "all_updates": "所有最新動態",
             "business_cooperation": "商業合作",
