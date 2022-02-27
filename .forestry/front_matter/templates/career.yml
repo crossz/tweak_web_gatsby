@@ -26,6 +26,7 @@ fields:
       file: 
       path: 
   label: Department
+  description: 商業戰略合作business_strategic_coperation<strong><em><br></em></strong>dite
 - name: date
   type: datetime
   label: Date
@@ -49,5 +50,6 @@ fields:
       file: 
       path: 
   label: Region
+  description: "<em>所有地區all<br>中國大陸mainland_china<br>香港特別行政區hongkong_special_administrative_region</em>"
 pages:
 - content/join-us/customer-service-specialist.md
