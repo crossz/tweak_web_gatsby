@@ -53,7 +53,7 @@ fields:
       file: 
       path: 
   label: Type
-  description: Tag of post.<br><em>health - 健康資訊<br>professional_healthcare - 專業醫護資訊</em>
+  description: Tag of post.<br><em>健康資訊health<br>專業醫護資訊professional_healthcare</em>
 - name: href
   type: text
   config:
