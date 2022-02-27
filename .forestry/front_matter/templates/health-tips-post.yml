@@ -48,6 +48,7 @@ fields:
     - 健康資訊
     - 專業醫護資訊
     - health
+    - professional_healthcare
     source:
       type: simple
       section: 
