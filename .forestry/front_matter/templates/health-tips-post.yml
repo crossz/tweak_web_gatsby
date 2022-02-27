@@ -45,10 +45,8 @@ fields:
   config:
     required: false
     options:
-    - health
-    - professional_healthcare
-    - professional_healthcare_tip
     - health_tip
+    - professional_healthcare_tip
     source:
       type: simple
       section: 
