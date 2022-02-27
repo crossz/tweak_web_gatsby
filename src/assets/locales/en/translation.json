@@ -160,7 +160,14 @@
             "mainland_china": "China",
             "hongkong_special_administrative_region": "Hong Kong"
         },
-        "update_post_types": {},
+        "update_post_types": {
+            "all": "Latest News",
+            "company_trends": "Company Trends",
+            "company_awards_and_achievements": "Company Awards and Achievements",
+            "industry_information": "Industry Update",
+            "ceo_sharing": "CEO Sharing",
+            "business_cooperation": "Corporate Development"
+        },
         "hongkong_regions": {
             "all": "All Regions",
             "hongkong": "Hong Kong",
@@ -181,7 +188,9 @@
             "ceo_sharing": "CEO Sharing",
             "company_awards_and_achievements": "Company Awards and Achievements",
             "company_trends": "Company Trends",
-            "industry_information": "Industry Update"
+            "industry_information": "Industry Update",
+            "health_tip": "Health Tip",
+            "professional_healthcare_tip": "Professional Healthcare Tip"
         }
     },
     "our_technologies": {
