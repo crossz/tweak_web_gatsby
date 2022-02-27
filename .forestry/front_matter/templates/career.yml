@@ -26,7 +26,7 @@ fields:
       file: 
       path: 
   label: Department
-  description: 商業戰略合作business_strategic_coperation<strong><em><br></em></strong>dite
+  description: "<em>商業戰略合作business_strategic_coperation</em>"
 - name: date
   type: datetime
   label: Date
