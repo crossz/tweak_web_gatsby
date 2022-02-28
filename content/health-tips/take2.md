@@ -18,7 +18,7 @@ slug: ''
 
 第一集：最近為甚麼有更多人關注鼻咽癌？
 
-[https://voca.ro/14ZbWuBwsr49](https://voca.ro/14ZbWuBwsr49 "https://voca.ro/14ZbWuBwsr49")
+\~\~\~\~\~\~\~\~\~
 
 得易健康有限公司行政總裁翁錦輝Tony與大家說明鼻咽癌的高危因素，提醒大家可注意日常飲食和生活習慣。
 
