@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: MDX_MEDIA_MAXWIDTH,
     margin: '0 auto',
+    marginBottom: theme.spacing(4),
   },
   audio: {
     width: '100%',
