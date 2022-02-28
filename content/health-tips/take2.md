@@ -18,7 +18,7 @@ slug: ''
 
 第一集：最近為甚麼有更多人關注鼻咽癌？
 
-\~\~\~\~\~\~\~\~\~
+`audio: /audios/final_01.mp3`
 
 得易健康有限公司行政總裁翁錦輝Tony與大家說明鼻咽癌的高危因素，提醒大家可注意日常飲食和生活習慣。
 
@@ -26,9 +26,7 @@ slug: ''
 
 第二集：如何識別鼻咽癌及一般檢測方法
 
-`audio: /final_01.mp3`
-
-_（Audio file: 第二集final.mp3）_
+`audio: /audios/final_02.mp3`
 
 耳鼻喉專科林傳廣醫生為大家講解鼻咽癌常見病徵，以及抽血驗早期鼻咽癌的技術。
 
@@ -36,18 +34,18 @@ _（Audio file: 第二集final.mp3）_
 
 第三集：鼻咽癌為生活和身心帶來的影響
 
-_（Audio file: 第三集final.mp3）_  
+`audio: /audios/final_03.mp3`  
 耳鼻喉專科林傳廣醫生與聽眾講述鼻咽癌的治療手段，以及鼻咽癌為患者日常生活帶來的影響。
 
 ![](../images/crhk_ep04_final_high.jpg)
 
 第四集：早期鼻咽癌篩查與家庭幸福的關係
 
-_（Audio file: 第四集final.mp3）_  
+`audio: /audios/final_04.mp3`  
 得易健康有限公司行政總裁翁錦輝Tony與大家分享實際例子，指出早期鼻咽癌篩查對家庭帶來的重要影響。
 
 ![](../images/crhk_ep05_final_high.jpg)
 
 第五集：驗血能找到無病徵的鼻咽癌患者  
-_（Audio file: 第五集final.mp3）_  
+`audio: /audios/final_05.mp3`  
 得易健康有限公司行政總裁翁錦輝Tony向聽眾介紹早期鼻咽癌篩查的最新技術及分析其優勢
