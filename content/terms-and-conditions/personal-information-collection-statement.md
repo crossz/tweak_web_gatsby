@@ -1,6 +1,6 @@
 ---
 title: Personal Information Collection Statement
-date: 2021-12-13T00:00:00.000+08:00
+date: 2022-01-02T00:00:00+08:00
 languages:
 - en
 slug: personal-information-collection-statement
