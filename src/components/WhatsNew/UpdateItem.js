@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
   date: {
     color: theme.palette.text.primary,
     marginRight: theme.spacing(3),
+    flexShrink: 0,
     [theme.breakpoints.down('xs')]: {
       marginRight: theme.spacing(2),
     },
@@ -73,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.overline.fontSize,
     color: theme.palette.secondary.contrastText,
     padding: theme.spacing(0.25, 1),
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
   btnWrapper: {},
   imageList: {
