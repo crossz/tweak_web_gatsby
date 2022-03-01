@@ -30,7 +30,7 @@
         "sign_up_as_menber": "Register in Take2 Health Platform",
         "or": "or",
         "book_detection": "Book our Service Now",
-        "service_location": "Service Locations",
+        "service_location": "Service Locations - Overseas",
         "notice": "Important Note",
         "sign_in": "Sign In",
         "faq": "FAQ",
@@ -126,7 +126,7 @@
             "title": "Thanks for participating!",
             "subtitle": "Thank you for completing the risk assessment.",
             "detail_1": "The risks and symptoms stated in the assessment are highly related to NPC. If you experience these symptoms continuously, it is advised to consult healthcare professionals as soon as possible.",
-            "detail_2": "Join us now to enjoy the exclusive privileges of “Take2 Extra Care” membership and schedule a doctor consultation through Take2 Health Platform."
+            "detail_2": "You could join as a lifetime member at no cost and enjoy the exclusive privileges under the program, including services of live chat, health tips, exclusive offers, annual check-up reminders and more."
         },
         "questions": {
             "0": "Have your family members ever been diagnosed with NPC?",
@@ -160,25 +160,6 @@
             "mainland_china": "China",
             "hongkong_special_administrative_region": "Hong Kong"
         },
-        "regions": {
-            "all": "All Regions",
-            "hongkong": "Hong Kong",
-            "kowloon": "Kowloon",
-            "new_territories_east": "New Territories East",
-            "new_territories_west": "New Territories West",
-            "other": "Other Areas",
-            "east_of_hongkong_island": "East of Hong Kong Island",
-            "kowloon_central": "Kowloon Central",
-            "kowloon_east": "Kowloon East",
-            "kowloon_west": "Kowloon West",
-            "macao": "Macao",
-            "new_territories_north": "New Territories North",
-            "northeast_new_territories": "Northeast New Territories",
-            "northwest_new_territories": "Northwest New Territories",
-            "southeast_new_territories": "Southeast New Territories",
-            "southwest_new_territories": "Southwest New Territories",
-            "west_of_hongkong_island": "West of Hong Kong Island"
-        },
         "department": {
             "all": "All Departments",
             "business_strategic_cooperation": "Business C"
@@ -196,31 +177,50 @@
             "health_tip": "Health Tip",
             "professional_healthcare_tip": "Professional Healthcare Tip"
         },
+        "regions": {
+            "all": "All Regions",
+            "hongkong": "Hong Kong",
+            "kowloon": "Kowloon",
+            "new_territories_east": "New Territories East",
+            "new_territories_west": "New Territories West",
+            "macao": "Macao",
+            "kowloon_west": "Kowloon West",
+            "kowloon_central": "Kowloon Central",
+            "kowloon_east": "Kowloon East",
+            "west_of_hongkong_island": "West of Hong Kong Island",
+            "east_of_hongkong_island": "East of Hong Kong Island",
+            "new_territories_north": "New Territories North",
+            "southeast_new_territories": "Southeast New Territories",
+            "northwest_new_territories": "Northwest New Territories",
+            "northeast_new_territories": "Northeast New Territories",
+            "southwest_new_territories": "Southwest New Territories",
+            "other": "Other Areas"
+        },
         "faq_types": {
             "all": "All FAQ",
-            "about_npc": "About NPC",
-            "book_online_and_pay_process": "Book Online and Pay Process",
             "detection_service": "Detection Service",
             "detection_technology": "Detection Technology",
-            "membership_program": "Membership Program",
-            "notes_and_result": "Notes and Result",
             "price_and_service": "Price and Service",
+            "book_online_and_pay_process": "Book Online and Pay Process",
+            "notes_and_result": "Notes and Result",
+            "about_npc": "About NPC",
+            "membership_program": "Membership Program",
             "privacy_and_electronic_records": "Privacy and Electronic Records"
         }
     },
     "our_technologies": {
         "clinical_papers": {
             "title": "Relevant Studies and Literature",
-            "detail": "The Take2 Prophecy™ Test for NPC utilises the pioneering technology invented by an award-winning research team from the Chinese University of Hong Kong (CUHK). The technology has been validated by large-scale clinical study involving 20,000 individuals and the research was published in the globally respected New England Journal of Medicine and Proceedings of the National Academy of Sciences of the United States of America. The reports and results can be viewed here:"
+            "detail": "The Take2 Prophecy™ Test for NPC utilises the pioneering technology invented by an award-winning research team from the Chinese University of Hong Kong (CUHK). The technologies has been validated by large-scale clinical study involving 20,000 individuals and the research was published in the globally respected New England Journal of Medicine and Proceedings of the National Academy of Sciences of the United States of America. The reports and results can be viewed here:"
         },
         "ngs": {
             "title": "What is Next-generation Sequencing (NGS)?",
-            "what_is_ngs": "What is Next-generation Sequencing NGS?",
-            "intro": "NGS (Next-generation Sequencing) is a powerful tool that utilises the high-throughput and massively parallel sequencing approach, which has greatly improved sequencing efficiency while maintaining a high level of accuracy. The first-generation sequencing (Sanger sequencing) can only sequence a single DNA fragment at a time, while NGS can sequence and analyse hundreds to thousands of genes simultaneously, this allows scientists to rapidly obtain results that cover the entire human genome. <br/><br/>Compared to the first-generation sequencing, NGS has a significantly higher sequencing throughput and sequencing speed. This has made the whole genome sequencing process less expensive and time-consuming, reducing the cost from nearly 30 billion USD to about 1000 USD and the time required from 10 years to just 1 day. Besides, NGS has a higher sensitivity, which allows new or rare mutations within the target region of the genome to be detected by deep sequencing. Therefore, NGS can perform complex analysis that is beyond the capacity of the first-generation sequencing. For example, performing a large-scale whole-genome sequencing to analyse a complete human genome, or using transcriptome sequencing for mRNA, miRNA expression and RNA splicing analysis.<br/><br/>With the ultra-high throughput, scalability and speed offered by NGS, a wide range of applications can now be performed by scientists to study biological systems at an unprecedented level. Results generated from NGS can be combined with genomic data and bioinformatic studies to provide useful information for diseases and population-wide genomic research. Clinical applications of NGS include sequencing cancer samples to study rare somatic mutations, analysing epigenetic factors and revealing disease-related alleles.",
+            "what_is_ngs": "What is Next-generation Sequencing (NGS)?",
+            "intro": "NGS (Next-generation Sequencing) is a powerful tool that utilises the high-throughput and massively parallel sequencing approach, which has greatly improved sequencing efficiency while maintaining a high level of accuracy.  \n\nThe first-generation sequencing (Sanger sequencing) can only sequence a single DNA fragment at a time, while NGS can sequence and analyse hundreds to thousands of genes simultaneously, this allows scientists to rapidly obtain results that cover the entire human genome. \n\nCompared to the first-generation sequencing, NGS has a significantly higher sequencing throughput and sequencing speed. This has made the whole genome sequencing process less expensive and time-consuming, reducing the cost from nearly 30 billion USD to about 1000 USD and the time required from 10 years to just 1 day. Besides, NGS has a higher sensitivity, which allows new or rare mutations within the target region of the genome to be detected by deep sequencing. Therefore, NGS can perform complex analysis that is beyond the capacity of the first-generation sequencing. For example, performing a large-scale whole-genome sequencing to analyse a complete human genome, or using transcriptome sequencing for mRNA, miRNA expression and RNA splicing analysis.\n\nWith the ultra-high throughput, scalability and speed offered by NGS, a wide range of applications can now be performed by scientists to study biological systems at an unprecedented level. Results generated from NGS can be combined with genomic data and bioinformatic studies to provide useful information for diseases and population-wide genomic research. Clinical applications of NGS include sequencing cancer samples to study rare somatic mutations, analysing epigenetic factors and revealing disease-related alleles.",
             "notes": {
                 "0": {
                     "title": "How Does the Take2 Prophecy™ Test for NPC Work?",
-                    "content": "The Take2 Prophecy™ Test for NPC detects human and NPC-associated genomic signatures of EBV DNA in the bloodstream with a combination of Polymerase Chain Reaction (PCR) and Next-generation Sequencing (NGS) technologies. With the help of advanced algorithms, NPC can be accurately detected at a significantly earlier stage such that patients can receive more timely and effective treatment to increase chances of survival³."
+                    "content": "The Take2 Prophecy™ Test for NPC detects human and NPC-associated genomic signatures of EBV DNA in the bloodstream with a combination of Polymerase Chain Reaction (PCR) and Next-generation Sequencing (NGS) technologies. With the help of advanced algorithms, NPC can be accurately detected at a significantly earlier stage such that patients can receive more timely and effective treatment to increase chances of survival¹."
                 },
                 "1": {
                     "title": "Limitations of Identifying NPC Through Tissue Biopsy",
@@ -237,7 +237,7 @@
             "title": "Why Early NPC Detection is Vital",
             "center_data": {
                 "0": "is the No.1 cancer amongst men aged 20 to 44¹",
-                "1": "is one of the cancers that is more likely to occur between 50 to 60 years old in women, apart from cancers of the breast and uterus²",
+                "1": "is one of the cancers that is more likely to occur between 50 to 60 years old in women, apart from breast cancer and uterine cancer²",
                 "2": "occurs at a relatively younger age, unlike colon, liver or prostate cancers³, where most patients are aged 65 to 80; over 80% of NPC patients are 50 to 65 years old, for whom are entering their “golden age” and planning for retirement."
             },
             "references": {
@@ -250,11 +250,11 @@
             "center_data_title": "Recent Hong Kong Cancer Registry figures show that NPC:",
             "content_data_detail": "Cancer might seem frightening to many people but let us not worry. Taking early cancer detection tests regularly is an excellent first step for us to stay vigilant about potential diseases. Early diagnosis and treatment may bring better survival. After all, we can still live a quality life after the battle.",
             "whats_is_early_cancer_detection": "What is an Early Detection Test for NPC?",
-            "whats_is_early_cancer_detection_content": "An early cancer detection test is a medical assessment that helps to identify the risks of cancer in apparently healthy people. A person with cancer may, or may not, be experiencing significant symptoms; moreover, the presence of symptoms alone is not a reliable indicator to confirm having cancer. Under this situation, an early cancer detection test can tell the likeliness of having such disease at the test moment or in the future. With the information provided by an early cancer detection test, a patient can realise the disease earlier and receive timely treatment. The patient might possibly suffer fewer complications and experience better survival. An early cancer detection test with high sensitivity and specificity can further reduce the possibilities of misdiagnosis and lift the anxiety brought by inaccurate testing results.<br/><br/>The Take2 Prophecy Test for NPC is an early cancer detection test which is suitable for anyone, no matter one is asymptomatic or with unnoticeable symptoms. Our test is blood-based and non-invasive with the use of ground-breaking Next-generation Sequencing technology to analyse human and NPC-associated genomic signatures of EBV DNA in the blood plasma. By testing early, NPC patients can be identified at the early stage then start to receive treatment much earlier which can minimise possible side-effects and significantly increase their chance of survival.",
+            "whats_is_early_cancer_detection_content": "An early cancer detection test is a medical assessment that helps to identify the risks of cancer in apparently healthy people. A person with cancer may, or may not, be experiencing significant symptoms; moreover, the presence of symptoms alone is not a reliable indicator to confirm having cancer. Under this situation, an early cancer detection test can tell the likeliness of having such disease at the test moment or in the future. With the information provided by an early cancer detection test, a patient can realise the disease earlier and receive timely treatment. The patient might possibly suffer fewer complications and experience better survival. An early cancer detection test with high sensitivity and specificity can further reduce the possibilities of misdiagnosis and lift the anxiety brought by inaccurate testing results.\n\nThe Take2 Prophecy Test for NPC is an early cancer detection test which is suitable for anyone, no matter one is asymptomatic or with non-specific symptoms. Our test is blood-based and non-invasive with the use of ground-breaking Next-generation Sequencing technology to analyse human and NPC-associated genomic signatures of EBV DNA in the blood plasma. By testing early, NPC patients can be identified at the early stage then start to receive treatment much earlier which can minimise possible side-effects and significantly increase their chance of survival.",
             "reason_title": "Why is Early Detection for NPC so Important?",
             "reasons": {
                 "0": {
-                    "content": "The anatomical location of nasopharynx is rather ‘concealed’ and difficult to examine. Some NPC symptoms may resemble flu or inflammation conditions, patients may overlook these warning signs.",
+                    "content": "NPC is not easy to notice. The anatomical location of nasopharynx is rather ‘concealed’ and difficult to examine. Some NPC symptoms may resemble flu or inflammation conditions, patients may overlook these warning signs.",
                     "title": "NPC is not easy to notice."
                 },
                 "1": {
@@ -271,17 +271,17 @@
     },
     "products_and_services": {
         "take2_extra_care": {
-            "title": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer",
+            "title": "Take2 Extra Care Membership Program",
             "steps": {
                 "0": "Order and perform the Take2 Prophecy™ Test for NPC",
-                "1": "Simply complete and return the membership form at our service locations",
+                "1": "Simply complete and return the membership form at our service locations OR",
                 "2": "Register directly at the Take2 Health Platform"
             },
             "what_is_extra_care": "About the Program",
             "what_is_extra_care_content": "Open to any individuals, Take2 Extra Care is a complimentary all-round health management program, designed by a team of healthcare professionals.",
             "how_to_join_extra_care": "Simple Enrolment",
             "benefit_of_extra_care": "What are the Benefits of Joining Take2 Extra Care?",
-            "benefit_of_extra_care_content": "You could join as a lifetime member at no cost and enjoy the exclusive privileges under the program, including services of live chat, health tips, exclusive offers, annual check-up reminders and more.<br/><1></1>Get prepared for tomorrow’s challenges. Sign up for your membership today, get access to cutting-edge technologies and professional healthcare support and save time and money on your health management. ",
+            "benefit_of_extra_care_content": "Open to any individuals, Take2 Extra Care is a complimentary all-round health management program, designed by a team of healthcare professionals.\n•\tLive chat\n•\tExclusive offers\n•\tHealth tips\n•\tAnnual check-up reminders\n\nGet prepared for tomorrow’s challenges. Sign up for your membership today, get access to cutting-edge technologies and professional healthcare support and save time and money on your health management. ",
             "club_plans": {
                 "0": "Live chat",
                 "1": "Exclusive offers",
