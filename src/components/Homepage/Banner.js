@@ -133,6 +133,16 @@ const useStyles = makeStyles((theme) => ({
         },
       },
     },
+    '& .swiper-button-prev': {
+      [theme.breakpoints.down('xs')]: {
+        left: 0,
+      },
+    },
+    '& .swiper-button-next': {
+      [theme.breakpoints.down('xs')]: {
+        right: 0,
+      },
+    },
     WebkitBackfaceVisibility: 'hidden',
     '& .swiper-slide': {
       // width: '100%',
