@@ -163,9 +163,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 'auto',
   },
   viewBtn: {
-    width: theme.spacing(15),
-    padding: 0,
     textDecoration: 'none',
+    padding: theme.spacing(0, 2),
   },
   box03: {
     paddingTop: theme.spacing(5),

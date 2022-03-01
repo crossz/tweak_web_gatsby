@@ -64,6 +64,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     paddingTop: theme.spacing(12.5),
     paddingBottom: theme.spacing(15),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(10.5),

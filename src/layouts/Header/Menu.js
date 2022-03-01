@@ -288,7 +288,7 @@ const Menu = (props) => {
                           size={1.5}
                           left={-4}
                         ></TitleDot>
-                        {matches && item.sections?.length ? (
+                        {matches && item.sections?.length && index !== 5 ? (
                           <Typography variant='h4'>{t(item.title)}</Typography>
                         ) : (
                           <Link

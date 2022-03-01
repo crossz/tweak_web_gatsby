@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     padding: theme.spacing(2, 3.5),
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+    },
   },
 }))
 
