@@ -261,7 +261,7 @@ export const query = graphql`
     mdx: mdx(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {
-        date(formatString: "YYYY/MM/DD")
+        date(formatString: "DD/MM/YYYY")
         title
         type
       }

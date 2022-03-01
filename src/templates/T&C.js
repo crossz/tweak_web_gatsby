@@ -96,7 +96,7 @@ export const query = graphql`
     ) {
       id
       frontmatter {
-        date(formatString: "YYYY/MM/DD")
+        date(formatString: "DD/MM/YYYY")
         title
       }
       body

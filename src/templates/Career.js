@@ -199,7 +199,7 @@ export const query = graphql`
         title
         type
         region
-        date(formatString: "YYYY/MM/DD")
+        date(formatString: "DD/MM/YYYY")
       }
       body
     }
