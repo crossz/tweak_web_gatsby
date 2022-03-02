@@ -108,8 +108,8 @@
         }
     },
     "quiz": {
-        "pre": "Back to the previous question",
-        "next": "Next question",
+        "pre": "Back",
+        "next": "Next",
         "start": {
             "button": "Start Now",
             "title": "Get Started with Your Free NPC Risk Assessment!",
@@ -183,17 +183,17 @@
             "kowloon": "Kowloon",
             "new_territories_east": "New Territories East",
             "new_territories_west": "New Territories West",
-            "macao": "Macao",
+            "macao": "Macau",
             "kowloon_west": "Kowloon West",
             "kowloon_central": "Kowloon Central",
             "kowloon_east": "Kowloon East",
-            "west_of_hongkong_island": "West of Hong Kong Island",
-            "east_of_hongkong_island": "East of Hong Kong Island",
+            "west_of_hongkong_island": "Hong Kong Island West",
+            "east_of_hongkong_island": "Hong Kong Island East",
             "new_territories_north": "New Territories North",
-            "southeast_new_territories": "Southeast New Territories",
-            "northwest_new_territories": "Northwest New Territories",
-            "northeast_new_territories": "Northeast New Territories",
-            "southwest_new_territories": "Southwest New Territories",
+            "southeast_new_territories": "New Territories Southeast",
+            "northwest_new_territories": "New Territories Northwest",
+            "northeast_new_territories": "New Territories Northeast",
+            "southwest_new_territories": "New Territories Southwest",
             "other": "Other Areas"
         },
         "faq_types": {
@@ -214,7 +214,7 @@
             "detail": "The Take2 Prophecy™ Test for NPC utilises the pioneering technology invented by an award-winning research team from the Chinese University of Hong Kong (CUHK). The technologies has been validated by large-scale clinical study involving 20,000 individuals and the research was published in the globally respected New England Journal of Medicine and Proceedings of the National Academy of Sciences of the United States of America. The reports and results can be viewed here:"
         },
         "ngs": {
-            "title": "What is Next-generation Sequencing (NGS)?",
+            "title": "What is NGS?",
             "what_is_ngs": "What is Next-generation Sequencing (NGS)?",
             "intro": "NGS (Next-generation Sequencing) is a powerful tool that utilises the high-throughput and massively parallel sequencing approach, which has greatly improved sequencing efficiency while maintaining a high level of accuracy.  \n\nThe first-generation sequencing (Sanger sequencing) can only sequence a single DNA fragment at a time, while NGS can sequence and analyse hundreds to thousands of genes simultaneously, this allows scientists to rapidly obtain results that cover the entire human genome. \n\nCompared to the first-generation sequencing, NGS has a significantly higher sequencing throughput and sequencing speed. This has made the whole genome sequencing process less expensive and time-consuming, reducing the cost from nearly 30 billion USD to about 1000 USD and the time required from 10 years to just 1 day. Besides, NGS has a higher sensitivity, which allows new or rare mutations within the target region of the genome to be detected by deep sequencing. Therefore, NGS can perform complex analysis that is beyond the capacity of the first-generation sequencing. For example, performing a large-scale whole-genome sequencing to analyse a complete human genome, or using transcriptome sequencing for mRNA, miRNA expression and RNA splicing analysis.\n\nWith the ultra-high throughput, scalability and speed offered by NGS, a wide range of applications can now be performed by scientists to study biological systems at an unprecedented level. Results generated from NGS can be combined with genomic data and bioinformatic studies to provide useful information for diseases and population-wide genomic research. Clinical applications of NGS include sequencing cancer samples to study rare somatic mutations, analysing epigenetic factors and revealing disease-related alleles.",
             "notes": {
@@ -375,7 +375,7 @@
         "ngs": "What is Next-generation Sequencing (NGS)?",
         "clinical_papers": "Relevant Studies and Literature",
         "products_and_services": "Products and Services",
-        "take2_prophecy": "The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC)",
+        "take2_prophecy": "Test for Nasopharyngeal Cancer (NPC)",
         "take2_extra_care": "Take2 Extra Care Membership Program",
         "service_location": "Service Locations – Hong Kong",
         "international": "Business Cooperation",
