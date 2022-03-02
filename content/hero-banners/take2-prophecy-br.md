@@ -1,6 +1,6 @@
 ---
 image: "../images/hero_02.jpg"
-mobileImage: "../images/picture2.png"
+mobileImage: "../images/top-banner-tat-ming.jpg"
 buttons:
 - template: hero-button
   variant: outlined
