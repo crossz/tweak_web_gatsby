@@ -9,7 +9,6 @@ import {
   FormControl,
   FormHelperText,
   CircularProgress,
-  MenuItem,
   useTheme,
   useMediaQuery,
   Button,
@@ -26,6 +25,7 @@ import {
   EFormLabel,
   ESelect,
   CancelButton,
+  EMenuItem,
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -447,13 +447,13 @@ const JoinUs = ({ data, pageContext }) => {
                                 onChange={handleChange}
                               >
                                 {CAREER_REGIONS?.map((region) => (
-                                  <MenuItem
+                                  <EMenuItem
                                     key={region.value}
                                     value={region.value}
                                     disabled={!region.value}
                                   >
                                     {t(region.label)}
-                                  </MenuItem>
+                                  </EMenuItem>
                                 ))}
                               </ESelect>
                               {errorText('area')}

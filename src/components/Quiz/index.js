@@ -16,12 +16,10 @@ import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import RadioGroup from '@material-ui/core/RadioGroup'
-import MenuItem from '@material-ui/core/MenuItem'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Checkbox from '@material-ui/core/Checkbox'
-// import { Link as MuiLink } from '@material-ui/core'
 import Link from '@components/Link'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import GenderRadio from './GenderRadio'
@@ -32,6 +30,7 @@ import {
   ESelect,
   EInputBase,
   CancelButton,
+  EMenuItem,
 } from '@themes/components/ETextField'
 import { AGE_OPTIONS, QUIZ, GENDER_OPTIONS } from '@utils/constant'
 import { padStartNum } from '@utils'
@@ -557,15 +556,15 @@ const Quiz = () => {
                               onChange={handleChange}
                               displayEmpty
                             >
-                              <MenuItem value='' disabled>
+                              <EMenuItem value='' disabled>
                                 {t('form.placeholder.select', {
                                   field: t('form.age.label'),
                                 })}
-                              </MenuItem>
+                              </EMenuItem>
                               {AGE_OPTIONS.map((age) => (
-                                <MenuItem key={age.value} value={age.value}>
+                                <EMenuItem key={age.value} value={age.value}>
                                   {t(age.label)}
-                                </MenuItem>
+                                </EMenuItem>
                               ))}
                             </ESelect>
                             {errorText('age')}
@@ -771,26 +770,22 @@ const Quiz = () => {
                               <EFormLabel>{t('form.phone.label')}</EFormLabel>
                             </Box>
                             <Box display='flex'>
-                              <Box mr={0.5}>
-                                <FormControl
-                                  className={classes.dialingCode}
-                                  required
-                                >
+                              <Box mr={0.5} flexShrink={0}>
+                                <FormControl required>
                                   <ESelect
                                     labelId='dialingCode-select-label'
                                     id='dialingCode-type-select'
                                     name='dialingCode'
                                     value={values.dialingCode}
                                     onChange={handleChange}
-                                    input={<EInputBase />}
                                   >
                                     {DIALING_CODES.map((dialingCode) => (
-                                      <MenuItem
+                                      <EMenuItem
                                         key={dialingCode.value}
                                         value={dialingCode.value}
                                       >
                                         {dialingCode.label}
-                                      </MenuItem>
+                                      </EMenuItem>
                                     ))}
                                   </ESelect>
                                 </FormControl>

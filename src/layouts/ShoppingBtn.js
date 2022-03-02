@@ -7,7 +7,7 @@ import { Trans } from 'gatsby-plugin-react-i18next'
 const useStyles = makeStyles((theme) => ({
   shopBtn: {
     position: 'fixed',
-    zIndex: theme.zIndex.snackbar,
+    zIndex: theme.zIndex.appBar,
     right: theme.spacing(3),
     bottom: theme.spacing(2.75),
     backgroundColor: theme.palette.background.paper,
