@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
   },
   link: {
-    color: theme.palette.primary.main,
-  },
-  item: {
+    display: 'flex',
     width: '100%',
+    height: '100%',
+    alignItems: 'center',
     color: theme.palette.primary.contrastText,
     padding: theme.spacing(0, 1),
     minWidth: theme.spacing(17.5),
@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
         fill: theme.palette.primary.main,
       },
     },
+  },
+  item: {
+    padding: 0,
   },
   paper: {
     backgroundColor: theme.palette.primary.main,
@@ -95,17 +98,20 @@ const LanguageButton = (props) => {
         {languageLabels
           ?.filter((item) => item.lang !== language)
           ?.map((item) => (
-            <Link
-              className={classes.link}
+            <MenuItem
+              className={classes.item}
+              onClick={handleClose}
               key={item.lang}
-              to={originalPath}
-              language={item.lang}
             >
-              <MenuItem className={classes.item} onClick={handleClose}>
+              <Link
+                className={classes.link}
+                to={originalPath}
+                language={item.lang}
+              >
                 {item.label}
                 <CancelIcon className={classes.cancelIcon}></CancelIcon>
-              </MenuItem>
-            </Link>
+              </Link>
+            </MenuItem>
           ))}
       </Menu>
     </>
