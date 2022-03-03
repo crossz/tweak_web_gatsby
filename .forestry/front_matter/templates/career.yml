@@ -51,3 +51,5 @@ fields:
       path: 
   label: Region
   description: "<em>所有地區all<br>中國大陸mainland_china<br>香港特別行政區hongkong_special_administrative_region</em>"
+pages:
+- content/join-us/take2-health-collaborating-with-cxa-to-provide-innovative-employee-benefits.md
