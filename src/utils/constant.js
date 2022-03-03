@@ -27,6 +27,7 @@ export const DATE_FORMAT_WITH_WEEK = `yyyy-MM-dd(${DAY_OF_WEEK})`
 export const DATE_FORMAT_WITH_TIME = 'yyyy-MM-dd HH:mm'
 export const DATABASE_DATE_TIME_FORMAT = 'yyyy-MM-dd HH:mm:ss'
 export const TIME_SLICE = 'HH:mm'
+export const POST_TIME_FORMAT = 'DD/MM/YYYY'
 export const DIALING_CODES = [
   {
     label: '+852',

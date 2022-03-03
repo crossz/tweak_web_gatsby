@@ -9,6 +9,7 @@ import { POST_TYPES } from '@utils/constant'
 import Link from '@components/Link'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -104,7 +105,7 @@ const UpdateItem = ({ title, type, date, detail, href, slug, cover }) => {
     <Link to={href || slug} className={classes.link}>
       <Box className={classes.root}>
         <Box className={classes.top}>
-          <Box className={classes.date}>{date}</Box>
+          <Box className={classes.date}>{formatLocal(date)}</Box>
           <Box
             className={classes.mark}
             bgcolor={

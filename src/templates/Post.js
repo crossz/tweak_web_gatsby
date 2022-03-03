@@ -20,6 +20,7 @@ import { POST_TYPES } from '@utils/constant'
 import Layout from '@layouts/Layout'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -191,7 +192,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
               <Box className={classes.header}>
                 <Box className={classes.top}>
                   <Box className={classes.topLeft}>
-                    <Box className={classes.date}>{date}</Box>
+                    <Box className={classes.date}>{formatLocal(date)}</Box>
                     {type && (
                       <Box
                         className={classes.mark}
@@ -261,7 +262,7 @@ export const query = graphql`
     mdx: mdx(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {
-        date(formatString: "DD/MM/YYYY")
+        date
         title
         type
       }
@@ -286,7 +287,7 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
-          date(formatString: "DD/MM/YYYY")
+          date
           title
           type
           detail

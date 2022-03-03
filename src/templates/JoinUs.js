@@ -520,7 +520,7 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "DD/MM/YYYY")
+          date
           title
           type
           region
@@ -540,7 +540,7 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "DD/MM/YYYY")
+          date
           title
           type
           region

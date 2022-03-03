@@ -126,7 +126,7 @@ export const query = graphql`
         frontmatter {
           title
           detail
-          date(formatString: "DD/MM/YYYY")
+          date
           href
           pdf {
             publicURL

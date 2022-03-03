@@ -16,6 +16,7 @@ import CloseIcon from '@images/icons/close.svg'
 import classnames from 'classnames'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -162,7 +163,7 @@ const Post = ({ data }) => {
                 <Typography className={classes.date} color='primary'>
                   {t('common.release_date')}:
                   <Box fontWeight='fontWeightBold' component='span'>
-                    {date}
+                    {formatLocal(date)}
                   </Box>
                 </Typography>
                 <Box className={classes.region}>
@@ -199,7 +200,7 @@ export const query = graphql`
         title
         type
         region
-        date(formatString: "DD/MM/YYYY")
+        date
       }
       body
     }

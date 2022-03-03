@@ -3,6 +3,7 @@ import MdxLayout from '@layouts/MdxLayout'
 import { graphql } from 'gatsby'
 import { makeStyles, Typography, Container, Box } from '@material-ui/core'
 import Layout from '@layouts/Layout'
+import { formatLocal } from '@utils/moment'
 
 // import { StaticImage } from 'gatsby-plugin-image'
 
@@ -61,7 +62,7 @@ const Post = ({ data }) => {
                 <Typography variant='h5' color='primary'>
                   {title}
                 </Typography>
-                <Box className={classes.date}>{date}</Box>
+                <Box className={classes.date}>{formatLocal(date)}</Box>
               </Box>
               <MdxLayout>{mdx}</MdxLayout>
             </Container>
@@ -96,7 +97,7 @@ export const query = graphql`
     ) {
       id
       frontmatter {
-        date(formatString: "DD/MM/YYYY")
+        date
         title
       }
       body
