@@ -7,11 +7,10 @@ import {
   useTheme,
   useMediaQuery,
   Grid,
+  Box,
 } from '@material-ui/core'
-import Box from '@material-ui/core/Box'
-import MenuItem from '@material-ui/core/MenuItem'
 import classnames from 'classnames'
-import { ESelect } from '@themes/components/ETextField'
+import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import { POST_TYPES, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 import Layout from '@layouts/Layout'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
@@ -90,9 +89,9 @@ const Updates = ({ data }) => {
                   displayEmpty
                 >
                   {POST_TYPES.map((type, index) => (
-                    <MenuItem key={index} value={type.value}>
+                    <EMenuItem key={index} value={type.value}>
                       {t(type.label)}
-                    </MenuItem>
+                    </EMenuItem>
                   ))}
                 </ESelect>
               ) : (

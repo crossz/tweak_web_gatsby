@@ -8,7 +8,6 @@ import {
   Button,
   Box,
   Grid,
-  MenuItem,
 } from '@material-ui/core'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import PhoneIcon from '@images/icons/phone.svg'
@@ -19,7 +18,7 @@ import FaqSearch from '@components/FaqSearch'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { groupBy } from 'lodash-es'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { ESelect } from '@themes/components/ETextField'
+import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import Loading from '@components/Loading'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql } from 'gatsby'
@@ -270,9 +269,9 @@ const FAQ = () => {
                       displayEmpty
                     >
                       {faqTypes.map((type, index) => (
-                        <MenuItem key={index} value={type}>
+                        <EMenuItem key={index} value={type}>
                           {translateFaqType(type) || t('options.faq_types.all')}
-                        </MenuItem>
+                        </EMenuItem>
                       ))}
                     </ESelect>
                   </Grid>

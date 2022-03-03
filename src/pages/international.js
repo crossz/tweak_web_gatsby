@@ -13,7 +13,6 @@ import {
   FormControl,
   FormHelperText,
   CircularProgress,
-  MenuItem,
   useTheme,
   useMediaQuery,
 } from '@material-ui/core'
@@ -29,6 +28,7 @@ import {
   EFormLabel,
   ESelect,
   CancelButton,
+  EMenuItem,
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
@@ -530,12 +530,12 @@ const International = () => {
                                   displayEmpty
                                 >
                                   {DIALING_CODES.map((dialingCode) => (
-                                    <MenuItem
+                                    <EMenuItem
                                       key={dialingCode.value}
                                       value={dialingCode.value}
                                     >
                                       {dialingCode.label}
-                                    </MenuItem>
+                                    </EMenuItem>
                                   ))}
                                 </ESelect>
                               </FormControl>

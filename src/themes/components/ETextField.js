@@ -2,11 +2,15 @@ import React from 'react'
 import {
   withStyles,
   makeStyles,
+  useMediaQuery,
+  useTheme,
   InputAdornment,
   InputBase,
   FormLabel,
   Select,
   Box,
+  NativeSelect,
+  MenuItem,
 } from '@material-ui/core'
 import { MOBILE_LABEL_WIDTH } from '../../utils/constant'
 import classnames from 'classnames'
@@ -20,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
+    '&:focus': {
+      backgroundColor: 'transparent',
+    },
+  },
+  selectOutLined: {
+    paddingRight: `${theme.spacing(1)}px !important`,
   },
   selectInputBaseRoot: {
     paddingTop: `0 !important`,
@@ -120,9 +130,35 @@ const menuProps = {
   getContentAnchorEl: null,
 }
 
+export const EMenuItem = ({ children, ...rest }) => {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+
+  return isMobile ? (
+    <option {...rest}>{children}</option>
+  ) : (
+    <MenuItem {...rest}>{children}</MenuItem>
+  )
+}
+
 export const ESelect = (props) => {
   const classes = useStyles()
-  return (
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+
+  return isMobile ? (
+    <NativeSelect
+      classes={{
+        root: classes.selectRoot,
+        outlined: classes.selectOutLined,
+      }}
+      input={<EInputBase classes={{ root: classes.selectInputBaseRoot }} />}
+      displayEmpty
+      {...props}
+    >
+      {props.children}
+    </NativeSelect>
+  ) : (
     <Select
       classes={{
         root: classes.selectRoot,

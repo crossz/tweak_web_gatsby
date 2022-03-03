@@ -1,19 +1,21 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import GoogleMap from './GoogleMap'
-import Box from '@material-ui/core/Box'
-import MenuItem from '@material-ui/core/MenuItem'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
 import ClinicList from './ClinicList'
-import Container from '@material-ui/core/Container'
-import { makeStyles, Hidden } from '@material-ui/core'
+import {
+  makeStyles,
+  Hidden,
+  Container,
+  Box,
+  ButtonGroup,
+  IconButton,
+  Typography,
+} from '@material-ui/core'
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from '@utils/constant'
 import MapIcon from '@images/icons/map.svg'
 import ListIcon from '@images/icons/list.svg'
-import IconButton from '@material-ui/core/IconButton'
 import ArrowIcon from '@images/icons/arrow.svg'
-import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
-import { ESelect } from '@themes/components/ETextField'
+import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import { groupBy } from 'lodash-es'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import Loading from '@components/Loading'
@@ -246,13 +248,13 @@ const Map = () => {
             variant='outlined'
             className={classnames(classes.selectRoot, classes.homepageSelector)}
           >
-            <MenuItem key='' value=''>
+            <EMenuItem key='' value=''>
               {t('options.regions.all')}
-            </MenuItem>
+            </EMenuItem>
             {areaOptions?.map((areaItem) => (
-              <MenuItem key={areaItem} value={areaItem}>
+              <EMenuItem key={areaItem} value={areaItem}>
                 {translateRegion(areaItem)}
-              </MenuItem>
+              </EMenuItem>
             ))}
           </ESelect>
         )
@@ -282,9 +284,9 @@ const Map = () => {
                         className={classes.selectRoot}
                       >
                         {location.map((item) => (
-                          <MenuItem key={item.province} value={item.province}>
+                          <EMenuItem key={item.province} value={item.province}>
                             {translateRegion(item.province)}
-                          </MenuItem>
+                          </EMenuItem>
                         ))}
                       </ESelect>
                     </Box>
@@ -298,13 +300,13 @@ const Map = () => {
                       variant='outlined'
                       className={classes.selectRoot}
                     >
-                      <MenuItem key='' value=''>
+                      <EMenuItem key='' value=''>
                         {t('form.region.options.all')}
-                      </MenuItem>
+                      </EMenuItem>
                       {areaOptions?.map((areaItem) => (
-                        <MenuItem key={areaItem} value={areaItem}>
+                        <EMenuItem key={areaItem} value={areaItem}>
                           {translateRegion(areaItem)}
-                        </MenuItem>
+                        </EMenuItem>
                       ))}
                     </ESelect>
                   </Box>
@@ -335,7 +337,7 @@ const Map = () => {
                 <Box className={classes.toolBarBottom}>
                   <Box mb={1.5}>{t('form.region.label')}</Box>
                   <Box display='flex'>
-                    <Box mr={2} width='100%'>
+                    <Box mr={2}>
                       <ESelect
                         labelId='region-select-label'
                         id='region-type-select'
@@ -346,30 +348,32 @@ const Map = () => {
                         variant='outlined'
                       >
                         {location.map((item) => (
-                          <MenuItem key={item.province} value={item.province}>
+                          <EMenuItem key={item.province} value={item.province}>
                             {translateRegion(item.province)}
-                          </MenuItem>
+                          </EMenuItem>
                         ))}
                       </ESelect>
                     </Box>
-                    <ESelect
-                      labelId='district-select-label'
-                      id='district-type-select'
-                      name='district'
-                      value={curArea}
-                      onChange={handleArea}
-                      placeholder={t('form.placeholder.select')}
-                      variant='outlined'
-                    >
-                      <MenuItem key='' value=''>
-                        {t('form.region.options.all')}
-                      </MenuItem>
-                      {areaOptions?.map((areaItem) => (
-                        <MenuItem key={areaItem} value={areaItem}>
-                          {translateRegion(areaItem)}
-                        </MenuItem>
-                      ))}
-                    </ESelect>
+                    <Box ml='auto'>
+                      <ESelect
+                        labelId='district-select-label'
+                        id='district-type-select'
+                        name='district'
+                        value={curArea}
+                        onChange={handleArea}
+                        placeholder={t('form.placeholder.select')}
+                        variant='outlined'
+                      >
+                        <EMenuItem key='' value=''>
+                          {t('form.region.options.all')}
+                        </EMenuItem>
+                        {areaOptions?.map((areaItem) => (
+                          <EMenuItem key={areaItem} value={areaItem}>
+                            {translateRegion(areaItem)}
+                          </EMenuItem>
+                        ))}
+                      </ESelect>
+                    </Box>
                   </Box>
                 </Box>
               )}
