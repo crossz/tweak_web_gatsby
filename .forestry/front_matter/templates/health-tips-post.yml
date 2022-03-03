@@ -2,10 +2,15 @@
 label: Health Tips Post
 hide_body: false
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: cover
   type: image_gallery
   config: {}
-  label: cover
+  label: Cover
   description: 'Cover of post card, in updates list it may be multiple images or empty.<br><em>Aspect
     ratio: 2 (width / height)</em><br><em>Recommend size</em>: 600 * 300'
 - name: date
@@ -16,14 +21,14 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
-  label: date
+  label: Date
 - name: title
   type: text
   config:
     required: true
-  label: title
-  description: 'Title of post. <br>If slug and href is empty should forbidden these
-    characters: <em>"$","%",":","/",Tab</em>'
+  label: Title
+  description: 'This will be used as slug for url when slug and href is empty;<br><em>Forbidden
+    characters: "$","%",":","/",Tab</em>'
 - name: detail
   type: textarea
   default: ''
@@ -32,7 +37,7 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-  label: detail
+  label: Detail
   description: Detail of post, used by post card.
 - name: type
   type: select
@@ -40,27 +45,27 @@ fields:
   config:
     required: false
     options:
-    - 健康資訊
-    - 專業醫護資訊
+    - health_tip
+    - professional_healthcare_tip
     source:
       type: simple
       section: 
       file: 
       path: 
-  label: type
-  description: Tag of post.
+  label: Type
+  description: Tag of post.<br><em>健康資訊health_tip<br>專業醫護資訊professional_healthcare</em>
 - name: href
   type: text
   config:
     required: false
-  label: href
+  label: Href
   description: If href is not empty, post card will open new window for this href
     instead of post detail page.
 - name: slug
   type: text
   config:
     required: false
-  label: slug
+  label: Slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
@@ -69,8 +74,13 @@ pages:
 - content/health-tips/97-dna.md
 - content/health-tips/am730.md
 - content/health-tips/choosing-the-right-plan-doctor-shares-insights-on-specific-cancer-screening-in-health-checks.md
+- content/health-tips/hk01-dna-97.md
 - content/health-tips/hk01.md
 - content/health-tips/med-cuhk-cuhk-completes-a-20-000-person-plasma-dna-screening-study-of-nasopharyngeal-cancer-and-finds-a-dramatic-shift-to-early-stage-cancers.md
+- content/health-tips/medical-inspire-dna-97.md
+- content/health-tips/sky-post-7.md
+- content/health-tips/take2.md
 - content/health-tips/test-test-test.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後出現的言語困難.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後會面對的吞嚥問題.md
+- content/health-tips/常見癌症-鼻塞原來有機會是鼻咽癌-醫生籲進行高準確度篩查.md

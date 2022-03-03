@@ -15,7 +15,8 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import Button from '@material-ui/core/Button'
 import RightIcon from '@images/icons/right.svg'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
@@ -104,6 +105,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
@@ -158,7 +160,7 @@ const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
                 size='small'
                 endIcon={!matches && <RightIcon />}
               >
-                瀏覽更多
+                {t('common.view_more')}
               </Button>
             </Link>
           </Box>

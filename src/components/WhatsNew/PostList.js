@@ -13,6 +13,7 @@ import {
   ImageListItem,
 } from '@material-ui/core'
 import { POST_PAGE_SIZE } from '@utils/constant'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const PostList = ({ title, caption, nodes }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const numberOfPages = Math.ceil(nodes?.length / POST_PAGE_SIZE)
@@ -116,7 +118,7 @@ const PostList = ({ title, caption, nodes }) => {
               color='primary'
               onClick={handleMoreViews}
             >
-              瀏覽更多
+              {t('common.view_more')}
             </Button>
           </Box>
         )}

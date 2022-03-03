@@ -1,22 +1,34 @@
 import * as React from 'react'
 import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
+import Layout from '@layouts/Layout'
 
 const Index = ({ data }) => {
   const { heroBannerNodes, promotionNodes, healthTipsNodes } = data
   return (
-    <Homepage
-      heroBannerNodes={heroBannerNodes?.nodes}
-      promotionNodes={promotionNodes?.nodes}
-      healthTipsNodes={healthTipsNodes?.nodes}
-    ></Homepage>
+    <Layout>
+      <Homepage
+        heroBannerNodes={heroBannerNodes?.nodes}
+        promotionNodes={promotionNodes?.nodes}
+        healthTipsNodes={healthTipsNodes?.nodes}
+      ></Homepage>
+    </Layout>
   )
 }
 
 export default Index
 
 export const query = graphql`
-  {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     heroBannerNodes: allMdx(
       filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
       sort: { fields: frontmatter___sort, order: ASC }
@@ -24,8 +36,12 @@ export const query = graphql`
       nodes {
         id
         frontmatter {
-          title
-          detail
+          titleHk
+          titleEn
+          titleCn
+          detailHk
+          detailEn
+          detailCn
           image {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)
@@ -61,7 +77,7 @@ export const query = graphql`
         }
         frontmatter {
           title
-          date(formatString: "DD/MM/YYYY")
+          date
           type
           href
           cover {
@@ -74,7 +90,10 @@ export const query = graphql`
     }
     healthTipsNodes: allMdx(
       limit: 6
-      filter: { fileAbsolutePath: { regex: "/health-tips/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/health-tips/" }
+        frontmatter: { languages: { eq: $language } }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
@@ -84,7 +103,7 @@ export const query = graphql`
         }
         frontmatter {
           title
-          date(formatString: "DD/MM/YYYY")
+          date
           type
           href
           cover {

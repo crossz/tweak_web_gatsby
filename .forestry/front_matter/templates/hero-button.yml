@@ -37,8 +37,8 @@ fields:
   config:
     required: false
     options:
-    - 了解更多
-    - 立即預約
+    - common.learn_more
+    - common.book_now
     source:
       type: simple
       section: 
@@ -49,8 +49,4 @@ fields:
   type: text
   config:
     required: false
-  label: link
-- name: internal
-  type: boolean
-  label: Internal
-  default: true
+  label: Link

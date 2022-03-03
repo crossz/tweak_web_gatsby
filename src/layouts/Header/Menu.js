@@ -1,45 +1,38 @@
 import React, { useState } from 'react'
-import useMenu from '@hooks/useMenu'
-import MenuIcon from '@images/icons/menu.svg'
-import IconButton from '@material-ui/core/IconButton'
-import Box from '@material-ui/core/Box'
 import {
   makeStyles,
   Container,
-  useTheme,
   useMediaQuery,
+  IconButton,
+  Box,
+  Dialog,
+  Slide,
+  Typography,
+  ImageList,
+  Hidden,
+  Divider,
 } from '@material-ui/core'
-import Dialog from '@material-ui/core/Dialog'
-import CloseIcon from '@images/icons/close.svg'
-import Slide from '@material-ui/core/Slide'
-import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
-import Typography from '@material-ui/core/Typography'
-import ImageList from '@material-ui/core/ImageList'
-import { Link as MuiLink } from '@material-ui/core'
-import classnames from 'classnames'
 import {
   EAccordion,
   EAccordionSummary,
   EAccordionDetails,
 } from '@themes/components/EAccordion'
-import ArrowIcon from '@images/icons/arrow.svg'
-import SocialLinks from '@layouts/SocialLinks'
-import { Link } from 'gatsby'
-import TitleDot from '@themes/components/TitleDot'
-import Divider from '@material-ui/core/Divider'
-import Hidden from '@material-ui/core/Hidden'
+import classnames from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import SocialLinks from '@layouts/SocialLinks'
+import useMenu from '@hooks/useMenu'
+import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
+import Link from '@components/Link'
+import TitleDot from '@themes/components/TitleDot'
+import MenuIcon from '@images/icons/menu.svg'
+import CloseIcon from '@images/icons/close.svg'
+import ArrowIcon from '@images/icons/arrow.svg'
+import LanguageButton from '../LanguageButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     color: theme.palette.primary.contrastText,
-  },
-  btn: {
-    marginLeft: theme.spacing(8),
-    marginRight: theme.spacing(-1.5),
-    [theme.breakpoints.down('xs')]: {
-      marginLeft: theme.spacing(4.25),
-    },
   },
   icon: {
     width: theme.spacing(3),
@@ -85,6 +78,8 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(12),
     [theme.breakpoints.down('xs')]: {
       paddingTop: 0,
+      paddingLeft: theme.spacing(1),
+      paddingRight: 0,
     },
   },
   wrapper: {
@@ -108,11 +103,10 @@ const useStyles = makeStyles((theme) => ({
   bottomInfo: {
     marginTop: 'auto',
     display: 'flex',
-    justifyContent: 'space-between',
     marginBottom: theme.spacing(7),
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
+      flexDirection: 'column-reverse',
       alignItems: 'flex-start',
       marginTop: 0,
       marginBottom: 0,
@@ -121,21 +115,23 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: theme.palette.primary.contrastText,
     cursor: 'pointer',
-    textDecoration: 'none',
   },
   contactLink: {
-    marginRight: theme.spacing(14.5),
     flexShrink: 0,
+    marginRight: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      marginRight: theme.spacing(4),
+    },
     [theme.breakpoints.down('xs')]: {
       marginRight: theme.spacing(5),
+      '&:last-child': {
+        marginRight: 0,
+      },
     },
   },
   contactList: {
     fontSize: theme.typography.subtitle1.fontSize,
     fontWeight: theme.typography.fontWeightBold,
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: theme.spacing(1.5),
-    },
   },
   accordionRoot: {
     marginBottom: `${theme.spacing(12)}px !important`,
@@ -146,6 +142,9 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     backgroundColor: '#2C3C75',
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(2),
+    },
   },
 }))
 
@@ -155,8 +154,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const Menu = (props) => {
   const classes = useStyles()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { t } = useI18next()
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const menu = useMenu()
   const [open, setOpen] = useState(false)
   const [panel, setPanel] = useState('')
@@ -182,43 +181,42 @@ const Menu = (props) => {
           to={contactUsItem.path}
           onClick={handleClose}
         >
-          {contactUsItem.title}
+          {t(contactUsItem.title)}
         </Link>
         <Link
           className={classnames(classes.link, classes.contactLink)}
           to={joinUsItem.path}
           onClick={handleClose}
         >
-          {joinUsItem.title}
+          {t(joinUsItem.title)}
         </Link>
-        <MuiLink
-          className={classes.link}
-          href={`${process.env.GATSBY_SITE_URL}signin`}
-          onClick={handleClose}
-        >
-          登入
-        </MuiLink>
-        <Box component='span' mx={1} color='primary.contrastText'>
-          /
-        </Box>
-        <MuiLink
-          className={classes.link}
-          href={`${process.env.GATSBY_SITE_URL}signup`}
-          onClick={handleClose}
-        >
-          登記
-        </MuiLink>
       </Box>
     )
   }
+  const AuthList = (second) => (
+    <Box className={classes.contactList} display='flex'>
+      <Link
+        className={classnames(classes.link, classes.contactLink)}
+        to={`${process.env.GATSBY_SITE_URL}signin`}
+        onClick={handleClose}
+        underline='always'
+      >
+        {t('common.book_now')}
+      </Link>
+      <Link
+        className={classnames(classes.link, classes.contactLink)}
+        to={`${process.env.GATSBY_SITE_URL}signup`}
+        onClick={handleClose}
+        underline='always'
+      >
+        {t('common.member_registration')}
+      </Link>
+    </Box>
+  )
 
   return (
     <>
-      <IconButton
-        className={classes.btn}
-        aria-label='menu'
-        onClick={handleOpen}
-      >
+      <IconButton onClick={handleOpen}>
         <MenuIcon
           className={classnames(classes.icon, { [classes.isDark]: props.dark })}
         ></MenuIcon>
@@ -251,6 +249,11 @@ const Menu = (props) => {
             </IconButton>
           </Box>
           <Container className={classes.menuWrapper} maxWidth='md'>
+            <Hidden smUp>
+              <Box mb={3}>
+                <AuthList></AuthList>
+              </Box>
+            </Hidden>
             <ImageList className={classes.imageList} cols={matches ? 1 : 3}>
               {menu?.map(
                 (item, index) =>
@@ -283,18 +286,19 @@ const Menu = (props) => {
                         <TitleDot
                           bgcolor='background.paper'
                           size={1.5}
+                          left={-4}
                         ></TitleDot>
-                        {item.sections &&
-                        item.sections?.length &&
-                        index !== 5 ? (
-                          <Typography variant='h4'>{item.title}</Typography>
+                        {matches && item.sections?.length && index !== 5 ? (
+                          <Typography variant='h4'>{t(item.title)}</Typography>
                         ) : (
                           <Link
                             className={classes.link}
                             to={item.path}
                             onClick={handleClose}
                           >
-                            <Typography variant='h4'>{item.title}</Typography>
+                            <Typography variant='h4'>
+                              {t(item.title)}
+                            </Typography>
                           </Link>
                         )}
                       </EAccordionSummary>
@@ -311,7 +315,7 @@ const Menu = (props) => {
                                   className={classes.link}
                                   onClick={handleClose}
                                 >
-                                  {tab.title}
+                                  {t(tab.title)}
                                 </Link>
                               </Box>
                             ))}
@@ -326,7 +330,17 @@ const Menu = (props) => {
               <Divider className={classes.divider} />
             </Hidden>
             <Box className={classes.bottomInfo}>
-              <ContactList></ContactList>
+              <Box display='flex' mt={matches ? 1 : 0}>
+                <Box className={classes.contactLink}>
+                  <LanguageButton></LanguageButton>
+                </Box>
+                <ContactList></ContactList>
+              </Box>
+              <Hidden xsDown>
+                <Box ml='auto'>
+                  <AuthList></AuthList>
+                </Box>
+              </Hidden>
               <SocialLinks></SocialLinks>
             </Box>
           </Container>

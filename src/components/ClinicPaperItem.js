@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles, Box, Grid, Link } from '@material-ui/core'
 import ArrowIcon from '@images/icons/arrow.svg'
 import PdfIcon from '@images/icons/pdf.svg'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -103,7 +104,7 @@ const ClinicPaperItem = ({ date, title, detail, href, pdf }) => {
       >
         <Grid container>
           <Grid item sm={3}>
-            <Box className={classes.date}>{date}</Box>
+            <Box className={classes.date}>{formatLocal(date)}</Box>
             <Box className={classes.pdfWrapper}>
               <PdfIcon className={classes.pdfIcon}></PdfIcon>PDF
             </Box>

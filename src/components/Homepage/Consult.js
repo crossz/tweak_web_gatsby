@@ -4,9 +4,10 @@ import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,12 +60,19 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
+  btn: {
+    padding: theme.spacing(2, 3.5),
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+    },
+  },
 }))
 
 const Consult = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { t } = useI18next()
 
   return (
     <Container disableGutters className={classes.root} maxWidth='xl'>
@@ -79,14 +87,17 @@ const Consult = () => {
         <Grid className={classes.rightWrapper} item xs={12} sm={6}>
           <Box maxWidth={matches ? 'none' : 560}>
             <Typography variant='h5' color='primary' component='div'>
-              <Box mt={matches ? 3 : 0}>立即登記 線上專業諮詢</Box>
+              <Box fontWeight='fontSize.body1' mt={matches ? 3 : 0}>
+                {t('homepage.sign_up.title')}
+              </Box>
               <Box className={classes.content}>
-                只需輸入簡單資料，你就可以接收最新健康資訊、活動推廣及優惠，並可享用線上醫療諮詢及預約測試服務。
+                {t('homepage.sign_up.detail')}
                 <Link
-                  to='/terms-and-conditions/條款及細則'
+                  to='/terms-and-conditions'
+                  underline='always'
                   className={classes.greyLink}
                 >
-                  條款及細則
+                  {t('t_and_c.terms_and_conditions')}
                 </Link>
               </Box>
             </Typography>
@@ -100,8 +111,9 @@ const Consult = () => {
                     variant='outlined'
                     color='primary'
                     fullWidth={matches}
+                    className={classes.btn}
                   >
-                    了解更多
+                    {t('common.learn_more')}
                   </Button>
                 </Link>
               </Grid>
@@ -112,8 +124,9 @@ const Consult = () => {
                   href={process.env.GATSBY_SITE_URL}
                   target='_blank'
                   fullWidth={matches}
+                  className={classes.btn}
                 >
-                  立即登記
+                  {t('common.sign_up')}
                 </Button>
               </Grid>
             </Grid>

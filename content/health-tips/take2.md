@@ -1,7 +1,9 @@
 ---
-type: 健康資訊
+type: health_tip
+languages:
+  - zh-HK
 cover:
-  - '../images/take2-health-x-crhk_facebook-graphic_20220225-01-png.png'
+  - '../images/take2-health-x-crhk_facebook-graphic_20220302-website-adaptation.png'
 date: 2022-02-28T00:00:00.000+08:00
 title: '《杏林早茶：先知先醫 生命有Take2》商業電台專訪 鼻咽癌特輯'
 detail: 商業電台雷霆881903《在晴朗的一天出發》——《杏林早茶：先知先醫生命有Take2》邀請了得易健康有限公司行政總裁翁錦輝Tony以及耳鼻喉專科林傳廣醫生，為聽眾分享一系列與鼻咽癌相關的健康資訊。

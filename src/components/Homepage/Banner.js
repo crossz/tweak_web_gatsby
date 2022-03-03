@@ -12,13 +12,17 @@ import {
   Hidden,
 } from '@material-ui/core'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { HeroThemeContext } from '@layouts/context'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
+import classnames from 'classnames'
+
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
@@ -52,11 +56,12 @@ const useStyles = makeStyles((theme) => ({
   },
   contentWrapper: {
     height: '100%',
-    maxWidth: theme.spacing(60),
+    maxWidth: ({ isEn }) => theme.spacing(isEn ? 80 : 60),
     paddingTop: theme.spacing(29),
     paddingBottom: theme.spacing(5.5),
     display: 'flex',
     flexDirection: 'column',
+    color: theme.palette.primary.main,
     [theme.breakpoints.down('xs')]: {
       maxWidth: 'none',
       paddingTop: theme.spacing(3),
@@ -66,29 +71,46 @@ const useStyles = makeStyles((theme) => ({
   titleWrapper: {
     marginRight: '-100%',
   },
+  isEnTitleWrapper: {
+    marginRight: 0,
+    lineHeight: 1.2,
+    fontSize: theme.typography.h3.fontSize,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
+  },
+  isEnDetailWrapper: {
+    [theme.breakpoints.down('xs')]: {
+      lineHeight: 1.4,
+    },
+  },
   reference: {
     fontSize: 9,
     lineHeight: 1,
-    marginTop: 'auto',
     [theme.breakpoints.down('xs')]: {
       color: theme.palette.primary.main,
       fontSize: 6,
-      marginTop: 'auto',
+      // marginTop: 'auto',
       padding: theme.spacing(0, 3),
       paddingTop: theme.spacing(1),
     },
   },
   btnWrapper: {
     display: 'flex',
-    marginTop: theme.spacing(8),
+    marginTop: 'auto',
     '& a': {
       textDecoration: 'none',
     },
+    marginBottom: theme.spacing(20),
     [theme.breakpoints.down('xs')]: {
-      marginTop: 0,
-      position: 'absolute',
-      top: 314,
-      left: theme.spacing(3),
+      marginBottom: theme.spacing(8),
+    },
+  },
+  isEnBtnWrapper: {
+    marginBottom: theme.spacing(10),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(4),
+      justifyContent: 'space-between',
     },
   },
   btn: {
@@ -111,6 +133,16 @@ const useStyles = makeStyles((theme) => ({
         },
       },
     },
+    '& .swiper-button-prev': {
+      [theme.breakpoints.down('xs')]: {
+        left: 0,
+      },
+    },
+    '& .swiper-button-next': {
+      [theme.breakpoints.down('xs')]: {
+        right: 0,
+      },
+    },
     WebkitBackfaceVisibility: 'hidden',
     '& .swiper-slide': {
       // width: '100%',
@@ -131,8 +163,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Banner = ({ nodes, changeHeroTheme }) => {
-  const classes = useStyles()
+const Banner = ({ nodes }) => {
+  const { t, language } = useI18next()
+  const isEn = language === 'en'
+  const classes = useStyles({ isEn })
+  const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const context = useContext(HeroThemeContext)
@@ -168,7 +203,7 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                       getImage(node?.frontmatter?.mobileImage)
                     }
                     placeholder='blurred'
-                    alt={node?.frontmatter?.title}
+                    alt={tB('title', node?.frontmatter)}
                   ></GatsbyImage>
                 ) : (
                   <GatsbyImage
@@ -178,21 +213,30 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                       getImage(node?.frontmatter?.image)
                     }
                     placeholder='blurred'
-                    alt={node?.frontmatter?.title}
+                    alt={tB('title', node?.frontmatter)}
                   ></GatsbyImage>
                 )}
                 <Container className={classes.wrapper} maxWidth='md'>
                   <Box className={classes.contentWrapper}>
-                    <Typography variant='h2' color='primary' component='div'>
+                    <Typography
+                      variant={matches && isEn ? 'h3' : 'h2'}
+                      color='primary'
+                      component='div'
+                    >
                       <Box
-                        className={classes.titleWrapper}
+                        className={classnames(classes.titleWrapper, {
+                          [classes.isEnTitleWrapper]: isEn,
+                        })}
                         mb={matches ? 1 : 2}
                         lineHeight={1.5}
                         dangerouslySetInnerHTML={{
-                          __html: node?.frontmatter?.title,
+                          __html: tB('title', node?.frontmatter),
                         }}
                       ></Box>
                       <Box
+                        className={classnames({
+                          [classes.isEnDetailWrapper]: isEn,
+                        })}
                         fontSize={
                           matches ? 'caption.fontSize' : 'body1.fontSize'
                         }
@@ -200,53 +244,43 @@ const Banner = ({ nodes, changeHeroTheme }) => {
                         lineHeight='1.5'
                         textAlign='justify'
                         dangerouslySetInnerHTML={{
-                          __html: node?.frontmatter?.detail,
+                          __html: tB('detail', node?.frontmatter),
                         }}
                       ></Box>
                     </Typography>
-                    <Grid className={classes.btnWrapper} container spacing={2}>
+                    <Grid
+                      className={classnames(classes.btnWrapper, {
+                        [classes.isEnBtnWrapper]: isEn,
+                      })}
+                      container
+                      spacing={2}
+                    >
                       {node?.frontmatter?.buttons?.length > 0 &&
                         node?.frontmatter?.buttons?.map((button) => (
                           <Grid
                             key={button.name}
                             item
                             xs={
-                              matches
+                              matches && !isEn
                                 ? 12
                                 : node?.frontmatter?.buttons?.length === 1
                                 ? 12
                                 : 'auto'
                             }
                           >
-                            {button.internal ? (
-                              <Link to={button.link}>
-                                <Button
-                                  variant={button.variant}
-                                  color={button.color}
-                                  className={classes.btn}
-                                  fullWidth={
-                                    !matches &&
-                                    node?.frontmatter?.buttons?.length === 1
-                                  }
-                                >
-                                  {button.name}
-                                </Button>
-                              </Link>
-                            ) : (
+                            <Link underline='none' to={button.link}>
                               <Button
                                 variant={button.variant}
                                 color={button.color}
-                                href={button.link}
-                                target='_blank'
                                 className={classes.btn}
                                 fullWidth={
                                   !matches &&
                                   node?.frontmatter?.buttons?.length === 1
                                 }
                               >
-                                {button.name}
+                                {t(button.name)}
                               </Button>
-                            )}
+                            </Link>
                           </Grid>
                         ))}
                     </Grid>

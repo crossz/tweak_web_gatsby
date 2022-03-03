@@ -8,7 +8,6 @@ import {
   alpha,
   Container,
   useMediaQuery,
-  useTheme,
   Hidden,
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
@@ -17,12 +16,11 @@ import { DIALING_CODES } from '@utils/constant'
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import RadioGroup from '@material-ui/core/RadioGroup'
-import MenuItem from '@material-ui/core/MenuItem'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Checkbox from '@material-ui/core/Checkbox'
-import { Link as MuiLink } from '@material-ui/core'
+import Link from '@components/Link'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import GenderRadio from './GenderRadio'
 import QuizRadio from './QuizRadio'
@@ -32,6 +30,7 @@ import {
   ESelect,
   EInputBase,
   CancelButton,
+  EMenuItem,
 } from '@themes/components/ETextField'
 import { AGE_OPTIONS, QUIZ, GENDER_OPTIONS } from '@utils/constant'
 import { padStartNum } from '@utils'
@@ -42,6 +41,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -192,6 +192,13 @@ const useStyle = makeStyles((theme) => ({
       fontSize: theme.typography.h6.fontSize,
     },
   },
+  isEnQuizTitle: {
+    fontSize: theme.typography.h4.fontSize,
+    lineHeight: 1.4,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.h6.fontSize,
+    },
+  },
   quizNum: {
     marginRight: theme.spacing(3),
     fontSize: theme.typography.h2.fontSize,
@@ -316,6 +323,9 @@ const useStyle = makeStyles((theme) => ({
       minWidth: 158,
     },
   },
+  link: {
+    color: theme.palette.primary.main,
+  },
 }))
 
 const initialValues = {
@@ -328,25 +338,27 @@ const initialValues = {
   dialingCode: '852',
   agreeTC: false,
 }
-const schema = oriSchema().pick([
-  'requiredEmailOrPhone',
-  'gender',
-  'age',
-  'quiz',
-  'email',
-  'dialingCode',
-  'phone',
-  'agreeTC',
-])
 
 const Quiz = () => {
   const classes = useStyle()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { language, t } = useI18next()
+  const isEn = language === 'en'
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const [step, setStep] = useState(0)
   const [finishQuiz, setFinishQuiz] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
   const [loading, setLoading] = useState(false)
+
+  const schema = oriSchema(t).pick([
+    'requiredEmailOrPhone',
+    'gender',
+    'age',
+    'quiz',
+    'email',
+    'dialingCode',
+    'phone',
+    'agreeTC',
+  ])
 
   const progressValue = useMemo(
     () => Math.round(((step - 1) / QUIZ.length) * 100),
@@ -358,10 +370,11 @@ const Quiz = () => {
       const res = await fetchWithTimeout(`/quiz/add`, {
         values: omit(values, 'agreeTC', 'requiredEmailOrPhone'), // data can be `string` or {object}!
       })
-      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
+      if (res?.code !== 1000)
+        return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
-      return Promise.reject('提交失敗')
+      return Promise.reject(t('status.submit.fail'))
     }
   }
 
@@ -397,7 +410,7 @@ const Quiz = () => {
             setLoading(true)
             try {
               await handleFetch(values)
-              toast.success('已成功提交')
+              toast.success(t('status.submit.success'))
               resetForm()
               setStep(8)
             } catch (error) {
@@ -465,27 +478,35 @@ const Quiz = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <Box className={classes.quizRight}>
-                        <Box mb={matches ? 1 : 3}>
+                        <Box mb={matches ? 1 : isEn ? 1 : 3}>
                           <Typography
-                            variant={matches ? 'h5' : 'h4'}
+                            variant={matches ? 'h5' : isEn ? 'h5' : 'h4'}
                             color='primary'
                           >
-                            免費測驗 了解健康
+                            {t('quiz.start.title')}
                           </Typography>
                         </Box>
-                        <Box mb={matches ? 1 : 2.5} color='grey.900'>
-                          <Typography variant={matches ? 'body2' : 'body1'}>
-                            來個簡單測驗，人生可能從此變得不一樣。
-                            <Hidden xsDown>
-                              <br />
-                            </Hidden>
-                            雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解有關鼻咽癌的徵狀。
+                        <Box mb={matches ? 1 : isEn ? 1 : 2.5} color='grey.900'>
+                          <Typography
+                            variant={
+                              matches ? 'body2' : isEn ? 'body2' : 'body1'
+                            }
+                          >
+                            <Trans i18nKey='quiz.start.detail'>
+                              來個簡單測驗，人生可能從此變得不一樣。
+                              <Hidden xsDown>
+                                <br />
+                              </Hidden>
+                              雖然早期鼻咽癌病徵不明顯，但總有迹可尋。倘若晚期才確診，5年內存活率有機會跌至70%以下。以下簡單問題經專業人士設定，讓你了解有關鼻咽癌的徵狀。
+                            </Trans>
                           </Typography>
                         </Box>
                         <Typography className={classes.quizTip}>
-                          分析僅屬參考性質。
-                          <br />
-                          引致鼻咽癌的成因有很多，而且徵狀因人而異，詳情請向醫護人員查詢或與我們的專業醫護團隊聯絡。
+                          <Trans i18nKey='quiz.start.reference'>
+                            分析僅屬參考性質。
+                            <br />
+                            引致鼻咽癌的成因有很多，而且徵狀因人而異，詳情請向醫護人員查詢或與我們的專業醫護團隊聯絡。
+                          </Trans>
                         </Typography>
                         <Box mb={matches ? 2 : 2}>
                           <FormControl
@@ -495,7 +516,7 @@ const Quiz = () => {
                             fullWidth={matches}
                           >
                             <EFormLabel className={classes.label}>
-                              性別
+                              {t('form.gender.label')}
                             </EFormLabel>
                             <RadioGroup
                               name='gender'
@@ -508,14 +529,16 @@ const Quiz = () => {
                                   key={gender.value}
                                   className={classes.genderLabel}
                                   value={gender.value}
-                                  control={<GenderRadio label={gender.label} />}
+                                  control={
+                                    <GenderRadio label={t(gender.label)} />
+                                  }
                                 />
                               ))}
                             </RadioGroup>
                             {errorText('gender')}
                           </FormControl>
                         </Box>
-                        <Box mb={matches ? 3 : 4.5}>
+                        <Box mb={matches ? 3 : isEn ? 3 : 4.5}>
                           <FormControl
                             className={classes.ageFormControl}
                             fullWidth={matches}
@@ -523,7 +546,7 @@ const Quiz = () => {
                             error={isError('age')}
                           >
                             <EFormLabel className={classes.label}>
-                              年齡
+                              {t('form.age.label')}
                             </EFormLabel>
                             <ESelect
                               labelId='age-select-label'
@@ -533,13 +556,15 @@ const Quiz = () => {
                               onChange={handleChange}
                               displayEmpty
                             >
-                              <MenuItem value='' disabled>
-                                請選擇
-                              </MenuItem>
+                              <EMenuItem value='' disabled>
+                                {t('form.placeholder.select', {
+                                  field: t('form.age.label'),
+                                })}
+                              </EMenuItem>
                               {AGE_OPTIONS.map((age) => (
-                                <MenuItem key={age.value} value={age.value}>
-                                  {age.label}
-                                </MenuItem>
+                                <EMenuItem key={age.value} value={age.value}>
+                                  {t(age.label)}
+                                </EMenuItem>
                               ))}
                             </ESelect>
                             {errorText('age')}
@@ -552,7 +577,7 @@ const Quiz = () => {
                             onClick={handleStartQuiz}
                             fullWidth={matches}
                           >
-                            開始免費測驗
+                            {t('quiz.start.button')}
                           </Button>
                         </Box>
                       </Box>
@@ -605,7 +630,11 @@ const Quiz = () => {
                                 key={index}
                                 component='fieldset'
                               >
-                                <Box className={classes.quizTitle}>
+                                <Box
+                                  className={classnames(classes.quizTitle, {
+                                    [classes.isEnQuizTitle]: isEn,
+                                  })}
+                                >
                                   <Box
                                     className={classes.quizNum}
                                     component='span'
@@ -618,7 +647,7 @@ const Quiz = () => {
                                       /{padStartNum(QUIZ.length)}
                                     </Box>
                                   </Box>
-                                  <Box>{QUIZ[index].question}</Box>
+                                  <Box>{t(QUIZ[index].question)}</Box>
                                 </Box>
                                 {QUIZ[index]?.type === 'slider' ? (
                                   <SliderRadio
@@ -667,7 +696,7 @@ const Quiz = () => {
                               startIcon: classes.preBtnStartIcon,
                             }}
                           >
-                            返回上一题
+                            {t('quiz.pre')}
                           </Button>
                         )}
                         {step <= QUIZ.length && values.quiz[step - 1] && (
@@ -677,7 +706,7 @@ const Quiz = () => {
                             color='secondary'
                             onClick={handleQuizNext}
                           >
-                            下一题
+                            {t('quiz.next')}
                           </Button>
                         )}
                       </Box>
@@ -702,7 +731,7 @@ const Quiz = () => {
                           mb={matches ? 1 : 2}
                         >
                           <Typography variant='h4' color='primary'>
-                            最後一個步驟 免費獲取結果!
+                            {t('quiz.last.title')}
                           </Typography>
                         </Box>
                         <Box
@@ -711,14 +740,13 @@ const Quiz = () => {
                           color='grey.900'
                         >
                           <Typography variant={matches ? 'caption' : 'body1'}>
-                            請即輸入你的資料，以透過電郵獲取測驗結果；或與線上註冊護士聯絡，以諮詢服務或產品內容！你亦可直接登記，免費成為Take2
-                            ExtraCare會員。
+                            {t('quiz.last.detail')}
                           </Typography>
                         </Box>
                         <Box className={classes.formWrapper}>
                           <Box mb={1.5}>
                             <FormControl fullWidth error={isError('email')}>
-                              <EFormLabel>電郵</EFormLabel>
+                              <EFormLabel>{t('form.email.label')}</EFormLabel>
                               <EInputBase
                                 id='email'
                                 name='email'
@@ -736,32 +764,28 @@ const Quiz = () => {
                               {errorText('email')}
                             </FormControl>
                           </Box>
-                          <Box textAlign='center'>或</Box>
+                          <Box textAlign='center'>{t('common.or')}</Box>
                           <Box mb={matches ? 2 : 4}>
                             <Box mb={1}>
-                              <EFormLabel>電話號碼</EFormLabel>
+                              <EFormLabel>{t('form.phone.label')}</EFormLabel>
                             </Box>
                             <Box display='flex'>
-                              <Box mr={0.5}>
-                                <FormControl
-                                  className={classes.dialingCode}
-                                  required
-                                >
+                              <Box mr={0.5} flexShrink={0}>
+                                <FormControl required>
                                   <ESelect
                                     labelId='dialingCode-select-label'
                                     id='dialingCode-type-select'
                                     name='dialingCode'
                                     value={values.dialingCode}
                                     onChange={handleChange}
-                                    input={<EInputBase />}
                                   >
                                     {DIALING_CODES.map((dialingCode) => (
-                                      <MenuItem
+                                      <EMenuItem
                                         key={dialingCode.value}
                                         value={dialingCode.value}
                                       >
                                         {dialingCode.label}
-                                      </MenuItem>
+                                      </EMenuItem>
                                     ))}
                                   </ESelect>
                                 </FormControl>
@@ -773,7 +797,7 @@ const Quiz = () => {
                                   margin='none'
                                   value={values.phone}
                                   onChange={handleChange}
-                                  placeholder='9876 5432'
+                                  placeholder={t('form.phone.placeholder')}
                                   endAdornment={
                                     <CusCancelButton field='phone' />
                                   }
@@ -796,26 +820,25 @@ const Quiz = () => {
                                   component='span'
                                   lineHeight={1}
                                 >
-                                  本人已明白及同意Take2 Health Limited
-                                  的網站於take2health.net之網站
-                                  <MuiLink
-                                    href='/terms-and-conditions/私隱政策'
-                                    underline='always'
-                                  >
-                                    <Box color='primary.main' component='span'>
+                                  <Trans i18nKey='quiz.agreement'>
+                                    本人已明白及同意Take2 Health Limited
+                                    的網站於take2health.net之網站
+                                    <Link
+                                      className={classes.link}
+                                      to='/terms-and-conditions/privacy-policy/'
+                                      underline='always'
+                                    >
                                       私隱政策
-                                    </Box>
-                                  </MuiLink>
-                                  及
-                                  <MuiLink
-                                    href='/terms-and-conditions/個人資料收集聲明'
-                                    underline='always'
-                                  >
-                                    <Box color='primary.main' component='span'>
+                                    </Link>
+                                    <Link
+                                      className={classes.link}
+                                      to='/terms-and-conditions/personal-information-collection-statement/'
+                                      underline='always'
+                                    >
                                       個人資料收集聲明
-                                    </Box>
-                                  </MuiLink>
-                                  。
+                                    </Link>
+                                    。
+                                  </Trans>
                                 </Box>
                               }
                               onChange={handleChange}
@@ -838,29 +861,27 @@ const Quiz = () => {
                             {loading ? (
                               <CircularProgress color='inherit' size={24} />
                             ) : (
-                              '提交'
+                              t('common.submit')
                             )}
                           </Button>
                           <Hidden xsDown>
-                            <MuiLink
+                            <Link
                               className={classes.platformLink}
-                              href={process.env.GATSBY_SITE_URL}
-                              target='_blank'
+                              to={process.env.GATSBY_SITE_URL}
                             >
-                              直接登記為 Take2 Extra Care會員
-                            </MuiLink>
+                              {t('quiz.direct_sign_up')}
+                            </Link>
                           </Hidden>
                           <Hidden smUp>
-                            <MuiLink
+                            <Link
                               className={classnames(
                                 classes.platformLink,
                                 classes.mobilePlatformLink
                               )}
-                              href={process.env.GATSBY_SITE_URL}
-                              target='_blank'
+                              to={process.env.GATSBY_SITE_URL}
                             >
-                              直接登記 得易健康服務平台
-                            </MuiLink>
+                              {t('quiz.direct_sign_up')}
+                            </Link>
                           </Hidden>
                         </Box>
                         {reCapStatus > 0 && (
@@ -892,7 +913,7 @@ const Quiz = () => {
                             variant={matches ? 'h5' : 'h4'}
                             color='primary'
                           >
-                            多謝參與！
+                            {t('quiz.final.title')}
                           </Typography>
                         </Box>
                         <Box
@@ -905,21 +926,19 @@ const Quiz = () => {
                             fontWeight='fontWeightBold'
                             mb={matches ? 2 : 1.5}
                           >
-                            你已完成了測驗！
+                            {t('quiz.final.subtitle')}
                           </Box>
                           <Box
                             fontSize={
                               matches ? 'caption.fontSize' : 'body1.fontSize'
                             }
                           >
-                            以上問題均與鼻咽癌息息相關，若你持續出現上述病徵，建議你儘快向醫生查詢。
+                            {t('quiz.final.detail_1')}
                             <br />
                             <Hidden smUp>
                               <br />
                             </Hidden>
-                            立即登記，免費成為Take2 Extra
-                            Care會員，以優惠價預約進行檢測，並享用Take2 Health
-                            得易健康服務平台的各項服務。
+                            {t('quiz.final.detail_2')}
                           </Box>
                         </Box>
                         <Box
@@ -942,7 +961,7 @@ const Quiz = () => {
                               href={process.env.GATSBY_SITE_URL}
                               target='_blank'
                             >
-                              了解更多
+                              {t('common.learn_more')}
                             </Button>
                           </Box>
                           <Button
@@ -953,7 +972,7 @@ const Quiz = () => {
                             href={process.env.GATSBY_SITE_URL}
                             target='_blank'
                           >
-                            登記成為會員
+                            {t('common.sign_up_as_menber')}
                           </Button>
                         </Box>
                       </Box>

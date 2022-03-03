@@ -1,6 +1,8 @@
 import React from 'react'
 import { makeStyles, Box, alpha, Button, Hidden } from '@material-ui/core'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,21 +68,24 @@ const useStyles = makeStyles((theme) => ({
 }))
 const CareerItem = ({ title, type, region, date, slug }) => {
   const classes = useStyles()
+  const { t } = useI18next()
 
   return (
     <Box className={classes.root}>
       <Box className={classes.type}>
         {/* {type} */}
         <Hidden smUp>
-          <Box className={classes.date}>{date}</Box>
+          <Box className={classes.date}>{formatLocal(date)}</Box>
         </Hidden>
       </Box>
       <Box className={classes.title}>{title}</Box>
       <Box display='flex' justifyContent='space-between' alignItems='flex-end'>
         <Box>
-          <Box className={classes.region}>{region}</Box>
+          <Box className={classes.region}>
+            {t(`options.career_regions.${region}`)}
+          </Box>
           <Hidden xsDown>
-            <Box className={classes.date}>{date}</Box>
+            <Box className={classes.date}>{formatLocal(date)}</Box>
           </Hidden>
         </Box>
         <Link className={classes.link} to={slug}>
@@ -90,7 +95,7 @@ const CareerItem = ({ title, type, region, date, slug }) => {
             variant='outlined'
             color='primary'
           >
-            查看詳情
+            {t('common.view_details')}
           </Button>
         </Link>
       </Box>

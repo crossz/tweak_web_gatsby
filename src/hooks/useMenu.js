@@ -18,6 +18,7 @@ const useMenu = () => {
       }
     }
   `)
+
   return data.allMenuJson.nodes
 }
 

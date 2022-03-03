@@ -2,14 +2,36 @@
 label: T&C
 hide_body: false
 fields:
+- name: slug
+  type: select
+  default: personal-infomation-collection-statement
+  config:
+    required: true
+    options:
+    - terms-and-conditions
+    - privacy-policy
+    - website-terms-of-use
+    - personal-information-collection-statement
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Slug
+  description: Slug for T&amp;C url.
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: title
   type: text
   config:
     required: true
-  label: title
+  label: Title
 - name: date
   type: datetime
-  label: date
+  label: Date
   description: ''
   config:
     required: true
@@ -17,6 +39,8 @@ fields:
     time_format: 
     display_utc: false
 pages:
+- content/terms-and-conditions/privacy-policy-statement.md
+- content/terms-and-conditions/terms-of-use.md
 - content/terms-and-conditions/條款及細則.md
 - content/terms-and-conditions/私隱政策.md
 - content/terms-and-conditions/網站使用條款.md

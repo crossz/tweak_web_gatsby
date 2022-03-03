@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles, Box, Slider } from '@material-ui/core'
 import { QUIZ_ANSWER_KEYS } from '@utils/constant'
 import { indexOf } from 'lodash-es'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -72,11 +73,12 @@ const useStyle = makeStyles((theme) => ({
 
 const SliderRadio = ({ onChange, answers, name, value }) => {
   const classes = useStyle()
+  const { t } = useI18next()
   const stepValue = answers?.length - 1 || 0
   const marks = answers?.map((answer, index) => {
     return {
       value: index,
-      label: QUIZ_ANSWER_KEYS[answer].label,
+      label: t(QUIZ_ANSWER_KEYS[answer].label),
     }
   })
   const handleCommittedChange = (e, newValue) => {

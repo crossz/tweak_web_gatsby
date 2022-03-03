@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Map from '@components/Map'
 import { makeStyles } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'
@@ -9,6 +9,7 @@ import TitleDot from '@themes/components/TitleDot'
 import Typography from '@material-ui/core/Typography'
 import Quiz from '@components/Quiz'
 import PostSwiper from './PostSwiper'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
   const classes = useStyles()
+  const { t } = useI18next()
 
   return (
     <>
@@ -69,11 +71,11 @@ const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
           <Box className={classes.title}>
             <TitleDot></TitleDot>
             <Typography variant='h4' color='primary'>
-              最新推廣優惠
+              {t('whats_new.promotions.title')}
             </Typography>
           </Box>
           <Box fontSize='caption.fontSize' color='text.primary'>
-            我們與不同夥伴合作，推出各項優惠，讓你以更優惠的價錢進行體檢及享用多元化的健康服務。
+            {t('whats_new.promotions.detail')}
           </Box>
           <Box className={classes.promotionsSwiperWrapper}>
             <PostSwiper
@@ -85,7 +87,7 @@ const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
           <Box className={classes.title}>
             <TitleDot></TitleDot>
             <Typography variant='h4' color='primary'>
-              本港篩查服務點
+              {t('service_location.title')}
             </Typography>
           </Box>
           <Map></Map>
@@ -101,10 +103,12 @@ const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
           >
             <Box className={classes.title}>
               <TitleDot></TitleDot>
-              <Typography variant='h4'>健康資訊 為你更新</Typography>
+              <Typography variant='h4'>
+                {t('whats_new.health_tips.title')}
+              </Typography>
             </Box>
             <Box fontSize='caption.fontSize'>
-              為了守護你和家人的健康，我們將持續為你提供實用的資訊，緊貼你的健康需要。
+              {t('whats_new.health_tips.detail')}
             </Box>
             <PostSwiper
               nodes={healthTipsNodes}

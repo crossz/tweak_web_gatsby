@@ -9,14 +9,13 @@ import {
   FormControl,
   FormHelperText,
   CircularProgress,
-  MenuItem,
   useTheme,
   useMediaQuery,
   Button,
   IconButton,
 } from '@material-ui/core'
 import { throttle, omit } from 'lodash-es'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
@@ -26,6 +25,7 @@ import {
   EFormLabel,
   ESelect,
   CancelButton,
+  EMenuItem,
 } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -34,6 +34,9 @@ import classnames from 'classnames'
 import Search from '@components/Search'
 import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { useTranslation, Trans } from 'gatsby-plugin-react-i18next'
+import Layout from '@layouts/Layout'
+import Link from '@components/Link'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -196,10 +199,9 @@ const initialValues = {
   area: '',
 }
 
-const schema = oriSchema().pick(['name', 'email', 'area'])
-
 const JoinUs = ({ data, pageContext }) => {
   const classes = useStyles()
+  const { t } = useTranslation()
   const { totalCount } = data?.allMdx?.pageInfo
   const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
     pageContext
@@ -212,285 +214,302 @@ const JoinUs = ({ data, pageContext }) => {
   const [loading, setLoading] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
 
+  const schema = oriSchema(t).pick(['name', 'email', 'area'])
+
   const handleFetch = async (values) => {
     try {
       const res = await fetchWithTimeout(`/joinUs/add`, {
         values, // data can be `string` or {object}!
       })
-      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
+      if (res?.code !== 1000)
+        return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
-      return Promise.reject('提交失敗')
+      return Promise.reject(t('status.submit.fail'))
     }
   }
 
   return (
-    <Box className={classes.root}>
-      <Container className={classes.box01} disableGutters maxWidth='md'>
-        <Container className={classes.headerRoot} disableGutters maxWidth='sm'>
-          <Typography
-            className={classes.box01Title}
-            variant='h4'
-            color='primary'
+    <Layout>
+      <Box className={classes.root}>
+        <Container className={classes.box01} disableGutters maxWidth='md'>
+          <Container
+            className={classes.headerRoot}
+            disableGutters
+            maxWidth='sm'
           >
-            加入我們
-          </Typography>
-          <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
-            作為一家初創企業，我們期待與更多生物科技行業的專才，及各行業的專業人士合作，攜手帶領
-            Take2 Health在本地及海外市場拓展，改寫人類健康。
-            <br />
-            <br />
-            誠邀閣下加入我們團隊，成為我們一份子，一起為人類健康努力，共同發掘無限可能。
-          </Typography>
-        </Container>
-        <Box className={classes.countWrapper}>
-          <Typography variant='h5' color='primary'>
-            瀏覽現有空缺 ({totalCount})
-          </Typography>
-        </Box>
-        <Box className={classes.careersWrapper}>
-          <Grid container>
-            <Grid item xs={12} sm={4}>
-              <Search
-                data={allCareer}
-                setSearchResult={(result) => setCareers(result)}
-                setSearching={(status) => setSearching(status)}
-                setPageList={() => setCareers(curPageCareers)}
-              ></Search>
-            </Grid>
-            <Grid item xs={12} sm={8}>
-              <Box>
-                {careers?.map((career) => (
-                  <CareerItem
-                    key={career.id}
-                    slug={career?.fields?.slug}
-                    {...career.frontmatter}
-                  ></CareerItem>
-                ))}
-              </Box>
-              {numberOfPages > 1 && !searching && careers?.length > 0 && (
-                <Box className={classes.pagination}>
-                  <Link
-                    className={classnames(
-                      humanPageNumber === 1 && classes.disableLink
-                    )}
-                    to={previousPagePath}
-                    disabled
-                  >
-                    <IconButton
-                      className={classes.prePageBtn}
-                      aria-label='previous page'
-                    >
-                      <ArrowIcon></ArrowIcon>
-                    </IconButton>
-                  </Link>
-                  <Box className={classes.pageInfo}>
-                    <Box className={classes.curPageBtn}>{humanPageNumber}</Box>
-                    <Box>of {numberOfPages}</Box>
-                  </Box>
-                  <Link to={nextPagePath}>
-                    <IconButton aria-label='previous page'>
-                      <ArrowIcon></ArrowIcon>
-                    </IconButton>
-                  </Link>
+            <Typography
+              className={classes.box01Title}
+              variant='h4'
+              color='primary'
+            >
+              {t('about_us.join_us.title')}
+            </Typography>
+            <Typography
+              variant={matches ? 'body2' : 'body1'}
+              color='textPrimary'
+            >
+              <Trans i18nKey='about_us.join_us.detail'></Trans>
+            </Typography>
+          </Container>
+          <Box className={classes.countWrapper}>
+            <Typography variant='h5' color='primary'>
+              {t('about_us.join_us.open_positions', { count: totalCount })}
+            </Typography>
+          </Box>
+          <Box className={classes.careersWrapper}>
+            <Grid container>
+              <Grid item xs={12} sm={4}>
+                <Search
+                  data={allCareer}
+                  setSearchResult={(result) => setCareers(result)}
+                  setSearching={(status) => setSearching(status)}
+                  setPageList={() => setCareers(curPageCareers)}
+                ></Search>
+              </Grid>
+              <Grid item xs={12} sm={8}>
+                <Box>
+                  {careers?.map((career) => (
+                    <CareerItem
+                      key={career.id}
+                      slug={career?.fields?.slug}
+                      {...career.frontmatter}
+                    ></CareerItem>
+                  ))}
                 </Box>
-              )}
+                {numberOfPages > 1 && !searching && careers?.length > 0 && (
+                  <Box className={classes.pagination}>
+                    <Link
+                      className={classnames(
+                        humanPageNumber === 1 && classes.disableLink
+                      )}
+                      to={previousPagePath}
+                      disabled
+                    >
+                      <IconButton className={classes.prePageBtn}>
+                        <ArrowIcon></ArrowIcon>
+                      </IconButton>
+                    </Link>
+                    <Box className={classes.pageInfo}>
+                      <Box className={classes.curPageBtn}>
+                        {humanPageNumber}
+                      </Box>
+                      <Box>of {numberOfPages}</Box>
+                    </Box>
+                    <Link to={nextPagePath}>
+                      <IconButton>
+                        <ArrowIcon></ArrowIcon>
+                      </IconButton>
+                    </Link>
+                  </Box>
+                )}
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
-      </Container>
-      <Box className={classes.box03}>
-        <Container disableGutters maxWidth='lg'>
-          <Grid container>
-            <Grid item xs={12} sm={6}>
-              <StaticImage
-                className={classes.sideImgWrapper}
-                imgClassName={classes.sideImg}
-                src='../assets/images/join_us_01.jpg'
-                alt='international img 01'
-                objectFit='fill'
-              ></StaticImage>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box className={classes.box03Wrapper}>
-                <Typography
-                  className={classes.box03Title}
-                  variant='h4'
-                  color='primary'
-                >
-                  加入我們
-                </Typography>
-                <Typography
-                  variant={matches ? 'body2' : 'body1'}
-                  color='textPrimary'
-                >
-                  如現時未有合適空缺，歡迎留下聯絡方法，
-                  <br />
-                  第一時間獲取最新空缺資料：
-                </Typography>
-                <Formik
-                  initialValues={initialValues}
-                  validationSchema={schema}
-                  onSubmit={throttle(async (values, { resetForm }) => {
-                    if (!reCapStatus) {
-                      return setReCapStatus(1)
-                    }
-                    if (loading) return
-                    try {
-                      setLoading(true)
-                      await handleFetch(
-                        omit(values, ['requiredArea', 'requiredName'])
-                      )
-                      toast.success('已成功提交')
-                      resetForm()
-                    } catch (error) {
-                      toast.error(error)
-                    }
-                    setLoading(false)
-                    setReCapStatus(0)
-                  }, 1000)}
-                >
-                  {(props) => {
-                    const {
-                      values,
-                      handleSubmit,
-                      handleChange,
-                      touched,
-                      errors,
-                      setFieldValue,
-                    } = props
-                    const isError = (field) =>
-                      touched[field] && Boolean(errors[field])
-                    const errorText = (field) =>
-                      touched[field] &&
-                      errors[field] && (
-                        <FormHelperText>{errors[field]}</FormHelperText>
-                      )
-
-                    const CusCancelButton = ({ field }) => (
-                      <CancelButton
-                        values={values}
-                        touched={touched}
-                        errors={errors}
-                        field={field}
-                        onCancel={(field) => setFieldValue(field, '')}
-                      />
-                    )
-
-                    return (
-                      <form
-                        onSubmit={handleSubmit}
-                        className={classes.form}
-                        noValidate
-                      >
-                        <Box className={classes.formControlLine}>
-                          <FormControl
-                            fullWidth
-                            error={isError('name')}
-                            required
-                          >
-                            <EFormLabel>聯絡人姓名</EFormLabel>
-                            <EInputBase
-                              id='contact-name'
-                              name='name'
-                              margin='none'
-                              value={values.name}
-                              onChange={handleChange}
-                              type='text'
-                              endAdornment={<CusCancelButton field='name' />}
-                            />
-                            {errorText('name')}
-                          </FormControl>
-                        </Box>
-                        <Box className={classes.formControlLine}>
-                          <FormControl
-                            fullWidth
-                            error={isError('email')}
-                            required
-                            className={classes.formControl}
-                          >
-                            <EFormLabel>電郵</EFormLabel>
-                            <EInputBase
-                              id='email'
-                              name='email'
-                              margin='none'
-                              value={values.email}
-                              onChange={handleChange}
-                              placeholder={
-                                isError('email')
-                                  ? ''
-                                  : 'example@take2health.com'
-                              }
-                              endAdornment={<CusCancelButton field='email' />}
-                            />
-                            {errorText('email')}
-                          </FormControl>
-                          <FormControl
-                            fullWidth
-                            error={isError('area')}
-                            required
-                            className={classes.formControl}
-                          >
-                            <EFormLabel>地區</EFormLabel>
-                            <ESelect
-                              displayEmpty
-                              labelId='area-label'
-                              id='area'
-                              name='area'
-                              value={values.area}
-                              onChange={handleChange}
-                            >
-                              {CAREER_REGIONS?.map((region) => (
-                                <MenuItem
-                                  key={region.value}
-                                  value={region.value}
-                                  disabled={!region.value}
-                                >
-                                  {region.label}
-                                </MenuItem>
-                              ))}
-                            </ESelect>
-                            {errorText('area')}
-                          </FormControl>
-                        </Box>
-                        <Button
-                          type='submit'
-                          fullWidth
-                          variant='contained'
-                          color='secondary'
-                          className={classes.submitBtn}
-                          disabled={reCapStatus === 1}
-                        >
-                          {loading ? (
-                            <CircularProgress color='inherit' size={24} />
-                          ) : (
-                            '提交'
-                          )}
-                        </Button>
-                        {reCapStatus > 0 && (
-                          <ReCaptcha
-                            onChange={(value) => setReCapStatus(value)}
-                          ></ReCaptcha>
-                        )}
-                      </form>
-                    )
-                  }}
-                </Formik>
-              </Box>
-            </Grid>
-          </Grid>
+          </Box>
         </Container>
+        <Box className={classes.box03}>
+          <Container disableGutters maxWidth='lg'>
+            <Grid container>
+              <Grid item xs={12} sm={6}>
+                <StaticImage
+                  className={classes.sideImgWrapper}
+                  imgClassName={classes.sideImg}
+                  src='../assets/images/join_us_01.jpg'
+                  alt='international img 01'
+                  objectFit='fill'
+                ></StaticImage>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Box className={classes.box03Wrapper}>
+                  <Typography
+                    className={classes.box03Title}
+                    variant='h4'
+                    color='primary'
+                  >
+                    {t('about_us.join_us.title')}
+                  </Typography>
+                  <Typography
+                    variant={matches ? 'body2' : 'body1'}
+                    color='textPrimary'
+                  >
+                    <Trans i18nKey='about_us.join_us.form_detail'></Trans>
+                  </Typography>
+                  <Formik
+                    initialValues={initialValues}
+                    validationSchema={schema}
+                    onSubmit={throttle(async (values, { resetForm }) => {
+                      if (!reCapStatus) {
+                        return setReCapStatus(1)
+                      }
+                      if (loading) return
+                      try {
+                        setLoading(true)
+                        await handleFetch(
+                          omit(values, ['requiredArea', 'requiredName'])
+                        )
+                        toast.success(t('status.submit.success'))
+                        resetForm()
+                      } catch (error) {
+                        toast.error(error)
+                      }
+                      setLoading(false)
+                      setReCapStatus(0)
+                    }, 1000)}
+                  >
+                    {(props) => {
+                      const {
+                        values,
+                        handleSubmit,
+                        handleChange,
+                        touched,
+                        errors,
+                        setFieldValue,
+                      } = props
+                      const isError = (field) =>
+                        touched[field] && Boolean(errors[field])
+                      const errorText = (field) =>
+                        touched[field] &&
+                        errors[field] && (
+                          <FormHelperText>{errors[field]}</FormHelperText>
+                        )
+
+                      const CusCancelButton = ({ field }) => (
+                        <CancelButton
+                          values={values}
+                          touched={touched}
+                          errors={errors}
+                          field={field}
+                          onCancel={(field) => setFieldValue(field, '')}
+                        />
+                      )
+
+                      return (
+                        <form
+                          onSubmit={handleSubmit}
+                          className={classes.form}
+                          noValidate
+                        >
+                          <Box className={classes.formControlLine}>
+                            <FormControl
+                              fullWidth
+                              error={isError('name')}
+                              required
+                            >
+                              <EFormLabel>{t('form.contact.label')}</EFormLabel>
+                              <EInputBase
+                                id='contact-name'
+                                name='name'
+                                margin='none'
+                                value={values.name}
+                                onChange={handleChange}
+                                type='text'
+                                endAdornment={<CusCancelButton field='name' />}
+                              />
+                              {errorText('name')}
+                            </FormControl>
+                          </Box>
+                          <Box className={classes.formControlLine}>
+                            <FormControl
+                              fullWidth
+                              error={isError('email')}
+                              required
+                              className={classes.formControl}
+                            >
+                              <EFormLabel>{t('form.email.label')}</EFormLabel>
+                              <EInputBase
+                                id='email'
+                                name='email'
+                                margin='none'
+                                value={values.email}
+                                onChange={handleChange}
+                                placeholder={
+                                  isError('email')
+                                    ? ''
+                                    : 'example@take2health.com'
+                                }
+                                endAdornment={<CusCancelButton field='email' />}
+                              />
+                              {errorText('email')}
+                            </FormControl>
+                            <FormControl
+                              fullWidth
+                              error={isError('area')}
+                              required
+                              className={classes.formControl}
+                            >
+                              <EFormLabel>{t('form.region.label')}</EFormLabel>
+                              <ESelect
+                                displayEmpty
+                                labelId='area-label'
+                                id='area'
+                                name='area'
+                                value={values.area}
+                                onChange={handleChange}
+                              >
+                                {CAREER_REGIONS?.map((region) => (
+                                  <EMenuItem
+                                    key={region.value}
+                                    value={region.value}
+                                    disabled={!region.value}
+                                  >
+                                    {t(region.label)}
+                                  </EMenuItem>
+                                ))}
+                              </ESelect>
+                              {errorText('area')}
+                            </FormControl>
+                          </Box>
+                          <Button
+                            type='submit'
+                            fullWidth
+                            variant='contained'
+                            color='secondary'
+                            className={classes.submitBtn}
+                            disabled={reCapStatus === 1}
+                          >
+                            {loading ? (
+                              <CircularProgress color='inherit' size={24} />
+                            ) : (
+                              t('common.submit')
+                            )}
+                          </Button>
+                          {reCapStatus > 0 && (
+                            <ReCaptcha
+                              onChange={(value) => setReCapStatus(value)}
+                            ></ReCaptcha>
+                          )}
+                        </form>
+                      )
+                    }}
+                  </Formik>
+                </Box>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
       </Box>
-    </Box>
+    </Layout>
   )
 }
 
 export default JoinUs
 
 export const query = graphql`
-  query ($skip: Int!, $limit: Int!) {
+  query ($skip: Int!, $limit: Int!, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMdx(
-      filter: { fileAbsolutePath: { regex: "/join-us/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/join-us/" }
+        frontmatter: { languages: { eq: $language } }
+      }
       sort: { fields: frontmatter___date, order: DESC }
       skip: $skip
       limit: $limit
@@ -501,7 +520,7 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "DD/MM/YYYY")
+          date
           title
           type
           region
@@ -521,7 +540,7 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "DD/MM/YYYY")
+          date
           title
           type
           region

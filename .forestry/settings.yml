@@ -4,6 +4,9 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: document
+  path: content/business-partners.json
+  label: Business Partners
 - type: directory
   path: content/hero-banners
   label: Hero Banners
@@ -39,7 +42,6 @@ sections:
 - type: document
   path: content/menu.json
   label: Menu
-  read_only: true
 - type: directory
   path: content/promotions
   label: Promotions
