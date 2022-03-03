@@ -8,7 +8,6 @@ import {
   Button,
   Box,
   Grid,
-  MenuItem,
 } from '@material-ui/core'
 import useSiteMetadata from '@hooks/useSiteMetadata'
 import PhoneIcon from '@images/icons/phone.svg'
@@ -19,8 +18,13 @@ import FaqSearch from '@components/FaqSearch'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { groupBy } from 'lodash-es'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { ESelect } from '@themes/components/ETextField'
+import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import Loading from '@components/Loading'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import { graphql } from 'gatsby'
+import Layout from '@layouts/Layout'
+import useObjectTranslation from '@hooks/useObjectTranslation'
+import { FAQ_TYPES } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -59,6 +63,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     paddingTop: theme.spacing(12.5),
     paddingBottom: theme.spacing(15),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(10.5),
@@ -150,6 +156,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 const FAQ = () => {
   const classes = useStyles()
+  const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const { whatsapp, phone } = useSiteMetadata()
   const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
@@ -166,27 +174,14 @@ const FAQ = () => {
         if (res?.code !== 1000) {
           return console.log('fetch error')
         }
-        const list =
-          res?.data
-            ?.filter((item) => item.status)
-            ?.map((item) => {
-              return {
-                id: item.id,
-                question: item.questionHk,
-                content: item.contentHk,
-                status: item.status,
-                typeName: item.typeName,
-              }
-            }) || []
+        const list = res?.data?.filter((item) => item.status) || []
         setAllFaqList(list)
         setFaqList(list)
         const groupType = groupBy(
           list?.filter((item) => item.status),
           'typeName'
         )
-        setFaqTypes((status) =>
-          status.concat(...(Object.keys(groupType) || []))
-        )
+        setFaqTypes(['', ...Object.keys(groupType)])
         setLoadingStatus('fulfilled')
       } catch (error) {
         setLoadingStatus('rejected')
@@ -208,123 +203,144 @@ const FAQ = () => {
     scrollTo('#section-tabs')
     return setActiveType(e.target?.value)
   }
-
+  const translateFaqType = (type) =>
+    FAQ_TYPES[type] ? t(FAQ_TYPES[type]) : type
   return (
-    <Box className={classes.root}>
-      <Container className={classes.contentRoot} disableGutters maxWidth='md'>
-        <Grid container>
-          <Grid item xs={12} sm={4}></Grid>
-          <Grid className={classes.titleWrapper} item xs={12} sm={8}>
-            <Typography className={classes.title} variant='h4' color='primary'>
-              常見問題
-              {activeType && (
-                <Typography
-                  component='span'
-                  variant='h5'
-                >{` #${activeType}`}</Typography>
-              )}
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid className={classes.faqList} container spacing={4}>
-          <Hidden xsDown>
-            <Grid item sm={4}>
-              <Box className={classes.formWrapper}>
-                <FaqSearch
-                  data={allFaqList}
-                  setSearchResult={handleSearchResult}
-                ></FaqSearch>
-                <Box className={classes.types} onClick={handleTypeChange}>
-                  {faqTypes?.map((type, index) => (
-                    <Box
-                      className={classnames(
-                        classes.type,
-                        activeType === type && classes.activeType
-                      )}
-                      key={index}
-                      data-value={type}
-                    >
-                      {type || '所有問題'}
-                    </Box>
-                  ))}
-                </Box>
-              </Box>
+    <Layout>
+      <Box className={classes.root}>
+        <Container className={classes.contentRoot} disableGutters maxWidth='md'>
+          <Grid container>
+            <Grid item xs={12} sm={4}></Grid>
+            <Grid className={classes.titleWrapper} item xs={12} sm={8}>
+              <Typography
+                className={classes.title}
+                variant='h4'
+                color='primary'
+              >
+                {t('common.faq')}
+                {activeType && (
+                  <Typography
+                    component='span'
+                    variant='h5'
+                  >{` #${translateFaqType(activeType)}`}</Typography>
+                )}
+              </Typography>
             </Grid>
-          </Hidden>
-          <Hidden smUp>
-            <Box className={classes.formWrapper}>
-              <Grid container spacing={1}>
-                <Grid item xs={7}>
+          </Grid>
+          <Grid className={classes.faqList} container spacing={4}>
+            <Hidden xsDown>
+              <Grid item sm={4}>
+                <Box className={classes.formWrapper}>
                   <FaqSearch
                     data={allFaqList}
                     setSearchResult={handleSearchResult}
                   ></FaqSearch>
-                </Grid>
-                <Grid item xs={5}>
-                  <ESelect
-                    value={activeType}
-                    onChange={handleMobileTypeChange}
-                    className={classes.select}
-                    displayEmpty
-                  >
-                    {faqTypes.map((type, index) => (
-                      <MenuItem key={index} value={type}>
-                        {type || '所有問題'}
-                      </MenuItem>
+                  <Box className={classes.types} onClick={handleTypeChange}>
+                    {faqTypes?.map((type, index) => (
+                      <Box
+                        className={classnames(
+                          classes.type,
+                          activeType === type && classes.activeType
+                        )}
+                        key={index}
+                        data-value={type}
+                      >
+                        {translateFaqType(type) || t('options.faq_types.all')}
+                      </Box>
                     ))}
-                  </ESelect>
-                </Grid>
+                  </Box>
+                </Box>
               </Grid>
-            </Box>
-          </Hidden>
-          <Grid item xs={12} sm={8}>
-            {faqList?.length > 0 && loadingStatus !== 'pending' ? (
-              faqList
-                ?.filter((faq) => faq.typeName === activeType || !activeType)
-                ?.map((faq) => (
-                  <FaqItem
-                    key={faq.id}
-                    id={faq.id}
-                    question={faq.question}
-                    content={faq.content}
-                    onChange={handleChange}
-                    activePanel={activePanel}
-                  ></FaqItem>
-                ))
-            ) : (
-              <Loading status={loadingStatus}></Loading>
-            )}
+            </Hidden>
+            <Hidden smUp>
+              <Box className={classes.formWrapper}>
+                <Grid container spacing={1}>
+                  <Grid item xs={7}>
+                    <FaqSearch
+                      data={allFaqList}
+                      setSearchResult={handleSearchResult}
+                    ></FaqSearch>
+                  </Grid>
+                  <Grid item xs={5}>
+                    <ESelect
+                      value={activeType}
+                      onChange={handleMobileTypeChange}
+                      className={classes.select}
+                      displayEmpty
+                    >
+                      {faqTypes.map((type, index) => (
+                        <EMenuItem key={index} value={type}>
+                          {translateFaqType(type) || t('options.faq_types.all')}
+                        </EMenuItem>
+                      ))}
+                    </ESelect>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Hidden>
+            <Grid item xs={12} sm={8}>
+              {faqList?.length > 0 && loadingStatus !== 'pending' ? (
+                faqList
+                  ?.filter((faq) => faq.typeName === activeType || !activeType)
+                  ?.map((faq) => (
+                    <FaqItem
+                      key={faq.id}
+                      id={faq.id}
+                      question={tB('question', faq)}
+                      content={tB('content', faq)}
+                      onChange={handleChange}
+                      activePanel={activePanel}
+                    ></FaqItem>
+                  ))
+              ) : (
+                <Loading status={loadingStatus}></Loading>
+              )}
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-      <Box className={classes.contactRoot}>
-        <Box className={classes.contactTitle}>
-          如有其他問題，歡迎向我們查詢：
-        </Box>
-        <Box className={classes.contactBtnWrapper}>
-          <Button
-            className={classes.contactBtn}
-            variant='contained'
-            color='secondary'
-            startIcon={<WhatsappIcon className={classes.btnIcon} />}
-            href={whatsapp}
-            target='_blank'
-          >
-            WhatsApp
-          </Button>
-          <Button
-            className={classnames(classes.contactBtn, classes.phoneIcon)}
-            variant='contained'
-            color='default'
-            startIcon={<PhoneIcon className={classes.btnIcon} />}
-            href={`tel:${phone}`}
-          >
-            {phone}
-          </Button>
+        </Container>
+        <Box className={classes.contactRoot}>
+          <Box className={classes.contactTitle}>
+            {t('products_and_services.take2_extra_care.faq.welcome_contact')}
+          </Box>
+          <Box className={classes.contactBtnWrapper}>
+            <Button
+              className={classes.contactBtn}
+              variant='contained'
+              color='secondary'
+              startIcon={<WhatsappIcon className={classes.btnIcon} />}
+              href={whatsapp}
+              target='_blank'
+            >
+              WhatsApp
+            </Button>
+            <Button
+              className={classnames(classes.contactBtn, classes.phoneIcon)}
+              variant='contained'
+              color='default'
+              startIcon={<PhoneIcon className={classes.btnIcon} />}
+              href={`tel:${phone}`}
+            >
+              {phone}
+            </Button>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </Layout>
   )
 }
 
 export default FAQ
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

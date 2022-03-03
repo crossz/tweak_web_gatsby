@@ -1,6 +1,6 @@
 import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
 import MoreUpdates from '@components/WhatsNew/MoreUpdates'
 import {
@@ -15,9 +15,12 @@ import {
 import ArrowIcon from '@images/icons/arrow.svg'
 import useMenu from '@hooks/useMenu'
 import Links from '@components/WhatsNew/Links'
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
+import Layout from '@layouts/Layout'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+import Link from '@components/Link'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -147,18 +150,18 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const morePostTitle = {
-  'health-tips': '更多健康資訊',
-  promotions: '更多推廣優惠',
-  updates: '更多相關動態',
+  'health-tips': 'menu.health_tips',
+  promotions: 'menu.promotions',
+  updates: 'menu.updates',
 }
 
 const Post = ({ data, pageContext, location: { href } }) => {
   const { sectionPath, regex } = pageContext
+  const { t } = useTranslation()
   const classes = useStyles()
   const menu = useMenu()
   const mdx = data?.mdx?.body
   const { date, title, type } = data?.mdx?.frontmatter
-  // const images = cover?.map((item) => getImage(item))
   const morePostsNodes = data?.morePosts?.nodes
   const middlePath = `/whats-new/${sectionPath}`
   const middleTitle = menu[0].sections?.find((section) =>
@@ -166,95 +169,110 @@ const Post = ({ data, pageContext, location: { href } }) => {
   )?.title
 
   return (
-    <Box className={classes.root}>
-      <Container disableGutters maxWidth='xl'>
-        <Box className={classes.breadcrumbsWrapper}>
-          <Hidden xsDown>
-            <Container disableGutters maxWidth='sm'>
-              <Breadcrumbs
-                className={classes.breadcrumbs}
-                separator={<ArrowIcon className={classes.arrowIcon} />}
-                aria-label='breadcrumb'
-              >
-                <Link to='/'>Take2 Health</Link>
-                <Link to={middlePath}>{middleTitle}</Link>
-                <Box className={classes.breadcrumbsTitle}>{title}</Box>
-              </Breadcrumbs>
-            </Container>
-          </Hidden>
-        </Box>
-        <Box className={classes.contentWrapper}>
-          <Container className={classes.content} disableGutters maxWidth='sm'>
-            {/* {images?.[0] && (
-              <Box className={classes.image}>
-                <GatsbyImage image={images?.[0]} alt={title}></GatsbyImage>
-              </Box>
-            )} */}
-            <Box className={classes.header}>
-              <Box className={classes.top}>
-                <Box className={classes.topLeft}>
-                  <Box className={classes.date}>{date}</Box>
-                  <Box
-                    className={classes.mark}
-                    bgcolor={
-                      POST_TYPES.find((item) => item.label === type)?.color ||
-                      'secondary.main'
-                    }
-                  >
-                    {type}
+    <Layout>
+      <Box className={classes.root}>
+        <Container disableGutters maxWidth='xl'>
+          <Box className={classes.breadcrumbsWrapper}>
+            <Hidden xsDown>
+              <Container disableGutters maxWidth='sm'>
+                <Breadcrumbs
+                  className={classes.breadcrumbs}
+                  separator={<ArrowIcon className={classes.arrowIcon} />}
+                  aria-label='breadcrumb'
+                >
+                  <Link to='/'>Take2 Health</Link>
+                  <Link to={middlePath}>{t(middleTitle)}</Link>
+                  <Box className={classes.breadcrumbsTitle}>{title}</Box>
+                </Breadcrumbs>
+              </Container>
+            </Hidden>
+          </Box>
+          <Box className={classes.contentWrapper}>
+            <Container className={classes.content} disableGutters maxWidth='sm'>
+              <Box className={classes.header}>
+                <Box className={classes.top}>
+                  <Box className={classes.topLeft}>
+                    <Box className={classes.date}>{formatLocal(date)}</Box>
+                    {type && (
+                      <Box
+                        className={classes.mark}
+                        bgcolor={
+                          POST_TYPES.find((item) => item.label === type)
+                            ?.color || 'secondary.main'
+                        }
+                      >
+                        {t(`options.post_types.${type}`)}
+                      </Box>
+                    )}
+                  </Box>
+                  <Box ml='auto'>
+                    <Links href={href}></Links>
                   </Box>
                 </Box>
-                <Box ml='auto'>
-                  <Links href={href}></Links>
-                </Box>
+                <Typography variant='h5' color='primary'>
+                  {title}
+                </Typography>
               </Box>
-              <Typography variant='h5' color='primary'>
-                {title}
-              </Typography>
-            </Box>
-            <MdxLayout>{mdx}</MdxLayout>
-          </Container>
-          <StaticImage
-            className={classes.postBg}
-            src='../assets/images/post_bg.png'
-            alt='post background'
-          ></StaticImage>
-        </Box>
-        <Box className={classes.moreWrapper}>
-          <Container disableGutters maxWidth='md'>
-            {pageContext?.sectionPath === 'updates' ? (
-              <MoreUpdates
-                title={morePostTitle[pageContext?.sectionPath]}
-                nodes={morePostsNodes}
-              ></MoreUpdates>
-            ) : (
-              <MorePosts
-                title={morePostTitle[pageContext?.sectionPath]}
-                nodes={morePostsNodes}
-              ></MorePosts>
-            )}
-          </Container>
-        </Box>
-      </Container>
-    </Box>
+              <MdxLayout>{mdx}</MdxLayout>
+            </Container>
+            <StaticImage
+              className={classes.postBg}
+              src='../assets/images/post_bg.png'
+              alt='post background'
+            ></StaticImage>
+          </Box>
+          <Box className={classes.moreWrapper}>
+            <Container disableGutters maxWidth='md'>
+              {pageContext?.sectionPath === 'updates' ? (
+                <MoreUpdates
+                  title={t('common.more', {
+                    field: t(morePostTitle[pageContext?.sectionPath]),
+                  })}
+                  nodes={morePostsNodes}
+                ></MoreUpdates>
+              ) : (
+                <MorePosts
+                  title={t('common.more', {
+                    field: t(morePostTitle[pageContext?.sectionPath]),
+                  })}
+                  nodes={morePostsNodes}
+                ></MorePosts>
+              )}
+            </Container>
+          </Box>
+        </Container>
+      </Box>
+    </Layout>
   )
 }
 
 export default Post
 
 export const query = graphql`
-  query ($slug: String!, $regex: String!) {
+  query ($slug: String!, $regex: String!, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx: mdx(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {
-        date(formatString: "YYYY/MM/DD")
+        date
         title
         type
       }
       body
     }
     morePosts: allMdx(
-      filter: { fileAbsolutePath: { regex: $regex } }
+      filter: {
+        fileAbsolutePath: { regex: $regex }
+        frontmatter: { languages: { eq: $language } }
+      }
       limit: 3
       sort: { fields: frontmatter___date, order: DESC }
     ) {
@@ -269,7 +287,7 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
-          date(formatString: "DD/MM/YYYY")
+          date
           title
           type
           detail

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {
   makeStyles,
   useMediaQuery,
-  useTheme,
   Grid,
   Container,
   alpha,
@@ -20,12 +19,14 @@ import {
   EAccordionDetails,
 } from '@themes/components/EAccordion'
 import ArrowIcon from '@images/icons/arrow.svg'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import classnames from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
 import GoToTop from './GoToTop'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import LanguageButton from '../LanguageButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     marginTop: 'auto',
     flexWrap: 'wrap',
+    alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(6),
     },
@@ -130,28 +132,31 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 'none',
     },
   },
+  isEnMenuWrapper: {
+    maxHeight: theme.spacing(50),
+    [theme.breakpoints.down('xs')]: {
+      maxHeight: 'none',
+    },
+  },
   menuItem: {
-    width: `calc(100% / 3)`,
+    width: '100%',
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down('xs')]: {
-      width: '100%',
       marginBottom: 0,
     },
   },
-  lastMenuItem: {
-    [theme.breakpoints.up('md')]: {
-      marginTop: theme.spacing(3.5),
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginTop: 0,
-    },
+
+  languageBtn: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
   },
 }))
 
 const Footer = () => {
   const classes = useStyles()
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const { language, t } = useI18next()
+  const isEn = language === 'en'
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
   const menu = useMenu()
   const { email, phone, whatsapp, whatsappAccount } = useSiteMetadata()
   const [panel, setPanel] = useState('')
@@ -166,13 +171,13 @@ const Footer = () => {
         width={matches ? '100%' : 'auto'}
         mb={matches ? 2 : 0}
       >
-        ©2021 Take2 Health 版權所有
+        {t('common.take2_copy_right')}
       </Box>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/私隱政策'
+        to='/terms-and-conditions/privacy-policy/'
       >
-        私隱政策
+        {t('t_and_c.privacy_policy')}
       </Link>
       {/* <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         服務條款
@@ -185,18 +190,89 @@ const Footer = () => {
       </Link> */}
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/網站使用條款'
+        to='/terms-and-conditions/website-terms-of-use/'
       >
-        網站使用條款
+        {t('t_and_c.website_trems_of_use')}
       </Link>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/個人資料收集聲明'
+        to='/terms-and-conditions/personal-information-collection-statement/'
       >
-        個人資料收集聲明
+        {t('t_and_c.personal_information_collection_statement')}
       </Link>
+      <LanguageButton
+        className={classnames(classes.languageBtn, classes.copyRightLink)}
+      ></LanguageButton>
     </Box>
   )
+  const menuItem = (index) => {
+    const item = menu?.[index]
+    return item ? (
+      <Box
+        className={classnames(classes.menuWrapper, {
+          [classes.isEnMenuWrapper]: isEn,
+        })}
+      >
+        <Box key={index} className={classnames(classes.menuItem)}>
+          <EAccordion
+            expanded={!matches || item.path === panel}
+            square
+            onChange={handleChange(
+              !matches || !item.sections?.length ? '' : item.path
+            )}
+          >
+            <EAccordionSummary
+              expandIcon={
+                matches &&
+                item.sections?.length && (
+                  <ArrowIcon className={classes.arrowIcon} />
+                )
+              }
+              aria-controls='panel1a-content'
+              id='panel1a-header'
+              classes={{
+                root: classes.accordionSummaryRoot,
+                content: classes.accordionSummaryContent,
+              }}
+            >
+              {matches && item.sections?.length ? (
+                <Box
+                  fontSize='body1.fontSize'
+                  fontWeight='fontWeightBold'
+                  className={classes.link}
+                >
+                  {t(item.title)}
+                </Box>
+              ) : (
+                <Link className={classes.link} to={item.path}>
+                  <Box fontSize='body1.fontSize' fontWeight='fontWeightBold'>
+                    {t(item.title)}
+                  </Box>
+                </Link>
+              )}
+            </EAccordionSummary>
+            {item.sections?.length && (
+              <EAccordionDetails
+                classes={{
+                  root: classes.accordionDetailsRoot,
+                }}
+              >
+                <Typography variant='body2' component='div'>
+                  {item.sections.map((tab) => (
+                    <Box mt={1} key={tab.title}>
+                      <Link to={tab.path} className={classes.link}>
+                        {t(tab.title)}
+                      </Link>
+                    </Box>
+                  ))}
+                </Typography>
+              </EAccordionDetails>
+            )}
+          </EAccordion>
+        </Box>
+      </Box>
+    ) : null
+  }
 
   return (
     <Box className={classes.root}>
@@ -238,71 +314,34 @@ const Footer = () => {
             </Box>
             <Box mb={matches ? 5 : 0} display='inline-block'>
               <Divider className={classes.divider} />
-              <Box mb={0.5}>關注我們</Box>
+              <Box mb={0.5}>{t('common.follow_us')}</Box>
               <SocialLinks></SocialLinks>
             </Box>
           </Grid>
           <Grid item xs={12} sm={9} md={8}>
-            <Box className={classes.menuWrapper}>
-              {menu?.map((item, index) => (
-                <Box
-                  key={index}
-                  className={classnames(
-                    classes.menuItem,
-                    index === menu.length - 1 && classes.lastMenuItem
-                  )}
-                >
-                  <EAccordion
-                    expanded={!matches || item.path === panel}
-                    square
-                    onChange={handleChange(
-                      !matches || !item.sections?.length ? '' : item.path
-                    )}
-                  >
-                    <EAccordionSummary
-                      expandIcon={
-                        matches &&
-                        item.sections?.length && (
-                          <ArrowIcon className={classes.arrowIcon} />
-                        )
-                      }
-                      aria-controls='panel1a-content'
-                      id='panel1a-header'
-                      classes={{
-                        root: classes.accordionSummaryRoot,
-                        content: classes.accordionSummaryContent,
-                      }}
-                    >
-                      <Link className={classes.link} to={item.path}>
-                        <Box
-                          fontSize='body1.fontSize'
-                          fontWeight='fontWeightBold'
-                        >
-                          {item.title}
-                        </Box>
-                      </Link>
-                    </EAccordionSummary>
-                    {item.sections?.length && (
-                      <EAccordionDetails
-                        classes={{
-                          root: classes.accordionDetailsRoot,
-                        }}
-                      >
-                        <Typography variant='body2' component='div'>
-                          {item.sections.map((tab) => (
-                            <Box mt={1} key={tab.title}>
-                              <Link to={tab.path} className={classes.link}>
-                                {tab.title}
-                              </Link>
-                            </Box>
-                          ))}
-                        </Typography>
-                      </EAccordionDetails>
-                    )}
-                  </EAccordion>
-                </Box>
-              ))}
-            </Box>
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={4}>
+                {menuItem(0)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(2)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(5)}
+              </Grid>
+            </Grid>
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={4}>
+                {menuItem(1)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(3)}
+                {menuItem(4)}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                {menuItem(6)}
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
         <CopyRights></CopyRights>

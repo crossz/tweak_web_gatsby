@@ -20,7 +20,9 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         break
       case 'terms-and-conditions':
         slug = `/terms-and-conditions/${
-          node.frontmatter.slug || node.frontmatter.title?.trim() || name
+          node.frontmatter.slug === 'terms-and-conditions'
+            ? ''
+            : node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
       case 'health-tips':

@@ -8,6 +8,8 @@ if (process.env.GATSBY_ENV) {
   })
 }
 
+const { languages, defaultLanguage } = require('./languages')
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://take2health.net',
@@ -158,19 +160,23 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`zh`],
-        // defaultLanguage: `zh`,
+        languages,
+        defaultLanguage,
         redirect: false,
+        fallbackLanguage: defaultLanguage,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        // siteUrl: `https://example.com/`,
+        siteUrl: `https://take2health.net/`,
         // you can pass any i18next options
         generateDefaultLanguagePage: true,
         i18nextOptions: {
           interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
           },
-          keySeparator: false,
-          nsSeparator: false,
+          returnEmptyString: false,
+          parseMissingKeyHandler: (key) => {
+            // return empty space if missing keys or loading translation
+            return key.split('.').slice(-1)
+          },
         },
       },
     },

@@ -16,6 +16,7 @@ import { gsap } from './utils/initGsap'
 import Container from '@material-ui/core/Container'
 import Hidden from '@material-ui/core/Hidden'
 import { Link as GatsbyLink } from 'gatsby'
+import { PROMOTION_CODE } from '@utils/constant'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -275,9 +276,12 @@ const Header = (props) => {
               <Box className={classes.promoLabel}>
                 會員迎新優惠價$1,870(原價$2,200) 優惠碼
               </Box>
-              <CopyToClipboard text='NEW330' onCopy={handleSnackBarOpen}>
+              <CopyToClipboard
+                text={PROMOTION_CODE}
+                onCopy={handleSnackBarOpen}
+              >
                 <Box className={classes.promoBtn}>
-                  <Box className={classes.promoCode}>NEW330</Box>
+                  <Box className={classes.promoCode}>{PROMOTION_CODE}</Box>
                   <Box className={classes.promoCopy}>複製</Box>
                 </Box>
               </CopyToClipboard>
@@ -290,9 +294,12 @@ const Header = (props) => {
               </Box>
               <Box className={classes.promoWrapper}>
                 <Box className={classes.promoLabel}>優惠碼</Box>
-                <CopyToClipboard text='NEW330' onCopy={handleSnackBarOpen}>
+                <CopyToClipboard
+                  text={PROMOTION_CODE}
+                  onCopy={handleSnackBarOpen}
+                >
                   <Box className={classes.promoBtn}>
-                    <Box className={classes.promoCode}>NEW330</Box>
+                    <Box className={classes.promoCode}>{PROMOTION_CODE}</Box>
                     <Box className={classes.promoCopy}>複製</Box>
                   </Box>
                 </CopyToClipboard>

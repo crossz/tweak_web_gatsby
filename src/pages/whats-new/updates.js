@@ -7,12 +7,13 @@ import {
   useTheme,
   useMediaQuery,
   Grid,
+  Box,
 } from '@material-ui/core'
-import Box from '@material-ui/core/Box'
-import MenuItem from '@material-ui/core/MenuItem'
 import classnames from 'classnames'
-import { ESelect } from '@themes/components/ETextField'
+import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import { POST_TYPES, MOBILE_HEADER_HEIGHT } from '@utils/constant'
+import Layout from '@layouts/Layout'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Updates = ({ data }) => {
   const classes = useStyles()
+  const { t } = useTranslation()
   const nodes = data.allMdx.nodes
   const [activeType, setActiveType] = useState('')
   const theme = useTheme()
@@ -69,74 +71,88 @@ const Updates = ({ data }) => {
 
   const handleMobileChange = (e) => setActiveType(e.target?.value)
   return (
-    <Box className={classes.root}>
-      <Container disableGutters maxWidth='md'>
-        <Grid container spacing={0}>
-          <Grid
-            className={classnames(matches && classes.selectWrapper)}
-            item
-            xs={12}
-            sm={4}
-          >
-            {matches ? (
-              <ESelect
-                value={activeType}
-                onChange={handleMobileChange}
-                className={classes.select}
-                displayEmpty
-              >
-                {POST_TYPES.map((type, index) => (
-                  <MenuItem key={index} value={type.value}>
-                    {type.label}
-                  </MenuItem>
+    <Layout>
+      <Box className={classes.root}>
+        <Container disableGutters maxWidth='md'>
+          <Grid container spacing={0}>
+            <Grid
+              className={classnames(matches && classes.selectWrapper)}
+              item
+              xs={12}
+              sm={4}
+            >
+              {matches ? (
+                <ESelect
+                  value={activeType}
+                  onChange={handleMobileChange}
+                  className={classes.select}
+                  displayEmpty
+                >
+                  {POST_TYPES.map((type, index) => (
+                    <EMenuItem key={index} value={type.value}>
+                      {t(type.label)}
+                    </EMenuItem>
+                  ))}
+                </ESelect>
+              ) : (
+                <Box className={classes.types} onClick={handleChange}>
+                  {POST_TYPES.map((type, index) => (
+                    <Box
+                      className={classnames(
+                        classes.type,
+                        activeType === type.value && classes.activeType
+                      )}
+                      key={index}
+                      data-value={type.value}
+                    >
+                      {t(type.label)}
+                    </Box>
+                  ))}
+                </Box>
+              )}
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              {curNodes?.length > 0 &&
+                curNodes?.map((node) => (
+                  <UpdateItem
+                    key={node.id}
+                    slug={`${node.fields.slug}`}
+                    {...node.frontmatter}
+                  />
                 ))}
-              </ESelect>
-            ) : (
-              <Box className={classes.types} onClick={handleChange}>
-                {POST_TYPES.map((type, index) => (
-                  <Box
-                    className={classnames(
-                      classes.type,
-                      activeType === type.value && classes.activeType
-                    )}
-                    key={index}
-                    data-value={type.value}
-                  >
-                    {type.label}
-                  </Box>
-                ))}
-              </Box>
-            )}
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={8}>
-            {curNodes?.length > 0 &&
-              curNodes?.map((node) => (
-                <UpdateItem
-                  key={node.id}
-                  slug={`${node.fields.slug}`}
-                  {...node.frontmatter}
-                />
-              ))}
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </Layout>
   )
 }
 
 export default Updates
 
 export const query = graphql`
-  {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMdx(
       limit: 1000
-      filter: { fileAbsolutePath: { regex: "/updates/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/updates/" }
+        frontmatter: { languages: { eq: $language } }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         id
         frontmatter {
-          date(formatString: "YYYY年MM月DD日")
+          date
           detail
           title
           type

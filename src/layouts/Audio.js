@@ -36,7 +36,7 @@ const Audio = ({ src, title, describe, ...rest }) => {
       <audio
         className={classes.audio}
         controls
-        preload='auto'
+        preload='none'
         src={src}
         {...rest}
       ></audio>

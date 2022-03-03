@@ -1,30 +1,36 @@
 ---
-label: Post
+label: Update Post
 hide_body: false
 display_field: title
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: cover
   type: image_gallery
   config: {}
-  label: " cover"
+  label: " Cover"
   description: 'Cover of post card, in updates list it may be multiple images or empty.<br><em>Aspect
     ratio: 2 (width / height)</em><br><em>Recommend size</em>: 600 * 300'
 - type: datetime
   name: date
-  label: date
+  label: Date
   config:
     required: true
   description: Created date of post.
 - type: text
   name: title
-  label: title
+  label: Title
   config:
     required: true
-  description: 'Title of post. <br>If slug and href is empty should forbidden these
-    characters: <em>"$","%",":","/",Tab<br></em>'
+    max: 100
+  description: 'This will be used as slug for url when slug and href is empty;<br><em>Forbidden
+    characters: "$","%",":","/",Tab<br>Max length: 100<br></em>'
 - type: textarea
   name: detail
-  label: detail
+  label: Detail
   config:
     required: true
   description: Detail of post, used by post card.
@@ -34,47 +40,67 @@ fields:
   config:
     required: false
     options:
-    - 公司動向
-    - 公司獎項與成就
-    - 行業資訊
-    - 商業合作
-    - 行政總裁分享
+    - company_trends
+    - industry_information
+    - company_awards_and_achievements
+    - ceo_sharing
+    - business_cooperation
     source:
       type: simple
       section: 
       file: 
       path: 
-  label: type
-  description: Tag of post.
+  label: Type
+  description: Tag of post.<br><em>公司動向company_trends<br>公司獎項與成就company_awards_and_achievements<br>行業資訊industry_information<br>行政總裁分享ceo_sharing<br>商業合作business_cooperation</em>
 - name: href
   type: text
   config:
     required: false
-  label: href
+  label: Href
   description: If href is not empty, post card will open new window for this href
     instead of post detail page.
 - name: slug
   type: text
   config:
     required: false
-  label: slug
+  label: Slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/updates/collaborating-with-gmt-take2-prophecy-is-currently-available-across-the-phillippines.md
 - content/updates/dna-1.md
 - content/updates/dna.md
+- content/updates/global-medical-technologies-take2-prophecy.md
+- content/updates/joining-hands-with-pwc-take2-health-is-ready-to-provide-early-cancer-detection-test-via-employee-benefit-platform.md
 - content/updates/pwc-take2-prophecy.md
 - content/updates/startup-focus-1.md
 - content/updates/take2-grail-1.md
 - content/updates/take2-health-1.md
 - content/updates/take2-health-2.md
 - content/updates/take2-health-2021-1.md
+- content/updates/take2-health-2021-copy.md
 - content/updates/take2-health-2021-go-live-again.md
+- content/updates/take2-health-2021-latest-campaign-go-live-again.md
 - content/updates/take2-health-2021.md
+- content/updates/take2-health-and-kpmg-reached-partnership-to-enlist-the-take2-prophecy-test-for-nasopharyngeal-cancer-as-employee-benefit.md
+- content/updates/take2-health-and-pantai-premier-pathology-joining-hands-to-promote-early-npc-detection.md
+- content/updates/take2-health-collaborating-with-cxa-to-provide-innovative-employee-benefits.md
 - content/updates/take2-health-cxa.md
+- content/updates/take2-health-in-alliance-with-boc-life-to-become-the-first-brand-providing-early-cancer-detection-on-live-young.md
 - content/updates/take2-health-invites-eric-cheung-to-explain-his-cancer-survival-story-1.md
 - content/updates/take2-health-kpmg-take2-prophecy.md
+- content/updates/take2-health-lifestrands-genomics.md
+- content/updates/take2-health-pantai-premier-pathology.md
+- content/updates/take2-health-partnered-with-hong-kong-federation-of-insurers-to-share-non-invasive-early-cancer-detection-technology-1.md
+- content/updates/take2-health-partnering-with-lifestrands-genomics-to-offer-early-npc-detection-in-three-countries.md
+- content/updates/take2-health-partnering-with-pascific-laboratories-to-offer-early-cancer-detection-test.md
+- content/updates/take2-health-pascific-laboratories.md
+- content/updates/take2-health-settled-in-qianhai-kerry-centre-shenzhen-laying-the-foundation-for-business-expansion-in-the-greater-bay-area.md
+- content/updates/take2-health-teaming-up-with-yourgene-health-to-expand-its-service-to-taiwan-region.md
+- content/updates/take2-health-was-recognised-as-the-rising-star-company-by-deloitte-hong-kong.md
+- content/updates/take2-health-yourgene-health.md
 - content/updates/take2-health.md
+- content/updates/take2-prophecy-is-now-serving-more-than-20-thousand-employees-upon-launching-on-hsbc-life-benefits.md
 - content/updates/take2-prophecy.md
 - content/updates/中文大學創新及科技系列報道-翁錦輝.md
 - content/updates/次世代科技逼-廣東癌-早現形.md

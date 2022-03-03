@@ -1,8 +1,9 @@
 import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
 import { graphql } from 'gatsby'
-
 import { makeStyles, Typography, Container, Box } from '@material-ui/core'
+import Layout from '@layouts/Layout'
+import { formatLocal } from '@utils/moment'
 
 // import { StaticImage } from 'gatsby-plugin-image'
 
@@ -52,37 +53,51 @@ const Post = ({ data }) => {
   const { date, title } = data?.mdx?.frontmatter
 
   return (
-    <Box className={classes.root}>
-      <Container disableGutters maxWidth='xl'>
-        <Box className={classes.contentWrapper}>
-          <Container className={classes.content} disableGutters maxWidth='sm'>
-            <Box className={classes.header}>
-              <Typography variant='h5' color='primary'>
-                {title}
-              </Typography>
-              <Box className={classes.date}>{date}</Box>
-            </Box>
-            <MdxLayout>{mdx}</MdxLayout>
-          </Container>
-          {/* <StaticImage
+    <Layout>
+      <Box className={classes.root}>
+        <Container disableGutters maxWidth='xl'>
+          <Box className={classes.contentWrapper}>
+            <Container className={classes.content} disableGutters maxWidth='sm'>
+              <Box className={classes.header}>
+                <Typography variant='h5' color='primary'>
+                  {title}
+                </Typography>
+                <Box className={classes.date}>{formatLocal(date)}</Box>
+              </Box>
+              <MdxLayout>{mdx}</MdxLayout>
+            </Container>
+            {/* <StaticImage
             className={classes.postBg}
             src='../assets/images/post_bg.png'
             alt='post background'
           ></StaticImage> */}
-        </Box>
-      </Container>
-    </Box>
+          </Box>
+        </Container>
+      </Box>
+    </Layout>
   )
 }
 
 export default Post
 
 export const query = graphql`
-  query ($slug: String!) {
-    mdx: mdx(fields: { slug: { eq: $slug } }) {
+  query ($slug: String!, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+    mdx: mdx(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { languages: { eq: $language } }
+    ) {
       id
       frontmatter {
-        date(formatString: "YYYY/MM/DD")
+        date
         title
       }
       body

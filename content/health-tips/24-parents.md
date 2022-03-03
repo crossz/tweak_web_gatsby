@@ -1,5 +1,5 @@
 ---
-type: 健康資訊
+type: health_tip
 date: 2021-11-30T00:00:00.000+08:00
 title: "【24 Parents】 鼻咽癌知多啲｜女士就不會「中招」？　拆解三大常見誤解"
 detail: 健康資訊
@@ -7,5 +7,7 @@ href: https://www.ohpama.com/689815/%E7%94%9F%E6%B4%BB%E5%81%A5%E5%BA%B7/%E5%81%
 slug: ''
 cover:
 - "../images/24-parent.png"
+languages:
+- zh-HK
 
 ---

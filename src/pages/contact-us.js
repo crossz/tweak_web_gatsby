@@ -33,9 +33,12 @@ import ImageListItem from '@material-ui/core/ImageListItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import classnames from 'classnames'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import { graphql } from 'gatsby'
 import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import Layout from '@layouts/Layout'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -176,16 +179,9 @@ const initialValues = {
   message: '',
 }
 
-const schema = oriSchema().pick([
-  'companyName',
-  'message',
-  'dialingCode',
-  'phone',
-  'email',
-])
-
 const ContactUs = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const [activeTab, setActiveTab] = useState(0)
@@ -193,32 +189,40 @@ const ContactUs = () => {
   const [reCapStatus, setReCapStatus] = useState(0)
   const { whatsapp, email, phone, messenger } = useSiteMetadata()
 
+  const schema = oriSchema(t).pick([
+    'companyName',
+    'message',
+    'dialingCode',
+    'phone',
+    'email',
+  ])
+
   const contactTypes = [
     {
       label: '+852 3613 0533',
       Icon: PhoneIcon,
-      tabLabel: '客戶服務專線',
+      tabLabel: t('contact_us.types.0'),
       type: 'phone',
       link: phone,
     },
     {
       label: 'info@take2.health',
       Icon: EmailIcon,
-      tabLabel: '一般查詢',
+      tabLabel: t('contact_us.types.1'),
       type: 'email',
       link: email,
     },
     {
       label: 'WhatsApp',
       Icon: WhatsappIcon,
-      tabLabel: '公關及傳訊',
+      tabLabel: t('contact_us.types.2'),
       type: 'link',
       link: whatsapp,
     },
     {
       label: 'Messenger',
       Icon: MessengerIcon,
-      tabLabel: '商務合作',
+      tabLabel: t('contact_us.types.3'),
       type: 'link',
       link: messenger,
     },
@@ -229,10 +233,11 @@ const ContactUs = () => {
   const handleFetch = async (values) => {
     try {
       const res = await fetchWithTimeout('/contactUs/add', { values })
-      if (res?.code !== 1000) return Promise.reject(res?.message || '提交失敗')
+      if (res?.code !== 1000)
+        return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
-      return Promise.reject('提交失敗')
+      return Promise.reject(t('status.submit.fail'))
     }
   }
 
@@ -248,26 +253,27 @@ const ContactUs = () => {
   }
 
   return (
-    <Box className={classes.root}>
-      <Container className={classes.container} disableGutters maxWidth='xl'>
-        <Box
-          height={matches ? 118 : 190}
-          bgcolor='primary.main'
-          mb={-13.75}
-        ></Box>
-        <Box className={classes.contentRoot}>
-          <Container disableGutters maxWidth='md'>
-            <Grid container spacing={0}>
-              <Grid className={classes.leftWrapper} item xs={12} sm={7}>
-                <Box
-                  mt={1.5}
-                  px={matches ? 3 : 0}
-                  fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
-                  color='primary.contrastText'
-                >
-                  如有任何意見或查詢，歡迎透過下列方式與我們聯繫
-                </Box>
-                {/* <Tabs
+    <Layout>
+      <Box className={classes.root}>
+        <Container className={classes.container} disableGutters maxWidth='xl'>
+          <Box
+            height={matches ? 118 : 190}
+            bgcolor='primary.main'
+            mb={-13.75}
+          ></Box>
+          <Box className={classes.contentRoot}>
+            <Container disableGutters maxWidth='md'>
+              <Grid container spacing={0}>
+                <Grid className={classes.leftWrapper} item xs={12} sm={7}>
+                  <Box
+                    mt={1.5}
+                    px={matches ? 3 : 0}
+                    fontSize={matches ? 'body2.fontSize' : 'body1.fontSize'}
+                    color='primary.contrastText'
+                  >
+                    {t('contact_us.title')}
+                  </Box>
+                  {/* <Tabs
                   scrollButtons='off'
                   variant='scrollable'
                   indicatorColor='secondary'
@@ -290,241 +296,266 @@ const ContactUs = () => {
                     ></Tab>
                   ))}
                 </Tabs> */}
-                <Box px={matches ? 3 : 0} mt={matches ? 2 : 1.5}>
-                  <ImageList
-                    className={classes.imageList}
-                    rowHeight='auto'
-                    cols={matches ? 1 : 2}
-                    gap={16}
-                  >
-                    {contactTypes.map(({ label, Icon, type, link }, index) => (
-                      <ImageListItem
-                        key={label}
-                        classes={{
-                          item: classes.imageListItemItem,
-                        }}
-                        className={classes.imageListItem}
-                      >
-                        <Button
-                          className={classes.button}
-                          classes={{
-                            startIcon: classes.startIcon,
-                          }}
-                          variant={index ? 'outlined' : 'contained'}
-                          color={index === activeTab ? 'secondary' : 'primary'}
-                          startIcon={
-                            <Icon
-                              className={classnames(
-                                index === activeTab && classes.activeIcon
-                              )}
-                            />
-                          }
-                          size='large'
-                          href={getHref(type, link)}
-                          target={type === 'link' ? '_blank' : ''}
-                        >
-                          {label}
-                        </Button>
-                      </ImageListItem>
-                    ))}
-                  </ImageList>
-                </Box>
-              </Grid>
-              <Grid item xs={12} sm={5}>
-                <Box className={classes.formTitle}>提交意見或查詢</Box>
-                <Formik
-                  initialValues={initialValues}
-                  validationSchema={schema}
-                  onSubmit={throttle(async (values, { resetForm }) => {
-                    if (!reCapStatus) {
-                      return setReCapStatus(1)
-                    }
-                    if (loading) return
-                    try {
-                      setLoading(true)
-                      await handleFetch(values)
-                      toast.success('已成功提交')
-                      resetForm()
-                    } catch (error) {
-                      toast.error(error)
-                    }
-                    setLoading(false)
-                    setReCapStatus(0)
-                  }, 1000)}
-                >
-                  {(props) => {
-                    const {
-                      values,
-                      handleSubmit,
-                      handleChange,
-                      touched,
-                      errors,
-                      setFieldValue,
-                    } = props
-                    const isError = (field) =>
-                      touched[field] && Boolean(errors[field])
-                    const errorText = (field) =>
-                      touched[field] &&
-                      errors[field] && (
-                        <FormHelperText>{errors[field]}</FormHelperText>
-                      )
-
-                    const CusCancelButton = ({ field }) => (
-                      <CancelButton
-                        values={values}
-                        touched={touched}
-                        errors={errors}
-                        field={field}
-                        onCancel={(field) => setFieldValue(field, '')}
-                      />
-                    )
-                    return (
-                      <form
-                        onSubmit={handleSubmit}
-                        className={classes.form}
-                        noValidate
-                      >
-                        <Box mb={4}>
-                          <FormControl
-                            fullWidth
-                            error={isError('companyName')}
-                            required
+                  <Box px={matches ? 3 : 0} mt={matches ? 2 : 1.5}>
+                    <ImageList
+                      className={classes.imageList}
+                      rowHeight='auto'
+                      cols={matches ? 1 : 2}
+                      gap={16}
+                    >
+                      {contactTypes.map(
+                        ({ label, Icon, type, link }, index) => (
+                          <ImageListItem
+                            key={label}
+                            classes={{
+                              item: classes.imageListItemItem,
+                            }}
+                            className={classes.imageListItem}
                           >
-                            <EFormLabel>公司名稱/姓名</EFormLabel>
-                            <EInputBase
-                              id='company-ame'
-                              name='companyName'
-                              margin='none'
-                              value={values.companyName}
-                              onChange={handleChange}
-                              placeholder={
-                                isError('companyName')
-                                  ? ''
-                                  : '請輸入公司名稱/姓名'
+                            <Button
+                              className={classes.button}
+                              classes={{
+                                startIcon: classes.startIcon,
+                              }}
+                              variant={index ? 'outlined' : 'contained'}
+                              color={
+                                index === activeTab ? 'secondary' : 'primary'
                               }
-                              type='text'
-                              endAdornment={
-                                <CusCancelButton field='companyName' />
+                              startIcon={
+                                <Icon
+                                  className={classnames(
+                                    index === activeTab && classes.activeIcon
+                                  )}
+                                />
                               }
-                            />
-                            {errorText('companyName')}
-                          </FormControl>
-                        </Box>
-                        <Box mb={4}>
-                          <Box mb={1}>
-                            <EFormLabel>電話號碼</EFormLabel>
-                          </Box>
-                          <Box display='flex'>
-                            <Box mr={0.5}>
-                              <FormControl
-                                className={classes.dialingCode}
-                                required
-                              >
-                                <ESelect
-                                  labelId='dialingCode-select-label'
-                                  id='dialingCode-type-select'
-                                  name='dialingCode'
-                                  value={values.dialingCode}
-                                  onChange={handleChange}
-                                  displayEmpty
-                                >
-                                  {DIALING_CODES.map((dialingCode) => (
-                                    <MenuItem
-                                      key={dialingCode.value}
-                                      value={dialingCode.value}
-                                    >
-                                      {dialingCode.label}
-                                    </MenuItem>
-                                  ))}
-                                </ESelect>
-                              </FormControl>
-                            </Box>
-                            <FormControl fullWidth error={isError('phone')}>
+                              size='large'
+                              href={getHref(type, link)}
+                              target={type === 'link' ? '_blank' : ''}
+                            >
+                              {label}
+                            </Button>
+                          </ImageListItem>
+                        )
+                      )}
+                    </ImageList>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                  <Box className={classes.formTitle}>
+                    {t('contact_us.form_title')}
+                  </Box>
+                  <Formik
+                    initialValues={initialValues}
+                    validationSchema={schema}
+                    onSubmit={throttle(async (values, { resetForm }) => {
+                      if (!reCapStatus) {
+                        return setReCapStatus(1)
+                      }
+                      if (loading) return
+                      try {
+                        setLoading(true)
+                        await handleFetch(values)
+                        toast.success(t('status.submit.success'))
+                        resetForm()
+                      } catch (error) {
+                        toast.error(error)
+                      }
+                      setLoading(false)
+                      setReCapStatus(0)
+                    }, 1000)}
+                  >
+                    {(props) => {
+                      const {
+                        values,
+                        handleSubmit,
+                        handleChange,
+                        touched,
+                        errors,
+                        setFieldValue,
+                      } = props
+                      const isError = (field) =>
+                        touched[field] && Boolean(errors[field])
+                      const errorText = (field) =>
+                        touched[field] &&
+                        errors[field] && (
+                          <FormHelperText>{errors[field]}</FormHelperText>
+                        )
+
+                      const CusCancelButton = ({ field }) => (
+                        <CancelButton
+                          values={values}
+                          touched={touched}
+                          errors={errors}
+                          field={field}
+                          onCancel={(field) => setFieldValue(field, '')}
+                        />
+                      )
+                      return (
+                        <form
+                          onSubmit={handleSubmit}
+                          className={classes.form}
+                          noValidate
+                        >
+                          <Box mb={4}>
+                            <FormControl
+                              fullWidth
+                              error={isError('companyName')}
+                              required
+                            >
+                              <EFormLabel>{t('form.company.label')}</EFormLabel>
                               <EInputBase
-                                id='phone'
-                                name='phone'
+                                id='company-ame'
+                                name='companyName'
                                 margin='none'
-                                value={values.phone}
+                                value={values.companyName}
                                 onChange={handleChange}
-                                placeholder='9876 5432'
-                                endAdornment={<CusCancelButton field='phone' />}
+                                placeholder={
+                                  isError('companyName')
+                                    ? ''
+                                    : t('form.placeholder.enter', {
+                                        field: t('form.company.label'),
+                                      })
+                                }
+                                type='text'
+                                endAdornment={
+                                  <CusCancelButton field='companyName' />
+                                }
                               />
-                              {errorText('phone')}
+                              {errorText('companyName')}
                             </FormControl>
                           </Box>
-                        </Box>
-                        <Box mb={4}>
-                          <FormControl
-                            fullWidth
-                            error={isError('email')}
-                            required
-                          >
-                            <EFormLabel>電郵</EFormLabel>
-                            <EInputBase
-                              id='email'
-                              name='email'
-                              margin='none'
-                              value={values.email}
-                              onChange={handleChange}
-                              placeholder={
-                                isError('email')
-                                  ? ''
-                                  : 'example@take2health.com'
-                              }
-                              endAdornment={<CusCancelButton field='email' />}
-                            />
-
-                            {errorText('email')}
-                          </FormControl>
-                        </Box>
-                        <Box mb={4}>
-                          <FormControl fullWidth>
-                            <EFormLabel>訊息</EFormLabel>
-                            <TextareaAutosize
-                              className={classes.textarea}
-                              minRows={6}
-                              aria-label='message'
-                              name='message'
-                              onChange={handleChange}
-                              value={values.message}
-                              placeholder='請輸入你的訊息'
-                            />
-                          </FormControl>
-                          <FormHelperText>
-                            <Box color='primary.main' component='span'>
-                              *必填資料
+                          <Box mb={4}>
+                            <Box mb={1}>
+                              <EFormLabel>{t('form.phone.label')}</EFormLabel>
                             </Box>
-                          </FormHelperText>
-                        </Box>
-                        <Button
-                          type='submit'
-                          fullWidth
-                          variant='contained'
-                          color='secondary'
-                          disabled={reCapStatus === 1}
-                        >
-                          {loading ? (
-                            <CircularProgress color='inherit' size={24} />
-                          ) : (
-                            '提交'
+                            <Box display='flex'>
+                              <Box mr={0.5}>
+                                <FormControl
+                                  className={classes.dialingCode}
+                                  required
+                                >
+                                  <ESelect
+                                    labelId='dialingCode-select-label'
+                                    id='dialingCode-type-select'
+                                    name='dialingCode'
+                                    value={values.dialingCode}
+                                    onChange={handleChange}
+                                    displayEmpty
+                                  >
+                                    {DIALING_CODES.map((dialingCode) => (
+                                      <MenuItem
+                                        key={dialingCode.value}
+                                        value={dialingCode.value}
+                                      >
+                                        {dialingCode.label}
+                                      </MenuItem>
+                                    ))}
+                                  </ESelect>
+                                </FormControl>
+                              </Box>
+                              <FormControl fullWidth error={isError('phone')}>
+                                <EInputBase
+                                  id='phone'
+                                  name='phone'
+                                  margin='none'
+                                  value={values.phone}
+                                  onChange={handleChange}
+                                  placeholder={t('form.phone.placeholder')}
+                                  endAdornment={
+                                    <CusCancelButton field='phone' />
+                                  }
+                                />
+                                {errorText('phone')}
+                              </FormControl>
+                            </Box>
+                          </Box>
+                          <Box mb={4}>
+                            <FormControl
+                              fullWidth
+                              error={isError('email')}
+                              required
+                            >
+                              <EFormLabel>{t('form.email.label')}</EFormLabel>
+                              <EInputBase
+                                id='email'
+                                name='email'
+                                margin='none'
+                                value={values.email}
+                                onChange={handleChange}
+                                placeholder={
+                                  isError('email')
+                                    ? ''
+                                    : 'example@take2health.com'
+                                }
+                                endAdornment={<CusCancelButton field='email' />}
+                              />
+
+                              {errorText('email')}
+                            </FormControl>
+                          </Box>
+                          <Box mb={4}>
+                            <FormControl fullWidth>
+                              <EFormLabel>{t('form.message.label')}</EFormLabel>
+                              <TextareaAutosize
+                                className={classes.textarea}
+                                minRows={6}
+                                aria-label='message'
+                                name='message'
+                                onChange={handleChange}
+                                value={values.message}
+                                placeholder={t('form.message.placeholder')}
+                              />
+                            </FormControl>
+                            <FormHelperText>
+                              <Box color='primary.main' component='span'>
+                                {t('form.message.validation.required')}
+                              </Box>
+                            </FormHelperText>
+                          </Box>
+                          <Button
+                            type='submit'
+                            fullWidth
+                            variant='contained'
+                            color='secondary'
+                            disabled={reCapStatus === 1}
+                          >
+                            {loading ? (
+                              <CircularProgress color='inherit' size={24} />
+                            ) : (
+                              t('common.submit')
+                            )}
+                          </Button>
+                          {reCapStatus > 0 && (
+                            <ReCaptcha
+                              onChange={(value) => setReCapStatus(value)}
+                            ></ReCaptcha>
                           )}
-                        </Button>
-                        {reCapStatus > 0 && (
-                          <ReCaptcha
-                            onChange={(value) => setReCapStatus(value)}
-                          ></ReCaptcha>
-                        )}
-                      </form>
-                    )
-                  }}
-                </Formik>
+                        </form>
+                      )
+                    }}
+                  </Formik>
+                </Grid>
               </Grid>
-            </Grid>
-          </Container>
-        </Box>
-      </Container>
-    </Box>
+            </Container>
+          </Box>
+        </Container>
+      </Box>
+    </Layout>
   )
 }
 
 export default ContactUs
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

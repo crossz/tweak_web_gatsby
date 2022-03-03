@@ -4,6 +4,7 @@ import { EInputBase } from '@themes/components/ETextField'
 import SearchIcon from '@images/icons/search.svg'
 import CancelIcon from '@images/icons/cancel.svg'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Search = ({ data, setSearchResult, isFAQ }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const [query, setQuery] = useState('')
 
   useEffect(() => {
@@ -64,7 +66,7 @@ const Search = ({ data, setSearchResult, isFAQ }) => {
     <form id='search-box' noValidate onSubmit={handleSearchSubmit}>
       <EInputBase
         className={classes.searchInput}
-        placeholder='搜尋'
+        placeholder={t('form.placeholder.search')}
         value={query}
         onChange={handleSearch}
         startAdornment={

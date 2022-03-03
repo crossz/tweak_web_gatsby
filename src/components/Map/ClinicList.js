@@ -17,6 +17,9 @@ import CollapseIcon from '@images/icons/collapse.svg'
 import PhoneIcon from '@images/icons/phone.svg'
 import LocationIcon from '@images/icons/location.svg'
 import { orderBy } from 'lodash-es'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
+import { REGIONS } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -142,12 +145,17 @@ const MapAccordionDetails = withStyles((theme) => ({
 
 const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const classes = useStyles()
+  const { t } = useI18next()
+  const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   const _handleChange = (activeArea) => (e, isExpanded) => {
     onChange && onChange(isExpanded ? activeArea : '')
   }
+  const translateRegion = (region) =>
+    REGIONS[region] ? t(REGIONS[region]) : region
+
   return (
     <Box className={classes.root}>
       {Object.keys(clinics)?.map((area, index) => (
@@ -165,7 +173,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
               )
             }
           >
-            {curProvince}·{area}
+            {translateRegion(curProvince)}·{translateRegion(area)}
           </MapAccordionSummary>
           <MapAccordionDetails>
             <Box className={classes.list}>
@@ -174,10 +182,10 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                   <Box className={classes.item} key={index}>
                     <Grid container spacing={0}>
                       <Grid item xs={3} sm={1}>
-                        {clinic.province}
+                        {translateRegion(clinic.province)}
                       </Grid>
                       <Grid item xs={9} sm={2}>
-                        {clinic.area}
+                        {translateRegion(clinic.area)}
                       </Grid>
                       <Grid item xs={12} sm={6}>
                         <Box width='100%'>
@@ -186,7 +194,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                             mt={matches ? 1.5 : 0}
                             mb={matches ? 1 : 1.5}
                           >
-                            {clinic.nameHk}
+                            {tB('name', clinic)}
                           </Box>
                           <Box
                             color='text.primary'
@@ -207,7 +215,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                               <Box className={classes.infoIcon}>
                                 <LocationIcon></LocationIcon>
                               </Box>
-                              <Box>{clinic.addressHk}</Box>
+                              <Box>{tB('address', clinic)}</Box>
                             </Box>
                           </Box>
                         </Box>
@@ -222,7 +230,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                             href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
                             target='_blank'
                           >
-                            立即預約
+                            {t('common.book_now')}
                           </Button>
                         )}
                       </Grid>

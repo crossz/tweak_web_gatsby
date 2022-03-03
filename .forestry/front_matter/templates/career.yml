@@ -2,28 +2,34 @@
 label: Career
 hide_body: false
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: title
   type: text
   config:
     required: true
-  label: career
+  label: Career
 - name: type
   type: select
   default: ''
   config:
     required: true
     options:
-    - 商業戰略合作
-    - DITE
+    - business_strategic_cooperation
+    - dite
     source:
       type: simple
       section: 
       file: 
       path: 
-  label: department
+  label: Department
+  description: "<em>商業戰略合作business_strategic_coperation</em>"
 - name: date
   type: datetime
-  label: date
+  label: Date
   config:
     required: true
     date_format: 
@@ -35,14 +41,17 @@ fields:
   config:
     required: true
     options:
-    - 所有地區
-    - 香港特別行政區
-    - 中國內地
+    - all
+    - mainland_china
+    - hongkong_special_administrative_region
     source:
       type: simple
       section: 
       file: 
       path: 
-  label: region
+  label: Region
+  description: "<em>所有地區all<br>中國大陸mainland_china<br>香港特別行政區hongkong_special_administrative_region</em>"
 pages:
-- content/join-us/customer-service-specialist.md
+- content/join-us/associate-medical-technologist-amt.md
+- content/join-us/senior-specialist-brands-communications-and-creative-marketing.md
+- content/join-us/take2-health-collaborating-with-cxa-to-provide-innovative-employee-benefits.md

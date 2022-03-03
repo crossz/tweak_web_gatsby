@@ -13,15 +13,17 @@ import {
 import Box from '@material-ui/core/Box'
 import { StaticImage } from 'gatsby-plugin-image'
 import RightIcon from '@images/icons/right.svg'
-import { Link } from 'gatsby'
+import Link from '@components/Link'
 import ArrowIcon from '@images/icons/arrow.svg'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import classnames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import Layout from '@layouts/Layout'
 
 const steps = [
   {
-    label: '諮詢醫生意見',
+    label: 'products_and_services.take2_prophecy.process.0',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_01.svg'
@@ -31,7 +33,7 @@ const steps = [
     ),
   },
   {
-    label: '採集血液樣本',
+    label: 'products_and_services.take2_prophecy.process.1',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_02.svg'
@@ -41,7 +43,7 @@ const steps = [
     ),
   },
   {
-    label: '送到本港實驗室\n進行分析',
+    label: 'products_and_services.take2_prophecy.process.2',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_03.svg'
@@ -51,7 +53,7 @@ const steps = [
     ),
   },
   {
-    label: '3-7個工作天內有\n篩查結果',
+    label: 'products_and_services.take2_prophecy.process.3',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_04.svg'
@@ -61,7 +63,7 @@ const steps = [
     ),
   },
   {
-    label: '醫生為病人分析報告',
+    label: 'products_and_services.take2_prophecy.process.4',
     icon: (
       <StaticImage
         src='../assets/images/icons/prophecy/step_05.svg'
@@ -74,15 +76,15 @@ const steps = [
 
 const reports = [
   {
-    result: '結果為陽性*',
-    suggestion: '諮詢耳鼻喉科專家',
-    mark: '*陽性： 檢測到血漿中存在「人類和EB病毒的DNA與鼻咽癌相關之特徵」，詳情請向醫護人員查詢。',
+    result: 'products_and_services.take2_prophecy.reports.0.result',
+    suggestion: 'products_and_services.take2_prophecy.reports.0.suggestion',
+    mark: 'products_and_services.take2_prophecy.reports.0.mark',
     color: '#C8002E',
   },
   {
-    result: '結果為陰性**',
-    suggestion: '進行年度檢查',
-    mark: '**陰性： 檢測不到血漿中存在「人類和EB病毒的DNA與鼻咽癌相關之特徵」，詳情請向醫護人員查詢。',
+    result: 'products_and_services.take2_prophecy.reports.1.result',
+    suggestion: 'products_and_services.take2_prophecy.reports.1.suggestion',
+    mark: 'products_and_services.take2_prophecy.reports.1.mark',
     color: '#00AA82',
   },
 ]
@@ -331,200 +333,206 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2Prophecy = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
-    <Container className={classes.root} disableGutters maxWidth='xl'>
-      <Box className={classes.wrapper}>
-        <Container className={classes.content} disableGutters maxWidth='md'>
-          <Box className={classes.title}>
-            <Typography variant='h4' color='primary'>
-              Take2 Prophecy™ 早期鼻咽癌篩查
-            </Typography>
-            <Box mt={matches ? 2.5 : 3}>
-              <Typography
-                variant={matches ? 'body2' : 'body1'}
-                color='textPrimary'
-              >
-                Take2 Prophecy™
-                早期鼻咽癌篩查，適用群體包括常規體檢者、無徵狀人士及有疑似徵狀人士等。
+    <Layout>
+      <Container className={classes.root} disableGutters maxWidth='xl'>
+        <Box className={classes.wrapper}>
+          <Container className={classes.content} disableGutters maxWidth='md'>
+            <Box className={classes.title}>
+              <Typography variant='h4' color='primary'>
+                {t('products_and_services.take2_prophecy.title')}
               </Typography>
-            </Box>
-          </Box>
-          <Box className={classes.sectionOneWrapper}>
-            <Box className={classes.bannerWrapper}>
-              <StaticImage
-                className={classes.bannerBg}
-                src='../assets/images/products_services_banner_bg.jpg'
-                alt='homepage banner mobile'
-              ></StaticImage>
-              <Box className={classes.sectionOneBanner}>篩查流程</Box>
-            </Box>
-            <Box className={classes.sectionOneContent}>
-              <Box className={classes.stepsWrapper}>
-                {steps.map((step, index) => {
-                  let curStep
-                  if (matches) {
-                    switch (index) {
-                      case 2:
-                        curStep = steps[3]
-                        break
-                      case 3:
-                        curStep = steps[2]
-                        break
-                      default:
-                        curStep = step
-                        break
-                    }
-                  } else {
-                    curStep = step
-                  }
-                  return (
-                    <React.Fragment key={index}>
-                      <Box
-                        className={classnames(classes.stepItem, {
-                          [classes.stepFiveItem]: index === 4,
-                        })}
-                      >
-                        <Box className={classes.stepIcon}>{curStep.icon}</Box>
-                        <Box className={classes.stepLabel}>
-                          {!(index === 4 && matches) && curStep.label}
-                          <Hidden smUp>
-                            {index < steps?.length - 1 && (
-                              <ArrowIcon
-                                className={classnames(classes.arrowIcon, {
-                                  [classes.stepOneArrow]: index === 0,
-                                  [classes.stepTwoArrow]: index === 1,
-                                  [classes.stepThreeArrow]: index === 2,
-                                  [classes.stepFourArrow]: index === 3,
-                                })}
-                              ></ArrowIcon>
-                            )}
-                          </Hidden>
-                        </Box>
-                      </Box>
-                      <Hidden xsDown>
-                        {index < steps?.length - 1 && (
-                          <ArrowIcon className={classes.arrowIcon}></ArrowIcon>
-                        )}
-                      </Hidden>
-                    </React.Fragment>
-                  )
-                })}
-              </Box>
-              <Box
-                fontWeight={matches ? 'fontWeightBold' : 'fontWeightMedium'}
-                textAlign='center'
-                mb={matches ? 4 : 3}
-                mt={matches ? 1 : 8}
-                color='primary.main'
-                fontSize='body1.fontSize'
-              >
-                醫生為病人分析報告：
-              </Box>
-              <ImageList
-                rowHeight='auto'
-                cols={matches ? 1 : 2}
-                gap={matches ? 16 : 24}
-              >
-                {reports.map((report, index) => (
-                  <ImageListItem
-                    key={index}
-                    classes={{
-                      item: classes.imageListItemItem,
-                    }}
-                    className={classes.imageListItem}
-                  >
-                    <Box className={classes.reportItem}>
-                      <Box className={classes.reportTop}>
-                        <Box
-                          className={classes.reportType}
-                          style={{
-                            color: report.color,
-                          }}
-                        >
-                          {report.result}
-                          <RightIcon
-                            className={classnames(
-                              classes.rightIcon,
-                              index === 1 && classes.greenRightIcon
-                            )}
-                          ></RightIcon>
-                        </Box>
-                        {report.suggestion}
-                      </Box>
-                      {report.mark}
-                    </Box>
-                  </ImageListItem>
-                ))}
-              </ImageList>
-              <Box className={classes.reportTip}>
-                注意事項 <br />
-                此篩查不建議已經進行器官移植人士、已患有其他癌症、自身免疫系統疾病、正接受全身性糖皮質激素及免疫抑制治療的人士使用。如有任何疑問，請向專業醫護人員內詢。
-              </Box>
-            </Box>
-          </Box>
-          <Grid container>
-            <Grid item xs={12} sm={6}>
-              <StaticImage
-                className={classes.prophecyImgWrapper}
-                imgClassName={classes.prophecyImg}
-                src='../assets/images/take2_prophecy_01.jpg'
-                alt='take2 prophecy 01'
-              ></StaticImage>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box ml={matches ? 0 : 5}>
-                <Typography variant='h5' component='div'>
-                  <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
-                    預約篩查
-                  </Box>
-                  <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
-                    <Typography
-                      variant={matches ? 'body2' : 'body1'}
-                      color='textPrimary'
-                    >
-                      想知道自己有沒有患上鼻咽癌？
-                      <Hidden smUp>
-                        <br />
-                      </Hidden>
-                      不要猶豫，立即行動！
-                    </Typography>
-                  </Box>
+              <Box mt={matches ? 2.5 : 3}>
+                <Typography
+                  variant={matches ? 'body2' : 'body1'}
+                  color='textPrimary'
+                >
+                  {t('products_and_services.take2_prophecy.detail')}
                 </Typography>
-                <Grid className={classes.btnWrapper} container spacing={2}>
-                  <Grid item xs={matches ? 6 : 'auto'}>
-                    <Button
-                      variant='outlined'
-                      color='primary'
-                      href={process.env.GATSBY_SITE_URL}
-                      target='_blank'
-                      fullWidth={matches}
-                      className={classes.btn}
-                    >
-                      立即預約
-                    </Button>
-                  </Grid>
-                  <Grid item xs={matches ? 6 : 'auto'}>
-                    <Link to='/service-location/'>
-                      <Button
-                        className={classes.btn}
-                        variant='contained'
-                        color='secondary'
-                        fullWidth={matches}
-                      >
-                        篩查服務點
-                      </Button>
-                    </Link>
-                  </Grid>
-                </Grid>
               </Box>
+            </Box>
+            <Box className={classes.sectionOneWrapper}>
+              <Box className={classes.bannerWrapper}>
+                <StaticImage
+                  className={classes.bannerBg}
+                  src='../assets/images/products_services_banner_bg.jpg'
+                  alt='homepage banner mobile'
+                ></StaticImage>
+                <Box className={classes.sectionOneBanner}>
+                  {t('products_and_services.take2_prophecy.detection_process')}
+                </Box>
+              </Box>
+              <Box className={classes.sectionOneContent}>
+                <Box className={classes.stepsWrapper}>
+                  {steps.map((step, index) => {
+                    let curStep
+                    if (matches) {
+                      switch (index) {
+                        case 2:
+                          curStep = steps[3]
+                          break
+                        case 3:
+                          curStep = steps[2]
+                          break
+                        default:
+                          curStep = step
+                          break
+                      }
+                    } else {
+                      curStep = step
+                    }
+                    return (
+                      <React.Fragment key={index}>
+                        <Box
+                          className={classnames(classes.stepItem, {
+                            [classes.stepFiveItem]: index === 4,
+                          })}
+                        >
+                          <Box className={classes.stepIcon}>{curStep.icon}</Box>
+                          <Box className={classes.stepLabel}>
+                            {!(index === 4 && matches) && t(curStep.label)}
+                            <Hidden smUp>
+                              {index < steps?.length - 1 && (
+                                <ArrowIcon
+                                  className={classnames(classes.arrowIcon, {
+                                    [classes.stepOneArrow]: index === 0,
+                                    [classes.stepTwoArrow]: index === 1,
+                                    [classes.stepThreeArrow]: index === 2,
+                                    [classes.stepFourArrow]: index === 3,
+                                  })}
+                                ></ArrowIcon>
+                              )}
+                            </Hidden>
+                          </Box>
+                        </Box>
+                        <Hidden xsDown>
+                          {index < steps?.length - 1 && (
+                            <ArrowIcon
+                              className={classes.arrowIcon}
+                            ></ArrowIcon>
+                          )}
+                        </Hidden>
+                      </React.Fragment>
+                    )
+                  })}
+                </Box>
+                <Box
+                  fontWeight={matches ? 'fontWeightBold' : 'fontWeightMedium'}
+                  textAlign='center'
+                  mb={matches ? 4 : 3}
+                  mt={matches ? 1 : 8}
+                  color='primary.main'
+                  fontSize='body1.fontSize'
+                >
+                  {t('products_and_services.take2_prophecy.process.4')}:
+                </Box>
+                <ImageList
+                  rowHeight='auto'
+                  cols={matches ? 1 : 2}
+                  gap={matches ? 16 : 24}
+                >
+                  {reports.map((report, index) => (
+                    <ImageListItem
+                      key={index}
+                      classes={{
+                        item: classes.imageListItemItem,
+                      }}
+                      className={classes.imageListItem}
+                    >
+                      <Box className={classes.reportItem}>
+                        <Box className={classes.reportTop}>
+                          <Box
+                            className={classes.reportType}
+                            style={{
+                              color: report.color,
+                            }}
+                          >
+                            {t(report.result)}
+                            <RightIcon
+                              className={classnames(
+                                classes.rightIcon,
+                                index === 1 && classes.greenRightIcon
+                              )}
+                            ></RightIcon>
+                          </Box>
+                          {t(report.suggestion)}
+                        </Box>
+                        {t(report.mark)}
+                      </Box>
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+                <Box className={classes.reportTip}>
+                  {t('common.notice')} <br />
+                  {t('products_and_services.take2_prophecy.notice')}
+                </Box>
+              </Box>
+            </Box>
+            <Grid container>
+              <Grid item xs={12} sm={6}>
+                <StaticImage
+                  className={classes.prophecyImgWrapper}
+                  imgClassName={classes.prophecyImg}
+                  src='../assets/images/take2_prophecy_01.jpg'
+                  alt='take2 prophecy 01'
+                ></StaticImage>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Box ml={matches ? 0 : 5}>
+                  <Typography variant='h5' component='div'>
+                    <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
+                      {t('common.book_detection')}
+                    </Box>
+                    <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
+                      <Typography
+                        variant={matches ? 'body2' : 'body1'}
+                        color='textPrimary'
+                      >
+                        {t('products_and_services.take2_prophecy.do_you_have')}
+                        <Hidden smUp>
+                          <br />
+                        </Hidden>
+                        {t('products_and_services.take2_prophecy.action')}
+                      </Typography>
+                    </Box>
+                  </Typography>
+                  <Grid className={classes.btnWrapper} container spacing={2}>
+                    <Grid item xs={matches ? 6 : 'auto'}>
+                      <Button
+                        variant='outlined'
+                        color='primary'
+                        href={process.env.GATSBY_SITE_URL}
+                        target='_blank'
+                        fullWidth={matches}
+                        className={classes.btn}
+                      >
+                        {t('common.book_now')}
+                      </Button>
+                    </Grid>
+                    <Grid item xs={matches ? 6 : 'auto'}>
+                      <Link to='/service-location/'>
+                        <Button
+                          className={classes.btn}
+                          variant='contained'
+                          color='secondary'
+                          fullWidth={matches}
+                        >
+                          {t('common.service_location')}
+                        </Button>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
-    </Container>
+          </Container>
+        </Box>
+      </Container>
+    </Layout>
   )
 }
 

@@ -36,6 +36,7 @@ import Header from './Header'
 import Annotate from './Annotate'
 import FlipCardsSwiper from './FlipCardsSwiper'
 import { Link as GatsbyLink } from 'gatsby'
+import { PROMOTION_CODE } from '@utils/constant'
 
 import {
   menuListData,
@@ -797,7 +798,7 @@ const CampaignPage = () => {
                   *先登記成為會員，在付款頁面輸入
                   <br />
                   <Box color='secondary.main' component='span'>
-                    迎新優惠碼NEW330
+                    迎新優惠碼{PROMOTION_CODE}
                   </Box>
                   即享優惠價$1,870
                   <br />
@@ -849,7 +850,7 @@ const CampaignPage = () => {
                 *先登記成為會員，在付款頁面輸入
                 <br />
                 <Box color='secondary.main' component='span'>
-                  迎新優惠碼NEW330
+                  迎新優惠碼{PROMOTION_CODE}
                 </Box>
                 即享優惠價$1,870
                 <br />
@@ -1137,7 +1138,7 @@ const CampaignPage = () => {
                   *先登記成為會員，在付款頁面輸入
                   <br />
                   <Box color='secondary.main' component='span'>
-                    迎新優惠碼NEW330
+                    迎新優惠碼{PROMOTION_CODE}
                   </Box>
                   即享優惠價$1,870
                   <br />
@@ -1189,7 +1190,7 @@ const CampaignPage = () => {
                 *先登記成為會員，在付款頁面輸入
                 <br />
                 <Box color='secondary.main' component='span'>
-                  迎新優惠碼NEW330
+                  迎新優惠碼{PROMOTION_CODE}
                 </Box>
                 即享優惠價$1,870
                 <br />

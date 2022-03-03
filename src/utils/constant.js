@@ -1,6 +1,6 @@
 import { MOBILE_REGEX_HK, MOBILE_REGEX_CN, MOBILE_REGEX_MO } from './regex'
 import { keyBy } from 'lodash-es'
-
+export const PROMOTION_CODE = 'NEW330'
 export const HEADER_HEIGHT = 10.5
 export const MOBILE_HEADER_HEIGHT = 7.5
 export const POST_ASPECT_RATIO = 471 / 228
@@ -22,13 +22,12 @@ export const POST_PAGE_SIZE = 6
 
 export const DATE_FORMAT = 'yyyy-MM-dd'
 export const DATE_FORMAT_WITHOUT_CONNECT = 'yyyyMMdd'
-export const BIRTHDAY_FORMAT = 'yyyy/MM/dd'
-export const OLD_BIRTHDAY_FORMAT = 'MM.dd.yyyy'
 export const DAY_OF_WEEK = 'eeee'
 export const DATE_FORMAT_WITH_WEEK = `yyyy-MM-dd(${DAY_OF_WEEK})`
 export const DATE_FORMAT_WITH_TIME = 'yyyy-MM-dd HH:mm'
 export const DATABASE_DATE_TIME_FORMAT = 'yyyy-MM-dd HH:mm:ss'
 export const TIME_SLICE = 'HH:mm'
+export const POST_TIME_FORMAT = 'DD/MM/YYYY'
 export const DIALING_CODES = [
   {
     label: '+852',
@@ -48,54 +47,62 @@ export const DIALING_CODES = [
 ]
 
 export const POST_TYPES = [
-  { label: '所有最新動態', value: '', color: '' },
-  { label: '公司動向', value: '公司動向', color: 'supporting.supporting01' },
-  { label: '公司獎項與成就', value: '公司獎項與成就', color: 'secondary.main' },
+  { label: 'options.post_types.all_updates', value: '', color: '' },
   {
-    label: '行業資訊',
-    value: '行業資訊',
+    label: 'options.post_types.company_trends',
+    value: 'company_trends',
+    color: 'supporting.supporting01',
+  },
+  {
+    label: 'options.post_types.company_awards_and_achievements',
+    value: 'company_awards_and_achievements',
+    color: 'secondary.main',
+  },
+  {
+    label: 'options.post_types.industry_information',
+    value: 'industry_information',
     color: 'prophecySupporting.supporting01',
   },
-  // { label: '商業合作', value: '商業合作', color: 'prophecyPrimary.main' },
+  // {
+  //   label: 'options.post_types.business_cooperation',
+  //   value: 'business_cooperation',
+  //   color: 'prophecyPrimary.main',
+  // },
   {
-    label: '行政總裁分享',
-    value: '行政總裁分享',
+    label: 'options.post_types.ceo_sharing',
+    value: 'ceo_sharing',
     color: 'prophecySupporting.supporting02',
   },
 ]
 
-export const REGIONS = [
-  {
-    label: '香港',
-    value: 0,
-    districts: [
-      {
-        label: '所有地區',
-        value: '',
-      },
-      {
-        label: '香港',
-        value: 0,
-      },
-      {
-        label: '九龍',
-        value: 1,
-      },
-      {
-        label: '新界東',
-        value: 2,
-      },
-      {
-        label: '新界西',
-        value: 3,
-      },
-      {
-        label: '澳門',
-        value: 4,
-      },
-    ],
-  },
-]
+export const REGIONS = {
+  所有地區: 'options.regions.all',
+  香港: 'options.regions.hongkong',
+  澳門: 'options.regions.macao',
+  九龍西: 'options.regions.kowloon_west',
+  九龍中: 'options.regions.kowloon_central',
+  九龍東: 'options.regions.kowloon_east',
+  香港島西: 'options.regions.west_of_hongkong_island',
+  香港島東: 'options.regions.east_of_hongkong_island',
+  新界北: 'options.regions.new_territories_north',
+  新界東南: 'options.regions.southeast_new_territories',
+  新界西北: 'options.regions.northwest_new_territories',
+  新界東北: 'options.regions.northeast_new_territories',
+  新界西南: 'options.regions.southwest_new_territories',
+  其他地區: 'options.regions.other',
+}
+
+export const FAQ_TYPES = {
+  所有問題: 'options.faq_types.all',
+  篩查服務: 'options.faq_types.detection_service',
+  篩查技術: 'options.faq_types.detection_technology',
+  價錢及服務點: 'options.faq_types.price_and_service',
+  網上預約及付款流程: 'options.faq_types.book_online_and_pay_process',
+  測試需知及結果: 'options.faq_types.notes_and_result',
+  有關鼻咽癌: 'options.faq_types.about_npc',
+  'Take2 Extra Care會員計劃': 'options.faq_types.membership_program',
+  私隱及電子紀錄: 'options.faq_types.privacy_and_electronic_records',
+}
 
 const QUIZ_ANSWERS = {
   type01: ['no', 'unclear', 'yes'],
@@ -104,90 +111,88 @@ const QUIZ_ANSWERS = {
 
 export const QUIZ = [
   {
-    question: '家族成員曾否患上鼻咽癌？',
+    question: 'quiz.questions.0',
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你有否經常出現鼻水帶血或流鼻血情況？',
+    question: 'quiz.questions.1',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有否出現頸部淋巴脹大？',
+    question: 'quiz.questions.2',
     answers: QUIZ_ANSWERS.type01,
   },
   {
-    question: '你有否經常出現頭痛或單側頭痛？',
+    question: 'quiz.questions.3',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有否經常受耳鳴困擾？',
+    question: 'quiz.questions.4',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
   {
-    question: '你有否經常吸煙？',
+    question: 'quiz.questions.5',
     answers: QUIZ_ANSWERS.typeO2,
     type: 'slider',
   },
 ]
 
-export const AGES = ['20或以下', '21-30', '31-40', '41-50', '51-60', '61或以上']
-
 export const CAREER_REGIONS = [
   {
-    label: '所有地區',
+    label: 'options.career_regions.all',
     value: '',
   },
   {
-    label: '香港特別行政區',
-    value: 'hongkong',
+    label: 'options.career_regions.hongkong_special_administrative_region',
+    value: 'hongkong_special_administrative_region',
   },
   {
-    label: '中國內地',
+    label: 'options.career_regions.mainland_china',
     value: 'mainland_china',
   },
 ]
 
 export const GENDER_OPTIONS = [
   {
-    label: '男性',
+    label: 'options.gender.male',
     value: 'male',
   },
   {
-    label: '女性',
+    label: 'options.gender.female',
     value: 'female',
   },
 ]
 
 const QUIZ_ANSWER_OPTIONS = [
   {
-    label: '沒有',
+    label: 'options.quiz.no',
     value: 'no',
   },
   {
-    label: '不確定',
+    label: 'options.quiz.unclear',
     value: 'unclear',
   },
   {
-    label: '有',
+    label: 'options.quiz.yes',
     value: 'yes',
   },
   {
-    label: '從不',
+    label: 'options.quiz.never',
     value: 'never',
   },
   {
-    label: '很少',
+    label: 'options.quiz.rarely',
     value: 'rarely',
   },
   {
-    label: '間中',
+    label: 'options.quiz.sometimes',
     value: 'sometimes',
   },
   {
-    label: '經常',
+    label: 'options.quiz.often',
     value: 'often',
   },
 ]
@@ -196,7 +201,7 @@ export const QUIZ_ANSWER_KEYS = keyBy(QUIZ_ANSWER_OPTIONS, 'value')
 
 export const AGE_OPTIONS = [
   {
-    label: '20或以下',
+    label: 'options.age.20_or_below',
     value: '20_or_below',
   },
   {
@@ -216,103 +221,22 @@ export const AGE_OPTIONS = [
     value: '51_to_60',
   },
   {
-    label: '61或以上',
+    label: 'options.age.61_or_above',
     value: '61_or_above',
-  },
-]
-
-export const AREA_OPTIONS = [
-  {
-    label: '所有地區',
-    value: '',
-  },
-  {
-    label: '香港',
-    value: 'hongkong',
-  },
-  {
-    label: '九龍',
-    value: 'kowloon',
   },
 ]
 
 export const DEPARTMENT_OPTIONS = [
   {
-    label: '所有部門',
+    label: 'options.department.all',
     value: '',
   },
   {
-    label: '商業戰略合作',
+    label: 'options.department.business_strategic_cooperation',
     value: 'business_strategic_cooperation',
   },
   {
     label: 'DITE',
     value: 'dite',
-  },
-]
-
-export const PARTNERS = [
-  {
-    country: '馬來西亞',
-    name: 'Pantai Premier Pathology',
-    intro:
-      '馬來西亞規模最大的醫學診斷企業之一，隸屬全球知名醫療集團IHH Healthcare旗下。',
-    link: 'https://www.premierpathology.com.my',
-    lat: 3.8124274936333666,
-    lng: 101.60320871733128,
-  },
-  {
-    country: '菲律賓',
-    name: 'Global Medical Technologies ',
-    intro:
-      '一家位於菲律賓的醫療技術公司，主要業務為向菲律賓國內引進世界各地的先進技術，以向醫護人員、患者及消費者提供健康測試和診斷技術的選擇。',
-    link: 'https://gmtmanila.com/',
-    lat: 14.622741230780443,
-    lng: 120.9678862363281,
-  },
-  {
-    country: '台灣',
-    name: 'Yourgene Health',
-    intro:
-      '一家總部設於英國且於倫敦證交所上市的分子診斷公司，主要從事基因測序技術開發和商業化，其業務遍佈台灣、新加坡、美國及加拿大等地區。',
-    link: 'https://www.yourgene-health.com',
-    lat: 24.007028114876242,
-    lng: 121.07166512736177,
-  },
-  {
-    country: '新加坡',
-    name: 'Lifestrands Genomics',
-    intro:
-      '一家業務橫跨新加坡、馬來西亞及越南的基因科技集團，隸屬醫學診斷集團Pathology Asia Holdings旗下，其子公司GenomixLab是馬來西亞第一家獲得CAP認證的醫學實驗室。',
-    link: '',
-    lat: 1.3579294889776585,
-    lng: 103.86964607814394,
-  },
-  {
-    country: '菲律賓',
-    name: 'Pascific Laboratories',
-    intro:
-      '一家業務橫跨菲律賓、新加坡及印度的病理診斷集團，主要業務為以精準醫療為方針的病理學及分子診斷。',
-    link: 'https://www.pascific.com/',
-    lat: 14.622741230780443,
-    lng: 120.9678862363281,
-  },
-  {
-    country: '卡塔爾',
-    name: 'Tempcon',
-    intro:
-      '一家總部位於多哈的醫療器械供應商，致力為當地的私人醫療機構、公立醫療服務、連鎖診所及大型企業提供從日常消費品、試劑到高端科技型的醫療器械。',
-    link: 'https://www.tempconqatar.com/index',
-    lat: 25.310775003022403,
-    lng: 51.195632901833974,
-  },
-  {
-    country: '澳門',
-    name: 'Catalyst Bioscience',
-    intro:
-      '一家位於澳門的生物科技經銷商，致力為當地的醫療機構提供高端科技測試。',
-    link: '',
-    lat: 22.158991865767508,
-    lng: 113.57665634534713,
   },
 ]
