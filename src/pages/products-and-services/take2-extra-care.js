@@ -333,13 +333,13 @@ const useStyles = makeStyles((theme) => ({
   },
   box04Btn: {
     width: theme.spacing(20.5),
+    padding: 0,
     flexShrink: 1,
     '&:last-child': {
       marginLeft: theme.spacing(2),
     },
     [theme.breakpoints.down('xs')]: {
       width: '100%',
-      padding: 0,
     },
   },
 }))
