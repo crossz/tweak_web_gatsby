@@ -31,7 +31,7 @@ export const query = graphql`
         }
         frontmatter {
           title
-          date(formatString: "DD/MM/YYYY")
+          date
           type
           href
           cover {

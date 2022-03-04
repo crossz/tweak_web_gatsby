@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles, Box, alpha, Button, Hidden } from '@material-ui/core'
 import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,7 +75,7 @@ const CareerItem = ({ title, type, region, date, slug }) => {
       <Box className={classes.type}>
         {/* {type} */}
         <Hidden smUp>
-          <Box className={classes.date}>{date}</Box>
+          <Box className={classes.date}>{formatLocal(date)}</Box>
         </Hidden>
       </Box>
       <Box className={classes.title}>{title}</Box>
@@ -84,7 +85,7 @@ const CareerItem = ({ title, type, region, date, slug }) => {
             {t(`options.career_regions.${region}`)}
           </Box>
           <Hidden xsDown>
-            <Box className={classes.date}>{date}</Box>
+            <Box className={classes.date}>{formatLocal(date)}</Box>
           </Hidden>
         </Box>
         <Link className={classes.link} to={slug}>

@@ -1,10 +1,9 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Button } from '@material-ui/core'
 import Audio from './Audio'
 
-const shortCodes = { Audio, Button }
+const shortCodes = { Audio }
 
 const MdxLayout = ({ children }) => {
   return (

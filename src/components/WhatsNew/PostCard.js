@@ -4,6 +4,7 @@ import { makeStyles, alpha, Box } from '@material-ui/core'
 import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { formatLocal } from '@utils/moment'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -115,7 +116,7 @@ const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
               <ViewButton slug={slug}></ViewButton>
             </Box>
           ) : (
-            <Box className={classes.date}>{date}</Box>
+            <Box className={classes.date}>{formatLocal(date)}</Box>
           )}
         </Box>
       </Box>
