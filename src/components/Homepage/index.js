@@ -90,7 +90,7 @@ const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
               {t('service_location.title')}
             </Typography>
           </Box>
-          <Map></Map>
+          <Map showMap></Map>
         </Container>
       </Box>
       <Container disableGutters maxWidth='lg'>

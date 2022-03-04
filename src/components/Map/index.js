@@ -154,10 +154,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Map = () => {
+const Map = ({ showMap }) => {
   const classes = useStyles()
-  const { t, originalPath } = useI18next()
-  const isHomepage = originalPath === '/'
+  const { t } = useI18next()
   const [viewType, setViewType] = useState('list')
   const [location, setLocation] = useState([])
   const [clinics, setClinics] = useState(null)
@@ -232,11 +231,8 @@ const Map = () => {
     REGIONS[region] ? t(REGIONS[region]) : region
 
   return (
-    <Box
-      position='relative'
-      className={classnames(isHomepage && classes.mapRoot)}
-    >
-      {isHomepage ? (
+    <Box position='relative' className={classnames(showMap && classes.mapRoot)}>
+      {showMap ? (
         location?.length > 0 && (
           <ESelect
             labelId='district-select-label'
@@ -383,7 +379,7 @@ const Map = () => {
       )}
       {curClinics && loadingStatus !== 'pending' ? (
         <Box className={classes.root}>
-          {viewType === 'list' && !isHomepage ? (
+          {viewType === 'list' && !showMap ? (
             <Container maxWidth='md'>
               <ClinicList
                 clinics={curClinics}
@@ -393,7 +389,11 @@ const Map = () => {
               ></ClinicList>
             </Container>
           ) : (
-            <GoogleMap clinics={curClinics} curArea={curArea}></GoogleMap>
+            <GoogleMap
+              showMap={showMap}
+              clinics={curClinics}
+              curArea={curArea}
+            ></GoogleMap>
           )}
         </Box>
       ) : (
