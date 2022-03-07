@@ -100,7 +100,7 @@ const ClinicPaperItem = ({ date, title, detail, href, pdf }) => {
       <Link
         href={href || pdf?.publicURL}
         className={classes.link}
-        target='_blank'
+        isPdf={Boolean(pdf?.publicURL && !href)}
       >
         <Grid container>
           <Grid item sm={3}>
