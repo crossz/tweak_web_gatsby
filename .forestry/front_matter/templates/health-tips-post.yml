@@ -54,6 +54,11 @@ fields:
       path: 
   label: Type
   description: Tag of post.<br><em>健康資訊health_tip<br>專業醫護資訊professional_healthcare</em>
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
+  label: Pdf
 - name: href
   type: text
   config:
