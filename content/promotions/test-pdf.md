@@ -10,5 +10,6 @@ type: ''
 languages:
 - en
 - zh-HK
+pdf: "../images/lam_-2018_pnas_sequencing-based-counting-and-size-profiling-of.pdf"
 
 ---
