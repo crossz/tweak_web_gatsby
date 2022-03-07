@@ -39,6 +39,11 @@ fields:
       path: 
   label: Type
   description: Tag of post.
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
+  label: Pdf
 - type: textarea
   name: href
   label: Href
