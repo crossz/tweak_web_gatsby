@@ -1,1 +1,139 @@
-{}
+{
+    "cp_v2": {
+        "menu": {
+            "list": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": ""
+            },
+            "office_website": ""
+        },
+        "promotion": {
+            "title": "",
+            "price": "",
+            "tip": ""
+        },
+        "ngs_characteristic": {
+            "paragraphs": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": ""
+            },
+            "characteristics": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "symptoms": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": ""
+            },
+            "diseases": {
+                "0": "",
+                "1": "",
+                "2": ""
+            }
+        },
+        "ngs_advantage": {
+            "paragraphs": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": ""
+            },
+            "efficient_detections": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "table": {
+                "row_titles": {
+                    "0": "",
+                    "1": "",
+                    "2": ""
+                },
+                "column_titles": {
+                    "0": "",
+                    "1": ""
+                },
+                "about": "",
+                "up_to": ""
+            },
+            "advantages": {
+                "0": {
+                    "title": "",
+                    "content": ""
+                },
+                "1": {
+                    "title": "",
+                    "content": ""
+                },
+                "2": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        },
+        "ngs_progress": {
+            "paragraphs": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "steps": {
+                "0": {
+                    "title": "",
+                    "content": ""
+                },
+                "1": {
+                    "title": "",
+                    "content": ""
+                },
+                "2": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        },
+        "news": {
+            "paragraphs": {
+                "0": "",
+                "1": ""
+            }
+        },
+        "second_life": {
+            "paragraphs": {
+                "0": "",
+                "1": ""
+            }
+        },
+        "contact_and_reference": {
+            "paragraphs": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": ""
+            }
+        },
+        "footer": {
+            "paragraphs": {
+                "0": ""
+            }
+        }
+    }
+}
