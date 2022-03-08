@@ -9,7 +9,6 @@ import TitleDot from "@themes/components/TitleDot";
 import Typography from "@material-ui/core/Typography";
 import Quiz from "@components/Quiz";
 import PostSwiper from "./PostSwiper";
-import Steps from "./Steps";
 
 import { useI18next } from "gatsby-plugin-react-i18next";
 
@@ -119,7 +118,6 @@ const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
           </Container>
         </Box>
       </Container>
-      <Steps/>
       <Consult></Consult>
     </>
   );
