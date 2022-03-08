@@ -1,5 +1,6 @@
 import React from 'react'
-import { makeStyles, Box, Grid, Link } from '@material-ui/core'
+import { makeStyles, Box, Grid } from '@material-ui/core'
+import Link from '@components/Link'
 import ArrowIcon from '@images/icons/arrow.svg'
 import PdfIcon from '@images/icons/pdf.svg'
 import { formatLocal } from '@utils/moment'
