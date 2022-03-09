@@ -41,7 +41,7 @@ const Audio = ({ src, title, describe, ...rest }) => {
         {...rest}
       ></audio>
       {describe && (
-        <Box my={0.5} color='grey.600'>
+        <Box my={0.5} color='grey.800'>
           <Typography variant={isMobile ? 'body2' : 'body1'}>
             {describe}
           </Typography>
