@@ -9,12 +9,11 @@ import {
 import Typography from "@material-ui/core/Typography";
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import "swiper/swiper-bundle.min.css";
-import stepsTop from "@images/stepSection.png";
-import stepsTopM from "@images/stepSection-M.png";
-
+import { StaticImage } from "gatsby-plugin-image";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import { useI18next } from "gatsby-plugin-react-i18next";
+
 SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
@@ -26,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     top: "20%",
     left: "10%",
     [theme.breakpoints.down("xs")]: {
-      top: '10%',
-      left: '5%',
+      top: "10%",
+      left: "5%",
     },
   },
   textSub: {
@@ -43,28 +42,41 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   introductionTop: {
-    marginTop:theme.spacing(2),
+    marginTop: theme.spacing(2),
     width: theme.spacing(88),
     lineHeight: 1.5,
   },
   introductionBottom: {
-    marginTop:theme.spacing(2),
+    marginTop: theme.spacing(2),
     width: theme.spacing(88),
     lineHeight: 1.5,
   },
-  title:{
-    color:theme.palette.prophecyPrimary.light,
-    fontWeight:900,
-    marginTop:theme.spacing(2)
+  title: {
+    color: theme.palette.prophecyPrimary.light,
+    fontWeight: 900,
+    margin: theme.spacing(2, 0),
   },
-  stepsContainer:{
-    display:"inline-flex",
+  stepsContainer: {
+    background: "#FFFFFF",
+    boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
+    borderSadius: theme.spacing(2),
+    minHeight: theme.spacing(85),
+    margin: theme.spacing(0, 20),
+  },
+  iconBox: {
+    display: "inline-block",
+    height: theme.spacing(15),
+    width: theme.spacing(15),
+    border: "1px solid red",
+  },
+  step: {
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border:"1px red solid",
-    minHeight:theme.spacing(85),
-    width:"50%"
-  }
+  },
+  img: {
+    width: "100%",
+  },
 }));
 const Steps = () => {
   const { t } = useI18next();
@@ -80,48 +92,19 @@ const Steps = () => {
   return (
     <Box className={classes.root}>
       <Box className={classes.topContainer}>
-        <img src={matches ? stepsTopM : stepsTop} width="100%" />
-        <Typography variant="h5" component="div" className={classes.text}>
-          <Box
-            fontWeight="fontSize.body1"
-            color="#D4F6FF"
-            mb={1}
-            fontSize={matches ? "h5.fontSize" : "h4.fontSize"}
-          >
-            告別繁瑣{matches ? <br /> : null}迎接次世代無創抽血篩查！
-          </Box>
-          <Typography
-            variant={matches ? "h1" : "h3"}
-            className={classes.textSub}
-          >
-            <Box display="inline-block" fontSize="h3.fontSize" lineHeight="1.5">
-              簡單、便捷
-            </Box>
-            {matches ? <br /> : null}
-            <Box
-              display="inline-block"
-              fontSize="h3.fontSize"
-              ml={matches ? 0 : 2}
-              lineHeight="1.5"
-            >
-              一個
-            </Box>
-
-            <Box
-              display="inline-block"
-              fontWeight="fontSize.body1"
-              color={theme.palette.secondary.main}
-              fontSize="h3.fontSize"
-              lineHeight="1.5"
-            >
-              &nbsp;Lunch Time&nbsp;
-            </Box>
-            {matches ? <br /> : null}
-            <Box display="inline-block" fontSize="h3.fontSize" lineHeight="1.5">
-              即完成
-            </Box>
-          </Typography>
-        </Typography>
+        {matches ? (
+          <StaticImage
+            className={classes.img}
+            src="../../images/section_banner_03_mobile.jpg"
+            alt="empty"
+          ></StaticImage>
+        ) : (
+          <StaticImage
+            className={classes.img}
+            src="../../images/section_banner_03.png"
+            alt="empty"
+          ></StaticImage>
+        )}
       </Box>
       <Box className={classes.bottomContainer}>
         <Typography className={classes.introduction}>
@@ -134,8 +117,26 @@ const Steps = () => {
             Time，就近診所即能完成。想提防鼻咽癌，現在易如反掌！{" "}
           </Box>
         </Typography>
-        <Box fontSize="h5.fontSize"   textAlign="center" className={classes.title}>檢測3步</Box>
-        <Box  className={classes.stepsContainer}></Box>
+        <Box
+          fontSize="h5.fontSize"
+          textAlign="center"
+          className={classes.title}
+        >
+          檢測3步
+        </Box>
+        <Box className={classes.stepsContainer}>
+          <Box className="step">
+            <Box className={classes.iconBox}></Box>
+            <Box display="inline-block">
+              {" "}
+              <Box>網上 1 Click登記</Box>
+              <Box>
+                於Take2
+                Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
