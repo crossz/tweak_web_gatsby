@@ -61,21 +61,26 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
     borderSadius: theme.spacing(2),
     minHeight: theme.spacing(85),
-    margin: theme.spacing(0, 20),
+    margin: theme.spacing(2, 40),
   },
   iconBox: {
     display: "inline-block",
     height: theme.spacing(15),
     width: theme.spacing(15),
-    border: "1px solid red",
+    borderRadius: "50%",
   },
   step: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    paddingTop: theme.spacing(7),
   },
   img: {
     width: "100%",
+  },
+  arrowDown: {
+    marginTop:theme.spacing(4),
+    marginLeft: "50%",
   },
 }));
 const Steps = () => {
@@ -88,7 +93,6 @@ const Steps = () => {
   });
 
   const [activeSlide, setActiveSlide] = useState(0);
-
   return (
     <Box className={classes.root}>
       <Box className={classes.topContainer}>
@@ -125,14 +129,106 @@ const Steps = () => {
           檢測3步
         </Box>
         <Box className={classes.stepsContainer}>
-          <Box className="step">
-            <Box className={classes.iconBox}></Box>
+          <Box className={classes.step}>
+            <Box className={classes.iconBox}>
+              <StaticImage
+                className={classes.img}
+                src="../../images/ngs_step_01.png"
+                alt="empty"
+              ></StaticImage>
+            </Box>
             <Box display="inline-block">
-              {" "}
-              <Box>網上 1 Click登記</Box>
-              <Box>
+              <Box
+                fontSize="h5.fontSize"
+                fontWeight="700"
+                color="prophecyPrimary.main"
+                mt={-1}
+              >
+                網上
+                <Box
+                  display="inline-block"
+                  color="supporting.supporting02"
+                  fontSize="h3.fontSize"
+                  mx={1}
+                >
+                  1{" "}
+                </Box>
+                Click登記
+              </Box>
+              <Box width="300px" color="prophecyPrimary.main" fontWeight="500">
                 於Take2
                 Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約
+              </Box>
+            </Box>
+          </Box>
+          <StaticImage
+            class={classes.arrowDown}
+            src="../../images/arrowDown.jpg"
+            alt="empty"
+          ></StaticImage>
+          <Box className={classes.step}>
+            <Box className={classes.iconBox}>
+              <StaticImage
+                className={classes.img}
+                src="../../images/ngs_step_02.png"
+                alt="empty"
+              ></StaticImage>
+            </Box>
+            <Box display="inline-block">
+              <Box
+                fontSize="h5.fontSize"
+                fontWeight="700"
+                color="prophecyPrimary.main"
+                mt={-1}
+              >
+                行
+                <Box
+                  display="inline-block"
+                  color="supporting.supporting02"
+                  fontSize="h3.fontSize"
+                  mx={1}
+                >
+                  2{" "}
+                </Box>
+                步去抽血
+              </Box>
+              <Box width="300px" color="prophecyPrimary.main" fontWeight="500">
+                過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到
+              </Box>
+            </Box>
+          </Box>{" "}
+          <StaticImage
+            class={classes.arrowDown}
+            src="../../images/arrowDown.jpg"
+            alt="empty"
+          ></StaticImage>
+          <Box className={classes.step}>
+            <Box className={classes.iconBox}>
+              <StaticImage
+                className={classes.img}
+                src="../../images/ngs_step_03.png"
+                alt="empty"
+              ></StaticImage>
+            </Box>
+            <Box display="inline-block">
+              <Box
+                fontSize="h5.fontSize"
+                fontWeight="700"
+                color="prophecyPrimary.main"
+                mt={-1}
+              >
+                <Box
+                  display="inline-block"
+                  color="supporting.supporting02"
+                  fontSize="h3.fontSize"
+                  mx={1}
+                >
+                  3{" "}
+                </Box>
+                日有結果
+              </Box>
+              <Box width="300px" color="prophecyPrimary.main" fontWeight="500">
+                最快三個工作天就有結果，不再因漫長等待而「心掛掛」
               </Box>
             </Box>
           </Box>
