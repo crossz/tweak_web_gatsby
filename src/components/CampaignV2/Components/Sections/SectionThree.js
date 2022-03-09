@@ -23,19 +23,49 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     position: "absolute",
-    top: theme.spacing(15),
-    left: theme.spacing(17),
+    top: "20%",
+    left: "10%",
     [theme.breakpoints.down("xs")]: {
-      top: theme.spacing(5),
-      left: theme.spacing(2),
+      top: '10%',
+      left: '5%',
     },
   },
   textSub: {
     display: "inline-block",
     color: "#FFF",
   },
+  bottomContainer: {},
+  introduction: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  },
+  introductionTop: {
+    marginTop:theme.spacing(2),
+    width: theme.spacing(88),
+    lineHeight: 1.5,
+  },
+  introductionBottom: {
+    marginTop:theme.spacing(2),
+    width: theme.spacing(88),
+    lineHeight: 1.5,
+  },
+  title:{
+    color:theme.palette.prophecyPrimary.light,
+    fontWeight:900,
+    marginTop:theme.spacing(2)
+  },
+  stepsContainer:{
+    display:"inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    border:"1px red solid",
+    minHeight:theme.spacing(85),
+    width:"50%"
+  }
 }));
-
 const Steps = () => {
   const { t } = useI18next();
   const theme = useTheme();
@@ -44,6 +74,7 @@ const Steps = () => {
     progressRightWidth: matches ? 80 : 316,
     matches,
   });
+
   const [activeSlide, setActiveSlide] = useState(0);
 
   return (
@@ -63,7 +94,7 @@ const Steps = () => {
             variant={matches ? "h1" : "h3"}
             className={classes.textSub}
           >
-            <Box display="inline-block" fontSize="h3.fontSize">
+            <Box display="inline-block" fontSize="h3.fontSize" lineHeight="1.5">
               簡單、便捷
             </Box>
             {matches ? <br /> : null}
@@ -71,6 +102,7 @@ const Steps = () => {
               display="inline-block"
               fontSize="h3.fontSize"
               ml={matches ? 0 : 2}
+              lineHeight="1.5"
             >
               一個
             </Box>
@@ -80,15 +112,30 @@ const Steps = () => {
               fontWeight="fontSize.body1"
               color={theme.palette.secondary.main}
               fontSize="h3.fontSize"
+              lineHeight="1.5"
             >
               &nbsp;Lunch Time&nbsp;
             </Box>
             {matches ? <br /> : null}
-            <Box display="inline-block" fontSize="h3.fontSize">
+            <Box display="inline-block" fontSize="h3.fontSize" lineHeight="1.5">
               即完成
             </Box>
           </Typography>
         </Typography>
+      </Box>
+      <Box className={classes.bottomContainer}>
+        <Typography className={classes.introduction}>
+          <Box className={classes.introductionTop}>
+            聽到「癌症篩查」一詞，大家可能即時聯想到一大堆繁複程序及需要，例如請假入院、看專科醫生、抽取身體組織活檢、用上各樣大型儀器等。
+          </Box>
+          <Box className={classes.introductionBottom}>
+            別擔心！Take2 Prophecy™
+            早期鼻咽癌篩查打破過去篩查服務的局限，採用次世代醫療科技，篩查過程從此變得非常簡單，只須跟著以下檢測3步，一個Lunch
+            Time，就近診所即能完成。想提防鼻咽癌，現在易如反掌！{" "}
+          </Box>
+        </Typography>
+        <Box fontSize="h5.fontSize"   textAlign="center" className={classes.title}>檢測3步</Box>
+        <Box  className={classes.stepsContainer}></Box>
       </Box>
     </Box>
   );
