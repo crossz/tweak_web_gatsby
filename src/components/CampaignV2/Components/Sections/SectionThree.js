@@ -116,7 +116,7 @@ const Steps = () => {
       arrowDown: (
         <StaticImage
           class={classes.arrowDown}
-          src="../../images/arrowDown.jpg"
+          src="../../images/arrowDown.png"
           alt="empty"
         ></StaticImage>
       ),
@@ -136,7 +136,7 @@ const Steps = () => {
       arrowDown: (
         <StaticImage
           class={classes.arrowDown}
-          src="../../images/arrowDown.jpg"
+          src="../../images/arrowDown.png"
           alt="empty"
         ></StaticImage>
       ),
