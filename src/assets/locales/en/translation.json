@@ -36,7 +36,7 @@
         "faq": "FAQ",
         "register": "Register",
         "follow_us": "Follow Us",
-        "take2_copy_right": "©2021 Take2 Health copy right",
+        "take2_copy_right": "Copyright © 2022 Take2 Health Limited. All rights reserved.",
         "online_promotion_code": "Book Online<br/>Promo Code {{PROMOTION_CODE}}",
         "member_registration": "Member Registration",
         "take2_health": "Take2 Health Limited",
@@ -120,7 +120,7 @@
             "title": "Just one more step to get your free test result!",
             "detail": "Please type in the following information and receive the test result for free via email. Registered nurses will be in touch with you online and provide additional product and service details. You may also register to become Take2 ExtraCare member for free."
         },
-        "agreement": "I acknowledge and agree with the <1><1> and <1><1> listed in take2health.net under Take2 Health Limited.",
+        "agreement": "I acknowledge and agree with the <1>Privacy Policy</1> and <1>Personal Information Collection Statement</1> listed in take2health.net under Take2 Health Limited.",
         "direct_sign_up": "Register as a Take2 Extra Care member\n",
         "final": {
             "title": "Thanks for participating!",
