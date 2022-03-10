@@ -33,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     color: "#FFF",
   },
-  bottomContainer: {},
+  bottomContainer: {
+  },
   introduction: {
     width: "100%",
     display: "flex",
@@ -61,25 +62,33 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
     borderSadius: theme.spacing(2),
     minHeight: theme.spacing(85),
-    margin: theme.spacing(2, 40),
+    [theme.breakpoints.down("xs")]: {
+      boxShadow: "none",
+
+    },
   },
   iconBox: {
-    display: "inline-block",
     height: theme.spacing(15),
     width: theme.spacing(15),
     borderRadius: "50%",
   },
   step: {
     display: "flex",
-    flexDirection: "row",
     justifyContent: "space-evenly",
     paddingTop: theme.spacing(7),
+    flexDirection: "row",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems:'center',
+      textAlign:"center"
+    },
   },
   img: {
+    minHeight: theme.spacing(10),
     width: "100%",
   },
   arrowDown: {
-    marginTop:theme.spacing(4),
+    marginTop: theme.spacing(4),
     marginLeft: "50%",
   },
 }));
@@ -128,8 +137,11 @@ const Steps = () => {
         >
           檢測3步
         </Box>
-        <Box className={classes.stepsContainer}>
-          <Box className={classes.step}>
+        <Box
+          className={classes.stepsContainer}
+          margin={matches ? theme.spacing(0, 0) : theme.spacing(2, 40)}
+        >
+          <Box className={classes.step} >
             <Box className={classes.iconBox}>
               <StaticImage
                 className={classes.img}
@@ -137,7 +149,7 @@ const Steps = () => {
                 alt="empty"
               ></StaticImage>
             </Box>
-            <Box display="inline-block">
+            <Box>
               <Box
                 fontSize="h5.fontSize"
                 fontWeight="700"
@@ -166,7 +178,9 @@ const Steps = () => {
             src="../../images/arrowDown.jpg"
             alt="empty"
           ></StaticImage>
-          <Box className={classes.step}>
+          <Box
+            className={classes.step}
+          >
             <Box className={classes.iconBox}>
               <StaticImage
                 className={classes.img}
@@ -202,7 +216,9 @@ const Steps = () => {
             src="../../images/arrowDown.jpg"
             alt="empty"
           ></StaticImage>
-          <Box className={classes.step}>
+          <Box
+            className={classes.step}
+          >
             <Box className={classes.iconBox}>
               <StaticImage
                 className={classes.img}
