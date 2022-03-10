@@ -192,7 +192,7 @@ const Steps = () => {
         </Box>
         <Box
           className={classes.stepsContainer}
-          margin={matches ? theme.spacing(0, 0) : theme.spacing(2, 40)}
+          margin={matches ? theme.spacing(0, 0) : "0 20%"}
         >
           {steps.map((item, index) => (
             <Box>
