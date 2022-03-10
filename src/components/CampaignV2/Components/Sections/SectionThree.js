@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   stepsContainer: {
     background: "#FFFFFF",
     boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
-    borderSadius: theme.spacing(2),
+    borderRadius: theme.spacing(2),
     minHeight: theme.spacing(85),
     [theme.breakpoints.down("xs")]: {
       boxShadow: "none",
