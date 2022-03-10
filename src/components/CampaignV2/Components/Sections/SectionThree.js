@@ -33,8 +33,7 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     color: "#FFF",
   },
-  bottomContainer: {
-  },
+  bottomContainer: {},
   introduction: {
     width: "100%",
     display: "flex",
@@ -64,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     minHeight: theme.spacing(85),
     [theme.breakpoints.down("xs")]: {
       boxShadow: "none",
-
     },
   },
   iconBox: {
@@ -79,8 +77,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
-      alignItems:'center',
-      textAlign:"center"
+      alignItems: "center",
+      textAlign: "center",
+      paddingTop: theme.spacing(4),
+
     },
   },
   img: {
@@ -100,7 +100,60 @@ const Steps = () => {
     progressRightWidth: matches ? 80 : 316,
     matches,
   });
-
+  const steps = [
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/ngs_step_01.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      indexLeft: "網上",
+      indexRight: "Click登記",
+      detail:
+        "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
+      arrowDown: (
+        <StaticImage
+          class={classes.arrowDown}
+          src="../../images/arrowDown.jpg"
+          alt="empty"
+        ></StaticImage>
+      ),
+    },
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/ngs_step_02.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      indexLeft: "行",
+      indexRight: "步去抽血",
+      detail:
+        "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
+      arrowDown: (
+        <StaticImage
+          class={classes.arrowDown}
+          src="../../images/arrowDown.jpg"
+          alt="empty"
+        ></StaticImage>
+      ),
+    },
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/ngs_step_03.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      indexLeft: "",
+      indexRight: "日有結果",
+      detail: "最快三個工作天就有結果，不再因漫長等待而「心掛掛」",
+    },
+  ];
   const [activeSlide, setActiveSlide] = useState(0);
   return (
     <Box className={classes.root}>
@@ -141,113 +194,40 @@ const Steps = () => {
           className={classes.stepsContainer}
           margin={matches ? theme.spacing(0, 0) : theme.spacing(2, 40)}
         >
-          <Box className={classes.step} >
-            <Box className={classes.iconBox}>
-              <StaticImage
-                className={classes.img}
-                src="../../images/ngs_step_01.png"
-                alt="empty"
-              ></StaticImage>
-            </Box>
+          {steps.map((item, index) => (
             <Box>
-              <Box
-                fontSize="h5.fontSize"
-                fontWeight="700"
-                color="prophecyPrimary.main"
-                mt={-1}
-              >
-                網上
-                <Box
-                  display="inline-block"
-                  color="supporting.supporting02"
-                  fontSize="h3.fontSize"
-                  mx={1}
-                >
-                  1{" "}
+              <Box className={classes.step}>
+                <Box className={classes.iconBox}>{item.img}</Box>
+                <Box>
+                  <Box
+                    fontSize="h5.fontSize"
+                    fontWeight="700"
+                    color="prophecyPrimary.main"
+                    mt={-1}
+                  >
+                    {item.indexLeft}
+                    <Box
+                      display="inline-block"
+                      color="supporting.supporting02"
+                      fontSize="h3.fontSize"
+                      mx={1}
+                    >
+                      {index + 1}
+                    </Box>
+                    {item.indexRight}
+                  </Box>
+                  <Box
+                    width="300px"
+                    color="prophecyPrimary.main"
+                    fontWeight="500"
+                  >
+                    {item.detail}
+                  </Box>
                 </Box>
-                Click登記
               </Box>
-              <Box width="300px" color="prophecyPrimary.main" fontWeight="500">
-                於Take2
-                Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約
-              </Box>
+              {item.arrowDown}
             </Box>
-          </Box>
-          <StaticImage
-            class={classes.arrowDown}
-            src="../../images/arrowDown.jpg"
-            alt="empty"
-          ></StaticImage>
-          <Box
-            className={classes.step}
-          >
-            <Box className={classes.iconBox}>
-              <StaticImage
-                className={classes.img}
-                src="../../images/ngs_step_02.png"
-                alt="empty"
-              ></StaticImage>
-            </Box>
-            <Box display="inline-block">
-              <Box
-                fontSize="h5.fontSize"
-                fontWeight="700"
-                color="prophecyPrimary.main"
-                mt={-1}
-              >
-                行
-                <Box
-                  display="inline-block"
-                  color="supporting.supporting02"
-                  fontSize="h3.fontSize"
-                  mx={1}
-                >
-                  2{" "}
-                </Box>
-                步去抽血
-              </Box>
-              <Box width="300px" color="prophecyPrimary.main" fontWeight="500">
-                過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到
-              </Box>
-            </Box>
-          </Box>{" "}
-          <StaticImage
-            class={classes.arrowDown}
-            src="../../images/arrowDown.jpg"
-            alt="empty"
-          ></StaticImage>
-          <Box
-            className={classes.step}
-          >
-            <Box className={classes.iconBox}>
-              <StaticImage
-                className={classes.img}
-                src="../../images/ngs_step_03.png"
-                alt="empty"
-              ></StaticImage>
-            </Box>
-            <Box display="inline-block">
-              <Box
-                fontSize="h5.fontSize"
-                fontWeight="700"
-                color="prophecyPrimary.main"
-                mt={-1}
-              >
-                <Box
-                  display="inline-block"
-                  color="supporting.supporting02"
-                  fontSize="h3.fontSize"
-                  mx={1}
-                >
-                  3{" "}
-                </Box>
-                日有結果
-              </Box>
-              <Box width="300px" color="prophecyPrimary.main" fontWeight="500">
-                最快三個工作天就有結果，不再因漫長等待而「心掛掛」
-              </Box>
-            </Box>
-          </Box>
+          ))}
         </Box>
       </Box>
     </Box>
