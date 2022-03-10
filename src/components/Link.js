@@ -41,6 +41,7 @@ const Link = ({
   language,
   className,
   underline,
+  isPdf,
   ...other
 }) => {
   const classes = useStyles()
@@ -52,7 +53,7 @@ const Link = ({
   const internal = /^\/(?!\/)/.test(to)
 
   // Use Gatsby Link for internal links, and <a> for others
-  if (internal) {
+  if (internal && !isPdf) {
     return routed || language ? (
       <I18nLink
         className={classnames(classes.root, className, underline)}

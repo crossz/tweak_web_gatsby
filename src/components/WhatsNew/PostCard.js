@@ -89,12 +89,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostCard = ({ title, type, date, cover, slug, href, withViewBtn }) => {
+const PostCard = ({
+  title,
+  type,
+  date,
+  cover,
+  slug,
+  href,
+  withViewBtn,
+  pdf,
+}) => {
   const classes = useStyles()
   const { t } = useI18next()
   const images = cover.map((item) => getImage(item))
   return (
-    <Link className={classes.link} to={href || slug}>
+    <Link
+      className={classes.link}
+      to={pdf?.publicURL || href || slug}
+      isPdf={Boolean(pdf?.publicURL)}
+    >
       <Box className={classes.root}>
         <Box className={classes.imageWrapper}>
           {images[0] && (
