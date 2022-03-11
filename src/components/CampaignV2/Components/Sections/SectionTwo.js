@@ -55,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 900,
     margin: theme.spacing(4, 0, 1, 0),
   },
+  titleSecond: {
+    color: theme.palette.prophecyPrimary.main,
+    fontWeight: 900,
+    margin: "0 auto",
+  },
   dark: {
     color: theme.palette.secondary.main,
     fontWeight: 900,
@@ -74,12 +79,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.spacing(3),
     minHeight: theme.spacing(100),
     margin: theme.spacing(0, 20, 0, 20),
-    padding: theme.spacing(5, 5),
+    padding: theme.spacing(5, 1),
     [theme.breakpoints.down("xs")]: {
       margin: theme.spacing(0),
     },
   },
   iconBox: {
+    flexShrink: 0,
     height: theme.spacing(15),
     width: theme.spacing(15),
     borderRadius: "50%",
@@ -177,114 +183,125 @@ const SectionTwo = () => {
             早期鼻咽癌篩查有效識別出未有明顯病徵的早期患者，助其及早開展治療，以大大提高治癒的機會，及減少治療帶來的副作用，將對生活的影響減至最低。懂得預備好你的「人生保險」，定期接受篩查，自然無需再「談癌色變」，可以放心面對各種挑戰。
           </Box>
         </Typography>
-        <Box className={classes.bottomContainer}>
-          <Box
-            fontSize="h5.fontSize"
-            textAlign="center"
-            className={classes.title}
-          >
-            何謂可靠有效的鼻咽癌篩查 ？
-          </Box>
-          <Box
-            fontSize="h5.fontSize"
-            textAlign="center"
-            className={classes.dark}
-            color={theme.palette.secondary.main}
-          >
-            高靈敏度、低假陽性
-            {matches ? null : (
+        <Typography>
+          <Box className={classes.bottomContainer}>
+            <Box
+              fontSize="h5.fontSize"
+              textAlign="center"
+              className={classes.title}
+            >
+              何謂可靠有效的鼻咽癌篩查？
+            </Box>
+            <Box
+              fontSize="h5.fontSize"
+              textAlign="center"
+              className={classes.dark}
+              color={theme.palette.secondary.main}
+            >
+              高靈敏度、低假陽性
+              {matches ? null : (
+                <Box
+                  fontSize="h5.fontSize"
+                  textAlign="center"
+                  display="inline-block"
+                  pl={1}
+                  className={classes.addText}
+                >
+                  至關重要
+                </Box>
+              )}
+            </Box>
+            {matches ? (
               <Box
                 fontSize="h5.fontSize"
                 textAlign="center"
-                display="inline-block"
-                pl={1}
                 className={classes.addText}
               >
                 至關重要
               </Box>
-            )}
-          </Box>
-          {matches ? (
+            ) : null}
             <Box
-              fontSize="h5.fontSize"
-              textAlign="center"
-              className={classes.addText}
+              className={classes.stepsContainer}
+              margin={matches ? theme.spacing(0, 0) : "0 20%"}
             >
-              至關重要
-            </Box>
-          ) : null}
-          <Box
-            className={classes.stepsContainer}
-            margin={matches ? theme.spacing(0, 0) : "0 20%"}
-          >
-            {steps.map((item, index) => (
-              <Box>
-                <Box className={classes.step}>
-                  <Box className={classes.iconBox}>{item.img}</Box>
-                  <Box>
-                    <Box
-                      width="300px"
-                      color="prophecyPrimary.main"
-                      fontWeight="500"
-                      pt={matches?0: 3}
-                      pl={matches?0:2}
-                    >
-                      {item.detail}
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-      </Box>
-      <Box className={classes.bottomContainer}>
-        <Box
-          fontSize="h5.fontSize"
-          textAlign="center"
-          className={classes.title}
-        >
-          檢測3步
-        </Box>
-        <Box
-          className={classes.stepsContainer}
-          margin={matches ? theme.spacing(0, 0) : "0 20%"}
-        >
-          {steps.map((item, index) => (
-            <Box>
-              <Box className={classes.step}>
-                <Box className={classes.iconBox}>{item.img}</Box>
+              {steps.map((item, index) => (
                 <Box>
-                  <Box
-                    fontSize="h5.fontSize"
-                    fontWeight="700"
-                    color="prophecyPrimary.main"
-                    mt={-1}
-                  >
-                    {item.indexLeft}
-                    <Box
-                      display="inline-block"
-                      color="supporting.supporting02"
-                      fontSize="h3.fontSize"
-                      mx={1}
-                    >
-                      {index + 1}
+                  <Box className={classes.step}>
+                    <Box className={classes.iconBox}>{item.img}</Box>
+                    <Box>
+                      <Typography className={classes.introduction}>
+                        <Box
+                          width="300px"
+                          color="prophecyPrimary.main"
+                          fontWeight="500"
+                          pt={matches ? 0 : 3}
+                          pl={matches ? 0 : 2}
+                        >
+                          {item.detail}
+                        </Box>
+                      </Typography>
                     </Box>
-                    {item.indexRight}
-                  </Box>
-                  <Box
-                    width="300px"
-                    color="prophecyPrimary.main"
-                    fontWeight="500"
-                  >
-                    {item.detail}
                   </Box>
                 </Box>
+              ))}
+            </Box>{" "}
+            <Typography className={classes.introduction}>
+              <Box
+                className={classes.introductionBottom}
+                fontWeight="500"
+                margin="0 auto"
+              >
+                所以我們應選擇高靈敏度且低假陽性率的篩查，因為這表示其表現十分理想，能有效檢測出陽性患者，讓患者不會因漏檢而以為自己無病，延誤開展治療；同時有效減低誤判，免去我們承受不必要的擔憂，真正達到進行篩查的目的。
               </Box>
-              {item.arrowDown}
-            </Box>
-          ))}
+            </Typography>
+          </Box>
+        </Typography>
+      </Box>
+      <Box
+        fontSize="h5.fontSize"
+        textAlign="center"
+        className={classes.titleSecond}
+        maxWidth={420}
+      >
+        Take2 Prophecy™
+        {matches ? <br /> : ""}
+        早期鼻咽癌篩查{matches ? <br /> : ""}市場上最值得信賴 ？
+      </Box>
+      <Typography className={classes.introduction}>
+        <Box
+          fontWeight="500"
+          margin="0 auto"
+          width={theme.spacing(110)}
+          textAlign="center"
+          mt={2}
+        >
+          所以我們應選擇高靈敏度且低假陽性率的篩查，因為這表示其表現十分理想，能有效檢測出陽性患者，讓患者不會因漏檢而以為自己無病，延誤開展治療；同時有效減低誤判，免去我們承受不必要的擔憂，真正達到進行篩查的目的。
         </Box>
+        <Box
+          fontWeight="500"
+          margin="0 auto"
+          width={theme.spacing(110)}
+          textAlign="center"
+          mt={2}
+        >
+          此篩查的靈敏度＞97%，絕少漏檢，而且假陽性率極低
+          (0.7%)，結果準確可靠，冠絕其他同類測試！
+        </Box>
+      </Typography>
+      <Box maxWidth={theme.spacing(100)} margin={matches?"20px 10px":"40px auto"}>
+        {matches ? (
+          <StaticImage
+            className={classes.img}
+            src="../../images/table-mobile.jpg"
+            alt="empty"
+          ></StaticImage>
+        ) : (
+          <StaticImage
+            className={classes.img}
+            src="../../images/table.jpg"
+            alt="empty"
+          ></StaticImage>
+        )}
       </Box>
     </Box>
   );
