@@ -13,7 +13,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import { useI18next } from "gatsby-plugin-react-i18next";
-
 SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
