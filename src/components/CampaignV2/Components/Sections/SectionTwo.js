@@ -16,7 +16,7 @@ import { useI18next } from "gatsby-plugin-react-i18next";
 SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
-  topContainer: {
+  root: {
     position: "relative",
   },
   text: {
@@ -51,17 +51,32 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.5,
   },
   title: {
-    color: theme.palette.prophecyPrimary.light,
+    color: theme.palette.prophecyPrimary.main,
     fontWeight: 900,
-    margin: theme.spacing(2, 0),
+    margin: theme.spacing(4, 0, 1, 0),
   },
-  stepsContainer: {
-    background: "#FFFFFF",
-    boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
-    borderRadius: theme.spacing(2),
-    minHeight: theme.spacing(85),
+  dark: {
+    color: theme.palette.secondary.main,
+    fontWeight: 900,
+    margin: theme.spacing(0, 0, 2, 0),
+  },
+  addText: {
+    color: theme.palette.prophecyPrimary.main,
+    fontWeight: 900,
+    margin: theme.spacing(0, 0, 2, 0),
+  },
+  stepsContainer: {},
+  middleBox: {
+    position: "relative",
+    top: theme.spacing(-3),
+    background: " #FFFFFF",
+    boxShadow: "0px 2px 30px rgba(120, 120, 120, 0.15)",
+    borderRadius: theme.spacing(3),
+    minHeight: theme.spacing(100),
+    margin: theme.spacing(0, 20, 0, 20),
+    padding: theme.spacing(5, 5),
     [theme.breakpoints.down("xs")]: {
-      boxShadow: "none",
+      margin: theme.spacing(0),
     },
   },
   iconBox: {
@@ -72,14 +87,12 @@ const useStyles = makeStyles((theme) => ({
   step: {
     display: "flex",
     justifyContent: "space-evenly",
-    paddingTop: theme.spacing(7),
+    paddingTop: theme.spacing(4),
     flexDirection: "row",
     [theme.breakpoints.down("xs")]: {
-      flexDirection: "column",
+      flexDirection: "row",
       alignItems: "center",
-      textAlign: "center",
       paddingTop: theme.spacing(4),
-
     },
   },
   img: {
@@ -104,53 +117,37 @@ const SectionTwo = () => {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/ngs_step_01.png"
+          src="../../images/efficient_detection_01.png"
           alt="empty"
         ></StaticImage>
       ),
-      indexLeft: "網上",
-      indexRight: "Click登記",
+
       detail:
-        "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
-      arrowDown: (
-        <StaticImage
-          class={classes.arrowDown}
-          src="../../images/arrowDown.png"
-          alt="empty"
-        ></StaticImage>
-      ),
+        "靈敏度指能否準確找出真正患者，將「有病卻未能發現」的情況減到最低。所以篩查的靈敏度愈高，自然愈值得信賴。",
     },
     {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/ngs_step_02.png"
+          src="../../images/efficient_detection_02.png"
           alt="empty"
         ></StaticImage>
       ),
-      indexLeft: "行",
-      indexRight: "步去抽血",
+
       detail:
-        "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
-      arrowDown: (
-        <StaticImage
-          class={classes.arrowDown}
-          src="../../images/arrowDown.png"
-          alt="empty"
-        ></StaticImage>
-      ),
+        "反之，若篩查的靈敏度不夠高，容易漏檢了真正有病的人，即是「明明有病，但以為自己無病」，結果延誤發現患病，令患者白白錯失了治療的黃金時機。",
     },
     {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/ngs_step_03.png"
+          src="../../images/efficient_detection_03.png"
           alt="empty"
         ></StaticImage>
       ),
-      indexLeft: "",
-      indexRight: "日有結果",
-      detail: "最快三個工作天就有結果，不再因漫長等待而「心掛掛」",
+
+      detail:
+        "假陽性指受測者的報告結果呈陽性但實際上是沒有患病的，一旦檢測出來的結果存在「假陽性」，會令患者產生巨大的心理負擔。",
     },
   ];
   const [activeSlide, setActiveSlide] = useState(0);
@@ -171,17 +168,77 @@ const SectionTwo = () => {
           ></StaticImage>
         )}
       </Box>
-      <Box className={classes.bottomContainer}>
+      <Box className={classes.middleBox}>
         <Typography className={classes.introduction}>
-          <Box className={classes.introductionTop}>
-            聽到「癌症篩查」一詞，大家可能即時聯想到一大堆繁複程序及需要，例如請假入院、看專科醫生、抽取身體組織活檢、用上各樣大型儀器等。
+          <Box className={classes.introductionTop} fontWeight="bold">
+            去旅行，面對未知風險，你也會提前購買保險，未雨綢繆。在人生旅途上，其實我們同樣需要提防鼻咽癌，防患於未然。
           </Box>
-          <Box className={classes.introductionBottom}>
-            別擔心！Take2 Prophecy™
-            早期鼻咽癌篩查打破過去篩查服務的局限，採用次世代醫療科技，篩查過程從此變得非常簡單，只須跟著以下檢測3步，一個Lunch
-            Time，就近診所即能完成。想提防鼻咽癌，現在易如反掌！{" "}
+          <Box className={classes.introductionBottom} fontWeight="bold">
+            早期鼻咽癌篩查有效識別出未有明顯病徵的早期患者，助其及早開展治療，以大大提高治癒的機會，及減少治療帶來的副作用，將對生活的影響減至最低。懂得預備好你的「人生保險」，定期接受篩查，自然無需再「談癌色變」，可以放心面對各種挑戰。
           </Box>
         </Typography>
+        <Box className={classes.bottomContainer}>
+          <Box
+            fontSize="h5.fontSize"
+            textAlign="center"
+            className={classes.title}
+          >
+            何謂可靠有效的鼻咽癌篩查 ？
+          </Box>
+          <Box
+            fontSize="h5.fontSize"
+            textAlign="center"
+            className={classes.dark}
+            color={theme.palette.secondary.main}
+          >
+            高靈敏度、低假陽性
+            {matches ? null : (
+              <Box
+                fontSize="h5.fontSize"
+                textAlign="center"
+                display="inline-block"
+                pl={1}
+                className={classes.addText}
+              >
+                至關重要
+              </Box>
+            )}
+          </Box>
+          {matches ? (
+            <Box
+              fontSize="h5.fontSize"
+              textAlign="center"
+              className={classes.addText}
+            >
+              至關重要
+            </Box>
+          ) : null}
+          <Box
+            className={classes.stepsContainer}
+            margin={matches ? theme.spacing(0, 0) : "0 20%"}
+          >
+            {steps.map((item, index) => (
+              <Box>
+                <Box className={classes.step}>
+                  <Box className={classes.iconBox}>{item.img}</Box>
+                  <Box>
+                    <Box
+                      width="300px"
+                      color="prophecyPrimary.main"
+                      fontWeight="500"
+                      pt={matches?0: 3}
+                      pl={matches?0:2}
+                    >
+                      {item.detail}
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+      <Box className={classes.bottomContainer}>
         <Box
           fontSize="h5.fontSize"
           textAlign="center"
@@ -233,4 +290,4 @@ const SectionTwo = () => {
   );
 };
 
-export default  SectionTwo;
+export default SectionTwo;
