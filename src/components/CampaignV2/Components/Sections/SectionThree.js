@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.5,
   },
   title: {
-    color: theme.palette.prophecyPrimary.light,
+    color: theme.palette.prophecyPrimary.main,
     fontWeight: 900,
     margin: theme.spacing(2, 0),
   },
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#FFFFFF",
     boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
     borderRadius: theme.spacing(2),
-    minHeight: theme.spacing(85),
+    minHeight: theme.spacing(90),
     [theme.breakpoints.down("xs")]: {
       boxShadow: "none",
     },
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   step: {
     display: "flex",
     justifyContent: "space-evenly",
-    paddingTop: theme.spacing(7),
+    paddingTop: theme.spacing(3.5),
     flexDirection: "row",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
@@ -115,7 +115,7 @@ const Steps = () => {
         "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
       arrowDown: (
         <StaticImage
-          class={classes.arrowDown}
+        className={classes.arrowDown}
           src="../../images/arrowDown.png"
           alt="empty"
         ></StaticImage>
@@ -135,7 +135,7 @@ const Steps = () => {
         "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
       arrowDown: (
         <StaticImage
-          class={classes.arrowDown}
+        className={classes.arrowDown}
           src="../../images/arrowDown.png"
           alt="empty"
         ></StaticImage>
