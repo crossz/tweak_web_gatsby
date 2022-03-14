@@ -80,7 +80,6 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "center",
       textAlign: "center",
       paddingTop: theme.spacing(4),
-
     },
   },
   img: {
@@ -110,10 +109,7 @@ const Steps = () => {
       detail:
         "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
       arrowDown: (
-        <StaticImage
-          src="../../images/arrowDown.png"
-          alt="empty"
-        ></StaticImage>
+        <StaticImage src="../../images/arrowDown.png" alt="empty"></StaticImage>
       ),
     },
     {
@@ -129,10 +125,7 @@ const Steps = () => {
       detail:
         "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
       arrowDown: (
-        <StaticImage
-          src="../../images/arrowDown.png"
-          alt="empty"
-        ></StaticImage>
+        <StaticImage src="../../images/arrowDown.png" alt="empty"></StaticImage>
       ),
     },
     {
@@ -198,6 +191,7 @@ const Steps = () => {
                     fontWeight="700"
                     color="prophecyPrimary.main"
                     mt={-1}
+                    textAlign={matches ? "center" : "left"}
                   >
                     {item.indexLeft}
                     <Box
@@ -214,6 +208,7 @@ const Steps = () => {
                     width="300px"
                     color="prophecyPrimary.main"
                     fontWeight="500"
+                    textAlign={matches ? "center" : "left"}
                   >
                     {item.detail}
                   </Box>
