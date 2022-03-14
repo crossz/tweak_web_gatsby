@@ -6,6 +6,10 @@ import {
   makeStyles,
   alpha,
 } from "@material-ui/core/";
+import Link from "@components/Link";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+
 import Typography from "@material-ui/core/Typography";
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import "swiper/swiper-bundle.min.css";
@@ -131,6 +135,21 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "center",
     },
   },
+  btnWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom:theme.spacing(2),
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+    },
+  },
+  item:{
+    [theme.breakpoints.down("xs")]: {
+      width:"100%"
+    },
+  }
 }));
 const SectionTwo = () => {
   const { t } = useI18next();
@@ -292,7 +311,7 @@ const SectionTwo = () => {
                     <Box>
                       <Typography className={classes.introduction}>
                         <Box
-                         width={matches?null:"300px"}
+                          width={matches ? null : "300px"}
                           color="prophecyPrimary.main"
                           fontWeight="500"
                           pt={matches ? 0 : 3}
@@ -375,7 +394,7 @@ const SectionTwo = () => {
       >
         頂尖大學研發 經萬人實證{" "}
       </Box>
-      <Box className={classes.triangleContainer} >
+      <Box className={classes.triangleContainer}>
         <Box
           maxWidth={theme.spacing(45)}
           margin={matches ? "20px 10px" : "150px auto"}
@@ -414,7 +433,7 @@ const SectionTwo = () => {
                       fontWeight="900"
                       color="prophecyPrimary.main"
                       display="inline-block"
-                      my={matches?2:0}
+                      my={matches ? 2 : 0}
                     >
                       <Box display="inline-block" pr={1}>
                         <StaticImage
@@ -425,7 +444,7 @@ const SectionTwo = () => {
                       {item.title}
                     </Box>
                     <Typography className={classes.introduction}>
-                      <Box width={matches?null:"300px"} fontWeight="500">
+                      <Box width={matches ? null : "300px"} fontWeight="500">
                         {item.detail}
                       </Box>
                     </Typography>
@@ -436,6 +455,35 @@ const SectionTwo = () => {
           </Box>{" "}
         </Box>
       </Box>
+      <Grid className={classes.btnWrapper} container spacing={2}>
+        <Grid item className={classes.item}>
+          <Button
+            variant="contained"
+            color="secondary"
+            href={process.env.GATSBY_SITE_URL}
+            target="_blank"
+            fullWidth={matches}
+            className={classes.btn}
+          >
+            立即預約
+          </Button>
+        </Grid>
+        <Grid item className={classes.item}>
+          <Link
+            className={classes.btnLink}
+            to="/products-and-services/take2-extra-care"
+          >
+            <Button
+              variant="outlined"
+              color="primary"
+              fullWidth={matches}
+              className={classes.btn}
+            >
+              查看篩查服務點
+            </Button>
+          </Link>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
