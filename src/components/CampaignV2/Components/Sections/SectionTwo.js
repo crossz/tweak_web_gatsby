@@ -101,6 +101,19 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: theme.spacing(4),
     },
   },
+  stepTwo: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    paddingTop: theme.spacing(4),
+    flexDirection: "row",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+
+      paddingTop: theme.spacing(4),
+    },
+  },
   img: {
     minHeight: theme.spacing(10),
     width: "100%",
@@ -108,6 +121,15 @@ const useStyles = makeStyles((theme) => ({
   arrowDown: {
     marginTop: theme.spacing(4),
     marginLeft: "50%",
+  },
+  triangleContainer: {
+    display: "flex",
+    flexDirection: "row",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+    },
   },
 }));
 const SectionTwo = () => {
@@ -154,6 +176,45 @@ const SectionTwo = () => {
 
       detail:
         "假陽性指受測者的報告結果呈陽性但實際上是沒有患病的，一旦檢測出來的結果存在「假陽性」，會令患者產生巨大的心理負擔。",
+    },
+  ];
+  const steps2 = [
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/ngs_advantage_01.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      title: "高靈敏度",
+      detail:
+        "篩查的靈敏度高於97%¹’²，而且絕少漏檢，結果準確可靠，冠絕其他同類測試！",
+    },
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/ngs_advantage_02.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      title: "經萬人實證",
+
+      detail:
+        "並通過二萬名人士參與的臨床實證⁶，是市場上最值得信賴的早期鼻咽癌篩查。(詳情請向醫護人員查詢)",
+    },
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/ngs_advantage_03.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      title: "頂尖大學研發",
+      detail:
+        "Take2 Prophecy™ 早期鼻咽癌篩查，應用了由本地頂尖大學團隊研發的次世代 DNA測序技術",
     },
   ];
   const [activeSlide, setActiveSlide] = useState(0);
@@ -231,7 +292,7 @@ const SectionTwo = () => {
                     <Box>
                       <Typography className={classes.introduction}>
                         <Box
-                          width="300px"
+                         width={matches?null:"300px"}
                           color="prophecyPrimary.main"
                           fontWeight="500"
                           pt={matches ? 0 : 3}
@@ -288,7 +349,10 @@ const SectionTwo = () => {
           (0.7%)，結果準確可靠，冠絕其他同類測試！
         </Box>
       </Typography>
-      <Box maxWidth={theme.spacing(100)} margin={matches?"20px 10px":"40px auto"}>
+      <Box
+        maxWidth={theme.spacing(100)}
+        margin={matches ? "20px 10px" : "40px auto"}
+      >
         {matches ? (
           <StaticImage
             className={classes.img}
@@ -302,6 +366,75 @@ const SectionTwo = () => {
             alt="empty"
           ></StaticImage>
         )}
+      </Box>
+      <Box
+        fontSize="h5.fontSize"
+        textAlign="center"
+        className={classes.titleSecond}
+        maxWidth={420}
+      >
+        頂尖大學研發 經萬人實證{" "}
+      </Box>
+      <Box className={classes.triangleContainer} >
+        <Box
+          maxWidth={theme.spacing(45)}
+          margin={matches ? "20px 10px" : "150px auto"}
+        >
+          {matches ? (
+            <StaticImage
+              className={classes.img}
+              src="../../images/ngs_advantage_triangle.png"
+              alt="empty"
+            ></StaticImage>
+          ) : (
+            <StaticImage
+              className={classes.img}
+              src="../../images/ngs_advantage_triangle.png"
+              alt="empty"
+            ></StaticImage>
+          )}
+        </Box>
+        <Box
+          display="inline-block"
+          maxWidth={theme.spacing(45)}
+          margin={matches ? "20px 10px" : "40px auto"}
+        >
+          <Box
+            className={classes.stepsContainer}
+            margin={matches ? theme.spacing(0, 0) : "0 20%"}
+          >
+            {steps2.map((item, index) => (
+              <Box>
+                <Box className={classes.stepTwo}>
+                  <Box className={classes.iconBox}>{item.img}</Box>
+
+                  <Box ml={2}>
+                    <Box
+                      fontSize="20px"
+                      fontWeight="900"
+                      color="prophecyPrimary.main"
+                      display="inline-block"
+                      my={matches?2:0}
+                    >
+                      <Box display="inline-block" pr={1}>
+                        <StaticImage
+                          src="../../images/check.png"
+                          alt="empty"
+                        ></StaticImage>
+                      </Box>
+                      {item.title}
+                    </Box>
+                    <Typography className={classes.introduction}>
+                      <Box width={matches?null:"300px"} fontWeight="500">
+                        {item.detail}
+                      </Box>
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Box>{" "}
+        </Box>
       </Box>
     </Box>
   );
