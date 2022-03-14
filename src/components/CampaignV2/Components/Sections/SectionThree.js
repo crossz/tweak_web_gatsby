@@ -87,10 +87,6 @@ const useStyles = makeStyles((theme) => ({
     minHeight: theme.spacing(10),
     width: "100%",
   },
-  arrowDown: {
-    marginTop: theme.spacing(4),
-    marginLeft: "50%",
-  },
 }));
 const Steps = () => {
   const { t } = useI18next();
@@ -115,7 +111,6 @@ const Steps = () => {
         "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
       arrowDown: (
         <StaticImage
-        className={classes.arrowDown}
           src="../../images/arrowDown.png"
           alt="empty"
         ></StaticImage>
@@ -135,7 +130,6 @@ const Steps = () => {
         "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
       arrowDown: (
         <StaticImage
-        className={classes.arrowDown}
           src="../../images/arrowDown.png"
           alt="empty"
         ></StaticImage>
@@ -195,7 +189,7 @@ const Steps = () => {
           margin={matches ? theme.spacing(0, 0) : "0 20%"}
         >
           {steps.map((item, index) => (
-            <Box>
+            <Box textAlign="center">
               <Box className={classes.step}>
                 <Box className={classes.iconBox}>{item.img}</Box>
                 <Box>
