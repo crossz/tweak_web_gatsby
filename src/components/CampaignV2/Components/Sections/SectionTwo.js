@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.spacing(3),
     minHeight: theme.spacing(100),
     margin: theme.spacing(0, 20, 0, 20),
-    padding: theme.spacing(5, 1),
+    padding: theme.spacing(5, 2),
     [theme.breakpoints.down("xs")]: {
       margin: theme.spacing(0),
     },
@@ -93,6 +93,10 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(15),
     width: theme.spacing(15),
     borderRadius: "50%",
+    [theme.breakpoints.down("xs")]: {
+      height: theme.spacing(10),
+    width: theme.spacing(10),
+    },
   },
   step: {
     display: "flex",
@@ -315,7 +319,7 @@ const SectionTwo = () => {
                           color="prophecyPrimary.main"
                           fontWeight="500"
                           pt={matches ? 0 : 3}
-                          pl={matches ? 0 : 2}
+                          pl={matches ? 2 : 2}
                         >
                           {item.detail}
                         </Box>
