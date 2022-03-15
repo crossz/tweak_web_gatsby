@@ -22,6 +22,7 @@ SwiperCore.use([Pagination, Navigation]);
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
+    background: "#FAFFFF",
   },
   text: {
     position: "absolute",
@@ -95,13 +96,14 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "50%",
     [theme.breakpoints.down("xs")]: {
       height: theme.spacing(10),
-    width: theme.spacing(10),
+      width: theme.spacing(10),
     },
   },
   step: {
     display: "flex",
     justifyContent: "space-evenly",
     paddingTop: theme.spacing(4),
+    alignItems: "center",
     flexDirection: "row",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "row",
@@ -112,14 +114,13 @@ const useStyles = makeStyles((theme) => ({
   stepTwo: {
     display: "flex",
     justifyContent: "space-evenly",
-    paddingTop: theme.spacing(4),
     flexDirection: "row",
+    alignItems: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
-
-      paddingTop: theme.spacing(4),
+      padding: theme.spacing(2,0),
     },
   },
   img: {
@@ -133,6 +134,7 @@ const useStyles = makeStyles((theme) => ({
   triangleContainer: {
     display: "flex",
     flexDirection: "row",
+    alignItems: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
@@ -142,18 +144,25 @@ const useStyles = makeStyles((theme) => ({
   btnWrapper: {
     display: "flex",
     justifyContent: "center",
-    marginBottom:theme.spacing(2),
+    marginBottom: theme.spacing(2),
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
     },
   },
-  item:{
+  item: {
     [theme.breakpoints.down("xs")]: {
-      width:"100%"
+      width: "100%",
     },
-  }
+  },
+  card: {
+    background: "#fff",
+    boxShadow: "0px 5px 30px rgba(124, 124, 124, 0.1)",
+    borderRadius: theme.spacing(2),
+    padding: theme.spacing(1, 2),
+    marginBottom: theme.spacing(2),
+  },
 }));
 const SectionTwo = () => {
   const { t } = useI18next();
@@ -304,10 +313,7 @@ const SectionTwo = () => {
                 至關重要
               </Box>
             ) : null}
-            <Box
-              className={classes.stepsContainer}
-              margin={matches ? theme.spacing(0, 0) : "0 20%"}
-            >
+            <Box className={classes.stepsContainer}>
               {steps.map((item, index) => (
                 <Box>
                   <Box className={classes.step}>
@@ -318,7 +324,6 @@ const SectionTwo = () => {
                           width={matches ? null : "300px"}
                           color="prophecyPrimary.main"
                           fontWeight="500"
-                          pt={matches ? 0 : 3}
                           pl={matches ? 2 : 2}
                         >
                           {item.detail}
@@ -385,7 +390,7 @@ const SectionTwo = () => {
         ) : (
           <StaticImage
             className={classes.img}
-            src="../../images/table.jpg"
+            src="../../images/table.png"
             alt="empty"
           ></StaticImage>
         )}
@@ -401,7 +406,7 @@ const SectionTwo = () => {
       <Box className={classes.triangleContainer}>
         <Box
           maxWidth={theme.spacing(45)}
-          margin={matches ? "20px 10px" : "150px auto"}
+          margin={matches ? "20px 10px" : "20px auto"}
         >
           {matches ? (
             <StaticImage
@@ -424,14 +429,13 @@ const SectionTwo = () => {
         >
           <Box
             className={classes.stepsContainer}
-            margin={matches ? theme.spacing(0, 0) : "0 20%"}
+            // margin={matches ? theme.spacing(0, 0) : "0 20%"}
           >
             {steps2.map((item, index) => (
-              <Box>
+              <Box className={classes.card}>
                 <Box className={classes.stepTwo}>
                   <Box className={classes.iconBox}>{item.img}</Box>
-
-                  <Box ml={2}>
+                  <Box ml={matches ? 0 : 3}>
                     <Box
                       fontSize="20px"
                       fontWeight="900"

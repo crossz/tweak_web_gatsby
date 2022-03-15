@@ -16,6 +16,9 @@ import { useI18next } from "gatsby-plugin-react-i18next";
 SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    background: "#FAFFFF",
+  },
   topContainer: {
     position: "relative",
   },
@@ -74,12 +77,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     paddingTop: theme.spacing(7),
     flexDirection: "row",
+    alignItems: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
       paddingTop: theme.spacing(4),
-
     },
   },
   img: {
