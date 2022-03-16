@@ -424,7 +424,7 @@ const SectionTwo = () => {
         </Box>
         <Box
           display="inline-block"
-          maxWidth={theme.spacing(45)}
+          // maxWidth={theme.spacing(45)}
           margin={matches ? "20px 10px" : "40px auto"}
         >
           <Box

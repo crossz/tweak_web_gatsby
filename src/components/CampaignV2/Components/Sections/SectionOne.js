@@ -48,51 +48,58 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     width: theme.spacing(88),
     lineHeight: 1.5,
+    textAlign: "center",
   },
-  introductionBottom: {
-    marginTop: theme.spacing(2),
-    width: theme.spacing(88),
-    lineHeight: 1.5,
-  },
-  title: {
-    color: theme.palette.prophecyPrimary.light,
-    fontWeight: 900,
-    margin: theme.spacing(2, 0),
-  },
-  stepsContainer: {
-    background: "#FFFFFF",
-    boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
-    borderRadius: theme.spacing(2),
-    minHeight: theme.spacing(85),
+
+  item: {
     [theme.breakpoints.down("xs")]: {
-      boxShadow: "none",
+      width: "100%",
     },
   },
+  introduction: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  },
   iconBox: {
+    flexShrink: 0,
     height: theme.spacing(15),
     width: theme.spacing(15),
     borderRadius: "50%",
+    [theme.breakpoints.down("xs")]: {
+      height: theme.spacing(10),
+      width: theme.spacing(10),
+      marginBottom: theme.spacing(2),
+    },
   },
-  step: {
+  stepTwo: {
     display: "flex",
     justifyContent: "space-evenly",
-    paddingTop: theme.spacing(7),
     flexDirection: "row",
     alignItems: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
-      paddingTop: theme.spacing(4),
+      padding: theme.spacing(2, 0),
     },
   },
-  img: {
-    minHeight: theme.spacing(10),
-    width: "100%",
+  card: {
+    background: "#fff",
+    boxShadow: "0px 5px 30px rgba(124, 124, 124, 0.1)",
+    borderRadius: theme.spacing(2),
+    padding: theme.spacing(1, 2),
+    marginBottom: theme.spacing(2),
   },
-  arrowDown: {
-    marginTop: theme.spacing(4),
-    marginLeft: "50%",
+  stepsContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    [theme.breakpoints.down("xs")]: {
+      display: "block",
+    },
   },
 }));
 const SectionOne = () => {
@@ -103,58 +110,46 @@ const SectionOne = () => {
     progressRightWidth: matches ? 80 : 316,
     matches,
   });
-  const steps = [
+  const steps2 = [
     {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/ngs_step_01.png"
+          src="../../images/npc_characteristic_01.png"
           alt="empty"
         ></StaticImage>
       ),
-      indexLeft: "網上",
-      indexRight: "Click登記",
-      detail:
-        "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
-      arrowDown: (
-        <StaticImage
-          class={classes.arrowDown}
-          src="../../images/arrowDown.png"
-          alt="empty"
-        ></StaticImage>
-      ),
+      detail: "鼻咽癌是本港十大癌症殺手之一，每年有六百至八百多宗病例²",
     },
     {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/ngs_step_02.png"
+          src="../../images/npc_characteristic_02.png"
           alt="empty"
         ></StaticImage>
       ),
-      indexLeft: "行",
-      indexRight: "步去抽血",
-      detail:
-        "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
-      arrowDown: (
-        <StaticImage
-          class={classes.arrowDown}
-          src="../../images/arrowDown.png"
-          alt="empty"
-        ></StaticImage>
-      ),
+      detail: "20-44歲男士的頭號癌症³",
     },
     {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/ngs_step_03.png"
+          src="../../images/npc_characteristic_03.png"
           alt="empty"
         ></StaticImage>
       ),
-      indexLeft: "",
-      indexRight: "日有結果",
-      detail: "最快三個工作天就有結果，不再因漫長等待而「心掛掛」",
+      detail: "女士當中較常發病於50-60歲的其中一種癌症²",
+    },
+    {
+      img: (
+        <StaticImage
+          className={classes.img}
+          src="../../images/npc_characteristic_04.png"
+          alt="empty"
+        ></StaticImage>
+      ),
+      detail: "香港人的鼻咽癌發病率更是全球平均的5-6倍¹’²",
     },
   ];
   const [activeSlide, setActiveSlide] = useState(0);
@@ -177,71 +172,40 @@ const SectionOne = () => {
       </Box>
 
       <Box className={classes.bottomContainer}>
-        {" "}
-        <Box mt={matches ? 3 : 8}>
+        <Box mt={matches ? 3 : 8} width="100%" height="200px">
           <YouTube
             videoId="BACVA3es0NI"
             opts={{
-              height: '390',
-              width: '640',
+              height: "390px",
+              width: "640px",
             }}
           />
         </Box>
         <Typography className={classes.introduction}>
           <Box className={classes.introductionTop}>
-            聽到「癌症篩查」一詞，大家可能即時聯想到一大堆繁複程序及需要，例如請假入院、看專科醫生、抽取身體組織活檢、用上各樣大型儀器等。
+            很多人誤以為鼻咽癌只和吸煙有關，要是年青力壯或是生活習慣良好，又怎會認為癌症有自己的份兒？但事實上，不論男女老幼，鼻咽癌的威脅可能已悄悄進逼至你身邊。
           </Box>
-          <Box className={classes.introductionBottom}>
-            別擔心！Take2 Prophecy™
-            早期鼻咽癌篩查打破過去篩查服務的局限，採用次世代醫療科技，篩查過程從此變得非常簡單，只須跟著以下檢測3步，一個Lunch
-            Time，就近診所即能完成。想提防鼻咽癌，現在易如反掌！{" "}
-          </Box>
-        </Typography>
+        </Typography>{" "}
         <Box
-          fontSize="h5.fontSize"
-          textAlign="center"
-          className={classes.title}
+          display="inline-block"
+          margin={matches ? "20px 10px" : "40px auto"}
         >
-          檢測3步
-        </Box>
-        <Box
-          className={classes.stepsContainer}
-          margin={matches ? theme.spacing(0, 0) : "0 20%"}
-        >
-          {steps.map((item, index) => (
-            <Box>
-              <Box className={classes.step}>
-                <Box className={classes.iconBox}>{item.img}</Box>
-                <Box>
-                  <Box
-                    fontSize="h5.fontSize"
-                    fontWeight="700"
-                    color="prophecyPrimary.main"
-                    mt={-1}
-                  >
-                    {item.indexLeft}
-                    <Box
-                      display="inline-block"
-                      color="supporting.supporting02"
-                      fontSize="h3.fontSize"
-                      mx={1}
-                    >
-                      {index + 1}
-                    </Box>
-                    {item.indexRight}
-                  </Box>
-                  <Box
-                    width="300px"
-                    color="prophecyPrimary.main"
-                    fontWeight="500"
-                  >
-                    {item.detail}
+          <Box className={classes.stepsContainer}>
+            {steps2.map((item, index) => (
+              <Box className={classes.card}>
+                <Box className={classes.stepTwo}>
+                  <Box className={classes.iconBox}>{item.img}</Box>
+                  <Box ml={matches ? 0 : 3}>
+                    <Typography className={classes.introduction}>
+                      <Box width={matches ? null : "300px"} fontWeight="500">
+                        {item.detail}
+                      </Box>
+                    </Typography>
                   </Box>
                 </Box>
               </Box>
-              {item.arrowDown}
-            </Box>
-          ))}
+            ))}
+          </Box>{" "}
         </Box>
       </Box>
     </Box>
