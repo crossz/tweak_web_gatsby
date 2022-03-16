@@ -149,7 +149,7 @@ const SectionOne = () => {
           alt="empty"
         ></StaticImage>
       ),
-      detail: "香港人的鼻咽癌發病率更是全球平均的5-6倍¹’²",
+      detail: "香港人的鼻咽癌發病率更是全球平均的5-6倍⁴’⁵",
     },
   ];
   const [activeSlide, setActiveSlide] = useState(0);
