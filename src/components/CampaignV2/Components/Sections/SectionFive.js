@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(88),
     lineHeight: 2,
     textAlign: "center",
-    color: "#Fff",
+    color: "#fff",
     [theme.breakpoints.down("xs")]: {
       textAlign:"left"
     },
