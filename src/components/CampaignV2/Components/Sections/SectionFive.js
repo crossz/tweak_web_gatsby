@@ -18,12 +18,18 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 
 import LineDots from "../../images/bg_wave_dots.png";
+import LineDotsMobile from "../../images/bg_wave_dots_mobile.jpg";
+
 SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    background: " linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)",
-    // backgroundSize: "cover",
+  bgImage: {
+    background: `url(${LineDots}) no-repeat ,linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)`,
+    backgroundSize: "cover",
+    [theme.breakpoints.down("xs")]: {
+      backgroundSize: "cover",
+      background: `url(${LineDots}) no-repeat ,linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)`,
+    },
   },
   topContainer: {
     position: "relative",
@@ -49,10 +55,17 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: "#fff",
     [theme.breakpoints.down("xs")]: {
-      textAlign:"left"
+      textAlign: "left",
     },
   },
 
+  introductionSub: {
+    width: theme.spacing(88),
+    lineHeight: 2,
+    textAlign: "center",
+    color: "#fff",
+    
+  },
   introduction: {
     width: "100%",
     display: "flex",
@@ -114,50 +127,54 @@ const SectionFive = () => {
           ></StaticImage>
         )}
       </Box>
-      <Box width="100%">
-        <Typography className={classes.introduction}>
-          <Box className={classes.introductionTop}>
-            作為鼻咽癌康復者兼香港著名喜劇演員，張達明先生曾因忽略身體警號而延誤求醫。
-          </Box>
-          <Box className={classes.introductionTop}>
-            走過長達7年的抗癌路，達明終成功擊退鼻咽癌，現在可於電影和舞台劇路上再創輝煌成績。
-          </Box>{" "}
-          <Box className={classes.introductionTop}>
-            一起聽聽達明親述他的第二人生及進行「早期鼻咽癌篩查」的重要！
-          </Box>
-        </Typography>
-      </Box>
-      <Box mt={matches ? 3 : 8} width="100%" height="200px">
-        <YouTube
-          videoId="BACVA3es0NI"
-          opts={{
-            height: "390px",
-            width: "640px",
-          }}
-        />
-      </Box>
-      <Box width="100%">
-        <Typography className={classes.introductionBottom}>
-          <Box className={classes.introductionTop}>
-            不要讓鼻咽癌打亂你的人生，想掌握健康，就要定期接受早期鼻咽癌篩查，
-          </Box>
-          <Box className={classes.introductionTop}>「預早知 ・ 越早醫」。</Box>
-        </Typography>
-      </Box>
-      <Grid className={classes.btnWrapper} container spacing={2}>
-        <Grid item className={classes.item}>
-          <Button
-            variant="contained"
-            color="secondary"
-            href={process.env.GATSBY_SITE_URL}
-            target="_blank"
-            fullWidth={matches}
-            className={classes.btn}
-          >
-            立即預約
-          </Button>
+      <Box className={classes.bgImage}>
+        <Box width="100%">
+          <Typography className={classes.introduction}>
+            <Box className={classes.introductionTop}>
+              作為鼻咽癌康復者兼香港著名喜劇演員，張達明先生曾因忽略身體警號而延誤求醫。
+            </Box>
+            <Box className={classes.introductionTop}>
+              走過長達7年的抗癌路，達明終成功擊退鼻咽癌，現在可於電影和舞台劇路上再創輝煌成績。
+            </Box>{" "}
+            <Box className={classes.introductionTop}>
+              一起聽聽達明親述他的第二人生及進行「早期鼻咽癌篩查」的重要！
+            </Box>
+          </Typography>
+        </Box>
+        <Box mt={matches ? 3 : 8} width="100%" height="200px">
+          <YouTube
+            videoId="BACVA3es0NI"
+            opts={{
+              height: "390px",
+              width: "640px",
+            }}
+          />
+        </Box>
+        <Box width="100%">
+          <Typography className={classes.introductionBottom}>
+            <Box className={classes.introductionSub}>
+              不要讓鼻咽癌打亂你的人生，想掌握健康，就要定期接受早期鼻咽癌篩查，
+            </Box>
+            <Box className={classes.introductionSub}>
+              「預早知 ・ 越早醫」。
+            </Box>
+          </Typography>
+        </Box>
+        <Grid className={classes.btnWrapper} container spacing={2}>
+          <Grid item className={classes.item}>
+            <Button
+              variant="contained"
+              color="secondary"
+              href={process.env.GATSBY_SITE_URL}
+              target="_blank"
+              fullWidth={matches}
+              className={classes.btn}
+            >
+              立即預約
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
+      </Box>
     </Box>
   );
 };
