@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 2px 30px rgba(120, 120, 120, 0.15)",
     borderRadius: theme.spacing(3),
     minHeight: theme.spacing(100),
-    margin: theme.spacing(0, 20, 0, 20),
+    margin: theme.spacing(0, 15, 0, 15),
     padding: theme.spacing(5, 2),
     [theme.breakpoints.down("xs")]: {
       margin: theme.spacing(0),
@@ -94,14 +94,17 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(15),
     width: theme.spacing(15),
     borderRadius: "50%",
+    marginRight:theme.spacing(6),
     [theme.breakpoints.down("xs")]: {
       height: theme.spacing(10),
       width: theme.spacing(10),
+      marginRight:theme.spacing(1),
+
     },
   },
   step: {
     display: "flex",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     paddingTop: theme.spacing(4),
     alignItems: "center",
     flexDirection: "row",
