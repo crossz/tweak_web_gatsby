@@ -64,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 2,
     textAlign: "center",
     color: "#fff",
-    
   },
   introduction: {
     width: "100%",
@@ -74,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     paddingTop: theme.spacing(10),
     [theme.breakpoints.down("xs")]: {
-      padding: theme.spacing(8, 2),
+      padding: theme.spacing(4, 2),
     },
   },
   introductionBottom: {
@@ -97,6 +96,14 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
+    },
+  },
+  video: {
+    borderRadius: theme.spacing(3),
+    width: theme.spacing(94),
+    marginBottom:theme.spacing(2),
+    [theme.breakpoints.down("xs")]: {
+      width: theme.spacing(42),
     },
   },
 }));
@@ -141,14 +148,25 @@ const SectionFive = () => {
             </Box>
           </Typography>
         </Box>
-        <Box mt={matches ? 3 : 8} width="100%" height="200px">
-          <YouTube
-            videoId="BACVA3es0NI"
-            opts={{
-              height: "390px",
-              width: "640px",
-            }}
-          />
+        <Box mt={matches ? -2 : 3} display="flex" justifyContent="center">
+          {matches ? (
+            <YouTube
+              className={classes.video}
+              videoId="BACVA3es0NI"
+              opts={{
+                width: "350px",
+                height: "236px",
+              }}
+            />
+          ) : (
+            <YouTube
+              className={classes.video}
+              videoId="BACVA3es0NI"
+              opts={{
+                height: "436px",
+              }}
+            />
+          )}
         </Box>
         <Box width="100%">
           <Typography className={classes.introductionBottom}>

@@ -101,6 +101,13 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
     },
   },
+  video: {
+    borderRadius: theme.spacing(3),
+    width:theme.spacing(94),
+    [theme.breakpoints.down("xs")]: {
+      width:theme.spacing(42)
+    },
+  },
 }));
 const SectionOne = () => {
   const { t } = useI18next();
@@ -172,14 +179,25 @@ const SectionOne = () => {
       </Box>
 
       <Box className={classes.bottomContainer}>
-        <Box mt={matches ? 3 : 8} width="100%" height="200px">
-          <YouTube
-            videoId="BACVA3es0NI"
-            opts={{
-              height: "390px",
-              width: "640px",
-            }}
-          />
+        <Box mt={matches ? 3 : 6} display="flex" justifyContent="center">
+          {matches ? (
+            <YouTube
+              className={classes.video}
+              videoId="BACVA3es0NI"
+              opts={{
+                width:"350px",
+                height: "236px",
+              }}
+            />
+          ) : (
+            <YouTube
+              className={classes.video}
+              videoId="BACVA3es0NI"
+              opts={{
+                height: "436px",
+              }}
+            />
+          )}
         </Box>
         <Typography className={classes.introduction}>
           <Box className={classes.introductionTop}>
