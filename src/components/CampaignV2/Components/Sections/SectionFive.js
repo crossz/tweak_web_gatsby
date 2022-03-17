@@ -22,8 +22,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background:
-      " url(${LineDots}) no-repeat linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)",
+    background: " linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)",
     // backgroundSize: "cover",
   },
   topContainer: {
@@ -49,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 2,
     textAlign: "center",
     color: "#Fff",
+    [theme.breakpoints.down("xs")]: {
+      textAlign:"left"
+    },
   },
 
   introduction: {
