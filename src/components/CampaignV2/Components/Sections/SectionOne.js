@@ -205,7 +205,7 @@ const SectionOne = () => {
           </Box>
         </Typography>{" "}
         <Box
-          display="inline-block"
+          // display="inline-block"
           margin={matches ? "20px 10px" : "40px auto"}
         >
           <Box className={classes.stepsContainer}>

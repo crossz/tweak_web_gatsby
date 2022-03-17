@@ -75,7 +75,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 900,
     margin: theme.spacing(0, 0, 2, 0),
   },
-  stepsContainer: {},
+  stepsContainer: {
+  },
   middleBox: {
     position: "relative",
     top: theme.spacing(-3),
