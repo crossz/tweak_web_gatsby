@@ -139,10 +139,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
+    padding:'0 50px',
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
+      padding:"0 0"
     },
   },
   btnWrapper: {
@@ -428,8 +431,7 @@ const SectionTwo = () => {
         </Box>
         <Box
           display="inline-block"
-          // maxWidth={theme.spacing(45)}
-          margin={matches ? "20px 10px" : "40px auto"}
+          margin={matches ? "20px 10px" : "40px 10px"}
         >
           <Box
             className={classes.stepsContainer}
