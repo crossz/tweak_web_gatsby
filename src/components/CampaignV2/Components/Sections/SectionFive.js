@@ -93,18 +93,21 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     paddingBottom: theme.spacing(4),
     [theme.breakpoints.down("xs")]: {
-      paddingTop:theme.spacing(3),
+      paddingTop: theme.spacing(3),
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
     },
   },
   video: {
+    margin: theme.spacing(0, 5),
+    marginBottom: theme.spacing(2),
+
     borderRadius: theme.spacing(3),
-    width: theme.spacing(94),
-    marginBottom:theme.spacing(2),
     [theme.breakpoints.down("xs")]: {
-      width: theme.spacing(42),
+      margin: theme.spacing(0, 1.25),
+
+      borderRadius: theme.spacing(0.5),
     },
   },
 }));
@@ -155,7 +158,7 @@ const SectionFive = () => {
               className={classes.video}
               videoId="BACVA3es0NI"
               opts={{
-                minWidth: "350px",
+                width: "350px",
                 height: "236px",
               }}
             />

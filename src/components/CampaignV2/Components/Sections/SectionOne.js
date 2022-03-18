@@ -102,10 +102,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   video: {
+    margin: theme.spacing(0, 5),
+
     borderRadius: theme.spacing(3),
-    width:theme.spacing(94),
     [theme.breakpoints.down("xs")]: {
-      width:theme.spacing(42)
+      margin: theme.spacing(0, 1.25),
+
+      borderRadius: theme.spacing(0.5),
     },
   },
 }));
@@ -185,7 +188,7 @@ const SectionOne = () => {
               className={classes.video}
               videoId="BACVA3es0NI"
               opts={{
-                width:"350px",
+                width: "350px",
                 height: "236px",
               }}
             />
