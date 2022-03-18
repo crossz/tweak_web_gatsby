@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   topContainer: {
-    position: "relative",
+    // position: "relative",
   },
   text: {
     position: "absolute",
@@ -155,7 +155,7 @@ const SectionFive = () => {
               className={classes.video}
               videoId="BACVA3es0NI"
               opts={{
-                width: "350px",
+                minWidth: "350px",
                 height: "236px",
               }}
             />
