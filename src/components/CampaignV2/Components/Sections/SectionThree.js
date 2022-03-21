@@ -13,10 +13,12 @@ import { StaticImage } from "gatsby-plugin-image";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import { useI18next } from "gatsby-plugin-react-i18next";
-
 SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    background: "#FAFFFF",
+  },
   topContainer: {
     position: "relative",
   },
@@ -52,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.5,
   },
   title: {
-    color: theme.palette.prophecyPrimary.main,
+    color: theme.palette.prophecyPrimary.light,
     fontWeight: 900,
     margin: theme.spacing(2, 0),
   },
@@ -60,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#FFFFFF",
     boxShadow: " 0px 5px 30px rgba(124, 124, 124, 0.1)",
     borderRadius: theme.spacing(2),
-    minHeight: theme.spacing(90),
+    minHeight: theme.spacing(85),
     [theme.breakpoints.down("xs")]: {
       boxShadow: "none",
     },
@@ -73,8 +75,9 @@ const useStyles = makeStyles((theme) => ({
   step: {
     display: "flex",
     justifyContent: "space-evenly",
-    paddingTop: theme.spacing(3.5),
+    paddingTop: theme.spacing(7),
     flexDirection: "row",
+    alignItems: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
@@ -85,6 +88,10 @@ const useStyles = makeStyles((theme) => ({
   img: {
     minHeight: theme.spacing(10),
     width: "100%",
+  },
+  arrowDown: {
+    marginTop: theme.spacing(4),
+    marginLeft: "50%",
   },
 }));
 const Steps = () => {
@@ -109,7 +116,11 @@ const Steps = () => {
       detail:
         "於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約",
       arrowDown: (
-        <StaticImage src="../../images/arrowDown.png" alt="empty"></StaticImage>
+        <StaticImage
+          class={classes.arrowDown}
+          src="../../images/arrowDown.png"
+          alt="empty"
+        ></StaticImage>
       ),
     },
     {
@@ -125,7 +136,11 @@ const Steps = () => {
       detail:
         "過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到",
       arrowDown: (
-        <StaticImage src="../../images/arrowDown.png" alt="empty"></StaticImage>
+        <StaticImage
+          class={classes.arrowDown}
+          src="../../images/arrowDown.png"
+          alt="empty"
+        ></StaticImage>
       ),
     },
     {
@@ -182,7 +197,7 @@ const Steps = () => {
           margin={matches ? theme.spacing(0, 0) : "0 20%"}
         >
           {steps.map((item, index) => (
-            <Box textAlign="center">
+            <Box>
               <Box className={classes.step}>
                 <Box className={classes.iconBox}>{item.img}</Box>
                 <Box>
@@ -191,7 +206,6 @@ const Steps = () => {
                     fontWeight="700"
                     color="prophecyPrimary.main"
                     mt={-1}
-                    textAlign={matches ? "center" : "left"}
                   >
                     {item.indexLeft}
                     <Box
@@ -208,7 +222,6 @@ const Steps = () => {
                     width="300px"
                     color="prophecyPrimary.main"
                     fontWeight="500"
-                    textAlign={matches ? "center" : "left"}
                   >
                     {item.detail}
                   </Box>
