@@ -86,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       padding: theme.spacing(0, 2),
       marginBottom: theme.spacing(2),
+      marginTop: theme.spacing(2),
     },
   },
   btnWrapper: {
