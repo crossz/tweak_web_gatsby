@@ -18,7 +18,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: "#FAFFFF",
+    background: "#FBFFFF",
   },
   topContainer: {
     position: "relative",
@@ -45,10 +45,15 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   introductionTop: {
-    marginTop: theme.spacing(2),
-    width: theme.spacing(88),
+    marginTop: theme.spacing(3),
+    marginBottom:theme.spacing(8),
+    width: theme.spacing(81),
     lineHeight: 1.5,
     textAlign: "center",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: theme.spacing(3.25),
+      marginBottom:theme.spacing(6),    
+    },
   },
 
   item: {
@@ -69,8 +74,8 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(15),
     borderRadius: "50%",
     [theme.breakpoints.down("xs")]: {
-      height: theme.spacing(10),
-      width: theme.spacing(10),
+      height: theme.spacing(13),
+      width: theme.spacing(13),
       marginBottom: theme.spacing(2),
     },
   },
@@ -83,15 +88,19 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
-      padding: theme.spacing(2, 0),
+      // padding: theme.spacing(2, 0),
     },
   },
   card: {
     background: "#fff",
     boxShadow: "0px 5px 30px rgba(124, 124, 124, 0.1)",
     borderRadius: theme.spacing(2),
-    padding: theme.spacing(1, 2),
+    padding: theme.spacing(3, 3),
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down("xs")]: {
+      padding: theme.spacing(2.5),
+      margin:theme.spacing(2,2.5)
+    },
   },
   stepsContainer: {
     display: "flex",
