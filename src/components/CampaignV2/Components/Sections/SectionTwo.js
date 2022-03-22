@@ -5,7 +5,9 @@ import {
   Box,
   makeStyles,
   alpha,
+  Container,
 } from "@material-ui/core/";
+
 import Link from "@components/Link";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -37,8 +39,20 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     color: "#FFF",
   },
-  bottomContainer: {},
+  bottomContainer: {
+    // maxWidth: theme.spacing(88),
+  },
   introduction: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    [theme.breakpoints.down("xs")]: {
+      padding : theme.spacing(2,2.25),
+    },
+  },
+  detail: {
     width: "100%",
     display: "flex",
     alignItems: "center",
@@ -46,29 +60,44 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   introductionTop: {
-    marginTop: theme.spacing(2),
+    margin: theme.spacing(2, 13, 0, 13),
     width: theme.spacing(88),
     lineHeight: 1.5,
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(3, 2.25),
+    },
   },
   introductionBottom: {
-    marginTop: theme.spacing(2),
-    width: theme.spacing(88),
+    margin: theme.spacing(4, 13, 0, 13),
+    maxWidth: theme.spacing(88),
     lineHeight: 1.5,
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(3, 2.25),
+    },
   },
   title: {
     color: theme.palette.prophecyPrimary.main,
     fontWeight: 900,
     margin: theme.spacing(4, 0, 1, 0),
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(4, 0, 0, 0),
+    },
   },
   titleSecond: {
     color: theme.palette.prophecyPrimary.main,
     fontWeight: 900,
     margin: "0 auto",
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(5,0,4,0),
+    },
   },
   dark: {
     color: theme.palette.secondary.main,
     fontWeight: 900,
     margin: theme.spacing(0, 0, 2, 0),
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing( 0),
+    },
   },
   addText: {
     color: theme.palette.prophecyPrimary.main,
@@ -83,10 +112,14 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 2px 30px rgba(120, 120, 120, 0.15)",
     borderRadius: theme.spacing(3),
     minHeight: theme.spacing(100),
-    margin: theme.spacing(0, 20, 0, 20),
+    maxWidth: theme.spacing(98),
     padding: theme.spacing(5, 2),
+    margin: "0 auto",
+    marginBottom:theme.spacing(8),
     [theme.breakpoints.down("xs")]: {
       margin: theme.spacing(0),
+      marginBottom:theme.spacing(5.5),
+
     },
   },
   iconBox: {
@@ -94,14 +127,16 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(15),
     width: theme.spacing(15),
     borderRadius: "50%",
+    marginRight: theme.spacing(6),
     [theme.breakpoints.down("xs")]: {
       height: theme.spacing(10),
       width: theme.spacing(10),
+      marginRight: theme.spacing(1),
     },
   },
   step: {
     display: "flex",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     paddingTop: theme.spacing(4),
     alignItems: "center",
     flexDirection: "row",
@@ -120,7 +155,7 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
-      padding: theme.spacing(2,0),
+      padding: theme.spacing(2, 0),
     },
   },
   img: {
@@ -135,10 +170,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
+    padding: "0 50px",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
+      padding: "0 0",
     },
   },
   btnWrapper: {
@@ -160,8 +198,11 @@ const useStyles = makeStyles((theme) => ({
     background: "#fff",
     boxShadow: "0px 5px 30px rgba(124, 124, 124, 0.1)",
     borderRadius: theme.spacing(2),
-    padding: theme.spacing(1, 2),
+    padding: theme.spacing(2, 3),
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down("xs")]: {
+      padding: theme.spacing(1, 2),
+    },
   },
 }));
 const SectionTwo = () => {
@@ -267,6 +308,7 @@ const SectionTwo = () => {
           ></StaticImage>
         )}
       </Box>
+
       <Box className={classes.middleBox}>
         <Typography className={classes.introduction}>
           <Box className={classes.introductionTop} fontWeight="bold">
@@ -283,7 +325,7 @@ const SectionTwo = () => {
               textAlign="center"
               className={classes.title}
             >
-              何謂可靠有效的鼻咽癌篩查？
+              何謂可靠有效的鼻咽癌篩查 &nbsp;？
             </Box>
             <Box
               fontSize="h5.fontSize"
@@ -321,8 +363,8 @@ const SectionTwo = () => {
                     <Box>
                       <Typography className={classes.introduction}>
                         <Box
-                          width={matches ? null : "300px"}
-                          color="prophecyPrimary.main"
+                          width={matches ? null : "360px"}
+                          // color="prophecyPrimary.main"
                           fontWeight="500"
                           pl={matches ? 2 : 2}
                         >
@@ -360,8 +402,8 @@ const SectionTwo = () => {
         <Box
           fontWeight="500"
           margin="0 auto"
-          width={theme.spacing(110)}
-          textAlign="center"
+          width={theme.spacing(100)}
+          textAlign={matches?null:"center"}
           mt={2}
         >
           所以我們應選擇高靈敏度且低假陽性率的篩查，因為這表示其表現十分理想，能有效檢測出陽性患者，讓患者不會因漏檢而以為自己無病，延誤開展治療；同時有效減低誤判，免去我們承受不必要的擔憂，真正達到進行篩查的目的。
@@ -370,7 +412,7 @@ const SectionTwo = () => {
           fontWeight="500"
           margin="0 auto"
           width={theme.spacing(110)}
-          textAlign="center"
+          textAlign={matches?null:"center"}
           mt={2}
         >
           此篩查的靈敏度＞97%，絕少漏檢，而且假陽性率極低
@@ -424,8 +466,7 @@ const SectionTwo = () => {
         </Box>
         <Box
           display="inline-block"
-          maxWidth={theme.spacing(45)}
-          margin={matches ? "20px 10px" : "40px auto"}
+          margin={matches ? "20px 10px" : "40px 10px"}
         >
           <Box
             className={classes.stepsContainer}
@@ -451,7 +492,7 @@ const SectionTwo = () => {
                       </Box>
                       {item.title}
                     </Box>
-                    <Typography className={classes.introduction}>
+                    <Typography className={classes.detail}>
                       <Box width={matches ? null : "300px"} fontWeight="500">
                         {item.detail}
                       </Box>
