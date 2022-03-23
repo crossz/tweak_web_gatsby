@@ -211,7 +211,7 @@ const ContactReference = () => {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/check.png"
+          src="../../images/WhatsApp.png"
           alt="empty"
         ></StaticImage>
       ),
@@ -224,7 +224,7 @@ const ContactReference = () => {
       img: (
         <StaticImage
           className={classes.img}
-          src="../../images/check.png"
+          src="../../images/phone.png"
           alt="empty"
         ></StaticImage>
       ),
@@ -238,7 +238,7 @@ const ContactReference = () => {
       img: (
         <StaticImage
           className={classes.img3}
-          src="../../images/check.png"
+          src="../../images/mail.png"
           alt="empty"
         ></StaticImage>
       ),
@@ -300,7 +300,7 @@ const ContactReference = () => {
             <Box className={classes.fb}>
               <StaticImage
                 className={classes.facebook}
-                src="../../images/check.png"
+                src="../../images/facebook.png"
                 alt="empty"
               ></StaticImage>
             </Box>
