@@ -7,6 +7,10 @@ import {
   alpha,
   Typography,
 } from "@material-ui/core/";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useI18next } from "gatsby-plugin-react-i18next";
 import { StaticImage } from "gatsby-plugin-image";
 const useStyles = makeStyles((theme) => ({
@@ -155,11 +159,42 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid #E1E1E1",
     paddingBottom: theme.spacing(6),
   },
-  rules:{
+  referenceDetail2: {
     fontSize: "12px",
     lineHeight: 2,
     color: theme.palette.prophecyPrimary.light,
-  }
+  },
+  rules: {
+    fontSize: "12px",
+    lineHeight: 2,
+    color: theme.palette.prophecyPrimary.light,
+    [theme.breakpoints.down("xs")]: {
+      borderBottom: "1px solid #E1E1E1",
+      paddingBottom: theme.spacing(6),
+    },
+  },
+  heading: {
+    color: theme.palette.prophecyPrimary.light,
+    fontWeight: 700,
+  },
+  rounded: {
+    boxShadow: "none",
+    borderBottom: "1px solid #E1E1E1",
+    // paddingBottom: theme.spacing(4),
+  },
+  rounded2: {
+    boxShadow: "none",
+    // borderBottom: "1px solid #E1E1E1",
+    // paddingBottom: theme.spacing(4),
+  },
+  expanded:{
+margin:"0 0 !important"
+  },
+  summaryRoot: {
+    padding: "0 0",
+    minHeight:theme.spacing(13)
+    // marginTop: theme.spacing(5),
+  },
 }));
 
 const ContactReference = () => {
@@ -272,96 +307,242 @@ const ContactReference = () => {
           </Typography>
         </Box>
       </Box>
-      <Box className={classes.reference} my={4}>
-        參考資料
-      </Box>
-      <Typography className={classes.referenceDetail}>
-        1. Hong Kong Cancer Registry. Hong Kong Hospital Authority,
-        www3.ha.org.hk/cancereg/. Accessed 23 May 2021.
-        <br /> 2. Overview of Hong Kong Cancer Statistics of 2018. Hong Kong
-        Hospital Authority, October 2020.
-        <br /> 3. “Nasopharyngeal Cancer.” Centre for Health Protection,
-        Department of Health, The Government of the Hong Kong Special
-        Administrative Region, 2021,
-        www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July
-        2021. <br />
-        4. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN Estimates
-        of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.”
-        CA: A Cancer Journal for Clinicians, vol. 68, no. 6. 2018, pp. 394-424.
-        <br /> 5. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr
-        Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal of
-        Medicine, vol. 377, no. <br />
-        6. 2017, pp. 513–22. 6. Lam, W. K. Jacky, et al. “Sequencing-Based
-        Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance
-        Population Screening of Nasopharyngeal Carcinoma.” Proceedings of the
-        National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
-        <br /> 7. Chang, Kai-Ping, et al. “Complementary Serum Test of
-        Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early Antigen: A
-        Possible Alternative for Primary Screening of Nasopharyngeal Carcinoma.”
-        Oral Oncology, vol. 44, no.
-        <br /> 8. 2008, pp. 784–92. 8. Tay, Joshua K., et al. “Nasopharyngeal
-        Carcinoma: Current Strategies and Future Directions.” Current
-        Otorhinolaryngology Reports, vol. 2, no. 1, 2013, pp. 1–7. <br />
-        9. Overview of Hong Kong Cancer Statistics of 2019. Hong Kong Hospital
-        Authority, October 2021.
-      </Typography>
-      <Box className={classes.reference} my={4}>
-      條款及細則
-      </Box>
-      <Typography className={classes.rules} >
-        <Box mt={2}>
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-          autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat.
+      {matches ? (
+        <Box>
+          <Accordion
+            classes={{
+              rounded: classes.rounded,
+              expanded:classes.expanded
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              classes={{
+                root: classes.summaryRoot,
+              }}
+            >
+              <Typography className={classes.heading}>參考資料</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography className={classes.referenceDetail2}>
+                1. Hong Kong Cancer Registry. Hong Kong Hospital Authority,
+                www3.ha.org.hk/cancereg/. Accessed 23 May 2021.
+                <br /> 2. Overview of Hong Kong Cancer Statistics of 2018. Hong
+                Kong Hospital Authority, October 2020.
+                <br /> 3. “Nasopharyngeal Cancer.” Centre for Health Protection,
+                Department of Health, The Government of the Hong Kong Special
+                Administrative Region, 2021,
+                www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23
+                July 2021. <br />
+                4. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN
+                Estimates of Incidence and Mortality Worldwide for 36 Cancers in
+                185 Countries.” CA: A Cancer Journal for Clinicians, vol. 68,
+                no. 6. 2018, pp. 394-424.
+                <br /> 5. Chan, K. C. Allen, et al. “Analysis of Plasma
+                Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” New
+                England Journal of Medicine, vol. 377, no. <br />
+                6. 2017, pp. 513–22. 6. Lam, W. K. Jacky, et al.
+                “Sequencing-Based Counting and Size Profiling of Plasma
+                Epstein–Barr Virus DNA Enhance Population Screening of
+                Nasopharyngeal Carcinoma.” Proceedings of the National Academy
+                of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
+                <br /> 7. Chang, Kai-Ping, et al. “Complementary Serum Test of
+                Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early
+                Antigen: A Possible Alternative for Primary Screening of
+                Nasopharyngeal Carcinoma.” Oral Oncology, vol. 44, no.
+                <br /> 8. 2008, pp. 784–92. 8. Tay, Joshua K., et al.
+                “Nasopharyngeal Carcinoma: Current Strategies and Future
+                Directions.” Current Otorhinolaryngology Reports, vol. 2, no. 1,
+                2013, pp. 1–7. <br />
+                9. Overview of Hong Kong Cancer Statistics of 2019. Hong Kong
+                Hospital Authority, October 2021.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            classes={{
+              rounded: classes.rounded2,
+              expanded:classes.expanded
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              classes={{
+                root: classes.summaryRoot,
+              }}
+            >
+              <Typography className={classes.heading}>條款及細則</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography className={classes.referenceDetail2}>
+                <Box>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                  blanditiis praesentium voluptatum deleniti atque corrupti quos
+                  dolores et quas molestias excepturi sint occaecati cupiditate
+                  non provident, similique sunt in culpa qui officia deserunt
+                  mollitia animi, id est laborum et dolorum fuga. Et harum
+                  quidem rerum facilis est et expedita distinctio. Nam libero
+                  tempore, cum soluta nobis est eligendi optio cumque nihil
+                  impedit quo minus id quod maxime placeat facere possimus,
+                  omnis voluptas assumenda est, omnis dolor repellendus.
+                  Temporibus autem quibusdam et aut officiis debitis aut rerum
+                  necessitatibus saepe eveniet ut et voluptates repudiandae sint
+                  et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                  sapiente delectus, ut aut reiciendis voluptatibus maiores
+                  alias consequatur aut perferendis doloribus asperiores
+                  repellat.
+                </Box>
+                <Box mt={2}>
+                  Similique sunt in culpa qui officia deserunt mollitia animi,
+                  id est laborum et dolorum fuga. Et harum quidem rerum facilis
+                  est et expedita distinctio. Nam libero tempore, cum soluta
+                  nobis est eligendi optio cumque nihil impedit quo minus id
+                  quod maxime placeat facere possimus, omnis voluptas assumenda
+                  est, omnis dolor repellendus. Temporibus autem quibusdam et
+                  aut officiis debitis aut rerum necessitatibus saepe eveniet ut
+                  et voluptates repudiandae sint et molestiae non recusandae.
+                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                  reiciendis voluptatibus maiores alias consequatur aut
+                  perferendis doloribus asperiores repellat.
+                </Box>
+                <Box mt={2}>
+                  Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                  nihil impedit quo minus id quod maxime placeat facere
+                  possimus, omnis voluptas assumenda est, omnis dolor
+                  repellendus. Temporibus autem quibusdam et aut officiis
+                  debitis aut rerum necessitatibus saepe eveniet ut et
+                  voluptates repudiandae sint et molestiae non recusandae.
+                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                  reiciendis voluptatibus maiores alias consequatur aut
+                  perferendis doloribus asperiores repellat.
+                </Box>
+                <Box mt={2}>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                  blanditiis praesentium voluptatum deleniti atque corrupti quos
+                  dolores et quas molestias excepturi sint occaecati cupiditate
+                  non provident, similique sunt in culpa qui officia deserunt
+                  mollitia animi, id est laborum et dolorum fuga. Et harum
+                  quidem rerum facilis est et expedita distinctio. Nam libero
+                  tempore, cum soluta nobis est eligendi optio cumque nihil
+                  impedit quo minus id quod maxime placeat facere possimus,
+                  omnis voluptas assumenda est, omnis dolor repellendus.
+                  Temporibus autem quibusdam et aut officiis debitis aut rerum
+                  necessitatibus saepe eveniet ut et voluptates repudiandae sint
+                  et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                  sapiente delectus, ut aut reiciendis voluptatibus maiores
+                  alias consequatur aut perferendis doloribus asperiores
+                  repellat.
+                </Box>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+       
         </Box>
-        <Box mt={2}>
-          Similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-          autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat.
+      ) : (
+        <Box>
+          {" "}
+          <Box className={classes.reference} my={4}>
+            參考資料
+          </Box>
+          <Typography className={classes.referenceDetail}>
+            1. Hong Kong Cancer Registry. Hong Kong Hospital Authority,
+            www3.ha.org.hk/cancereg/. Accessed 23 May 2021.
+            <br /> 2. Overview of Hong Kong Cancer Statistics of 2018. Hong Kong
+            Hospital Authority, October 2020.
+            <br /> 3. “Nasopharyngeal Cancer.” Centre for Health Protection,
+            Department of Health, The Government of the Hong Kong Special
+            Administrative Region, 2021,
+            www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July
+            2021. <br />
+            4. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN
+            Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185
+            Countries.” CA: A Cancer Journal for Clinicians, vol. 68, no. 6.
+            2018, pp. 394-424.
+            <br /> 5. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr
+            Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal
+            of Medicine, vol. 377, no. <br />
+            6. 2017, pp. 513–22. 6. Lam, W. K. Jacky, et al. “Sequencing-Based
+            Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance
+            Population Screening of Nasopharyngeal Carcinoma.” Proceedings of
+            the National Academy of Sciences, vol. 115, no. 22, 2018, pp.
+            E5115–24.
+            <br /> 7. Chang, Kai-Ping, et al. “Complementary Serum Test of
+            Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early
+            Antigen: A Possible Alternative for Primary Screening of
+            Nasopharyngeal Carcinoma.” Oral Oncology, vol. 44, no.
+            <br /> 8. 2008, pp. 784–92. 8. Tay, Joshua K., et al.
+            “Nasopharyngeal Carcinoma: Current Strategies and Future
+            Directions.” Current Otorhinolaryngology Reports, vol. 2, no. 1,
+            2013, pp. 1–7. <br />
+            9. Overview of Hong Kong Cancer Statistics of 2019. Hong Kong
+            Hospital Authority, October 2021.
+          </Typography>
+          <Box className={classes.reference} my={4}>
+            條款及細則
+          </Box>
+          <Typography className={classes.rules}>
+            <Box mt={2}>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et
+              voluptates repudiandae sint et molestiae non recusandae. Itaque
+              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+              voluptatibus maiores alias consequatur aut perferendis doloribus
+              asperiores repellat.
+            </Box>
+            <Box mt={2}>
+              Similique sunt in culpa qui officia deserunt mollitia animi, id
+              est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+              expedita distinctio. Nam libero tempore, cum soluta nobis est
+              eligendi optio cumque nihil impedit quo minus id quod maxime
+              placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+              repellendus. Temporibus autem quibusdam et aut officiis debitis
+              aut rerum necessitatibus saepe eveniet ut et voluptates
+              repudiandae sint et molestiae non recusandae. Itaque earum rerum
+              hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+              maiores alias consequatur aut perferendis doloribus asperiores
+              repellat.
+            </Box>
+            <Box mt={2}>
+              Nam libero tempore, cum soluta nobis est eligendi optio cumque
+              nihil impedit quo minus id quod maxime placeat facere possimus,
+              omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+              autem quibusdam et aut officiis debitis aut rerum necessitatibus
+              saepe eveniet ut et voluptates repudiandae sint et molestiae non
+              recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut
+              aut reiciendis voluptatibus maiores alias consequatur aut
+              perferendis doloribus asperiores repellat.
+            </Box>
+            <Box mt={2}>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et
+              voluptates repudiandae sint et molestiae non recusandae. Itaque
+              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+              voluptatibus maiores alias consequatur aut perferendis doloribus
+              asperiores repellat.
+            </Box>
+          </Typography>
         </Box>
-        <Box mt={2}>
-          Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-          impedit quo minus id quod maxime placeat facere possimus, omnis
-          voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-          quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat.
-        </Box>
-        <Box mt={2}>
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-          autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat.
-        </Box>
-      </Typography>
+      )}
     </Box>
   );
 };
