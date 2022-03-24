@@ -1,38 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   makeStyles,
-  Container,
-  useMediaQuery,
+  Drawer,
+  Button,
   IconButton,
   Box,
-  Dialog,
-  Slide,
-  Typography,
-  ImageList,
-  Hidden,
+  List,
+  ListItem,
   Divider,
+  alpha,
 } from '@material-ui/core'
-import {
-  EAccordion,
-  EAccordionSummary,
-  EAccordionDetails,
-} from '@themes/components/EAccordion'
-import classnames from 'classnames'
-import { StaticImage } from 'gatsby-plugin-image'
-import { useI18next } from 'gatsby-plugin-react-i18next'
-import SocialLinks from '@layouts/SocialLinks'
-import useMenu from '@hooks/useMenu'
-import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
-import Link from '@components/Link'
-import TitleDot from '@themes/components/TitleDot'
 import MenuIcon from '@images/icons/menu.svg'
 import CloseIcon from '@images/icons/close.svg'
-import ArrowIcon from '@images/icons/arrow.svg'
-import LanguageButton from '@layouts/LanguageButton'
+import classnames from 'classnames'
+import Link from '@components/Link'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+const { languageLabels } = require('../../../../../languages')
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.contrastText,
+  list: {
+    width: 250,
   },
   icon: {
     width: theme.spacing(3),
@@ -50,211 +37,139 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.primary.main,
     },
   },
-  header: {
-    height: theme.spacing(HEADER_HEIGHT),
-    padding: theme.spacing(0, 6),
-    display: 'flex',
-    alignItems: 'center',
-    flexShrink: 0,
-    [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(MOBILE_HEADER_HEIGHT),
-      padding: theme.spacing(0, 3),
-    },
+  drawer: {
+    backgroundColor: alpha(theme.palette.prophecyPrimary.main, 0.9),
+    backdropFilter: `blur(24px)`,
   },
-  closeBtn: {
-    marginLeft: 'auto',
+  list: {},
+  listItem: {
+    padding: theme.spacing(3, 0),
+    cursor: 'pointer',
+  },
+  divider: {
+    backgroundColor: alpha(theme.palette.background.paper, 0.2),
+  },
+  closeIcon: {
+    width: theme.spacing(3.5),
+    height: theme.spacing(3.5),
     '& rect': {
       fill: theme.palette.primary.contrastText,
     },
   },
-  dialogPaper: {
-    backgroundColor: theme.palette.prophecyPrimary.main,
-  },
-  arrowIcon: {
-    transform: 'rotate(90deg)',
-    '& path': {
-      fill: theme.palette.primary.contrastText,
-    },
-  },
-  imageList: {
-    padding: theme.spacing(2),
-    paddingTop: theme.spacing(12),
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: 0,
-      paddingLeft: theme.spacing(1),
-      paddingRight: 0,
-    },
-  },
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-  },
-  menuWrapper: {
-    flexGrow: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(4, 3),
-    },
-  },
-
-  menuChildrenItem: {
-    fontSize: theme.typography.subtitle1.fontSize,
-    marginTop: theme.spacing(2.5),
-  },
-  bottomInfo: {
-    marginTop: 'auto',
-    display: 'flex',
-    marginBottom: theme.spacing(7),
-    alignItems: 'center',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column-reverse',
-      alignItems: 'flex-start',
-      marginTop: 0,
-      marginBottom: 0,
-    },
-  },
-  link: {
+  button: {
     color: theme.palette.primary.contrastText,
-    cursor: 'pointer',
+    backgroundColor: 'transparent',
+    height: theme.spacing(8),
+    borderColor: theme.palette.primary.contrastText,
   },
-  contactLink: {
-    flexShrink: 0,
-    marginRight: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
-      marginRight: theme.spacing(4),
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginRight: theme.spacing(5),
-      '&:last-child': {
-        marginRight: 0,
-      },
-    },
-  },
-  contactList: {
-    fontSize: theme.typography.subtitle1.fontSize,
-    fontWeight: theme.typography.fontWeightBold,
-  },
-  accordionRoot: {
-    marginBottom: `${theme.spacing(12)}px !important`,
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: `${theme.spacing(2)}px !important`,
-    },
-  },
-  divider: {
-    backgroundColor: '#2C3C75',
-    marginBottom: theme.spacing(3),
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: theme.spacing(2),
-    },
+  langLink: {
+    color: theme.palette.primary.contrastText,
   },
 }))
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction='left' ref={ref} {...props} />
-})
+const LIST = [
+  { label: '早期鼻咽癌病徵，你我都經歷過？\n想自救怎能靠估！', id: '' },
+  { label: '有得防的癌症  你不會不防吧！\n進行早期鼻咽癌篩查', id: '' },
+  { label: '無創抽血　過程簡單、快捷\n一個Lunch Time即完成', id: '' },
+  { label: '早期鼻咽癌病徵，你我都經歷過？\n想自救怎能靠估！', id: '' },
+  { label: '「發現得早，一樣可以醫返好！」', id: '' },
+  { label: '張達明康復鼻咽癌後的第二人生', id: '' },
+  { label: '聯絡我們', id: '' },
+]
 
-const Menu = (props) => {
+export default function Menu(props) {
   const classes = useStyles()
-  const { t } = useI18next()
-  const matches = useMediaQuery((theme) => theme.breakpoints.down('xs'))
-  const menu = useMenu()
-  const [open, setOpen] = useState(false)
-  const [panel, setPanel] = useState('')
+  const { language, originalPath } = useI18next()
+  const [state, setState] = React.useState(false)
 
-  const handleOpen = () => {
-    setOpen(true)
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return
+    }
+
+    setState(open)
   }
-
-  const handleClose = () => {
-    setOpen(false)
-  }
-
-  const handleChange = (activePanel) => (e, isExpanded) =>
-    setPanel(isExpanded ? activePanel : '')
-
-  const ContactList = () => {
-    const contactUsItem = menu[6]
-    const joinUsItem = menu[5].sections[1]
-    return (
-      <Box className={classes.contactList} display='flex'>
-        <Link
-          className={classnames(classes.link, classes.contactLink)}
-          to={contactUsItem.path}
-          onClick={handleClose}
-        >
-          {t(contactUsItem.title)}
-        </Link>
-        <Link
-          className={classnames(classes.link, classes.contactLink)}
-          to={joinUsItem.path}
-          onClick={handleClose}
-        >
-          {t(joinUsItem.title)}
-        </Link>
-      </Box>
-    )
-  }
-  const AuthList = (second) => (
-    <Box className={classes.contactList} display='flex'>
-      <Link
-        className={classnames(classes.link, classes.contactLink)}
-        to={`${process.env.GATSBY_SITE_URL}signin`}
-        onClick={handleClose}
-        underline='always'
-      >
-        {t('common.book_now')}
-      </Link>
-      <Link
-        className={classnames(classes.link, classes.contactLink)}
-        to={`${process.env.GATSBY_SITE_URL}signup`}
-        onClick={handleClose}
-        underline='always'
-      >
-        {t('common.member_registration')}
-      </Link>
-    </Box>
-  )
 
   return (
-    <>
-      <IconButton onClick={handleOpen}>
+    <div>
+      <IconButton onClick={toggleDrawer(true)}>
         <MenuIcon
           className={classnames(classes.icon, { [classes.isDark]: props.dark })}
         ></MenuIcon>
       </IconButton>
-      <Dialog
-        className={classes.root}
-        classes={{ paper: classes.dialogPaper }}
-        fullScreen
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
+      <Drawer
+        classes={{
+          paper: classes.drawer,
+        }}
+        anchor='right'
+        open={state}
+        onClose={toggleDrawer(false)}
       >
-        <Container className={classes.wrapper} disableGutters maxWidth='lg'>
-          <Box className={classes.header}>
-            <Box width={matches ? 100 : 145}>
-              <StaticImage
-                src='../../assets/images/common/take2_white_orange.png'
-                alt='Logo'
-                placeholder='tracedSVG'
-              />
-            </Box>
-            <IconButton
-              className={classnames(classes.btn, classes.closeBtn)}
-              edge='start'
-              color='inherit'
-              onClick={handleClose}
-              aria-label='close'
-            >
-              <CloseIcon className={classes.icon} />
-            </IconButton>
+        <Box
+          justifyContent='flex-end'
+          alignItems='center'
+          display='flex'
+          height={84}
+          mx={3.5}
+        >
+          <IconButton aria-label='close button' onClick={toggleDrawer(false)}>
+            <CloseIcon className={classes.closeIcon}></CloseIcon>
+          </IconButton>
+        </Box>
+        <Box
+          color='primary.contrastText'
+          fontWeight='fontWeightMedium'
+          fontSize={18}
+          minWidth={405}
+          mx={5}
+        >
+          <List disablePadding>
+            {LIST.map((item, index) => (
+              <React.Fragment key={index}>
+                <Divider className={classes.divider}></Divider>
+                <ListItem
+                  className={classes.listItem}
+                  role='presentation'
+                  onClick={toggleDrawer(false)}
+                  onKeyDown={toggleDrawer(false)}
+                  disableGutters
+                >
+                  <Box whiteSpace='break-spaces'>{item.label}</Box>
+                </ListItem>
+              </React.Fragment>
+            ))}
+          </List>
+        </Box>
+        <Box mx={5} mb={5} mt='auto' alignItems='center' display='flex'>
+          <Link to='/'>
+            <Button className={classes.button} variant='outlined'>
+              官方網站
+            </Button>
+          </Link>
+          <Box
+            fontSize={18}
+            fontWeight='fontWeightBold'
+            display='flex'
+            ml='auto'
+          >
+            {languageLabels?.map((language) => (
+              <Box
+                className={classes.langLink}
+                ml={2.5}
+                key={language.lang}
+                to={originalPath}
+                language={language.lang}
+                component={Link}
+              >
+                {language.shortLabel}
+              </Box>
+            ))}
           </Box>
-        </Container>
-      </Dialog>
-    </>
+        </Box>
+      </Drawer>
+    </div>
   )
 }
-
-export default Menu
