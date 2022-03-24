@@ -144,7 +144,7 @@ const FaqItem = ({ question, content, onChange, id, activePanel }) => {
           {question}
         </FaqAccordionSummary>
         <FaqAccordionDetails>
-          <Box className={classes.list}>
+          <Box whiteSpace='break-spaces' className={classes.list}>
             <div
               dangerouslySetInnerHTML={{ __html: replaceURLs(content) }}
             ></div>
