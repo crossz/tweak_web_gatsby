@@ -396,7 +396,8 @@ const Take2Prophecy = () => {
                           <Box className={classes.stepLabel}>
                             <Box component='span'>
                               {!(index === 4 && matches) && t(curStep.label)}
-                              {index === 3 && <sup>#</sup>}
+                              {index === 3 && !matches && <sup>#</sup>}
+                              {index === 2 && matches && <sup>#</sup>}
                             </Box>
                             <Hidden smUp>
                               {index < steps?.length - 1 && (
