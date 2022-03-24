@@ -28,13 +28,6 @@ const useStyles = makeStyles((theme) => ({
     transition: `background-color 0.6s`,
     marginBottom: theme.spacing(-MOBILE_HEADER_HEIGHT),
   },
-  homepageRoot: {
-    backgroundColor: 'transparent',
-    position: 'fixed',
-    boxShadow: 'none',
-    left: 0,
-    right: 0,
-  },
   withBg: {
     backgroundColor: alpha(theme.palette.background.paper, 1),
     boxShadow: `0 1px 0 0  ${theme.palette.grey[400]}`,
@@ -43,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   wrapper: {
+    justifyContent: 'space-between',
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 6),
@@ -50,36 +44,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(MOBILE_HEADER_HEIGHT),
       padding: theme.spacing(0, 3),
-    },
-  },
-
-  authBtn: {
-    cursor: 'pointer',
-    marginLeft: 'auto',
-    flexShrink: 0,
-    fontSize: theme.typography.body1.fontSize,
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.typography.caption.fontSize,
-    },
-  },
-  logo: {
-    width: 145,
-    [theme.breakpoints.down('xs')]: {
-      width: 100,
-    },
-  },
-  link: {
-    marginLeft: theme.spacing(3.5),
-  },
-  withoutShadow: {
-    boxShadow: 'none',
-  },
-  darkHeroTheme: {
-    '& $authBtn': {
-      color: theme.palette.primary.contrastText,
-      '& a': {
-        color: theme.palette.primary.contrastText,
-      },
     },
   },
   menuBtn: {
@@ -108,27 +72,29 @@ const Header = (props) => {
         id='header'
         className={classnames(classes.root, {
           [classes.withBg]: withBg,
-          // [classes.homepageRoot]: !matches,
-          // [classes.withoutShadow]: withBg,
         })}
       >
         <Container className={classes.wrapper} maxWidth='lg'>
-          <Link to='/'>
-            <Box width={matches ? 100 : 145}>
-              {withBg ? (
-                <StaticImage
-                  src='../../../../assets/images/common/prophecy_full_color.png'
-                  alt='Logo'
-                />
-              ) : (
-                <StaticImage
-                  src='../../../../assets/images/common/prophecy_white.png'
-                  alt='Logo'
-                />
-              )}
-            </Box>
-          </Link>
-          {withBg && <PromotionContent></PromotionContent>}
+          <Box
+            display='block'
+            width={matches ? 100 : 145}
+            to='/'
+            component={Link}
+            mr={2}
+          >
+            {withBg ? (
+              <StaticImage
+                src='../../../../assets/images/common/prophecy_full_color.png'
+                alt='Logo'
+              />
+            ) : (
+              <StaticImage
+                src='../../../../assets/images/common/prophecy_white.png'
+                alt='Logo'
+              />
+            )}
+          </Box>
+          {withBg && <PromotionContent whiteBg={withBg}></PromotionContent>}
           <Box className={classes.menuBtn}>
             <Menu dark={withBg}></Menu>
           </Box>

@@ -6,24 +6,24 @@ import {
   useMediaQuery,
   Container,
   Hidden,
+  Box,
 } from '@material-ui/core'
 import PromotionContent from './PromotionContent'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.secondary.main,
-    height: theme.spacing(MOBILE_HEADER_HEIGHT),
-    color: theme.palette.secondary.contrastText,
+  container: {
+    height: 62,
   },
 }))
+
 const PromotionBar = () => {
   const classes = useStyles()
   return (
-    <Container maxWidth='lg'>
-      <div className={classes.root}>
+    <Box bgcolor='secondary.main'>
+      <Container className={classes.container} maxWidth='lg'>
         <PromotionContent></PromotionContent>
-      </div>
-    </Container>
+      </Container>
+    </Box>
   )
 }
 
