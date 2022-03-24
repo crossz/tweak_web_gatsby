@@ -6,6 +6,7 @@ import {
   useMediaQuery,
   Container,
   Hidden,
+  alpha,
 } from '@material-ui/core'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import classnames from 'classnames'
@@ -16,15 +17,30 @@ import { Waypoint } from 'react-waypoint'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import PromotionBar from './PromotionBar'
+import PromotionContent from './PromotionContent'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    boxShadow: `0 1px 0 0  ${theme.palette.grey[400]}`,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: alpha(theme.palette.background.paper, 0),
     position: 'sticky',
     top: 0,
     zIndex: theme.zIndex.appBar,
     transition: `background-color 0.6s`,
+    marginBottom: theme.spacing(-MOBILE_HEADER_HEIGHT),
+  },
+  homepageRoot: {
+    backgroundColor: 'transparent',
+    position: 'fixed',
+    boxShadow: 'none',
+    left: 0,
+    right: 0,
+  },
+  withBg: {
+    backgroundColor: alpha(theme.palette.background.paper, 1),
+    boxShadow: `0 1px 0 0  ${theme.palette.grey[400]}`,
+    transition: theme.transitions.create(['background-color'], {
+      duration: theme.transitions.duration.standard,
+    }),
   },
   wrapper: {
     display: 'flex',
@@ -36,20 +52,7 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(0, 3),
     },
   },
-  homepageRoot: {
-    backgroundColor: 'transparent',
-    position: 'fixed',
-    boxShadow: 'none',
-    left: 0,
-    right: 0,
-  },
-  withBg: {
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: `0 1px 0 0  ${theme.palette.grey[400]}`,
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.standard,
-    }),
-  },
+
   authBtn: {
     cursor: 'pointer',
     marginLeft: 'auto',
@@ -97,41 +100,40 @@ const Header = (props) => {
   return (
     <>
       <PromotionBar></PromotionBar>
+      <Waypoint
+        onEnter={() => setWithBg(false)}
+        onLeave={() => setWithBg(true)}
+      ></Waypoint>
       <Box
         id='header'
         className={classnames(classes.root, {
-          [classes.withBg]: !matches && withBg,
-          [classes.homepageRoot]: !matches,
-          [classes.withoutShadow]: !matches && withBg,
-          [classes.darkHeroTheme]:
-            !matches && !withBg && context?.theme === 'dark',
+          [classes.withBg]: withBg,
+          // [classes.homepageRoot]: !matches,
+          // [classes.withoutShadow]: withBg,
         })}
       >
         <Container className={classes.wrapper} maxWidth='lg'>
           <Link to='/'>
             <Box width={matches ? 100 : 145}>
-              <StaticImage
-                src='../../assets/images/common/take2_full_color.png'
-                alt='Logo'
-              />
+              {withBg ? (
+                <StaticImage
+                  src='../../../../assets/images/common/prophecy_full_color.png'
+                  alt='Logo'
+                />
+              ) : (
+                <StaticImage
+                  src='../../../../assets/images/common/prophecy_white.png'
+                  alt='Logo'
+                />
+              )}
             </Box>
           </Link>
-          <Box
-            className={classes.authBtn}
-            color='primary.main'
-            component='span'
-          ></Box>
+          {withBg && <PromotionContent></PromotionContent>}
           <Box className={classes.menuBtn}>
-            <Menu
-              dark={!matches && !withBg && context?.theme === 'dark'}
-            ></Menu>
+            <Menu dark={withBg}></Menu>
           </Box>
         </Container>
       </Box>
-      <Waypoint
-        onEnter={() => setWithBg(false)}
-        onLeave={() => setWithBg(true)}
-      ></Waypoint>
     </>
   )
 }

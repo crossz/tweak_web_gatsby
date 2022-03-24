@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     width: theme.spacing(3),
     height: theme.spacing(3),
+    '& rect': {
+      fill: theme.palette.primary.contrastText,
+    },
     [theme.breakpoints.down('xs')]: {
       width: theme.spacing(2.5),
       height: theme.spacing(2.5),
@@ -44,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   isDark: {
     '& rect': {
-      fill: theme.palette.primary.contrastText,
+      fill: theme.palette.primary.main,
     },
   },
   header: {
