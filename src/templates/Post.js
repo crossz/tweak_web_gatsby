@@ -292,6 +292,9 @@ export const query = graphql`
           type
           detail
           href
+          pdf {
+            publicURL
+          }
         }
       }
     }

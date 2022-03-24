@@ -68,11 +68,11 @@ export const POST_TYPES = [
   //   value: 'business_cooperation',
   //   color: 'prophecyPrimary.main',
   // },
-  {
-    label: 'options.post_types.ceo_sharing',
-    value: 'ceo_sharing',
-    color: 'prophecySupporting.supporting02',
-  },
+  // {
+  //   label: 'options.post_types.ceo_sharing',
+  //   value: 'ceo_sharing',
+  //   color: 'prophecySupporting.supporting02',
+  // },
 ]
 
 export const REGIONS = {

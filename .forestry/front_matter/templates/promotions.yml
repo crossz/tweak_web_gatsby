@@ -39,6 +39,11 @@ fields:
       path: 
   label: Type
   description: Tag of post.
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
+  label: Pdf
 - type: textarea
   name: href
   label: Href
@@ -46,4 +51,4 @@ fields:
   name: slug
   label: Slug
 pages:
-- content/promotions/take2-health-re-health.md
+- content/promotions/take2-health-1-1.md

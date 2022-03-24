@@ -2,7 +2,7 @@
 type: professional_healthcare_tip
 cover:
 - "../images/ntitled-design-12.png"
-date: 2017-08-11T00:00:00.000+08:00
+date: 2017-08-10T00:00:00+08:00
 title: "【CU Medicine】CUHK Completes a 20,000-person Plasma DNA Screening Study of
   Nasopharyngeal Cancer, and Finds a Dramatic Shift to Early Stage Cancers"
 detail: " Early Stage Cancers"
@@ -11,5 +11,6 @@ slug: ''
 languages:
 - en
 - zh-HK
+pdf: ''
 
 ---
