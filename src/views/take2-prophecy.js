@@ -394,7 +394,10 @@ const Take2Prophecy = () => {
                         >
                           <Box className={classes.stepIcon}>{curStep.icon}</Box>
                           <Box className={classes.stepLabel}>
-                            {!(index === 4 && matches) && t(curStep.label)}
+                            <Box component='span'>
+                              {!(index === 4 && matches) && t(curStep.label)}
+                              {index === 3 && <sup>#</sup>}
+                            </Box>
                             <Hidden smUp>
                               {index < steps?.length - 1 && (
                                 <ArrowIcon
@@ -469,6 +472,9 @@ const Take2Prophecy = () => {
                 <Box className={classes.reportTip}>
                   {t('common.notice')} <br />
                   {t('products_and_services.take2_prophecy.notice')}
+                  <br />
+                  <sup>#</sup>
+                  {t('products_and_services.take2_prophecy.covid_notice')}
                 </Box>
               </Box>
             </Box>
