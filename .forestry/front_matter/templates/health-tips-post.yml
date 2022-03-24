@@ -54,6 +54,11 @@ fields:
       path: 
   label: Type
   description: Tag of post.<br><em>健康資訊health_tip<br>專業醫護資訊professional_healthcare</em>
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
+  label: Pdf
 - name: href
   type: text
   config:
@@ -74,6 +79,7 @@ pages:
 - content/health-tips/97-dna.md
 - content/health-tips/am730.md
 - content/health-tips/choosing-the-right-plan-doctor-shares-insights-on-specific-cancer-screening-in-health-checks.md
+- content/health-tips/healthy-d.md
 - content/health-tips/hk01-dna-97.md
 - content/health-tips/hk01.md
 - content/health-tips/med-cuhk-cuhk-completes-a-20-000-person-plasma-dna-screening-study-of-nasopharyngeal-cancer-and-finds-a-dramatic-shift-to-early-stage-cancers.md
@@ -83,4 +89,5 @@ pages:
 - content/health-tips/test-test-test.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後出現的言語困難.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後會面對的吞嚥問題.md
+- content/health-tips/共享醫識-鼻水帶血絲-頸部現-雞蛋-原來與鼻咽癌相關.md
 - content/health-tips/常見癌症-鼻塞原來有機會是鼻咽癌-醫生籲進行高準確度篩查.md

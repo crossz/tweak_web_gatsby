@@ -2,7 +2,7 @@
 type: professional_healthcare_tip
 cover:
 - "../images/ntitled-design-21.png"
-date: 2021-11-05T00:00:00.000+08:00
+date: 2021-11-04T00:00:00+08:00
 title: "【SCMP】Choosing the right plan: doctor shares insights on specific cancer screening
   in health checks"
 detail: Why should we get specific cancer screenings as part of our health checks?
@@ -11,5 +11,6 @@ slug: ''
 languages:
 - en
 - zh-HK
+pdf: ''
 
 ---

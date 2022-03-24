@@ -1,5 +1,6 @@
 import React from 'react'
-import { makeStyles, Box, Grid, Link } from '@material-ui/core'
+import { makeStyles, Box, Grid } from '@material-ui/core'
+import Link from '@components/Link'
 import ArrowIcon from '@images/icons/arrow.svg'
 import PdfIcon from '@images/icons/pdf.svg'
 import { formatLocal } from '@utils/moment'
@@ -100,7 +101,7 @@ const ClinicPaperItem = ({ date, title, detail, href, pdf }) => {
       <Link
         href={href || pdf?.publicURL}
         className={classes.link}
-        target='_blank'
+        isPdf={Boolean(pdf?.publicURL && !href)}
       >
         <Grid container>
           <Grid item sm={3}>
