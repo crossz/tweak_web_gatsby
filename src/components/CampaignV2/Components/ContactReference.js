@@ -190,6 +190,9 @@ const useStyles = makeStyles((theme) => ({
   summaryRoot: {
     padding: "0 0",
     minHeight: theme.spacing(13),
+    '&.Mui-expanded': {
+      minHeight: theme.spacing(13),
+    },
   },
   accordDetails:{
     [theme.breakpoints.down("xs")]: {
@@ -408,7 +411,7 @@ const ContactReference = () => {
             >
               <Typography className={classes.referenceDetail2}>
                 {rules.map((item, index) => (
-                  <Box mt={index === 1 ? 0 : 2}>{item.rulesDetail}</Box>
+                  <Box mt={index === 0 ? 0 : 2}>{item.rulesDetail}</Box>
                 ))}
               </Typography>
             </AccordionDetails>
