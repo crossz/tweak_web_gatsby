@@ -1,7 +1,5 @@
 import React from 'react'
 import { makeStyles, createStyles, Box, Container } from '@material-ui/core'
-import Map from '@components/Map'
-import PostSwiper from '@components/Homepage/PostSwiper'
 import Header from './Components/Header'
 import Sections from './Components/Sections'
 import ContactReference from './Components/ContactReference'
@@ -23,17 +21,10 @@ const Page = ({ promotionNodes, healthTipsNodes }) => {
       <Header></Header>
       <Container disableGutters maxWidth='lg'>
         <Banner />
-        <Map showMap></Map>
-        <PostSwiper
-          nodes={promotionNodes}
-          morePath='/whats-new/promotions/'
-          withViewBtn
-        ></PostSwiper>
-        <PostSwiper
-          nodes={healthTipsNodes}
-          morePath='/whats-new/health-tips/'
-        ></PostSwiper>
-        <Sections></Sections>
+        <Sections
+          promotionNodes={promotionNodes}
+          healthTipsNodes={healthTipsNodes}
+        ></Sections>
         <ContactReference></ContactReference>
         <Footer></Footer>
       </Container>

@@ -1,11 +1,5 @@
-import React, { useState } from 'react'
-import {
-  useTheme,
-  useMediaQuery,
-  Box,
-  makeStyles,
-  alpha,
-} from '@material-ui/core/'
+import React from 'react'
+import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core/'
 import Typography from '@material-ui/core/Typography'
 import SwiperCore, { Pagination, Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
@@ -16,9 +10,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
-import Disease01 from '@components/CampaignV2/images/disease_01.png'
-import Disease02 from '@components/CampaignV2/images/disease_02.png'
-import Disease03 from '@components/CampaignV2/images/disease_03.png'
+
 import Button from '@material-ui/core/Button'
 
 SwiperCore.use([Pagination, Navigation])
@@ -222,20 +214,20 @@ const SectionOne = () => {
       detail: '香港人的鼻咽癌發病率更是全球平均的5-6倍⁴’⁵',
     },
   ]
-  const [activeSlide, setActiveSlide] = useState(0)
+
   return (
     <Box className={classes.root}>
       <Box className={classes.topContainer}>
         {matches ? (
           <StaticImage
             className={classes.img}
-            src='../../images/section_banner_01_mobile.jpg'
+            src='../../images/section_banner_01_mobile_Hk.jpg'
             alt='empty'
           ></StaticImage>
         ) : (
           <StaticImage
             className={classes.img}
-            src='../../images/section_banner_01.jpg'
+            src='../../images/section_banner_01_Hk.jpg'
             alt='empty'
           ></StaticImage>
         )}

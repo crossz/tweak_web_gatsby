@@ -5,13 +5,16 @@ import SectionThree from './SectionThree'
 import SectionFour from './SectionFour'
 import SectionFive from './SectionFive'
 
-const Sections = () => {
+const Sections = ({ promotionNodes, healthTipsNodes }) => {
   return (
     <>
       <SectionOne></SectionOne>
       <SectionTwo></SectionTwo>
       <SectionThree></SectionThree>
-      <SectionFour></SectionFour>
+      <SectionFour
+        promotionNodes={promotionNodes}
+        healthTipsNodes={healthTipsNodes}
+      ></SectionFour>
       <SectionFive></SectionFive>
     </>
   )
