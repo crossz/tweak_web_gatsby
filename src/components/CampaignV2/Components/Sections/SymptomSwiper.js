@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { makeStyles, Box, alpha } from '@material-ui/core/'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper/core'
+import SwiperCore, { Autoplay } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
-import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/components/navigation/navigation.min.css'
-import classnames from 'classnames'
-import WheelImg from '@components/CampaignV2/images/wheel.png'
+// import 'swiper/components/pagination/pagination.min.css'
+// import 'swiper/components/navigation/navigation.min.css'
+import { StaticImage } from 'gatsby-plugin-image'
 
-SwiperCore.use([Autoplay, Navigation, Pagination])
+SwiperCore.use([Autoplay])
 
 const SYMPTOMS = [
   {
@@ -40,11 +38,10 @@ const useStyles = makeStyles((theme) => ({
   },
   swiper: {
     maxWidth: 780,
-    height: 285,
+    height: 240,
     '& .swiper-button-prev,.swiper-button-next': {
       '&:after': {
         fontSize: theme.spacing(3),
-
         color: alpha(theme.palette.primary.contrastText, 0.25),
       },
     },
@@ -68,8 +65,9 @@ const SymptomSwiper = () => {
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
+        reverseDirection: true,
       }}
-      navigation
+      // navigation
       initialSlide={0}
       onSlideChange={(swiper) => {
         if (swiper.realIndex === activeSlide) return
@@ -77,16 +75,16 @@ const SymptomSwiper = () => {
         setActiveSlide((oldActiveSlide) => {
           switch (true) {
             case swiper.isBeginning:
-              plusDeg = -60
+              plusDeg = 60
               break
             case swiper.isEnd:
-              plusDeg = 60
-              break
-            case swiper.realIndex < oldActiveSlide:
               plusDeg = -60
               break
-            case swiper.realIndex > oldActiveSlide:
+            case swiper.realIndex < oldActiveSlide:
               plusDeg = 60
+              break
+            case swiper.realIndex > oldActiveSlide:
+              plusDeg = -60
               break
             default:
               break
@@ -105,18 +103,12 @@ const SymptomSwiper = () => {
         left={0}
         right={0}
         position='absolute'
-        maxWidth={860}
         mx='auto'
         style={{
           transform: `rotate(${deg}deg)`,
         }}
       >
-        <img
-          className={classes.symptomImg}
-          width='100%'
-          src={WheelImg}
-          alt='symptoms'
-        />
+        <StaticImage src='../../images/wheel.png' alt='symptoms'></StaticImage>
       </Box>
     </Swiper>
   )
