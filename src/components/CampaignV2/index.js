@@ -6,6 +6,7 @@ import Header from './Components/Header'
 import Sections from './Components/Sections'
 import ContactReference from './Components/ContactReference'
 import Footer from './Components/Footer'
+import Banner from './Components/Banner'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -20,7 +21,8 @@ const Page = ({ promotionNodes, healthTipsNodes }) => {
   return (
     <Box className={classes.root}>
       <Header></Header>
-      <Container maxWidth='lg'>
+      <Container disableGutters maxWidth='lg'>
+        <Banner />
         <Map showMap></Map>
         <PostSwiper
           nodes={promotionNodes}
