@@ -53,6 +53,7 @@ const PromotionContent = ({ whiteBg }) => {
         fontWeight='fontWeightBold'
         flexWrap={isMobile ? 'wrap' : 'nowrap'}
         flexGrow={1}
+        py={1}
       >
         <Box
           width={isMobile ? '100%' : 'auto'}

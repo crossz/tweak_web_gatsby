@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.appBar,
     transition: `background-color 0.6s`,
     marginBottom: theme.spacing(-HEADER_HEIGHT),
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(-MOBILE_HEADER_HEIGHT),
+    },
   },
   withBg: {
     backgroundColor: alpha(theme.palette.background.paper, 1),
