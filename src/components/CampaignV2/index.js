@@ -8,16 +8,14 @@ import Banner from './Components/Banner'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
-      backgroundColor: theme.palette.background.paper,
-    },
+    root: {},
   })
 )
 const Page = ({ promotionNodes, healthTipsNodes }) => {
   const classes = useStyles()
 
   return (
-    <Box className={classes.root}>
+    <Box bgcolor='#FAFFFF'>
       <Header></Header>
       <Container disableGutters maxWidth='lg'>
         <Banner />

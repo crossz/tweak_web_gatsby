@@ -23,113 +23,17 @@ import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    background: '#FAFFFF',
-  },
   imageList: {
     overflow: 'visible',
   },
   imageListItem: {
     overflow: 'visible',
   },
-  text: {
-    position: 'absolute',
-    top: '20%',
-    left: '10%',
-    [theme.breakpoints.down('xs')]: {
-      top: '10%',
-      left: '5%',
-    },
-  },
-  textSub: {
-    display: 'inline-block',
-    color: '#FFF',
-  },
-  introduction: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-  },
-  introductionTop: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(8),
-    width: theme.spacing(81),
-    lineHeight: 1.5,
-    textAlign: 'center',
-    [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(3.25),
-      marginBottom: theme.spacing(6),
-    },
-  },
-
-  item: {
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    },
-  },
-  introduction: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-  },
-  iconBox: {
-    flexShrink: 0,
-    height: theme.spacing(15),
-    width: theme.spacing(15),
-    borderRadius: '50%',
-    [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(13),
-      width: theme.spacing(13),
-      marginBottom: theme.spacing(2),
-    },
-  },
-  stepTwo: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    flexDirection: 'row',
-    alignItems: 'center',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      textAlign: 'center',
-      // padding: theme.spacing(2, 0),
-    },
-  },
-  card: {
-    background: '#fff',
-    boxShadow: '0px 5px 30px rgba(124, 124, 124, 0.1)',
-    borderRadius: theme.spacing(2),
-    padding: theme.spacing(3, 3),
-    marginBottom: theme.spacing(2),
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(2.5),
-      margin: theme.spacing(2, 2.5),
-    },
-  },
-  stepsContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    [theme.breakpoints.down('xs')]: {
-      display: 'block',
-    },
-  },
   video: {
     borderRadius: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
       borderRadius: theme.spacing(0.5),
     },
-  },
-  symptomWrapper: {
-    // transform: `translateX(-50%)`,
-  },
-  symptomBackground: {
-    maxWidth: 1371,
-    gridArea: '1/1',
   },
   outlineButton: {
     whiteSpace: 'nowrap',
@@ -223,7 +127,7 @@ const SectionOne = () => {
   })
 
   return (
-    <Box width='100%' overflow='hidden' bgcolor='#FAFFFF'>
+    <Box width='100%' overflow='hidden'>
       <Box>
         {isMobile ? (
           <StaticImage
@@ -372,6 +276,7 @@ const SectionOne = () => {
               left='50%'
               right={0}
               position='absolute'
+              zIndex={1}
               style={{
                 transform: `translateX(-50%)`,
               }}
