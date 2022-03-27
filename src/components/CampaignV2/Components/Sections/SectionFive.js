@@ -1,37 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   useTheme,
   useMediaQuery,
   Box,
   makeStyles,
-  Typography,
   Button,
-  Grid,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import LineDots from '@components/CampaignV2/images/bg_wave_dots.png'
-import LineDotsMobile from '@components/CampaignV2/images/bg_wave_dots_mobile.jpg'
 
 const useStyles = makeStyles((theme) => ({
   bgImage: {
     background: `url(${LineDots}) no-repeat ,linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)`,
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
+    backgroundPosition: 'center',
     [theme.breakpoints.down('xs')]: {
-      backgroundSize: 'cover',
-      background: `url(${LineDots}) no-repeat ,linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)`,
-    },
-  },
-  btnWrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    paddingBottom: theme.spacing(4),
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: theme.spacing(3),
-      flexDirection: 'column',
-      alignItems: 'center',
-      textAlign: 'center',
+      backgroundPosition: 'center 30%',
     },
   },
   video: {
