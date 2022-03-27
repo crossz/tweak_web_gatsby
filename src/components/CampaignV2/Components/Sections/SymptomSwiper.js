@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
     objectFit: 'contain',
   },
   swiper: {
-    maxWidth: 780,
-    height: 240,
+    // width: 780,
+    height: '100%',
     '& .swiper-button-prev,.swiper-button-next': {
       '&:after': {
         fontSize: theme.spacing(3),

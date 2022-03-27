@@ -1,6 +1,15 @@
 import React from 'react'
-import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core/'
-import Typography from '@material-ui/core/Typography'
+import {
+  useTheme,
+  useMediaQuery,
+  Box,
+  makeStyles,
+  ImageList,
+  ImageListItem,
+  Typography,
+  Button,
+  alpha,
+} from '@material-ui/core'
 import SwiperCore, { Pagination, Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -11,16 +20,17 @@ import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 
-import Button from '@material-ui/core/Button'
-
 SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: '#FBFFFF',
+    background: '#FAFFFF',
   },
-  topContainer: {
-    position: 'relative',
+  imageList: {
+    overflow: 'visible',
+  },
+  imageListItem: {
+    overflow: 'visible',
   },
   text: {
     position: 'absolute',
@@ -35,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     color: '#FFF',
   },
-  bottomContainer: {},
   introduction: {
     width: '100%',
     display: 'flex',
@@ -110,20 +119,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   video: {
-    margin: theme.spacing(0, 5),
-
     borderRadius: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
-      margin: theme.spacing(0, 1.25),
-
       borderRadius: theme.spacing(0.5),
     },
   },
   symptomWrapper: {
-    transform: `translateX(-50%)`,
+    // transform: `translateX(-50%)`,
   },
   symptomBackground: {
     maxWidth: 1371,
+    gridArea: '1/1',
   },
   outlineButton: {
     whiteSpace: 'nowrap',
@@ -131,6 +137,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'transparent',
     borderColor: theme.palette.primary.contrastText,
     marginLeft: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: 0,
+      marginTop: theme.spacing(1.5),
+    },
   },
 }))
 
@@ -164,169 +174,259 @@ const SYMPTOM_LIST = [
   },
 ]
 
+const characteristics = [
+  {
+    img: (
+      <StaticImage
+        src='../../images/npc_characteristic_01.png'
+        alt='characteristic 01'
+      ></StaticImage>
+    ),
+    detail: '鼻咽癌是本港十大癌症殺手之一，每年有六百至八百多宗病例²',
+  },
+  {
+    img: (
+      <StaticImage
+        src='../../images/npc_characteristic_02.png'
+        alt='characteristic 01'
+      ></StaticImage>
+    ),
+    detail: '20-44歲男士的頭號癌症³',
+  },
+  {
+    img: (
+      <StaticImage
+        src='../../images/npc_characteristic_03.png'
+        alt='characteristic 03'
+      ></StaticImage>
+    ),
+    detail: '女士當中較常發病於50-60歲的其中一種癌症²',
+  },
+  {
+    img: (
+      <StaticImage
+        src='../../images/npc_characteristic_04.png'
+        alt='characteristic 04'
+      ></StaticImage>
+    ),
+    detail: '香港人的鼻咽癌發病率更是全球平均的5-6倍⁴’⁵',
+  },
+]
+
 const SectionOne = () => {
   const { t } = useI18next()
   const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
-    progressRightWidth: matches ? 80 : 316,
-    matches,
+    progressRightWidth: isMobile ? 80 : 316,
+    isMobile,
   })
-  const steps2 = [
-    {
-      img: (
-        <StaticImage
-          className={classes.img}
-          src='../../images/npc_characteristic_01.png'
-          alt='empty'
-        ></StaticImage>
-      ),
-      detail: '鼻咽癌是本港十大癌症殺手之一，每年有六百至八百多宗病例²',
-    },
-    {
-      img: (
-        <StaticImage
-          className={classes.img}
-          src='../../images/npc_characteristic_02.png'
-          alt='empty'
-        ></StaticImage>
-      ),
-      detail: '20-44歲男士的頭號癌症³',
-    },
-    {
-      img: (
-        <StaticImage
-          className={classes.img}
-          src='../../images/npc_characteristic_03.png'
-          alt='empty'
-        ></StaticImage>
-      ),
-      detail: '女士當中較常發病於50-60歲的其中一種癌症²',
-    },
-    {
-      img: (
-        <StaticImage
-          className={classes.img}
-          src='../../images/npc_characteristic_04.png'
-          alt='empty'
-        ></StaticImage>
-      ),
-      detail: '香港人的鼻咽癌發病率更是全球平均的5-6倍⁴’⁵',
-    },
-  ]
 
   return (
-    <Box className={classes.root}>
-      <Box className={classes.topContainer}>
-        {matches ? (
+    <Box width='100%' overflow='hidden' bgcolor='#FAFFFF'>
+      <Box>
+        {isMobile ? (
           <StaticImage
-            className={classes.img}
             src='../../images/section_banner_01_mobile_Hk.jpg'
             alt='empty'
           ></StaticImage>
         ) : (
           <StaticImage
-            className={classes.img}
             src='../../images/section_banner_01_Hk.jpg'
             alt='empty'
           ></StaticImage>
         )}
       </Box>
-      <Box className={classes.bottomContainer}>
-        <Box mt={matches ? 3 : 6} display='flex' justifyContent='center'>
-          {matches ? (
-            <YouTube
-              className={classes.video}
-              videoId='BACVA3es0NI'
-              opts={{
-                width: '350px',
-                height: '236px',
-              }}
-            />
-          ) : (
-            <YouTube
-              className={classes.video}
-              videoId='BACVA3es0NI'
-              opts={{
-                height: '436px',
-              }}
-            />
-          )}
-        </Box>
-        <Typography className={classes.introduction}>
-          <Box className={classes.introductionTop}>
+      <Box
+        fontSize={isMobile ? 16 : 18}
+        mx='auto'
+        boxSizing='content-box'
+        px={2.5}
+        pb={8}
+        maxWidth={784}
+      >
+        <Box mt={isMobile ? 0 : 6} mb={isMobile ? 6 : 8}>
+          <YouTube
+            className={classes.video}
+            videoId='BACVA3es0NI'
+            opts={{
+              width: '100%',
+              height: isMobile ? 165 : 405,
+            }}
+          />
+          <Box
+            textAlign={isMobile ? 'left' : 'center'}
+            color='grey.900'
+            component='p'
+          >
             很多人誤以為鼻咽癌只和吸煙有關，要是年青力壯或是生活習慣良好，又怎會認為癌症有自己的份兒？但事實上，不論男女老幼，鼻咽癌的威脅可能已悄悄進逼至你身邊。
           </Box>
-        </Typography>{' '}
-        <Box margin={matches ? '20px 10px' : '40px auto'}>
-          <Box className={classes.stepsContainer}>
-            {steps2.map((item, index) => (
-              <Box className={classes.card}>
-                <Box className={classes.stepTwo}>
-                  <Box className={classes.iconBox}>{item.img}</Box>
-                  <Box ml={matches ? 0 : 3}>
-                    <Typography className={classes.introduction}>
-                      <Box width={matches ? null : '300px'} fontWeight='500'>
-                        {item.detail}
-                      </Box>
-                    </Typography>
-                  </Box>
+        </Box>
+        <ImageList
+          className={classes.imageList}
+          rowHeight='auto'
+          cols={isMobile ? 1 : 2}
+          gap={isMobile ? 24 : 32}
+        >
+          {characteristics.map((item, index) => (
+            <ImageListItem
+              classes={{ item: classes.imageListItem }}
+              key={index}
+            >
+              <Box
+                bgcolor='background.paper'
+                p={isMobile ? 2.5 : 3}
+                flexDirection={isMobile ? 'column' : 'row'}
+                alignItems='center'
+                display='flex'
+                borderRadius={16}
+                boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
+              >
+                <Box
+                  flexShrink={0}
+                  width={105}
+                  height={105}
+                  mr={isMobile ? 0 : 3}
+                  mb={isMobile ? 2 : 0}
+                >
+                  {item.img}
+                </Box>
+                <Box
+                  color='grey.900'
+                  textAlign={isMobile ? 'center' : 'left'}
+                  fontWeight='fontWeightBold'
+                >
+                  {item.detail}
                 </Box>
               </Box>
-            ))}
+            </ImageListItem>
+          ))}
+        </ImageList>
+        <Box mt={6} textAlign='center' color='grey.900'>
+          可見鼻咽癌實在和我們切身相關，好應提高警覺。
+        </Box>
+      </Box>
+      <Box
+        py={isMobile ? 5 : 6}
+        textAlign={isMobile ? 'left' : 'center'}
+        maxWidth={1192}
+        borderRadius={12}
+        bgcolor='#E0F2FF'
+        color='#326F99'
+        mx='auto'
+        px={2.5}
+        position='relative'
+        zIndex={1}
+        mb={-16}
+      >
+        <Box maxWidth={988} mx='auto'>
+          <Typography variant={isMobile ? 'h4' : 'h5'} color='secondary'>
+            早期鼻咽癌令人防不勝防！原來這些都是病徵之一？
+          </Typography>
+          <Box
+            mt={2}
+            fontWeight='fontWeightRegular'
+            fontSize={isMobile ? 16 : 18}
+          >
+            部分早期鼻咽癌徵狀與一般感冒、鼻敏感相似，容易令患者掉以輕心，以為只是持續出現小毛病，以致遲遲未有求醫；當驚覺病情越趨嚴重時已錯失治療黃金期，80%患者在初次確診時已屬晚期⁵，大大增加治療的難度，亦令存活率降低。
           </Box>
         </Box>
       </Box>
       <Box
-        justifyContent='center'
-        display='flex'
+        px={2}
+        pt={25}
+        pb={isMobile ? 8 : 14}
         position='relative'
-        pt={8}
         bgcolor='prophecyPrimary.main'
       >
         <Box
-          className={classes.symptomWrapper}
           flexDirection='column'
           alignItems='center'
-          position='absolute'
-          bottom='10%'
-          left='50%'
-          zIndex={1}
           color='primary.contrastText'
           fontWeight='fontWeightBold'
           display='flex'
           maxWidth={785}
+          mx='auto'
+          justifyContent='center'
         >
           <Box
             alignItems='center'
             justifyContent='center'
             flexDirection='column'
             display='flex'
-            fontSize={28}
-            pb={3.5}
+            fontSize={isMobile ? 20 : 28}
+            pb={isMobile ? 3 : 3.5}
           >
-            <Box mb={5}>你真的懂得分辨這些病徵嗎？</Box>
-            <IntersectIcon />
+            <Box mb={isMobile ? 4 : 5}>你真的懂得分辨這些病徵嗎？</Box>
+            <IntersectIcon
+              style={{
+                width: isMobile ? 64 : 100,
+              }}
+            />
           </Box>
-          <Box width='100%'>
-            <SymptomSwiper></SymptomSwiper>
+          <Box width='100%' height={240} position='relative'>
+            <Box
+              top={0}
+              bottom={0}
+              width={isMobile ? 534 : 780}
+              left='50%'
+              right={0}
+              position='absolute'
+              style={{
+                transform: `translateX(-50%)`,
+              }}
+            >
+              <SymptomSwiper></SymptomSwiper>
+            </Box>
+            <Box
+              position='absolute'
+              left='50%'
+              top={isMobile ? '-60%' : '-110%'}
+              width={isMobile ? 780 : 1371}
+              minWidth={640}
+              zIndex={0}
+              style={{
+                transform: `translateX(-50%)`,
+              }}
+            >
+              <StaticImage
+                src='../../images/symptom_background.svg'
+                alt='symptom background'
+              ></StaticImage>
+            </Box>
           </Box>
-          <Box mt={4} mb={5} justifyContent='space-around' display='flex'>
+          <Box
+            px={5}
+            width='100%'
+            mt={4}
+            mb={isMobile ? 4 : 5}
+            justifyContent='space-around'
+            display='flex'
+          >
             {SYMPTOM_LIST.map((symptom) => (
               <Box
                 key={symptom.label}
-                fontSize='h5.fontSize'
+                fontSize={isMobile ? 'body1.fontSize' : 'h5.fontSize'}
                 textAlign='center'
               >
-                <Box width={120}>{symptom.icon}</Box>
-                <Box mt={2}>{symptom.label}</Box>
+                <Box width={isMobile ? 88 : 120}>{symptom.icon}</Box>
+                <Box mt={isMobile ? 1.5 : 2}>{symptom.label}</Box>
               </Box>
             ))}
           </Box>
-          <Box fontSize='h6.fontSize' textAlign='center'>
-            是感冒持續、鼻敏感還是鼻咽癌……似是而非？當然不能靠自己盲目估計！如果你並非 專業醫護人員，雖不懂得分辨這些病徵和判斷自己的病情，但祈求一旦患病時能儘早 自救，就應該及早進行早期鼻咽癌篩查，讓精準可靠的次世代技術守護你的健康！
+          <Box
+            fontSize={isMobile ? 'body1.fontSize' : 'h6.fontSize'}
+            textAlign={isMobile ? 'left' : 'center'}
+          >
+            是感冒持續、鼻敏感還是鼻咽癌……似是而非？當然不能靠自己盲目估計！如果你並非專業醫護人員，雖不懂得分辨這些病徵和判斷自己的病情，但祈求一旦患病時能儘早自救，就應該及早進行早期鼻咽癌篩查，讓精準可靠的次世代技術守護你的健康！
           </Box>
-          <Box mt={8} display='flex' maxWidth={480}>
+          <Box
+            mt={isMobile ? 4 : 8}
+            flexWrap={isMobile ? 'wrap' : 'nowrap'}
+            display='flex'
+            width='100%'
+            maxWidth={isMobile ? 'auto' : 480}
+          >
             <Button fullWidth variant='contained' color='secondary'>
               立即預約
             </Button>
@@ -339,11 +439,6 @@ const SectionOne = () => {
             </Button>
           </Box>
         </Box>
-        <StaticImage
-          className={classes.symptomBackground}
-          src='../../images/symptom_background.svg'
-          alt='symptom background'
-        ></StaticImage>
       </Box>
     </Box>
   )

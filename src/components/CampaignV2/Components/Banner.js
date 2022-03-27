@@ -5,6 +5,7 @@ import {
   Box,
   Container,
   Button,
+  Hidden,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
@@ -27,9 +28,16 @@ const Banner = () => {
   return (
     <Box position='relative'>
       <Link underline='none' to='/' className={classes.button}>
-        <Button variant='contained' color='secondary'>
-          立即預約
-        </Button>
+        <Hidden smUp>
+          <Button size='small' variant='contained' color='secondary'>
+            立即預約
+          </Button>
+        </Hidden>
+        <Hidden xsDown>
+          <Button size='medium' variant='contained' color='secondary'>
+            立即預約
+          </Button>
+        </Hidden>
       </Link>
       <StaticImage
         src='../images/hero_banner.jpg'

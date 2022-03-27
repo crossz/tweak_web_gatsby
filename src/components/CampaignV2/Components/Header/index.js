@@ -59,7 +59,7 @@ const Header = (props) => {
   const classes = useStyles()
   const { t } = useI18next()
   const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
 
   const [withBg, setWithBg] = useState(true)
   const context = useContext(HeroThemeContext)
@@ -80,7 +80,7 @@ const Header = (props) => {
         <Container className={classes.wrapper} maxWidth='lg'>
           <Box
             display='block'
-            width={matches ? 100 : 145}
+            width={isMobile ? 100 : 145}
             to='/'
             component={Link}
             mr={2}
@@ -97,7 +97,9 @@ const Header = (props) => {
               />
             )}
           </Box>
-          {withBg && <PromotionContent whiteBg={withBg}></PromotionContent>}
+          {withBg && !isMobile && (
+            <PromotionContent whiteBg={withBg}></PromotionContent>
+          )}
           <Box className={classes.menuBtn}>
             <Menu dark={withBg}></Menu>
           </Box>
