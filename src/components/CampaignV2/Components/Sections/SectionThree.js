@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  useTheme,
-  useMediaQuery,
-  Box,
-  makeStyles,
-  alpha,
-  Typography,
-} from '@material-ui/core'
+import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import Map from '@components/Map'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -115,7 +108,7 @@ const Steps = () => {
             {steps.map((item, index) => (
               <React.Fragment key={index}>
                 <Box
-                  flexDirection={isMobile ? 'column' : 'flex'}
+                  flexDirection={isMobile ? 'column' : 'row'}
                   alignItems='center'
                   display='flex'
                 >
@@ -149,7 +142,7 @@ const Steps = () => {
                     </Box>
                   </Box>
                 </Box>
-                <Box width={48} height={48} my={isMobile ? 3 : 0}>
+                <Box width={48} height={48} my={3}>
                   {item.arrowDown}
                 </Box>
               </React.Fragment>

@@ -8,14 +8,8 @@ import {
   Button,
 } from '@material-ui/core'
 import Link from '@components/Link'
-import SwiperCore, { Pagination, Navigation } from 'swiper/core'
-import 'swiper/swiper-bundle.min.css'
 import { StaticImage } from 'gatsby-plugin-image'
-import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/components/navigation/navigation.min.css'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-
-SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
   outlineButton: {
@@ -311,6 +305,7 @@ const SectionTwo = () => {
             href={process.env.GATSBY_SITE_URL}
             variant='contained'
             color='secondary'
+            target='_blank'
           >
             立即預約
           </Button>

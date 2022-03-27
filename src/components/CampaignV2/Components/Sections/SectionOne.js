@@ -10,17 +10,12 @@ import {
   Button,
   alpha,
 } from '@material-ui/core'
-import SwiperCore, { Pagination, Navigation } from 'swiper/core'
-import 'swiper/swiper-bundle.min.css'
 import { StaticImage } from 'gatsby-plugin-image'
-import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/components/navigation/navigation.min.css'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
-
-SwiperCore.use([Pagination, Navigation])
+import Link from '@components/Link'
 
 const useStyles = makeStyles((theme) => ({
   imageList: {
@@ -332,13 +327,21 @@ const SectionOne = () => {
             width='100%'
             maxWidth={isMobile ? 'auto' : 480}
           >
-            <Button fullWidth variant='contained' color='secondary'>
+            <Button
+              fullWidth
+              variant='contained'
+              color='secondary'
+              href={process.env.GATSBY_SITE_URL}
+              target='_blank'
+            >
               立即預約
             </Button>
             <Button
               className={classes.outlineButton}
               fullWidth
               variant='outlined'
+              component={Link}
+              to='/products-and-services/take2-extra-care'
             >
               查看篩查服務點
             </Button>
