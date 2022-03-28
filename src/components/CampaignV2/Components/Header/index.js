@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(3),
     marginRight: theme.spacing(-1.5),
     [theme.breakpoints.down('sm')]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: 0,
     },
   },
 }))

@@ -92,19 +92,16 @@ const useStyles = makeStyles((theme) => ({
 const CONTACT_LIST = [
   {
     title: 'WhatsApp',
-    subtitle: 'WhatsApp',
     href: WHATS_APP_LINK,
     icon: <WhatsAppIcon />,
   },
   {
-    title: '聯絡電話',
-    subtitle: SERVICE_PHONE,
+    title: SERVICE_PHONE,
     href: `tel:${SERVICE_PHONE}`,
     icon: <PhoneIcon />,
   },
   {
-    title: '郵箱',
-    subtitle: SERVICE_EMAIL,
+    title: SERVICE_EMAIL,
     href: `mailto:${SERVICE_EMAIL}`,
     icon: <MailIcon />,
   },
@@ -179,7 +176,7 @@ const ContactReference = () => {
           fontWeight='fontWeightBold'
           fontSize={24}
         >
-          仍有疑問？
+          {t('cp_v2.contact_and_reference.paragraphs.0')}
         </Box>
         <Box py={isMobile ? 5 : 6} borderBottom='1px solid #E1E1E1'>
           <Box
@@ -188,7 +185,7 @@ const ContactReference = () => {
             color='grey.900'
             mb={2}
           >
-            「十五十六」？和我們的專業醫護團隊聊聊（不需收費）：
+            {t('cp_v2.contact_and_reference.paragraphs.1')}
           </Box>
           <Box display={isMobile ? 'block' : 'flex'}>
             {CONTACT_LIST.map((item, index) => (
@@ -212,7 +209,7 @@ const ContactReference = () => {
                     color='primary.contrastText'
                     component='span'
                   >
-                    {item.subtitle}
+                    {item.title}
                   </Box>
                 </Box>
               </Link>
@@ -232,7 +229,7 @@ const ContactReference = () => {
                 color='grey.900'
                 mb={2}
               >
-                想了解更多Take2 Prophecy™ 早期鼻咽癌篩查的資訊：{' '}
+                {t('cp_v2.contact_and_reference.paragraphs.2')}
               </Box>
               <Button
                 size='small'
@@ -242,7 +239,7 @@ const ContactReference = () => {
                 color='inherit'
                 className={classes.websiteButton}
               >
-                官方網站
+                {t('cp_v2.menu.office_website')}
               </Button>
             </Box>
           </Grid>
@@ -258,7 +255,7 @@ const ContactReference = () => {
                 color='grey.900'
                 mb={2}
               >
-                緊貼我們以接收最新資訊：
+                {t('cp_v2.contact_and_reference.paragraphs.3')}
               </Box>
               <Box height={56}>
                 <IconButton
@@ -289,7 +286,9 @@ const ContactReference = () => {
                   root: classes.summaryRoot,
                 }}
               >
-                <Typography className={classes.heading}>參考資料</Typography>
+                <Typography className={classes.heading}>
+                  {t('cp_v2.contact_and_reference.paragraphs.4')}
+                </Typography>
               </AccordionSummary>
               <AccordionDetails
                 classes={{
@@ -317,7 +316,9 @@ const ContactReference = () => {
                   root: classes.summaryRoot,
                 }}
               >
-                <Typography className={classes.heading}>條款及細則</Typography>
+                <Typography className={classes.heading}>
+                  {t('t_and_c.terms_and_conditions')}
+                </Typography>
               </AccordionSummary>
               <AccordionDetails
                 classes={{
@@ -337,7 +338,7 @@ const ContactReference = () => {
         ) : (
           <Box>
             <Box className={classes.reference} my={4}>
-              參考資料
+              {t('cp_v2.contact_and_reference.paragraphs.4')}
             </Box>
             <Box className={classes.referenceDetail}>
               {reference.map((item, index) => (
@@ -345,7 +346,7 @@ const ContactReference = () => {
               ))}
             </Box>
             <Box className={classes.reference} my={4}>
-              條款及細則
+              {t('t_and_c.terms_and_conditions')}
             </Box>
             <Box className={classes.rules}>
               {rules.map((item, index) => (

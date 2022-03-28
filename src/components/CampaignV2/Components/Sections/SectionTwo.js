@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import Link from '@components/Link'
 import { StaticImage } from 'gatsby-plugin-image'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   outlineButton: {
@@ -38,8 +38,7 @@ const SectionTwo = () => {
           alt='efficient detection 01'
         ></StaticImage>
       ),
-      detail:
-        '靈敏度指能否準確找出真正患者，將「有病卻未能發現」的情況減到最低。所以篩查的靈敏度愈高，自然愈值得信賴。',
+      detail: 'cp_v2.ngs_advantage.efficient_detections.0',
     },
     {
       img: (
@@ -48,8 +47,7 @@ const SectionTwo = () => {
           alt='efficient detection 02'
         ></StaticImage>
       ),
-      detail:
-        '反之，若篩查的靈敏度不夠高，容易漏檢了真正有病的人，即是「明明有病，但以為自己無病」，結果延誤發現患病，令患者白白錯失了治療的黃金時機。',
+      detail: 'cp_v2.ngs_advantage.efficient_detections.1',
     },
     {
       img: (
@@ -58,8 +56,7 @@ const SectionTwo = () => {
           alt='efficient detection 03'
         ></StaticImage>
       ),
-      detail:
-        '假陽性指受測者的報告結果呈陽性但實際上是沒有患病的，一旦檢測出來的結果存在「假陽性」，會令患者產生巨大的心理負擔。',
+      detail: 'cp_v2.ngs_advantage.efficient_detections.2',
     },
   ]
   const steps2 = [
@@ -70,9 +67,8 @@ const SectionTwo = () => {
           alt='advantage 01'
         ></StaticImage>
       ),
-      title: '高靈敏度',
-      detail:
-        '篩查的靈敏度高於97%¹’²，而且絕少漏檢，結果準確可靠，冠絕其他同類測試！',
+      title: 'cp_v2.ngs_advantage.advantages.0.title',
+      detail: 'cp_v2.ngs_advantage.advantages.0.content',
     },
     {
       img: (
@@ -81,9 +77,8 @@ const SectionTwo = () => {
           alt='advantage 02'
         ></StaticImage>
       ),
-      title: '經萬人實證',
-      detail:
-        '並通過二萬名人士參與的臨床實證⁶，是市場上最值得信賴的早期鼻咽癌篩查。(詳情請向醫護人員查詢)',
+      title: 'cp_v2.ngs_advantage.advantages.1.title',
+      detail: 'cp_v2.ngs_advantage.advantages.1.content',
     },
     {
       img: (
@@ -92,9 +87,8 @@ const SectionTwo = () => {
           alt='advantage 03'
         ></StaticImage>
       ),
-      title: '頂尖大學研發',
-      detail:
-        'Take2 Prophecy™ 早期鼻咽癌篩查，應用了由本地頂尖大學團隊研發的次世代 DNA測序技術',
+      title: 'cp_v2.ngs_advantage.advantages.2.title',
+      detail: 'cp_v2.ngs_advantage.advantages.2.content',
     },
   ]
 
@@ -131,11 +125,8 @@ const SectionTwo = () => {
         position='relative'
       >
         <Box fontSize={isMobile ? 16 : 18} maxWidth={580} mx='auto' px={2.5}>
-          <Box>
-            去旅行，面對未知風險，你也會提前購買保險，未雨綢繆。在人生旅途上，其實我們同樣需要提防鼻咽癌，防患於未然。
-            <br />
-            <br />
-            早期鼻咽癌篩查有效識別出未有明顯病徵的早期患者，助其及早開展治療，以大大提高治癒的機會，及減少治療帶來的副作用，將對生活的影響減至最低。懂得預備好你的「人生保險」，定期接受篩查，自然無需再「談癌色變」，可以放心面對各種挑戰。
+          <Box whiteSpace='break-spaces'>
+            {t('cp_v2.ngs_advantage.paragraphs.0')}
           </Box>
           <Box
             fontWeight={900}
@@ -144,14 +135,12 @@ const SectionTwo = () => {
             color='prophecyPrimary.main'
             my={4}
           >
-            <Box>何謂可靠有效的鼻咽癌篩查 ？</Box>
-            <Box>
-              <Box color='secondary.main' component='span'>
-                高靈敏度、低假陽性
-              </Box>
-              {!isMobile && <Box component='span'>至關重要</Box>}
+            <Box>{t('cp_v2.ngs_advantage.paragraphs.1')}</Box>
+            <Box color='secondary.main' component='span'>
+              {t('cp_v2.ngs_advantage.paragraphs.6')}
             </Box>
-            {isMobile && <Box>至關重要</Box>}
+            {isMobile && <br />}
+            <Box component='span'>{t('cp_v2.ngs_advantage.paragraphs.7')}</Box>
           </Box>
           <Box>
             {steps.map((item, index) => (
@@ -164,13 +153,11 @@ const SectionTwo = () => {
                 >
                   {item.img}
                 </Box>
-                <Box>{item.detail}</Box>
+                <Box>{t(item.detail)}</Box>
               </Box>
             ))}
           </Box>
-          <Box mt={1}>
-            所以我們應選擇高靈敏度且低假陽性率的篩查，因為這表示其表現十分理想，能有效檢測出陽性患者，讓患者不會因漏檢而以為自己無病，延誤開展治療；同時有效減低誤判，免去我們承受不必要的擔憂，真正達到進行篩查的目的。
-          </Box>
+          <Box mt={1}>{t('cp_v2.ngs_advantage.paragraphs.2')}</Box>
         </Box>
       </Box>
       <Box maxWidth={988} mx='auto' px={2.5}>
@@ -180,19 +167,18 @@ const SectionTwo = () => {
           textAlign='center'
           color='prophecyPrimary.main'
           mb={4}
+          whiteSpace='break-spaces'
         >
           Take2 Prophecy™
           {isMobile && <br />}
-          早期鼻咽癌篩查
-          <br />
-          市場上最值得信賴
+          {t('cp_v2.ngs_advantage.paragraphs.3')}
         </Box>
-        <Box textAlign={isMobile ? 'left' : 'center'} mb={4}>
-          所以我們應選擇高靈敏度且低假陽性率的篩查，因為這表示其表現十分理想，能有效檢測出陽性患者，讓患者不會因漏檢而以為自己無病，延誤開展治療；同時有效減低誤判，免去我們承受不必要的擔憂，真正達到進行篩查的目的。
-          <br />
-          <br />
-          此篩查的靈敏度＞97%，絕少漏檢，而且假陽性率極低
-          (0.7%)，結果準確可靠，冠絕其他同類測試！
+        <Box
+          whiteSpace='break-spaces'
+          textAlign={isMobile ? 'left' : 'center'}
+          mb={4}
+        >
+          {t('cp_v2.ngs_advantage.paragraphs.4')}
         </Box>
         <Box
           maxWidth={theme.spacing(100)}
@@ -219,7 +205,7 @@ const SectionTwo = () => {
           color='prophecyPrimary.main'
           mb={6}
         >
-          頂尖大學研發 經萬人實證
+          {t('cp_v2.ngs_advantage.paragraphs.5')}
         </Box>
         <Box>
           <Grid alignItems='center' container spacing={4}>
@@ -274,19 +260,23 @@ const SectionTwo = () => {
                             alt='check'
                           ></StaticImage>
                         </Box>
-                        <Box>{item.title}</Box>
+                        <Box>{t(item.title)}</Box>
                       </Box>
-                      <Box>
-                        {item.detail}
-                        {index === 1 && (
-                          <Box
-                            fontSize={13}
-                            component={isMobile ? 'span' : 'div'}
-                          >
-                            (詳情請向醫護人員查詢)
-                          </Box>
-                        )}
-                      </Box>
+                      {index === 1 ? (
+                        <Box>
+                          <Trans i18nKey={item.detail}>
+                            .
+                            <Box
+                              fontSize={13}
+                              component={isMobile ? 'span' : 'div'}
+                            >
+                              (詳情請向醫護人員查詢)
+                            </Box>
+                          </Trans>
+                        </Box>
+                      ) : (
+                        <Box>{t(item.detail)}</Box>
+                      )}
                     </Box>
                   </Box>
                 ))}
@@ -309,7 +299,7 @@ const SectionTwo = () => {
             color='secondary'
             target='_blank'
           >
-            立即預約
+            {t('common.book_now')}
           </Button>
           <Link to='/products-and-services/take2-extra-care'>
             <Button
@@ -317,7 +307,7 @@ const SectionTwo = () => {
               fullWidth
               variant='outlined'
             >
-              查看篩查服務點
+              {t('cp_v2.common.view_service_location')}
             </Button>
           </Link>
         </Box>

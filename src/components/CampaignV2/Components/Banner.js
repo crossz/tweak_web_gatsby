@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import classnames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) =>
 )
 const Banner = () => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -42,7 +44,7 @@ const Banner = () => {
         variant='contained'
         color='secondary'
       >
-        立即預約
+        {t('common.book_now')}
       </Button>
       {isMobile ? (
         <StaticImage

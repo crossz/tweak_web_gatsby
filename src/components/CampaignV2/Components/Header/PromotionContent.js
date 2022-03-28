@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core'
 import { PROMOTION_CODE } from '@components/CampaignV2/utils/constant'
 import classnames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const PromotionContent = ({ whiteBg }) => {
   const classes = useStyles()
+  const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -77,7 +79,7 @@ const PromotionContent = ({ whiteBg }) => {
             fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
             component='span'
           >
-            限时优惠
+            {t('cp_v2.promotion.limited_time_offer')}
             <Hidden xsDown>
               <Box fontWeight='fontWeightLight' component='span'>
                 ｜
@@ -90,7 +92,7 @@ const PromotionContent = ({ whiteBg }) => {
             fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
             flexShrink={0}
           >
-            输入
+            {t('cp_v2.common.enter')}
           </Box>
           <Box
             fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
@@ -108,7 +110,7 @@ const PromotionContent = ({ whiteBg }) => {
             {PROMOTION_CODE}
           </Box>
           <Typography component='div' noWrap>
-            即享$1,500推廣價
+            {t('cp_v2.promotion.price')}
             <Box
               fontWeight='fontWeightLight'
               fontSize='body2.fontSize'
@@ -116,7 +118,7 @@ const PromotionContent = ({ whiteBg }) => {
               pl={0.5}
               mt={0.5}
             >
-              (*只限首200名首次預約者)
+              (*{t('cp_v2.promotion.tip')})
             </Box>
           </Typography>
         </Box>
@@ -128,7 +130,7 @@ const PromotionContent = ({ whiteBg }) => {
           variant='contained'
           color='secondary'
         >
-          立即预约
+          {t('cp_v2.common.book_now')}
         </Button>
       )}
     </>

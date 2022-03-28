@@ -61,13 +61,12 @@ const SectionFive = () => {
         px={2.5}
       >
         <Box maxWidth={784} mx='auto'>
-          <Box lineHeight={isMobile ? 1.5 : 2} mb={isMobile ? 3 : 6}>
-            作為鼻咽癌康復者兼香港著名喜劇演員，張達明先生曾因忽略身體警號而延誤求醫。
-            <br />
-            走過長達7年的抗癌路，達明終成功擊退鼻咽癌，現在可於電影和舞台劇路上再創輝煌成績。
-            <br />
-            <br />
-            一起聽聽達明親述他的第二人生及進行「早期鼻咽癌篩查」的重要！
+          <Box
+            whiteSpace='break-spaces'
+            lineHeight={isMobile ? 1.5 : 2}
+            mb={isMobile ? 3 : 6}
+          >
+            {t('cp_v2.second_life.paragraphs.0')}
           </Box>
           <YouTube
             className={classes.video}
@@ -83,13 +82,9 @@ const SectionFive = () => {
             fontWeight='fontWeightBold'
             textAlign='center'
             fontSize={isMobile ? 14 : 20}
+            whiteSpace='break-spaces'
           >
-            <Box>
-              不要讓鼻咽癌打亂你的人生，想掌握健康，
-              {isMobile && <br />}
-              就要定期接受早期鼻咽癌篩查，
-            </Box>
-            <Box>「預早知 ・ 越早醫」。</Box>
+            {t('cp_v2.second_life.paragraphs.1')}
           </Box>
           <Box textAlign='center'>
             <Button
@@ -99,7 +94,7 @@ const SectionFive = () => {
               target='_blank'
               className={classes.btn}
             >
-              立即預約
+              {t('common.book_now')}
             </Button>
           </Box>
         </Box>

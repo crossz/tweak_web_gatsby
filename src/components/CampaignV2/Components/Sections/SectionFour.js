@@ -3,8 +3,10 @@ import { useTheme, useMediaQuery, Box } from '@material-ui/core/'
 import PostSwiper from '@components/Homepage/PostSwiper'
 import { StaticImage } from 'gatsby-plugin-image'
 import Button from '@material-ui/core/Button'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
+  const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   return (
@@ -32,13 +34,13 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
         pb={15}
         pl={2.5}
       >
-        <Box mb={-2}>了解鼻咽癌康復者的故事</Box>
+        <Box mb={-2}>{t('cp_v2.news.paragraphs.0')}</Box>
         <PostSwiper
           nodes={promotionNodes}
           morePath='/whats-new/promotions/'
           withViewBtn
         ></PostSwiper>
-        <Box mb={-2}>更多相關資訊</Box>
+        <Box mb={-2}>{t('cp_v2.news.paragraphs.1')}</Box>
         <PostSwiper
           nodes={healthTipsNodes}
           morePath='/whats-new/health-tips/'
@@ -50,7 +52,7 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
             color='secondary'
             target='_blank'
           >
-            立即預約
+            {t('common.book_now')}
           </Button>
         </Box>
       </Box>

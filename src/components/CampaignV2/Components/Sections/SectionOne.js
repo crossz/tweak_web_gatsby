@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SYMPTOM_LIST = [
   {
-    label: '鼻咽癌？',
+    label: 'cp_v2.ngs_characteristic.diseases.0',
     icon: (
       <StaticImage
         src='../../images/disease_01.png'
@@ -54,7 +54,7 @@ const SYMPTOM_LIST = [
     ),
   },
   {
-    label: '感冒？',
+    label: 'cp_v2.ngs_characteristic.diseases.1',
     icon: (
       <StaticImage
         src='../../images/disease_02.png'
@@ -63,7 +63,7 @@ const SYMPTOM_LIST = [
     ),
   },
   {
-    label: '鼻敏感？',
+    label: 'cp_v2.ngs_characteristic.diseases.2',
     icon: (
       <StaticImage
         src='../../images/disease_03.png'
@@ -81,16 +81,16 @@ const characteristics = [
         alt='characteristic 01'
       ></StaticImage>
     ),
-    detail: '鼻咽癌是本港十大癌症殺手之一，每年有六百至八百多宗病例²',
+    detail: 'cp_v2.ngs_characteristic.characteristics.0',
   },
   {
     img: (
       <StaticImage
         src='../../images/npc_characteristic_02.png'
-        alt='characteristic 01'
+        alt='characteristic 02'
       ></StaticImage>
     ),
-    detail: '20-44歲男士的頭號癌症³',
+    detail: 'cp_v2.ngs_characteristic.characteristics.1',
   },
   {
     img: (
@@ -99,7 +99,7 @@ const characteristics = [
         alt='characteristic 03'
       ></StaticImage>
     ),
-    detail: '女士當中較常發病於50-60歲的其中一種癌症²',
+    detail: 'cp_v2.ngs_characteristic.characteristics.2',
   },
   {
     img: (
@@ -108,7 +108,7 @@ const characteristics = [
         alt='characteristic 04'
       ></StaticImage>
     ),
-    detail: '香港人的鼻咽癌發病率更是全球平均的5-6倍⁴’⁵',
+    detail: 'cp_v2.ngs_characteristic.characteristics.3',
   },
 ]
 
@@ -158,7 +158,7 @@ const SectionOne = () => {
             color='grey.900'
             component='p'
           >
-            很多人誤以為鼻咽癌只和吸煙有關，要是年青力壯或是生活習慣良好，又怎會認為癌症有自己的份兒？但事實上，不論男女老幼，鼻咽癌的威脅可能已悄悄進逼至你身邊。
+            {t('cp_v2.ngs_characteristic.paragraphs.0')}
           </Box>
         </Box>
         <ImageList
@@ -195,14 +195,14 @@ const SectionOne = () => {
                   textAlign={isMobile ? 'center' : 'left'}
                   fontWeight='fontWeightBold'
                 >
-                  {item.detail}
+                  {t(item.detail)}
                 </Box>
               </Box>
             </ImageListItem>
           ))}
         </ImageList>
         <Box mt={6} textAlign='center' color='grey.900'>
-          可見鼻咽癌實在和我們切身相關，好應提高警覺。
+          {t('cp_v2.ngs_characteristic.paragraphs.1')}
         </Box>
       </Box>
       <Box
@@ -220,14 +220,14 @@ const SectionOne = () => {
       >
         <Box maxWidth={988} mx='auto'>
           <Typography variant={isMobile ? 'h4' : 'h5'} color='secondary'>
-            早期鼻咽癌令人防不勝防！原來這些都是病徵之一？
+            {t('cp_v2.ngs_characteristic.paragraphs.2')}
           </Typography>
           <Box
             mt={2}
             fontWeight='fontWeightRegular'
             fontSize={isMobile ? 16 : 18}
           >
-            部分早期鼻咽癌徵狀與一般感冒、鼻敏感相似，容易令患者掉以輕心，以為只是持續出現小毛病，以致遲遲未有求醫；當驚覺病情越趨嚴重時已錯失治療黃金期，80%患者在初次確診時已屬晚期⁵，大大增加治療的難度，亦令存活率降低。
+            {t('cp_v2.ngs_characteristic.paragraphs.3')}
           </Box>
         </Box>
       </Box>
@@ -256,7 +256,9 @@ const SectionOne = () => {
             fontSize={isMobile ? 20 : 28}
             pb={isMobile ? 3 : 3.5}
           >
-            <Box mb={isMobile ? 4 : 5}>你真的懂得分辨這些病徵嗎？</Box>
+            <Box mb={isMobile ? 4 : 5}>
+              {t('cp_v2.ngs_characteristic.paragraphs.4')}
+            </Box>
             <IntersectIcon
               style={{
                 width: isMobile ? 64 : 100,
@@ -310,7 +312,7 @@ const SectionOne = () => {
                 textAlign='center'
               >
                 <Box width={isMobile ? 88 : 120}>{symptom.icon}</Box>
-                <Box mt={isMobile ? 1.5 : 2}>{symptom.label}</Box>
+                <Box mt={isMobile ? 1.5 : 2}>{t(symptom.label)} ?</Box>
               </Box>
             ))}
           </Box>
@@ -318,7 +320,7 @@ const SectionOne = () => {
             fontSize={isMobile ? 'body1.fontSize' : 'h6.fontSize'}
             textAlign={isMobile ? 'left' : 'center'}
           >
-            是感冒持續、鼻敏感還是鼻咽癌……似是而非？當然不能靠自己盲目估計！如果你並非專業醫護人員，雖不懂得分辨這些病徵和判斷自己的病情，但祈求一旦患病時能儘早自救，就應該及早進行早期鼻咽癌篩查，讓精準可靠的次世代技術守護你的健康！
+            {t('cp_v2.ngs_characteristic.paragraphs.5')}
           </Box>
           <Box
             mt={isMobile ? 4 : 8}
@@ -334,7 +336,7 @@ const SectionOne = () => {
               href={process.env.GATSBY_SITE_URL}
               target='_blank'
             >
-              立即預約
+              {t('common.book_now')}
             </Button>
             <Link to='/products-and-services/take2-extra-care'>
               <Button
@@ -342,7 +344,7 @@ const SectionOne = () => {
                 fullWidth
                 variant='outlined'
               >
-                查看篩查服務點
+                {t('cp_v2.common.view_service_location')}
               </Button>
             </Link>
           </Box>

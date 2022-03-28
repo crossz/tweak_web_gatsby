@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Map from '@components/Map'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -19,10 +19,8 @@ const Steps = () => {
           alt='step 01'
         ></StaticImage>
       ),
-      indexLeft: '網上',
-      indexRight: 'Click登記',
-      detail:
-        '於Take2Health網上平台，一按即能隨時隨地一站式選擇診所、醫生、篩查日期、時間及地點進行預約',
+      title: 'cp_v2.ngs_progress.steps.0.title',
+      detail: 'cp_v2.ngs_progress.steps.0.content',
       arrowDown: (
         <StaticImage src='../../images/arrowDown.png' alt='empty'></StaticImage>
       ),
@@ -34,10 +32,8 @@ const Steps = () => {
           alt='step 02'
         ></StaticImage>
       ),
-      indexLeft: '行',
-      indexRight: '步去抽血',
-      detail:
-        '過程簡單無創，無需入院進行，抽血即可；服務點遍布全港九新界，住所、公司附近都做到',
+      title: 'cp_v2.ngs_progress.steps.1.title',
+      detail: 'cp_v2.ngs_progress.steps.1.content',
       arrowDown: (
         <StaticImage src='../../images/arrowDown.png' alt='empty'></StaticImage>
       ),
@@ -49,9 +45,8 @@ const Steps = () => {
           alt='step 03'
         ></StaticImage>
       ),
-      indexLeft: '',
-      indexRight: '日有結果',
-      detail: '最快三個工作天就有結果，不再因漫長等待而「心掛掛」',
+      title: 'cp_v2.ngs_progress.steps.2.title',
+      detail: 'cp_v2.ngs_progress.steps.2.content',
     },
   ]
 
@@ -71,13 +66,13 @@ const Steps = () => {
         )}
       </Box>
       <Box mb={-15} position='relative' mx='auto' maxWidth={784}>
-        <Box pt={isMobile ? 3 : 6} fontSize={isMobile ? 16 : 18} px={2.5}>
-          聽到「癌症篩查」一詞，大家可能即時聯想到一大堆繁複程序及需要，例如請假入院、看專科醫生、抽取身體組織活檢、用上各樣大型儀器等。
-          <br />
-          <br />
-          別擔心！Take2 Prophecy™
-          早期鼻咽癌篩查打破過去篩查服務的局限，採用次世代醫療科技，篩查過程從此變得非常簡單，只須跟著以下檢測3步，一個Lunch
-          Time，就近診所即能完成。想提防鼻咽癌，現在易如反掌！
+        <Box
+          whiteSpace='break-spaces'
+          pt={isMobile ? 3 : 6}
+          fontSize={isMobile ? 16 : 18}
+          px={2.5}
+        >
+          {t('cp_v2.ngs_progress.paragraphs.0')}
         </Box>
         <Box
           color='prophecyPrimary.main'
@@ -87,7 +82,7 @@ const Steps = () => {
           mb={3}
           textAlign='center'
         >
-          檢測3步
+          {t('cp_v2.ngs_progress.paragraphs.1')}
         </Box>
         <Box
           borderRadius={isMobile ? 24 : 16}
@@ -123,22 +118,24 @@ const Steps = () => {
                   </Box>
                   <Box textAlign={isMobile ? 'center' : 'left'}>
                     <Box fontSize='h5.fontSize' fontWeight={900}>
-                      {item.indexLeft}
-                      <Box
-                        color='secondary.main'
-                        fontSize='h3.fontSize'
-                        component='span'
-                        px={0.5}
-                      >
-                        {index + 1}
-                      </Box>
-                      {item.indexRight}
+                      <Trans i18nKey={item.title}>
+                        .
+                        <Box
+                          color='secondary.main'
+                          fontSize='h3.fontSize'
+                          component='span'
+                          px={0.5}
+                        >
+                          .
+                        </Box>
+                        .
+                      </Trans>
                     </Box>
                     <Box
                       fontWeight='fontWeightMedium'
                       fontSize={isMobile ? 16 : 18}
                     >
-                      {item.detail}
+                      {t(item.detail)}
                     </Box>
                   </Box>
                 </Box>

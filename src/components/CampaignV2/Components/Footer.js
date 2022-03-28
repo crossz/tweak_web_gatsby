@@ -9,23 +9,6 @@ import Link from '@components/Link'
 
 import { SERVICE_PHONE, SERVICE_INFO_EMAIL } from '../utils/constant'
 
-const INFO_LIST = [
-  {
-    icon: <LocationIcon />,
-    title: '香港九龍灣常悅道1號恩浩國際中心25樓D室',
-  },
-  {
-    icon: <PhoneIcon />,
-    title: '(852) 3613 0533',
-    href: `tel:${SERVICE_PHONE}`,
-  },
-  {
-    icon: <MailIcon />,
-    title: SERVICE_INFO_EMAIL,
-    href: `mailto:${SERVICE_INFO_EMAIL}`,
-  },
-]
-
 const useStyles = makeStyles((theme) => ({
   icon: {
     '& svg': {
@@ -42,6 +25,23 @@ const Footer = () => {
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+
+  const INFO_LIST = [
+    {
+      icon: <LocationIcon />,
+      title: t('cp_v2.footer.paragraphs.0'),
+    },
+    {
+      icon: <PhoneIcon />,
+      title: '(852) 3613 0533',
+      href: `tel:${SERVICE_PHONE}`,
+    },
+    {
+      icon: <MailIcon />,
+      title: SERVICE_INFO_EMAIL,
+      href: `mailto:${SERVICE_INFO_EMAIL}`,
+    },
+  ]
 
   return (
     <Box

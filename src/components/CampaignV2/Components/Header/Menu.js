@@ -70,18 +70,17 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const LIST = [
-  { label: '早期鼻咽癌病徵，你我都經歷過？\n想自救怎能靠估！', id: '' },
-  { label: '有得防的癌症  你不會不防吧！\n進行早期鼻咽癌篩查', id: '' },
-  { label: '無創抽血　過程簡單、快捷\n一個Lunch Time即完成', id: '' },
-  { label: '早期鼻咽癌病徵，你我都經歷過？\n想自救怎能靠估！', id: '' },
-  { label: '「發現得早，一樣可以醫返好！」', id: '' },
-  { label: '張達明康復鼻咽癌後的第二人生', id: '' },
-  { label: '聯絡我們', id: '' },
+  { label: 'cp_v2.menu.list.0', id: '' },
+  { label: 'cp_v2.menu.list.1', id: '' },
+  { label: 'cp_v2.menu.list.2', id: '' },
+  { label: 'cp_v2.menu.list.3', id: '' },
+  { label: 'cp_v2.menu.list.4', id: '' },
+  { label: 'cp_v2.menu.list.5', id: '' },
 ]
 
 export default function Menu(props) {
   const classes = useStyles()
-  const { language, originalPath } = useI18next()
+  const { t, originalPath } = useI18next()
   const [state, setState] = React.useState(false)
 
   const toggleDrawer = (open) => (event) => {
@@ -139,7 +138,7 @@ export default function Menu(props) {
                   onKeyDown={toggleDrawer(false)}
                   disableGutters
                 >
-                  <Box whiteSpace='break-spaces'>{item.label}</Box>
+                  <Box whiteSpace='break-spaces'>{t(item.label)}</Box>
                 </ListItem>
               </React.Fragment>
             ))}
@@ -148,7 +147,7 @@ export default function Menu(props) {
         <Box mx={5} mb={5} mt='auto' alignItems='center' display='flex'>
           <Link to='/'>
             <Button className={classes.button} variant='outlined'>
-              官方網站
+              {t('cp_v2.menu.office_website')}
             </Button>
           </Link>
           <Box
