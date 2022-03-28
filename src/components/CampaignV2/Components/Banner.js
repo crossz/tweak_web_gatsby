@@ -2,13 +2,14 @@ import React from 'react'
 import {
   makeStyles,
   createStyles,
+  useTheme,
   Box,
-  Container,
+  useMediaQuery,
   Button,
-  Hidden,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -21,28 +22,40 @@ const useStyles = makeStyles((theme) =>
       top: `${(383 / 584) * 100}%`,
       zIndex: 1,
     },
+    mobileButton: {
+      left: `${(19 / 320) * 100}%`,
+      top: `${(333 / 486) * 100}%`,
+    },
   })
 )
 const Banner = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+
   return (
     <Box position='relative'>
-      <Link underline='none' to='/' className={classes.button}>
-        <Hidden smUp>
-          <Button size='small' variant='contained' color='secondary'>
-            立即預約
-          </Button>
-        </Hidden>
-        <Hidden xsDown>
-          <Button size='medium' variant='contained' color='secondary'>
-            立即預約
-          </Button>
-        </Hidden>
-      </Link>
-      <StaticImage
-        src='../images/hero_banner.jpg'
-        alt='hero banner'
-      ></StaticImage>
+      <Button
+        className={classnames(classes.button, {
+          [classes.mobileButton]: isMobile,
+        })}
+        href={process.env.GATSBY_SITE_URL}
+        variant='contained'
+        color='secondary'
+      >
+        立即預約
+      </Button>
+      {isMobile ? (
+        <StaticImage
+          src='../images/hero_banner_mobile.jpg'
+          alt='hero banner mobile'
+        ></StaticImage>
+      ) : (
+        <StaticImage
+          src='../images/hero_banner.jpg'
+          alt='hero banner'
+        ></StaticImage>
+      )}
     </Box>
   )
 }

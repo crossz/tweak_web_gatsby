@@ -21,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
+  drawer: {
+    backgroundColor: alpha(theme.palette.prophecyPrimary.main, 0.9),
+    backdropFilter: `blur(24px)`,
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
+  },
   icon: {
     width: theme.spacing(3),
     height: theme.spacing(3),
@@ -37,11 +44,6 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.primary.main,
     },
   },
-  drawer: {
-    backgroundColor: alpha(theme.palette.prophecyPrimary.main, 0.9),
-    backdropFilter: `blur(24px)`,
-  },
-  list: {},
   listItem: {
     padding: theme.spacing(3, 0),
     cursor: 'pointer',
