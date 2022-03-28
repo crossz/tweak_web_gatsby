@@ -235,6 +235,7 @@ const SectionTwo = () => {
               <Box>
                 {steps2.map((item, index) => (
                   <Box
+                    key={index}
                     alignItems='center'
                     borderRadius={16}
                     px={isMobile ? 2.5 : 3}
@@ -310,15 +311,15 @@ const SectionTwo = () => {
           >
             立即預約
           </Button>
-          <Button
-            component={Link}
-            className={classes.outlineButton}
-            fullWidth
-            variant='outlined'
-            to='/products-and-services/take2-extra-care'
-          >
-            查看篩查服務點
-          </Button>
+          <Link to='/products-and-services/take2-extra-care'>
+            <Button
+              className={classes.outlineButton}
+              fullWidth
+              variant='outlined'
+            >
+              查看篩查服務點
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Box>

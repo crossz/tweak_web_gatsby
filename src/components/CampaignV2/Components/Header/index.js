@@ -1,34 +1,36 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Box from '@material-ui/core/Box'
 import {
   makeStyles,
   useTheme,
   useMediaQuery,
   Container,
-  Hidden,
   alpha,
 } from '@material-ui/core'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
+import { PROMOTION_BAR_HEIGHT } from '../../utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
 import { StaticImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
 import { Waypoint } from 'react-waypoint'
-import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import PromotionBar from './PromotionBar'
 import PromotionContent from './PromotionContent'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: alpha(theme.palette.background.paper, 0),
     position: 'sticky',
     top: 0,
     zIndex: theme.zIndex.appBar,
+  },
+  header: {
+    backgroundColor: alpha(theme.palette.background.paper, 0),
     transition: `background-color 0.6s`,
     marginBottom: theme.spacing(-HEADER_HEIGHT),
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(-MOBILE_HEADER_HEIGHT),
+      top: PROMOTION_BAR_HEIGHT,
     },
   },
   withBg: {
@@ -60,50 +62,55 @@ const Header = (props) => {
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
-
   const [withBg, setWithBg] = useState(true)
-  const context = useContext(HeroThemeContext)
 
   return (
     <>
-      <PromotionBar></PromotionBar>
       <Waypoint
+        topOffset={isMobile ? 0 : -PROMOTION_BAR_HEIGHT}
         onEnter={() => setWithBg(false)}
         onLeave={() => setWithBg(true)}
       ></Waypoint>
       <Box
-        id='header'
-        className={classnames(classes.root, {
-          [classes.withBg]: withBg,
-        })}
+        position='sticky'
+        top={isMobile ? 0 : -PROMOTION_BAR_HEIGHT}
+        zIndex='appBar'
       >
-        <Container className={classes.wrapper} maxWidth='lg'>
-          <Box
-            display='block'
-            width={isMobile ? 100 : 145}
-            to='/'
-            component={Link}
-            mr={2}
-          >
-            {withBg ? (
-              <StaticImage
-                src='../../../../assets/images/common/prophecy_full_color.png'
-                alt='Logo'
-              />
-            ) : (
-              <StaticImage
-                src='../../../../assets/images/common/prophecy_white.png'
-                alt='Logo'
-              />
+        <PromotionBar></PromotionBar>
+        <Box
+          id='header'
+          className={classnames(classes.header, {
+            [classes.withBg]: withBg,
+          })}
+        >
+          <Container className={classes.wrapper} maxWidth='lg'>
+            <Box
+              display='block'
+              width={isMobile ? 100 : 145}
+              to='/'
+              component={Link}
+              mr={2}
+            >
+              {withBg ? (
+                <StaticImage
+                  src='../../../../assets/images/common/prophecy_full_color.png'
+                  alt='Logo'
+                />
+              ) : (
+                <StaticImage
+                  src='../../../../assets/images/common/prophecy_white.png'
+                  alt='Logo'
+                />
+              )}
+            </Box>
+            {withBg && !isMobile && (
+              <PromotionContent whiteBg={withBg}></PromotionContent>
             )}
-          </Box>
-          {withBg && !isMobile && (
-            <PromotionContent whiteBg={withBg}></PromotionContent>
-          )}
-          <Box className={classes.menuBtn}>
-            <Menu dark={withBg}></Menu>
-          </Box>
-        </Container>
+            <Box className={classes.menuBtn}>
+              <Menu dark={withBg}></Menu>
+            </Box>
+          </Container>
+        </Box>
       </Box>
     </>
   )

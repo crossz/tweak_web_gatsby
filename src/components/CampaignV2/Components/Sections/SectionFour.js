@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme, useMediaQuery, makeStyles, Box } from '@material-ui/core/'
+import { useTheme, useMediaQuery, Box } from '@material-ui/core/'
 import PostSwiper from '@components/Homepage/PostSwiper'
 import { StaticImage } from 'gatsby-plugin-image'
 import Button from '@material-ui/core/Button'
-
-const useStyles = makeStyles((theme) => ({}))
 
 const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
   const theme = useTheme()

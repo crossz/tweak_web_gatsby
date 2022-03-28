@@ -336,15 +336,15 @@ const SectionOne = () => {
             >
               立即預約
             </Button>
-            <Button
-              className={classes.outlineButton}
-              fullWidth
-              variant='outlined'
-              component={Link}
-              to='/products-and-services/take2-extra-care'
-            >
-              查看篩查服務點
-            </Button>
+            <Link to='/products-and-services/take2-extra-care'>
+              <Button
+                className={classes.outlineButton}
+                fullWidth
+                variant='outlined'
+              >
+                查看篩查服務點
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>

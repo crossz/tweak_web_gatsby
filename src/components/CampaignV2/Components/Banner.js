@@ -8,7 +8,6 @@ import {
   Button,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
-import Link from '@components/Link'
 import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) =>

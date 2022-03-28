@@ -1,11 +1,9 @@
 import React from 'react'
-import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import ClockIcon from '@components/CampaignV2/images/clock.svg'
 import {
   makeStyles,
   useTheme,
   useMediaQuery,
-  Container,
   Hidden,
   Box,
   Button,

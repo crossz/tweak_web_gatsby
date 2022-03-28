@@ -235,7 +235,6 @@ const Map = ({ showMap }) => {
       {showMap ? (
         location?.length > 0 && (
           <ESelect
-            labelId='district-select-label'
             id='district-type-select'
             name='district'
             value={curArea}

@@ -27,6 +27,13 @@ import {
 } from '../utils/constant'
 
 const useStyles = makeStyles((theme) => ({
+  websiteButton: {
+    borderColor: theme.palette.prophecyPrimary.main,
+    color: theme.palette.prophecyPrimary.main,
+    backgroundColor: `transparent`,
+    fontSize: theme.typography.body1.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
+  },
   reference: {
     color: theme.palette.prophecyPrimary.light,
     fontWeight: 700,
@@ -185,13 +192,12 @@ const ContactReference = () => {
           </Box>
           <Box display={isMobile ? 'block' : 'flex'}>
             {CONTACT_LIST.map((item, index) => (
-              <Link underline='none' to={item.href} target='_blank'>
+              <Link key={index} underline='none' to={item.href} target='_blank'>
                 <Box
                   bgcolor={!index ? '#25D366' : 'prophecyPrimary.light'}
                   borderRadius={12}
                   mr={isMobile ? 0 : 2}
                   mb={isMobile ? 2 : 0}
-                  key={index}
                   py={2}
                   px={3}
                   display='flex'
@@ -228,7 +234,14 @@ const ContactReference = () => {
               >
                 想了解更多Take2 Prophecy™ 早期鼻咽癌篩查的資訊：{' '}
               </Box>
-              <Button to='/' variant='outlined' color='inherit'>
+              <Button
+                size='small'
+                fullWidth={isMobile}
+                to='/'
+                variant='outlined'
+                color='inherit'
+                className={classes.websiteButton}
+              >
                 官方網站
               </Button>
             </Box>
@@ -283,11 +296,11 @@ const ContactReference = () => {
                   root: classes.accordDetails,
                 }}
               >
-                <Typography className={classes.referenceDetail2}>
+                <Box className={classes.referenceDetail2}>
                   {reference.map((item, index) => (
-                    <Box>{item.list}</Box>
+                    <Box key={index}>{item.list}</Box>
                   ))}
-                </Typography>
+                </Box>
               </AccordionDetails>
             </Accordion>
             <Accordion
@@ -311,11 +324,13 @@ const ContactReference = () => {
                   root: classes.accordDetails,
                 }}
               >
-                <Typography className={classes.referenceDetail2}>
+                <Box className={classes.referenceDetail2}>
                   {rules.map((item, index) => (
-                    <Box mt={index === 0 ? 0 : 2}>{item.rulesDetail}</Box>
+                    <Box key={index} mt={index === 0 ? 0 : 2}>
+                      {item.rulesDetail}
+                    </Box>
                   ))}
-                </Typography>
+                </Box>
               </AccordionDetails>
             </Accordion>
           </Box>
@@ -324,19 +339,21 @@ const ContactReference = () => {
             <Box className={classes.reference} my={4}>
               參考資料
             </Box>
-            <Typography className={classes.referenceDetail}>
+            <Box className={classes.referenceDetail}>
               {reference.map((item, index) => (
-                <Box>{item.list}</Box>
+                <Box key={index}>{item.list}</Box>
               ))}
-            </Typography>
+            </Box>
             <Box className={classes.reference} my={4}>
               條款及細則
             </Box>
-            <Typography className={classes.rules}>
+            <Box className={classes.rules}>
               {rules.map((item, index) => (
-                <Box mt={index === 0 ? 0 : 2}>{item.rulesDetail}</Box>
+                <Box key={index} mt={index === 0 ? 0 : 2}>
+                  {item.rulesDetail}
+                </Box>
               ))}
-            </Typography>
+            </Box>
           </Box>
         )}
       </Box>
