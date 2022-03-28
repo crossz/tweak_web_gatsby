@@ -18,10 +18,7 @@ export default CampaignRoot
 export const query = graphql`
   query ($language: String!) {
     locales: allLocale(
-      filter: {
-        ns: { in: ["translation", "campaignPageV2"] }
-        language: { eq: $language }
-      }
+      filter: { ns: { in: ["campaignPageV2"] }, language: { eq: $language } }
     ) {
       edges {
         node {
