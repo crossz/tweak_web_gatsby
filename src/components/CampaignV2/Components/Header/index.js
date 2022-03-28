@@ -46,14 +46,25 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     padding: theme.spacing(0, 6),
     height: theme.spacing(HEADER_HEIGHT),
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(0, 2),
+    },
     [theme.breakpoints.down('xs')]: {
       height: theme.spacing(MOBILE_HEADER_HEIGHT),
       padding: theme.spacing(0, 3),
     },
   },
+  logoWrapper: {
+    [theme.breakpoints.down('sm')]: {
+      width: theme.spacing(12),
+    },
+  },
   menuBtn: {
     marginLeft: theme.spacing(3),
     marginRight: theme.spacing(-1.5),
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1),
+    },
   },
 }))
 
@@ -90,6 +101,8 @@ const Header = (props) => {
               to='/'
               component={Link}
               mr={2}
+              flexShrink={0}
+              className={classes.logoWrapper}
             >
               {withBg ? (
                 <StaticImage

@@ -33,6 +33,14 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 3.5),
     fontWeight: theme.typography.fontWeightBold,
     flexShrink: 0,
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(0, 2),
+    },
+  },
+  codeWrapper: {
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(0, 0.5),
+    },
   },
 }))
 const PromotionContent = ({ whiteBg }) => {
@@ -77,7 +85,6 @@ const PromotionContent = ({ whiteBg }) => {
             </Hidden>
           </Box>
         </Box>
-
         <Box overflow='hidden' alignItems='center' display='flex'>
           <Box
             fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
@@ -96,6 +103,7 @@ const PromotionContent = ({ whiteBg }) => {
             px={isMobile ? 1 : 1.5}
             mx={isMobile ? 0.5 : 1.5}
             component='span'
+            className={classes.codeWrapper}
           >
             {PROMOTION_CODE}
           </Box>
