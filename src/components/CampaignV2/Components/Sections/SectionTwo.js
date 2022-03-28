@@ -128,6 +128,7 @@ const SectionTwo = () => {
         mb={isMobile ? 5.25 : 8}
         mt={isMobile ? 0 : -4}
         boxShadow='0px 2px 30px rgba(120, 120, 120, 0.15)'
+        position='relative'
       >
         <Box fontSize={isMobile ? 16 : 18} maxWidth={580} mx='auto' px={2.5}>
           <Box>

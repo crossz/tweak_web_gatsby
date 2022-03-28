@@ -185,7 +185,7 @@ const ContactReference = () => {
           </Box>
           <Box display={isMobile ? 'block' : 'flex'}>
             {CONTACT_LIST.map((item, index) => (
-              <Link to={item.href} target='_blank'>
+              <Link underline='none' to={item.href} target='_blank'>
                 <Box
                   bgcolor={!index ? '#25D366' : 'prophecyPrimary.light'}
                   borderRadius={12}
