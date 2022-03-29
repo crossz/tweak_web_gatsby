@@ -4,7 +4,11 @@ import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Map from '@components/Map'
 import { StaticImage } from 'gatsby-plugin-image'
 
-const useStyles = makeStyles((theme) => ({}))
+const useStyles = makeStyles((theme) => ({
+  map: {
+    margin: 0,
+  },
+}))
 const Steps = () => {
   const { t } = useI18next()
   const theme = useTheme()
@@ -168,7 +172,7 @@ const Steps = () => {
             Take2 Prophecy™
             早期鼻咽癌篩查服務廣受各大型醫療機構採用，查看篩查服務點：
           </Box>
-          <Map showMap></Map>
+          <Map showMap className={classes.map}></Map>
         </Box>
       </Box>
     </Box>

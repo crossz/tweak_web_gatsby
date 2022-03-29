@@ -304,7 +304,11 @@ const SectionTwo = () => {
           >
             {t('common.book_now')}
           </Button>
-          <Link to='/products-and-services/take2-extra-care'>
+          <Box
+            width='100%'
+            component={Link}
+            to='/products-and-services/take2-extra-care'
+          >
             <Button
               className={classes.outlineButton}
               fullWidth
@@ -312,7 +316,7 @@ const SectionTwo = () => {
             >
               {t('cp_v2.common.view_service_location')}
             </Button>
-          </Link>
+          </Box>
         </Box>
       </Box>
     </Box>

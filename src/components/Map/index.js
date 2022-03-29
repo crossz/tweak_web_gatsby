@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Map = ({ showMap }) => {
+const Map = ({ showMap, className }) => {
   const classes = useStyles()
   const { t } = useI18next()
   const [viewType, setViewType] = useState('list')
@@ -231,7 +231,15 @@ const Map = ({ showMap }) => {
     REGIONS[region] ? t(REGIONS[region]) : region
 
   return (
-    <Box position='relative' className={classnames(showMap && classes.mapRoot)}>
+    <Box
+      position='relative'
+      className={classnames(
+        {
+          [classes.mapRoot]: showMap,
+        },
+        className
+      )}
+    >
       {showMap ? (
         location?.length > 0 && (
           <ESelect

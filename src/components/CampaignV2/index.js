@@ -28,7 +28,7 @@ const Page = ({ promotionNodes, healthTipsNodes }) => {
       ScrollTrigger.create({
         trigger: q(`.gsap-fade-in-${index}-trigger`),
         animation: fadeIn,
-        start: '100 bottom',
+        start: '200 bottom',
         toggleActions: 'play none none none',
       })
     }
