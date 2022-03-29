@@ -98,7 +98,7 @@ export default function Menu(props) {
   const handleScroll = (e) => {
     toggleDrawer(false)
     const { id } = e.currentTarget.dataset
-    scrollTo(`#${id}`, 'nearest')
+    scrollTo(`#${id}`, 'start')
   }
 
   return (

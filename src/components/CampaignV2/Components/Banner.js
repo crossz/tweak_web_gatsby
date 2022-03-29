@@ -7,9 +7,9 @@ import {
   useMediaQuery,
   Button,
 } from '@material-ui/core'
-import { StaticImage } from 'gatsby-plugin-image'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -46,17 +46,10 @@ const Banner = () => {
       >
         {t('cp_v2.common.book_now')}
       </Button>
-      {isMobile ? (
-        <StaticImage
-          src='../images/hero_banner_mobile_Hk.jpg'
-          alt='hero banner mobile'
-        ></StaticImage>
-      ) : (
-        <StaticImage
-          src='../images/hero_banner_Hk.jpg'
-          alt='hero banner'
-        ></StaticImage>
-      )}
+      <ImageTranslation
+        filename='hero_banner'
+        alt='hero banner'
+      ></ImageTranslation>
     </Box>
   )
 }

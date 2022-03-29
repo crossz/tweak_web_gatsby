@@ -1,9 +1,9 @@
 import React from 'react'
 import { useTheme, useMediaQuery, Box } from '@material-ui/core/'
 import PostSwiper from '@components/Homepage/PostSwiper'
-import { StaticImage } from 'gatsby-plugin-image'
 import Button from '@material-ui/core/Button'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
 
 const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
   const { t } = useI18next()
@@ -11,19 +11,10 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   return (
     <>
-      <Box>
-        {isMobile ? (
-          <StaticImage
-            src='../../images/section_banner_04_mobile_Hk.jpg'
-            alt='section banner 03 mobile'
-          ></StaticImage>
-        ) : (
-          <StaticImage
-            src='../../images/section_banner_04_Hk.jpg'
-            alt='section banner 03'
-          ></StaticImage>
-        )}
-      </Box>
+      <ImageTranslation
+        filename='section_banner_04'
+        alt='section banner 04'
+      ></ImageTranslation>
       <Box
         color='prophecyPrimary.main'
         fontWeight='fontWeightBold'

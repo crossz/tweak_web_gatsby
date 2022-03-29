@@ -3,6 +3,7 @@ import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Map from '@components/Map'
 import { StaticImage } from 'gatsby-plugin-image'
+import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   map: {
@@ -56,19 +57,10 @@ const Steps = () => {
 
   return (
     <>
-      <Box>
-        {isMobile ? (
-          <StaticImage
-            src='../../images/section_banner_03_mobile_Hk.jpg'
-            alt='section banner 03 mobile'
-          ></StaticImage>
-        ) : (
-          <StaticImage
-            src='../../images/section_banner_03_Hk.jpg'
-            alt='section banner 03'
-          ></StaticImage>
-        )}
-      </Box>
+      <ImageTranslation
+        filename='section_banner_03'
+        alt='section banner 03'
+      ></ImageTranslation>
       <Box mb={-15} position='relative' mx='auto' maxWidth={784}>
         <Box
           whiteSpace='break-spaces'

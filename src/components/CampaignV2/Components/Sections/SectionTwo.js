@@ -10,6 +10,7 @@ import {
 import Link from '@components/Link'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
+import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   outlineButton: {
@@ -100,19 +101,10 @@ const SectionTwo = () => {
       color='grey.900'
       pb={isMobile ? 8 : 13.5}
     >
-      <Box>
-        {isMobile ? (
-          <StaticImage
-            src='../../images/section_banner_02_mobile_Hk.jpg'
-            alt='section banner 02 mobile'
-          ></StaticImage>
-        ) : (
-          <StaticImage
-            src='../../images/section_banner_02_Hk.jpg'
-            alt='section banner 02'
-          ></StaticImage>
-        )}
-      </Box>
+      <ImageTranslation
+        filename='section_banner_02'
+        alt='section banner 02'
+      ></ImageTranslation>
       <Box
         className='gsap-fade-in-4-trigger gsap-fade-in-4'
         bgcolor='background.paper'

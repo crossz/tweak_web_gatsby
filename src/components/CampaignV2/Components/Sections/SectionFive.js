@@ -6,10 +6,10 @@ import {
   makeStyles,
   Button,
 } from '@material-ui/core'
-import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import LineDots from '@components/CampaignV2/images/bg_wave_dots.png'
+import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   bgImage: {
@@ -38,19 +38,10 @@ const SectionFive = () => {
 
   return (
     <>
-      <Box>
-        {isMobile ? (
-          <StaticImage
-            src='../../images/section_banner_05_mobile_Hk.jpg'
-            alt='empty'
-          ></StaticImage>
-        ) : (
-          <StaticImage
-            src='../../images/section_banner_05_Hk.jpg'
-            alt='empty'
-          ></StaticImage>
-        )}
-      </Box>
+      <ImageTranslation
+        filename='section_banner_05'
+        alt='section banner 05'
+      ></ImageTranslation>
       <Box
         color='primary.contrastText'
         fontSize={isMobile ? 16 : 18}
