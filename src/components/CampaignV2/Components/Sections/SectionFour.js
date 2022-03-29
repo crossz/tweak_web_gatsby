@@ -34,18 +34,26 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
         pb={15}
         pl={2.5}
       >
-        <Box mb={-2}>{t('cp_v2.news.paragraphs.0')}</Box>
-        <PostSwiper
-          nodes={promotionNodes}
-          morePath='/whats-new/promotions/'
-          withViewBtn
-        ></PostSwiper>
-        <Box mb={-2}>{t('cp_v2.news.paragraphs.1')}</Box>
-        <PostSwiper
-          nodes={healthTipsNodes}
-          morePath='/whats-new/health-tips/'
-        ></PostSwiper>
-        <Box mt={8} textAlign='center'>
+        <Box className='gsap-fade-in-8-trigger gsap-fade-in-8' mb={-2}>
+          {t('cp_v2.news.paragraphs.0')}
+        </Box>
+        <Box className='gsap-fade-in-8'>
+          <PostSwiper
+            nodes={promotionNodes}
+            morePath='/whats-new/promotions/'
+            withViewBtn
+          ></PostSwiper>
+        </Box>
+        <Box className='gsap-fade-in-9-trigger gsap-fade-in-9' mb={-2}>
+          {t('cp_v2.news.paragraphs.1')}
+        </Box>
+        <Box className='gsap-fade-in-9'>
+          <PostSwiper
+            nodes={healthTipsNodes}
+            morePath='/whats-new/health-tips/'
+          ></PostSwiper>
+        </Box>
+        <Box className='gsap-fade-in-9' mt={8} textAlign='center'>
           <Button
             href={process.env.GATSBY_SITE_URL}
             variant='contained'

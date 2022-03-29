@@ -17,6 +17,8 @@ import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 import Link from '@components/Link'
 
+import classnames from 'classnames'
+
 const useStyles = makeStyles((theme) => ({
   imageList: {
     overflow: 'visible',
@@ -116,10 +118,7 @@ const SectionOne = () => {
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
-  const classes = useStyles({
-    progressRightWidth: isMobile ? 80 : 316,
-    isMobile,
-  })
+  const classes = useStyles()
 
   return (
     <Box width='100%' overflow='hidden'>
@@ -162,13 +161,14 @@ const SectionOne = () => {
           </Box>
         </Box>
         <ImageList
-          className={classes.imageList}
+          className={classnames('gsap-fade-in-1-trigger', classes.imageList)}
           rowHeight='auto'
           cols={isMobile ? 1 : 2}
           gap={isMobile ? 24 : 32}
         >
           {characteristics.map((item, index) => (
             <ImageListItem
+              className='gsap-fade-in-1'
               classes={{ item: classes.imageListItem }}
               key={index}
             >
@@ -201,11 +201,17 @@ const SectionOne = () => {
             </ImageListItem>
           ))}
         </ImageList>
-        <Box mt={6} textAlign='center' color='grey.900'>
+        <Box
+          className='gsap-fade-in-2-trigger'
+          mt={6}
+          textAlign='center'
+          color='grey.900'
+        >
           {t('cp_v2.ngs_characteristic.paragraphs.1')}
         </Box>
       </Box>
       <Box
+        className='gsap-fade-in-2'
         py={isMobile ? 5 : 6}
         textAlign={isMobile ? 'left' : 'center'}
         maxWidth={1192}
@@ -218,7 +224,7 @@ const SectionOne = () => {
         zIndex={1}
         mb={-16}
       >
-        <Box maxWidth={988} mx='auto'>
+        <Box className='gsap-fade-in-2' maxWidth={988} mx='auto'>
           <Typography variant={isMobile ? 'h4' : 'h5'} color='secondary'>
             {t('cp_v2.ngs_characteristic.paragraphs.2')}
           </Typography>
@@ -298,6 +304,7 @@ const SectionOne = () => {
             </Box>
           </Box>
           <Box
+            className='gsap-fade-in-3-trigger gsap-fade-in-3'
             px={5}
             width='100%'
             mt={4}
@@ -317,12 +324,14 @@ const SectionOne = () => {
             ))}
           </Box>
           <Box
+            className='gsap-fade-in-3'
             fontSize={isMobile ? 'body1.fontSize' : 'h6.fontSize'}
             textAlign={isMobile ? 'left' : 'center'}
           >
             {t('cp_v2.ngs_characteristic.paragraphs.5')}
           </Box>
           <Box
+            className='gsap-fade-in-3'
             mt={isMobile ? 4 : 8}
             flexWrap={isMobile ? 'wrap' : 'nowrap'}
             display='flex'

@@ -114,6 +114,7 @@ const SectionTwo = () => {
         )}
       </Box>
       <Box
+        className='gsap-fade-in-4-trigger gsap-fade-in-4'
         bgcolor='background.paper'
         borderRadius={isMobile ? `0 0 24px 24px` : 24}
         maxWidth={784}
@@ -181,6 +182,7 @@ const SectionTwo = () => {
           {t('cp_v2.ngs_advantage.paragraphs.4')}
         </Box>
         <Box
+          className='gsap-fade-in-5-trigger gsap-fade-in-5'
           maxWidth={theme.spacing(100)}
           margin={isMobile ? '20px 10px' : '40px auto'}
         >
@@ -199,6 +201,7 @@ const SectionTwo = () => {
           )}
         </Box>
         <Box
+          className='gsap-fade-in-5'
           fontWeight={900}
           fontSize={isMobile ? 20 : 28}
           textAlign='center'
@@ -207,7 +210,7 @@ const SectionTwo = () => {
         >
           {t('cp_v2.ngs_advantage.paragraphs.5')}
         </Box>
-        <Box>
+        <Box className='gsap-fade-in-5'>
           <Grid alignItems='center' container spacing={4}>
             <Grid item sm={5}>
               <Box width='100%'>

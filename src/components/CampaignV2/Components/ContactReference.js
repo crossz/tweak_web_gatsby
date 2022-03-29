@@ -170,7 +170,11 @@ const ContactReference = () => {
       px={2.5}
       bgcolor={isMobile ? 'transparent' : 'background.paper'}
     >
-      <Box mx='auto' maxWidth={1192}>
+      <Box
+        className='gsap-fade-in-11-trigger gsap-fade-in-11'
+        mx='auto'
+        maxWidth={1192}
+      >
         <Box
           color='prophecyPrimary.main'
           fontWeight='fontWeightBold'
@@ -346,7 +350,7 @@ const ContactReference = () => {
               ))}
             </Box>
             <Box className={classes.reference} my={4}>
-              {t('t_and_c.terms_and_conditions')}
+              {t('cp_v2.contact_and_reference.paragraphs.5')}
             </Box>
             <Box className={classes.rules}>
               {rules.map((item, index) => (

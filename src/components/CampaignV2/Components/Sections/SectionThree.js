@@ -75,6 +75,7 @@ const Steps = () => {
           {t('cp_v2.ngs_progress.paragraphs.0')}
         </Box>
         <Box
+          className='gsap-fade-in-6-trigger gsap-fade-in-6'
           color='prophecyPrimary.main'
           fontWeight={900}
           fontSize={isMobile ? 20 : 28}
@@ -85,6 +86,7 @@ const Steps = () => {
           {t('cp_v2.ngs_progress.paragraphs.1')}
         </Box>
         <Box
+          className='gsap-fade-in-6'
           borderRadius={isMobile ? 24 : 16}
           pt={isMobile ? 5 : 8}
           pb={isMobile ? 8 : 6}
@@ -152,7 +154,11 @@ const Steps = () => {
         pb={isMobile ? 8 : 15}
         bgcolor='prophecyPrimary.main'
       >
-        <Box mx='auto' maxWidth={1192}>
+        <Box
+          className='gsap-fade-in-7-trigger gsap-fade-in-7'
+          mx='auto'
+          maxWidth={1192}
+        >
           <Box
             px={2.5}
             fontSize={isMobile ? 'body1.fontSize' : 'h6.fontSize'}

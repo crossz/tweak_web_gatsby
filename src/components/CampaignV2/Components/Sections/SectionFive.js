@@ -62,20 +62,23 @@ const SectionFive = () => {
       >
         <Box maxWidth={784} mx='auto'>
           <Box
+            className='gsap-fade-in-10-trigger gsap-fade-in-10'
             whiteSpace='break-spaces'
             lineHeight={isMobile ? 1.5 : 2}
             mb={isMobile ? 3 : 6}
           >
             {t('cp_v2.second_life.paragraphs.0')}
           </Box>
-          <YouTube
-            className={classes.video}
-            videoId='BACVA3es0NI'
-            opts={{
-              width: '100%',
-              height: isMobile ? 158 : 436,
-            }}
-          />
+          <Box className='gsap-fade-in-10'>
+            <YouTube
+              className={classes.video}
+              videoId='BACVA3es0NI'
+              opts={{
+                width: '100%',
+                height: isMobile ? 158 : 436,
+              }}
+            />
+          </Box>
           <Box
             mt={isMobile ? 3 : 5.5}
             mb={isMobile ? 6 : 8}

@@ -44,7 +44,7 @@ const Banner = () => {
         variant='contained'
         color='secondary'
       >
-        {t('common.book_now')}
+        {t('cp_v2.common.book_now')}
       </Button>
       {isMobile ? (
         <StaticImage
