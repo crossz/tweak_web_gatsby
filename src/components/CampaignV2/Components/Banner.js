@@ -48,12 +48,12 @@ const Banner = () => {
       </Button>
       {isMobile ? (
         <StaticImage
-          src='../images/hero_banner_mobile.jpg'
+          src='../images/hero_banner_mobile_Hk.jpg'
           alt='hero banner mobile'
         ></StaticImage>
       ) : (
         <StaticImage
-          src='../images/hero_banner.jpg'
+          src='../images/hero_banner_Hk.jpg'
           alt='hero banner'
         ></StaticImage>
       )}

@@ -16,7 +16,6 @@ import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 import Link from '@components/Link'
-
 import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +41,12 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 0,
       marginTop: theme.spacing(1.5),
     },
+  },
+  circle: {
+    background: `linear-gradient(180deg, ${alpha('#85B6FF', 0.1)} 0%, ${alpha(
+      theme.palette.background.paper,
+      0
+    )} 100%)`,
   },
 }))
 
@@ -287,21 +292,34 @@ const SectionOne = () => {
               <SymptomSwiper></SymptomSwiper>
             </Box>
             <Box
+              className={classnames('gsap-scale-1', classes.circle)}
               position='absolute'
               left='50%'
               top={isMobile ? '-60%' : '-110%'}
               width={isMobile ? 780 : 1371}
+              height={isMobile ? 780 : 1371}
+              borderRadius='50%'
               minWidth={640}
               zIndex={0}
               style={{
                 transform: `translateX(-50%)`,
               }}
-            >
-              <StaticImage
-                src='../../images/symptom_background.svg'
-                alt='symptom background'
-              ></StaticImage>
-            </Box>
+            ></Box>
+            <Box
+              className={classnames('gsap-scale-2', classes.circle)}
+              position='absolute'
+              left='50%'
+              top={isMobile ? '-60%' : '-110%'}
+              width={isMobile ? 612 : 1213}
+              height={isMobile ? 612 : 1213}
+              borderRadius='50%'
+              minWidth={640}
+              zIndex={0}
+              style={{
+                transform: `translateX(-50%)`,
+              }}
+              mt={10.5}
+            ></Box>
           </Box>
           <Box
             className='gsap-fade-in-3-trigger gsap-fade-in-3'

@@ -189,7 +189,7 @@ const SectionTwo = () => {
           {isMobile ? (
             <StaticImage
               className={classes.img}
-              src='../../images/table-mobile.jpg'
+              src='../../images/table_mobile.png'
               alt='empty'
             ></StaticImage>
           ) : (
