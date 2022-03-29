@@ -47,6 +47,7 @@ const Page = ({ promotionNodes, healthTipsNodes }) => {
 
   return (
     <Box
+      id='scroll-to-top'
       ref={(current) => {
         el.current = current
       }}

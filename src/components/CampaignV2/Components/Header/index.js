@@ -12,11 +12,11 @@ import { PROMOTION_BAR_HEIGHT } from '../../utils/constant'
 import classnames from 'classnames'
 import Menu from './Menu'
 import { StaticImage } from 'gatsby-plugin-image'
-import Link from '@components/Link'
 import { Waypoint } from 'react-waypoint'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import PromotionBar from './PromotionBar'
 import PromotionContent from './PromotionContent'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logoWrapper: {
+    cursor: 'pointer',
     [theme.breakpoints.down('sm')]: {
       width: theme.spacing(12),
     },
@@ -98,11 +99,10 @@ const Header = (props) => {
             <Box
               display='block'
               width={isMobile ? 100 : 145}
-              to='/'
-              component={Link}
               mr={2}
               flexShrink={0}
               className={classes.logoWrapper}
+              onClick={() => scrollTo('#scroll-to-top', 'start')}
             >
               {withBg ? (
                 <StaticImage

@@ -37,7 +37,7 @@ const SectionFive = () => {
   })
 
   return (
-    <Box>
+    <>
       <Box>
         {isMobile ? (
           <StaticImage
@@ -102,7 +102,7 @@ const SectionFive = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   )
 }
 

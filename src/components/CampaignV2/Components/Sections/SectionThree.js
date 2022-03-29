@@ -55,7 +55,7 @@ const Steps = () => {
   ]
 
   return (
-    <Box>
+    <>
       <Box>
         {isMobile ? (
           <StaticImage
@@ -175,7 +175,7 @@ const Steps = () => {
           <Map showMap className={classes.map}></Map>
         </Box>
       </Box>
-    </Box>
+    </>
   )
 }
 

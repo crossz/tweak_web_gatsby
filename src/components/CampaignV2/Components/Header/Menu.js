@@ -15,6 +15,7 @@ import CloseIcon from '@images/icons/close.svg'
 import classnames from 'classnames'
 import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 const { languageLabels } = require('../../../../../languages')
 
 const useStyles = makeStyles((theme) => ({
@@ -70,12 +71,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const LIST = [
-  { label: 'cp_v2.menu.list.0', id: '' },
-  { label: 'cp_v2.menu.list.1', id: '' },
-  { label: 'cp_v2.menu.list.2', id: '' },
-  { label: 'cp_v2.menu.list.3', id: '' },
-  { label: 'cp_v2.menu.list.4', id: '' },
-  { label: 'cp_v2.menu.list.5', id: '' },
+  { label: 'cp_v2.menu.list.0', id: 'gsap-scroll-to-section-one' },
+  { label: 'cp_v2.menu.list.1', id: 'gsap-scroll-to-section-two' },
+  { label: 'cp_v2.menu.list.2', id: 'gsap-scroll-to-section-three' },
+  { label: 'cp_v2.menu.list.3', id: 'gsap-scroll-to-section-four' },
+  { label: 'cp_v2.menu.list.4', id: 'gsap-scroll-to-section-five' },
+  { label: 'cp_v2.menu.list.5', id: 'gsap-scroll-to-contact-us' },
 ]
 
 export default function Menu(props) {
@@ -92,6 +93,12 @@ export default function Menu(props) {
     }
 
     setState(open)
+  }
+
+  const handleScroll = (e) => {
+    toggleDrawer(false)
+    const { id } = e.currentTarget.dataset
+    scrollTo(`#${id}`, 'nearest')
   }
 
   return (
@@ -134,9 +141,10 @@ export default function Menu(props) {
                 <ListItem
                   className={classes.listItem}
                   role='presentation'
-                  onClick={toggleDrawer(false)}
+                  onClick={handleScroll}
                   onKeyDown={toggleDrawer(false)}
                   disableGutters
+                  data-id={item.id}
                 >
                   <Box whiteSpace='break-spaces'>{t(item.label)}</Box>
                 </ListItem>

@@ -10,7 +10,7 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   return (
-    <Box>
+    <>
       <Box>
         {isMobile ? (
           <StaticImage
@@ -64,7 +64,7 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
           </Button>
         </Box>
       </Box>
-    </Box>
+    </>
   )
 }
 

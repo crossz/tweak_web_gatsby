@@ -165,6 +165,7 @@ const ContactReference = () => {
   ]
   return (
     <Box
+      id='gsap-scroll-to-contact-us'
       pt={isMobile ? 5 : 8}
       pb={isMobile ? 0 : 13.5}
       px={2.5}

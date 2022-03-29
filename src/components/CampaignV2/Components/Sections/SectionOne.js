@@ -126,7 +126,7 @@ const SectionOne = () => {
   const classes = useStyles()
 
   return (
-    <Box width='100%' overflow='hidden'>
+    <>
       <Box>
         {isMobile ? (
           <StaticImage
@@ -381,7 +381,7 @@ const SectionOne = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   )
 }
 
