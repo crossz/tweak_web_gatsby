@@ -317,8 +317,7 @@
             },
             "notice": "Patients who have had organ transplant, currently have cancer or autoimmune diseases, or those currently receiving systemic glucocorticoid or immunosuppressive treatment are not recommended for early NPC detection using our test. If in doubt, please consult healthcare professionals for more information. ",
             "do_you_have": "Book our service to detect your health status in relation to NPC.",
-            "action": "Act now!",
-            "covid_notice": "Prolonged processing time might happen during pandemics. Thank you for your understanding."
+            "action": "Act now!"
         }
     },
     "about_us": {
