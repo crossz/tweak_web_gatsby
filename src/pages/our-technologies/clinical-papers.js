@@ -128,10 +128,9 @@ export const query = graphql`
           detail
           date
           href
-          pdf
-          # {
-          #   publicURL
-          # }
+          pdf {
+            publicURL
+          }
         }
       }
     }
