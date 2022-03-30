@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTheme, useMediaQuery } from '@material-ui/core'
-import Image from '@components/Image'
+import Image from './Image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 const { languagePrefixes } = require('../../../../languages')
 
