@@ -3,12 +3,13 @@ import { graphql } from 'gatsby'
 import Campaign from '@components/CampaignV2'
 
 const CampaignRoot = ({ data }) => {
-  const { promotionNodes, healthTipsNodes } = data
+  const { promotionNodes, healthTipsNodes, imagesTranslation } = data
 
   return (
     <Campaign
       promotionNodes={promotionNodes?.nodes}
       healthTipsNodes={healthTipsNodes?.nodes}
+      imagesTranslation={imagesTranslation?.nodes}
     ></Campaign>
   )
 }
@@ -16,7 +17,20 @@ const CampaignRoot = ({ data }) => {
 export default CampaignRoot
 
 export const query = graphql`
-  query ($language: String!) {
+  query ($language: String!, $regex: String) {
+    imagesTranslation: allFile(
+      filter: {
+        absolutePath: { regex: "/CampaignV2/images/" }
+        name: { regex: $regex }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
     locales: allLocale(
       filter: {
         ns: { in: ["translation", "campaignPageV2"] }

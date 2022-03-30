@@ -16,7 +16,7 @@ import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 import Link from '@components/Link'
-import ImageTranslation from '../ImageTranslation'
+// import ImageTranslation from '../ImageTranslation'
 import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
@@ -128,10 +128,10 @@ const SectionOne = () => {
 
   return (
     <>
-      <ImageTranslation
+      {/* <ImageTranslation
         filename='section_banner_01'
         alt='section banner 01'
-      ></ImageTranslation>
+      ></ImageTranslation> */}
       <Box
         fontSize={isMobile ? 16 : 18}
         mx='auto'

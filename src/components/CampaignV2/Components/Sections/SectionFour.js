@@ -11,10 +11,10 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   return (
     <>
-      <ImageTranslation
+      {/* <ImageTranslation
         filename='section_banner_04'
         alt='section banner 04'
-      ></ImageTranslation>
+      ></ImageTranslation> */}
       <Box
         color='prophecyPrimary.main'
         fontWeight='fontWeightBold'

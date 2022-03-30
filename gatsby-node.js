@@ -1,6 +1,7 @@
 'use strict'
 const { resolve } = require('path')
 const { paginate } = require('gatsby-awesome-pagination')
+const { languagePrefixes } = require('./languages')
 
 const formatEndsPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
 const formatStartsPath = (path) => (path?.startsWith('/') ? path : `/${path}`)
@@ -47,41 +48,6 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createRedirect, createPage } = actions
-
-  // const menuQuery = await graphql(`
-  //   {
-  //     allMenuJson {
-  //       nodes {
-  //         banner
-  //         mobileBanner
-  //         path
-  //         title
-  //         titleColor
-  //         sections {
-  //           path
-  //           title
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // if (menuQuery.errors)
-  //   return reporter.panicOnBuild(`Error while running GraphQL query.`)
-
-  // const menuList = menuQuery.data.allMenuJson.nodes
-
-  // menuList?.forEach((menu) => {
-  //   if (menu?.sections?.length) {
-  //     const fromPath = formatEndsPath(menu?.path)
-  //     const toPath = formatEndsPath(menu?.sections[0]?.path)
-  //     createRedirect({
-  //       fromPath,
-  //       redirectInBrowser: true,
-  //       toPath,
-  //     })
-  //   }
-  // })
 
   const careers = await graphql(`
     {
@@ -161,12 +127,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         regex: `/${mdx.parent.relativeDirectory}/`,
       },
     })
-    // const fromPath = path + '.html'
-    // createRedirect({
-    //   fromPath,
-    //   redirectInBrowser: true,
-    //   toPath: path,
-    // })
+  })
+
+  const localQuery = await graphql(`
+    {
+      locale {
+        language
+      }
+    }
+  `)
+
+  const campaignTemplate = resolve(__dirname, 'src/templates/Campaign.js')
+
+  createPage({
+    path: `/whats-new/campaign/`,
+    component: campaignTemplate,
+    context: {
+      regex: `/${languagePrefixes[localQuery.data.locale.language]}/`,
+    },
   })
 
   createRedirect({

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef, useMemo } from 'react'
 import { Box, Container } from '@material-ui/core'
 import Header from './Components/Header'
 import Sections from './Components/Sections'
@@ -7,11 +7,11 @@ import Footer from './Components/Footer'
 import Banner from './Components/Banner'
 import { gsap, ScrollTrigger } from '@components/CampaignV2/utils/initGsap'
 
-const Page = ({ promotionNodes, healthTipsNodes }) => {
+const Page = ({ promotionNodes, healthTipsNodes, imagesTranslation }) => {
   const el = useRef()
   const q = gsap.utils.selector(el)
   const t = useRef()
-
+  console.log('imagesTranslation', imagesTranslation)
   useLayoutEffect(() => {
     // symptom circle scale animation
     t.current = gsap.timeline()
@@ -44,6 +44,10 @@ const Page = ({ promotionNodes, healthTipsNodes }) => {
 
     return () => ScrollTrigger.kill()
   }, [])
+
+  // const bannerImages = useMemo(()=>{
+  //   const images = imagesTranslation?.filter(image =>image.name )
+  // })
 
   return (
     <Box
