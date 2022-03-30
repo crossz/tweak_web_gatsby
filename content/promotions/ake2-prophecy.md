@@ -1,6 +1,6 @@
 ---
 cover:
-- "../images/untitled-design-9.jpg"
+- "../images/232131.jpg"
 date: 2022-04-07T00:00:00+08:00
 title: Take2 Prophecy™ 早期鼻咽癌篩查｜消費券限時網上優惠
 detail: ake2 Prophecy™ 早期鼻咽癌篩查｜消費券限時網上優惠
