@@ -3,7 +3,7 @@ import { useTheme, useMediaQuery, Box } from '@material-ui/core/'
 import PostSwiper from '@components/Homepage/PostSwiper'
 import Button from '@material-ui/core/Button'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
+import ImageTranslation from '../ImageTranslation'
 
 const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
   const { t } = useI18next()

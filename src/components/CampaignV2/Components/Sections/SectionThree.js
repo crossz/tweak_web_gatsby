@@ -3,7 +3,7 @@ import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Map from '@components/Map'
 import { StaticImage } from 'gatsby-plugin-image'
-import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
+import ImageTranslation from '../ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   map: {

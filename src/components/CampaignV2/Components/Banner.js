@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
+import ImageTranslation from './ImageTranslation'
 
 const useStyles = makeStyles((theme) =>
   createStyles({

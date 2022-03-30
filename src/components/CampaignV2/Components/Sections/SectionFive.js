@@ -9,7 +9,7 @@ import {
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import LineDots from '@components/CampaignV2/images/bg_wave_dots.png'
-import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
+import ImageTranslation from '../ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   bgImage: {

@@ -10,7 +10,7 @@ import {
 import Link from '@components/Link'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
-import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
+import ImageTranslation from '../ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   outlineButton: {

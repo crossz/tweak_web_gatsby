@@ -16,7 +16,7 @@ import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 import Link from '@components/Link'
-import ImageTranslation from '@components/CampaignV2/components/ImageTranslation'
+import ImageTranslation from '../ImageTranslation'
 import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
