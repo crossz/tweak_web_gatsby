@@ -1,10 +1,11 @@
 ---
 type: professional_healthcare_tip
 languages:
+- zh-CN
 - zh-HK
 cover:
 - "../images/untitled-design-2.jpg"
-date: 2021-12-20T00:00:00+08:00
+date: 2021-12-20T00:00:00.000+08:00
 title: "【Healthy D】鼻咽癌｜有鼻塞、頸淋巴結腫大 是感冒還是鼻咽癌？｜醫生籲定期進行早期篩查"
 detail: "【Healthy D】鼻咽癌｜有鼻塞、頸淋巴結腫大 是感冒還是鼻咽癌？｜醫生籲定期進行早期篩查"
 pdf: ''
