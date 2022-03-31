@@ -8,7 +8,6 @@ slug: ''
 cover:
 - "../images/24-parent.png"
 languages:
-- zh-CN
 - zh-HK
 pdf: ''
 
