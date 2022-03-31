@@ -51,5 +51,4 @@ fields:
   name: slug
   label: Slug
 pages:
-- content/promotions/ake2-prophecy.md
 - content/promotions/take2-health-1-1.md
