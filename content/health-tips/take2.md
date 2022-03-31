@@ -2,7 +2,6 @@
 type: health_tip
 languages:
 - zh-CN
-- zh-HK
 cover:
 - "../images/take2-health-x-crhk_facebook-graphic_20220309-website-adaptation-ai-new1_-1.png"
 date: 2021-01-30T00:00:00.000+08:00
