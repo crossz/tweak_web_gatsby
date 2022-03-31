@@ -2,7 +2,6 @@
 type: professional_healthcare_tip
 languages:
 - zh-CN
-- zh-HK
 cover:
 - "../images/untitled-design-2.jpg"
 date: 2021-12-20T00:00:00.000+08:00
