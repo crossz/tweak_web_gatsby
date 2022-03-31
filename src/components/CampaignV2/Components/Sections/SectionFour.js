@@ -32,7 +32,6 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
           <PostSwiper
             nodes={promotionNodes}
             morePath='/whats-new/promotions/'
-            withViewBtn
           ></PostSwiper>
         </Box>
         <Box className='gsap-fade-in-9-trigger gsap-fade-in-9' mb={-2}>
@@ -42,6 +41,7 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
           <PostSwiper
             nodes={healthTipsNodes}
             morePath='/whats-new/health-tips/'
+            noMornBtn
           ></PostSwiper>
         </Box>
         <Box className='gsap-fade-in-9' mt={8} mr={1.25} textAlign='center'>

@@ -9,9 +9,11 @@ import {
   Button,
   Typography,
 } from '@material-ui/core'
-import { PROMOTION_CODE } from '@components/CampaignV2/utils/constant'
+import { PROMOTION_CODE } from '@utils/constant'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { toast } from 'react-toastify'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -49,6 +51,8 @@ const PromotionContent = ({ whiteBg }) => {
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+
+  const handleCopy = (e) => toast.success('優惠碼複製成功！')
 
   return (
     <>
@@ -94,21 +98,25 @@ const PromotionContent = ({ whiteBg }) => {
           >
             {t('cp_v2.common.enter')}
           </Box>
-          <Box
-            fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
-            bgcolor={whiteBg ? 'secondary.main' : 'secondary.contrastText'}
-            alignItems='center'
-            height={isMobile ? 18 : 32}
-            display='flex'
-            color={whiteBg ? 'secondary.contrastText' : 'prophecyPrimary.main'}
-            borderRadius={4}
-            px={isMobile ? 1 : 1.5}
-            mx={isMobile ? 0.5 : 1.5}
-            component='span'
-            className={classes.codeWrapper}
-          >
-            {PROMOTION_CODE}
-          </Box>
+          <CopyToClipboard text={PROMOTION_CODE} onCopy={handleCopy}>
+            <Box
+              fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
+              bgcolor={whiteBg ? 'secondary.main' : 'secondary.contrastText'}
+              alignItems='center'
+              height={isMobile ? 18 : 32}
+              display='flex'
+              color={
+                whiteBg ? 'secondary.contrastText' : 'prophecyPrimary.main'
+              }
+              borderRadius={4}
+              px={isMobile ? 1 : 1.5}
+              mx={isMobile ? 0.5 : 1.5}
+              component='span'
+              className={classes.codeWrapper}
+            >
+              {PROMOTION_CODE}
+            </Box>
+          </CopyToClipboard>
           <Typography component='div' noWrap>
             {t('cp_v2.promotion.price')}
             <Box

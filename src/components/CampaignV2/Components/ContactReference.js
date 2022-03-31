@@ -236,16 +236,17 @@ const ContactReference = () => {
               >
                 {t('cp_v2.contact_and_reference.paragraphs.2')}
               </Box>
-              <Button
-                size='small'
-                fullWidth={isMobile}
-                to='/'
-                variant='outlined'
-                color='inherit'
-                className={classes.websiteButton}
-              >
-                {t('cp_v2.menu.office_website')}
-              </Button>
+              <Link to='/'>
+                <Button
+                  size='small'
+                  fullWidth={isMobile}
+                  variant='outlined'
+                  color='inherit'
+                  className={classes.websiteButton}
+                >
+                  {t('cp_v2.menu.office_website')}
+                </Button>
+              </Link>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>

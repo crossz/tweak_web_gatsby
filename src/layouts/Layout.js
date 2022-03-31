@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
         )}
         <ShoppingBtn></ShoppingBtn>
       </main>
+      <ShoppingBtn></ShoppingBtn>
     </HeroThemeContext.Provider>
   )
 }

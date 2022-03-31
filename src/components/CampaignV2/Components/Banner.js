@@ -18,19 +18,20 @@ const useStyles = makeStyles((theme) =>
     },
     button: {
       position: 'absolute',
-      left: `${(124 / 1440) * 100}%`,
-      top: `${(383 / 584) * 100}%`,
+      left: ({ isEn }) => `${((isEn ? 123 : 124) / 1440) * 100}%`,
+      top: ({ isEn }) => `${((isEn ? 424 : 383) / 584) * 100}%`,
       zIndex: 1,
     },
     mobileButton: {
-      left: `${(19 / 320) * 100}%`,
-      top: `${(333 / 486) * 100}%`,
+      left: ({ isEn }) => `${((isEn ? 26 : 19) / 320) * 100}%`,
+      top: ({ isEn }) => `${((isEn ? 410 : 333) / 486) * 100}%`,
     },
   })
 )
 const Banner = () => {
-  const classes = useStyles()
-  const { t } = useI18next()
+  const { t, language } = useI18next()
+  const isEn = language === 'en'
+  const classes = useStyles({ isEn })
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
 

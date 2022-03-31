@@ -235,6 +235,7 @@ const SectionOne = () => {
         </Box>
       </Box>
       <Box
+        overflow='hidden'
         px={2}
         pt={25}
         pb={isMobile ? 8 : 14}

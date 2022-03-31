@@ -1,16 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Campaign from '@components/CampaignV2'
+import Layout from '@layouts/Layout'
 
 const CampaignRoot = ({ data }) => {
   const { promotionNodes, healthTipsNodes, imagesTranslation } = data
 
   return (
-    <Campaign
-      promotionNodes={promotionNodes?.nodes}
-      healthTipsNodes={healthTipsNodes?.nodes}
-      imagesTranslation={imagesTranslation?.nodes}
-    ></Campaign>
+    <Layout>
+      <Campaign
+        promotionNodes={promotionNodes?.nodes}
+        healthTipsNodes={healthTipsNodes?.nodes}
+        imagesTranslation={imagesTranslation?.nodes}
+      ></Campaign>
+    </Layout>
   )
 }
 
