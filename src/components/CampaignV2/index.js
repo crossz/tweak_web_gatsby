@@ -6,12 +6,13 @@ import ContactReference from './Components/ContactReference'
 import Footer from './Components/Footer'
 import Banner from './Components/Banner'
 import { gsap, ScrollTrigger } from '@components/CampaignV2/utils/initGsap'
+import { ImagesTranslationContext } from '@components/CampaignV2/utils/context'
 
 const Page = ({ promotionNodes, healthTipsNodes, imagesTranslation }) => {
   const el = useRef()
   const q = gsap.utils.selector(el)
   const t = useRef()
-  console.log('imagesTranslation', imagesTranslation)
+
   useLayoutEffect(() => {
     // symptom circle scale animation
     t.current = gsap.timeline()
@@ -50,24 +51,26 @@ const Page = ({ promotionNodes, healthTipsNodes, imagesTranslation }) => {
   // })
 
   return (
-    <Box
-      id='scroll-to-top'
-      ref={(current) => {
-        el.current = current
-      }}
-      bgcolor='#FAFFFF'
-    >
-      <Header></Header>
-      <Container disableGutters maxWidth='lg'>
-        <Banner />
-        <Sections
-          promotionNodes={promotionNodes}
-          healthTipsNodes={healthTipsNodes}
-        ></Sections>
-        <ContactReference></ContactReference>
-        <Footer></Footer>
-      </Container>
-    </Box>
+    <ImagesTranslationContext.Provider value={{ images: imagesTranslation }}>
+      <Box
+        id='scroll-to-top'
+        ref={(current) => {
+          el.current = current
+        }}
+        bgcolor='#FAFFFF'
+      >
+        <Header></Header>
+        <Container disableGutters maxWidth='lg'>
+          <Banner />
+          <Sections
+            promotionNodes={promotionNodes}
+            healthTipsNodes={healthTipsNodes}
+          ></Sections>
+          <ContactReference></ContactReference>
+          <Footer></Footer>
+        </Container>
+      </Box>
+    </ImagesTranslationContext.Provider>
   )
 }
 

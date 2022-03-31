@@ -129,24 +129,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  const localQuery = await graphql(`
-    {
-      locale {
-        language
-      }
-    }
-  `)
-
-  const campaignTemplate = resolve(__dirname, 'src/templates/Campaign.js')
-
-  createPage({
-    path: `/whats-new/campaign/`,
-    component: campaignTemplate,
-    context: {
-      regex: `/${languagePrefixes[localQuery.data.locale.language]}/`,
-    },
-  })
-
   createRedirect({
     fromPath: '/index.html',
     redirectInBrowser: true,

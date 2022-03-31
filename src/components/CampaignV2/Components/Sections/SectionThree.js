@@ -57,10 +57,10 @@ const Steps = () => {
 
   return (
     <>
-      {/* <ImageTranslation
+      <ImageTranslation
         filename='section_banner_03'
         alt='section banner 03'
-      ></ImageTranslation> */}
+      ></ImageTranslation>
       <Box mb={-15} position='relative' mx='auto' maxWidth={784}>
         <Box
           whiteSpace='break-spaces'

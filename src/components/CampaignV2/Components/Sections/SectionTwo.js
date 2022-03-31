@@ -101,10 +101,10 @@ const SectionTwo = () => {
       color='grey.900'
       pb={isMobile ? 8 : 13.5}
     >
-      {/* <ImageTranslation
+      <ImageTranslation
         filename='section_banner_02'
         alt='section banner 02'
-      ></ImageTranslation> */}
+      ></ImageTranslation>
       <Box
         className='gsap-fade-in-4-trigger gsap-fade-in-4'
         bgcolor='background.paper'

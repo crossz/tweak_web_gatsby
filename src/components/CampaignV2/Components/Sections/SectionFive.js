@@ -9,7 +9,7 @@ import {
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import LineDots from '@components/CampaignV2/images/bg_wave_dots.png'
-// import ImageTranslation from '../ImageTranslation'
+import ImageTranslation from '../ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
   bgImage: {
@@ -38,10 +38,10 @@ const SectionFive = () => {
 
   return (
     <>
-      {/* <ImageTranslation
+      <ImageTranslation
         filename='section_banner_05'
         alt='section banner 05'
-      ></ImageTranslation> */}
+      ></ImageTranslation>
       <Box
         color='primary.contrastText'
         fontSize={isMobile ? 16 : 18}

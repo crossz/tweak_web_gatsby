@@ -46,10 +46,10 @@ const Banner = () => {
       >
         {t('cp_v2.common.book_now')}
       </Button>
-      {/* <ImageTranslation
+      <ImageTranslation
         filename='hero_banner'
         alt='hero banner'
-      ></ImageTranslation> */}
+      ></ImageTranslation>
     </Box>
   )
 }

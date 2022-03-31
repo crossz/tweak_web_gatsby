@@ -17,12 +17,9 @@ const CampaignRoot = ({ data }) => {
 export default CampaignRoot
 
 export const query = graphql`
-  query ($language: String!, $regex: String) {
+  query ($language: String!) {
     imagesTranslation: allFile(
-      filter: {
-        absolutePath: { regex: "/CampaignV2/images/" }
-        name: { regex: $regex }
-      }
+      filter: { sourceInstanceName: { eq: "campaignImages" } }
     ) {
       nodes {
         name
