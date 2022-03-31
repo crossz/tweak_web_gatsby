@@ -21,10 +21,10 @@ reference: "¹“Nasopharyngeal Cancer.” Centre for Health Protection, Departm
   CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424."
 theme: dark
 sort: 1
-titleCn: ''
+titleCn: 张达明首选Take2 Prophecy™ <br/>亲述早期鼻咽癌筛查的重要性
 titleEn: Take2 Prophecy™, Cheung Tat-ming’s First Choice<br/>Learn the Importance
   of Detecting NPC Early
-detailCn: ''
+detailCn: "“鼻咽癌康复者” 张达明先生曾因忽略身体警号而延误求医，他希望借着自己的经历让大众关注鼻咽癌。根据世界卫生组织2018年的数据显示，香港鼻咽癌发病率是全球平均的5-6倍<sup>1,2</sup>\x05。无论年纪、性别及背景，任何人士都有机会患上鼻咽癌，因此，及早进行早期鼻咽癌筛查“提防”鼻咽癌是至关重要的。"
 detailEn: Mr. Cheung Tat-ming, a Nasopharyngeal Cancer (NPC) survivor, had experienced
   a delay in seeking medical intervention because of lacking cancer awareness, and
   hence he overlooked the warning signs of his health. Through his story, he is sharing
