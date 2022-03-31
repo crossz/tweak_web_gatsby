@@ -1,11 +1,12 @@
 ---
 region: hongkong_special_administrative_region
 languages:
+- zh-CN
 - en
 - zh-HK
 title: Manager / Assistant Manager, Business Partnership and Alliance Management
 type: business_strategic_cooperation
-date: 2022-03-18T00:00:00+08:00
+date: 2022-03-18T00:00:00.000+08:00
 
 ---
 # Manager / Assistant Manager, Business Partnership and Alliance Management
