@@ -1,7 +1,6 @@
 ---
 type: professional_healthcare_tip
 languages:
-- zh-CN
 - zh-HK
 cover:
 - "../images/untitled-design-4.jpg"
