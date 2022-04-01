@@ -74,19 +74,34 @@ fields:
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/health-tips/24-parents-1.md
 - content/health-tips/24-parents.md
+- content/health-tips/80-1.md
 - content/health-tips/80.md
 - content/health-tips/97-dna.md
+- content/health-tips/am730-1.md
+- content/health-tips/am730-97-dna.md
 - content/health-tips/am730.md
 - content/health-tips/choosing-the-right-plan-doctor-shares-insights-on-specific-cancer-screening-in-health-checks.md
+- content/health-tips/health-concept.md
+- content/health-tips/healthy-d-1.md
 - content/health-tips/healthy-d.md
+- content/health-tips/hk01-1.md
+- content/health-tips/hk01-dna-97-1.md
 - content/health-tips/hk01-dna-97.md
 - content/health-tips/hk01.md
 - content/health-tips/med-cuhk-cuhk-completes-a-20-000-person-plasma-dna-screening-study-of-nasopharyngeal-cancer-and-finds-a-dramatic-shift-to-early-stage-cancers.md
+- content/health-tips/medical-inspire-dna-97-1.md
 - content/health-tips/medical-inspire-dna-97.md
+- content/health-tips/sky-post-7-1.md
 - content/health-tips/sky-post-7.md
+- content/health-tips/take2-1.md
 - content/health-tips/take2.md
 - content/health-tips/test-test-test.md
+- content/health-tips/unwire-97.md
+- content/health-tips/共享医识-资深言语治疗师谢仉贤-鼻咽癌患者接受电疗后会面对的吞咽问题.md
+- content/health-tips/共享医识-资深言语治疗师谢仉贤-鼻咽癌患者接受电疗后出现的言语困难.md
+- content/health-tips/共享医识-鼻水带血丝-颈部现-鸡蛋-原来与鼻咽癌相关.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後出現的言語困難.md
 - content/health-tips/共享醫識-資深言語治療師謝仉賢-鼻咽癌患者接受電療後會面對的吞嚥問題.md
 - content/health-tips/共享醫識-鼻水帶血絲-頸部現-雞蛋-原來與鼻咽癌相關.md

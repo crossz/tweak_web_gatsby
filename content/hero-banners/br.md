@@ -11,10 +11,13 @@ buttons:
 reference: "*優惠受條款及細則約束 Terms and conditions apply"
 theme: light
 sort: 3
-titleCn: ''
+titleCn: 早期鼻咽癌筛查<br/>会员迎新优惠
 titleEn: Take2 Prophecy™ Test for Nasopharyngeal Cancer<br/>Welcome Offer for New
   Members
-detailCn: ''
+detailCn: '登记成为会员，在得易健康服务平台预约Take2 Prophecy™ 早期鼻咽癌筛查，输入迎新优惠码“NEW330”，即可享会员价$1,870*
+  （原价$2,200）！
+
+  '
 detailEn: Register as a new member and make an appointment for the Take2 Prophecy™
   Test for Nasopharyngeal Cancer on the Take2 Health Platform now. Using promo code
   “NEW330”, you can enjoy the special price of $1,870* (Regular price $2,200)!
