@@ -4,7 +4,8 @@ cover:
 - "../images/untitled-design-30.png"
 date: 2021-12-07T00:00:00.000+08:00
 title: "Take2 Health加入中银人寿”大家减龄”\t成首家早期癌症筛查合作企业"
-detail: Take2 Prophecy™ 早期鼻咽癌篩查於2021年12月正式進駐中銀人壽「大家減齡」會員福利平台，成為目前為中銀人壽「大家減齡」首家及當前唯一的早期癌症篩查合作品牌。
+detail: Take2 Prophecy™ 早期鼻咽癌筛查于2021年12月正式进驻中银人寿”大家减龄”会员福利平台，其保险客户能以”健康积分”换取不同奖赏，当中包括Take2
+  Health (下称：我司) 提供的早期鼻咽癌筛查服务。
 href: ''
 slug: ''
 languages:
