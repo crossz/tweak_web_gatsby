@@ -3,8 +3,8 @@ type: industry_information
 cover: []
 date: 2021-03-15T00:00:00.000+08:00
 title: Take2 Prophecy™ 进驻汇丰保险 “全方位雇员褔利”平台　服务超过2万名用户
-detail: Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2021年3月正式進駐滙豐保險「全方位僱員褔利」 (HSBC Life Benefits+)
-  平台，在服務上線的首階段，更成功獲得不少用戶的關注。
+detail: Take2 Prophecy™ 早期鼻咽癌筛查及相关套餐于2021年3月正式进驻汇丰保险全方位雇员褔利” (HSBC Life Benefits+)
+  平台，提供全新的员工福利选项。现时，所有汇丰银行、恒生银行及汇丰集团旗下公司的员工，均可通过一站式网络平台，以优惠价格选购Take2 Prophecy™ 早期鼻咽癌筛查服务。
 href: ''
 slug: ''
 languages:
