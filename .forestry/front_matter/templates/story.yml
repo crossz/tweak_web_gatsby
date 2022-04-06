@@ -2,15 +2,15 @@
 label: Story
 hide_body: false
 fields:
-- name: post
-  type: include
-  config: {}
-  template: health-tips-post
-  label: Post
 - name: campaignPageCard
   type: include
   config: {}
   template: campaign-page-post-card
   label: Campaign Page Post Card
+- name: post
+  type: include
+  config: {}
+  template: health-tips-post
+  label: Post
 pages:
 - content/stories/test-2.md
