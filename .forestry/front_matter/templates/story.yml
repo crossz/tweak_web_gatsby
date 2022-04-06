@@ -10,5 +10,6 @@ fields:
 - name: isCampaign
   type: boolean
   label: Show In Campaign
+  description: Show in campaign health tips post.
 pages:
 - content/stories/test-2.md
