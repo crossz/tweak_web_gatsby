@@ -4,6 +4,14 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: directory
+  path: content/stories
+  label: Stories
+  create: documents
+  match: "**/*"
+  new_doc_ext: ".md"
+  templates:
+  - health-tips-post
 - type: document
   path: content/business-partners.json
   label: Business Partners
@@ -12,7 +20,7 @@ sections:
   label: Hero Banners
   create: documents
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
   templates:
   - hero-banner
 - type: directory
