@@ -47,6 +47,8 @@ fields:
 - type: textarea
   name: href
   label: Href
+  description: If href is not empty, post card will open new window for this href
+    instead of post detail page.
 - type: text
   name: slug
   label: Slug
