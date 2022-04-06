@@ -11,7 +11,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
   templates:
-  - health-tips-post
+  - story
 - type: document
   path: content/business-partners.json
   label: Business Partners

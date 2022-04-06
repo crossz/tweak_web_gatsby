@@ -1,4 +1,9 @@
 ---
 label: Story
 hide_body: false
-fields: []
+fields:
+- name: post
+  type: include
+  config: {}
+  template: health-tips-post
+  label: Post
