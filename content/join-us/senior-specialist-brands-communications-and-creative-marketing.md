@@ -1,43 +1,48 @@
 ---
 region: hongkong_special_administrative_region
 languages:
+- zh-CN
 - en
 - zh-HK
-title: Senior Specialist – Brands, Communications and Creative Marketing
+title: Manager / Assistant Manager, Business Partnership and Alliance Management
 type: business_strategic_cooperation
-date: 2022-03-03T00:00:00+08:00
+date: 2022-03-18T00:00:00.000+08:00
 
 ---
-# Senior Specialist – Brands, Communications and Creative Marketing
+# Manager / Assistant Manager, Business Partnership and Alliance Management
 
 Take2 Health Limited
 
-[Apply Now](https://hk.jobsdb.com/hk/en/job/job-100003009140570?JASRC=JCLHPLO&itemIndex=1&correlationName=last-search-jobs&fr=Homepage%20-%20Based%20on%20your%20last%20search&token=0\~b4879352-20fa-4a6c-9723-3c1a35534a10)
+Kowloon Bay
 
-#### Job Highlights
+[Apply Now](https://hk.jobsdb.com/hk/en/job/manager-assistant-manager-business-partnership-and-alliance-management-100003009169924?jobId=jobsdb-hk-job-100003009169924&sectionRank=1&token=0\~92320fd0-4622-44c6-8491-1d3f6cc6f4ef&searchPath=%2Fhk%2Fsearch-jobs%2Ftake2%2F1)
+
+#### ob Highlights
 
 * Start-up company, Competitive salary package
-* Open to candidate without Biotech knowledge
+* Candidate with Biotech knowledge is preferable
 * 13-month pay, 16days AL, medical cover
 
 #### Job Description
 
 **Responsibilities**
 
-* Develop thoughtful and compelling content to promote our products & services to consumers, medical and corporate partners, including but not limited to marketing collaterals, websites, social media content, press release;
-* Lead promotional programs from planning to evaluation to advocate our products & services via close collaboration with internal & external stakeholders;
-* Support digital marketing activities and event execution, and conduct research to understand the market;
-* Manage public relationship with media to generate exposure for the company and products by pitching media, connecting with associations and corporate clients, etc.
+* Works to proactively identify market opportunities where an external partnership can support Take2’s commercial goals across diverse sectors including Healthcare Institutions, Insurance, Digital Health, Biopharma, and Finance across Asia with focus on HK and Mainland China
+* Develops Go-to-Market strategy with the goal of creating a strategically and financially impactful new business models to create values for Take2 and partners
+* Evaluates the economic and strategic cost benefits of new and existing partnerships
+* Assists to negotiate and close complex and customized agreements, creates scalable partnership models, and maintains and grows direct relationships with key partners
+* Coordinates with cross functional teams to execute the partnership models
+* Supports the strategic objectives and interests of Take2’s management teams on company initiatives.
 
 **Requirements**
 
-* Degree holder in Business / Communications / Language Studies or related disciplines
-* 4+ years working experience in marketing / copy-writing / translation or related experience
-* Excellent written skills in Chinese and English, communication skills in Putonghua and English
-* Strong technological skills, including Office, web-based tools & social media
-* Proactive, passionate & determined and can-do mentality
-* Understanding of China market is a plus
-* Immediately Available
+* Bachelor’s degree in the field of life sciences, medicine, biomedical engineering, or any related subject
+* Preferably with at least 5 year of relevant business development, sales and/or marketing work experience in a related Healthcare, Insurance, or Life Science industry
+* Experience managing cross-functional internal stakeholders and building senior-level relationships
+* Strong interest in Next Generation Sequencing and Oncology topics
+* A self-starter with agility and positive attitude
+* Resourceful, analytical and problem-solving skills
+* Strong oral and written communication skills in both Mandarin and English
 
 #### Additional Information
 
@@ -51,35 +56,8 @@ Degree
 
 Years of Experience
 
-4 years
+5 years
 
 Job Type
 
-Full Time
-
-Job Functions
-
-Marketing / Public Relations, Marketing - General / Support
-
-#### Company Overview
-
-**About TAKE2 HEALTH LTD.**
-
-We are a healthcare start-up which explores, invents, and builds empowering platform to harness the power of biomedical sciences and informatics to deliver better healthcare solutions to individuals and communities with actionable information and results. Founded in Hong Kong SAR, expanding to Shenzhen, we aim to be a key driver that makes innovative healthcare inventions widely accessible to the public in China and across Asia. We are professional, committed, influential, pioneering, bold, and most importantly, we are young and have an unique corporate culture!
-
-  
-Please visit: [https://take2health.net/](https://take2health.net/ "https://take2health.net/")
-
-* Technology company with healthcare businesses
-* Based in Hong Kong with business in South China
-* Young and energetic team with passion in saving human lives and improving health
-
-#### Additional Company Information
-
-Industry
-
-Medical/Pharmaceutical
-
-Benefits & Others
-
-Dental insurance, Double pay, Education allowance, Free shuttle bus, Medical insurance, Performance bonus, Five-day work week
+Full Time, Permanent
