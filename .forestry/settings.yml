@@ -9,7 +9,7 @@ sections:
   label: Stories
   create: documents
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
   templates:
   - health-tips-post
 - type: document
@@ -20,7 +20,7 @@ sections:
   label: Hero Banners
   create: documents
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
   templates:
   - hero-banner
 - type: directory
@@ -28,7 +28,7 @@ sections:
   label: Careers
   create: documents
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
   templates:
   - career
 - type: directory
@@ -36,7 +36,7 @@ sections:
   label: Clinical Papers
   create: documents
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
   templates:
   - clinical-paper
 - type: directory
@@ -55,7 +55,7 @@ sections:
   label: Promotions
   create: documents
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
   templates:
   - promotions
 - type: directory
@@ -63,7 +63,7 @@ sections:
   label: Health Tips
   create: documents
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
   templates:
   - health-tips-post
 - type: directory
@@ -71,7 +71,7 @@ sections:
   label: Updates
   create: documents
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
   templates:
   - updates
 upload_dir: content/images
