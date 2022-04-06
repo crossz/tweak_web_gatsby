@@ -7,3 +7,5 @@ fields:
   config: {}
   template: health-tips-post
   label: Post
+pages:
+- content/stories/test-2.md
