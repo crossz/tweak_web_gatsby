@@ -2,11 +2,6 @@
 label: Story
 hide_body: false
 fields:
-- name: campaignPageCard
-  type: include
-  config: {}
-  template: campaign-page-post-card
-  label: Campaign Page Post Card
 - name: post
   type: include
   config: {}
