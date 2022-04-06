@@ -178,7 +178,8 @@ const SectionTwo = () => {
           maxWidth={theme.spacing(100)}
           margin={isMobile ? '20px 10px' : '40px auto'}
         >
-          {isMobile ? (
+          <ImageTranslation filename='table' alt='table'></ImageTranslation>
+          {/* {isMobile ? (
             <StaticImage
               className={classes.img}
               src='../../images/table_mobile.png'
@@ -190,7 +191,7 @@ const SectionTwo = () => {
               src='../../images/table.png'
               alt='empty'
             ></StaticImage>
-          )}
+          )} */}
         </Box>
         <Box
           className='gsap-fade-in-5'
@@ -206,10 +207,11 @@ const SectionTwo = () => {
           <Grid alignItems='center' container spacing={4}>
             <Grid item sm={5}>
               <Box width='100%'>
-                <StaticImage
-                  src='../../images/ngs_advantage_triangle.png'
-                  alt='empty'
-                ></StaticImage>
+                <ImageTranslation
+                  hasMobile={false}
+                  filename='ngs_advantage_triangle'
+                  alt='ngs advantage triangle'
+                ></ImageTranslation>
               </Box>
             </Grid>
             <Grid item sm={7}>

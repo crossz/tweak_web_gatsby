@@ -3,9 +3,7 @@ import { makeStyles, Box, alpha } from '@material-ui/core/'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
-// import 'swiper/components/pagination/pagination.min.css'
-// import 'swiper/components/navigation/navigation.min.css'
-import { StaticImage } from 'gatsby-plugin-image'
+import ImageTranslation from '../ImageTranslation'
 
 SwiperCore.use([Autoplay])
 
@@ -108,7 +106,11 @@ const SymptomSwiper = () => {
           transform: `rotate(${deg}deg)`,
         }}
       >
-        <StaticImage src='../../images/wheel.png' alt='symptoms'></StaticImage>
+        <ImageTranslation
+          hasMobile={false}
+          filename='wheel'
+          alt='symptoms'
+        ></ImageTranslation>
       </Box>
     </Swiper>
   )
