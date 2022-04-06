@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     height: PROMOTION_BAR_HEIGHT,
     position: 'relative',
+    backgroundColor: theme.palette.secondary.main,
   },
   closeIcon: {
     position: 'absolute',
@@ -36,7 +37,7 @@ const PromotionBar = () => {
   const handleClose = (params) => setOpen(false)
 
   return open ? (
-    <Box className={classes.root} bgcolor='secondary.main'>
+    <Box className={classes.root}>
       <Container className={classes.container} maxWidth='lg'>
         {isMobile && (
           <IconButton

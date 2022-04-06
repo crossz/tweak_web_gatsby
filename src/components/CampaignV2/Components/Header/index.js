@@ -25,12 +25,26 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.appBar,
   },
   header: {
-    backgroundColor: alpha(theme.palette.background.paper, 0),
-    transition: `background-color 0.6s`,
     marginBottom: theme.spacing(-HEADER_HEIGHT),
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(-MOBILE_HEADER_HEIGHT),
       top: PROMOTION_BAR_HEIGHT,
+    },
+  },
+  wrapper: {
+    justifyContent: 'space-between',
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 6),
+    height: theme.spacing(HEADER_HEIGHT),
+    backgroundColor: alpha(theme.palette.background.paper, 0),
+    transition: `background-color 0.6s`,
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(0, 2),
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(MOBILE_HEADER_HEIGHT),
+      padding: theme.spacing(0, 3),
     },
   },
   withBg: {
@@ -39,20 +53,6 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create(['background-color'], {
       duration: theme.transitions.duration.standard,
     }),
-  },
-  wrapper: {
-    justifyContent: 'space-between',
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 6),
-    height: theme.spacing(HEADER_HEIGHT),
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(0, 2),
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(MOBILE_HEADER_HEIGHT),
-      padding: theme.spacing(0, 3),
-    },
   },
   logoWrapper: {
     cursor: 'pointer',
@@ -89,13 +89,13 @@ const Header = (props) => {
         zIndex='appBar'
       >
         <PromotionBar></PromotionBar>
-        <Box
-          id='header'
-          className={classnames(classes.header, {
-            [classes.withBg]: withBg,
-          })}
-        >
-          <Container className={classes.wrapper} maxWidth='lg'>
+        <Box id='header' className={classes.header}>
+          <Container
+            className={classnames(classes.wrapper, {
+              [classes.withBg]: withBg,
+            })}
+            maxWidth='lg'
+          >
             <Box
               display='block'
               width={isMobile ? 100 : 145}
