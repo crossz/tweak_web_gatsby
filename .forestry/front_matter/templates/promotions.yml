@@ -50,3 +50,5 @@ fields:
 - type: text
   name: slug
   label: Slug
+pages:
+- content/promotions/take2-prophecy.md
