@@ -48,11 +48,13 @@
         "ngs_advantage": {
             "paragraphs": {
                 "0": "Facing unknown risks while travelling abroad, we will buy insurance in advance to prepare; in the journey of life, we should also be aware of the risks of developing NPC and nip it in the bud. \n\nThe early NPC detection test enables patients with non-specific symptoms to be identified at early stage for timely treatment, resulting in increasing survival rate, reducing the side effects of treatments, and minimising the impact on our lives. By well-preparing your “life.",
-                "1": "How can we define a reliable and effective NPC detection test?\n<1>High sensitivity, low false positive rate</1>is critical \n",
+                "1": "How can we define a reliable and effective NPC detection test?\n",
                 "2": "All in all, we should choose an early detection test that has a high sensitivity and a low false-positive rate. These criteria reflect that the test could effectively detect true patients so that patients would not be missed and result in a delay in their treatments; while the screened population are also less likely to be reported as \"diseased\" wrongly so that they would not suffer unnecessary worries.",
-                "3": "Take2 Prophecy™ Test for Nasopharyngeal Cancer \nConsidered the most reliable test available on the market",
+                "3": "Test for Nasopharyngeal Cancer \nConsidered the most reliable test available on the market",
                 "4": "Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC) specialises in capturing the NPC-associated DNA signal in the bloodstream, using Next-generation Sequencing (NGS) technology. It effectively enables NPC patients to be identified in their early stage for timely treatment and increases their survival rate. \n\nThe Take2 Prophecy™ Test for NPC has >97% sensitivity5,6, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate6. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!",
-                "5": "Developed by the leading university\nClinically proven with thousands of individuals"
+                "5": "Developed by the leading university\nClinically proven with thousands of individuals",
+                "6": "High sensitivity, low false positive rate",
+                "7": "is critical"
             },
             "efficient_detections": {
                 "0": "Sensitivity refers to the proportion of patients with NPC being correctly identified by a positive detection result. Therefore, the higher the test’s sensitivity, the lower the chance of missing the diseased ones in the screened population; which means the test is more reliable.",
@@ -95,15 +97,15 @@
             },
             "steps": {
                 "0": {
-                    "title": "1-click online registration",
+                    "title": "<1>1</1>-click online registration",
                     "content": "You can make appointments on the Take2 Health Online Platform through a one-stop selection of clinics, healthcare professionals, appointment dates, and times."
                 },
                 "1": {
-                    "title": "Walk 2 and a few paces for blood samples collection",
+                    "title": "Walk <1>2</1> and a few paces for blood samples collection",
                     "content": "Simple and non-invasive, Take2 Prophecy™ test only requires a single blood draw at clinic without admission to the hospital; widely accessible with coverage all over the territories. You can take the test nearby your home or work locations."
                 },
                 "2": {
-                    "title": "Test results ready in 3 days",
+                    "title": "Test results ready in <1>3</1> days",
                     "content": "Results can be available as soon as 3 working days, you will no longer feel anxious due to the long waiting."
                 }
             }
@@ -134,6 +136,9 @@
             "paragraphs": {
                 "0": "Unit D, 25/F YHC Tower, 1 Sheung Yuet Road, Kowloon Bay, Hong Kong"
             }
+        },
+        "common": {
+            "enter": "Enter"
         }
     }
 }

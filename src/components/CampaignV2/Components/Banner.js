@@ -45,7 +45,7 @@ const Banner = () => {
         variant='contained'
         color='secondary'
       >
-        {t('cp_v2.common.book_now')}
+        {t('common.book_now')}
       </Button>
       <ImageTranslation
         filename='hero_banner'

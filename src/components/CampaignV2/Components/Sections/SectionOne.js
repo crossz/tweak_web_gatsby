@@ -316,7 +316,6 @@ const SectionOne = () => {
           </Box>
           <Box
             className='gsap-fade-in-3-trigger gsap-fade-in-3'
-            px={5}
             width='100%'
             mt={4}
             mb={isMobile ? 4 : 5}
@@ -327,7 +326,9 @@ const SectionOne = () => {
               <Box
                 key={symptom.label}
                 fontSize={isMobile ? 'body1.fontSize' : 'h5.fontSize'}
-                textAlign='center'
+                alignItems='center'
+                display='flex'
+                flexDirection='column'
               >
                 <Box width={isMobile ? 88 : 120}>{symptom.icon}</Box>
                 <Box mt={isMobile ? 1.5 : 2}>{t(symptom.label)} ?</Box>

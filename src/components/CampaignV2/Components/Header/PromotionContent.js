@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   codeWrapper: {
+    cursor: 'pointer',
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(0, 0.5),
     },
@@ -83,7 +84,7 @@ const PromotionContent = ({ whiteBg }) => {
             fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
             component='span'
           >
-            {t('cp_v2.promotion.limited_time_offer')}
+            {t('cp_v2.promotion.title')}
             <Hidden xsDown>
               <Box fontWeight='fontWeightLight' component='span'>
                 ｜
@@ -138,7 +139,7 @@ const PromotionContent = ({ whiteBg }) => {
           variant='contained'
           color='secondary'
         >
-          {t('cp_v2.common.book_now')}
+          {t('common.book_now')}
         </Button>
       )}
     </>

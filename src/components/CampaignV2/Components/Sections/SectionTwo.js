@@ -132,7 +132,7 @@ const SectionTwo = () => {
             <Box color='secondary.main' component='span'>
               {t('cp_v2.ngs_advantage.paragraphs.6')}
             </Box>
-            {isMobile && <br />}
+            {isMobile && <br />}{' '}
             <Box component='span'>{t('cp_v2.ngs_advantage.paragraphs.7')}</Box>
           </Box>
           <Box>
