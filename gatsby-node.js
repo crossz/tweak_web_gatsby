@@ -26,6 +26,14 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         }`
         break
       case 'health-tips':
+        slug = node.frontmatter.isCampaign
+          ? `/whats-new/campaign/${relativeDirectory}/${
+              node.frontmatter.slug || node.frontmatter.cpTitle?.trim() || name
+            }`
+          : `/whats-new/${relativeDirectory}/${
+              node.frontmatter.slug || node.frontmatter.title?.trim() || name
+            }`
+        break
       case 'promotions':
       case 'updates':
         slug = `/whats-new/${relativeDirectory}/${

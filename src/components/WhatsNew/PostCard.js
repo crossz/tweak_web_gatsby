@@ -5,7 +5,6 @@ import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { formatLocal } from '@utils/moment'
-import { useMatch } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -97,16 +96,13 @@ const PostCard = ({
   href,
   withViewBtn,
   pdf,
+  isCampaign,
   cpTitle,
   cpDetail,
 }) => {
   const classes = useStyles()
-  const { t, routed, language } = useI18next()
+  const { t } = useI18next()
   const images = cover.map((item) => getImage(item))
-
-  const isCampaignPage = useMatch(
-    routed ? `/${language}` : '' + `/whats-new/campaign`
-  )
 
   return (
     <Link
@@ -125,7 +121,7 @@ const PostCard = ({
             ></GatsbyImage>
           )}
         </Box>
-        {isCampaignPage ? (
+        {isCampaign ? (
           <Box className={classes.info}>
             <Box
               mb={1}

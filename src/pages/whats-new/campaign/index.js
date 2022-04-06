@@ -89,6 +89,7 @@ export const query = graphql`
           cpDetail
           date
           href
+          isCampaign
           cover {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
