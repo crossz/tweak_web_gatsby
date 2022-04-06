@@ -50,5 +50,7 @@ fields:
 - type: text
   name: slug
   label: Slug
+  description: Path for post detail page, if this is empty, post path would be post
+    title.
 pages:
 - content/promotions/take2-prophecy.md
