@@ -7,7 +7,7 @@ detail: 並輸入優惠碼「CV500」，即可享優惠價$1,700 （原價：$2,
 type: ''
 pdf: ''
 href: ''
-slug: ''
+slug: consumption-voucher
 
 ---
 ![](../images/consumption-voucher-website-banner-output_1200-x-630.jpg)
