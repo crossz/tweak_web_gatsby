@@ -5,6 +5,7 @@ import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { formatLocal } from '@utils/moment'
+import { useMatch } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -89,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PostCard = ({
   title,
+  detail,
   type,
   date,
   cover,
@@ -101,8 +103,11 @@ const PostCard = ({
   cpDetail,
 }) => {
   const classes = useStyles()
-  const { t } = useI18next()
+  const { t, routed, language } = useI18next()
   const images = cover.map((item) => getImage(item))
+  const isCampaignPage = useMatch(
+    `${routed ? `/${language}` : ''}/whats-new/campaign`
+  )
 
   return (
     <Link
@@ -111,7 +116,7 @@ const PostCard = ({
       isPdf={Boolean(pdf?.publicURL)}
     >
       <Box className={classes.root}>
-        <Box height={images[0] ? 'auto' : 160} className={classes.imageWrapper}>
+        <Box height={images[0] ? 'auto' : 200} className={classes.imageWrapper}>
           {images[0] && (
             <GatsbyImage
               imgClassName={classes.image}
@@ -121,22 +126,22 @@ const PostCard = ({
             ></GatsbyImage>
           )}
         </Box>
-        {isCampaign ? (
+        {isCampaignPage ? (
           <Box className={classes.info}>
             <Box
               mb={1}
               color='secondary.main'
-              fontSize='h4.fontSize'
+              fontSize='h6.fontSize'
               fontWeight='fontWeightBold'
             >
-              {cpTitle}
+              {isCampaign ? cpTitle : title}
             </Box>
             <Box
               color='primary.main'
-              fontSize='body1.fontSize'
+              fontSize='body2.fontSize'
               fontWeight='fontWeightMedium'
             >
-              {cpDetail}
+              {isCampaign ? cpDetail : detail}
             </Box>
           </Box>
         ) : (

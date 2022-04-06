@@ -56,8 +56,8 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          cpTitle
-          cpDetail
+          title
+          detail
           date
           href
           cover {
@@ -75,7 +75,7 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language }, campaign: { eq: true } }
+        frontmatter: { languages: { eq: $language }, isCampaign: { eq: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
