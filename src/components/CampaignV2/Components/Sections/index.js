@@ -6,7 +6,7 @@ import SectionThree from './SectionThree'
 import SectionFour from './SectionFour'
 import SectionFive from './SectionFive'
 
-const Sections = ({ promotionNodes, healthTipsNodes }) => {
+const Sections = ({ storyNodes, healthTipsNodes }) => {
   return (
     <>
       <Box id='gsap-scroll-to-section-one'>
@@ -20,7 +20,7 @@ const Sections = ({ promotionNodes, healthTipsNodes }) => {
       </Box>
       <Box id='gsap-scroll-to-section-four'>
         <SectionFour
-          promotionNodes={promotionNodes}
+          storyNodes={storyNodes}
           healthTipsNodes={healthTipsNodes}
         ></SectionFour>
       </Box>

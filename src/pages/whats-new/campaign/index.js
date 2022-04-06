@@ -4,12 +4,12 @@ import Campaign from '@components/CampaignV2'
 import Layout from '@layouts/Layout'
 
 const CampaignRoot = ({ data }) => {
-  const { promotionNodes, healthTipsNodes, imagesTranslation } = data
-
+  const { storyNodes, healthTipsNodes, imagesTranslation } = data
+  console.log('storyNodes', storyNodes)
   return (
     <Layout>
       <Campaign
-        promotionNodes={promotionNodes?.nodes}
+        storyNodes={storyNodes?.nodes}
         healthTipsNodes={healthTipsNodes?.nodes}
         imagesTranslation={imagesTranslation?.nodes}
       ></Campaign>
@@ -45,45 +45,9 @@ export const query = graphql`
         }
       }
     }
-    heroBannerNodes: allMdx(
-      filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
-      sort: { fields: frontmatter___sort, order: ASC }
-    ) {
-      nodes {
-        id
-        frontmatter {
-          titleHk
-          titleEn
-          titleCn
-          detailHk
-          detailEn
-          detailCn
-          image {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
-          mobileImage {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
-          reference
-          sort
-          theme
-          buttons {
-            variant
-            color
-            name
-            link
-            internal
-          }
-        }
-      }
-    }
-    promotionNodes: allMdx(
+    storyNodes: allMdx(
       limit: 6
-      filter: { fileAbsolutePath: { regex: "/promotions/" } }
+      filter: { fileAbsolutePath: { regex: "/stories/" } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
@@ -111,7 +75,7 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language } }
+        frontmatter: { languages: { eq: $language }, campaign: { eq: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

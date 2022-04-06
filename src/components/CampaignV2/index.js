@@ -8,7 +8,7 @@ import Banner from './Components/Banner'
 import { gsap, ScrollTrigger } from '@components/CampaignV2/utils/initGsap'
 import { ImagesTranslationContext } from '@components/CampaignV2/utils/context'
 
-const Page = ({ promotionNodes, healthTipsNodes, imagesTranslation }) => {
+const Page = ({ storyNodes, healthTipsNodes, imagesTranslation }) => {
   const el = useRef()
   const q = gsap.utils.selector(el)
   const t = useRef()
@@ -63,7 +63,7 @@ const Page = ({ promotionNodes, healthTipsNodes, imagesTranslation }) => {
         <Container disableGutters maxWidth='lg'>
           <Banner />
           <Sections
-            promotionNodes={promotionNodes}
+            storyNodes={storyNodes}
             healthTipsNodes={healthTipsNodes}
           ></Sections>
           <ContactReference></ContactReference>

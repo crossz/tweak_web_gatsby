@@ -1,14 +1,13 @@
 import React from 'react'
-import { useTheme, useMediaQuery, Box } from '@material-ui/core/'
+import { Box } from '@material-ui/core/'
 import PostSwiper from '@components/Homepage/PostSwiper'
 import Button from '@material-ui/core/Button'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import ImageTranslation from '../ImageTranslation'
 
-const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
+const SectionFour = ({ storyNodes, healthTipsNodes }) => {
   const { t } = useI18next()
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+
   return (
     <>
       <ImageTranslation
@@ -30,7 +29,7 @@ const SectionFour = ({ promotionNodes, healthTipsNodes }) => {
         </Box>
         <Box className='gsap-fade-in-8' mr={-2.5}>
           <PostSwiper
-            nodes={promotionNodes}
+            nodes={storyNodes}
             morePath='/whats-new/promotions/'
           ></PostSwiper>
         </Box>

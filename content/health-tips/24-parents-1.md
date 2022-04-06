@@ -7,6 +7,7 @@ href: https://www.ohpama.com/689815/%E7%94%9F%E6%B4%BB%E5%81%A5%E5%BA%B7/%E5%81%
 slug: ''
 cover:
   - '../images/24-parent.png'
+campaign: false
 languages:
   - zh-CN
 ---
