@@ -1,4 +1,20 @@
 ---
 label: Campaign Page Post Card
 hide_body: true
-fields: []
+fields:
+- name: cpTitle
+  type: text
+  config:
+    required: true
+    max: 100
+  label: Cp Title
+- name: cpDetail
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+    max: 200
+  label: Cp Detail
