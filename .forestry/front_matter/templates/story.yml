@@ -7,9 +7,10 @@ fields:
   config: {}
   template: health-tips-post
   label: Post
-- name: isCampaign
-  type: boolean
-  label: Show In Campaign
-  description: Show in campaign health tips post.
+- name: campaignPageCard
+  type: include
+  config: {}
+  template: campaign-page-post-card
+  label: Campaign Page Post Card
 pages:
 - content/stories/test-2.md
