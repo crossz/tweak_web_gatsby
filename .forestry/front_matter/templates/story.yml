@@ -2,10 +2,15 @@
 label: Story
 hide_body: false
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - name: post
   type: include
   config: {}
-  template: health-tips-post
+  template: promotions
   label: Post
 pages:
 - content/stories/test-2.md
