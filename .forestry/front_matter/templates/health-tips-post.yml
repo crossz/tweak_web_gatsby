@@ -2,6 +2,11 @@
 label: Health Tips Post
 hide_body: false
 fields:
+- name: campaign
+  type: boolean
+  label: Show In Campaign
+  description: Show in campaign health tips post.
+  default: false
 - name: languages
   type: include
   config: {}
@@ -73,11 +78,6 @@ fields:
   label: Slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
-- name: campaign
-  type: boolean
-  label: Show In Campaign
-  description: Show in campaign health tips post.
-  default: false
 pages:
 - content/health-tips/24-parents-1.md
 - content/health-tips/24-parents.md
