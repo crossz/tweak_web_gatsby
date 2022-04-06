@@ -5,7 +5,7 @@ fields:
 - name: post
   type: include
   config: {}
-  template: health-tips-post
+  template: promotions
   label: Post
 pages:
 - content/stories/test-2.md
