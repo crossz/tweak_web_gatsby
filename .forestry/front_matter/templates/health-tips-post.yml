@@ -2,7 +2,7 @@
 label: Health Tips Post
 hide_body: false
 fields:
-- name: campaign
+- name: isCampaign
   type: boolean
   label: Show In Campaign
   description: Show in campaign health tips post.
