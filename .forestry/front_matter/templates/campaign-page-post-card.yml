@@ -8,6 +8,9 @@ fields:
     required: true
     max: 100
   label: Cp Title
+  showOnly:
+    field: isCampaign
+    value: true
 - name: cpDetail
   type: textarea
   default: ''
@@ -18,3 +21,10 @@ fields:
       format: markdown
     max: 200
   label: Cp Detail
+  showOnly:
+    field: isCampaign
+    value: true
+- name: isCampaign
+  type: boolean
+  label: Show In Campaign
+  description: Show in campaign page.
