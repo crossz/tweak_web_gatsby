@@ -5,7 +5,7 @@ import Layout from '@layouts/Layout'
 
 const CampaignRoot = ({ data }) => {
   const { storyNodes, healthTipsNodes, imagesTranslation } = data
-  console.log('storyNodes', storyNodes)
+
   return (
     <Layout>
       <Campaign
@@ -56,9 +56,9 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          title
+          cpTitle
+          cpDetail
           date
-          type
           href
           cover {
             childImageSharp {
@@ -85,9 +85,9 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          title
+          cpTitle
+          cpDetail
           date
-          type
           href
           cover {
             childImageSharp {

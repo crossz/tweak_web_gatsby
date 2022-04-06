@@ -1,7 +1,6 @@
 'use strict'
 const { resolve } = require('path')
 const { paginate } = require('gatsby-awesome-pagination')
-const { languagePrefixes } = require('./languages')
 
 const formatEndsPath = (path) => (path?.endsWith('/') ? path : `${path}/`)
 const formatStartsPath = (path) => (path?.startsWith('/') ? path : `/${path}`)
@@ -30,6 +29,11 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
       case 'promotions':
       case 'updates':
         slug = `/whats-new/${relativeDirectory}/${
+          node.frontmatter.slug || node.frontmatter.title?.trim() || name
+        }`
+        break
+      case 'stories':
+        slug = `/whats-new/campaign/${relativeDirectory}/${
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
