@@ -67,7 +67,10 @@ export const query = graphql`
     }
     promotionNodes: allMdx(
       limit: 6
-      filter: { fileAbsolutePath: { regex: "/promotions/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/promotions/" }
+        frontmatter: { languages: { eq: $language } }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
