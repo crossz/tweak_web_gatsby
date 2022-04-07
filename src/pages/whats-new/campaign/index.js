@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Campaign from '@components/CampaignV2'
+import Campaign from '@components/Campaign'
 import Layout from '@layouts/Layout'
 
 const CampaignRoot = ({ data }) => {
