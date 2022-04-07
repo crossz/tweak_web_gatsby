@@ -8,6 +8,8 @@ type: ''
 pdf: ''
 href: ''
 slug: consumption-voucher
+languages:
+- zh-HK
 
 ---
 ![](../images/consumption-voucher-website-banner-output_1200-x-630.jpg)
