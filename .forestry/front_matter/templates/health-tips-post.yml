@@ -2,6 +2,11 @@
 label: Health Tips Post
 hide_body: false
 fields:
+- name: campaignPagePostCard
+  type: include
+  config: {}
+  template: campaign-page-post-card
+  label: Campaign page post card
 - name: languages
   type: include
   config: {}

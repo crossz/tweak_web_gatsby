@@ -1,0 +1,144 @@
+{
+    "cp_v2": {
+        "menu": {
+            "list": {
+                "0": "We probably have all experienced symptoms of early-stage nasopharyngeal cancer (NPC)?\nStop guessing and help yourself!",
+                "1": "Cancer should be our utmost concern when we could beware of it!  \nSelecting an accurate and reliable early nasopharyngeal cancer (NPC) detection test is the key.",
+                "2": "Simple and quick; just a Lunch Time to get it done",
+                "3": "“NPC could be cured by detecting early”",
+                "4": "Cheung Tat-ming, a famous Hong Kong actor\nRegaining his “second life” after recovering from NPC",
+                "5": "Contact us"
+            },
+            "office_website": "Website"
+        },
+        "promotion": {
+            "title": "FLASH DEAL",
+            "price": "Enjoy a special price of $1,500 ",
+            "tip": "limited to the first 200 appointments"
+        },
+        "ngs_characteristic": {
+            "paragraphs": {
+                "0": "A lot of people mistakenly believe that NPC is merely linked to smoking habits. How can we think of being at risk of NPC especially if we are young and strong or live a healthy lifestyle? Actually, NPC can strike anyone at any age. The threat of NPC is hiding next to you and me.",
+                "1": "Therefore, no one should overlook the risk of getting NPC, which is, in fact, highly relevant to each of us.",
+                "2": "The early-stage NPC might seem to catch us off guard! So, these are all its signs?\n",
+                "3": "As the symptoms of early NPC resemble flu or inflammatory illnesses, it is typically easy to let the patients’ guards down and patients only relate themselves to some persistent mild illnesses, causing a delay in seeking medical intervention. As such, the best timing for NPC treatment is often missed when they notice the situation is getting severe. 80% of unscreened patients were diagnosed with late-stage NPC⁵, which significantly increased treatment difficulties and led to a reduced survival rate.\n\n",
+                "4": "Are you able to identify these symptoms?",
+                "5": "Is it the persistent flu, allergic rhinitis, or NPC…… all might be plausible? For no doubt, we should not make a shot in the dark!\nOf course, there is no way for us to identify these signs and make a diagnosis if we were not healthcare professionals. But, with accurate and reliable next-generation technologies, all of us can be our own life-saving heroes now by getting tested with early NPC detection test to take control of our health!"
+            },
+            "characteristics": {
+                "0": "NPC is one of the most common cancers in Hong Kong, and there are 600-800 new cases of NPC annually1.",
+                "1": "It is not only the top cancer for men aged between 20-442,",
+                "2": "but also one of the cancers that is more likely to occur in women aged between 50-60 1",
+                "3": "香港人的鼻咽癌發病率更是全球平均的5-6倍3,4"
+            },
+            "symptoms": {
+                "0": "Headache",
+                "1": "Tinnitus",
+                "2": "Stuffy nose",
+                "3": "Bloodshot nose",
+                "4": "Swollen lymph nodes",
+                "5": "Hoarseness"
+            },
+            "diseases": {
+                "0": "Nasopharyngeal carcinoma",
+                "1": "Flu ",
+                "2": "Inflammatory illnesses"
+            }
+        },
+        "ngs_advantage": {
+            "paragraphs": {
+                "0": "Facing unknown risks while travelling abroad, we will buy insurance in advance to prepare; in the journey of life, we should also be aware of the risks of developing NPC and nip it in the bud. \n\nThe early NPC detection test enables patients with non-specific symptoms to be identified at early stage for timely treatment, resulting in increasing survival rate, reducing the side effects of treatments, and minimising the impact on our lives. By well-preparing your “life.",
+                "1": "How can we define a reliable and effective NPC detection test?\n",
+                "2": "All in all, we should choose an early detection test that has a high sensitivity and a low false-positive rate. These criteria reflect that the test could effectively detect true patients so that patients would not be missed and result in a delay in their treatments; while the screened population are also less likely to be reported as \"diseased\" wrongly so that they would not suffer unnecessary worries.",
+                "3": "Test for Nasopharyngeal Cancer \nConsidered the most reliable test available on the market",
+                "4": "Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC) specialises in capturing the NPC-associated DNA signal in the bloodstream, using Next-generation Sequencing (NGS) technology. It effectively enables NPC patients to be identified in their early stage for timely treatment and increases their survival rate. \n\nThe Take2 Prophecy™ Test for NPC has >97% sensitivity5,6, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate6. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!",
+                "5": "Developed by the leading university\nClinically proven with thousands of individuals",
+                "6": "High sensitivity, low false positive rate",
+                "7": "is critical"
+            },
+            "efficient_detections": {
+                "0": "Sensitivity refers to the proportion of patients with NPC being correctly identified by a positive detection result. Therefore, the higher the test’s sensitivity, the lower the chance of missing the diseased ones in the screened population; which means the test is more reliable.",
+                "1": "On the contrary, if the sensitivity of a detection test is not high enough, it might miss the detection of true NPC patients. Those missed NPC patients may assume themselves as disease-free, resulting in a delay in diagnosis and treatment at the best timing.",
+                "2": "A false positive means that a person who does not have NPC gets a positive detection test result. The higher the test’s false-positive rate, the more non-NPC individuals are being reported as \"diseased\", which exposes the non-diseased ones to unnecessary mental burden and additional medical procedures."
+            },
+            "table": {
+                "row_titles": {
+                    "0": "Take2 Prophecy™ Test for Nasopharyngeal Cancer",
+                    "1": "Traditional EBV DNA test",
+                    "2": "Traditional EBV serology test"
+                },
+                "column_titles": {
+                    "0": "Sensitivity",
+                    "1": "False-positive rate"
+                },
+                "about": "\nAbout",
+                "up_to": "up to"
+            },
+            "advantages": {
+                "0": {
+                    "title": "High sensitivity",
+                    "content": "The Take2 Prophecy™ Test for NPC has >97% sensitivity5,6, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate6. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!"
+                },
+                "1": {
+                    "title": "Clinically proven with thousands of individuals",
+                    "content": "the utilised technologies have also been validated in a large-scale clinical study involving 20,000 individuals5; thus making the Take2 Prophecy™ Test for NPC the most reliable early NPC detection test on the market.\n<1>(Please consult healthcare professionals for more information)</1>"
+                },
+                "2": {
+                    "title": "Developed by the leading university",
+                    "content": "Take2 Prophecy™ Test for Nasopharyngeal Cancer, beginning with the research achievement of the world-class research team from a renowned local university, utilises NGS technology in early NPC detection"
+                }
+            }
+        },
+        "ngs_progress": {
+            "paragraphs": {
+                "0": "When the term “cancer detection test” is putting up, we may immediately associate it with many complicated procedures and needs, such as requesting a leave from work for hospital admission, visiting a specialist, undergoing tissue biopsy, using sizeable medical devices, and so on. \n\nDo not worry! Take2 Prophecy™ Test for Nasopharyngeal Cancer breaks the past limitations through utilising next-generation technologies; henceforward, the early NPC detection test becomes amazingly simple. Just following the 3-steps procedure, you can take the test at your nearest clinic and get it done within Lunch Time. Protecting yourself against NPC is a breeze to accomplish now!",
+                "1": "The 3-steps procedure",
+                "2": "Take2 Prophecy™ Test for NPC is adopted by numerous renowned medical institutions. Check out the nearest service locations:"
+            },
+            "steps": {
+                "0": {
+                    "title": "<1>1</1>-click online registration",
+                    "content": "You can make appointments on the Take2 Health Online Platform through a one-stop selection of clinics, healthcare professionals, appointment dates, and times."
+                },
+                "1": {
+                    "title": "Walk <1>2</1> and a few paces for blood samples collection",
+                    "content": "Simple and non-invasive, Take2 Prophecy™ test only requires a single blood draw at clinic without admission to the hospital; widely accessible with coverage all over the territories. You can take the test nearby your home or work locations."
+                },
+                "2": {
+                    "title": "Test results ready in <1>3</1> days",
+                    "content": "Results can be available as soon as 3 working days, you will no longer feel anxious due to the long waiting."
+                }
+            }
+        },
+        "news": {
+            "paragraphs": {
+                "0": "Learn more about NPC survivors’ stories",
+                "1": "Read more"
+            }
+        },
+        "second_life": {
+            "paragraphs": {
+                "0": "Mr. Cheung Tat-ming, a Nasopharyngeal Cancer (NPC) survivor, had experienced a delay in seeking medical intervention because of lacking cancer awareness, and hence he overlooked the warning signs of his health. Walking along the road to fight against NPC for seven years, he successfully beat the NPC. Now, he can continuously scale new heights in his acting profession.\n\nLet us watch the video below together to understand Tat-ming’s story about regaining his “second life” and the importance of detecting cancer early!",
+                "1": "Do not let NPC take over the control of your life. The earlier you know, the better you can manage. Get tested regularly; Take2 Prophecy™ Test for NPC helps you “\nGet to care NPC earlier by knowing it earlier”"
+            }
+        },
+        "contact_and_reference": {
+            "paragraphs": {
+                "0": "Still have questions?",
+                "1": "Shilly-shallying? Talk to our professional healthcare team (complimentary):",
+                "2": "Learn more about Take2 Prophecy™ Test for Nasopharyngeal Cancer:",
+                "3": "Follow us for the latest information:",
+                "4": "References",
+                "5": "Terms and Conditions"
+            }
+        },
+        "footer": {
+            "paragraphs": {
+                "0": "Unit D, 25/F YHC Tower, 1 Sheung Yuet Road, Kowloon Bay, Hong Kong"
+            }
+        },
+        "common": {
+            "enter": "Enter"
+        }
+    }
+}

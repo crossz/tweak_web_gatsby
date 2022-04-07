@@ -122,6 +122,15 @@ module.exports = {
       },
       __key: 'images',
     },
+    `gatsby-transformer-json`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'campaignImages',
+        path: `${__dirname}/src/components/CampaignV2/images`,
+      },
+      __key: 'campaignImages',
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

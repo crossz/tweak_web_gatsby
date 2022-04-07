@@ -5,6 +5,7 @@ import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { formatLocal } from '@utils/moment'
+import { useMatch } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,8 +46,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   image: {
-    // width: '100%',
-    // height: `calc(100% / ${POST_ASPECT_RATIO})`,
     borderRadius: `10px 10px 0 0 `,
   },
   info: {
@@ -91,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PostCard = ({
   title,
+  detail,
   type,
   date,
   cover,
@@ -98,10 +98,17 @@ const PostCard = ({
   href,
   withViewBtn,
   pdf,
+  isCampaign,
+  cpTitle,
+  cpDetail,
 }) => {
   const classes = useStyles()
-  const { t } = useI18next()
+  const { t, routed, language } = useI18next()
   const images = cover.map((item) => getImage(item))
+  const isCampaignPage = useMatch(
+    `${routed ? `/${language}` : ''}/whats-new/campaign`
+  )
+
   return (
     <Link
       className={classes.link}
@@ -109,7 +116,7 @@ const PostCard = ({
       isPdf={Boolean(pdf?.publicURL)}
     >
       <Box className={classes.root}>
-        <Box className={classes.imageWrapper}>
+        <Box height={images[0] ? 'auto' : 200} className={classes.imageWrapper}>
           {images[0] && (
             <GatsbyImage
               imgClassName={classes.image}
@@ -119,19 +126,39 @@ const PostCard = ({
             ></GatsbyImage>
           )}
         </Box>
-        <Box className={classes.info}>
-          <Box className={classes.type}>
-            {type && t(`options.post_types.${type}`)}
-          </Box>
-          <Box className={classes.title}>{title}</Box>
-          {withViewBtn ? (
-            <Box className={classes.btnWrapper}>
-              <ViewButton slug={slug}></ViewButton>
+        {isCampaignPage ? (
+          <Box className={classes.info}>
+            <Box
+              mb={1}
+              color='secondary.main'
+              fontSize='h6.fontSize'
+              fontWeight='fontWeightBold'
+            >
+              {isCampaign ? cpTitle : title}
             </Box>
-          ) : (
-            <Box className={classes.date}>{formatLocal(date)}</Box>
-          )}
-        </Box>
+            <Box
+              color='primary.main'
+              fontSize='body2.fontSize'
+              fontWeight='fontWeightMedium'
+            >
+              {isCampaign ? cpDetail : detail}
+            </Box>
+          </Box>
+        ) : (
+          <Box className={classes.info}>
+            <Box className={classes.type}>
+              {type && t(`options.post_types.${type}`)}
+            </Box>
+            <Box className={classes.title}>{title}</Box>
+            {withViewBtn ? (
+              <Box className={classes.btnWrapper}>
+                <ViewButton slug={slug}></ViewButton>
+              </Box>
+            ) : (
+              <Box className={classes.date}>{formatLocal(date)}</Box>
+            )}
+          </Box>
+        )}
       </Box>
     </Link>
   )

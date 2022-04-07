@@ -105,7 +105,6 @@ const useStyles = makeStyles((theme) => ({
   mark: {
     fontSize: theme.typography.overline.fontSize,
     color: theme.palette.secondary.contrastText,
-    // backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(0.25, 1),
     display: 'inline-block',
   },
@@ -163,10 +162,13 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const mdx = data?.mdx?.body
   const { date, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
-  const middlePath = `/whats-new/${sectionPath}`
-  const middleTitle = menu[0].sections?.find((section) =>
-    section.path.includes(regex)
-  )?.title
+  const middlePath = `/whats-new/${
+    sectionPath === 'stories' ? 'campaign/' : sectionPath
+  }`
+  const middleTitle =
+    sectionPath === 'stories'
+      ? 'Campaign Page'
+      : menu[0].sections?.find((section) => section.path.includes(regex))?.title
 
   return (
     <Layout>
@@ -292,9 +294,9 @@ export const query = graphql`
           type
           detail
           href
-          pdf {
-            publicURL
-          }
+          # pdf {
+          #   publicURL
+          # }
         }
       }
     }

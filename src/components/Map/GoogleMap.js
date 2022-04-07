@@ -153,9 +153,8 @@ const Marker = (props) => {
 
 const InfoWindow = (props) => {
   const classes = useStyles()
-  const { t, originalPath } = useI18next()
+  const { t } = useI18next()
   const { tB } = useObjectTranslation()
-  const isHomepage = originalPath === '/'
 
   if (!props?.info) return null
 
@@ -164,7 +163,7 @@ const InfoWindow = (props) => {
     <Box
       className={classnames(
         classes.infoWindow,
-        isHomepage && classes.isHomepageInfo
+        props.showMap && classes.isHomepageInfo
       )}
     >
       <Typography className={classes.infoTitle} variant='h6' color='primary'>
@@ -192,17 +191,17 @@ const InfoWindow = (props) => {
         className={classes.infoBtn}
         variant='contained'
         color='secondary'
-        fullWidth={Boolean(isHomepage)}
-        size={isHomepage ? 'small' : 'medium'}
+        fullWidth={Boolean(props.showMap)}
+        size={props.showMap ? 'small' : 'medium'}
       >
         {t('common.book_now')}
       </Button>
-      {isHomepage && (
+      {props.showMap && (
         <Box className={classes.moreClinicsBtn}>
           <Link to='/service-location'>
             <Button
-              fullWidth={Boolean(isHomepage)}
-              size={isHomepage ? 'small' : 'medium'}
+              fullWidth={Boolean(props.showMap)}
+              size={props.showMap ? 'small' : 'medium'}
               variant='text'
               color='primary'
             >
@@ -219,8 +218,6 @@ const GoogleMap = (props) => {
   const classes = useStyles()
   const { language } = useI18next()
   const mapRef = useRef()
-  const { originalPath } = useI18next()
-  const isHomepage = originalPath === '/'
 
   const [activeKey, setActiveKey] = useState(null)
 
@@ -286,7 +283,7 @@ const GoogleMap = (props) => {
       <div
         className={classnames(
           classes.root,
-          !isHomepage && classes.isNoHomepageRoot
+          !props.showMap && classes.isNoHomepageRoot
         )}
       >
         <GoogleMapReact
@@ -322,8 +319,10 @@ const GoogleMap = (props) => {
             ))}
         </GoogleMapReact>
       </div>
-      {activeKey && <InfoWindow info={activeInfo}></InfoWindow>}
-      {!isHomepage && <Box className={classes.isNoHomepageBottom} />}
+      {activeKey && (
+        <InfoWindow showMap={props.showMap} info={activeInfo}></InfoWindow>
+      )}
+      {!props.showMap && <Box className={classes.isNoHomepageBottom} />}
     </>
   )
 }

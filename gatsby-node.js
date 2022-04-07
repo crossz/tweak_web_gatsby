@@ -26,9 +26,22 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         }`
         break
       case 'health-tips':
+        slug = node.frontmatter.isCampaign
+          ? `/whats-new/campaign/${relativeDirectory}/${
+              node.frontmatter.slug || node.frontmatter.cpTitle?.trim() || name
+            }`
+          : `/whats-new/${relativeDirectory}/${
+              node.frontmatter.slug || node.frontmatter.title?.trim() || name
+            }`
+        break
       case 'promotions':
       case 'updates':
         slug = `/whats-new/${relativeDirectory}/${
+          node.frontmatter.slug || node.frontmatter.title?.trim() || name
+        }`
+        break
+      case 'stories':
+        slug = `/whats-new/campaign/${relativeDirectory}/${
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
@@ -126,12 +139,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         regex: `/${mdx.parent.relativeDirectory}/`,
       },
     })
-    // const fromPath = path + '.html'
-    // createRedirect({
-    //   fromPath,
-    //   redirectInBrowser: true,
-    //   toPath: path,
-    // })
   })
 
   createRedirect({

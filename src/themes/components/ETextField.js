@@ -132,7 +132,9 @@ const menuProps = {
 
 export const EMenuItem = ({ children, ...rest }) => {
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'), {
+    noSsr: true,
+  })
 
   return isMobile ? (
     <option {...rest}>{children}</option>
@@ -153,7 +155,6 @@ export const ESelect = (props) => {
         outlined: classes.selectOutLined,
       }}
       input={<EInputBase classes={{ root: classes.selectInputBaseRoot }} />}
-      displayEmpty
       {...props}
     >
       {props.children}
