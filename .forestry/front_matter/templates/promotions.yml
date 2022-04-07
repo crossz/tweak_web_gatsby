@@ -3,6 +3,11 @@ label: Promotions Post
 hide_body: false
 display_field: title
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - type: image_gallery
   name: cover
   label: Cover
