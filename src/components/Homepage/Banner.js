@@ -184,7 +184,9 @@ const Banner = ({ nodes }) => {
           onSlideChange={(swiper) => {
             return (
               context?.toggleTheme &&
-              context?.toggleTheme(nodes[swiper.realIndex]?.frontmatter?.theme)
+              context?.toggleTheme(
+                nodes[swiper.realIndex - 1]?.frontmatter?.theme
+              )
             )
           }}
           initialSlide={0}
@@ -192,6 +194,28 @@ const Banner = ({ nodes }) => {
           watchOverflow={true}
           watchSlidesVisibility={true}
         >
+          <SwiperSlide>
+            <Link
+              underline='none'
+              to='/whats-new/promotions/consumption-voucher'
+            >
+              <Box className={classes.heroBannerWrapper}>
+                {matches ? (
+                  <StaticImage
+                    className={classes.heroImgWrapper}
+                    src='../../assets/images/mobile_hero_04.jpg'
+                    alt='hero 04'
+                  ></StaticImage>
+                ) : (
+                  <StaticImage
+                    className={classes.heroImgWrapper}
+                    src='../../assets/images/hero_04.jpg'
+                    alt='hero 04'
+                  ></StaticImage>
+                )}
+              </Box>
+            </Link>
+          </SwiperSlide>
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>
               <Box className={classes.heroBannerWrapper}>
@@ -305,23 +329,6 @@ const Banner = ({ nodes }) => {
               </Hidden>
             </SwiperSlide>
           ))}
-          <SwiperSlide>
-            <Box className={classes.heroBannerWrapper}>
-              {matches ? (
-                <StaticImage
-                  className={classes.heroImgWrapper}
-                  src='../../assets/images/mobile_hero_04.jpg'
-                  alt='hero 04'
-                ></StaticImage>
-              ) : (
-                <StaticImage
-                  className={classes.heroImgWrapper}
-                  src='../../assets/images/hero_04.jpg'
-                  alt='hero 04'
-                ></StaticImage>
-              )}
-            </Box>
-          </SwiperSlide>
         </Swiper>
       )}
     </Container>
