@@ -113,6 +113,4 @@ fields:
   description: Order of hero banner, smaller number is closer to the left.
 pages:
 - content/hero-banners/Take2 Extra Care Membership Program.md
-- content/hero-banners/br.md
 - content/hero-banners/take2-prophecy-br.md
-- content/hero-banners/take2-prophecy-n.md
