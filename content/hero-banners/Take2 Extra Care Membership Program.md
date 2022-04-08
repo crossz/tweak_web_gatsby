@@ -19,8 +19,8 @@ buttons:
 - template: hero-button
   variant: contained
   color: secondary
-  name: ''
-  link: ''
+  name: common.book_now
+  link: https://take2health.net/health-platform/signup
 reference: https://take2health.net/zh-HK/products-and-services/take2-extra-care/
 
 ---
