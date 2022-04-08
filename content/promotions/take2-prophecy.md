@@ -38,9 +38,9 @@ Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破�
 
 優惠受條款及細則約束。
 
-¹__Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.”__ New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.
+¹___Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.”___ New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.
 
-²__Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.”__ Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
+²___Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.”___ Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
 
 ***
 
