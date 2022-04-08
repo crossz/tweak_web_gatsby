@@ -19,7 +19,7 @@ detailCn: "由专业医护人员团队制订的全面健康管理计划，任何
   年度筛查提醒"
 buttons:
 - template: hero-button
-  variant: contained
+  variant: outlined
   color: secondary
   name: common.learn_more
   link: https://take2health.net/products-and-services/take2-extra-care/
