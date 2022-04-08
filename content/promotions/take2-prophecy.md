@@ -38,9 +38,9 @@ Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破�
 
 優惠受條款及細則約束。
 
-_¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer._” New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.
+¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” _New England Journal of Medicine_, vol. 377, no. 6, 2017, pp. 513–22.
 
-_²Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.”_ Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
+_²Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.”_ _Proceedings of the National Academy of Sciences,_ vol. 115, no. 22, 2018, pp. E5115–24.
 
 ***
 
@@ -50,7 +50,7 @@ _²Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of P
 
 2\. 你必須一併閱讀本條款、我們網站 take2health.net 的[私隱政策](https://take2health.net/terms-and-conditions/%E7%A7%81%E9%9A%B1%E6%94%BF%E7%AD%96)、[網站使用條款](https://take2health.net/terms-and-conditions/%E7%B6%B2%E7%AB%99%E4%BD%BF%E7%94%A8%E6%A2%9D%E6%AC%BE)、[個人資料收集聲明](https://take2health.net/terms-and-conditions/%E5%80%8B%E4%BA%BA%E8%B3%87%E6%96%99%E6%94%B6%E9%9B%86%E8%81%B2%E6%98%8E)、[得易健康服務平台 《私隱政策》](https://take2health.net/health-platform/agreement/2)、[得易健康服務平台條款](https://take2health.net/health-platform/agreement/3)、[得易健康服務平台《個人資料收集聲明》](https://take2health.net/health-platform/agreement/1)，以及我們可能向你提供的任何其他條款（「其他條款」）。除本條款外，任何其他條款亦一併適用。
 
-3\. 優惠碼**「CV500」**只適用於在得易健康服務平台([https://take2health.net/health-platform/](https://take2health.net/health-platform/ "https://take2health.net/health-platform/"))上購買我們於推廣活動中指定的產品或服務。在購買中使用優惠碼**「CV500」**將可在該購買中獲得\[折扣\]。
+3\. 優惠碼**「CV500」**只適用於在得易健康服務平台(**[**https://take2health.net/health-platform/**](https://take2health.net/health-platform/ "https://take2health.net/health-platform/")**)上購買我們於推廣活動中指定的產品或服務。在購買中使用優惠碼**「CV500」**將可在該購買中獲得\[折扣\]。
 
 4\. 優惠名額有限，先到先得，額滿即止。優惠推廣期由2022年4月7日起至2022年6月30日，包括首尾兩日（「推廣期」）。
 
@@ -83,3 +83,9 @@ c. 決定已被使用的優惠碼是否存在不正當目的，並取消你使�
 任何此類決定均應視為最終決定並對你具有約束力。
 
 13\. 如就此推廣優惠有任何爭議，我們保留最終決定權。
+
+14\. 本條款及細則在所有方面均受香港特別行政區法律的管限，並須根據香港特別行政區法律的解釋。雙方得受香港特別行政區法院的專屬管轄權管轄。
+
+15\. 如本條款的不同語言版本有任何抵觸或不相符之處，應以英文版本為準。
+
+最後更新日期：2022年4月7日
