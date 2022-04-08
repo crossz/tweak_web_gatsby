@@ -14,7 +14,7 @@ languages:
 - zh-HK
 
 ---
-![](../images/consumption-voucher-website-banner-output_1506-x-1125.jpg)
+![](../images/compressed-promotion.jpg)
 
 出現持續偏頭痛、耳鳴、鼻塞，你以為只是感冒或鼻敏感？其實早期鼻咽癌徵狀與一般感冒、鼻敏感相似，故患者容易混淆和忽略，往往病徵持續或變得嚴重時，患者才驚覺自己需要求醫；根據研究，高達80%的患者在初診時已屬晚期¹，後果不堪設想。從今起，切勿再估估下！好好利用政府派發的消費券來進行鼻咽癌篩查，只要一個Lunch Time的時間，就能釋除一直以來的疑慮！
 
