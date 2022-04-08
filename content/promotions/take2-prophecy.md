@@ -22,7 +22,7 @@ languages:
 
 Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97%¹ ²，冠絕同類測試！
 
-![](../images/table.png)
+![](../images/table_hk.png)
 
 測試的靈敏度愈高，代表愈能將「有病卻未能發現」的漏檢情況減到最低，故擁有高靈敏度的測試是其中一個重要指標。此外，若測試的假陽性率愈高，愈容易出現錯誤報告，令受測者承受不必要的心理負擔，更甚是額外的醫療程序。
 
@@ -38,9 +38,11 @@ Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破�
 
 優惠受條款及細則約束。
 
-¹_Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.”_ New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.
+¹__Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.”__ New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.
 
-²_Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.”_ Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
+²__Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.”__ Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.
+
+***
 
 優惠條款及細則：  
 「2022NEW」優惠碼推廣（「推廣優惠」）條款及細則
