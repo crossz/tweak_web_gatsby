@@ -798,9 +798,9 @@ const CampaignPage = () => {
                   *先登記成為會員，在付款頁面輸入
                   <br />
                   <Box color='secondary.main' component='span'>
-                    優惠碼{PROMOTION_CODE}
+                    消費券優惠碼{PROMOTION_CODE}
                   </Box>
-                  消費券優惠即減$500
+                  即享優惠價$1,700
                   <br />
                   (原價$2,200)
                 </Box>
@@ -850,9 +850,9 @@ const CampaignPage = () => {
                 *先登記成為會員，在付款頁面輸入
                 <br />
                 <Box color='secondary.main' component='span'>
-                  優惠碼{PROMOTION_CODE}
+                  消費券優惠碼{PROMOTION_CODE}
                 </Box>
-                消費券優惠即減$500
+                即享優惠價$1,700
                 <br />
                 (原價$2,200)
               </Box>
@@ -1138,9 +1138,9 @@ const CampaignPage = () => {
                   *先登記成為會員，在付款頁面輸入
                   <br />
                   <Box color='secondary.main' component='span'>
-                    優惠碼{PROMOTION_CODE}
+                    消費券優惠碼{PROMOTION_CODE}
                   </Box>
-                  消費券優惠即減$500
+                  即享優惠價$1,700
                   <br />
                   (原價$2,200)
                 </Box>
@@ -1190,9 +1190,9 @@ const CampaignPage = () => {
                 *先登記成為會員，在付款頁面輸入
                 <br />
                 <Box color='secondary.main' component='span'>
-                  優惠碼{PROMOTION_CODE}
+                  消費券優惠碼{PROMOTION_CODE}
                 </Box>
-                消費券優惠即減$500
+                即享優惠價$1,700
                 <br />
                 (原價$2,200)
               </Box>
