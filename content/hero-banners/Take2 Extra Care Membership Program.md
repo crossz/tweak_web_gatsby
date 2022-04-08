@@ -20,7 +20,7 @@ detailCn: "由专业医护人员团队制订的全面健康管理计划，任何
 buttons:
 - template: hero-button
   variant: outlined
-  color: secondary
+  color: primary
   name: common.learn_more
   link: https://take2health.net/products-and-services/take2-extra-care/
 - template: hero-button
