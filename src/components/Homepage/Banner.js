@@ -11,7 +11,7 @@ import {
   alpha,
   Hidden,
 } from '@material-ui/core'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
@@ -305,6 +305,23 @@ const Banner = ({ nodes }) => {
               </Hidden>
             </SwiperSlide>
           ))}
+          <SwiperSlide>
+            <Box className={classes.heroBannerWrapper}>
+              {matches ? (
+                <StaticImage
+                  className={classes.heroImgWrapper}
+                  src='../../assets/images/mobile_hero_04.jpg'
+                  alt='hero 04'
+                ></StaticImage>
+              ) : (
+                <StaticImage
+                  className={classes.heroImgWrapper}
+                  src='../../assets/images/hero_04.jpg'
+                  alt='hero 04'
+                ></StaticImage>
+              )}
+            </Box>
+          </SwiperSlide>
         </Swiper>
       )}
     </Container>
