@@ -38,6 +38,14 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 877,
     },
   },
+  containImgWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#BADCF2',
+  },
+  containImg: {
+    maxHeight: '100%',
+  },
   wrapper: {
     position: 'relative',
     gridArea: '1/1',
@@ -200,19 +208,28 @@ const Banner = ({ nodes }) => {
               to='/whats-new/promotions/consumption-voucher'
             >
               <Box className={classes.heroBannerWrapper}>
-                {matches ? (
-                  <StaticImage
-                    className={classes.heroImgWrapper}
-                    src='../../assets/images/mobile_hero_04.jpg'
-                    alt='hero 04'
-                  ></StaticImage>
-                ) : (
-                  <StaticImage
-                    className={classes.heroImgWrapper}
-                    src='../../assets/images/hero_04.jpg'
-                    alt='hero 04'
-                  ></StaticImage>
-                )}
+                <Box
+                  className={classnames(
+                    classes.heroImgWrapper,
+                    classes.containImgWrapper
+                  )}
+                >
+                  {matches ? (
+                    <StaticImage
+                      className={classes.containImg}
+                      src='../../assets/images/mobile_hero_04.jpg'
+                      alt='hero 04'
+                      objectFit='contain'
+                    ></StaticImage>
+                  ) : (
+                    <StaticImage
+                      className={classes.containImg}
+                      src='../../assets/images/hero_04.jpg'
+                      alt='hero 04'
+                      objectFit='contain'
+                    ></StaticImage>
+                  )}
+                </Box>
               </Box>
             </Link>
           </SwiperSlide>
