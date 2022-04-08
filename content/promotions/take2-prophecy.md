@@ -46,7 +46,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破�
 
 **「CV500」優惠碼推廣（「推廣優惠」）條款及細則**：
 
-1\. 以下條款適（「本條款」）用於由得易健康有限公司（「我們」或「我們的」）所提供的推廣優惠。參加此推廣優惠，即表示你同意本條款。
+1\. 以下條款（「本條款」）適用於由得易健康有限公司（「我們」或「我們的」）所提供的推廣優惠。參加此推廣優惠，即表示你同意本條款。
 
 2\. 你必須一併閱讀本條款、我們網站 take2health.net 的[私隱政策](https://take2health.net/terms-and-conditions/%E7%A7%81%E9%9A%B1%E6%94%BF%E7%AD%96)、[網站使用條款](https://take2health.net/terms-and-conditions/%E7%B6%B2%E7%AB%99%E4%BD%BF%E7%94%A8%E6%A2%9D%E6%AC%BE)、[個人資料收集聲明](https://take2health.net/terms-and-conditions/%E5%80%8B%E4%BA%BA%E8%B3%87%E6%96%99%E6%94%B6%E9%9B%86%E8%81%B2%E6%98%8E)、[得易健康服務平台 《私隱政策》](https://take2health.net/health-platform/agreement/2)、[得易健康服務平台條款](https://take2health.net/health-platform/agreement/3)、[得易健康服務平台《個人資料收集聲明》](https://take2health.net/health-platform/agreement/1)，以及我們可能向你提供的任何其他條款（「其他條款」）。除本條款外，任何其他條款亦一併適用。
 
