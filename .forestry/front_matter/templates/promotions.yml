@@ -3,6 +3,11 @@ label: Promotions Post
 hide_body: false
 display_field: title
 fields:
+- name: languages
+  type: include
+  config: {}
+  template: languages
+  label: Languages
 - type: image_gallery
   name: cover
   label: Cover
@@ -47,8 +52,12 @@ fields:
 - type: textarea
   name: href
   label: Href
+  description: If href is not empty, post card will open new window for this href
+    instead of post detail page.
 - type: text
   name: slug
   label: Slug
+  description: Path for post detail page, if this is empty, post path would be post
+    title.
 pages:
-- content/promotions/take2-health-1-1.md
+- content/promotions/take2-prophecy.md

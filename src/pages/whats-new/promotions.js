@@ -21,7 +21,10 @@ export const query = graphql`
     }
     allMdx(
       limit: 1000
-      filter: { fileAbsolutePath: { regex: "/promotions/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/promotions/" }
+        frontmatter: { languages: { eq: $language } }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
@@ -39,9 +42,9 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
-          pdf {
-            publicURL
-          }
+          # pdf {
+          #   publicURL
+          # }
         }
       }
     }

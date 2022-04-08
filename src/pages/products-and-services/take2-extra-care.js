@@ -338,6 +338,9 @@ const useStyles = makeStyles((theme) => ({
     '&:last-child': {
       marginLeft: theme.spacing(2),
     },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
   },
 }))
 

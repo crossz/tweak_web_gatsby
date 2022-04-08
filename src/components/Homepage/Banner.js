@@ -11,7 +11,7 @@ import {
   alpha,
   Hidden,
 } from '@material-ui/core'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
@@ -37,6 +37,14 @@ const useStyles = makeStyles((theme) => ({
       height: 'calc((502 / 375) * 100vw)',
       maxHeight: 877,
     },
+  },
+  containImgWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#BADCF2',
+  },
+  containImg: {
+    maxHeight: '100%',
   },
   wrapper: {
     position: 'relative',
@@ -184,7 +192,9 @@ const Banner = ({ nodes }) => {
           onSlideChange={(swiper) => {
             return (
               context?.toggleTheme &&
-              context?.toggleTheme(nodes[swiper.realIndex]?.frontmatter?.theme)
+              context?.toggleTheme(
+                nodes[swiper.realIndex - 1]?.frontmatter?.theme
+              )
             )
           }}
           initialSlide={0}
@@ -192,6 +202,37 @@ const Banner = ({ nodes }) => {
           watchOverflow={true}
           watchSlidesVisibility={true}
         >
+          <SwiperSlide>
+            <Link
+              underline='none'
+              to='/whats-new/promotions/consumption-voucher'
+            >
+              <Box className={classes.heroBannerWrapper}>
+                <Box
+                  className={classnames(
+                    classes.heroImgWrapper,
+                    classes.containImgWrapper
+                  )}
+                >
+                  {matches ? (
+                    <StaticImage
+                      className={classes.containImg}
+                      src='../../assets/images/mobile_hero_04.jpg'
+                      alt='hero 04'
+                      objectFit='contain'
+                    ></StaticImage>
+                  ) : (
+                    <StaticImage
+                      className={classes.containImg}
+                      src='../../assets/images/hero_04.jpg'
+                      alt='hero 04'
+                      objectFit='contain'
+                    ></StaticImage>
+                  )}
+                </Box>
+              </Box>
+            </Link>
+          </SwiperSlide>
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>
               <Box className={classes.heroBannerWrapper}>
@@ -243,6 +284,7 @@ const Banner = ({ nodes }) => {
                         fontWeight='fontWeightLight'
                         lineHeight='1.5'
                         textAlign='justify'
+                        whiteSpace='break-spaces'
                         dangerouslySetInnerHTML={{
                           __html: tB('detail', node?.frontmatter),
                         }}

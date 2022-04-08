@@ -1,9 +1,9 @@
 import { MOBILE_REGEX_HK, MOBILE_REGEX_CN, MOBILE_REGEX_MO } from './regex'
 import { keyBy } from 'lodash-es'
-export const PROMOTION_CODE = 'NEW330'
+export const PROMOTION_CODE = 'CV500'
 export const HEADER_HEIGHT = 10.5
 export const MOBILE_HEADER_HEIGHT = 7.5
-export const POST_ASPECT_RATIO = 471 / 228
+export const POST_ASPECT_RATIO = 2
 export const MDX_MEDIA_MAXWIDTH = 570
 export const LOGO_TYPE = {
   take2FullColor: 'take2_full_color',

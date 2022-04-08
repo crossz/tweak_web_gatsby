@@ -17,6 +17,7 @@ import Button from '@material-ui/core/Button'
 import RightIcon from '@images/icons/right.svg'
 import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import classnames from 'classnames'
 SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
@@ -104,12 +105,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
+const PostSwiper = ({
+  nodes,
+  morePath = '/whats-new/',
+  withViewBtn,
+  noMoreBtn,
+}) => {
   const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
-    progressRightWidth: matches ? 80 : 316,
+    progressRightWidth: matches ? 80 : !noMoreBtn ? 120 : 316,
     matches,
   })
   const [activeSlide, setActiveSlide] = useState(0)
@@ -152,17 +158,25 @@ const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
               variant='determinate'
               value={Math.round(((activeSlide + 1) / nodes?.length) * 100)}
             />
-            <Link className={classes.viewBtnLink} to={morePath}>
-              <Button
-                className={classes.viewBtn}
-                variant='outlined'
-                color='primary'
-                size='small'
-                endIcon={!matches && <RightIcon />}
-              >
-                {t('common.view_more')}
-              </Button>
-            </Link>
+
+            {noMoreBtn ? (
+              <Link className={classes.viewBtnLink} to={morePath}>
+                <Button
+                  className={classes.viewBtn}
+                  variant='outlined'
+                  color='primary'
+                  size='small'
+                  endIcon={!matches && <RightIcon />}
+                >
+                  {t('common.view_more')}
+                </Button>
+              </Link>
+            ) : (
+              <Box
+                height={44}
+                className={classnames(classes.viewBtnLink, classes.viewBtn)}
+              ></Box>
+            )}
           </Box>
         )}
       </Swiper>

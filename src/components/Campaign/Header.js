@@ -274,7 +274,7 @@ const Header = (props) => {
           <Hidden xsDown>
             <Box className={classes.promoWrapper}>
               <Box className={classes.promoLabel}>
-                會員迎新優惠價$1,870(原價$2,200) 優惠碼
+                消費券優惠即減$500(原價$2,200) 優惠碼
               </Box>
               <CopyToClipboard
                 text={PROMOTION_CODE}
@@ -290,7 +290,7 @@ const Header = (props) => {
           <Hidden smUp>
             <Box className={classes.promoMobileWrapper}>
               <Box className={classes.promoLabel}>
-                會員迎新優惠價$1,870(原價$2,200)
+                消費券優惠即減$500(原價$2,200)
               </Box>
               <Box className={classes.promoWrapper}>
                 <Box className={classes.promoLabel}>優惠碼</Box>
