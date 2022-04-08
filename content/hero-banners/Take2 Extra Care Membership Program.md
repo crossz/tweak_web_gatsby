@@ -1,6 +1,6 @@
 ---
 theme: light
-sort: 0
+sort: 2
 titleHk: 'Take2 Extra Care 會員計劃 '
 titleEn: Take2 Extra Care Membership Program
 titleCn: Take2 Extra Care会员计划
