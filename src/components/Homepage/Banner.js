@@ -284,6 +284,7 @@ const Banner = ({ nodes }) => {
                         fontWeight='fontWeightLight'
                         lineHeight='1.5'
                         textAlign='justify'
+                        whiteSpace='break-spaces'
                         dangerouslySetInnerHTML={{
                           __html: tB('detail', node?.frontmatter),
                         }}
