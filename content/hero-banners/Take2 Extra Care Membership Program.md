@@ -14,8 +14,8 @@ buttons:
 - template: hero-button
   variant: contained
   color: secondary
-  name: ''
-  link: ''
+  name: common.learn_more
+  link: https://take2health.net/products-and-services/take2-extra-care/
 - template: hero-button
   variant: contained
   color: secondary
