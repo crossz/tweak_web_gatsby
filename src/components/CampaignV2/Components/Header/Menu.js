@@ -45,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.primary.main,
     },
   },
+  listWrapper: {
+    maxWidth: 405,
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 'unset',
+    },
+  },
   listItem: {
     padding: theme.spacing(3, 0),
     cursor: 'pointer',
@@ -128,10 +134,10 @@ export default function Menu(props) {
           </IconButton>
         </Box>
         <Box
+          className={classes.listWrapper}
           color='primary.contrastText'
           fontWeight='fontWeightMedium'
           fontSize={18}
-          minWidth={405}
           mx={5}
         >
           <List disablePadding>
