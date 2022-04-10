@@ -26,32 +26,32 @@
                 "5": "Is it the persistent flu, allergic rhinitis, or NPC…… all might be plausible? For no doubt, we should not make a shot in the dark!\nOf course, there is no way for us to identify these signs and make a diagnosis if we were not healthcare professionals. But, with accurate and reliable next-generation technologies, all of us can be our own life-saving heroes now by getting tested with early NPC detection test to take control of our health!"
             },
             "characteristics": {
-                "0": "NPC is one of the most common cancers in Hong Kong, and there are 600-800 new cases of NPC annually1.",
-                "1": "It is not only the top cancer for men aged between 20-442,",
-                "2": "but also one of the cancers that is more likely to occur in women aged between 50-60 1",
-                "3": "香港人的鼻咽癌發病率更是全球平均的5-6倍3,4"
+                "0": "NPC is one of the most common cancers in Hong Kong, and there are 600-800 new cases of NPC annually¹.",
+                "1": "It is the top cancer for men aged between 20-44².",
+                "2": "NPC is more likely to occur in women aged between 40-60¹.",
+                "3": "NPC incidence rate in Hong Kong is 5 to 6 times the world’s average³ ⁴"
             },
             "symptoms": {
                 "0": "Headache",
                 "1": "Tinnitus",
-                "2": "Stuffy nose",
-                "3": "Bloodshot nose",
-                "4": "Swollen lymph nodes",
-                "5": "Hoarseness"
+                "2": "Nasal blockage",
+                "3": "Blood-stained nasal discharge",
+                "4": "Neck swelling",
+                "5": "Hoarse voice"
             },
             "diseases": {
-                "0": "Nasopharyngeal carcinoma",
+                "0": "Nasopharyngeal Cancer",
                 "1": "Flu ",
                 "2": "Inflammatory illnesses"
             }
         },
         "ngs_advantage": {
             "paragraphs": {
-                "0": "Facing unknown risks while travelling abroad, we will buy insurance in advance to prepare; in the journey of life, we should also be aware of the risks of developing NPC and nip it in the bud. \n\nThe early NPC detection test enables patients with non-specific symptoms to be identified at early stage for timely treatment, resulting in increasing survival rate, reducing the side effects of treatments, and minimising the impact on our lives. By well-preparing your “life.",
+                "0": "Facing unknown risks while travelling abroad, we will buy insurance in advance to prepare; in the journey of life, we should also be aware of the risks of developing NPC and nip it in the bud. \n\nThe early NPC detection test enables patients with non-specific symptoms to be identified at early stage for timely treatment, resulting in increasing survival rate, reducing the side effects of treatments, and minimising the impact on our lives. By well-preparing the “insurance” for your health – regularly taking early NPC detection test, NPC would no longer seem frightening, allowing us to focus on enjoying a quality life. ",
                 "1": "How can we define a reliable and effective NPC detection test?\n",
                 "2": "All in all, we should choose an early detection test that has a high sensitivity and a low false-positive rate. These criteria reflect that the test could effectively detect true patients so that patients would not be missed and result in a delay in their treatments; while the screened population are also less likely to be reported as \"diseased\" wrongly so that they would not suffer unnecessary worries.",
                 "3": "Test for Nasopharyngeal Cancer \nConsidered the most reliable test available on the market",
-                "4": "Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC) specialises in capturing the NPC-associated DNA signal in the bloodstream, using Next-generation Sequencing (NGS) technology. It effectively enables NPC patients to be identified in their early stage for timely treatment and increases their survival rate. \n\nThe Take2 Prophecy™ Test for NPC has >97% sensitivity5,6, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate6. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!",
+                "4": "Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC) specialises in capturing the NPC-associated DNA signal in the bloodstream, using Next-generation Sequencing (NGS) technology. It effectively enables NPC patients to be identified in their early stage for timely treatment and increases their survival rate. \n\nThe Take2 Prophecy™ Test for NPC has >97% sensitivity⁵ ⁶, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate⁶. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!",
                 "5": "Developed by the leading university\nClinically proven with thousands of individuals",
                 "6": "High sensitivity, low false positive rate",
                 "7": "is critical"
@@ -77,15 +77,15 @@
             "advantages": {
                 "0": {
                     "title": "High sensitivity",
-                    "content": "The Take2 Prophecy™ Test for NPC has >97% sensitivity5,6, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate6. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!"
+                    "content": "The Take2 Prophecy™ Test for NPC has >97% sensitivity⁵ ⁶, and very few cases of NPC are missed. Also, it only has a 0.7% remarkably low false-positive rate⁶. Providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests!"
                 },
                 "1": {
                     "title": "Clinically proven with thousands of individuals",
-                    "content": "the utilised technologies have also been validated in a large-scale clinical study involving 20,000 individuals5; thus making the Take2 Prophecy™ Test for NPC the most reliable early NPC detection test on the market.\n<1>(Please consult healthcare professionals for more information)</1>"
+                    "content": "The utilised technologies have also been validated in a large-scale clinical study involving 20,000 individuals5; thus making the Take2 Prophecy™ Test for NPC the most reliable early NPC detection test on the market.\n<1>(Please consult healthcare professionals for more information)</1>"
                 },
                 "2": {
                     "title": "Developed by the leading university",
-                    "content": "Take2 Prophecy™ Test for Nasopharyngeal Cancer, beginning with the research achievement of the world-class research team from a renowned local university, utilises NGS technology in early NPC detection"
+                    "content": "Take2 Prophecy™ Test for Nasopharyngeal Cancer, beginning with the research achievement of the world-class research team from a renowned Hong Kong university, utilises NGS technology in early NPC detection."
                 }
             }
         },
@@ -119,7 +119,7 @@
         "second_life": {
             "paragraphs": {
                 "0": "Mr. Cheung Tat-ming, a Nasopharyngeal Cancer (NPC) survivor, had experienced a delay in seeking medical intervention because of lacking cancer awareness, and hence he overlooked the warning signs of his health. Walking along the road to fight against NPC for seven years, he successfully beat the NPC. Now, he can continuously scale new heights in his acting profession.\n\nLet us watch the video below together to understand Tat-ming’s story about regaining his “second life” and the importance of detecting cancer early!",
-                "1": "Do not let NPC take over the control of your life. The earlier you know, the better you can manage. Get tested regularly; Take2 Prophecy™ Test for NPC helps you “\nGet to care NPC earlier by knowing it earlier”"
+                "1": "Do not let NPC take over the control of your life. The earlier you know, the better you can manage. Get tested regularly; Take2 Prophecy™ Test for NPC helps you “Get to care NPC earlier by knowing it earlier”"
             }
         },
         "contact_and_reference": {
@@ -138,7 +138,8 @@
             }
         },
         "common": {
-            "enter": "Enter"
+            "enter": "Enter",
+            "view_service_location": "View service Location"
         }
     }
 }
