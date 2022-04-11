@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@material-ui/core/'
-import PostWrapper from '@components/CampaignV2/PostWrapper'
+import PostWrapper from '@components/CampaignV2/components/PostWrapper'
 import Button from '@material-ui/core/Button'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import ImageTranslation from '../ImageTranslation'

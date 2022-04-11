@@ -160,7 +160,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const classes = useStyles()
   const menu = useMenu()
   const mdx = data?.mdx?.body
-  const { date, title, type } = data?.mdx?.frontmatter
+  const { date, cpTitle, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
   const middlePath = `/whats-new/${
     sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath
@@ -212,7 +212,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
                   </Box>
                 </Box>
                 <Typography variant='h5' color='primary'>
-                  {title}
+                  {cpTitle || title}
                 </Typography>
               </Box>
               <MdxLayout>{mdx}</MdxLayout>
@@ -265,6 +265,7 @@ export const query = graphql`
       id
       frontmatter {
         date
+        cpTitle
         title
         type
       }

@@ -61,8 +61,6 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          cpTitle
-          cpDetail
           title
           detail
           date
@@ -96,6 +94,8 @@ export const query = graphql`
         frontmatter {
           cpTitle
           cpDetail
+          title
+          detail
           date
           href
           cover {

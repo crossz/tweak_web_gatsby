@@ -117,9 +117,6 @@ const PostSwiper = ({ nodes }) => {
         slidesPerView={'auto'}
         loop={nodes?.length > (matches ? 1 : 3)}
         navigation={showNavigation}
-        onSlideChange={(swiper) => {
-          setActiveSlide(swiper.realIndex)
-        }}
         initialSlide={0}
       >
         {nodes?.map((node, index) => {
@@ -129,8 +126,8 @@ const PostSwiper = ({ nodes }) => {
                 key={node.id}
                 slug={node.fields.slug}
                 {...node.frontmatter}
-                title={node.cpTitle || node.title}
-                detail={node.cpDetail || node.detail}
+                title={node.frontmatter.cpTitle || node.frontmatter.title}
+                detail={node.frontmatter.cpDetail || node.frontmatter.detail}
               />
             </SwiperSlide>
           )
