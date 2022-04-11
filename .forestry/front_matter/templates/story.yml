@@ -5,7 +5,19 @@ fields:
 - name: post
   type: include
   config: {}
-  template: promotions
+  template: health-tips-post
   label: Post
-pages:
-- content/stories/test-2.md
+- name: postType
+  type: select
+  default: campaignStory
+  config:
+    required: true
+    options:
+    - campaignStory
+    - campaignNews
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Post Type
