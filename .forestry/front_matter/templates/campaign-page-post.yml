@@ -21,3 +21,5 @@ fields:
       file: 
       path: 
   label: Post Type
+pages:
+- content/campaign-page-posts/test-01.md
