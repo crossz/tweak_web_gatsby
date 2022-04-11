@@ -2,11 +2,6 @@
 label: Story
 hide_body: false
 fields:
-- name: languages
-  type: include
-  config: {}
-  template: languages
-  label: Languages
 - name: post
   type: include
   config: {}
