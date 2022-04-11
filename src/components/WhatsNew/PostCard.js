@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
     textDecoration: 'none',
-    minHeight: theme.spacing(41.25),
+    minHeight: ({ minHeight }) => theme.spacing(minHeight || 41.25),
     display: 'flex',
     flexDirection: 'column',
     transition: theme.transitions.create('transform', {
@@ -98,8 +98,9 @@ const PostCard = ({
   href,
   withViewBtn,
   pdf,
+  minHeight,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles({ minHeight })
   const { t, routed, language } = useI18next()
   const images = cover.map((item) => getImage(item))
   const isCampaignPage = useMatch(
