@@ -2,10 +2,6 @@
 label: Campaign Page Post Card
 hide_body: true
 fields:
-- name: isCampaign
-  type: boolean
-  label: Show In Campaign
-  description: Show in campaign page.
 - name: cpTitle
   type: text
   config:
@@ -28,3 +24,17 @@ fields:
   showOnly:
     field: isCampaign
     value: true
+- name: postType
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - campaignStory
+    - campaignNews
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Post Type
