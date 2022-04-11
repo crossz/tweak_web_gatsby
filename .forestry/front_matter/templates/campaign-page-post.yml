@@ -7,3 +7,8 @@ fields:
   config: {}
   template: promotions
   label: Post
+- name: postType
+  type: include
+  config: {}
+  template: post-type
+  label: Post Type
