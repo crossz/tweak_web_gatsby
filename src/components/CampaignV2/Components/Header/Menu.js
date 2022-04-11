@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  headerWrapper: {
+    backgroundColor: alpha(theme.palette.prophecyPrimary.main, 0.9),
+  },
   icon: {
     width: theme.spacing(3),
     height: theme.spacing(3),
@@ -123,11 +126,15 @@ export default function Menu(props) {
         onClose={toggleDrawer(false)}
       >
         <Box
+          className={classes.headerWrapper}
           justifyContent='flex-end'
           alignItems='center'
           display='flex'
           height={84}
-          mx={3.5}
+          px={3.5}
+          position='sticky'
+          top={0}
+          zIndex={1}
         >
           <IconButton aria-label='close button' onClick={toggleDrawer(false)}>
             <CloseIcon className={classes.closeIcon}></CloseIcon>
