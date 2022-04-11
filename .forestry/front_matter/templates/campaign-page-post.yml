@@ -8,7 +8,16 @@ fields:
   template: promotions
   label: Post
 - name: postType
-  type: include
-  config: {}
-  template: post-type
+  type: select
+  default: campaignStory
+  config:
+    required: true
+    options:
+    - campaignStory
+    - campaignNews
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: Post Type
