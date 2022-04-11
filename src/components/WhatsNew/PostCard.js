@@ -98,9 +98,6 @@ const PostCard = ({
   href,
   withViewBtn,
   pdf,
-  isCampaign,
-  cpTitle,
-  cpDetail,
 }) => {
   const classes = useStyles()
   const { t, routed, language } = useI18next()
@@ -134,14 +131,14 @@ const PostCard = ({
               fontSize='h6.fontSize'
               fontWeight='fontWeightBold'
             >
-              {isCampaign ? cpTitle : title}
+              {title}
             </Box>
             <Box
               color='primary.main'
               fontSize='body2.fontSize'
               fontWeight='fontWeightMedium'
             >
-              {isCampaign ? cpDetail : detail}
+              {detail}
             </Box>
           </Box>
         ) : (

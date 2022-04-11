@@ -9,15 +9,9 @@ import {
 } from '@material-ui/core/'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Pagination, Navigation } from 'swiper/core'
-import LinearProgress from '@material-ui/core/LinearProgress'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
-import Button from '@material-ui/core/Button'
-import RightIcon from '@images/icons/right.svg'
-import Link from '@components/Link'
-import { useI18next } from 'gatsby-plugin-react-i18next'
-import classnames from 'classnames'
 SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
@@ -105,15 +99,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
-  const { t } = useI18next()
+const PostSwiper = ({ nodes }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
     progressRightWidth: matches ? 80 : 120,
     matches,
   })
-  const [activeSlide, setActiveSlide] = useState(0)
 
   const showNavigation =
     (matches && nodes?.length > 1) || (!matches && nodes?.length > 2)
@@ -136,36 +128,13 @@ const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
               <PostCard
                 key={node.id}
                 slug={node.fields.slug}
-                withViewBtn={withViewBtn}
                 {...node.frontmatter}
+                title={node.cpTitle || node.title}
+                detail={node.cpDetail || node.detail}
               />
             </SwiperSlide>
           )
         })}
-        {showNavigation && (
-          <Box className={classes.linearProgressWrapper}>
-            <LinearProgress
-              classes={{
-                root: classes.linearProgressRoot,
-                bar: classes.linearProgressBar,
-              }}
-              color='primary'
-              variant='determinate'
-              value={Math.round(((activeSlide + 1) / nodes?.length) * 100)}
-            />
-            <Link className={classes.viewBtnLink} to={morePath}>
-              <Button
-                className={classes.viewBtn}
-                variant='outlined'
-                color='primary'
-                size='small'
-                endIcon={!matches && <RightIcon />}
-              >
-                {t('common.view_more')}
-              </Button>
-            </Link>
-          </Box>
-        )}
       </Swiper>
     </Box>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@material-ui/core/'
-import PostSwiper from '@components/Homepage/PostSwiper'
+import PostWrapper from '@components/CampaignV2/PostWrapper'
 import Button from '@material-ui/core/Button'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import ImageTranslation from '../ImageTranslation'
@@ -28,20 +28,19 @@ const SectionFour = ({ storyNodes, healthTipsNodes }) => {
           {t('cp_v2.news.paragraphs.0')}
         </Box>
         <Box className='gsap-fade-in-8' mr={-2.5}>
-          <PostSwiper
+          <PostWrapper
             nodes={storyNodes}
             morePath='/whats-new/promotions/'
-          ></PostSwiper>
+          ></PostWrapper>
         </Box>
         <Box className='gsap-fade-in-9-trigger gsap-fade-in-9' mb={-2}>
           {t('cp_v2.news.paragraphs.1')}
         </Box>
         <Box className='gsap-fade-in-9' mr={-2.5}>
-          <PostSwiper
+          <PostWrapper
             nodes={healthTipsNodes}
             morePath='/whats-new/health-tips/'
-            noMornBtn
-          ></PostSwiper>
+          ></PostWrapper>
         </Box>
         <Box className='gsap-fade-in-9' mt={8} mr={1.25} textAlign='center'>
           <Button

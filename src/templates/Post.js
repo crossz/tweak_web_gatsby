@@ -163,10 +163,10 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const { date, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
   const middlePath = `/whats-new/${
-    sectionPath === 'stories' ? 'campaign/' : sectionPath
+    sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath
   }`
   const middleTitle =
-    sectionPath === 'stories'
+    sectionPath === 'campaign-page-posts'
       ? 'Campaign Page'
       : menu[0].sections?.find((section) => section.path.includes(regex))?.title
 

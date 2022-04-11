@@ -47,7 +47,12 @@ export const query = graphql`
     }
     storyNodes: allMdx(
       limit: 6
-      filter: { fileAbsolutePath: { regex: "/stories/" } }
+      filter: {
+        frontmatter: {
+          languages: { eq: $language }
+          postType: { eq: "campaignStory" }
+        }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
@@ -56,6 +61,8 @@ export const query = graphql`
           slug
         }
         frontmatter {
+          cpTitle
+          cpDetail
           title
           detail
           date
@@ -74,8 +81,10 @@ export const query = graphql`
     healthTipsNodes: allMdx(
       limit: 6
       filter: {
-        fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language }, isCampaign: { eq: true } }
+        frontmatter: {
+          languages: { eq: $language }
+          postType: { eq: "campaignNews" }
+        }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
@@ -89,7 +98,6 @@ export const query = graphql`
           cpDetail
           date
           href
-          isCampaign
           cover {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
