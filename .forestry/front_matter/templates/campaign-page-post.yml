@@ -2,25 +2,16 @@
 label: Campaign Page Post
 hide_body: false
 fields:
-- name: postType
-  type: select
-  default: campaignStory
-  config:
-    required: true
-    options:
-    - campaignStory
-    - campaignNews
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Post Type
 - name: post
   type: include
   config: {}
   template: promotions
   label: Post
+- name: postType
+  type: include
+  config: {}
+  template: post-type
+  label: Post Type
 pages:
 - content/campaign-page-posts/test-01.md
 - content/campaign-page-posts/test-02.md
