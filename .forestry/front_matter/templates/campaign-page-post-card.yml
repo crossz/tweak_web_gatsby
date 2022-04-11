@@ -2,11 +2,14 @@
 label: Campaign Page Post Card
 hide_body: true
 fields:
+- name: isCampaign
+  type: boolean
+  label: Show In Campaign Page
 - name: postType
   type: select
-  default: ''
+  default: campaignStory
   config:
-    required: false
+    required: true
     options:
     - campaignStory
     - campaignNews
@@ -16,13 +19,17 @@ fields:
       file: 
       path: 
   label: Post Type
+  showOnly:
+    field: isCampaign
+    value: true
 - name: cpTitle
   type: text
   config:
     required: false
   label: Campaign Title
   showOnly:
-    field: postType
+    field: isCampaign
+    value: true
 - name: cpDetail
   type: textarea
   default: ''
@@ -33,4 +40,5 @@ fields:
       format: markdown
   label: Campaign Detail
   showOnly:
-    field: postType
+    field: isCampaign
+    value: true
