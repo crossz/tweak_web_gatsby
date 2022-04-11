@@ -100,6 +100,7 @@ const SectionTwo = () => {
       fontWeight='fontWeightMedium'
       color='grey.900'
       pb={isMobile ? 8 : 13.5}
+      whiteSpace='break-spaces'
     >
       <ImageTranslation
         filename='section_banner_02'
@@ -118,9 +119,7 @@ const SectionTwo = () => {
         position='relative'
       >
         <Box fontSize={isMobile ? 16 : 18} maxWidth={580} mx='auto' px={2.5}>
-          <Box whiteSpace='break-spaces'>
-            {t('cp_v2.ngs_advantage.paragraphs.0')}
-          </Box>
+          <Box>{t('cp_v2.ngs_advantage.paragraphs.0')}</Box>
           <Box
             fontWeight={900}
             fontSize='h4.fontSize'
@@ -160,17 +159,12 @@ const SectionTwo = () => {
           textAlign='center'
           color='prophecyPrimary.main'
           mb={4}
-          whiteSpace='break-spaces'
         >
           Take2 Prophecy™
           {isMobile && <br />}
           {t('cp_v2.ngs_advantage.paragraphs.3')}
         </Box>
-        <Box
-          whiteSpace='break-spaces'
-          textAlign={isMobile ? 'left' : 'center'}
-          mb={4}
-        >
+        <Box textAlign={isMobile ? 'left' : 'center'} mb={4}>
           {t('cp_v2.ngs_advantage.paragraphs.4')}
         </Box>
         <Box
