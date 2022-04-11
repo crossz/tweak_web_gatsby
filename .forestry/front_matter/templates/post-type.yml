@@ -1,4 +1,18 @@
 ---
 label: Post Type
 hide_body: true
-fields: []
+fields:
+- name: postType
+  type: select
+  default: campaignStory
+  config:
+    required: true
+    options:
+    - campaignStory
+    - campaignNews
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Post Type
