@@ -8,7 +8,7 @@ import {
   ImageList,
   ImageListItem,
 } from '@material-ui/core'
-import ArrowIcon from '@components/campaignV2/images/arrow.png'
+import ArrowIcon from '../images/arrow.png'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation } from 'swiper/core'
 import 'swiper/swiper-bundle.min.css'
