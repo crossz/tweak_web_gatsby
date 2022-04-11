@@ -2,16 +2,17 @@
 label: Campaign Page Post
 hide_body: false
 fields:
-- name: post
-  type: include
-  config: {}
-  template: promotions
-  label: Post
 - name: postType
   type: include
   config: {}
   template: post-type
   label: Post Type
+- name: post
+  type: include
+  config: {}
+  template: promotions
+  label: Post
 pages:
 - content/campaign-page-posts/test-01.md
 - content/campaign-page-posts/test-02.md
+- content/campaign-page-posts/test-03.md
