@@ -1,4 +1,9 @@
 ---
 label: Campaign Page Post
 hide_body: false
-fields: []
+fields:
+- name: post
+  type: include
+  config: {}
+  template: promotions
+  label: Post
