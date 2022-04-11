@@ -2,11 +2,6 @@
 label: Campaign Page Post
 hide_body: false
 fields:
-- name: post
-  type: include
-  config: {}
-  template: promotions
-  label: Post
 - name: postType
   type: select
   default: campaignStory
@@ -21,5 +16,10 @@ fields:
       file: 
       path: 
   label: Post Type
+- name: post
+  type: include
+  config: {}
+  template: promotions
+  label: Post
 pages:
 - content/campaign-page-posts/test-01.md
