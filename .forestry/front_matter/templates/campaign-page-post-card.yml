@@ -6,18 +6,9 @@ fields:
   type: boolean
   label: Show In Campaign Page
 - name: postType
-  type: select
-  default: campaignStory
-  config:
-    required: true
-    options:
-    - campaignStory
-    - campaignNews
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
+  type: include
+  config: {}
+  template: post-type
   label: Post Type
   showOnly:
     field: isCampaign
