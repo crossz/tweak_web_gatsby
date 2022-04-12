@@ -244,3 +244,34 @@ export const DEPARTMENT_OPTIONS = [
     value: 'dite',
   },
 ]
+
+export const T_AND_C = {
+  TERMS_AND_CONDITIONS: {
+    label: 't_and_c.terms_and_conditions',
+    url: '/terms-and-conditions/',
+  },
+  PRIVACY_POLICY: {
+    label: 't_and_c.privacy_policy',
+    url: '/terms-and-conditions/privacy-policy/',
+  },
+  PERSONAL_INFORMATION_COLLECTION_STATEMENT: {
+    label: 't_and_c.personal_information_collection_statement',
+    url: '/terms-and-conditions/personal-information-collection-statement/',
+  },
+  WEBSITE_TERMS_OF_USE: {
+    label: 't_and_c.website_terms_of_use',
+    url: '/terms-and-conditions/website-terms-of-use/',
+  },
+  HEALTH_PLATFORM_PRIVACY_POLICY: {
+    label: '得易健康服務平台 《私隱政策》',
+    url: 'https://take2health.net/health-platform/agreement/2',
+  },
+  HEALTH_PLATFORM_TERMS_AND_CONDITIONS: {
+    label: '得易健康服務平台條款',
+    url: 'https://take2health.net/health-platform/agreement/3',
+  },
+  HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT: {
+    label: '得易健康服務平台《個人資料收集聲明》',
+    url: 'https://take2health.net/health-platform/agreement/1',
+  },
+}

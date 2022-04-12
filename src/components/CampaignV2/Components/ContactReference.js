@@ -25,6 +25,7 @@ import {
   SERVICE_PHONE,
   FACEBOOK_LINK,
 } from '../utils/constant'
+import { T_AND_C } from '../../../utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   websiteButton: {
@@ -160,8 +161,41 @@ const ContactReference = () => {
         <Link underline='always' to={process.env.GATSBY_WEBSITE_URL}>
           take2health.net
         </Link>
+        <Link underline='always' to={T_AND_C.PRIVACY_POLICY.url}>
+          私隱政策
+        </Link>
+        <Link underline='always' to={T_AND_C.WEBSITE_TERMS_OF_USE.url}>
+          網站使用條款
+        </Link>
+        <Link
+          underline='always'
+          to={T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}
+        >
+          個人資料收集聲明
+        </Link>
+        <Link
+          underline='always'
+          to={T_AND_C.HEALTH_PLATFORM_PRIVACY_POLICY.url}
+        >
+          得易健康服務平台《私隱政策》
+        </Link>
+        <Link
+          underline='always'
+          to={T_AND_C.HEALTH_PLATFORM_TERMS_AND_CONDITIONS.url}
+        >
+          得易健康服務平台條款
+        </Link>
+        <Link
+          underline='always'
+          to={
+            T_AND_C.HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT
+              .url
+          }
+        >
+          得易健康服務平台《個人資料收集聲明》
+        </Link>
         <Link underline='always' to={process.env.GATSBY_SITE_URL}>
-          take2health.net
+          https://take2health.net/health-platform/
         </Link>
       </Trans>
     </Box>
@@ -331,7 +365,7 @@ const ContactReference = () => {
                 }}
               >
                 <Typography className={classes.heading}>
-                  {t('t_and_c.terms_and_conditions')}
+                  {t(T_AND_C.TERMS_AND_CONDITIONS.label)}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails
