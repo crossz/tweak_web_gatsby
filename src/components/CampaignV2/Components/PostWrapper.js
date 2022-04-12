@@ -80,14 +80,18 @@ const PostWrapper = ({ nodes }) => {
           {nodes?.map((node, index) => {
             return (
               <SwiperSlide key={index}>
-                <PostCard
-                  key={node.id}
-                  slug={node.fields.slug}
-                  {...node.frontmatter}
-                  title={node.frontmatter.cpTitle || node.frontmatter.title}
-                  detail={node.frontmatter.cpDetail || node.frontmatter.detail}
-                  minHeight={20}
-                />
+                <Box id={'ECP_Article_' + (index + 1)}>
+                  <PostCard
+                    key={node.id}
+                    slug={node.fields.slug}
+                    {...node.frontmatter}
+                    title={node.frontmatter.cpTitle || node.frontmatter.title}
+                    detail={
+                      node.frontmatter.cpDetail || node.frontmatter.detail
+                    }
+                    minHeight={20}
+                  />
+                </Box>
               </SwiperSlide>
             )
           })}
@@ -99,12 +103,13 @@ const PostWrapper = ({ nodes }) => {
           cols={3}
           gap={32}
         >
-          {nodes?.map((node) => (
+          {nodes?.map((node, index) => (
             <ImageListItem
               key={node.id}
               classes={{
                 item: classes.imageListItem,
               }}
+              id={'ECP_Article_' + (index + 1)}
             >
               <PostCard
                 slug={node.fields.slug}

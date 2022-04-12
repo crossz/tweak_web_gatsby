@@ -289,6 +289,7 @@ const SectionTwo = () => {
             variant='contained'
             color='secondary'
             target='_blank'
+            id='ECP_Credibility_EH'
           >
             {t('common.book_now')}
           </Button>
@@ -301,6 +302,7 @@ const SectionTwo = () => {
               className={classes.outlineButton}
               fullWidth
               variant='outlined'
+              id='ECP_Credibility_Locations'
             >
               {t('cp_v2.common.view_service_location')}
             </Button>

@@ -80,12 +80,36 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const LIST = [
-  { label: 'cp_v2.menu.list.0', id: 'gsap-scroll-to-section-one' },
-  { label: 'cp_v2.menu.list.1', id: 'gsap-scroll-to-section-two' },
-  { label: 'cp_v2.menu.list.2', id: 'gsap-scroll-to-section-three' },
-  { label: 'cp_v2.menu.list.3', id: 'gsap-scroll-to-section-four' },
-  { label: 'cp_v2.menu.list.4', id: 'gsap-scroll-to-section-five' },
-  { label: 'cp_v2.menu.list.5', id: 'gsap-scroll-to-contact-us' },
+  {
+    label: 'cp_v2.menu.list.0',
+    id: 'gsap-scroll-to-section-one',
+    countNode: 'ECP_Menubar_Section1',
+  },
+  {
+    label: 'cp_v2.menu.list.1',
+    id: 'gsap-scroll-to-section-two',
+    countNode: 'ECP_Menubar_Section2',
+  },
+  {
+    label: 'cp_v2.menu.list.2',
+    id: 'gsap-scroll-to-section-three',
+    countNode: 'ECP_Menubar_Section3',
+  },
+  {
+    label: 'cp_v2.menu.list.3',
+    id: 'gsap-scroll-to-section-four',
+    countNode: 'ECP_Menubar_Section4',
+  },
+  {
+    label: 'cp_v2.menu.list.4',
+    id: 'gsap-scroll-to-section-five',
+    countNode: 'ECP_Menubar_Section5',
+  },
+  {
+    label: 'cp_v2.menu.list.5',
+    id: 'gsap-scroll-to-contact-us',
+    countNode: 'ECP_Menubar_Section6',
+  },
 ]
 
 export default function Menu(props) {
@@ -160,6 +184,7 @@ export default function Menu(props) {
                   onClick={handleScroll}
                   disableGutters
                   data-id={item.id}
+                  id={item.countNode}
                 >
                   <Box whiteSpace='break-spaces'>{t(item.label)}</Box>
                 </ListItem>
@@ -169,7 +194,11 @@ export default function Menu(props) {
         </Box>
         <Box mx={5} mb={5} mt='auto' alignItems='center' display='flex'>
           <Link to='/'>
-            <Button className={classes.button} variant='outlined'>
+            <Button
+              className={classes.button}
+              variant='outlined'
+              id='ECP_Menubar_CorpSite'
+            >
               {t('cp_v2.menu.office_website')}
             </Button>
           </Link>
@@ -187,6 +216,7 @@ export default function Menu(props) {
                 to={originalPath}
                 language={language.lang}
                 component={Link}
+                id={language.id}
               >
                 {language.shortLabel}
               </Box>

@@ -92,16 +92,19 @@ const CONTACT_LIST = [
     title: 'WhatsApp',
     href: WHATS_APP_LINK,
     icon: <WhatsAppIcon />,
+    id: 'ECP_Contact_Whatapp',
   },
   {
     title: SERVICE_PHONE,
     href: `tel:${SERVICE_PHONE}`,
     icon: <PhoneIcon />,
+    id: 'ECP_Contact_Telephone',
   },
   {
     title: SERVICE_EMAIL,
     href: `mailto:${SERVICE_EMAIL}`,
     icon: <MailIcon />,
+    id: 'ECP_Contact_Email',
   },
 ]
 
@@ -116,19 +119,19 @@ const ContactReference = () => {
 
   const reference = [
     {
-      list: '1. Hong Kong Cancer Registry. Hong Kong Hospital Authority, . Accessed 23 May 2021.',
+      list: '1. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal of Medicine, vol. 377, no. 6. 2017, pp. 513–22.',
     },
     {
-      list: '2. Overview of Hong Kong Cancer Statistics of 2018. HongKong Hospital Authority, October 2020.',
+      list: '2. Hong Kong Cancer Registry. Hong Kong Hospital Authority,www3.ha.org.hk/cancereg/. Accessed 23 May 2021. ',
     },
     {
-      list: '3. ““Nasopharyngeal Cancer.” Centre for Health Protection,Department of Health, The Government of the Hong Kong SpecialAdministrative Region, 2021, , accessed 23 July 2021.',
+      list: '3. Overview of Hong Kong Cancer Statistics of 2018. HongKong Hospital Authority, October 2020.',
     },
     {
-      list: '4. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCANE stimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” CA: A Cancer Journal for Clinicians, vol. 68,no. 6. 2018, pp. 394-424.',
+      list: '4. “Nasopharyngeal Cancer.” Centre for Health Protection,Department of Health, The Government of the Hong Kong SpecialAdministrative Region, 2021,www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July 2021.',
     },
     {
-      list: '5. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal of Medicine, vol. 377, no.6. 2017, pp. 513–22.',
+      list: '5. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCANE stimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” CA: A Cancer Journal for Clinicians, vol. 68,no. 6. 2018, pp. 394-424.',
     },
     {
       list: '6. Lam, W. K. Jacky, et al.“Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.',
@@ -202,6 +205,7 @@ const ContactReference = () => {
                   px={3}
                   display='flex'
                   alignItems='center'
+                  id={item.id}
                 >
                   <Box mr={1} flexShrink={0}>
                     {item.icon}
@@ -241,6 +245,7 @@ const ContactReference = () => {
                   variant='outlined'
                   color='inherit'
                   className={classes.websiteButton}
+                  id='ECP_Contact_CorpSite'
                 >
                   {t('cp_v2.menu.office_website')}
                 </Button>
@@ -267,6 +272,7 @@ const ContactReference = () => {
                   target='_blank'
                   size='small'
                   aria-label='facebook'
+                  id='ECP_Contact_Facebook'
                 >
                   <FacebookIcon />
                 </IconButton>

@@ -119,7 +119,10 @@ const Header = (props) => {
             {withBg && !isMobile && (
               <PromotionContent whiteBg={withBg}></PromotionContent>
             )}
-            <Box className={classes.menuBtn}>
+            <Box
+              className={classes.menuBtn}
+              id={withBg ? 'ECP_Stickybar_Menu' : 'ECP_Menu'}
+            >
               <Menu dark={withBg}></Menu>
             </Box>
           </Container>
