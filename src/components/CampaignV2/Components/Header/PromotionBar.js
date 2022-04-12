@@ -44,6 +44,7 @@ const PromotionBar = () => {
             className={classes.closeIcon}
             aria-label='close icon'
             onClick={handleClose}
+            id='ECP_Promotion_cancel'
           >
             <CloseIcon />
           </IconButton>

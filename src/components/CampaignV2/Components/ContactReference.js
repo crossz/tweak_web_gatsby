@@ -92,16 +92,19 @@ const CONTACT_LIST = [
     title: 'WhatsApp',
     href: WHATS_APP_LINK,
     icon: <WhatsAppIcon />,
+    id: 'ECP_Contact_Whatapp',
   },
   {
     title: SERVICE_PHONE,
     href: `tel:${SERVICE_PHONE}`,
     icon: <PhoneIcon />,
+    id: 'ECP_Contact_Telephone',
   },
   {
     title: SERVICE_EMAIL,
     href: `mailto:${SERVICE_EMAIL}`,
     icon: <MailIcon />,
+    id: 'ECP_Contact_Email',
   },
 ]
 
@@ -202,6 +205,7 @@ const ContactReference = () => {
                   px={3}
                   display='flex'
                   alignItems='center'
+                  id={item.id}
                 >
                   <Box mr={1} flexShrink={0}>
                     {item.icon}
@@ -241,6 +245,7 @@ const ContactReference = () => {
                   variant='outlined'
                   color='inherit'
                   className={classes.websiteButton}
+                  id='ECP_Contact_CorpSite'
                 >
                   {t('cp_v2.menu.office_website')}
                 </Button>
@@ -267,6 +272,7 @@ const ContactReference = () => {
                   target='_blank'
                   size='small'
                   aria-label='facebook'
+                  id='ECP_Contact_Facebook'
                 >
                   <FacebookIcon />
                 </IconButton>

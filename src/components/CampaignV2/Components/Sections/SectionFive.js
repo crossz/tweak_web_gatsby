@@ -60,7 +60,7 @@ const SectionFive = () => {
           >
             {t('cp_v2.second_life.paragraphs.0')}
           </Box>
-          <Box className='gsap-fade-in-10'>
+          <Box className='gsap-fade-in-10' id='ECP_TM_Video_Play'>
             <YouTube
               className={classes.video}
               videoId='BACVA3es0NI'
@@ -87,6 +87,7 @@ const SectionFive = () => {
               href={process.env.GATSBY_SITE_URL}
               target='_blank'
               className={classes.btn}
+              id='ECP_TM_EH'
             >
               {t('common.book_now')}
             </Button>

@@ -138,6 +138,7 @@ const PromotionContent = ({ whiteBg }) => {
           size='small'
           variant='contained'
           color='secondary'
+          id='ECP_Stickybar_EH'
         >
           {t('common.book_now')}
         </Button>

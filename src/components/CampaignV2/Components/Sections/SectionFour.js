@@ -69,6 +69,7 @@ const SectionFour = ({ storyNodes, healthTipsNodes }) => {
             variant='contained'
             color='secondary'
             target='_blank'
+            id='ECP_Article_EH'
           >
             {t('common.book_now')}
           </Button>

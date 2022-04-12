@@ -65,6 +65,7 @@ const ShoppingBtn = () => {
             aria-label='whatsapp icon'
             href={WHATS_APP_LINK}
             target='_blank'
+            id='ECP_Sticky_Whatsapp'
           >
             <WhatsAppIcon className={classes.whatsAppIcon} />
           </IconButton>
@@ -75,6 +76,7 @@ const ShoppingBtn = () => {
         href={process.env.GATSBY_SITE_URL}
         target='_blank'
         variant='contain'
+        id='ECP_Sticky_EH'
       >
         <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
         <Box className={classes.shopBtnTooltip}>

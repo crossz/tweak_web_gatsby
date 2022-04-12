@@ -148,6 +148,7 @@ const SectionOne = () => {
               width: '100%',
               height: isMobile ? 165 : 405,
             }}
+            id='ECP_Video_Play'
           />
           <Box
             textAlign={isMobile ? 'left' : 'center'}
@@ -356,6 +357,7 @@ const SectionOne = () => {
               color='secondary'
               href={process.env.GATSBY_SITE_URL}
               target='_blank'
+              id='ECP_Symptoms_EH'
             >
               {t('common.book_now')}
             </Button>
@@ -368,6 +370,7 @@ const SectionOne = () => {
                 className={classes.outlineButton}
                 fullWidth
                 variant='outlined'
+                id='ECP_Symptoms_Location'
               >
                 {t('cp_v2.common.view_service_location')}
               </Button>

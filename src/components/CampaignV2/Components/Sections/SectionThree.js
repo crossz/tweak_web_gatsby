@@ -164,7 +164,7 @@ const Steps = () => {
             {t('cp_v2.ngs_progress.paragraphs.2')}
           </Box>
           <Box borderRadius={isMobile ? 0 : 16} overflow='hidden'>
-            <Map showMap className={classes.map}></Map>
+            <Map showMap className={classes.map} trackCodeV2></Map>
           </Box>
         </Box>
       </Box>
