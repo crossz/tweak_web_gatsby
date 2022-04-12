@@ -93,7 +93,7 @@ const SymptomSwiper = () => {
       }}
     >
       {SYMPTOMS?.map((symptom, index) => {
-        return <SwiperSlide key={index}></SwiperSlide>
+        return <SwiperSlide key={index} id='ECP_Symptoms_Clicks'></SwiperSlide>
       })}
       <Box
         className={classes.imgWrapper}
