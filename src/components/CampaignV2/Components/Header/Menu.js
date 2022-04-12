@@ -105,9 +105,12 @@ export default function Menu(props) {
   }
 
   const handleScroll = (e) => {
-    toggleDrawer(false)
+    // toggleDrawer(false)
     const { id } = e.currentTarget.dataset
     scrollTo(`#${id}`, 'start')
+    setTimeout(() => {
+      setState(false)
+    }, 700)
   }
 
   return (
@@ -155,7 +158,6 @@ export default function Menu(props) {
                   className={classes.listItem}
                   role='presentation'
                   onClick={handleScroll}
-                  onKeyDown={toggleDrawer(false)}
                   disableGutters
                   data-id={item.id}
                 >

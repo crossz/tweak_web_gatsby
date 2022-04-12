@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostSwiper = ({ nodes }) => {
+const PostWrapper = ({ nodes }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
@@ -101,6 +101,7 @@ const PostSwiper = ({ nodes }) => {
         >
           {nodes?.map((node) => (
             <ImageListItem
+              key={node.id}
               classes={{
                 item: classes.imageListItem,
               }}
@@ -120,4 +121,4 @@ const PostSwiper = ({ nodes }) => {
   )
 }
 
-export default PostSwiper
+export default PostWrapper
