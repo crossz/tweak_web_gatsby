@@ -13,7 +13,7 @@ import {
   IconButton,
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
 import MailIcon from '../images/mail.svg'
 import PhoneIcon from '../images/phone.svg'
@@ -53,11 +53,6 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 2,
     color: theme.palette.prophecyPrimary.light,
   },
-  rules: {
-    fontSize: '12px',
-    lineHeight: 2,
-    color: theme.palette.prophecyPrimary.light,
-  },
   heading: {
     color: theme.palette.prophecyPrimary.light,
     fontWeight: 700,
@@ -83,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
   accordDetails: {
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(0, 0, 3, 0),
+    },
+  },
+  tAndC: {
+    '& a': {
+      color: theme.palette.prophecyPrimary.light,
     },
   },
 }))
@@ -146,24 +146,27 @@ const ContactReference = () => {
       list: '9. Overview of Hong Kong Cancer Statistics of 2019. Hong Kong Hospital Authority, October 2021.',
     },
   ]
-  const rules = [
-    {
-      rulesDetail:
-        ' At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
-    },
-    {
-      rulesDetail:
-        'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
-    },
-    {
-      rulesDetail:
-        'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
-    },
-    {
-      rulesDetail:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
-    },
-  ]
+
+  const tAndC = (params) => (
+    <Box
+      className={classes.tAndC}
+      lineHeight={1.5}
+      color='prophecyPrimary.light'
+      whiteSpace='break-spaces'
+      fontSize='overline.fontSize'
+    >
+      <Trans i18nKey='cp_v2.terms_and_conditions'>
+        .
+        <Link underline='always' to={process.env.GATSBY_WEBSITE_URL}>
+          take2health.net
+        </Link>
+        <Link underline='always' to={process.env.GATSBY_SITE_URL}>
+          take2health.net
+        </Link>
+      </Trans>
+    </Box>
+  )
+
   return (
     <Box
       id='gsap-scroll-to-contact-us'
@@ -336,13 +339,7 @@ const ContactReference = () => {
                   root: classes.accordDetails,
                 }}
               >
-                <Box className={classes.referenceDetail2}>
-                  {rules.map((item, index) => (
-                    <Box key={index} mt={index === 0 ? 0 : 2}>
-                      {item.rulesDetail}
-                    </Box>
-                  ))}
-                </Box>
+                {tAndC()}
               </AccordionDetails>
             </Accordion>
           </Box>
@@ -359,13 +356,7 @@ const ContactReference = () => {
             <Box className={classes.reference} my={4}>
               {t('cp_v2.contact_and_reference.paragraphs.5')}
             </Box>
-            <Box className={classes.rules}>
-              {rules.map((item, index) => (
-                <Box key={index} mt={index === 0 ? 0 : 2}>
-                  {item.rulesDetail}
-                </Box>
-              ))}
-            </Box>
+            {tAndC()}
           </Box>
         )}
       </Box>
