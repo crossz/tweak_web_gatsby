@@ -7,9 +7,9 @@ languages:
 cover:
 - "../images/untitled-design-9.png"
 date: 2022-04-18T00:00:00.000+08:00
-title: 'Gigi (a yoga instructor): “If my cancer had been diagnosed and treated earlier,
-  my road in fighting against NPC would have been relatively easier and less painful.”'
-detail: "【戰勝癌魔】80後瑜伽導師戰勝第三期鼻咽癌 感悟：「死過翻生 才明白活著多好」"
+title: Gigi (a yoga instructor)
+detail: "“If my cancer had been diagnosed and treated earlier, my road in fighting
+  against NPC would have been relatively easier and less painful.”"
 type: ''
 pdf: ''
 href: https://medicalinspire.com/web/posts/72927/
