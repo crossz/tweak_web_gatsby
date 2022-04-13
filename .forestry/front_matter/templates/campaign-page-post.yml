@@ -13,9 +13,10 @@ fields:
   template: promotions
   label: Post
 pages:
-- content/campaign-page-posts/test-01.md
-- content/campaign-page-posts/test-02.md
-- content/campaign-page-posts/test-03.md
-- content/campaign-page-posts/test-04.md
-- content/campaign-page-posts/test-05.md
-- content/campaign-page-posts/test-06.md
+- content/campaign-page-posts/45-6-7-5.md
+- content/campaign-page-posts/7.md
+- content/campaign-page-posts/80.md
+- content/campaign-page-posts/女士都要知.md
+- content/campaign-page-posts/理財高手要知.md
+- content/campaign-page-posts/男士們要知.md
+- content/campaign-page-posts/科技達人要知.md
