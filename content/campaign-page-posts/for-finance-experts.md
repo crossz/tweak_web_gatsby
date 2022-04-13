@@ -5,7 +5,7 @@ languages:
 cover:
 - "../images/sundaykiss.jpg"
 date: 2022-04-18T00:00:00.000+08:00
-title: For finance experts
+title: For Finance Experts
 detail: Sunday Kiss：「【#做體檢要及時】及早進行早期鼻咽癌篩查 可節省達六位數字治療費用及收入損失」
 type: ''
 pdf: ''
