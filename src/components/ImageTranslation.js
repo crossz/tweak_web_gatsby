@@ -19,7 +19,14 @@ const ImageTranslation = ({ filename, alt, hasMobile = true, ...rest }) => {
 
   const image = getImage(imageData)
 
-  return <GatsbyImage image={image} alt={alt} {...rest}></GatsbyImage>
+  return (
+    <GatsbyImage
+      objectFit='contain'
+      image={image}
+      alt={alt}
+      {...rest}
+    ></GatsbyImage>
+  )
 }
 
 export default ImageTranslation

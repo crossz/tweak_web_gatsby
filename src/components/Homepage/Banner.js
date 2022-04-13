@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
   containImgWrapper: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#BADCF2',
+    background: `rgb(127,177,210)`,
+    background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
   },
   containImg: {
     maxHeight: '100%',
@@ -201,12 +202,6 @@ const Banner = ({ nodes }) => {
           watchSlidesVisibility={true}
         >
           <SwiperSlide>
-            {/* <Link
-              underline='none'
-              to='/whats-new/promotions/consumption-voucher'
-            >
-              
-            </Link> */}
             <Box className={classes.heroBannerWrapper}>
               <Box
                 className={classnames(
@@ -214,7 +209,11 @@ const Banner = ({ nodes }) => {
                   classes.containImgWrapper
                 )}
               >
-                <ImageTranslation filename='promo_banner' alt='promo banner' />
+                <ImageTranslation
+                  filename='promo_banner'
+                  alt='promo banner'
+                  className={classes.containImg}
+                />
               </Box>
             </Box>
           </SwiperSlide>
