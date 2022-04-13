@@ -5,7 +5,7 @@ languages:
 cover:
 - "../images/24parentsog.jpg"
 date: 2022-04-18T00:00:00.000+08:00
-title: For women
+title: For Women
 detail: 'Ohpama: 鼻咽癌知多啲｜女士就不會「中招」？　拆解三大常見誤解'
 type: ''
 pdf: ''
