@@ -3,7 +3,7 @@ postType: campaignStory
 languages:
 - en
 cover:
-- "../images/og_1024.jpeg"
+- "../images/chan_og_1024.jpg"
 date: 2022-04-18T00:00:00.000+08:00
 title: Mr. Chan (a young man who neither smokes nor drinks)
 detail: "“Don't ignore any subtle signs and symptoms of your body.”"
