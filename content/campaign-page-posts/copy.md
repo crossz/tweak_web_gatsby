@@ -3,7 +3,7 @@ postType: campaignStory
 languages:
 - zh-CN
 cover:
-- "../images/og_1024.jpeg"
+- "../images/chan_og_1024.jpg"
 date: 2022-04-18T00:00:00.000+08:00
 title: 不烟不酒壮男 陈先生：”千万不要忽略身体的细小警号。”
 detail: " 抗癌勇士｜45岁港男不烟不酒患晚期鼻咽癌 历6次化疗7周电疗抗癌半年康复｜附鼻咽癌5大先兆"
