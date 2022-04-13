@@ -122,7 +122,14 @@ module.exports = {
       },
       __key: 'images',
     },
-    `gatsby-transformer-json`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'imagesTranslation',
+        path: `${__dirname}/src/assets/imagesTranslation`,
+      },
+      __key: 'imagesTranslation',
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
