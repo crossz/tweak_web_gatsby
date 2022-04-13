@@ -46,7 +46,6 @@ const Link = ({
 }) => {
   const classes = useStyles()
   const { language: curLanguage, routed } = useI18next()
-  console.log('process.env.GATSBY_WEBSITE_URL', process.env.GATSBY_WEBSITE_URL)
 
   // Tailor the following test to your environment.
   // This example assumes that any internal link (intended for Gatsby)

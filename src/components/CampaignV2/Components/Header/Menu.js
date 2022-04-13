@@ -118,6 +118,7 @@ export default function Menu(props) {
   const [state, setState] = React.useState(false)
 
   const toggleDrawer = (open) => (event) => {
+    console.log('toggleDrawer ', toggleDrawer)
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
@@ -129,12 +130,12 @@ export default function Menu(props) {
   }
 
   const handleScroll = (e) => {
-    // toggleDrawer(false)
     const { id } = e.currentTarget.dataset
-    scrollTo(`#${id}`, 'start')
+
+    setState(false)
     setTimeout(() => {
-      setState(false)
-    }, 700)
+      scrollTo(`#${id}`, 'start')
+    }, 0)
   }
 
   return (
@@ -180,7 +181,6 @@ export default function Menu(props) {
                 <Divider className={classes.divider}></Divider>
                 <ListItem
                   className={classes.listItem}
-                  role='presentation'
                   onClick={handleScroll}
                   disableGutters
                   data-id={item.id}
