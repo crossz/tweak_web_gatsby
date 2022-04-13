@@ -139,6 +139,8 @@ const PromotionContent = ({ whiteBg }) => {
           variant='contained'
           color='secondary'
           id='ECP_Stickybar_EH'
+          href={process.env.GATSBY_SITE_URL}
+          target='_blank'
         >
           {t('common.book_now')}
         </Button>

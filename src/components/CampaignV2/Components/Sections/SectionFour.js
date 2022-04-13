@@ -97,8 +97,9 @@ const SectionFour = ({ storyNodes, healthTipsNodes }) => {
           </Button>
           <Box
             width='100%'
+            target='_blank'
             component={Link}
-            to='/products-and-services/take2-extra-care'
+            to='/service-location/'
           >
             <Button
               className={classes.outlineButton}

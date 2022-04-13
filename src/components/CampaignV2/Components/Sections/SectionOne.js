@@ -143,7 +143,7 @@ const SectionOne = () => {
         <Box mt={isMobile ? 0 : 6} mb={isMobile ? 6 : 8}>
           <YouTube
             className={classes.video}
-            videoId='BACVA3es0NI'
+            videoId='wOPREMoVhys'
             opts={{
               width: '100%',
               height: isMobile ? 165 : 405,
@@ -364,7 +364,8 @@ const SectionOne = () => {
             </Button>
             <Box
               width='100%'
-              to='/products-and-services/take2-extra-care'
+              target='_blank'
+              to='/service-location/'
               component={Link}
             >
               <Button

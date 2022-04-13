@@ -158,34 +158,46 @@ const ContactReference = () => {
     >
       <Trans i18nKey='cp_v2.terms_and_conditions'>
         .
-        <Link underline='always' to={process.env.GATSBY_WEBSITE_URL}>
+        <Link target='_blank' underline='always' to='/'>
           take2health.net
         </Link>
-        <Link underline='always' to={T_AND_C.PRIVACY_POLICY.url}>
+        <Link
+          target='_blank'
+          underline='always'
+          to={T_AND_C.PRIVACY_POLICY.url}
+        >
           私隱政策
         </Link>
-        <Link underline='always' to={T_AND_C.WEBSITE_TERMS_OF_USE.url}>
+        <Link
+          target='_blank'
+          underline='always'
+          to={T_AND_C.WEBSITE_TERMS_OF_USE.url}
+        >
           網站使用條款
         </Link>
         <Link
+          target='_blank'
           underline='always'
           to={T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}
         >
           個人資料收集聲明
         </Link>
         <Link
+          target='_blank'
           underline='always'
           to={T_AND_C.HEALTH_PLATFORM_PRIVACY_POLICY.url}
         >
           得易健康服務平台《私隱政策》
         </Link>
         <Link
+          target='_blank'
           underline='always'
           to={T_AND_C.HEALTH_PLATFORM_TERMS_AND_CONDITIONS.url}
         >
           得易健康服務平台條款
         </Link>
         <Link
+          target='_blank'
           underline='always'
           to={
             T_AND_C.HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT
@@ -194,7 +206,11 @@ const ContactReference = () => {
         >
           得易健康服務平台《個人資料收集聲明》
         </Link>
-        <Link underline='always' to={process.env.GATSBY_SITE_URL}>
+        <Link
+          target='_blank'
+          underline='always'
+          to={process.env.GATSBY_SITE_URL}
+        >
           https://take2health.net/health-platform/
         </Link>
       </Trans>
@@ -275,7 +291,7 @@ const ContactReference = () => {
               >
                 {t('cp_v2.contact_and_reference.paragraphs.2')}
               </Box>
-              <Link to='/'>
+              <Link target='_blank' to='/'>
                 <Button
                   size='small'
                   fullWidth={isMobile}

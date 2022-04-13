@@ -193,7 +193,7 @@ export default function Menu(props) {
           </List>
         </Box>
         <Box mx={5} mb={5} mt='auto' alignItems='center' display='flex'>
-          <Link to='/'>
+          <Link target='_blank' to='/'>
             <Button
               className={classes.button}
               variant='outlined'

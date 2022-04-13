@@ -112,7 +112,8 @@ const SectionFive = () => {
             </Button>
             <Box
               width='100%'
-              to='/products-and-services/take2-extra-care'
+              target='_blank'
+              to='/service-location/'
               component={Link}
             >
               <Button
