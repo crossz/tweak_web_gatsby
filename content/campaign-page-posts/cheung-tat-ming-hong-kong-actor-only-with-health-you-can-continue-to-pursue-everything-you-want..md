@@ -3,7 +3,7 @@ postType: campaignStory
 languages:
 - en
 cover:
-- "../images/skypost.png"
+- "../images/skypostog.jpg"
 date: 2022-04-18T00:00:00.000+08:00
 title: Cheung Tat-ming (Hong Kong actor)
 detail: "“Only with health, you can continue to pursue everything you want.”"
