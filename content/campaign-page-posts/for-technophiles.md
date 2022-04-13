@@ -4,7 +4,7 @@ languages:
 - en
 cover:
 - "../images/unwire.jpg"
-date: 2022-04-18T00:00:00.000+08:00
+date: 2022-04-18T00:01:00+08:00
 title: For Technophiles
 detail: Unwire：「突破性次世代科技偵測早期癌症   更高準確度(97%) + 無創測試」
 type: ''
