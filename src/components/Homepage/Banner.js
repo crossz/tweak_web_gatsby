@@ -22,7 +22,7 @@ import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
 import classnames from 'classnames'
-import ImageTranslation from '@components/ImageTranslation'
+// import ImageTranslation from '@components/ImageTranslation'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -42,8 +42,9 @@ const useStyles = makeStyles((theme) => ({
   containImgWrapper: {
     display: 'flex',
     alignItems: 'center',
-    background: `rgb(127,177,210)`,
-    background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
+    backgroundColor: '#BADCF2',
+    // background: `rgb(127,177,210)`,
+    // background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
   },
   containImg: {
     maxHeight: '100%',
@@ -202,7 +203,36 @@ const Banner = ({ nodes }) => {
           watchSlidesVisibility={true}
         >
           <SwiperSlide>
-            <Box className={classes.heroBannerWrapper}>
+            <Link
+              underline='none'
+              to='/whats-new/promotions/consumption-voucher'
+            >
+              <Box className={classes.heroBannerWrapper}>
+                <Box
+                  className={classnames(
+                    classes.heroImgWrapper,
+                    classes.containImgWrapper
+                  )}
+                >
+                  {matches ? (
+                    <StaticImage
+                      className={classes.containImg}
+                      src='../../assets/images/mobile_hero_04.jpg'
+                      alt='hero 04'
+                      objectFit='contain'
+                    ></StaticImage>
+                  ) : (
+                    <StaticImage
+                      className={classes.containImg}
+                      src='../../assets/images/hero_04.jpg'
+                      alt='hero 04'
+                      objectFit='contain'
+                    ></StaticImage>
+                  )}
+                </Box>
+              </Box>
+            </Link>
+            {/* <Box className={classes.heroBannerWrapper}>
               <Box
                 className={classnames(
                   classes.heroImgWrapper,
@@ -215,7 +245,7 @@ const Banner = ({ nodes }) => {
                   className={classes.containImg}
                 />
               </Box>
-            </Box>
+            </Box> */}
           </SwiperSlide>
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>
