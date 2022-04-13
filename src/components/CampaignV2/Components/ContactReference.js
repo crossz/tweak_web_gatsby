@@ -366,7 +366,7 @@ const ContactReference = () => {
                 </Box>
               </AccordionDetails>
             </Accordion>
-            <Accordion
+            {/* <Accordion
               classes={{
                 rounded: classes.rounded,
                 expanded: classes.expanded,
@@ -391,7 +391,7 @@ const ContactReference = () => {
               >
                 {tAndC()}
               </AccordionDetails>
-            </Accordion>
+            </Accordion> */}
           </Box>
         ) : (
           <Box>
@@ -403,10 +403,10 @@ const ContactReference = () => {
                 <Box key={index}>{item.list}</Box>
               ))}
             </Box>
-            <Box className={classes.reference} my={4}>
+            {/* <Box className={classes.reference} my={4}>
               {t('cp_v2.contact_and_reference.paragraphs.5')}
             </Box>
-            {tAndC()}
+            {tAndC()} */}
           </Box>
         )}
       </Box>
