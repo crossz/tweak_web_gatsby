@@ -173,19 +173,6 @@ const SectionTwo = () => {
           margin={isMobile ? '20px 10px' : '40px auto'}
         >
           <ImageTranslation filename='table' alt='table'></ImageTranslation>
-          {/* {isMobile ? (
-            <StaticImage
-              className={classes.img}
-              src='../../images/table_mobile.png'
-              alt='empty'
-            ></StaticImage>
-          ) : (
-            <StaticImage
-              className={classes.img}
-              src='../../images/table.png'
-              alt='empty'
-            ></StaticImage>
-          )} */}
         </Box>
         <Box
           className='gsap-fade-in-5'
@@ -302,7 +289,7 @@ const SectionTwo = () => {
               className={classes.outlineButton}
               fullWidth
               variant='outlined'
-              id='ECP_Credibility_Locations'
+              id='ECP_Credibility_Location'
             >
               {t('cp_v2.common.view_service_location')}
             </Button>

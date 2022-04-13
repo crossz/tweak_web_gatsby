@@ -10,6 +10,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import LineDots from '@components/CampaignV2/images/bg_wave_dots.png'
 import ImageTranslation from '../ImageTranslation'
+import Link from '@components/Link'
 
 const useStyles = makeStyles((theme) => ({
   bgImage: {
@@ -24,6 +25,17 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 24,
     [theme.breakpoints.down('xs')]: {
       borderRadius: 6,
+    },
+  },
+  outlineButton: {
+    whiteSpace: 'nowrap',
+    color: theme.palette.primary.contrastText,
+    backgroundColor: 'transparent',
+    borderColor: theme.palette.primary.contrastText,
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: 0,
+      marginTop: theme.spacing(1.5),
     },
   },
 }))
@@ -80,7 +92,40 @@ const SectionFive = () => {
           >
             {t('cp_v2.second_life.paragraphs.1')}
           </Box>
-          <Box textAlign='center'>
+          <Box
+            mt={isMobile ? 4 : 8}
+            mx='auto'
+            flexWrap={isMobile ? 'wrap' : 'nowrap'}
+            display='flex'
+            width='100%'
+            maxWidth={isMobile ? 'auto' : 480}
+          >
+            <Button
+              fullWidth
+              variant='contained'
+              color='secondary'
+              href={process.env.GATSBY_SITE_URL}
+              target='_blank'
+              id='ECP_TM_EH'
+            >
+              {t('common.book_now')}
+            </Button>
+            <Box
+              width='100%'
+              to='/products-and-services/take2-extra-care'
+              component={Link}
+            >
+              <Button
+                className={classes.outlineButton}
+                fullWidth
+                variant='outlined'
+                id='ECP_TM_Location'
+              >
+                {t('cp_v2.common.view_service_location')}
+              </Button>
+            </Box>
+          </Box>
+          {/* <Box textAlign='center'>
             <Button
               variant='contained'
               color='secondary'
@@ -91,7 +136,7 @@ const SectionFive = () => {
             >
               {t('common.book_now')}
             </Button>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </>

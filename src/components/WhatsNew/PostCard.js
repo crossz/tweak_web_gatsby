@@ -6,6 +6,7 @@ import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { formatLocal } from '@utils/moment'
 import { useMatch } from '@reach/router'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,6 +83,17 @@ const useStyles = makeStyles((theme) => ({
       fontSize: theme.typography.body2.fontSize,
     },
   },
+  campaignPageTitle: {
+    textOverflow: 'ellipsis',
+    lineClamp: 2,
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    overflow: 'hidden',
+    fontSize: 18,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+    },
+  },
   date: {
     color: theme.palette.grey[600],
     marginTop: 'auto',
@@ -127,17 +139,15 @@ const PostCard = ({
         {isCampaignPage ? (
           <Box className={classes.info}>
             <Box
+              className={classes.campaignPageTitle}
               mb={1}
               color='secondary.main'
-              fontSize='h6.fontSize'
               fontWeight='fontWeightBold'
             >
               {title}
             </Box>
             <Box
-              color='primary.main'
-              fontSize='body2.fontSize'
-              fontWeight='fontWeightMedium'
+              className={classnames(classes.title, classes.campaignPageDetail)}
             >
               {detail}
             </Box>

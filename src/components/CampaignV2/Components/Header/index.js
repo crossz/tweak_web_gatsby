@@ -13,7 +13,6 @@ import classnames from 'classnames'
 import Menu from './Menu'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Waypoint } from 'react-waypoint'
-import { useI18next } from 'gatsby-plugin-react-i18next'
 import PromotionBar from './PromotionBar'
 import PromotionContent from './PromotionContent'
 import scrollTo from 'gatsby-plugin-smoothscroll'
@@ -71,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (props) => {
   const classes = useStyles()
-  const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const [withBg, setWithBg] = useState(true)

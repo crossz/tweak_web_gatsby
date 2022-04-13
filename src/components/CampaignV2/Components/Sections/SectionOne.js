@@ -330,6 +330,7 @@ const SectionOne = () => {
                 alignItems='center'
                 display='flex'
                 flexDirection='column'
+                textAlign='center'
               >
                 <Box width={isMobile ? 88 : 120}>{symptom.icon}</Box>
                 <Box mt={isMobile ? 1.5 : 2}>{t(symptom.label)} ?</Box>
