@@ -214,18 +214,19 @@ const Banner = ({ nodes }) => {
                     classes.containImgWrapper
                   )}
                 >
-                  {matches ? (
+                  {matches && (
                     <StaticImage
                       className={classes.containImg}
-                      src='../../assets/images/mobile_hero_04.jpg'
-                      alt='hero 04'
+                      src='../../assets/images/promo_banner_mobile.jpg'
+                      alt='promo banner mobile'
                       objectFit='contain'
                     ></StaticImage>
-                  ) : (
+                  )}
+                  {!matches && (
                     <StaticImage
                       className={classes.containImg}
-                      src='../../assets/images/hero_04.jpg'
-                      alt='hero 04'
+                      src='../../assets/images/promo_banner.jpg'
+                      alt='promo banner'
                       objectFit='contain'
                     ></StaticImage>
                   )}

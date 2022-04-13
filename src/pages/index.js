@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React from 'react'
 import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
