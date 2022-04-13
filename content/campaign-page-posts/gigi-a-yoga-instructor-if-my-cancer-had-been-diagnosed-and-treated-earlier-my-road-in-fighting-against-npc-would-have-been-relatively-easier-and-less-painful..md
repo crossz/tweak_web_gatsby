@@ -2,8 +2,6 @@
 postType: campaignStory
 languages:
 - en
-- zh-CN
-- zh-HK
 cover:
 - "../images/untitled-design-9.png"
 date: 2022-04-18T00:00:00.000+08:00
