@@ -6,6 +6,7 @@ import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { formatLocal } from '@utils/moment'
 import { useMatch } from '@reach/router'
+import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
     textDecoration: 'none',
-    minHeight: theme.spacing(41.25),
+    minHeight: ({ minHeight }) => theme.spacing(minHeight || 41.25),
     display: 'flex',
     flexDirection: 'column',
     transition: theme.transitions.create('transform', {
@@ -82,6 +83,17 @@ const useStyles = makeStyles((theme) => ({
       fontSize: theme.typography.body2.fontSize,
     },
   },
+  campaignPageTitle: {
+    textOverflow: 'ellipsis',
+    lineClamp: 2,
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    overflow: 'hidden',
+    fontSize: 18,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.subtitle1.fontSize,
+    },
+  },
   date: {
     color: theme.palette.grey[600],
     marginTop: 'auto',
@@ -98,11 +110,9 @@ const PostCard = ({
   href,
   withViewBtn,
   pdf,
-  isCampaign,
-  cpTitle,
-  cpDetail,
+  minHeight,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles({ minHeight })
   const { t, routed, language } = useI18next()
   const images = cover.map((item) => getImage(item))
   const isCampaignPage = useMatch(
@@ -129,19 +139,17 @@ const PostCard = ({
         {isCampaignPage ? (
           <Box className={classes.info}>
             <Box
+              className={classes.campaignPageTitle}
               mb={1}
               color='secondary.main'
-              fontSize='h6.fontSize'
               fontWeight='fontWeightBold'
             >
-              {isCampaign ? cpTitle : title}
+              {title}
             </Box>
             <Box
-              color='primary.main'
-              fontSize='body2.fontSize'
-              fontWeight='fontWeightMedium'
+              className={classnames(classes.title, classes.campaignPageDetail)}
             >
-              {isCampaign ? cpDetail : detail}
+              {detail}
             </Box>
           </Box>
         ) : (

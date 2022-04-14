@@ -100,6 +100,7 @@ const SectionTwo = () => {
       fontWeight='fontWeightMedium'
       color='grey.900'
       pb={isMobile ? 8 : 13.5}
+      whiteSpace='break-spaces'
     >
       <ImageTranslation
         filename='section_banner_02'
@@ -118,9 +119,7 @@ const SectionTwo = () => {
         position='relative'
       >
         <Box fontSize={isMobile ? 16 : 18} maxWidth={580} mx='auto' px={2.5}>
-          <Box whiteSpace='break-spaces'>
-            {t('cp_v2.ngs_advantage.paragraphs.0')}
-          </Box>
+          <Box>{t('cp_v2.ngs_advantage.paragraphs.0')}</Box>
           <Box
             fontWeight={900}
             fontSize='h4.fontSize'
@@ -160,17 +159,11 @@ const SectionTwo = () => {
           textAlign='center'
           color='prophecyPrimary.main'
           mb={4}
-          whiteSpace='break-spaces'
         >
-          Take2 Prophecy™
-          {isMobile && <br />}
+          Take2 Prophecy™ {isMobile && <br />}
           {t('cp_v2.ngs_advantage.paragraphs.3')}
         </Box>
-        <Box
-          whiteSpace='break-spaces'
-          textAlign={isMobile ? 'left' : 'center'}
-          mb={4}
-        >
+        <Box textAlign={isMobile ? 'left' : 'center'} mb={4}>
           {t('cp_v2.ngs_advantage.paragraphs.4')}
         </Box>
         <Box
@@ -179,19 +172,6 @@ const SectionTwo = () => {
           margin={isMobile ? '20px 10px' : '40px auto'}
         >
           <ImageTranslation filename='table' alt='table'></ImageTranslation>
-          {/* {isMobile ? (
-            <StaticImage
-              className={classes.img}
-              src='../../images/table_mobile.png'
-              alt='empty'
-            ></StaticImage>
-          ) : (
-            <StaticImage
-              className={classes.img}
-              src='../../images/table.png'
-              alt='empty'
-            ></StaticImage>
-          )} */}
         </Box>
         <Box
           className='gsap-fade-in-5'
@@ -295,18 +275,21 @@ const SectionTwo = () => {
             variant='contained'
             color='secondary'
             target='_blank'
+            id='ECP_Credibility_EH'
           >
             {t('common.book_now')}
           </Button>
           <Box
             width='100%'
+            target='_blank'
             component={Link}
-            to='/products-and-services/take2-extra-care'
+            to='/service-location/'
           >
             <Button
               className={classes.outlineButton}
               fullWidth
               variant='outlined'
+              id='ECP_Credibility_Location'
             >
               {t('cp_v2.common.view_service_location')}
             </Button>

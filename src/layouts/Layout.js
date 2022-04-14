@@ -33,13 +33,18 @@ const Layout = ({ children }) => {
   const isCampaign = useMatch(
     `${routed ? `/${language}` : ''}/whats-new/campaign`
   )
+
   const handleChangeHeroTheme = (theme) => {
+    console.log('ok')
     return setHeroTheme(theme)
   }
 
   return (
     <HeroThemeContext.Provider
-      value={{ theme: heroTheme, toggleTheme: handleChangeHeroTheme }}
+      value={{
+        theme: heroTheme,
+        toggleTheme: handleChangeHeroTheme,
+      }}
     >
       <Seo></Seo>
       <main id='main' className={classes.root}>

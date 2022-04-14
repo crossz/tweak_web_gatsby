@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useMemo } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import { Box, Container } from '@material-ui/core'
 import Header from './Components/Header'
 import Sections from './Components/Sections'
@@ -45,10 +45,6 @@ const Page = ({ storyNodes, healthTipsNodes, imagesTranslation }) => {
 
     return () => ScrollTrigger.kill()
   }, [])
-
-  // const bannerImages = useMemo(()=>{
-  //   const images = imagesTranslation?.filter(image =>image.name )
-  // })
 
   return (
     <ImagesTranslationContext.Provider value={{ images: imagesTranslation }}>
