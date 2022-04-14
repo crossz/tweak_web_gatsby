@@ -160,8 +160,7 @@ const SectionTwo = () => {
           color='prophecyPrimary.main'
           mb={4}
         >
-          Take2 Prophecy™
-          {isMobile && <br />}
+          Take2 Prophecy™ {isMobile && <br />}
           {t('cp_v2.ngs_advantage.paragraphs.3')}
         </Box>
         <Box textAlign={isMobile ? 'left' : 'center'} mb={4}>
