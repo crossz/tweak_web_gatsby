@@ -58,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostWrapper = ({ nodes }) => {
+const PostWrapper = ({ nodes, name }) => {
+  console.log('name', name)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
@@ -80,7 +81,7 @@ const PostWrapper = ({ nodes }) => {
           {nodes?.map((node, index) => {
             return (
               <SwiperSlide key={index}>
-                <Box id={'ECP_Article_' + (index + 1)}>
+                <Box id={'ECP_' + name + '_' + (index + 1)}>
                   <PostCard
                     key={node.id}
                     slug={node.fields.slug}
@@ -109,7 +110,7 @@ const PostWrapper = ({ nodes }) => {
               classes={{
                 item: classes.imageListItem,
               }}
-              id={'ECP_Article_' + (index + 1)}
+              id={'ECP_' + name + '_' + (index + 1)}
             >
               <PostCard
                 slug={node.fields.slug}

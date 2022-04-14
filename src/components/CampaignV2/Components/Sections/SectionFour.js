@@ -59,6 +59,7 @@ const SectionFour = ({ storyNodes, healthTipsNodes }) => {
         <Box className='gsap-fade-in-8'>
           <PostWrapper
             nodes={storyNodes}
+            name={'Story'}
             morePath='/whats-new/promotions/'
           ></PostWrapper>
         </Box>
@@ -73,6 +74,7 @@ const SectionFour = ({ storyNodes, healthTipsNodes }) => {
         <Box className='gsap-fade-in-9'>
           <PostWrapper
             nodes={healthTipsNodes}
+            name={'Article'}
             morePath='/whats-new/health-tips/'
           ></PostWrapper>
         </Box>
