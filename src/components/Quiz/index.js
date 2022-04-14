@@ -32,7 +32,7 @@ import {
   CancelButton,
   EMenuItem,
 } from '@themes/components/ETextField'
-import { AGE_OPTIONS, QUIZ, GENDER_OPTIONS } from '@utils/constant'
+import { AGE_OPTIONS, QUIZ, GENDER_OPTIONS, T_AND_C } from '@utils/constant'
 import { padStartNum } from '@utils'
 import FlagIcon from '@images/icons/flag.svg'
 import BackIcon from '@images/icons/back.svg'
@@ -825,14 +825,18 @@ const Quiz = () => {
                                     的網站於take2health.net之網站
                                     <Link
                                       className={classes.link}
-                                      to='/terms-and-conditions/privacy-policy/'
+                                      to={T_AND_C.PRIVACY_POLICY.url}
                                       underline='always'
                                     >
                                       私隱政策
                                     </Link>
                                     <Link
                                       className={classes.link}
-                                      to='/terms-and-conditions/personal-information-collection-statement/'
+                                      to={
+                                        T_AND_C
+                                          .PERSONAL_INFORMATION_COLLECTION_STATEMENT
+                                          .url
+                                      }
                                       underline='always'
                                     >
                                       個人資料收集聲明

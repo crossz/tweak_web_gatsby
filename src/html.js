@@ -174,10 +174,10 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
       </body>
-      <footer>
-        {/* GetButton.io widget  */}
+      {/* <footer> */}
+      {/* GetButton.io widget  */}
 
-        <script
+      {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             (function () {
@@ -198,9 +198,9 @@ export default function HTML(props) {
             })();      
             `,
           }}
-        />
-        {/* /GetButton.io widget */}
-      </footer>
+        /> */}
+      {/* /GetButton.io widget */}
+      {/* </footer> */}
     </html>
   )
 }

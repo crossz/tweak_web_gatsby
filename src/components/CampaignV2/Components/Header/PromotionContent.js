@@ -93,12 +93,9 @@ const PromotionContent = ({ whiteBg }) => {
           </Box>
         </Box>
         <Box overflow='hidden' alignItems='center' display='flex'>
-          <Box
-            fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
-            flexShrink={0}
-          >
-            {t('cp_v2.common.enter')}
-          </Box>
+          <Typography component='div' flexShrink={0}>
+            {t('cp_v2.promotion.enter')}
+          </Typography>
           <CopyToClipboard text={PROMOTION_CODE} onCopy={handleCopy}>
             <Box
               fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
@@ -120,7 +117,7 @@ const PromotionContent = ({ whiteBg }) => {
           </CopyToClipboard>
           <Typography component='div' noWrap>
             {t('cp_v2.promotion.price')}
-            <Box
+            {/* <Box
               fontWeight='fontWeightLight'
               fontSize='body2.fontSize'
               component='span'
@@ -128,7 +125,7 @@ const PromotionContent = ({ whiteBg }) => {
               mt={0.5}
             >
               (*{t('cp_v2.promotion.tip')})
-            </Box>
+            </Box> */}
           </Typography>
         </Box>
       </Box>
@@ -138,6 +135,9 @@ const PromotionContent = ({ whiteBg }) => {
           size='small'
           variant='contained'
           color='secondary'
+          id='ECP_Stickybar_EH'
+          href={process.env.GATSBY_SITE_URL}
+          target='_blank'
         >
           {t('common.book_now')}
         </Button>

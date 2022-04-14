@@ -27,6 +27,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import GoToTop from './GoToTop'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import LanguageButton from '../LanguageButton'
+import { T_AND_C } from '../../utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -175,9 +176,9 @@ const Footer = () => {
       </Box>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/privacy-policy/'
+        to={T_AND_C.PRIVACY_POLICY.url}
       >
-        {t('t_and_c.privacy_policy')}
+        {t(T_AND_C.PRIVACY_POLICY.label)}
       </Link>
       {/* <Link className={classnames(classes.link, classes.copyRightLink)} to='/'>
         服務條款
@@ -190,15 +191,15 @@ const Footer = () => {
       </Link> */}
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/website-terms-of-use/'
+        to={T_AND_C.WEBSITE_TERMS_OF_USE.url}
       >
-        {t('t_and_c.website_trems_of_use')}
+        {t(T_AND_C.WEBSITE_TERMS_OF_USE.label)}
       </Link>
       <Link
         className={classnames(classes.link, classes.copyRightLink)}
-        to='/terms-and-conditions/personal-information-collection-statement/'
+        to={T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}
       >
-        {t('t_and_c.personal_information_collection_statement')}
+        {t(T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.label)}
       </Link>
       <LanguageButton
         className={classnames(classes.languageBtn, classes.copyRightLink)}

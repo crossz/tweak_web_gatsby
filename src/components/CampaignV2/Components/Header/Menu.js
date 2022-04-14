@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  headerWrapper: {
+    backgroundColor: alpha(theme.palette.prophecyPrimary.main, 0.9),
+  },
   icon: {
     width: theme.spacing(3),
     height: theme.spacing(3),
@@ -43,6 +46,12 @@ const useStyles = makeStyles((theme) => ({
   isDark: {
     '& rect': {
       fill: theme.palette.primary.main,
+    },
+  },
+  listWrapper: {
+    maxWidth: 405,
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 'unset',
     },
   },
   listItem: {
@@ -71,12 +80,36 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const LIST = [
-  { label: 'cp_v2.menu.list.0', id: 'gsap-scroll-to-section-one' },
-  { label: 'cp_v2.menu.list.1', id: 'gsap-scroll-to-section-two' },
-  { label: 'cp_v2.menu.list.2', id: 'gsap-scroll-to-section-three' },
-  { label: 'cp_v2.menu.list.3', id: 'gsap-scroll-to-section-four' },
-  { label: 'cp_v2.menu.list.4', id: 'gsap-scroll-to-section-five' },
-  { label: 'cp_v2.menu.list.5', id: 'gsap-scroll-to-contact-us' },
+  {
+    label: 'cp_v2.menu.list.0',
+    id: 'gsap-scroll-to-section-one',
+    countNode: 'ECP_Menubar_Section1',
+  },
+  {
+    label: 'cp_v2.menu.list.1',
+    id: 'gsap-scroll-to-section-two',
+    countNode: 'ECP_Menubar_Section2',
+  },
+  {
+    label: 'cp_v2.menu.list.2',
+    id: 'gsap-scroll-to-section-three',
+    countNode: 'ECP_Menubar_Section3',
+  },
+  {
+    label: 'cp_v2.menu.list.3',
+    id: 'gsap-scroll-to-section-four',
+    countNode: 'ECP_Menubar_Section4',
+  },
+  {
+    label: 'cp_v2.menu.list.4',
+    id: 'gsap-scroll-to-section-five',
+    countNode: 'ECP_Menubar_Section5',
+  },
+  {
+    label: 'cp_v2.menu.list.5',
+    id: 'gsap-scroll-to-contact-us',
+    countNode: 'ECP_Menubar_Section6',
+  },
 ]
 
 export default function Menu(props) {
@@ -85,6 +118,7 @@ export default function Menu(props) {
   const [state, setState] = React.useState(false)
 
   const toggleDrawer = (open) => (event) => {
+    console.log('toggleDrawer ', toggleDrawer)
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
@@ -96,9 +130,12 @@ export default function Menu(props) {
   }
 
   const handleScroll = (e) => {
-    toggleDrawer(false)
     const { id } = e.currentTarget.dataset
-    scrollTo(`#${id}`, 'start')
+
+    setState(false)
+    setTimeout(() => {
+      scrollTo(`#${id}`, 'start')
+    }, 0)
   }
 
   return (
@@ -117,21 +154,25 @@ export default function Menu(props) {
         onClose={toggleDrawer(false)}
       >
         <Box
+          className={classes.headerWrapper}
           justifyContent='flex-end'
           alignItems='center'
           display='flex'
           height={84}
-          mx={3.5}
+          px={3.5}
+          position='sticky'
+          top={0}
+          zIndex={1}
         >
           <IconButton aria-label='close button' onClick={toggleDrawer(false)}>
             <CloseIcon className={classes.closeIcon}></CloseIcon>
           </IconButton>
         </Box>
         <Box
+          className={classes.listWrapper}
           color='primary.contrastText'
           fontWeight='fontWeightMedium'
           fontSize={18}
-          minWidth={405}
           mx={5}
         >
           <List disablePadding>
@@ -140,11 +181,10 @@ export default function Menu(props) {
                 <Divider className={classes.divider}></Divider>
                 <ListItem
                   className={classes.listItem}
-                  role='presentation'
                   onClick={handleScroll}
-                  onKeyDown={toggleDrawer(false)}
                   disableGutters
                   data-id={item.id}
+                  id={item.countNode}
                 >
                   <Box whiteSpace='break-spaces'>{t(item.label)}</Box>
                 </ListItem>
@@ -153,8 +193,12 @@ export default function Menu(props) {
           </List>
         </Box>
         <Box mx={5} mb={5} mt='auto' alignItems='center' display='flex'>
-          <Link to='/'>
-            <Button className={classes.button} variant='outlined'>
+          <Link target='_blank' to='/'>
+            <Button
+              className={classes.button}
+              variant='outlined'
+              id='ECP_Menubar_CorpSite'
+            >
               {t('cp_v2.menu.office_website')}
             </Button>
           </Link>
@@ -172,6 +216,7 @@ export default function Menu(props) {
                 to={originalPath}
                 language={language.lang}
                 component={Link}
+                id={language.id}
               >
                 {language.shortLabel}
               </Box>

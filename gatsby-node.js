@@ -26,7 +26,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         }`
         break
       case 'health-tips':
-        slug = node.frontmatter.isCampaign
+        slug = node.frontmatter.postType
           ? `/whats-new/campaign/${relativeDirectory}/${
               node.frontmatter.slug || node.frontmatter.cpTitle?.trim() || name
             }`
@@ -40,7 +40,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
         break
-      case 'stories':
+      case 'campaign-page-posts':
         slug = `/whats-new/campaign/${relativeDirectory}/${
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
