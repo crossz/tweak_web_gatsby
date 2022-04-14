@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Map = ({ showMap, className }) => {
+const Map = ({ showMap, className, trackCodeV2 }) => {
   const classes = useStyles()
   const { t } = useI18next()
   const [viewType, setViewType] = useState('list')
@@ -243,7 +243,7 @@ const Map = ({ showMap, className }) => {
       {showMap ? (
         location?.length > 0 && (
           <ESelect
-            id='district-type-select'
+            id={trackCodeV2 ? 'ECP_Region' : 'district-type-select'}
             name='district'
             value={curArea}
             onChange={handleArea}

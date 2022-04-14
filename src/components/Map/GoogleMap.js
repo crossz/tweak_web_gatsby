@@ -193,6 +193,7 @@ const InfoWindow = (props) => {
         color='secondary'
         fullWidth={Boolean(props.showMap)}
         size={props.showMap ? 'small' : 'medium'}
+        id='ECP_Map_EH'
       >
         {t('common.book_now')}
       </Button>
@@ -204,6 +205,7 @@ const InfoWindow = (props) => {
               size={props.showMap ? 'small' : 'medium'}
               variant='text'
               color='primary'
+              id='ECP_Map_Location'
             >
               {t('service_location.more')}
             </Button>

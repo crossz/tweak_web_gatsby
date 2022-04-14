@@ -1,12 +1,36 @@
 import React from 'react'
-import { Box } from '@material-ui/core/'
-import PostSwiper from '@components/Homepage/PostSwiper'
+import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core/'
+import PostWrapper from '../PostWrapper'
 import Button from '@material-ui/core/Button'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import ImageTranslation from '../ImageTranslation'
+import classnames from 'classnames'
+import Link from '@components/Link'
+
+const useStyles = makeStyles((theme) => ({
+  outlineButton: {
+    whiteSpace: 'nowrap',
+    color: theme.palette.prophecyPrimary.main,
+    borderColor: theme.palette.prophecyPrimary.main,
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: 0,
+      marginTop: theme.spacing(1.5),
+    },
+  },
+  postWrapperTitle: {
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(-4),
+      paddingRight: theme.spacing(10),
+    },
+  },
+}))
 
 const SectionFour = ({ storyNodes, healthTipsNodes }) => {
+  const classes = useStyles()
   const { t } = useI18next()
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
     <>
@@ -24,34 +48,70 @@ const SectionFour = ({ storyNodes, healthTipsNodes }) => {
         pb={15}
         px={2.5}
       >
-        <Box className='gsap-fade-in-8-trigger gsap-fade-in-8' mb={-2}>
+        <Box
+          className={classnames(
+            classes.postWrapperTitle,
+            'gsap-fade-in-8-trigger gsap-fade-in-8'
+          )}
+        >
           {t('cp_v2.news.paragraphs.0')}
         </Box>
-        <Box className='gsap-fade-in-8' mr={-2.5}>
-          <PostSwiper
+        <Box className='gsap-fade-in-8'>
+          <PostWrapper
             nodes={storyNodes}
+            name={'Story'}
             morePath='/whats-new/promotions/'
-          ></PostSwiper>
+          ></PostWrapper>
         </Box>
-        <Box className='gsap-fade-in-9-trigger gsap-fade-in-9' mb={-2}>
+        <Box
+          className={classnames(
+            classes.postWrapperTitle,
+            'gsap-fade-in-9-trigger gsap-fade-in-9'
+          )}
+        >
           {t('cp_v2.news.paragraphs.1')}
         </Box>
-        <Box className='gsap-fade-in-9' mr={-2.5}>
-          <PostSwiper
+        <Box className='gsap-fade-in-9'>
+          <PostWrapper
             nodes={healthTipsNodes}
+            name={'Article'}
             morePath='/whats-new/health-tips/'
-            noMornBtn
-          ></PostSwiper>
+          ></PostWrapper>
         </Box>
-        <Box className='gsap-fade-in-9' mt={8} mr={1.25} textAlign='center'>
+        <Box
+          className='gsap-fade-in-9'
+          mt={1.25}
+          flexWrap={isMobile ? 'wrap' : 'nowrap'}
+          display='flex'
+          width='100%'
+          mx='auto'
+          maxWidth={isMobile ? 'auto' : 480}
+        >
           <Button
+            fullWidth
             href={process.env.GATSBY_SITE_URL}
             variant='contained'
             color='secondary'
             target='_blank'
+            id='ECP_Article_EH'
           >
             {t('common.book_now')}
           </Button>
+          <Box
+            width='100%'
+            target='_blank'
+            component={Link}
+            to='/service-location/'
+          >
+            <Button
+              className={classes.outlineButton}
+              fullWidth
+              variant='outlined'
+              id='ECP_Article_Location'
+            >
+              {t('cp_v2.common.view_service_location')}
+            </Button>
+          </Box>
         </Box>
       </Box>
     </>

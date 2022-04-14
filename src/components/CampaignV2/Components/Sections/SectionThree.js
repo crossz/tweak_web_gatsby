@@ -161,11 +161,10 @@ const Steps = () => {
             color='primary.contrastText'
             mb={3}
           >
-            Take2 Prophecy™
-            早期鼻咽癌篩查服務廣受各大型醫療機構採用，查看篩查服務點：
+            {t('cp_v2.ngs_progress.paragraphs.2')}
           </Box>
           <Box borderRadius={isMobile ? 0 : 16} overflow='hidden'>
-            <Map showMap className={classes.map}></Map>
+            <Map showMap className={classes.map} trackCodeV2></Map>
           </Box>
         </Box>
       </Box>

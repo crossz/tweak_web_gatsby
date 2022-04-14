@@ -22,6 +22,7 @@ import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
 import classnames from 'classnames'
+// import ImageTranslation from '@components/ImageTranslation'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -42,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     backgroundColor: '#BADCF2',
+    // background: `rgb(127,177,210)`,
+    // background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
   },
   containImg: {
     maxHeight: '100%',
@@ -178,7 +181,7 @@ const Banner = ({ nodes }) => {
   const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-  const context = useContext(HeroThemeContext)
+  const { toggleTheme } = useContext(HeroThemeContext)
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -190,11 +193,8 @@ const Banner = ({ nodes }) => {
           className={classes.swiperWrapper}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
-            return (
-              context?.toggleTheme &&
-              context?.toggleTheme(
-                nodes[swiper.realIndex - 1]?.frontmatter?.theme
-              )
+            return toggleTheme?.(
+              nodes[swiper.realIndex - 1]?.frontmatter?.theme
             )
           }}
           initialSlide={0}
@@ -214,24 +214,39 @@ const Banner = ({ nodes }) => {
                     classes.containImgWrapper
                   )}
                 >
-                  {matches ? (
+                  {matches && (
                     <StaticImage
                       className={classes.containImg}
-                      src='../../assets/images/mobile_hero_04.jpg'
-                      alt='hero 04'
+                      src='../../assets/images/promo_banner_mobile.jpg'
+                      alt='promo banner mobile'
                       objectFit='contain'
                     ></StaticImage>
-                  ) : (
+                  )}
+                  {!matches && (
                     <StaticImage
                       className={classes.containImg}
-                      src='../../assets/images/hero_04.jpg'
-                      alt='hero 04'
+                      src='../../assets/images/promo_banner.jpg'
+                      alt='promo banner'
                       objectFit='contain'
                     ></StaticImage>
                   )}
                 </Box>
               </Box>
             </Link>
+            {/* <Box className={classes.heroBannerWrapper}>
+              <Box
+                className={classnames(
+                  classes.heroImgWrapper,
+                  classes.containImgWrapper
+                )}
+              >
+                <ImageTranslation
+                  filename='promo_banner'
+                  alt='promo banner'
+                  className={classes.containImg}
+                />
+              </Box>
+            </Box> */}
           </SwiperSlide>
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>

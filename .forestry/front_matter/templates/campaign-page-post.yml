@@ -1,0 +1,36 @@
+---
+label: Campaign Page Post
+hide_body: false
+fields:
+- name: postType
+  type: include
+  config: {}
+  template: post-type
+  label: Post Type
+- name: post
+  type: include
+  config: {}
+  template: promotions
+  label: Post
+pages:
+- content/campaign-page-posts/45-6-7-5.md
+- content/campaign-page-posts/7.md
+- content/campaign-page-posts/80.md
+- content/campaign-page-posts/cheung-tat-ming-hong-kong-actor-only-with-health-you-can-continue-to-pursue-everything-you-want..md
+- content/campaign-page-posts/copy.md
+- content/campaign-page-posts/for-finance-experts.md
+- content/campaign-page-posts/for-men.md
+- content/campaign-page-posts/for-technophiles.md
+- content/campaign-page-posts/for-women.md
+- content/campaign-page-posts/gigi-a-yoga-instructor-if-my-cancer-had-been-diagnosed-and-treated-earlier-my-road-in-fighting-against-npc-would-have-been-relatively-easier-and-less-painful..md
+- content/campaign-page-posts/gigi.md
+- content/campaign-page-posts/mr.chan-a-young-man-who-neither-smokes-nor-drinks-don-t-ignore-any-subtle-signs-and-symptoms-of-your-body..md
+- content/campaign-page-posts/女士都要知.md
+- content/campaign-page-posts/女士都要知道.md
+- content/campaign-page-posts/理財高手要知.md
+- content/campaign-page-posts/理財高手要知道.md
+- content/campaign-page-posts/男士们要知道.md
+- content/campaign-page-posts/男士們要知.md
+- content/campaign-page-posts/科技达人要知道.md
+- content/campaign-page-posts/科技達人要知.md
+- content/campaign-page-posts/香港著名演员-张达明-因为有了健康才可以继续工作-要什么有什么.md

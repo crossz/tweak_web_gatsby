@@ -8,6 +8,7 @@ import Link from '@components/Link'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { T_AND_C } from '../../utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,11 +94,11 @@ const Consult = () => {
               <Box className={classes.content}>
                 {t('homepage.sign_up.detail')}
                 <Link
-                  to='/terms-and-conditions'
+                  to={T_AND_C.TERMS_AND_CONDITIONS.url}
                   underline='always'
                   className={classes.greyLink}
                 >
-                  {t('t_and_c.terms_and_conditions')}
+                  {t(T_AND_C.TERMS_AND_CONDITIONS.label)}
                 </Link>
               </Box>
             </Typography>

@@ -143,11 +143,12 @@ const SectionOne = () => {
         <Box mt={isMobile ? 0 : 6} mb={isMobile ? 6 : 8}>
           <YouTube
             className={classes.video}
-            videoId='BACVA3es0NI'
+            videoId='wOPREMoVhys'
             opts={{
               width: '100%',
               height: isMobile ? 165 : 405,
             }}
+            id='ECP_Video_Play'
           />
           <Box
             textAlign={isMobile ? 'left' : 'center'}
@@ -329,6 +330,7 @@ const SectionOne = () => {
                 alignItems='center'
                 display='flex'
                 flexDirection='column'
+                textAlign='center'
               >
                 <Box width={isMobile ? 88 : 120}>{symptom.icon}</Box>
                 <Box mt={isMobile ? 1.5 : 2}>{t(symptom.label)} ?</Box>
@@ -356,18 +358,21 @@ const SectionOne = () => {
               color='secondary'
               href={process.env.GATSBY_SITE_URL}
               target='_blank'
+              id='ECP_Symptoms_EH'
             >
               {t('common.book_now')}
             </Button>
             <Box
               width='100%'
-              to='/products-and-services/take2-extra-care'
+              target='_blank'
+              to='/service-location/'
               component={Link}
             >
               <Button
                 className={classes.outlineButton}
                 fullWidth
                 variant='outlined'
+                id='ECP_Symptoms_Location'
               >
                 {t('cp_v2.common.view_service_location')}
               </Button>

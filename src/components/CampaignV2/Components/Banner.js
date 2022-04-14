@@ -44,6 +44,8 @@ const Banner = () => {
         href={process.env.GATSBY_SITE_URL}
         variant='contained'
         color='secondary'
+        id='ECP_Banner_EH'
+        target='_blank'
       >
         {t('common.book_now')}
       </Button>

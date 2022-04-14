@@ -35,11 +35,13 @@ const Footer = () => {
       icon: <PhoneIcon />,
       title: '(852) 3613 0533',
       href: `tel:${SERVICE_PHONE}`,
+      id: 'ECP_Footer_Telephone',
     },
     {
       icon: <MailIcon />,
       title: SERVICE_INFO_EMAIL,
       href: `mailto:${SERVICE_INFO_EMAIL}`,
+      id: 'ECP_Footer_Email',
     },
   ]
 
@@ -64,7 +66,13 @@ const Footer = () => {
         >
           {INFO_LIST.map((item, index) => (
             <Link to={item.href} target='_blank' key={index}>
-              <Box mr={5} mb={1.5} alignItems='center' display='flex'>
+              <Box
+                mr={5}
+                mb={1.5}
+                alignItems='center'
+                display='flex'
+                id={item.id}
+              >
                 <Box mr={1} className={classes.icon}>
                   {item.icon}
                 </Box>

@@ -74,6 +74,7 @@ theme = createTheme(theme, {
   overrides: {
     MuiButton: {
       root: {
+        whiteSpace: 'nowrap',
         borderRadius: 6,
         height: theme.spacing(7),
         padding: theme.spacing(2, 6),

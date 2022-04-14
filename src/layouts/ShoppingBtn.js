@@ -1,15 +1,33 @@
 import React from 'react'
-import { makeStyles, IconButton, Box } from '@material-ui/core'
+import { makeStyles, IconButton, Box, alpha } from '@material-ui/core'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
-import { PROMOTION_CODE } from '@utils/constant'
+import { PROMOTION_CODE, WHATS_APP_LINK } from '@utils/constant'
 import { Trans } from 'gatsby-plugin-react-i18next'
+import WhatsAppIcon from '@material-ui/icons/WhatsApp'
+import ETooltip from '@themes/components/ETooltip'
+import { useMatch } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
-  shopBtn: {
+  root: {
     position: 'fixed',
     zIndex: theme.zIndex.appBar,
     right: theme.spacing(3),
     bottom: theme.spacing(2.75),
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  whatsAppBtn: {
+    backgroundColor: theme.palette.success.main,
+    boxShadow: theme.shadows[4],
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.success.main, 0.9),
+    },
+    marginBottom: theme.spacing(1.5),
+  },
+  whatsAppIcon: {
+    color: theme.palette.primary.contrastText,
+  },
+  shopBtn: {
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[4],
     transition: `background-color ease 0.3s`,
@@ -36,22 +54,40 @@ const useStyles = makeStyles((theme) => ({
 
 const ShoppingBtn = () => {
   const classes = useStyles()
+  const isReHealthPlansPage = useMatch('/rehealth-prevaccination-plans')
+
   return (
-    <IconButton
-      className={classes.shopBtn}
-      href={process.env.GATSBY_SITE_URL}
-      target='_blank'
-      variant='contain'
-    >
-      <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
-      <Box className={classes.shopBtnTooltip}>
-        <Trans i18nKey='common.online_promotion_code'>
-          網上預約
-          <br />
-          優惠碼{{ PROMOTION_CODE }}
-        </Trans>
-      </Box>
-    </IconButton>
+    <Box className={classes.root}>
+      {!isReHealthPlansPage && (
+        <ETooltip placement='left' title='WhatsApp'>
+          <IconButton
+            className={classes.whatsAppBtn}
+            aria-label='whatsapp icon'
+            href={WHATS_APP_LINK}
+            target='_blank'
+            id='ECP_Sticky_Whatsapp'
+          >
+            <WhatsAppIcon className={classes.whatsAppIcon} />
+          </IconButton>
+        </ETooltip>
+      )}
+      <IconButton
+        className={classes.shopBtn}
+        href={process.env.GATSBY_SITE_URL}
+        target='_blank'
+        variant='contain'
+        id='ECP_Sticky_EH'
+      >
+        <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
+        <Box className={classes.shopBtnTooltip}>
+          <Trans i18nKey='common.online_promotion_code'>
+            網上預約
+            <br />
+            優惠碼{{ PROMOTION_CODE }}
+          </Trans>
+        </Box>
+      </IconButton>
+    </Box>
   )
 }
 
