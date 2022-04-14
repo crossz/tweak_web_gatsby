@@ -35,15 +35,15 @@
             "symptoms": {
                 "0": "Headache",
                 "1": "Tinnitus",
-                "2": "Nasal blockage",
-                "3": "Blood-stained nasal discharge",
-                "4": "Neck swelling",
-                "5": "Hoarse voice"
+                "2": "Nasal Blockage",
+                "3": "Blood-stained Nasal Discharge",
+                "4": "Neck Swelling",
+                "5": "Hoarse Voice"
             },
             "diseases": {
                 "0": "Nasopharyngeal Cancer",
                 "1": "Flu ",
-                "2": "Inflammatory illnesses"
+                "2": "Allergic Rhinitis"
             }
         },
         "ngs_advantage": {
