@@ -93,9 +93,9 @@ const PromotionContent = ({ whiteBg }) => {
           </Box>
         </Box>
         <Box overflow='hidden' alignItems='center' display='flex'>
-          <Typography component='div' flexShrink={0}>
+          <Box flexShrink={0} component='span'>
             {t('cp_v2.promotion.enter')}
-          </Typography>
+          </Box>
           <CopyToClipboard text={PROMOTION_CODE} onCopy={handleCopy}>
             <Box
               fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}

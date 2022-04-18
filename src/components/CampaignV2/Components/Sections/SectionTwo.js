@@ -231,7 +231,7 @@ const SectionTwo = () => {
                         display='flex'
                         mb={1}
                       >
-                        <Box width={24} height={24} mr={1}>
+                        <Box flexShrink={0} width={24} height={24} mr={1}>
                           <StaticImage
                             src='../../images/check.png'
                             alt='check'
