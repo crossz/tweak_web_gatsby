@@ -11,7 +11,7 @@ import {
   alpha,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import SymptomSwiper from './SymptomSwiper'
 import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
@@ -193,7 +193,9 @@ const SectionOne = () => {
                   textAlign={isMobile ? 'center' : 'left'}
                   fontWeight='fontWeightBold'
                 >
-                  {t(item.detail)}
+                  <Trans i18nKey={item.detail}>
+                    .<sup>2</sup>
+                  </Trans>
                 </Box>
               </Box>
             </ImageListItem>

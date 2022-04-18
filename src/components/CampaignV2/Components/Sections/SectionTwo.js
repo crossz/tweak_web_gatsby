@@ -149,7 +149,12 @@ const SectionTwo = () => {
               </Box>
             ))}
           </Box>
-          <Box mt={1}>{t('cp_v2.ngs_advantage.paragraphs.2')}</Box>
+          <Box mt={1}>
+            <Trans i18nKey='cp_v2.ngs_advantage.paragraphs.2'>
+              .<sup>1</sup>
+            </Trans>
+            {/* {t('cp_v2.ngs_advantage.paragraphs.2')} */}
+          </Box>
         </Box>
       </Box>
       <Box maxWidth={988} mx='auto' px={2.5}>
@@ -164,7 +169,10 @@ const SectionTwo = () => {
           {t('cp_v2.ngs_advantage.paragraphs.3')}
         </Box>
         <Box textAlign={isMobile ? 'left' : 'center'} mb={4}>
-          {t('cp_v2.ngs_advantage.paragraphs.4')}
+          <Trans i18nKey='cp_v2.ngs_advantage.paragraphs.4'>
+            .<sup>16</sup>.
+          </Trans>
+          {/* {t('cp_v2.ngs_advantage.paragraphs.4')} */}
         </Box>
         <Box
           className='gsap-fade-in-5-trigger gsap-fade-in-5'
@@ -242,7 +250,7 @@ const SectionTwo = () => {
                       {index === 1 ? (
                         <Box>
                           <Trans i18nKey={item.detail}>
-                            .
+                            .<sup>1</sup>.
                             <Box
                               fontSize={13}
                               component={isMobile ? 'span' : 'div'}
@@ -252,7 +260,11 @@ const SectionTwo = () => {
                           </Trans>
                         </Box>
                       ) : (
-                        <Box>{t(item.detail)}</Box>
+                        <Box>
+                          <Trans i18nKey={item.detail}>
+                            .<sup>1</sup>
+                          </Trans>
+                        </Box>
                       )}
                     </Box>
                   </Box>
