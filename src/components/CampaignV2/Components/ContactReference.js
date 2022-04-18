@@ -403,10 +403,10 @@ const ContactReference = () => {
                 <Box key={index}>{item.list}</Box>
               ))}
             </Box>
-            {/* <Box className={classes.reference} my={4}>
+            <Box className={classes.reference} my={4}>
               {t('cp_v2.contact_and_reference.paragraphs.5')}
             </Box>
-            {tAndC()} */}
+            {tAndC()}
           </Box>
         )}
       </Box>
