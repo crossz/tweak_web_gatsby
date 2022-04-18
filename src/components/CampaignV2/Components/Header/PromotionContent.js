@@ -117,7 +117,7 @@ const PromotionContent = ({ whiteBg }) => {
           </CopyToClipboard>
           <Typography component='div' noWrap>
             {t('cp_v2.promotion.price')}
-            {/* <Box
+            <Box
               fontWeight='fontWeightLight'
               fontSize='body2.fontSize'
               component='span'
@@ -125,7 +125,7 @@ const PromotionContent = ({ whiteBg }) => {
               mt={0.5}
             >
               (*{t('cp_v2.promotion.tip')})
-            </Box> */}
+            </Box>
           </Typography>
         </Box>
       </Box>
