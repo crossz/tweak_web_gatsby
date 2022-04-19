@@ -88,7 +88,13 @@ const PromotionContent = ({ whiteBg }) => {
           />
           <Box
             pl={0.5}
-            fontSize={isTable ? 'body2.fontSize' : 'h6.fontSize'}
+            fontSize={
+              isTable
+                ? isMobile
+                  ? 'body2.fontSize'
+                  : 'body1.fontSize'
+                : 'h6.fontSize'
+            }
             component='span'
             whiteSpace='nowrap'
           >
@@ -101,7 +107,11 @@ const PromotionContent = ({ whiteBg }) => {
           </Box>
         </Box>
         <Box overflow='hidden' alignItems='center' display='flex'>
-          <Box flexShrink={0} component='span'>
+          <Box
+            fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
+            flexShrink={0}
+            component='span'
+          >
             {t('cp_v2.promotion.enter')}
           </Box>
           <CopyToClipboard text={PROMOTION_CODE} onCopy={handleCopy}>
@@ -125,8 +135,8 @@ const PromotionContent = ({ whiteBg }) => {
           </CopyToClipboard>
           <Typography className={classes.priceText} component='div' noWrap>
             <Box
-              fontWeight='fontWeightMedium'
               fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
+              fontWeight='fontWeightMedium'
               component='span'
             >
               {t('cp_v2.promotion.price')}

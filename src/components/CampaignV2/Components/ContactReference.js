@@ -366,7 +366,7 @@ const ContactReference = () => {
                 </Box>
               </AccordionDetails>
             </Accordion>
-            {/* <Accordion
+            <Accordion
               classes={{
                 rounded: classes.rounded,
                 expanded: classes.expanded,
@@ -391,7 +391,7 @@ const ContactReference = () => {
               >
                 {tAndC()}
               </AccordionDetails>
-            </Accordion> */}
+            </Accordion>
           </Box>
         ) : (
           <Box>
