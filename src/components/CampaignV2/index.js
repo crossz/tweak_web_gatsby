@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import { Box, Container } from '@material-ui/core'
+import { makeStyles, createStyles, Box, Container } from '@material-ui/core'
 import Header from './Components/Header'
 import Sections from './Components/Sections'
 import ContactReference from './Components/ContactReference'
@@ -8,7 +8,18 @@ import Banner from './Components/Banner'
 import { gsap, ScrollTrigger } from '@components/CampaignV2/utils/initGsap'
 import { ImagesTranslationContext } from '@components/CampaignV2/utils/context'
 
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    root: {
+      '& sup': {
+        fontSize: theme.typography.caption.fontSize,
+      },
+    },
+  })
+)
+
 const Page = ({ storyNodes, healthTipsNodes, imagesTranslation }) => {
+  const classes = useStyles()
   const el = useRef()
   const q = gsap.utils.selector(el)
   const t = useRef()
@@ -49,6 +60,7 @@ const Page = ({ storyNodes, healthTipsNodes, imagesTranslation }) => {
   return (
     <ImagesTranslationContext.Provider value={{ images: imagesTranslation }}>
       <Box
+        className={classes.root}
         id='scroll-to-top'
         ref={(current) => {
           el.current = current
