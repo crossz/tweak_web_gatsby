@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     right: 0,
     top: 0,
+    [theme.breakpoints.down('xs')]: {
+      right: theme.spacing(-0.5),
+      top: theme.spacing(-0.5),
+    },
   },
 }))
 
