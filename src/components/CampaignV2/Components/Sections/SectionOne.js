@@ -233,7 +233,9 @@ const SectionOne = () => {
             fontWeight='fontWeightRegular'
             fontSize={isMobile ? 16 : 18}
           >
-            {t('cp_v2.ngs_characteristic.paragraphs.3')}
+            <Trans i18nKey='cp_v2.ngs_characteristic.paragraphs.3'>
+              .<sup>.</sup>.
+            </Trans>
           </Box>
         </Box>
       </Box>
