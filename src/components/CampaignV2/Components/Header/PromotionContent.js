@@ -67,6 +67,7 @@ const PromotionContent = ({ whiteBg }) => {
         flexWrap={isMobile ? 'wrap' : 'nowrap'}
         flexGrow={1}
         py={1}
+        overflow='hidden'
       >
         <Box
           width={isMobile ? '100%' : 'auto'}
