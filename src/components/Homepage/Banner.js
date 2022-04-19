@@ -22,7 +22,7 @@ import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
 import classnames from 'classnames'
-// import ImageTranslation from '@components/ImageTranslation'
+import ImageTranslation from '@components/ImageTranslation'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -39,12 +39,23 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 877,
     },
   },
+  imageButton: {
+    position: 'absolute',
+    width: '13.5vw',
+    height: '4vw',
+    transform: `translateY(20.4vw)`,
+    [theme.breakpoints.down('xs')]: {
+      width: '20.2%',
+      height: '4.8%',
+      transform: `translateY(860%)`,
+    },
+  },
   containImgWrapper: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#BADCF2',
-    // background: `rgb(127,177,210)`,
-    // background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
+    // backgroundColor: '#BADCF2',
+    background: `rgb(127,177,210)`,
+    background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
   },
   containImg: {
     maxHeight: '100%',
@@ -180,7 +191,7 @@ const Banner = ({ nodes }) => {
   const classes = useStyles({ isEn })
   const { tB } = useObjectTranslation()
   const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const { toggleTheme } = useContext(HeroThemeContext)
 
   return (
@@ -191,7 +202,7 @@ const Banner = ({ nodes }) => {
           navigation={nodes?.length > 1}
           pagination={{ clickable: true }}
           className={classes.swiperWrapper}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          // autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return toggleTheme?.(
               nodes[swiper.realIndex - 1]?.frontmatter?.theme
@@ -203,55 +214,43 @@ const Banner = ({ nodes }) => {
           watchSlidesVisibility={true}
         >
           <SwiperSlide>
-            <Link
-              underline='none'
-              to='/whats-new/promotions/consumption-voucher'
-            >
-              <Box className={classes.heroBannerWrapper}>
-                <Box
-                  className={classnames(
-                    classes.heroImgWrapper,
-                    classes.containImgWrapper
-                  )}
-                >
-                  {matches && (
-                    <StaticImage
-                      className={classes.containImg}
-                      src='../../assets/images/promo_banner_mobile.jpg'
-                      alt='promo banner mobile'
-                      objectFit='contain'
-                    ></StaticImage>
-                  )}
-                  {!matches && (
-                    <StaticImage
-                      className={classes.containImg}
-                      src='../../assets/images/promo_banner.jpg'
-                      alt='promo banner'
-                      objectFit='contain'
-                    ></StaticImage>
-                  )}
-                </Box>
-              </Box>
-            </Link>
-            {/* <Box className={classes.heroBannerWrapper}>
+            <Box className={classes.heroBannerWrapper}>
               <Box
                 className={classnames(
                   classes.heroImgWrapper,
                   classes.containImgWrapper
                 )}
+                position='relative'
               >
                 <ImageTranslation
                   filename='promo_banner'
                   alt='promo banner'
                   className={classes.containImg}
-                />
+                ></ImageTranslation>
+                <Box
+                  className={classes.imageButton}
+                  left={isMobile ? (isEn ? '26.4%' : '16.8%') : '7.4vw'}
+                  to='/whats-new/campaign/'
+                  target='_blank'
+                  component={Link}
+                >
+                  <Box />
+                </Box>
+                <Box
+                  className={classes.imageButton}
+                  left={isMobile ? (isEn ? '53.4%' : '43.8%') : '25.2vw'}
+                  to={process.env.GATSBY_SITE_URL}
+                  component={Link}
+                >
+                  <Box />
+                </Box>
               </Box>
-            </Box> */}
+            </Box>
           </SwiperSlide>
           {nodes?.map((node) => (
             <SwiperSlide key={node.id}>
               <Box className={classes.heroBannerWrapper}>
-                {matches ? (
+                {isMobile ? (
                   <GatsbyImage
                     className={classes.heroImgWrapper}
                     image={
@@ -275,7 +274,7 @@ const Banner = ({ nodes }) => {
                 <Container className={classes.wrapper} maxWidth='md'>
                   <Box className={classes.contentWrapper}>
                     <Typography
-                      variant={matches && isEn ? 'h3' : 'h2'}
+                      variant={isMobile && isEn ? 'h3' : 'h2'}
                       color='primary'
                       component='div'
                     >
@@ -283,7 +282,7 @@ const Banner = ({ nodes }) => {
                         className={classnames(classes.titleWrapper, {
                           [classes.isEnTitleWrapper]: isEn,
                         })}
-                        mb={matches ? 1 : 2}
+                        mb={isMobile ? 1 : 2}
                         lineHeight={1.5}
                         dangerouslySetInnerHTML={{
                           __html: tB('title', node?.frontmatter),
@@ -294,7 +293,7 @@ const Banner = ({ nodes }) => {
                           [classes.isEnDetailWrapper]: isEn,
                         })}
                         fontSize={
-                          matches ? 'caption.fontSize' : 'body1.fontSize'
+                          isMobile ? 'caption.fontSize' : 'body1.fontSize'
                         }
                         fontWeight='fontWeightLight'
                         lineHeight='1.5'
@@ -318,7 +317,7 @@ const Banner = ({ nodes }) => {
                             key={button.name}
                             item
                             xs={
-                              matches && !isEn
+                              isMobile && !isEn
                                 ? 12
                                 : node?.frontmatter?.buttons?.length === 1
                                 ? 12
@@ -331,7 +330,7 @@ const Banner = ({ nodes }) => {
                                 color={button.color}
                                 className={classes.btn}
                                 fullWidth={
-                                  !matches &&
+                                  !isMobile &&
                                   node?.frontmatter?.buttons?.length === 1
                                 }
                               >
