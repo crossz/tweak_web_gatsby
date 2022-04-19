@@ -16,7 +16,6 @@ import { toast } from 'react-toastify'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   icon: {
     flexShrink: 0,
     [theme.breakpoints.down('xs')]: {
@@ -46,12 +45,19 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(0, 0.5),
     },
   },
+  priceText: {
+    [theme.breakpoints.down('xs')]: {
+      lineHeight: 1,
+    },
+  },
 }))
 const PromotionContent = ({ whiteBg }) => {
   const classes = useStyles()
-  const { t } = useI18next()
+  const { t, language } = useI18next()
+  const isEn = language === 'en'
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+  const isTable = useMediaQuery(theme.breakpoints.down('sm'))
 
   const handleCopy = (e) => toast.success('優惠碼複製成功！')
 
@@ -60,13 +66,13 @@ const PromotionContent = ({ whiteBg }) => {
       <Box
         color={whiteBg ? 'prophecyPrimary.main' : 'secondary.contrastText'}
         justifyContent={isMobile ? 'flex-start' : 'center'}
-        display='flex'
+        display={isMobile ? 'block' : 'flex'}
         height='100%'
-        alignItems='center'
+        alignItems={isMobile ? 'flex-start' : 'center'}
         fontWeight='fontWeightBold'
         flexWrap={isMobile ? 'wrap' : 'nowrap'}
         flexGrow={1}
-        py={1}
+        pt={isMobile ? 0.25 : 0}
         overflow='hidden'
       >
         <Box
@@ -82,8 +88,9 @@ const PromotionContent = ({ whiteBg }) => {
           />
           <Box
             pl={0.5}
-            fontSize={isMobile ? 'body2.fontSize' : 'h6.fontSize'}
+            fontSize={isTable ? 'body2.fontSize' : 'h6.fontSize'}
             component='span'
+            whiteSpace='nowrap'
           >
             {t('cp_v2.promotion.title')}
             <Hidden xsDown>
@@ -116,19 +123,45 @@ const PromotionContent = ({ whiteBg }) => {
               {PROMOTION_CODE}
             </Box>
           </CopyToClipboard>
-          <Typography component='div' noWrap>
-            {t('cp_v2.promotion.price')}
+          <Typography className={classes.priceText} component='div' noWrap>
             <Box
-              fontWeight='fontWeightLight'
-              fontSize='body2.fontSize'
+              fontWeight='fontWeightMedium'
+              fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
               component='span'
-              pl={0.5}
-              mt={0.5}
             >
-              (*{t('cp_v2.promotion.tip')})
+              {t('cp_v2.promotion.price')}
             </Box>
+            {!isMobile &&
+              (isTable || isEn ? (
+                <Box
+                  fontWeight='fontWeightLight'
+                  fontSize='caption.fontSize'
+                  lineHeight={1}
+                >
+                  {t('cp_v2.promotion.tip')}
+                </Box>
+              ) : (
+                <Box
+                  fontWeight='fontWeightLight'
+                  fontSize='body2.fontSize'
+                  component='span'
+                  pl={0.5}
+                >
+                  {t('cp_v2.promotion.tip')}
+                </Box>
+              ))}
           </Typography>
         </Box>
+        {isMobile && (
+          <Box
+            fontWeight='fontWeightLight'
+            fontSize='caption.fontSize'
+            component='span'
+            lineHeight={1}
+          >
+            {t('cp_v2.promotion.tip')}
+          </Box>
+        )}
       </Box>
       {whiteBg && (
         <Button
