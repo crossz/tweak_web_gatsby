@@ -132,7 +132,7 @@ const PromotionContent = ({ whiteBg }) => {
               {t('cp_v2.promotion.price')}
             </Box>
             {!isMobile &&
-              (isTable || isEn ? (
+              (isTable || (isEn && whiteBg) ? (
                 <Box
                   fontWeight='fontWeightLight'
                   fontSize='caption.fontSize'
