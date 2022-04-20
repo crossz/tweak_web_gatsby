@@ -233,7 +233,7 @@ const Banner = ({ nodes }) => {
                   to='/whats-new/campaign/'
                   target='_blank'
                   component={Link}
-                  id=' RW_HP_Top_Banner_PVCampaign_KnowMore'
+                  id='RW_HP_Top_Banner_PVCampaign_KnowMore'
                 >
                   <Box />
                 </Box>
