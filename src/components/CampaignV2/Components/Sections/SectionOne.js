@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   video: {
     borderRadius: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
-      borderRadius: theme.spacing(0.5),
+      borderRadius: theme.spacing(0.75),
     },
   },
   outlineButton: {
@@ -140,7 +140,11 @@ const SectionOne = () => {
         pb={8}
         maxWidth={784}
       >
-        <Box mt={isMobile ? 0 : 6} mb={isMobile ? 6 : 8}>
+        <Box
+          position='relative'
+          mt={isMobile ? -5.25 : -8}
+          mb={isMobile ? 6 : 8}
+        >
           <YouTube
             className={classes.video}
             videoId='wOPREMoVhys'
