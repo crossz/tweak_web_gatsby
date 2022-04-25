@@ -17,7 +17,6 @@ import Button from '@material-ui/core/Button'
 import RightIcon from '@images/icons/right.svg'
 import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import classnames from 'classnames'
 SwiperCore.use([Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
@@ -110,7 +109,7 @@ const PostSwiper = ({ nodes, morePath = '/whats-new/', withViewBtn }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
-    progressRightWidth: matches ? 80 : 120,
+    progressRightWidth: matches ? 80 : 316,
     matches,
   })
   const [activeSlide, setActiveSlide] = useState(0)
