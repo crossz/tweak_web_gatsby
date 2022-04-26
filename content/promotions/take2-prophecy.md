@@ -9,8 +9,6 @@ pdf: ''
 href: ''
 slug: consumption-voucher
 languages:
-- en
-- zh-CN
 - zh-HK
 
 ---
