@@ -21,7 +21,7 @@ Starting from today, do not make any guesses about your health! By making good u
 
 **Choose an accurate and reliable test**
 
-Take2 Prophecy™ Test for NPC applies the Next Generation Sequencing (NGS) technology, which effectively enables NPC patients to be identified in their early-stage for timely treatment. The Test has >97% sensitivity1,2, with superior test performance than other similar tests!
+Take2 Prophecy™ Test for NPC applies the Next Generation Sequencing (NGS) technology, which effectively enables NPC patients to be identified in their early-stage for timely treatment. The Test has >97% sensitivity¹,², with superior test performance than other similar tests!
 
 ![](../images/table-capscreen-chi.png)
 
