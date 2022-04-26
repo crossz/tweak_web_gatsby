@@ -1,6 +1,6 @@
 ---
 cover:
-- "../images/consumption-voucher-website-banner-output_600-x-300.jpg"
+- "../images/consumption-voucher-website-banner-output-2-_600-x-300-min.jpg"
 date: 2022-04-07T00:00:00.000+08:00
 title: Take2 Prophecy™ Test for Nasopharyngeal Cancer | Consumption Voucher Flash
   Sale
@@ -10,12 +10,10 @@ pdf: ''
 href: ''
 slug: consumption-voucher
 languages:
-- zh-HK
+- en
 
 ---
-![](../images/compressed-promotion.jpg)
-
-Persistent headaches, tinnitus and nasal blockage may make you wonder if you have caught a cold or allergic rhinitis? However, these symptoms could be signs of early-stage nasopharyngeal cancer (NPC)! Therefore, patients can easily be misled and ignore the condition, and realising they need medical intervention only when the condition deteriorates. According to research, 80% of unscreened patients were diagnosed with late-stage NPC1, leading to adverse consequences.
+![](../images/consumption-voucher-website-banner-output-2-_1506-x-1125-min.jpg)Persistent headaches, tinnitus and nasal blockage may make you wonder if you have caught a cold or allergic rhinitis? However, these symptoms could be signs of early-stage nasopharyngeal cancer (NPC)! Therefore, patients can easily be misled and ignore the condition, and realising they need medical intervention only when the condition deteriorates. According to research, 80% of unscreened patients were diagnosed with late-stage NPC1, leading to adverse consequences.
 
 Starting from today, do not make any guesses about your health! By making good use of your consumption voucher, get tested with Take2 Prophecy™ Test for NPC in a meal time, you would no longer need to worry about it!
 
@@ -23,7 +21,7 @@ Starting from today, do not make any guesses about your health! By making good u
 
 Take2 Prophecy™ Test for NPC applies the Next Generation Sequencing (NGS) technology, which effectively enables NPC patients to be identified in their early-stage for timely treatment. The Test has >97% sensitivity¹ ², with superior test performance than other similar tests!
 
-![](../images/table-capscreen-chi.png)
+![](../images/table-capscreen.jpg)
 
 The higher the test sensitivity, the lower the chance of missing patients with NPC, which means the test is more reliable. Hence, the test sensitivity is an important indication.
 
