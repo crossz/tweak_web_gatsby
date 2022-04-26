@@ -18,7 +18,7 @@ languages:
 
 拣选准确可靠的测试
 
-Take2 Prophecy™ 早期鼻咽癌筛查采用高通量测序技术 (NGS: Next-generation Sequencing)，有效识别出未有明显病征的早期患者，助其及早开展治疗，且灵敏度>97%1,2，冠绝同类测试！
+Take2 Prophecy™ 早期鼻咽癌筛查采用高通量测序技术 (NGS: Next-generation Sequencing)，有效识别出未有明显病征的早期患者，助其及早开展治疗，且灵敏度>97%¹ ²，冠绝同类测试！
 
 ![](../images/table-schi.jpg)
 
