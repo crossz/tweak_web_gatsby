@@ -21,7 +21,7 @@ Starting from today, do not make any guesses about your health! By making good u
 
 **Choose an accurate and reliable test**
 
-Take2 Prophecy™ Test for NPC applies the Next Generation Sequencing (NGS) technology, which effectively enables NPC patients to be identified in their early-stage for timely treatment. The Test has >97% sensitivity¹,², with superior test performance than other similar tests!
+Take2 Prophecy™ Test for NPC applies the Next Generation Sequencing (NGS) technology, which effectively enables NPC patients to be identified in their early-stage for timely treatment. The Test has >97% sensitivity¹ ², with superior test performance than other similar tests!
 
 ![](../images/table-capscreen-chi.png)
 
@@ -52,7 +52,7 @@ Terms and Conditions apply.
 
 **“CV500” Promotion Code Promotion (the “Promotion”) Terms and Conditions**
 
-1\.	These terms  (“Terms”) apply to this Promotion offered by Take2 Health Limited (“we”, “us”, “our”). By participating in the Promotion, you agree to these terms. 
+1\.	These terms  (“Terms”) apply to this Promotion offered by Take2 Health Limited (“we”, “us”, “our”). By participating in the Promotion, you agree to these terms.
 
 2\.	You must read these terms along with
 
@@ -60,7 +60,7 @@ the Privacy Policy, Terms of Use, Personal Information Collection Statement on o
 
 other terms we may provide to you (“Other Terms”). These terms apply in addition to any such Other Terms.
 
-3\.	Promotion code  (“CV500”) is only applicable for purchasing any of our designated products or services in the Promotion on Take2 Health Platform ([https://take2health.net/health-platform/](https://take2health.net/health-platform/ "https://take2health.net/health-platform/")  ) . Using promotion code“CV500” in the purchase will entitle a \[DISCOUNT\]  on the said purchase.  
+3\.	Promotion code  (“CV500”) is only applicable for purchasing any of our designated products or services in the Promotion on Take2 Health Platform ([https://take2health.net/health-platform/](https://take2health.net/health-platform/ "https://take2health.net/health-platform/")  ) . Using promotion code“CV500” in the purchase will entitle a \[DISCOUNT\]  on the said purchase.
 
 4\.	The Promotion is subject to a quota and is available on a first-come-first-served basis while the quota lasts. The promotion period is from 7 April 2022 to 30 June 2022, both dates inclusive ("Promotion Period”).
 
@@ -72,7 +72,7 @@ b.	enter the designated promotion code in the field of “Add promotion code” 
 
 6\.	The purchasing date and time (all records shall reference GMT+08:00, Hong Kong Standard Time) of all Eligible Appointments are based on the time of receipt by our server. We will not be liable for any matter or loss in relation to submission delay, loss, and any information transmission error due to technical problems including but not limited to any computer or internet network issues.
 
-7\.	A successful payment procedure is ultimately determined by our absolute discretion based on financial institutions’ transaction records held by us (which are final and conclusive in case of any discrepancy). 
+7\.	A successful payment procedure is ultimately determined by our absolute discretion based on financial institutions’ transaction records held by us (which are final and conclusive in case of any discrepancy).
 
 8\.	Only one promotion code can be used in a single purchase.
 
@@ -82,7 +82,7 @@ b.	enter the designated promotion code in the field of “Add promotion code” 
 
 11\.	For the avoidance of doubt, this Promotion is applicable to the designated products or services specified by us and is not applicable to services and products made available and sold by third-party medical service and/or testing service providers.
 
-12\.	We reserve the rights at any time, without notice or reason and in our sole discretion, to: 
+12\.	We reserve the rights at any time, without notice or reason and in our sole discretion, to:
 
 a.	change, modify, suspend, or terminate the Promotion or these terms (including any offer and discount);
 
