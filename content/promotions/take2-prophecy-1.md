@@ -1,45 +1,45 @@
 ---
 cover:
-- "../images/consumption-voucher-website-banner-output_600-x-300.jpg"
+- "../images/600-x-300-s-chi.jpg"
 date: 2022-04-07T00:00:00.000+08:00
 title: Take2 Prophecy™ 早期鼻咽癌筛查｜消费券限时网上优惠
-detail: 並輸入優惠碼「CV500」，即可享優惠價$1,700 （原價：$2,200），優惠有效期由即日起至2022年 6月30日。
+detail: 并输入优惠码「CV500」，即可享优惠价$1,700（原价：$2,200），
 type: ''
 pdf: ''
 href: ''
 slug: consumption-voucher
 languages:
-- en
 - zh-CN
-- zh-HK
 
 ---
-![](../images/compressed-promotion.jpg)
+![](../images/4320-x-2631-s-chi1.jpg)
 
-出現持續偏頭痛、耳鳴、鼻塞，你以為只是感冒或鼻敏感？其實早期鼻咽癌徵狀與一般感冒、鼻敏感相似，故患者容易混淆和忽略，往往病徵持續或變得嚴重時，患者才驚覺自己需要求醫；根據研究，高達80%的患者在初診時已屬晚期¹，後果不堪設想。從今起，切勿再估估下！好好利用政府派發的消費券來進行鼻咽癌篩查，只要一個Lunch Time的時間，就能釋除一直以來的疑慮！
+出现持续偏头痛、耳鸣、鼻塞，你以为只是感冒或过敏性鼻炎？其实早期鼻咽癌征状跟普通感冒、过敏性鼻炎相似，故患者容易混淆和忽略，往往病征持续或变得严重时，患者才发觉需要求医；根据研究，多达80%的患者在初诊时已属晚期1，后果不堪设想。从今天起，不要再自己盲目猜测！好好利用消费券来进行鼻咽癌筛查，只要一顿午餐的时间，就能消除一直以来的疑虑！
 
-**揀選準確可靠的測試**
+拣选准确可靠的测试
 
-Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97%¹ ²，冠絕同類測試！
+Take2 Prophecy™ 早期鼻咽癌筛查采用高通量测序技术 (NGS: Next-generation Sequencing)，有效识别出未有明显病征的早期患者，助其及早开展治疗，且灵敏度>97%1,2，冠绝同类测试！
 
-![](../images/table-capscreen-chi.png)
+检测的灵敏度越高，代表越能将患病却未能发现的漏检概率减到最低，故拥有高灵敏度是检测的一个重要指标。此外，若检测的假阳性率高，则容易出现错误报告，令受测者承受不必要的心理负担，甚至是额外的医疗程序。
 
-測試的靈敏度愈高，代表愈能將「有病卻未能發現」的漏檢情況減到最低，故擁有高靈敏度的測試是其中一個重要指標。此外，若測試的假陽性率愈高，愈容易出現錯誤報告，令受測者承受不必要的心理負擔，更甚是額外的醫療程序。
+一頓午饭时间就能完成的癌症筛查
 
-**一個Lunch Time就能完成癌症篩查**
+Take2 Prophecy™ 早期鼻咽癌筛查凭借高通量医疗科技，打破大家过去对癌症筛查的传统观念，包括必须请假入医院、看专科医生、抽取身体组织、用上各种大型仪器等，让癌症筛查从此变得简单、方便；只须到附近诊所抽血，一顿午饭时间即能完成！
 
-Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破大家過去對「癌症篩查」的傳統觀念，包括必須請假入醫院、看專科醫生、抽取身體組織、用上各項大型儀器等，讓癌症篩查從此變得簡單、方便；只須到附近診所抽血，一個Lunch Time即能完成！
+立即把握机会，到以下网上平台预约Take2 Prophecy™ 早期鼻咽癌筛查，并输入优惠码「CV500」，即可享优惠价$1,700（原价：$2,200），优惠有效期由即日起至2022年6月30日。
 
-立即把握機會，到以下網上平台預約Take2 Prophecy™ 早期鼻咽癌篩查，並輸入優惠碼「CV500」，即可享優惠價$1,700 （原價：$2,200），優惠有效期由即日起至2022年 6月30日。
-
-立即預約：[https://bit.ly/3xPC2Po](https://bit.ly/3xPC2Po "https://bit.ly/3xPC2Po")  
+立即预约：[https://bit.ly/3xPC2Po](https://bit.ly/3xPC2Po "https://bit.ly/3xPC2Po")  
 了解更多：[https://bit.ly/396BlHn](https://bit.ly/396BlHn "https://bit.ly/396BlHn")
 
-優惠受條款及細則約束。
+优惠受条款及细则约束。
 
 ¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” _New England Journal of Medicine_, vol. 377, no. 6, 2017, pp. 513–22.
 
 ²Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” _Proceedings of the National Academy of Sciences,_ vol. 115, no. 22, 2018, pp. E5115–24.
+
+³Chang, Kai-Ping, et al. “Complementary Serum Test of Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early Antigen: A Possible Alternative for Primary Screening of Nasopharyngeal Carcinoma.” _Oral Oncology_, vol. 44, no.8. 2008, pp. 784–92.
+
+⁴Tay, Joshua K., et al.“Nasopharyngeal Carcinoma: Current Strategies and Future Directions.” _Current Otorhinolaryngology Reports_, vol. 2, no. 1,2013, pp. 1–7.su
 
 ***
 
