@@ -15,75 +15,87 @@ languages:
 ---
 ![](../images/compressed-promotion.jpg)
 
-出現持續偏頭痛、耳鳴、鼻塞，你以為只是感冒或鼻敏感？其實早期鼻咽癌徵狀與一般感冒、鼻敏感相似，故患者容易混淆和忽略，往往病徵持續或變得嚴重時，患者才驚覺自己需要求醫；根據研究，高達80%的患者在初診時已屬晚期¹，後果不堪設想。從今起，切勿再估估下！好好利用政府派發的消費券來進行鼻咽癌篩查，只要一個Lunch Time的時間，就能釋除一直以來的疑慮！
+Persistent headaches, tinnitus and nasal blockage may make you wonder if you have caught a cold or allergic rhinitis? However, these symptoms could be signs of early-stage nasopharyngeal cancer (NPC)! Therefore, patients can easily be misled and ignore the condition, and realising they need medical intervention only when the condition deteriorates. According to research, 80% of unscreened patients were diagnosed with late-stage NPC1, leading to adverse consequences.
 
-**揀選準確可靠的測試**
+Starting from today, do not make any guesses about your health! By making good use of your consumption voucher, get tested with Take2 Prophecy™ Test for NPC in a meal time, you would no longer need to worry about it!
 
-Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97%¹ ²，冠絕同類測試！
+**Choose an accurate and reliable test**
+
+Take2 Prophecy™ Test for NPC applies the Next Generation Sequencing (NGS) technology, which effectively enables NPC patients to be identified in their early-stage for timely treatment. The Test has >97% sensitivity1,2, with superior test performance than other similar tests!
 
 ![](../images/table-capscreen-chi.png)
 
-測試的靈敏度愈高，代表愈能將「有病卻未能發現」的漏檢情況減到最低，故擁有高靈敏度的測試是其中一個重要指標。此外，若測試的假陽性率愈高，愈容易出現錯誤報告，令受測者承受不必要的心理負擔，更甚是額外的醫療程序。
+The higher the test sensitivity, the lower the chance of missing patients with NPC, which means the test is more reliable. Hence, the test sensitivity is an important indication.
 
-**一個Lunch Time就能完成癌症篩查**
+On the other hand, the higher the false-positive rate, the more non-NPC individuals are reported as "diseased", which exposes healthy individuals to unnecessary mental burden and additional medical procedures.
 
-Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破大家過去對「癌症篩查」的傳統觀念，包括必須請假入醫院、看專科醫生、抽取身體組織、用上各項大型儀器等，讓癌症篩查從此變得簡單、方便；只須到附近診所抽血，一個Lunch Time即能完成！
+**Only takes a lunch hour to complete the cancer detection test**
 
-立即把握機會，到以下網上平台預約Take2 Prophecy™ 早期鼻咽癌篩查，並輸入優惠碼「CV500」，即可享優惠價$1,700 （原價：$2,200），優惠有效期由即日起至2022年 6月30日。
+Adopting the NGS technologies, Take2 Prophecy™ Test for NPC breaks the traditional concepts of “cancer detection test” that requests hospitalisation, taking day off from work, visiting a specialist and undergoing tissue biopsy. Instead, the early NPC detection test is simple and convenient. By taking a blood draw at your nearest clinic and spending only a lunch hour, you could have the test done right away!
 
-立即預約：[https://bit.ly/3xPC2Po](https://bit.ly/3xPC2Po "https://bit.ly/3xPC2Po")  
-了解更多：[https://bit.ly/396BlHn](https://bit.ly/396BlHn "https://bit.ly/396BlHn")
+From now till 30 June 2022, you could enjoy the flash deal at $1,700 (original price: $2,200) by applying the promo code “CV500” when making an appointment with Take2 Prophecy™ Test for NPC via the below online platform. So don’t miss this limited offer now!
 
-優惠受條款及細則約束。
+Make an appointment now：[https://bit.ly/3xPC2Po](https://bit.ly/3xPC2Po "https://bit.ly/3xPC2Po")  
+Learn more：[https://bit.ly/396BlHn](https://bit.ly/396BlHn "https://bit.ly/396BlHn")
+
+Terms and Conditions apply.
 
 ¹Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” _New England Journal of Medicine_, vol. 377, no. 6, 2017, pp. 513–22.
 
 ²Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” _Proceedings of the National Academy of Sciences,_ vol. 115, no. 22, 2018, pp. E5115–24.
 
+³Chang, Kai-Ping, et al. “Complementary Serum Test of Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early Antigen: A Possible Alternative for Primary Screening of Nasopharyngeal Carcinoma.” _Oral Oncology_, vol. 44, no.8. 2008, pp. 784–92.
+
+⁴Tay, Joshua K., et al.“Nasopharyngeal Carcinoma: Current Strategies and Future Directions.” _Current Otorhinolaryngology Reports_, vol. 2, no. 1,2013, pp. 1–7.
+
 ***
 
-**「CV500」優惠碼推廣（「推廣優惠」）條款及細則**：
+**“CV500” Promotion Code Promotion (the “Promotion”) Terms and Conditions**
 
-1\. 以下條款（「本條款」）適用於由得易健康有限公司（「我們」或「我們的」）所提供的推廣優惠。參加此推廣優惠，即表示你同意本條款。
+1\.	These terms  (“Terms”) apply to this Promotion offered by Take2 Health Limited (“we”, “us”, “our”). By participating in the Promotion, you agree to these terms. 
 
-2\. 你必須一併閱讀本條款、我們網站 take2health.net 的[私隱政策](https://take2health.net/terms-and-conditions/%E7%A7%81%E9%9A%B1%E6%94%BF%E7%AD%96)、[網站使用條款](https://take2health.net/terms-and-conditions/%E7%B6%B2%E7%AB%99%E4%BD%BF%E7%94%A8%E6%A2%9D%E6%AC%BE)、[個人資料收集聲明](https://take2health.net/terms-and-conditions/%E5%80%8B%E4%BA%BA%E8%B3%87%E6%96%99%E6%94%B6%E9%9B%86%E8%81%B2%E6%98%8E)、[得易健康服務平台 《私隱政策》](https://take2health.net/health-platform/agreement/2)、[得易健康服務平台條款](https://take2health.net/health-platform/agreement/3)、[得易健康服務平台《個人資料收集聲明》](https://take2health.net/health-platform/agreement/1)，以及我們可能向你提供的任何其他條款（「其他條款」）。除本條款外，任何其他條款亦一併適用。
+2\.	You must read these terms along with
 
-3\. 優惠碼「CV500」只適用於在得易健康服務平台（[**https://take2health.net/health-platform/**](https://take2health.net/health-platform/ "https://take2health.net/health-platform/")）上購買我們於推廣活動中指定的產品或服務。在購買中使用優惠碼「CV500」將可在該購買中獲得港幣五佰元正折扣。
+the Privacy Policy, Terms of Use, Personal Information Collection Statement on our Website (“Website”: take2health.net), Take2 Health Platform Privacy Policy, Take2 Health Platform Terms and Conditions, Take2 Health Platform Personal Information Collection Statement, and any
 
-4\. 優惠名額有限，先到先得，額滿即止。優惠推廣期由2022年4月7日起至2022年6月30日，包括首尾兩日（「推廣期」）。
+other terms we may provide to you (“Other Terms”). These terms apply in addition to any such Other Terms.
 
-5\. 要參加本推廣優惠，你必須：
+3\.	Promotion code  (“CV500”) is only applicable for purchasing any of our designated products or services in the Promotion on Take2 Health Platform ([https://take2health.net/health-platform/](https://take2health.net/health-platform/ "https://take2health.net/health-platform/")  ) . Using promotion code“CV500” in the purchase will entitle a \[DISCOUNT\]  on the said purchase.  
 
-a. 於推廣期內，透過得易健康服務平台[https://take2health.net/health-platform/](https://take2health.net/health-platform/ "https://take2health.net/health-platform/") 購買此推廣活動中指定的產品或服務，及成功完成付款（「合資格預約」）。有關成功完成付款的定義，請參閱第 7 條。
+4\.	The Promotion is subject to a quota and is available on a first-come-first-served basis while the quota lasts. The promotion period is from 7 April 2022 to 30 June 2022, both dates inclusive ("Promotion Period”).
 
-b. 於網上預約過程中「添加促銷碼」一欄中輸入正確的優惠碼，付款過後恕不能後補優惠碼以享用推廣優惠。
+5\.	To participate in the Promotion, you must:
 
-6\. 所有合資格預約的日期及時間，均以香港時間 (GMT+08:00) 計算，並以我們的伺服器所獲得之數據為準。任何因電腦、網路等技術問題而引致用戶所遞交的資料有遲延、遺失、錯誤、無法辨識等情況，我們概不負責。
+a.	purchase the designated products or services specified in this Promotion, and complete the payment procedure successfully (“Eligible Appointment”) on the Take2 Health Platform [https://take2health.net/health-platform/](https://take2health.net/health-platform/ "https://take2health.net/health-platform/") within the Promotion Period. (Refer to Clause 7 for the definition of the successful payment procedure.)
 
-7\. 成功完成付款是根據我們所持有的金融機構交易紀錄及按其絕對酌情權作出最終決定（如有任何差異，以我們持有的金融機構交易紀錄為準）。
+b.	enter the designated promotion code in the field of “Add promotion code” during the checkout procedure of making an appointment. Promotion codes could not be submitted after successful payment if you have not yet done so.
 
-8\. 每次交易只可使用一個優惠碼。
+6\.	The purchasing date and time (all records shall reference GMT+08:00, Hong Kong Standard Time) of all Eligible Appointments are based on the time of receipt by our server. We will not be liable for any matter or loss in relation to submission delay, loss, and any information transmission error due to technical problems including but not limited to any computer or internet network issues.
 
-9\. 如取消任何成功交易或進行退款，該次交易所使用的優惠碼，則將根據優惠碼的折扣性質，可能不可再次使用或不獲退還。
+7\.	A successful payment procedure is ultimately determined by our absolute discretion based on financial institutions’ transaction records held by us (which are final and conclusive in case of any discrepancy). 
 
-10\. 優惠碼概不退款，也不能兌換現金或任何形式的補償。任何剩餘未使用的金額將被作廢。
+8\.	Only one promotion code can be used in a single purchase.
 
-11\. 為免生疑問，本推廣優惠僅適用於得易健康有限公司指定服務及產品，而不適用於第三方的醫療服務及／或檢測服務供應商所提供及銷售的服務及產品。
+9\.	In the event of any cancellation of Eligible Appointments or refunds, any redeemed promotion code might not be reused or returned, its applicability depends on the nature of the promotion code.
 
-12\. 我們保留全權酌情決定，恕不另行通知或提供理由。我們可隨時：
+10\.	The promotion code is neither refundable nor exchangeable for cash or any other form of compensation. Any remaining unused amount will be forfeited.
 
-a. 修訂、更改、暫停或終止此推廣優惠或本條款（包括任何優惠或折扣金額)；
+11\.	For the avoidance of doubt, this Promotion is applicable to the designated products or services specified by us and is not applicable to services and products made available and sold by third-party medical service and/or testing service providers.
 
-b. 作出與此推廣優惠相關的任何決定（包括拒絕或停止你參與此推廣優惠，決定此推廣優惠是否可以與其他任何優惠或推廣優惠結合使用）；和
+12\.	We reserve the rights at any time, without notice or reason and in our sole discretion, to: 
 
-c. 決定已被使用的優惠碼是否存在不正當目的，並取消你使用優惠碼的權利。
+a.	change, modify, suspend, or terminate the Promotion or these terms (including any offer and discount);
 
-任何此類決定均應視為最終決定並對你具有約束力。
+b.	make any decision in connection with the Promotion (including refuse or suspend your participation in the Promotion or determine whether the Promotion can or cannot be combined with any other offer or promotion); and
 
-13\. 如就此推廣優惠有任何爭議，我們保留最終決定權。
+c.	determine that the promotion code has been used for an improper purpose and cancel your use of any such Promotion Code.
 
-14\. 本條款及細則在所有方面均受香港特別行政區法律的管限，並須根據香港特別行政區法律的解釋。雙方得受香港特別行政區法院的專屬管轄權管轄。
+Any such rights exercised by us shall be conclusive and binding on you.
 
-15\. 如本條款的不同語言版本有任何抵觸或不相符之處，應以英文版本為準。
+13\.	If any dispute arises in connection with the Promotion, our decision shall be final.
 
-最後更新日期：2022年4月7日
+14\.	These terms are governed in all respects by and construed in accordance with the laws of the Hong Kong Special Administrative Region. The parties submit to the exclusive jurisdiction of the courts of the Hong Kong Special Administrative Region.
+
+15\.	The English version of the Terms shall prevail in the event of a conflict with other language versions.
+
+Last revision date: 7 Apr 2022
