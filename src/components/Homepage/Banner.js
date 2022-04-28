@@ -39,15 +39,20 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 877,
     },
   },
+  imageButtonWrapper: {
+    transform: `translate(-50%,-50%)`,
+  },
   imageButton: {
     position: 'absolute',
-    width: '13.5vw',
-    height: '4vw',
-    transform: `translateY(20.4vw)`,
+    width: '14%',
+    height: '7%',
+    bottom: '13%',
+    // transform: `translateY(20.4vw)`,
     [theme.breakpoints.down('xs')]: {
       width: '20.2%',
       height: '4.8%',
-      transform: `translateY(860%)`,
+      bottom: '6%',
+      // transform: `translateY(860%)`,
     },
   },
   containImgWrapper: {
@@ -228,23 +233,46 @@ const Banner = ({ nodes }) => {
                   className={classes.containImg}
                 ></ImageTranslation>
                 <Box
-                  className={classes.imageButton}
-                  left={isMobile ? (isEn ? '26.4%' : '16.8%') : '7.4vw'}
-                  to='/whats-new/campaign/'
-                  target='_blank'
-                  component={Link}
-                  id='RW_HP_Top_Banner_PVCampaign_KnowMore'
+                  className={classes.imageButtonWrapper}
+                  width='100%'
+                  height='100%'
+                  maxHeight={isMobile ? '100%' : `${(2631 / 4320) * 100}vw`}
+                  maxWidth={
+                    isMobile ? (1125 / 1506) * 877 : (4320 / 2631) * 877
+                  }
+                  position='absolute'
+                  top='50%'
+                  left='50%'
                 >
-                  <Box />
-                </Box>
-                <Box
-                  className={classes.imageButton}
-                  left={isMobile ? (isEn ? '53.4%' : '43.8%') : '25.2vw'}
-                  to={process.env.GATSBY_SITE_URL}
-                  component={Link}
-                  id='RW_HP_Top_Banner_PVCampaign_EHEALTH'
-                >
-                  <Box />
+                  <Box
+                    className={classes.imageButton}
+                    left={
+                      isMobile ? (isEn ? '26.4%' : '16.8%') : isEn ? '8%' : '7%'
+                    }
+                    to='/whats-new/campaign/'
+                    target='_blank'
+                    component={Link}
+                    id='RW_HP_Top_Banner_PVCampaign_KnowMore'
+                  >
+                    <Box />
+                  </Box>
+                  <Box
+                    className={classes.imageButton}
+                    left={
+                      isMobile
+                        ? isEn
+                          ? '53.4%'
+                          : '43.8%'
+                        : isEn
+                        ? '26%'
+                        : '25%'
+                    }
+                    to={process.env.GATSBY_SITE_URL}
+                    component={Link}
+                    id='RW_HP_Top_Banner_PVCampaign_EHEALTH'
+                  >
+                    <Box />
+                  </Box>
                 </Box>
               </Box>
             </Box>
