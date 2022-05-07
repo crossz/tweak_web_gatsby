@@ -159,6 +159,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const { t } = useTranslation()
   const classes = useStyles()
   const menu = useMenu()
+  if (!data?.mdx) return null
   const mdx = data?.mdx?.body
   const { date, cpTitle, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
