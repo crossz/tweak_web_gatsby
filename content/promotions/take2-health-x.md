@@ -24,7 +24,7 @@ slug: ''
 
 Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next-generation Sequencing)，來分析血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97% ² ³，冠絕同類測試！
 
-![](../images/picture14.png)
+![](../images/picture1.png)
 
 **不要猶豫，立即預約！**
 
@@ -34,7 +34,8 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **分店地址：**旺角
 
-**網上預約：**[https://bit.ly/3LpgU6S](https://bit.ly/3LpgU6S "https://bit.ly/3LpgU6S")  
+**網上預約**：[https://bit.ly/3LpgU6S](https://bit.ly/3LpgU6S "https://bit.ly/3LpgU6S")
+
 **計劃詳情：**計劃包括血液檢驗及由醫護人員解釋報告。
 
 **2. JP Partners Medical 莊柏醫療 - 早期鼻咽癌篩查 ($1,500)**
@@ -69,14 +70,6 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **計劃詳情：**檢查項目包括早期鼻咽癌篩查、基本體格檢查、心臟檢查、X 光檢查、血脂肪、全血計數、糖尿病及醫生解釋報告。
 
-**Medtimes 時代醫療集團 - 早期鼻咽癌篩查 ($3,000)**
-
-**分店地址：**尖沙咀 / 上水
-
-**網上預約：**[https://bit.ly/3KksG0I](https://bit.ly/3KksG0I "https://bit.ly/3KksG0I") / **電話預約：**3585 8533
-
-**計劃詳情：**計劃包括早期鼻咽癌篩查 (不包括醫生解釋報告)。
-
 **6. New Town Medical 新都醫療 - 早期鼻咽癌篩查 ($1,800)**
 
 **分店地址：**銅鑼灣 / 觀塘 / 尖沙咀 / 荃灣 / 沙田 / 元朗 /屯門 /天水圍
@@ -100,7 +93,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **8. Re:HEALTH 香港仁和體檢 - 早期鼻咽癌篩查計劃 ($2,000)**
 
-**分店地址：**銅鑼灣 / 旺角
+**分店地址**：銅鑼灣 / 旺角
 
 **網上預約：**[https://bit.ly/37Hhezh](https://bit.ly/37Hhezh "https://bit.ly/37Hhezh") / WhatsApp 查詢及預約： 6324 5948
 
@@ -112,15 +105,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **網上預約：**[https://bit.ly/3virsPf](https://bit.ly/3virsPf "https://bit.ly/3virsPf")
 
-**計劃詳情**：檢查項目包括早期鼻咽癌篩查、血全像、血脂肪、糖尿篩查、甲狀腺評估、心臟功能評估及本中心註冊醫生解釋檢查結果。
-
-**Trinity Medical Centre全仁醫務中心 - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,100)**
-
-**分店地址**：中環 / 尖沙咀
-
-**網上預約：**[https://bit.ly/38w3iYB](https://bit.ly/38w3iYB "https://bit.ly/38w3iYB")
-
-**計劃詳情：**計劃包括醫生診症費用及Take2 Prophecy™ 早期鼻咽癌篩查。3-7個工作天有報告。
+**計劃詳情**：檢查項目包括早期鼻咽癌篩查、血全像、血脂肪、糖尿篩查、甲狀腺評估、心臟功能評估及本中心註冊醫生解釋檢查結果。\\
 
 **10. V-Care - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,000)**
 
@@ -128,7 +113,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **網上預約：**[https://bit.ly/3vjvy9V](https://bit.ly/3vjvy9V "https://bit.ly/3vjvy9V")
 
-**計劃詳情：**計劃包括詳細病歷調查、醫生會診 / 醫生視像會診、鼻咽癌基因檢測及醫生解釋報告。
+計劃包括詳細病歷調查、醫生會診 / 醫生視像會診、鼻咽癌基因檢測及醫生解釋報告。
 
 備註：各體檢中心保留隨時更改其服務的價格及任何折扣優惠，而不作另行通知的權利，最終定價以各醫療集團網上價格為準。詳情請參閱其網上商店或網站。
 
