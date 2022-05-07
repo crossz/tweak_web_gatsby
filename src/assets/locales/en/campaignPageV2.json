@@ -58,9 +58,9 @@
                 "7": "is critical"
             },
             "efficient_detections": {
-                "0": "Sensitivity refers to the proportion of patients with NPC being correctly identified by a positive detection result. Therefore, the higher the test’s sensitivity, the lower the chance of missing the diseased ones in the screened population; which means the test is more reliable.",
+                "0": "<strong>Sensitivity</strong> refers to the proportion of patients with NPC being correctly identified by a positive detection result. Therefore, the higher the test’s sensitivity, the lower the chance of missing the diseased ones in the screened population; which means the test is more reliable.",
                 "1": "On the contrary, if the sensitivity of a detection test is not high enough, it might miss the detection of true NPC patients. Those missed NPC patients may assume themselves as disease-free, resulting in a delay in diagnosis and treatment at the best timing.",
-                "2": "False positive means that a person who does not have NPC gets a positive detection test result. The higher the test’s false-positive rate, the more non-NPC individuals are being reported as \"diseased\", which exposes the non-diseased ones to unnecessary mental burden and additional medical procedures."
+                "2": "<strong>False positive</strong> means that a person who does not have NPC gets a positive detection test result. The higher the test’s false-positive rate, the more non-NPC individuals are being reported as \"diseased\", which exposes the non-diseased ones to unnecessary mental burden and additional medical procedures."
             },
             "table": {
                 "row_titles": {
