@@ -128,7 +128,7 @@ const SectionTwo = () => {
             my={4}
           >
             <Box>{t('cp_v2.ngs_advantage.paragraphs.1')}</Box>
-            <Box color='secondary.main' component='span'>
+            <Box color='secondary.main' whiteSpace='pre' component='span'>
               {t('cp_v2.ngs_advantage.paragraphs.6')}
             </Box>
             {isMobile && <br />}{' '}
@@ -145,7 +145,9 @@ const SectionTwo = () => {
                 >
                   {item.img}
                 </Box>
-                <Box>{t(item.detail)}</Box>
+                <Box>
+                  <Trans i18nKey={item.detail}></Trans>
+                </Box>
               </Box>
             ))}
           </Box>
@@ -153,7 +155,6 @@ const SectionTwo = () => {
             <Trans i18nKey='cp_v2.ngs_advantage.paragraphs.2'>
               .<sup>1</sup>
             </Trans>
-            {/* {t('cp_v2.ngs_advantage.paragraphs.2')} */}
           </Box>
         </Box>
       </Box>

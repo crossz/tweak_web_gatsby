@@ -111,6 +111,7 @@ const PromotionContent = ({ whiteBg }) => {
             fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
             flexShrink={0}
             component='span'
+            fontWeight='fontWeightMedium'
           >
             {t('cp_v2.promotion.enter')}
           </Box>

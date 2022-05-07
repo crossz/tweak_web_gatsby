@@ -177,6 +177,7 @@ const SectionOne = () => {
               <Box
                 bgcolor='background.paper'
                 p={isMobile ? 2.5 : 3}
+                pr={isMobile ? 2.5 : 1.5}
                 flexDirection={isMobile ? 'column' : 'row'}
                 alignItems='center'
                 display='flex'
