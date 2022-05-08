@@ -18,7 +18,7 @@ import Links from '@components/WhatsNew/Links'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
 import Layout from '@layouts/Layout'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, useI18next } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
 import { formatLocal } from '@utils/moment'
 
@@ -157,9 +157,13 @@ const morePostTitle = {
 const Post = ({ data, pageContext, location: { href } }) => {
   const { sectionPath, regex } = pageContext
   const { t } = useTranslation()
+  const { navigate } = useI18next()
   const classes = useStyles()
   const menu = useMenu()
-  if (!data?.mdx) return null
+  if (!data?.mdx) {
+    navigate('/404', { replace: true })
+    return null
+  }
   const mdx = data?.mdx?.body
   const { date, cpTitle, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
