@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
 import { graphql } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
@@ -18,7 +18,7 @@ import Links from '@components/WhatsNew/Links'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
 import Layout from '@layouts/Layout'
-import { useTranslation, useI18next } from 'gatsby-plugin-react-i18next'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
 import { formatLocal } from '@utils/moment'
 
@@ -157,16 +157,10 @@ const morePostTitle = {
 const Post = ({ data, pageContext, location: { href } }) => {
   const { sectionPath, regex } = pageContext
   const { t } = useTranslation()
-  const { navigate } = useI18next()
   const classes = useStyles()
   const menu = useMenu()
 
-  useEffect(() => {
-    if (!data?.mdx) {
-      navigate('/404', { replace: true })
-      return null
-    }
-  }, [])
+  if (!data?.mdx) return null
 
   const mdx = data?.mdx?.body
   const { date, cpTitle, title, type } = data?.mdx?.frontmatter
