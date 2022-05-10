@@ -22,7 +22,7 @@ slug: ''
 
 **靈敏度冠絕市場同類測試**
 
-Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next-generation Sequencing)，來分析血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97% ² ³，冠絕同類測試！
+Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next-generation Sequencing)，來分析血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97% ² ³，冠絕同類測試！ 
 
 ![](../images/tableart.jpg)
 
