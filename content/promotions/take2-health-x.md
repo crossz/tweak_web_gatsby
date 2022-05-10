@@ -42,7 +42,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **分店地址：** 北角 / 中環 / 鑽石山 / 九龍城 / 佐敦 / 旺角 / 荃灣/ 上水 / 屯門
 
-**網上預約：** [https://bit.ly/3OHwU69](https://bit.ly/3OHwU69 "https://bit.ly/3OHwU69") 
+**網上預約：** [https://bit.ly/3OHwU69](https://bit.ly/3OHwU69 "https://bit.ly/3OHwU69")
 
 **計劃詳情：** 計劃包括醫生諮詢及醫生分析報告及血液檢查。7 – 10個工作天後有報告。
 
