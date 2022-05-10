@@ -9,7 +9,6 @@ href: ''
 slug: ''
 languages:
 - zh-CN
-- zh-HK
 
 ---
 ![](../images/award1.jpg)

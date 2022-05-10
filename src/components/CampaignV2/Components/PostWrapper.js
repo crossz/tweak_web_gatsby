@@ -59,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const PostWrapper = ({ nodes, name }) => {
-  console.log('name', name)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
