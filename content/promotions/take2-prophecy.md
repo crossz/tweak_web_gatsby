@@ -9,8 +9,6 @@ pdf: ''
 href: ''
 slug: consumption-voucher
 languages:
-- en
-- zh-CN
 - zh-HK
 
 ---
@@ -22,7 +20,7 @@ languages:
 
 Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97%¹ ²，冠絕同類測試！
 
-![](../images/table_hk.png)
+![](../images/table-capscreen-chi.png)
 
 測試的靈敏度愈高，代表愈能將「有病卻未能發現」的漏檢情況減到最低，故擁有高靈敏度的測試是其中一個重要指標。此外，若測試的假陽性率愈高，愈容易出現錯誤報告，令受測者承受不必要的心理負擔，更甚是額外的醫療程序。
 
@@ -32,9 +30,8 @@ Take2 Prophecy™ 早期鼻咽癌篩查憑藉次世代的醫療科技，打破�
 
 立即把握機會，到以下網上平台預約Take2 Prophecy™ 早期鼻咽癌篩查，並輸入優惠碼「CV500」，即可享優惠價$1,700 （原價：$2,200），優惠有效期由即日起至2022年 6月30日。
 
-立即預約：[https://bit.ly/3xaqIx9](https://bit.ly/3xaqIx9 "https://bit.ly/3xaqIx9")
-
-了解更多: [https://bit.ly/3JiVTsC](https://bit.ly/3JiVTsC "https://bit.ly/3JiVTsC")
+立即預約：[https://bit.ly/3xPC2Po](https://bit.ly/3xPC2Po "https://bit.ly/3xPC2Po")  
+了解更多：[https://bit.ly/396BlHn](https://bit.ly/396BlHn "https://bit.ly/396BlHn")
 
 優惠受條款及細則約束。
 
