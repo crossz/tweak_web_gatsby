@@ -38,6 +38,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **計劃詳情：** 計劃包括血液檢驗及由醫護人員解釋報告。
 
+<br/>
 
 **2. JP Partners Medical 莊柏醫療 - 早期鼻咽癌篩查 ($1,500)**
 
