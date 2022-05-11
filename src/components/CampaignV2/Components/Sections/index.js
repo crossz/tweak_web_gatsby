@@ -3,6 +3,7 @@ import { Box } from '@material-ui/core'
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
 import SectionThree from './SectionThree'
+import Athletes from './Athletes'
 import SectionFour from './SectionFour'
 import SectionFive from './SectionFive'
 
@@ -17,6 +18,9 @@ const Sections = ({ storyNodes, healthTipsNodes }) => {
       </Box>
       <Box id='gsap-scroll-to-section-three'>
         <SectionThree></SectionThree>
+      </Box>
+      <Box>
+        <Athletes />
       </Box>
       <Box id='gsap-scroll-to-section-four'>
         <SectionFour
