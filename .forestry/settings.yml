@@ -85,4 +85,4 @@ build:
   preview_docker_image: forestryio/node:14
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: yarn develop
+  instant_preview_command: gatsby develop -p 8080 -H 0.0.0.0
