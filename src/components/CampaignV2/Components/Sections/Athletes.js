@@ -6,9 +6,7 @@ import {
   makeStyles,
   ImageList,
   ImageListItem,
-  Typography,
   Button,
-  Avatar,
   alpha,
 } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -51,63 +49,60 @@ const Athletes = () => {
     {
       avatar: (
         <StaticImage
-          src='../../images/athlete_hero_01.jpg'
+          src='../../images/athlete_hero_01.png'
           alt='athlete hero avatar 01'
         ></StaticImage>
       ),
       image: (
         <StaticImage
-          src='../../images/athlete_hero_01_detail.jpg'
-          alt='athlete hero avatar 01'
+          src='../../images/athlete_hero_02_detail.jpg'
+          alt='athlete hero image 01'
         ></StaticImage>
       ),
       videos: ['wOPREMoVhys', 'wOPREMoVhys'],
-      name: '吳翹充、石偉雄',
-      title: '香港體操運動員',
-      intro:
-        '「鼻咽癌是本港20-44歲男士的頭號癌症 ，而最好的提防方法就是進行早期鼻咽癌篩查，就如為自己健康買「保險」一樣。時刻為健康做好準備，及早發現並展開治療，早期鼻咽癌患者的存活率可高於九成。」',
+      name: 'cp_v2.athletes.heros.0.name',
+      title: 'cp_v2.athletes.heros.0.title',
+      intro: 'cp_v2.athletes.heros.0.intro',
     },
     {
       avatar: (
         <StaticImage
-          src='../../images/athlete_hero_01.jpg'
-          alt='athlete hero avatar 01'
+          src='../../images/athlete_hero_02.png'
+          alt='athlete hero avatar 02'
         ></StaticImage>
       ),
       image: (
         <StaticImage
-          src='../../images/athlete_hero_01_detail.jpg'
-          alt='athlete hero avatar 01'
+          src='../../images/athlete_hero_02_detail.jpg'
+          alt='athlete hero image 02'
         ></StaticImage>
       ),
       videos: ['wOPREMoVhys', 'wOPREMoVhys'],
-      name: '吳翹充、石偉雄',
-      title: '香港體操運動員',
-      intro:
-        '「鼻咽癌是本港20-44歲男士的頭號癌症 ，而最好的提防方法就是進行早期鼻咽癌篩查，就如為自己健康買「保險」一樣。時刻為健康做好準備，及早發現並展開治療，早期鼻咽癌患者的存活率可高於九成。」',
+      name: 'cp_v2.athletes.heros.1.name',
+      title: 'cp_v2.athletes.heros.1.title',
+      intro: 'cp_v2.athletes.heros.1.intro',
     },
     {
       avatar: (
         <StaticImage
-          src='../../images/athlete_hero_01.jpg'
-          alt='athlete hero avatar 01'
+          src='../../images/athlete_hero_03.png'
+          alt='athlete hero avatar 03'
         ></StaticImage>
       ),
       image: (
         <StaticImage
-          src='../../images/athlete_hero_01_detail.jpg'
-          alt='athlete hero avatar 01'
+          src='../../images/athlete_hero_03_detail.jpg'
+          alt='athlete hero image 03'
         ></StaticImage>
       ),
       videos: ['wOPREMoVhys', 'wOPREMoVhys'],
-      name: '吳翹充、石偉雄',
-      title: '香港體操運動員',
-      intro:
-        '「鼻咽癌是本港20-44歲男士的頭號癌症 ，而最好的提防方法就是進行早期鼻咽癌篩查，就如為自己健康買「保險」一樣。時刻為健康做好準備，及早發現並展開治療，早期鼻咽癌患者的存活率可高於九成。」',
+      name: 'cp_v2.athletes.heros.2.name',
+      title: 'cp_v2.athletes.heros.2.title',
+      intro: 'cp_v2.athletes.heros.2.intro',
     },
   ]
   return (
-    <Box color='#29678F'>
+    <Box color='#29678F' whiteSpace='break-spaces'>
       <ImageTranslation
         filename='athlete_hero_banner'
         alt='athlete hero banner'
@@ -124,8 +119,7 @@ const Athletes = () => {
         position='relative'
         bgcolor='background.paper'
       >
-        運動員每天接受嚴格訓練，來保持身體於最好狀態。此外，及早為健康準備，和身體溝通同樣重要！透過醫學檢查，運動員可以全面了解身體狀態，從而作出適當的調整。
-        就如大部分人在人生中，尤其是青壯年時期，都自覺健康，不會聯想到自己有健康問題或受到疾病威脅。事實上，不少疾病潛藏體內時都沒有明顯病徵，以致未能及時發現，令病人錯過治療的黃金時機，抱憾終生！所以，防患於未然還是最好的提防良策，及早發現潛在的健康風險，我們就可以儘早開始管理身體，減低患病帶來的影響。
+        {t('cp_v2.athletes.paragraphs.0')}
       </Box>
       <Box>
         {ATHLETES_INFO.map((athlete, index) => (
@@ -141,7 +135,7 @@ const Athletes = () => {
                 color='#29678F'
                 fontWeight='fontWeightBold'
               >
-                看看在不同領域的傑出運動員分享他們如何為健康做準備
+                {t('cp_v2.athletes.paragraphs.1')}
               </Box>
             )}
             <Box pt={index ? 4.5 : 1.5} pb={5} maxWidth={1140} mx='auto'>
@@ -157,12 +151,15 @@ const Athletes = () => {
                     {athlete.avatar}
                   </Box>
                   <Box fontSize={18} lineHeight={1.5} textAlign='center'>
-                    <Box whiteSpace='nowrap'>{athlete.title}</Box>
-                    {athlete.name}
+                    <Box whiteSpace='nowrap'>{t(athlete.title)}</Box>
+                    {t(athlete.name)}
                   </Box>
                 </Box>
                 <Box fontSize={30} lineHeight={2}>
-                  {athlete.intro}
+                  <Trans i18nKey={athlete.intro}>
+                    .<sup>.</sup>
+                    <sup>.</sup>
+                  </Trans>
                 </Box>
               </Box>
               <Box>
@@ -249,18 +246,17 @@ const Athletes = () => {
             fontWeight='fontWeightBold'
             mb={4}
           >
-            為自己準備好健康「保險」
+            {t('cp_v2.athletes.paragraphs.2')}
           </Box>
           <Box fontSize='h6.fontSize' fontWeight='fontWeightMedium'>
-            對於是否患上癌症，我們以往或多只是根據病徵作出估計，但部分早期鼻咽癌的常見病徵不明顯，像鼻塞、頭痛、耳鳴等，與感冒、鼻敏感相似，令我們容易混淆而忽略，當察覺到明顯病徵時可能已變得嚴重，80%患者在初診時已是晚期¹。可惜的是，鼻咽癌的成因複雜，目前亦未有任何針對性的疫苗作預防或藥物作治療之用。
-            幸好，隨著醫療科技的發展，現在只要經過簡單的檢測3步，我們就可以「買個安心」，預早提防鼻咽癌。無事絕對是好；即使不幸確診，也能及早發現，令療效大大提升。
-            此外，若能於早期確診，患者需承受的治療副作用也較少、存活率也能大大提高；同時，於早期確診的治療時間一般較晚期短，不但可減輕患者家人作為主要照顧者的壓力，和減輕家庭經濟負擔；康復後，患者更可如常生活，在事業上繼續拚搏。所以，進行早期鼻咽癌篩查，就如為自己的健康買「保險」一樣，可有效讓患者在鼻咽癌惡化至晚期前，掌握治療黃金期，從而將鼻咽癌為患者身體、家庭、事業帶來的影響減至最低。
-            自己人生，自己掌控。在人生賽場上，擁有健康體魄，就能專注迎接挑戰，爭取屬於你的「第一」！健康，不只運動員才值得擁有，不要猶疑，立即預約，今天就為自己和最愛準備好健康「保險」。
+            <Trans i18nKey='cp_v2.athletes.paragraphs.3'>
+              .<sup>.</sup>
+            </Trans>
           </Box>
           <Box textAlign='right'>
             <Link to='/' underline='always'>
               <Box color='#F2974C' component='span'>
-                查看更多精彩幕後花絮
+                {t('cp_v2.athletes.paragraphs.4')}
               </Box>
             </Link>
           </Box>
