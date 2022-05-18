@@ -14,7 +14,6 @@ href: ''
 slug: ''
 
 ---
-
 ![](../images/thumbnail-changed-03.png)
 
 <br/>
@@ -141,7 +140,7 @@ It is believed that no one in the production team is more familiar with and can 
 
 We and the production team have made sufficient and detailed preparations in advance, to present numerous incredible cinematic scenes as a feast for the eyes. So, without further ado, let’s watch the video now:
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s "https://www.youtube.com/watch?v=nSD7pEd4J-s")
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1 "https://www.youtube.com/watch?v=nSD7pEd4J-s")
 
 (Hong Kong Gymnast Stone Shek and Kelvin Ng's video)
 

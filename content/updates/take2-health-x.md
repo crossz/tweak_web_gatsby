@@ -138,7 +138,17 @@ _第四位主角：Sherie_
 
 我們和製作團隊做了充足周詳的事前準備，全為呈上令你目不暇給的精彩電影級畫面。事不宜遲，現在立即去片：
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s "https://www.youtube.com/watch?v=nSD7pEd4J-s")
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
+
+(香港體操運動員 石偉雄和吳翹充的短片)
+
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
+
+(香港自由潛水紀錄保持者 張立興的短片)
+
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
+
+(全球首位華人女騎師 江碧蕙的短片)
 
 <br/>
 
