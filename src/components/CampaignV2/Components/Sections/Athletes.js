@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   videoFullWidth: {
     borderRadius: 10,
     [theme.breakpoints.down('xs')]: {
-      borderRadius: 6,
+      borderRadius: 16,
     },
   },
   outlineButton: {
@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 0,
       marginTop: theme.spacing(1.5),
     },
+  },
+  imageListItem: {
+    borderRadius: theme.spacing(1.75),
   },
 }))
 const Athletes = () => {
@@ -111,51 +114,93 @@ const Athletes = () => {
         maxWidth={920}
         mx='auto'
         color='grey.900'
-        fontSize={18}
-        fontWeight='fontWeightMedium'
+        fontSize={isMobile ? 16 : 18}
+        fontWeight={isMobile ? '' : 'fontWeightMedium'}
         p={4}
-        mt={5.5}
+        mt={isMobile ? 0 : 5.5}
         mb={-4}
         position='relative'
         bgcolor='background.paper'
+        borderRadius={isMobile ? 24 : 0}
       >
         {t('cp_v2.athletes.paragraphs.0')}
       </Box>
       <Box>
         {ATHLETES_INFO.map((athlete, index) => (
           <Box
-            bgcolor={!(index % 2) ? '#EEF7FC' : 'background.paper'}
+            bgcolor={
+              !(index % 2)
+                ? '#EEF7FC'
+                : isMobile
+                ? '#EEF7FC'
+                : 'background.paper'
+            }
             key={athlete.name}
+            pt={isMobile ? 1.5 : 0}
+            pb={1}
           >
             {!index && (
               <Box
                 textAlign='center'
-                fontSize={28}
-                pt={12}
+                fontSize={isMobile ? 20 : 28}
+                pt={isMobile ? 8 : 12}
+                px={isMobile ? 5 : 0}
                 color='#29678F'
-                fontWeight='fontWeightBold'
+                fontWeight={isMobile ? 'bold' : 'fontWeightBold'}
               >
                 {t('cp_v2.athletes.paragraphs.1')}
               </Box>
             )}
-            <Box pt={index ? 4.5 : 1.5} pb={5} maxWidth={1140} mx='auto'>
+            <Box
+              pt={index ? 4.5 : 1.5}
+              pb={5}
+              maxWidth={1140}
+              mx='auto'
+              margin={isMobile ? '36px 20px' : 'auto'}
+              borderRadius={isMobile ? '16px' : 0}
+              border={isMobile ? 'rgb(124 124 124 / 10%) 0px 5px 30px 0px' : ''}
+              bgcolor={isMobile ? 'background.paper' : ''}
+            >
               <Box
                 mx={-2}
                 mb={9}
-                flexDirection={!(index % 2) ? 'row' : 'row-reverse'}
+                flexDirection={
+                  isMobile ? 'column' : !(index % 2) ? 'row' : 'row-reverse'
+                }
                 display='flex'
                 alignItems='center'
               >
-                <Box mr={3}>
+                <Box mr={3} fontWeight='fontWeightBold'>
                   <Box width={180} height={180}>
                     {athlete.avatar}
                   </Box>
-                  <Box fontSize={18} lineHeight={1.5} textAlign='center'>
-                    <Box whiteSpace='nowrap'>{t(athlete.title)}</Box>
+                  <Box
+                    fontSize={isMobile ? 16 : 18}
+                    lineHeight={1.5}
+                    textAlign='center'
+                    mb={1}
+                  >
+                    <Box whiteSpace='nowrap' mt={1}>
+                      {t(athlete.title)}
+                    </Box>
                     {t(athlete.name)}
                   </Box>
                 </Box>
-                <Box fontSize={30} lineHeight={2}>
+                <Box
+                  fontSize={isMobile ? 16 : 30}
+                  lineHeight={2}
+                  px={isMobile ? 4 : 0}
+                  color={isMobile ? 'grey.900' : ''}
+                >
+                  {isMobile && (
+                    <YouTube
+                      className={classes.videoFullWidth}
+                      videoId={athlete.videos[0]}
+                      opts={{
+                        width: '100%',
+                      }}
+                    />
+                  )}
                   <Trans i18nKey={athlete.intro}>
                     .<sup>.</sup>
                     <sup>.</sup>
@@ -163,30 +208,61 @@ const Athletes = () => {
                 </Box>
               </Box>
               <Box>
-                <YouTube
-                  className={classes.videoFullWidth}
-                  videoId={athlete.videos[0]}
-                  opts={{
-                    width: '100%',
-                    height: 524,
-                  }}
-                />
-                <Box mt={5.5}>
-                  <ImageList rowHeight='auto' cols={2} gap={32}>
-                    <ImageListItem>{athlete.image}</ImageListItem>
-                    <ImageListItem>
-                      <YouTube
-                        className={classes.video}
-                        videoId={athlete.videos[1]}
-                        opts={{
-                          width: '100%',
-                        }}
-                      />
+                {!isMobile && (
+                  <YouTube
+                    className={classes.videoFullWidth}
+                    videoId={athlete.videos[0]}
+                    opts={{
+                      width: '100%',
+                      height: 524,
+                    }}
+                  />
+                )}
+                <Box mt={5.5} mx={isMobile ? 4 : 0}>
+                  <ImageList rowHeight='auto' cols={isMobile ? 1 : 2} gap={32}>
+                    <ImageListItem
+                      classes={{
+                        item: classes.imageListItem,
+                      }}
+                    >
+                      {athlete.image}
                     </ImageListItem>
+                    {!isMobile && (
+                      <ImageListItem>
+                        <YouTube
+                          className={classes.video}
+                          videoId={athlete.videos[1]}
+                          opts={{
+                            width: '100%',
+                            height: '454px',
+                          }}
+                        />
+                      </ImageListItem>
+                    )}
+                    {isMobile && (
+                      <ImageListItem>
+                        <YouTube
+                          className={classes.video}
+                          videoId={athlete.videos[1]}
+                          opts={{
+                            width: '100%',
+                          }}
+                        />
+                      </ImageListItem>
+                    )}
                   </ImageList>
                 </Box>
               </Box>
             </Box>
+            {isMobile && index === ATHLETES_INFO.length - 1 && (
+              <Box textAlign='center' fontSize='h6.fontSize'>
+                <Link to='/' underline='always'>
+                  <Box color='#F2974C' component='span'>
+                    {t('cp_v2.athletes.paragraphs.4')}
+                  </Box>
+                </Link>
+              </Box>
+            )}
             {index === ATHLETES_INFO.length - 1 && (
               <Box
                 className='gsap-fade-in-9'
@@ -197,6 +273,7 @@ const Athletes = () => {
                 width='100%'
                 mx='auto'
                 maxWidth={isMobile ? 'auto' : 480}
+                px={isMobile ? 4 : 0}
               >
                 <Button
                   fullWidth
@@ -236,32 +313,38 @@ const Athletes = () => {
         mt={-3}
         boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
         bgcolor='background.paper'
-        position='relative'
         borderRadius={16}
       >
         <Box maxWidth={854} mx='auto' borderRadius={16}>
           <Box
             textAlign='center'
-            fontSize={28}
+            fontSize={isMobile ? 20 : 28}
             fontWeight='fontWeightBold'
             mb={4}
           >
             {t('cp_v2.athletes.paragraphs.2')}
           </Box>
-          <Box fontSize='h6.fontSize' fontWeight='fontWeightMedium'>
+          <Box
+            fontSize={isMobile ? 16 : 'h6.fontSize'}
+            fontWeight={isMobile ? 400 : 'fontWeightMedium'}
+            px={isMobile ? 4 : 0}
+          >
             <Trans i18nKey='cp_v2.athletes.paragraphs.3'>
               .<sup>.</sup>
             </Trans>
           </Box>
-          <Box textAlign='right'>
-            <Link to='/' underline='always'>
-              <Box color='#F2974C' component='span'>
-                {t('cp_v2.athletes.paragraphs.4')}
-              </Box>
-            </Link>
-          </Box>
+          {!isMobile && (
+            <Box textAlign='right'>
+              <Link to='/' underline='always'>
+                <Box color='#F2974C' component='span'>
+                  {t('cp_v2.athletes.paragraphs.4')}
+                </Box>
+              </Link>
+            </Box>
+          )}
         </Box>
       </Box>
+
       <Box
         className='gsap-fade-in-9'
         mt={7}
@@ -271,6 +354,7 @@ const Athletes = () => {
         width='100%'
         mx='auto'
         maxWidth={isMobile ? 'auto' : 480}
+        px={isMobile ? 4 : 0}
       >
         <Button
           fullWidth
