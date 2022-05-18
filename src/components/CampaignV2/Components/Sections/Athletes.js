@@ -325,6 +325,7 @@ const Athletes = () => {
         position='relative'
         borderRadius={isMobile ? 0 : 16}
         color={isMobile ? 'common.white' : '#29678F'}
+        zIndex={isMobile ? 0 : 1}
       >
         <Box maxWidth={854} mx='auto' borderRadius={16}>
           <Box
