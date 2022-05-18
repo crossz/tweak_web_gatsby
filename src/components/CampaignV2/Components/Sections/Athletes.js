@@ -16,11 +16,15 @@ import Link from '@components/Link'
 import ImageTranslation from '../ImageTranslation'
 
 const useStyles = makeStyles((theme) => ({
+  videoContainer: {
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
   video: {
     borderRadius: 10,
-    [theme.breakpoints.down('xs')]: {
-      borderRadius: 6,
-    },
   },
   videoFullWidth: {
     borderRadius: 10,
@@ -123,6 +127,8 @@ const Athletes = () => {
         position='relative'
         bgcolor='background.paper'
         borderRadius={isMobile ? 24 : 0}
+        boxShadow={isMobile ? `0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}` : 'none'}
+        zIndex={4}
       >
         <Trans i18nKey='cp_v2.athletes.paragraphs.0'>
           .{isMobile && '\n\n'}
@@ -132,17 +138,14 @@ const Athletes = () => {
       <Box>
         {ATHLETES_INFO.map((athlete, index) => (
           <Box
-            bgcolor={
-              !(index % 2)
-                ? '#EEF7FC'
-                : isMobile
-                ? '#EEF7FC'
-                : 'background.paper'
-            }
+            bgcolor={!(index % 2) ? '#EEF7FC' : 'background.paper'}
             key={athlete.name}
             px={3}
-            pb={isMobile ? 10.5 : 0}
+            pb={isMobile ? 6 : 0}
             borderRadius={isMobile ? 24 : 0}
+            position='relative'
+            borderTop='1px solid transparent'
+            zIndex={1}
           >
             {!index && (
               <Box
@@ -159,8 +162,9 @@ const Athletes = () => {
             <Box
               px={isMobile ? 2.5 : 0}
               py={isMobile ? 2 : 0}
+              pb={isMobile ? 4 : 0}
               bgcolor={isMobile ? 'background.paper' : 'transparent'}
-              mt={index ? 4.5 : 1.5}
+              mt={index ? -4 : 1.5}
               mb={5}
               maxWidth={1140}
               mx='auto'
@@ -192,13 +196,14 @@ const Athletes = () => {
                   </Box>
                 </Box>
                 {isMobile && (
-                  <Box my={2}>
+                  <Box pt={`${(130 / 240) * 100}%`} position='relative' my={2}>
                     <YouTube
+                      containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
                       opts={{
                         width: '100%',
-                        height: 524,
+                        height: '100%',
                       }}
                     />
                   </Box>
@@ -217,50 +222,51 @@ const Athletes = () => {
                   </Trans>
                 </Box>
               </Box>
+
               <Box px={isMobile ? 2 : 0}>
                 {!isMobile && (
-                  <YouTube
-                    className={classes.videoFullWidth}
-                    videoId={athlete.videos[0]}
-                    opts={{
-                      width: '100%',
-                      height: 524,
-                    }}
-                  />
+                  <Box pt={`${(130 / 240) * 100}%`} position='relative'>
+                    <YouTube
+                      containerClassName={classes.videoContainer}
+                      className={classes.videoFullWidth}
+                      videoId={athlete.videos[0]}
+                      opts={{
+                        width: '100%',
+                        height: '100%',
+                      }}
+                    />
+                  </Box>
                 )}
                 <Box mt={isMobile ? 2 : 5.5}>
                   <ImageList
                     rowHeight='auto'
                     cols={isMobile ? 1 : 2}
                     gap={isMobile ? 16 : 32}
+                    style={{
+                      flexDirection: index % 2 ? 'row' : 'row-reverse',
+                    }}
                   >
-                    <ImageListItem>{athlete.image}</ImageListItem>
                     <ImageListItem>
-                      <YouTube
-                        className={classes.video}
-                        videoId={athlete.videos[1]}
-                        opts={{
-                          width: '100%',
-                        }}
-                      />
+                      <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
+                        <YouTube
+                          containerClassName={classes.videoContainer}
+                          className={classes.video}
+                          videoId={athlete.videos[1]}
+                          opts={{
+                            width: '100%',
+                            height: '100%',
+                          }}
+                        />
+                      </Box>
                     </ImageListItem>
+                    <ImageListItem>{athlete.image}</ImageListItem>
                   </ImageList>
                 </Box>
               </Box>
             </Box>
-            {isMobile && index === ATHLETES_INFO.length - 1 && (
-              <Box textAlign='center' fontSize='h6.fontSize'>
-                <Link to='/' underline='always'>
-                  <Box color='#F2974C' component='span'>
-                    {t('cp_v2.athletes.paragraphs.4')}
-                  </Box>
-                </Link>
-              </Box>
-            )}
             {index === ATHLETES_INFO.length - 1 && (
               <Box px={isMobile ? 2 : 0}>
                 <Box
-                  className='gsap-fade-in-9'
                   pt={isMobile ? 4 : 7}
                   pb={isMobile ? 0 : 15}
                   flexWrap={isMobile ? 'wrap' : 'nowrap'}
@@ -332,7 +338,7 @@ const Athletes = () => {
             {!isMobile && t('cp_v2.athletes.paragraphs.5')}
           </Box>
           {!isMobile && (
-            <Box textAlign='right'>
+            <Box px={2.5} textAlign='right'>
               <Link className={classes.link} to='/' underline='always'>
                 <Box component='span'>{t('cp_v2.athletes.paragraphs.4')}</Box>
               </Link>
@@ -353,7 +359,6 @@ const Athletes = () => {
                 {t('cp_v2.athletes.paragraphs.5')}
               </Box>
               <Box
-                className='gsap-fade-in-9'
                 mt={4}
                 flexWrap={isMobile ? 'wrap' : 'nowrap'}
                 display='flex'
@@ -403,7 +408,6 @@ const Athletes = () => {
       </Box>
       {!isMobile && (
         <Box
-          className='gsap-fade-in-9'
           mt={7}
           mb={14.5}
           flexWrap={isMobile ? 'wrap' : 'nowrap'}
