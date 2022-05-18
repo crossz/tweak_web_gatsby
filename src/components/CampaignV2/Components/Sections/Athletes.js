@@ -42,6 +42,15 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
   },
+  intro: {
+    fontSize: 30,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.typography.h6.fontSize,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.typography.body1.fontSize,
+    },
+  },
   link: {
     color: '#F2974C',
   },
@@ -121,19 +130,19 @@ const Athletes = () => {
         fontSize={isMobile ? 16 : 18}
         fontWeight={isMobile ? 'fontWeightRegular' : 'fontWeightMedium'}
         p={isMobile ? 2.5 : 4}
-        mt={isMobile ? 4 : 5.5}
+        mt={isMobile ? 0 : 5.5}
         pb={isMobile ? 6 : 4}
+        pt={isMobile ? 8 : 4}
         mb={-4}
         position='relative'
         bgcolor='background.paper'
-        borderRadius={isMobile ? 24 : 0}
-        boxShadow={isMobile ? `0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}` : 'none'}
+        borderRadius={isMobile ? '0 0 24px 24px' : 24}
+        boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
         zIndex={4}
       >
         <Trans i18nKey='cp_v2.athletes.paragraphs.0'>
           .{isMobile && '\n\n'}
         </Trans>
-        {/* {t('cp_v2.athletes.paragraphs.0')} */}
       </Box>
       <Box>
         {ATHLETES_INFO.map((athlete, index) => (
@@ -141,7 +150,7 @@ const Athletes = () => {
             bgcolor={!(index % 2) ? '#EEF7FC' : 'background.paper'}
             key={athlete.name}
             px={3}
-            pb={isMobile ? 6 : 0}
+            pb={isMobile ? 6 : 2}
             borderRadius={isMobile ? 24 : 0}
             position='relative'
             borderTop='1px solid transparent'
@@ -164,7 +173,7 @@ const Athletes = () => {
               py={isMobile ? 2 : 0}
               pb={isMobile ? 4 : 0}
               bgcolor={isMobile ? 'background.paper' : 'transparent'}
-              mt={index ? -4 : 1.5}
+              mt={isMobile && index ? -4 : 3}
               mb={5}
               maxWidth={1140}
               mx='auto'
@@ -174,7 +183,7 @@ const Athletes = () => {
               }
             >
               <Box
-                mb={isMobile ? 0 : 9}
+                mb={isMobile ? 0 : 6}
                 flexDirection={!(index % 2) ? 'row' : 'row-reverse'}
                 display={isMobile ? 'block' : 'flex'}
                 alignItems='center'
@@ -209,8 +218,8 @@ const Athletes = () => {
                   </Box>
                 )}
                 <Box
+                  className={classes.intro}
                   color={isMobile ? 'grey.900' : '#29678F'}
-                  fontSize={isMobile ? 16 : 30}
                   lineHeight={2}
                   fontWeight={
                     isMobile ? 'fontWeightMedium' : 'fontWeightRegular'
@@ -222,7 +231,6 @@ const Athletes = () => {
                   </Trans>
                 </Box>
               </Box>
-
               <Box px={isMobile ? 2 : 0}>
                 {!isMobile && (
                   <Box pt={`${(130 / 240) * 100}%`} position='relative'>
@@ -237,7 +245,7 @@ const Athletes = () => {
                     />
                   </Box>
                 )}
-                <Box mt={isMobile ? 2 : 5.5}>
+                <Box mt={isMobile ? 2 : 4}>
                   <ImageList
                     rowHeight='auto'
                     cols={isMobile ? 1 : 2}
