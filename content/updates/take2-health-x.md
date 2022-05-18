@@ -34,9 +34,7 @@ _第一組主角：石仔和Kelvin_
 
 石偉雄（石仔），香港體操運動員，主項為跳馬。他於2010年初次代表香港出戰亞運跳馬項目，並於兩年後首次取得奧運入場券，成為首位奧運體操香港代表。
 
-石偉雄（石仔），香港體操運動員，主項為跳馬。他於2010年初次代表香港出戰亞運跳馬項目，並於兩年後首次取得奧運入場券，成為首位奧運體操香港代表。石偉雄（石仔），香港體操運動員，主項為跳馬。他於2010年初次代表香港出戰亞運跳馬項目，並於兩年後首次取得奧運入場券，成為首位奧運體操香港代表。![](../images/dsc09186_min.jpg)
-
-吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。
+![](../images/dsc09186_min.jpg)
 
 吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。![](../images/dsc00268_min.jpg)
 
@@ -90,4 +88,44 @@ _第四位主角：Sherie_
 
 相信製作團隊中沒有人比Sherie 更熟悉和了解馬匹的一舉一動了。為了切合Sherie的拍攝內容，製作團隊設定了一些和馬匹互動的畫面，因此Sherie需要做出有一定危險性的動作。要拍攝到精彩畫面，這個時候我們和製作團隊都需要Sherie的豐富經驗，在短時間內透過接觸馬匹，來了解馬匹當天的心情和狀態。全靠Sherie事前和馬匹溝通，建立起信任與默契，我們的拍攝才得以順利進行。
 
-![](../images/pcw_20210405_0803_min.jpg)![](../images/pcw_20210405_3292_min.jpg)
+![](../images/pcw_20210405_0803_min.jpg)![](../images/pcw_20210405_3292_min.jpg)![](../images/pcw_20210405_3741_min.jpg)
+
+（全靠Sherie和馬匹事先溝通，馬匹拍攝時才乖乖聽話）
+
+**即看2022年全新廣告**
+
+我們和製作團隊做了充足周詳的事前準備，全為呈上令你目不暇給的精彩電影級畫面。事不宜遲，現在立即去片：
+
+<iframe width="560" height="315" src="[https://www.youtube.com/embed/nSD7pEd4J-s](https://www.youtube.com/embed/nSD7pEd4J-s "https://www.youtube.com/embed/nSD7pEd4J-s")" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**「預早準『鼻』 迎接挑戰無顧忌」**
+
+當大家見到運動員站上頒獎台時，相信這個輝煌成就背後絕不簡單；一個獎牌、一個認可是由無數的挑戰、挫敗和堅持累積而成，更重要的是，預早準備。
+
+而對於健康管理，我們同樣應預早準備，防患於未然。以癌症為例（尤其是鼻咽癌），其實是可以提防的。鼻咽癌不如其他大部份癌症般年齡愈大發病率愈高，其發病年齡相對比較早1，是本港20-44歲男士的頭號癌症2，也是女士當中較常發病於40-60歲的癌症3。所以，任何年齡、性別，均同樣受到鼻咽癌的威脅。
+
+此外，目前未有針對性的疫苗和特效藥，加上部分早期鼻咽癌病徵，如頭痛、鼻塞、耳鳴等，容易被患者忽略。可幸的是，愈早發現患上鼻咽癌，愈早開展治療，療效愈見提升，對患者的影響亦可減至最低；數據顯示，早期鼻咽癌的存活率可高於90%4。所以，提防鼻咽癌的最佳方法，就是定期進行早期鼻咽癌篩查，為自己的健康購買「保險」，及早準備。
+
+Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%4,5，而且絕少漏檢；假陽性率極低 (0.7%)5，是市場上最準確可靠的測試。此測試採用本地頂尖大學的研發成果，並通過二萬人參與大型臨床驗証4，結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing)，有效識別出早期鼻咽癌患者。
+
+篩查的過程簡單便捷，只需於網上一站式預約；不用入院，不用請假，到診所抽血即可；一頓午飯時間就能完成，最快三至七個工作天就有結果。
+
+現在登記成為會員並使用優惠碼【2020NEW】更尊享推廣優惠*！
+
+立即預約：(ehealth)
+
+了解更多Take2 Prophecy™ 早期鼻咽癌篩查資訊：(campaign page)
+
+\*優惠只限首200名預約者，並受條款及細則約束。
+
+參考資料
+
+1\. 鼻咽癌：及早察覺、徵狀、放射及化學治療. Hong Kong Anti-Cancer Society, April 2021, [https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf](https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf "https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf").
+
+2\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
+
+3\. _Hong Kong Cancer Registry_. Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.
+
+4\. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” _New England Journal of Medicine_, vol. 377, no. 6, 2017, pp. 513–22.
+
+5\. Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” _Proceedings of the National_ _Academy of Sciences_, vol. 115, no. 22, 2018, pp. E5115–24.
