@@ -143,6 +143,16 @@ We and the production team have made sufficient and detailed preparations in adv
 
 `youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s "https://www.youtube.com/watch?v=nSD7pEd4J-s")
 
+(Hong Kong Gymnast Stone Shek and Kelvin Ng's video)
+
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3 "https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3")
+
+(Hong Kong Freediving Record Holder Chris Cheung's video)
+
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2 "https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2")
+
+(The First Hong Kong Female Jockey Sherie Kong's video)
+
 <br/>
 
 <br/>
@@ -173,9 +183,9 @@ The whole test process is just amazingly simple. By making appointments on the T
 
 Register as a member now to enjoy the special promotional offer by entering Promo Code “2022NEW” *.
 
-Book the test now: (ehealth)
+Book the test now: [https://bit.ly/3Lqqo0T](https://bit.ly/3Lqqo0T "https://bit.ly/3Lqqo0T")
 
-Learn more about the Take2 Prophecy™ Test for NPC: (campaign page)
+Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/3woinVN](https://bit.ly/3woinVN "https://bit.ly/3woinVN")
 
 \*Limited to the first 200 appointments. Terms and Conditions apply.
 
