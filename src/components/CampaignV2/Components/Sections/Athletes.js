@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   videoFullWidth: {
     borderRadius: 10,
     [theme.breakpoints.down('xs')]: {
-      borderRadius: 16,
+      borderRadius: 24,
     },
   },
   outlineButton: {
@@ -35,11 +35,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       marginLeft: 0,
-      marginTop: theme.spacing(1.5),
+      marginTop: theme.spacing(2),
     },
   },
-  imageListItem: {
-    borderRadius: theme.spacing(1.75),
+  link: {
+    color: '#F2974C',
   },
 }))
 const Athletes = () => {
@@ -115,15 +115,19 @@ const Athletes = () => {
         mx='auto'
         color='grey.900'
         fontSize={isMobile ? 16 : 18}
-        fontWeight={isMobile ? '' : 'fontWeightMedium'}
-        p={4}
-        mt={isMobile ? 0 : 5.5}
+        fontWeight={isMobile ? 'fontWeightRegular' : 'fontWeightMedium'}
+        p={isMobile ? 2.5 : 4}
+        mt={isMobile ? 4 : 5.5}
+        pb={isMobile ? 6 : 4}
         mb={-4}
         position='relative'
         bgcolor='background.paper'
         borderRadius={isMobile ? 24 : 0}
       >
-        {t('cp_v2.athletes.paragraphs.0')}
+        <Trans i18nKey='cp_v2.athletes.paragraphs.0'>
+          .{isMobile && '\n\n'}
+        </Trans>
+        {/* {t('cp_v2.athletes.paragraphs.0')} */}
       </Box>
       <Box>
         {ATHLETES_INFO.map((athlete, index) => (
@@ -136,15 +140,16 @@ const Athletes = () => {
                 : 'background.paper'
             }
             key={athlete.name}
-            pt={isMobile ? 1.5 : 0}
-            pb={1}
+            px={3}
+            pb={isMobile ? 10.5 : 0}
+            borderRadius={isMobile ? 24 : 0}
           >
             {!index && (
               <Box
                 textAlign='center'
                 fontSize={isMobile ? 20 : 28}
                 pt={isMobile ? 8 : 12}
-                px={isMobile ? 5 : 0}
+                mb={isMobile ? 2.5 : 0}
                 color='#29678F'
                 fontWeight={isMobile ? 'bold' : 'fontWeightBold'}
               >
@@ -152,62 +157,67 @@ const Athletes = () => {
               </Box>
             )}
             <Box
-              pt={index ? 4.5 : 1.5}
-              pb={5}
+              px={isMobile ? 2.5 : 0}
+              py={isMobile ? 2 : 0}
+              bgcolor={isMobile ? 'background.paper' : 'transparent'}
+              mt={index ? 4.5 : 1.5}
+              mb={5}
               maxWidth={1140}
               mx='auto'
-              margin={isMobile ? '36px 20px' : 'auto'}
-              borderRadius={isMobile ? '16px' : 0}
-              border={isMobile ? 'rgb(124 124 124 / 10%) 0px 5px 30px 0px' : ''}
-              bgcolor={isMobile ? 'background.paper' : ''}
+              borderRadius={16}
+              boxShadow={
+                isMobile ? `0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}` : 'none'
+              }
             >
               <Box
-                mx={-2}
-                mb={9}
-                flexDirection={
-                  isMobile ? 'column' : !(index % 2) ? 'row' : 'row-reverse'
-                }
-                display='flex'
+                mb={isMobile ? 0 : 9}
+                flexDirection={!(index % 2) ? 'row' : 'row-reverse'}
+                display={isMobile ? 'block' : 'flex'}
                 alignItems='center'
               >
-                <Box mr={3} fontWeight='fontWeightBold'>
-                  <Box width={180} height={180}>
+                <Box
+                  alignItems='center'
+                  display='flex'
+                  flexDirection='column'
+                  mr={3}
+                  fontSize={isMobile ? 16 : 18}
+                  fontWeight={isMobile ? 'fontWeightBold' : 'fontWeightMedium'}
+                >
+                  <Box mb={isMobile ? 1 : 0} width={180} height={180}>
                     {athlete.avatar}
                   </Box>
-                  <Box
-                    fontSize={isMobile ? 16 : 18}
-                    lineHeight={1.5}
-                    textAlign='center'
-                    mb={1}
-                  >
-                    <Box whiteSpace='nowrap' mt={1}>
-                      {t(athlete.title)}
-                    </Box>
+                  <Box lineHeight={1.5} textAlign='center'>
+                    <Box whiteSpace='nowrap'>{t(athlete.title)}</Box>
                     {t(athlete.name)}
                   </Box>
                 </Box>
-                <Box
-                  fontSize={isMobile ? 16 : 30}
-                  lineHeight={2}
-                  px={isMobile ? 4 : 0}
-                  color={isMobile ? 'grey.900' : ''}
-                >
-                  {isMobile && (
+                {isMobile && (
+                  <Box my={2}>
                     <YouTube
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
                       opts={{
                         width: '100%',
+                        height: 524,
                       }}
                     />
-                  )}
+                  </Box>
+                )}
+                <Box
+                  color={isMobile ? 'grey.900' : '#29678F'}
+                  fontSize={isMobile ? 16 : 30}
+                  lineHeight={2}
+                  fontWeight={
+                    isMobile ? 'fontWeightMedium' : 'fontWeightRegular'
+                  }
+                >
                   <Trans i18nKey={athlete.intro}>
                     .<sup>.</sup>
                     <sup>.</sup>
                   </Trans>
                 </Box>
               </Box>
-              <Box>
+              <Box px={isMobile ? 2 : 0}>
                 {!isMobile && (
                   <YouTube
                     className={classes.videoFullWidth}
@@ -218,38 +228,22 @@ const Athletes = () => {
                     }}
                   />
                 )}
-                <Box mt={5.5} mx={isMobile ? 4 : 0}>
-                  <ImageList rowHeight='auto' cols={isMobile ? 1 : 2} gap={32}>
-                    <ImageListItem
-                      classes={{
-                        item: classes.imageListItem,
-                      }}
-                    >
-                      {athlete.image}
+                <Box mt={isMobile ? 2 : 5.5}>
+                  <ImageList
+                    rowHeight='auto'
+                    cols={isMobile ? 1 : 2}
+                    gap={isMobile ? 16 : 32}
+                  >
+                    <ImageListItem>{athlete.image}</ImageListItem>
+                    <ImageListItem>
+                      <YouTube
+                        className={classes.video}
+                        videoId={athlete.videos[1]}
+                        opts={{
+                          width: '100%',
+                        }}
+                      />
                     </ImageListItem>
-                    {!isMobile && (
-                      <ImageListItem>
-                        <YouTube
-                          className={classes.video}
-                          videoId={athlete.videos[1]}
-                          opts={{
-                            width: '100%',
-                            height: '454px',
-                          }}
-                        />
-                      </ImageListItem>
-                    )}
-                    {isMobile && (
-                      <ImageListItem>
-                        <YouTube
-                          className={classes.video}
-                          videoId={athlete.videos[1]}
-                          opts={{
-                            width: '100%',
-                          }}
-                        />
-                      </ImageListItem>
-                    )}
                   </ImageList>
                 </Box>
               </Box>
@@ -264,10 +258,103 @@ const Athletes = () => {
               </Box>
             )}
             {index === ATHLETES_INFO.length - 1 && (
+              <Box px={isMobile ? 2 : 0}>
+                <Box
+                  className='gsap-fade-in-9'
+                  pt={isMobile ? 4 : 7}
+                  pb={isMobile ? 0 : 15}
+                  flexWrap={isMobile ? 'wrap' : 'nowrap'}
+                  display='flex'
+                  width='100%'
+                  mx='auto'
+                  maxWidth={isMobile ? 'auto' : 480}
+                >
+                  <Button
+                    fullWidth
+                    href={process.env.GATSBY_SITE_URL}
+                    variant='contained'
+                    color='secondary'
+                    target='_blank'
+                    id='ECP_Article_EH'
+                  >
+                    {t('common.book_now')}
+                  </Button>
+                  <Box
+                    width='100%'
+                    target='_blank'
+                    component={Link}
+                    to='/service-location/'
+                  >
+                    <Button
+                      className={classes.outlineButton}
+                      fullWidth
+                      variant='outlined'
+                      id='ECP_Article_Location'
+                    >
+                      {t('cp_v2.common.view_service_location')}
+                    </Button>
+                  </Box>
+                </Box>
+              </Box>
+            )}
+          </Box>
+        ))}
+      </Box>
+      <Box
+        maxWidth={1192}
+        mx='auto'
+        pt={isMobile ? 8 : 3.5}
+        pb={isMobile ? 9 : 4}
+        mt={-3}
+        boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
+        bgcolor={isMobile ? 'prophecyPrimary.main' : 'background.paper'}
+        position='relative'
+        borderRadius={isMobile ? 0 : 16}
+        color={isMobile ? 'common.white' : '#29678F'}
+      >
+        <Box maxWidth={854} mx='auto' borderRadius={16}>
+          <Box
+            textAlign='center'
+            fontSize={isMobile ? 20 : 28}
+            fontWeight='fontWeightBold'
+            mb={4}
+          >
+            {t('cp_v2.athletes.paragraphs.2')}
+          </Box>
+          <Box
+            px={2.5}
+            fontSize={isMobile ? 'body1.fontSize' : 'h6.fontSize'}
+            fontWeight={isMobile ? 'fontWeightRegular' : 'fontWeightMedium'}
+          >
+            <Trans i18nKey='cp_v2.athletes.paragraphs.3'>
+              .<sup>.</sup>
+            </Trans>
+            {!isMobile && t('cp_v2.athletes.paragraphs.5')}
+          </Box>
+          {!isMobile && (
+            <Box textAlign='right'>
+              <Link className={classes.link} to='/' underline='always'>
+                <Box component='span'>{t('cp_v2.athletes.paragraphs.4')}</Box>
+              </Link>
+            </Box>
+          )}
+        </Box>
+        {isMobile && (
+          <>
+            <Box
+              borderRadius={16}
+              mt={2}
+              px={2.5}
+              py={4}
+              bgcolor='background.paper'
+              mx={2.5}
+            >
+              <Box color='grey.900' fontSize='body1.fontSize'>
+                {t('cp_v2.athletes.paragraphs.5')}
+              </Box>
               <Box
                 className='gsap-fade-in-9'
-                pt={7}
-                pb={15}
+                mt={4}
                 flexWrap={isMobile ? 'wrap' : 'nowrap'}
                 display='flex'
                 width='100%'
@@ -301,87 +388,57 @@ const Athletes = () => {
                   </Button>
                 </Box>
               </Box>
-            )}
-          </Box>
-        ))}
-      </Box>
-      <Box
-        maxWidth={1192}
-        mx='auto'
-        pt={3.5}
-        pb={4}
-        mt={-3}
-        boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
-        bgcolor='background.paper'
-        borderRadius={16}
-      >
-        <Box maxWidth={854} mx='auto' borderRadius={16}>
-          <Box
-            textAlign='center'
-            fontSize={isMobile ? 20 : 28}
-            fontWeight='fontWeightBold'
-            mb={4}
-          >
-            {t('cp_v2.athletes.paragraphs.2')}
-          </Box>
-          <Box
-            fontSize={isMobile ? 16 : 'h6.fontSize'}
-            fontWeight={isMobile ? 400 : 'fontWeightMedium'}
-            px={isMobile ? 4 : 0}
-          >
-            <Trans i18nKey='cp_v2.athletes.paragraphs.3'>
-              .<sup>.</sup>
-            </Trans>
-          </Box>
-          {!isMobile && (
-            <Box textAlign='right'>
-              <Link to='/' underline='always'>
-                <Box color='#F2974C' component='span'>
-                  {t('cp_v2.athletes.paragraphs.4')}
-                </Box>
-              </Link>
             </Box>
-          )}
-        </Box>
+            {isMobile && (
+              <Box mt={2} textAlign='center'>
+                <Link className={classes.link} to='/' underline='always'>
+                  <Box fontSize='body1.fontSize' component='span'>
+                    {t('cp_v2.athletes.paragraphs.4')}
+                  </Box>
+                </Link>
+              </Box>
+            )}
+          </>
+        )}
       </Box>
-
-      <Box
-        className='gsap-fade-in-9'
-        mt={7}
-        mb={14.5}
-        flexWrap={isMobile ? 'wrap' : 'nowrap'}
-        display='flex'
-        width='100%'
-        mx='auto'
-        maxWidth={isMobile ? 'auto' : 480}
-        px={isMobile ? 4 : 0}
-      >
-        <Button
-          fullWidth
-          href={process.env.GATSBY_SITE_URL}
-          variant='contained'
-          color='secondary'
-          target='_blank'
-          id='ECP_Article_EH'
-        >
-          {t('common.book_now')}
-        </Button>
+      {!isMobile && (
         <Box
+          className='gsap-fade-in-9'
+          mt={7}
+          mb={14.5}
+          flexWrap={isMobile ? 'wrap' : 'nowrap'}
+          display='flex'
           width='100%'
-          target='_blank'
-          component={Link}
-          to='/service-location/'
+          mx='auto'
+          maxWidth={isMobile ? 'auto' : 480}
         >
           <Button
-            className={classes.outlineButton}
             fullWidth
-            variant='outlined'
-            id='ECP_Article_Location'
+            href={process.env.GATSBY_SITE_URL}
+            variant='contained'
+            color='secondary'
+            target='_blank'
+            id='ECP_Article_EH'
           >
-            {t('cp_v2.common.view_service_location')}
+            {t('common.book_now')}
           </Button>
+          <Box
+            width='100%'
+            target='_blank'
+            component={Link}
+            to='/service-location/'
+          >
+            <Button
+              className={classes.outlineButton}
+              fullWidth
+              variant='outlined'
+              id='ECP_Article_Location'
+            >
+              {t('cp_v2.common.view_service_location')}
+            </Button>
+          </Box>
         </Box>
-      </Box>
+      )}
     </Box>
   )
 }
