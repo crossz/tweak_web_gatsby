@@ -46,13 +46,13 @@ Take2 Health和製作團隊為了能細緻地呈現香港運動員的特質，�
 
 **揭開四位運動員主角的神秘面紗 認真製作．幕後花絮全公開**
 
-_第一組主角：石仔和Kelvin_
+_首兩位主角：石仔和Kelvin_
 
 石偉雄（石仔），香港體操運動員，主項為跳馬。他於2010年初次代表香港出戰亞運跳馬項目，並於兩年後首次取得奧運入場券，成為首位奧運體操香港代表。
 
 ![](../images/dsc09186_min.jpg)
 
-吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。![](../images/dsc00268_min.jpg)
+吳翹充（Kelvin），香港體操運動員，贏得「吊環王子」的美譽。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。![](../images/dsc00268_min.jpg)
 
 <br/>
 
@@ -168,9 +168,9 @@ Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕�
 
 現在登記成為會員並使用優惠碼【2022NEW】更尊享推廣優惠*！
 
-立即預約：(ehealth)
+立即預約：[https://bit.ly/3Lqqo0T](https://bit.ly/3Lqqo0T "https://bit.ly/3Lqqo0T")
 
-了解更多Take2 Prophecy™ 早期鼻咽癌篩查資訊：(campaign page)
+了解更多Take2 Prophecy™ 早期鼻咽癌篩查資訊：[https://bit.ly/3woinVN](https://bit.ly/3woinVN "https://bit.ly/3woinVN")
 
 \*優惠只限首200名預約者，並受條款及細則約束。
 
