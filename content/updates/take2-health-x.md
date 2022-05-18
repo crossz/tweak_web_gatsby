@@ -96,7 +96,7 @@ _第四位主角：Sherie_
 
 我們和製作團隊做了充足周詳的事前準備，全為呈上令你目不暇給的精彩電影級畫面。事不宜遲，現在立即去片：
 
-<iframe width="560" height="315" src="[https://www.youtube.com/embed/nSD7pEd4J-s](https://www.youtube.com/embed/nSD7pEd4J-s "https://www.youtube.com/embed/nSD7pEd4J-s")" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s "https://www.youtube.com/watch?v=nSD7pEd4J-s")
 
 **「預早準『鼻』 迎接挑戰無顧忌」**
 
