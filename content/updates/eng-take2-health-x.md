@@ -3,116 +3,119 @@ type: company_trends
 languages:
 - en
 cover:
-- "../images/thumbnail-changed-04.png"
+- "../images/thumbnail-changed-06.png"
 date: 2022-05-23T00:00:00+08:00
-title: "(ENG Testing) Take2 Health X 四位頂尖香港運動員"
-detail: 香港運動員持續在國際舞台發光發熱，他們堅毅不屈的鬥志和追求卓越的決心，絕對值得所有人的掌聲。是次拍攝項目我們很榮幸邀請到四位本地運動菁英和Take2
-  Health一起預早準「鼻」，迎接挑戰。現在讓我們立即解構這次拍攝的細節吧！
+title: 'Take2 Health & Four Hong Kong Top Athletes　Early Preparation for Your Health '
+detail: Hong Kong athletes continue to glow in international sports events. In this
+  campaign, we are honoured to invite four Hong Kong top athletes to get ready, and
+  be well-prepared together to face the health challenges. Let’s deconstruct the details
+  of the campaign’s hero video now!
 href: ''
 slug: ''
 
 ---
-![](../images/thumbnail-changed-01.png)
+
+![](../images/thumbnail-changed-03.png)
 
 <br/>
 
-香港運動員持續在國際舞台發光發熱，他們堅毅不屈的鬥志和追求卓越的決心，絕對值得所有人的掌聲。Take2 Health作為香港的初創企業，同樣力瑧完美，一直致力守護大眾健康，不斷研發創新醫療科技。是次拍攝項目我們很榮幸邀請到四位本地運動菁英和Take2 Health一起預早準「鼻」，迎接挑戰。現在讓我們立即解構這次拍攝的細節吧！
-
-<br/>
-
-<br/>
-
-**賽場爭勝要及早準備 掌控你的健康也如是**
-
-Take2 Health和製作團隊為了能細緻地呈現香港運動員的特質，所以於構思階段時，向四位運動員在訓練、心路歷程和日常生活等方面皆作出全面了解，並展開了無數的熱烈討論。我們看過四位運動員在鎂光燈下挑戰自己、面對困難的故事，均發現他們通向成功的其中一個關鍵，就是預先的準備；和我們對於提防鼻咽癌、管理自己健康的信念不謀而合，最後鎖定是次拍攝的主題——「及早準備，掌握黃金時機」！
+Hong Kong athletes continue to glow in international sports events. Their spirit of perseverance and determination to pursue excellence deserves all the applause. Take2 Health, as a start-up built from Hong Kong, also strives for perfection, aims to provide practical information, and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia. In this campaign, we are honoured to invite four Hong Kong top athletes to get ready, and be well-prepared together to face the health challenges. Let’s deconstruct the details of the campaign’s hero video now!
 
 <br/>
 
 <br/>
 
-**維持良好狀態 從預早和身體溝通開始**
+**To win in the games we need to get prepared in advance　Same as to manage your health**
 
-每一個動作早已完成過萬次，每一個細節也曾在腦海中預先上演，才造就出最好的表現。要在運動場上發揮出應有水準，比賽前的反覆練習當然是不可或缺。除此之外，運動員更要時刻掌控自己的身體狀況，即使極細微如肌肉的變化也不能錯過，才能制訂針對性的訓練和治療，達致最完美的效果；預早和身體溝通，認清自己的狀態，才能以更好的方式應對變數。越早準備，自然勝算越高。
-
-<br/>
-
-你，同樣地，要及早準備！我們要有健康體魄，不單日常需要保持良好的生活習慣，也應定期了解自己的身體狀況，進行篩查，管理潛在的健康風險。我們在自覺很健康時，往往會習慣埋首於忙碌的生活及工作之中，當身體發出警號時，也甚少會聯想到自己患上疾病，未有正視。可是一旦疾病突然打亂你的生活時，你又是否已準備好面對變數？
+To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health and the production team have conducted a comprehensive study on their training, inner journey, and daily life of the four athletes and have gone through numerous lively discussions. We have discovered the stories of the four athletes facing various challenges and difficulties under the spotlight. One significant common factor driving them to succeed is early preparation which is coincidentally consistent with our beliefs about surmounting the odds of nasopharyngeal cancer and managing our own health. Therefore, we have decided the theme of the video to be, “Always start preparation early for the golden timing”!
 
 <br/>
 
-任何人都一樣，愈早準備，就能愈早部署，從容面對突如其來的挑戰。所以我們攜手和四位運動員帶來是次拍攝項目，讓大家認識到「預早知，越早醫」的道理，以精準科學守護各位健康。
+<br/>
+
+**Maintain a good condition　Begin with staying mindful to your body**
+
+To create the best performance, every movement has been practiced over millions of times, and every detail has been rehearsed in the mind beforehand. To achieve excellence in the games, it is vital to practice relentlessly. On the other hand, athletes need to constantly monitor and manage their body condition, even if the most subtle muscle changes cannot be missed, in order to map out the targeted training and treatment for achieving the best result. The earlier we listen to the signals sent by our body, the better we can take control of our health, as well as the circumstances to win the game.
 
 <br/>
 
-**揭開四位運動員主角的神秘面紗 認真製作．幕後花絮全公開**
+Similarly, you need to get prepared in advance! To stay healthy, it is barely sufficient to maintain sound daily living habits. Instead, we should also be aware of our body conditions continually, undergo early detection, and manage the potential health risks. We get used to the hectic life when we consider ourselves healthy, and are likely to neglect the warning signal sent out from our body which might be brought by diseases, thus making us fail to manage our health properly. Are you ready to face the changes when the disease comes as a bolt out of the blue?
 
-_第一組主角：石仔和Kelvin_
+<br/>
 
-石偉雄（石仔），香港體操運動員，主項為跳馬。他於2010年初次代表香港出戰亞運跳馬項目，並於兩年後首次取得奧運入場券，成為首位奧運體操香港代表。
+Everyone is the same; the earlier we get prepared, the easier we can organise our lives to face the challenges composedly. Therefore, we partner with the four athletes to bring out this campaign, aiming at informing everyone the principle of "Cure NPC earlier by knowing it earlier", hence protecting everyone's health with state-of-the-art technologies.
+
+<br/>
+
+**Reveal the four athlete protagonists　Fully disclose the footage of the making-of**
+
+_The first and second protagonists: Stone and Kelvin_
+
+Shek Wai Hung (Stone), the Hong Kong gymnast, is specialised in the vault. In 2010, he represented Hong Kong to compete in the Asian Games men’s vault for the first time and won his first Olympic entrance ticket after two years, becoming the first gymnastics Olympian from Hong Kong.
 
 ![](../images/dsc09186_min.jpg)
 
-吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。![](../images/dsc00268_min.jpg)
+Ng Kiu Chung (Kelvin), the Hong Kong gymnast, is known for the name of “Lord of the Rings”. He has won numerous global prizes in his gymnast career and has successfully made two elements on rings to be named after him.![](../images/dsc00268_min.jpg)
 
 <br/>
 
-為了讓石仔和Kelvin拍攝時能更容易適應和進入狀態，製作團隊事先做了一連串的準備功夫，包括仔細地蒐集資料，亦從面談中了解石仔和Kelvin的日常生活習慣和日程。得知香港體操代表隊現時於順利邨體育館集訓，其訓練場地設有各項專業的體操訓練設施，包括吊環、跳馬高低槓、鞍馬、平衡木等器材，因而我們立即決定借用體育館作拍攝場地，除了期望為石仔和Kelvin消除緊張的心情，亦確保運動員可於安全的環境下完成動作拍攝，避免因拍攝的壓力而不慎受傷。
+To let Stone and Kelvin get used to the shooting condition with ease, the production team has done a series of preparation, including collecting information in detail, and understanding the daily habits and schedules of Stone and Kelvin from interviews. Knowing that the Hong Kong gymnastics team is currently training at Shun Lee Estate Sports Centre, which is equipped with various professional facilities, including rings, vaults, uneven bars, pommel horses, and balance beams, we immediately decided to use the centre as the shooting venue, to relieve Stone and Kelvin's nervousness and ensure they could complete the shooting in a safe environment, avoiding injuries because of the stress of shooting.
 
 ![](../images/dsc06907_min.jpg)![](../images/dsc08282_min.jpg)![](../images/dsc08336_min.jpg)
 
-（製作團隊認真構思每個鏡頭）
+(Production team was conceiving of each camera angle and shot seriously)
 
 <br/>
 
-此外，為使畫面更迫真和更有質感，石仔和Kelvin絕不馬虎，拍攝時全神貫注地演繹他們的比賽動作，起跳、轉身，都能感受到他們的認真、專業和扎實的功力，彷彿置身奧運比賽之中。為了將動作淋漓盡致地呈現，他們更反覆做出動作，讓攝影師能採用不同角度拍攝，盡可能捕捉細節，構造最完美的畫面。
+Moreover, to make the scenes more realistic and textured, Stone and Kelvin fully concentrated on performing the shooting moves. They did the movements over and over again for the cameramen to shoot from different angles, and capture as much detail as they could to construct the most perfect scenes. Their seriousness, professionalism and solid skills could be seen from their jumps, leaps and turns, as if they were competing in the Olympic Games.
 
 ![](../images/dsc05880_min.jpg)![](../images/dsc00031_min.jpg)![](../images/dsc06356_min.jpg)![](../images/dsc06554_min.jpg)
 
-（石仔和Kelvin認真演繹日常訓練動作）
+(Stone and Kelvin performed their daily training seriously)
 
 <br/>
 
 ![](../images/dsc08624_min.jpg)![](../images/dsc08423_min.jpg)![](../images/dsc08533_min.jpg)
 
-（為求完美，石仔反覆做出他的招牌動作）
+(Stone repeatedly performed his iconic moves to strive for perfection)
 
 <br/>
 
-_第三位主角：Chris_
+_The third protagonist: Chris_
 
-張立興 (Chris)，香港自由潛水紀錄保持者，也是香港自由潛水協會的會長。早前於地區賽事中，他在同時打破3項香港自由潛水記錄下（靜態閉氣、動態閉氣帶雙蹼及動態閉氣不帶蛙鞋）取得男子組全場總冠軍。
+Cheung Lap Hing (Chris) is the current Hong Kong freediving record holder and the president of the Hong Kong Freediving Association. In the earlier regional competition, he has broken the Hong Kong freediving record in three disciplines (Static Apnea, Dynamic With Bi-Fins, and Dynamic Without Fins), winning the men’s overall championship.
 
 ![](../images/dsc00186_min.jpg)
 
 <br/>
 
-自由潛水於香港現時仍非一項很普及的運動，因此製作團隊於拍攝前，也請教了Chris有關他的日常訓練日程。要不帶任何裝備，徒手潛入深海，一個充滿變數的海底世界，Chris坦言唯一可以控制的就是他的身體和狀態。所以他會透過每日的恆常訓練，來穩定自己的身體狀態，這也成了他的拍攝主要內容，在影片中可以見到不少他練習瑜伽及冥想的畫面。
+Freediving is still not a popular sport in Hong Kong, and therefore the production team consulted Chris about his training routine before the shooting. Without any equipment, diving into the deep sea with bare hands, he entered an underwater world full of uncertainty. Chris stated that the only controllable factors are his body and mind. Therefore, he would stabilise his body condition through daily training, which has also become his main shooting content. Many scenes about his practice of yoga and meditation can be seen in the video.
 
 <br/>
 
-Chris解釋道，練習瑜珈可使他的身軀比一般人柔軟，有利提升他在水中的流暢度；而通過掌握腹式呼吸的技術，及冥想中專注於身體的正念技巧，可以有助他平靜心神，將意識帶到身體的不同部位並專注於放鬆身心。這些都能讓自由潛水員更有效率的運用肌肉，減少體力的消耗，進而降低耗氧量。![](../images/dsc00312_min.jpg)![](../images/dsc00066_min.jpg)
+Chris explained that practicing yoga can increase his body flexibility which helps to improve his mobility in the water. In addition, by mastering the technique of diaphragmatic breathing and meditation, he keeps himself calm, brings awareness to different body parts, and gets relaxed. All these help the free divers use their muscles more efficiently, reduce physical exertion, and thereby reduce oxygen consumption.![](../images/dsc00312_min.jpg)![](../images/dsc00066_min.jpg)
 
-（拍攝內容圍繞Chris的日常瑜伽及冥想訓練）
+(Many scenes about Chris practicing yoga and doing meditation could be seen)
 
 <br/>
 
-當然，提及自由潛水，怎麼會沒有戶外拍攝呢？為了令拍攝更順利，Chris於整個拍攝準備階段一直提供幫助。例如他比較熟識天氣和海上的變化，所以也分享了很多有關天氣預測的知識，讓製作團隊於準備安排做得更好，最終選擇了合適的拍攝地點。
+Of course, talking about freediving, outdoor shooting is inevitable. To assist in having a smooth shooting, Chris has provided full support in the preparation phase. For instance, since Chris is familiar with the changes in weather and the sea, he shared a lot of knowledge about weather prediction such that the production team was able to choose a suitable shooting venue at the end.
 
 ![](../images/dsc00306_min.jpg)![](../images/dsc00336_min.jpg)
 
-（Chris就像製作團隊的「天文台」，提供很多實用的天氣知識）
+(Chris served as our “Observatory” and provided a lot of weather information)
 
 <br/>
 
-P.S. 我們就告訴大家一個可特別留意的彩蛋吧！這次的拍攝，很高興可以邀請到特別嘉賓，就是Chris的兩位寶貝女兒。Chris除了是自由潛水的冠軍級人馬，他同時是一個慈父。在拍攝現場，兩位女兒熟練的做出一字馬等瑜伽動作，加上他們一家的真摰對話和互動，可見他們的關係非常融洽，也令拍攝的氣氛變得更愉快。![](../images/dsc00372_min.jpg)![](../images/dsc00654_min.jpg)![](../images/dsc00460_min.jpg)
+P.S. We wanted to share a little surprise that we found during the filming. We are glad to invite special guests during the shooting, the two daughters of Chris. Apart from being a freediving champion, Chris is also a loving father. At the shooting venue, the two daughters performed several yoga movements such as splitting. Coupled with their joyful conversations and interactions, it is shown that they have close rapport and created a pleasant shooting atmosphere.![](../images/dsc00372_min.jpg)![](../images/dsc00654_min.jpg)![](../images/dsc00460_min.jpg)
 
-（Chris和兩位寶貝女兒的互動，令現場氣氛十分歡樂）
+(The joyful interactions between Chris and his two daughters lighten the atmosphere)
 
 <br/>
 
-_第四位主角：Sherie_
+_The forth protagonist: Sherie_
 
-江碧蕙 (Sherie)，全球首位華人女騎師，於16歲時開始於騎術學校受訓，並在一年後出道。19歲時即贏得頭馬，往後在5 年的賽馬生涯中，共贏得 11 次頭馬。
+Kong Pik Wai (Sherie) is the first Hong Kong female jockey. She started training in riding school at the age of 16 and debuted a year after. She won her first race at the age of 19 and has won a total of 11 races in her five-year career.
 
 ![](../images/pcw_20210405_0857_min.jpg)
 
@@ -120,23 +123,23 @@ _第四位主角：Sherie_
 
 ![](../images/pcw_20210405_0146.jpg)![](../images/pcw_20210405_0992_min.jpg)
 
-（製作團隊嘗試拍攝馬匹的「動作畫面」）
+(The production team was trying to film the horse’s “action scenes”)
 
 <br/>
 
-相信製作團隊中沒有人比Sherie 更熟悉和了解馬匹的一舉一動了。為了切合Sherie的拍攝內容，製作團隊設定了一些和馬匹互動的畫面，因此Sherie需要做出有一定危險性的動作。要拍攝到精彩畫面，這個時候我們和製作團隊都需要Sherie的豐富經驗，在短時間內透過接觸馬匹，來了解馬匹當天的心情和狀態。全靠Sherie事前和馬匹溝通，建立起信任與默契，我們的拍攝才得以順利進行。
+It is believed that no one in the production team is more familiar with and can understand every single move of the horse better than Sherie. The production team set some interaction scenes with the horse to fit her shooting’s content. Hence Sherie needed to perform some dangerous moves. To capture the great shots, the team needed to understand the mood and condition of the horse on the day itself through contact with it in a short period of time. It was entirely up to Sherie’s communication with the horse beforehand, building up a trustful and tacit relationship, and therefore our shooting was able to go smoothly.
 
 ![](../images/pcw_20210405_0803_min.jpg)![](../images/pcw_20210405_3292_min.jpg)![](../images/pcw_20210405_3741_min.jpg)
 
-（全靠Sherie和馬匹事先溝通，馬匹拍攝時才乖乖聽話）
+(It was entirely up to Sherie’s communication with the horse in advance, so that the horse was well-behaved when filming)
 
 <br/>
 
 <br/>
 
-**即看2022年全新廣告**
+**Check out the new 2022 campaign**
 
-我們和製作團隊做了充足周詳的事前準備，全為呈上令你目不暇給的精彩電影級畫面。事不宜遲，現在立即去片：
+We and the production team have made sufficient and detailed preparations in advance, to present numerous incredible cinematic scenes as a feast for the eyes. So, without further ado, let’s watch the video now:
 
 `youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s "https://www.youtube.com/watch?v=nSD7pEd4J-s")
 
@@ -144,35 +147,37 @@ _第四位主角：Sherie_
 
 <br/>
 
-**「預早準『鼻』 迎接挑戰無顧忌」**
+**Early Preparation for your Health to Face Challenges without Scruples**
 
-當大家見到運動員站上頒獎台時，相信這個輝煌成就背後絕不簡單；一個獎牌、一個認可是由無數的挑戰、挫敗和堅持累積而成，更重要的是，預早準備。
-
-<br/>
-
-而對於健康管理，我們同樣應預早準備，防患於未然。以癌症為例（尤其是鼻咽癌），其實是可以提防的。鼻咽癌不如其他大部份癌症般年齡愈大發病率愈高，其發病年齡相對比較早¹，是本港20-44歲男士的頭號癌症²，也是女士當中較常發病於40-60歲的癌症³。所以，任何年齡、性別，均同樣受到鼻咽癌的威脅。
+When seeing the athletes standing on the podium, we believe that there is nothing simple behind this triumphant success. A medal and a recognition are accumulated through countless challenges, setbacks, persistence, and more importantly, early preparation.
 
 <br/>
 
-此外，目前未有針對性的疫苗和特效藥，加上部分早期鼻咽癌病徵，如頭痛、鼻塞、耳鳴等，容易被患者忽略。可幸的是，愈早發現患上鼻咽癌，愈早開展治療，療效愈見提升，對患者的影響亦可減至最低；數據顯示，早期鼻咽癌的存活率可高於90%⁴。所以，提防鼻咽癌的最佳方法，就是定期進行早期鼻咽癌篩查，為自己的健康購買「保險」，及早準備。
+With regards to the health management, we should also get prepared early and nip the disease in the bud. For example, cancers, especially nasopharyngeal cancer (NPC), are preventable. Unlike other cancer types, NPC occurs at a relatively young age¹. Not only it is the No.1 cancer among men aged 20 to 44², but also likely to occur in women between 40-60 years old³. Therefore, NPC can strike anyone at any age.
 
 <br/>
+
+Besides, as of now, there is no vaccine available for prevention or medication for treatment. Most importantly, the symptoms of early NPC, such as headache, nasal blockage, and rhinitis resemble those of flu and are easy to let the patients’ guards down. Luckily, the earlier the NPC gets diagnosed and treatments are received, the better the medical outcome, and fewer impacts are brought to the patients. According to the statistics, the survival rate of early-stage NPC patients could reach over 90%⁴. Therefore, the best way to tackle the uncertainties of NPC is to undergo early NPC detection regularly, to “buy insurance” for our health, and always get well-prepared.
+
+<br/>
+
+The Take2 Prophecy™ Test for NPC has over 97% sensitivity⁵ ⁶, and very few cases of NPC would be missed. Also, it only has a 0.7% remarkably low false-positive rate⁶. By providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests. Beginning with the research achievement from a renowned Hong Kong university, and being validated in a large-scale clinical study involving 20,000 individuals⁵, with the use of Next-generation Sequencing (NGS) technology, the test effectively enables NPC patients to be identified in their early-stage.
 
 Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕少漏檢；假陽性率極低 (0.7%)⁶，是市場上最準確可靠的測試。此測試採用本地頂尖大學的研發成果，並通過二萬人參與大型臨床驗証⁵，結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing)，有效識別出早期鼻咽癌患者。
 
 <br/>
 
-篩查的過程簡單便捷，只需於網上一站式預約；不用入院，不用請假，到診所抽血即可；一頓午飯時間就能完成，最快三至七個工作天就有結果。
+The whole test process is just amazingly simple. By making appointments on the Take2 Health Online Platform, without hospital admission or taking leave, you can take the test through a blood draw at your nearest clinic and get it done within the time of a lunch. Results can be available as soon as 3 working days.
 
 <br/>
 
-現在登記成為會員並使用優惠碼【2020NEW】更尊享推廣優惠*！
+Register as a member now to enjoy the special promotional offer by entering Promo Code “2022NEW” *.
 
-立即預約：(ehealth)
+Book the test now: (ehealth)
 
-了解更多Take2 Prophecy™ 早期鼻咽癌篩查資訊：(campaign page)
+Learn more about the Take2 Prophecy™ Test for NPC: (campaign page)
 
-\*優惠只限首200名預約者，並受條款及細則約束。
+\*Limited to the first 200 appointments. Terms and Conditions apply.
 
 <br/>
 
