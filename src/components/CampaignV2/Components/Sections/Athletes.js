@@ -254,7 +254,7 @@ const Athletes = () => {
                 </Box>
               </Box>
             </Box>
-            {isMobile && (
+            {isMobile && index === ATHLETES_INFO.length - 1 && (
               <Box textAlign='center' fontSize='h6.fontSize'>
                 <Link to='/' underline='always'>
                   <Box color='#F2974C' component='span'>
