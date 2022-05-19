@@ -196,7 +196,7 @@ P.S. We wanted to share a little surprise that we found during the filming. We a
 
 ![](../images/pcw_20210405_0857_min.jpg)
 
-Kong Pik Wai (Sherie) is the first Hong Kong female jockey. She started training in riding school at the age of 16 and debuted a year after. She won her first race at the age of 19 and has won a total of 11 races in her five-year career.
+Kong Pik Wai (Sherie) is the The World’s First Chinese Female Jockey. She started training in riding school at the age of 16 and debuted a year after. She won her first race at the age of 19 and has won a total of 11 races in her five-year career.
 
 <br/>
 
