@@ -282,9 +282,9 @@ The whole test process is just amazingly simple. By making appointments on the T
 
 Register as a member now to enjoy the special promotional offer by entering Promo Code “2022NEW” *.
 
-Book the test now: [https://bit.ly/3Lqqo0T](https://bit.ly/3Lqqo0T "https://bit.ly/3Lqqo0T")
+Book the test now: [https://bit.ly/3MyBAK4](https://bit.ly/3MyBAK4 "https://bit.ly/3MyBAK4")
 
-Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/3woinVN](https://bit.ly/3woinVN "https://bit.ly/3woinVN")
+Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
 \*Limited to the first 200 appointments. Terms and Conditions apply.
 
