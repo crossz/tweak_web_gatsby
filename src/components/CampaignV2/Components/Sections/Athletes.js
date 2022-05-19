@@ -79,6 +79,8 @@ const Athletes = () => {
       name: 'cp_v2.athletes.heros.0.name',
       title: 'cp_v2.athletes.heros.0.title',
       intro: 'cp_v2.athletes.heros.0.intro',
+      countNode: 'ECP_Athlete_Gymnast_long_video_play',
+      countNode2: 'ECP_Athlete_Gymnast_CTA_video_play',
     },
     {
       avatar: (
@@ -97,6 +99,8 @@ const Athletes = () => {
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
       intro: 'cp_v2.athletes.heros.1.intro',
+      countNode: 'ECP_Athlete_Chris_long_video_play',
+      countNode2: 'ECP_Athlete_Chris_CTA_video_play',
     },
     {
       avatar: (
@@ -115,6 +119,8 @@ const Athletes = () => {
       name: 'cp_v2.athletes.heros.2.name',
       title: 'cp_v2.athletes.heros.2.title',
       intro: 'cp_v2.athletes.heros.2.intro',
+      countNode: 'ECP_Athlete_Sherie_long_video_play',
+      countNode2: 'ECP_Athlete_Sherie_CTA_video_play',
     },
   ]
   return (
@@ -210,13 +216,7 @@ const Athletes = () => {
                       containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
-                      id={
-                        index === 0
-                          ? 'ECP_Athlete_Gymnast_long_video_play'
-                          : index === 1
-                          ? 'ECP_Athlete_Chris_long_video_play'
-                          : 'ECP_Athlete_Sherie_long_video_play'
-                      }
+                      id={athlete.countNode}
                       opts={{
                         width: '100%',
                         height: '100%',
@@ -245,13 +245,7 @@ const Athletes = () => {
                       containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
-                      id={
-                        index === 0
-                          ? 'ECP_Athlete_Gymnast_long_video_play'
-                          : index === 1
-                          ? 'ECP_Athlete_Chris_long_video_play'
-                          : 'ECP_Athlete_Sherie_long_video_play'
-                      }
+                      id={athlete.countNode}
                       opts={{
                         width: '100%',
                         height: '100%',
@@ -274,13 +268,7 @@ const Athletes = () => {
                           containerClassName={classes.videoContainer}
                           className={classes.video}
                           videoId={athlete.videos[1]}
-                          id={
-                            index === 0
-                              ? 'ECP_Athlete_Gymnast_CTA_video_play'
-                              : index === 1
-                              ? 'ECP_Athlete_Chris_CTA_video_play'
-                              : 'ECP_Athlete_Sherie_CTA_video_play'
-                          }
+                          id={athlete.countNode2}
                           opts={{
                             width: '100%',
                             height: '100%',
