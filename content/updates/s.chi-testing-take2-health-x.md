@@ -284,9 +284,9 @@ Take2 Prophecy™ 早期鼻咽癌筛查的准确度高于97%⁵ ⁶，而且绝�
 
 现在登记成为会员并使用优惠码【2022NEW】更能尊享推广优惠*！
 
-立即预约：[https://bit.ly/3Lqqo0T](https://bit.ly/3Lqqo0T "https://bit.ly/3Lqqo0T")
+立即预约：[https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
-了解更多Take2 Prophecy™ 早期鼻咽癌筛查资讯：[https://bit.ly/3woinVN](https://bit.ly/3woinVN "https://bit.ly/3woinVN")
+了解更多Take2 Prophecy™ 早期鼻咽癌筛查资讯：[https://bit.ly/3MyBAK4](https://bit.ly/3MyBAK4 "https://bit.ly/3MyBAK4")
 
 \*优惠只限首200名预约者，并受条款及细则约束。
 
