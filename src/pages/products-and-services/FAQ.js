@@ -202,8 +202,6 @@ const FAQ = () => {
 
   const handleChange = (index) => setActivePanel(index)
   const handleSearchResult = (result) => {
-    console.log(result, 'hhh')
-
     setFaqList(result)
   }
 
