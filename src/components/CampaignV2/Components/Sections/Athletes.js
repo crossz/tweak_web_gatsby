@@ -357,7 +357,12 @@ const Athletes = () => {
           </Box>
           {!isMobile && (
             <Box px={2.5} textAlign='right'>
-              <Link className={classes.link} to='/' underline='always'>
+              <Link
+                className={classes.link}
+                to='/'
+                underline='always'
+                target='_blank'
+              >
                 <Box component='span'>{t('cp_v2.athletes.paragraphs.4')}</Box>
               </Link>
             </Box>
@@ -414,7 +419,12 @@ const Athletes = () => {
             </Box>
             {isMobile && (
               <Box mt={2} textAlign='center'>
-                <Link className={classes.link} to='/' underline='always'>
+                <Link
+                  className={classes.link}
+                  to='/'
+                  underline='always'
+                  target='_blank'
+                >
                   <Box
                     fontSize='body1.fontSize'
                     component='span'
