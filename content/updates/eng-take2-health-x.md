@@ -80,7 +80,7 @@ To let Stone and Kelvin get used to the shooting condition with ease, the produc
 
 <br/>
 
-<br/>![](../images/dsc08336_min.jpg)
+![](../images/dsc08336_min.jpg)
 
 <br/>
 
