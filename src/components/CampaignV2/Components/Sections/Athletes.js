@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   intro: {
+    padding: theme.spacing(0, 2),
     fontSize: 30,
     [theme.breakpoints.down('sm')]: {
       fontSize: theme.typography.h6.fontSize,
@@ -346,7 +347,7 @@ const Athletes = () => {
             {t('cp_v2.athletes.paragraphs.2')}
           </Box>
           <Box
-            px={2.5}
+            px={2}
             fontSize={isMobile ? 'body1.fontSize' : 'h6.fontSize'}
             fontWeight={isMobile ? 'fontWeightRegular' : 'fontWeightMedium'}
           >
