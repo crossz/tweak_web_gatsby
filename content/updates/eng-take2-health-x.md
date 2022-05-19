@@ -24,7 +24,9 @@ Hong Kong athletes continue to glow in international sports events. Their spirit
 
 <br/>
 
-## **To win in the games we need to get prepared in advance　Same as to manage your health**
+## **To win in the games we need to get prepared in advance**　
+
+## **Same as to manage your health**
 
 To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health and the production team have conducted a comprehensive study on their training, inner journey, and daily life of the four athletes and have gone through numerous lively discussions. We have discovered the stories of the four athletes facing various challenges and difficulties under the spotlight. One significant common factor driving them to succeed is early preparation which is coincidentally consistent with our beliefs about surmounting the odds of nasopharyngeal cancer and managing our own health. Therefore, we have decided the theme of the video to be, “Always prepare early for the golden timing”!
 
@@ -32,7 +34,9 @@ To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health
 
 <br/>
 
-## **Maintain a good condition　Begin with staying mindful to your body**
+## **Maintain a good condition**　
+
+## **Begin with staying mindful to your body**
 
 To create the best performance, every movement has been practiced over millions of times, and every detail has been rehearsed in the mind beforehand. To achieve excellence in the games, it is vital to practice relentlessly. On the other hand, athletes need to constantly monitor and manage their body condition, even if the most subtle muscle changes cannot be missed, in order to map out the targeted training and treatment for achieving the best result. The earlier we listen to the signals sent by our body, the better we can take control of our health, as well as the circumstances to win the game.
 
@@ -48,7 +52,9 @@ Everyone is the same; the earlier we get prepared, the easier we can organise ou
 
 <br/>
 
-## **Reveal the four athlete protagonists　Fully disclose the footage of the making-of**
+## **Reveal the four athlete protagonists**　
+
+## **Fully disclose the footage of the making-of**
 
 <br/>
 
@@ -80,7 +86,7 @@ To let Stone and Kelvin get used to the shooting condition with ease, the produc
 
 <br/>
 
-<br/>![](../images/dsc08336_min.jpg)
+![](../images/dsc08336_min.jpg)
 
 <br/>
 
