@@ -4,14 +4,14 @@ languages:
 - en
 cover:
 - "../images/thumbnail-changed-06.png"
-date: 2022-05-23T00:00:00+08:00
+date: 2022-05-23T00:00:00.000+08:00
 title: 'Take2 Health & Four Hong Kong Top Athletes　Early Preparation for Your Health '
 detail: Hong Kong athletes continue to glow in international sports events. In this
   campaign, we are honoured to invite four Hong Kong top athletes to get ready, and
   be well-prepared together to face the health challenges. Let’s deconstruct the details
   of the campaign’s hero video now!
 href: ''
-slug: athletes
+slug: athletes-program
 
 ---
 ![](../images/thumbnail-changed-03.png)
