@@ -1,11 +1,11 @@
 ---
 type: company_trends
 languages:
-- zh-HK
+- zh-CN
 cover:
 - "../images/thumbnail-changed-04.png"
 date: 2022-05-23T00:00:00+08:00
-title: Take2 Health X 四位頂尖香港運動員　預早準「鼻」迎接挑戰無顧忌
+title: "( S.CHi Testing) Take2 Health X 四位頂尖香港運動員"
 detail: 香港運動員持續在國際舞台發光發熱，他們堅毅不屈的鬥志和追求卓越的決心，絕對值得所有人的掌聲。是次拍攝項目我們很榮幸邀請到四位本地運動菁英和Take2
   Health一起預早準「鼻」，迎接挑戰。現在讓我們立即解構這次拍攝的細節吧！
 href: ''
@@ -46,13 +46,13 @@ Take2 Health和製作團隊為了能細緻地呈現香港運動員的特質，�
 
 **揭開四位運動員主角的神秘面紗 認真製作．幕後花絮全公開**
 
-_首兩位主角：石仔和Kelvin_
+_第一組主角：石仔和Kelvin_
 
 石偉雄（石仔），香港體操運動員，主項為跳馬。他於2010年初次代表香港出戰亞運跳馬項目，並於兩年後首次取得奧運入場券，成為首位奧運體操香港代表。
 
 ![](../images/dsc09186_min.jpg)
 
-吳翹充（Kelvin），香港體操運動員，贏得「吊環王子」的美譽。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。![](../images/dsc00268_min.jpg)
+吳翹充（Kelvin），香港體操運動員，主項為吊環。在其體操生涯中，他不僅贏過多個國際獎項，更成功創出兩個以他名字命名的新吊環動作。![](../images/dsc00268_min.jpg)
 
 <br/>
 
@@ -138,17 +138,7 @@ _第四位主角：Sherie_
 
 我們和製作團隊做了充足周詳的事前準備，全為呈上令你目不暇給的精彩電影級畫面。事不宜遲，現在立即去片：
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
-
-(香港體操運動員 石偉雄和吳翹充的短片)
-
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
-
-(香港自由潛水紀錄保持者 張立興的短片)
-
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
-
-(全球首位華人女騎師 江碧蕙的短片)
+`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s "https://www.youtube.com/watch?v=nSD7pEd4J-s")
 
 <br/>
 
@@ -168,7 +158,7 @@ _第四位主角：Sherie_
 
 <br/>
 
-Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕少漏檢；假陽性率極低 (0.7%)⁶，是市場上最準確可靠的測試。此測試採用本地頂尖大學的研發成果，並通過二萬人參與大型臨床驗証⁵，應用次世代DNA測序技術 (NGS: Next-generation Sequencing)，有效識別出早期鼻咽癌患者。
+Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕少漏檢；假陽性率極低 (0.7%)⁶，是市場上最準確可靠的測試。此測試採用本地頂尖大學的研發成果，並通過二萬人參與大型臨床驗証⁵，結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing)，有效識別出早期鼻咽癌患者。
 
 <br/>
 
@@ -176,11 +166,11 @@ Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕�
 
 <br/>
 
-現在登記成為會員並使用優惠碼【2022NEW】更尊享推廣優惠*！
+現在登記成為會員並使用優惠碼【2020NEW】更尊享推廣優惠*！
 
-立即預約：[https://bit.ly/3Lqqo0T](https://bit.ly/3Lqqo0T "https://bit.ly/3Lqqo0T")
+立即預約：(ehealth)
 
-了解更多Take2 Prophecy™ 早期鼻咽癌篩查資訊：[https://bit.ly/3woinVN](https://bit.ly/3woinVN "https://bit.ly/3woinVN")
+了解更多Take2 Prophecy™ 早期鼻咽癌篩查資訊：(campaign page)
 
 \*優惠只限首200名預約者，並受條款及細則約束。
 
