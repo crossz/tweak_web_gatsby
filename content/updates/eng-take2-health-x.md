@@ -11,7 +11,7 @@ detail: Hong Kong athletes continue to glow in international sports events. In t
   be well-prepared together to face the health challenges. Let’s deconstruct the details
   of the campaign’s hero video now!
 href: ''
-slug: ''
+slug: athletes
 
 ---
 ![](../images/thumbnail-changed-03.png)
