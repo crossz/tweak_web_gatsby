@@ -294,9 +294,9 @@ Take2 Prophecy™ 早期鼻咽癌筛查的准确度高于97%⁵ ⁶，而且绝�
 
 <br/>
 
-參考資料
+参考资料
 
-1\. 鼻咽癌：及早察覺、徵狀、放射及化學治療. Hong Kong Anti-Cancer Society, April 2021, [https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf](https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf "https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf").
+1\. 鼻咽癌：及早察觉、征状、放射及化学治疗. Hong Kong Anti-Cancer Society, April 2021, [https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf](https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf "https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf").
 
 2\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
 
