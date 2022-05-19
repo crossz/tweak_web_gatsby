@@ -9,7 +9,7 @@ title: Take2 Health X 四位頂尖香港運動員　預早準「鼻」迎接挑�
 detail: 香港運動員持續在國際舞台發光發熱，他們堅毅不屈的鬥志和追求卓越的決心，絕對值得所有人的掌聲。是次拍攝項目我們很榮幸邀請到四位本地運動菁英和Take2
   Health一起預早準「鼻」，迎接挑戰。現在讓我們立即解構這次拍攝的細節吧！
 href: ''
-slug: ''
+slug: athletes
 
 ---
 ![](../images/thumbnail-changed-01.png)
