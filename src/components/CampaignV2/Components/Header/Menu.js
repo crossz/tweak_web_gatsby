@@ -96,6 +96,11 @@ const LIST = [
     countNode: 'ECP_Menubar_Section3',
   },
   {
+    label: 'cp_v2.menu.list.athletes',
+    id: 'athletes',
+    countNode: 'ECP_Menubar_Athlete',
+  },
+  {
     label: 'cp_v2.menu.list.3',
     id: 'gsap-scroll-to-section-four',
     countNode: 'ECP_Menubar_Section4',

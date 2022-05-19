@@ -75,7 +75,7 @@ const Athletes = () => {
           alt='athlete hero image 01'
         ></StaticImage>
       ),
-      videos: ['wOPREMoVhys', 'wOPREMoVhys'],
+      videos: ['nSD7pEd4J-s', 'wOPREMoVhys'],
       name: 'cp_v2.athletes.heros.0.name',
       title: 'cp_v2.athletes.heros.0.title',
       intro: 'cp_v2.athletes.heros.0.intro',
@@ -93,7 +93,7 @@ const Athletes = () => {
           alt='athlete hero image 02'
         ></StaticImage>
       ),
-      videos: ['wOPREMoVhys', 'wOPREMoVhys'],
+      videos: ['gIKEJ2N2MVs', 'wOPREMoVhys'],
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
       intro: 'cp_v2.athletes.heros.1.intro',
@@ -111,7 +111,7 @@ const Athletes = () => {
           alt='athlete hero image 03'
         ></StaticImage>
       ),
-      videos: ['wOPREMoVhys', 'wOPREMoVhys'],
+      videos: ['U_3tVZWEl6I', 'wOPREMoVhys'],
       name: 'cp_v2.athletes.heros.2.name',
       title: 'cp_v2.athletes.heros.2.title',
       intro: 'cp_v2.athletes.heros.2.intro',
