@@ -138,15 +138,15 @@ _第四位主角：Sherie_
 
 `youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
 
-(香港體操運動員 石偉雄和吳翹充的短片)
+(香港体操运动员 石伟雄和吴翘充的视频)
 
 `youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
 
-(香港自由潛水紀錄保持者 張立興的短片)
+(香港自由潜水记录保持者张立兴的视频)
 
 `youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
 
-(全球首位華人女騎師 江碧蕙的短片)
+(全球首位华人女骑师 江碧蕙的视频)
 
 <br/>
 
