@@ -79,6 +79,8 @@ const Athletes = () => {
       name: 'cp_v2.athletes.heros.0.name',
       title: 'cp_v2.athletes.heros.0.title',
       intro: 'cp_v2.athletes.heros.0.intro',
+      countNode: 'ECP_Athlete_Gymnast_long_video_play',
+      countNode2: 'ECP_Athlete_Gymnast_CTA_video_play',
     },
     {
       avatar: (
@@ -97,6 +99,8 @@ const Athletes = () => {
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
       intro: 'cp_v2.athletes.heros.1.intro',
+      countNode: 'ECP_Athlete_Chris_long_video_play',
+      countNode2: 'ECP_Athlete_Chris_CTA_video_play',
     },
     {
       avatar: (
@@ -115,6 +119,8 @@ const Athletes = () => {
       name: 'cp_v2.athletes.heros.2.name',
       title: 'cp_v2.athletes.heros.2.title',
       intro: 'cp_v2.athletes.heros.2.intro',
+      countNode: 'ECP_Athlete_Sherie_long_video_play',
+      countNode2: 'ECP_Athlete_Sherie_CTA_video_play',
     },
   ]
   return (
@@ -210,6 +216,7 @@ const Athletes = () => {
                       containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
+                      id={athlete.countNode}
                       opts={{
                         width: '100%',
                         height: '100%',
@@ -238,6 +245,7 @@ const Athletes = () => {
                       containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
+                      id={athlete.countNode}
                       opts={{
                         width: '100%',
                         height: '100%',
@@ -260,6 +268,7 @@ const Athletes = () => {
                           containerClassName={classes.videoContainer}
                           className={classes.video}
                           videoId={athlete.videos[1]}
+                          id={athlete.countNode2}
                           opts={{
                             width: '100%',
                             height: '100%',
@@ -382,7 +391,7 @@ const Athletes = () => {
                   variant='contained'
                   color='secondary'
                   target='_blank'
-                  id='ECP_Article_EH'
+                  id='ECP_Athlete_2_EH'
                 >
                   {t('common.book_now')}
                 </Button>
@@ -396,7 +405,7 @@ const Athletes = () => {
                     className={classes.outlineButton}
                     fullWidth
                     variant='outlined'
-                    id='ECP_Article_Location'
+                    id='ECP_Athlete_1_Location'
                   >
                     {t('cp_v2.common.view_service_location')}
                   </Button>
@@ -406,7 +415,11 @@ const Athletes = () => {
             {isMobile && (
               <Box mt={2} textAlign='center'>
                 <Link className={classes.link} to='/' underline='always'>
-                  <Box fontSize='body1.fontSize' component='span'>
+                  <Box
+                    fontSize='body1.fontSize'
+                    component='span'
+                    id='ECP_Athlete_BTS'
+                  >
                     {t('cp_v2.athletes.paragraphs.4')}
                   </Box>
                 </Link>
@@ -431,7 +444,7 @@ const Athletes = () => {
             variant='contained'
             color='secondary'
             target='_blank'
-            id='ECP_Article_EH'
+            id='ECP_Athlete_2_EH'
           >
             {t('common.book_now')}
           </Button>
@@ -445,7 +458,7 @@ const Athletes = () => {
               className={classes.outlineButton}
               fullWidth
               variant='outlined'
-              id='ECP_Article_Location'
+              id='ECP_Athlete_2_Location'
             >
               {t('cp_v2.common.view_service_location')}
             </Button>
