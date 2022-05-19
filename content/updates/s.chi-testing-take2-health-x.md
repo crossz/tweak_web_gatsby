@@ -50,7 +50,7 @@ Take2 Health和制作团队为了能细致地呈现香港运动员的特质，�
 
 <br/>
 
-_首两位主角：石仔和Kelvin_
+##### _首两位主角：石仔和Kelvin_
 
 <br/>
 
@@ -66,7 +66,11 @@ _首两位主角：石仔和Kelvin_
 
 <br/>
 
-为了让石仔和Kelvin拍摄时能更容易地适应和进入状态，制作团队预先做了各种的准备工作，其中包括仔细地搜集资料，与石仔和Kelvin面谈从而进一步了解他们的日常生活习惯和日程。得知香港体操代表队目前在顺利村体育馆集训，该场地设有专业的体操训练设施，包括吊环、跳马、高低杠、鞍马、平衡木等器材，我们就立刻决定借用体育馆来作拍摄的场地，除了期望可以消除石仔和Kelvin的紧张心情，亦确保运动员可在安全的环境下完成动作拍摄，避免因拍摄的压力而不慎受伤。<br/>![](../images/dsc06907_min.jpg)![](../images/dsc08282_min.jpg)![](../images/dsc08336_min.jpg)
+为了让石仔和Kelvin拍摄时能更容易地适应和进入状态，制作团队预先做了各种的准备工作，其中包括仔细地搜集资料，与石仔和Kelvin面谈从而进一步了解他们的日常生活习惯和日程。得知香港体操代表队目前在顺利村体育馆集训，该场地设有专业的体操训练设施，包括吊环、跳马、高低杠、鞍马、平衡木等器材，我们就立刻决定借用体育馆来作拍摄的场地，除了期望可以消除石仔和Kelvin的紧张心情，亦确保运动员可在安全的环境下完成动作拍摄，避免因拍摄的压力而不慎受伤。<br/>![](../images/dsc06907_min.jpg)
+
+<br/>
+
+![](../images/dsc08282_min.jpg)![](../images/dsc08336_min.jpg)
 
 （制作团队认真构思每一个镜头）
 
@@ -160,17 +164,19 @@ _第四位主角：Sherie_
 
 我们和制作团队做了周详的事前准备，全为了呈上令您目不转睛的精彩电影级画面。事不宜迟，现在立刻观看：
 
-<br/>
-
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
+    youtube:https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1
 
 (香港体操运动员 石伟雄和吴翘充的视频)
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
+<br/>
 
-(香港自由潜水记录保持者张立兴的视频)
+    youtube:https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2 "https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s")
+(香港自由潜水记录保持者 张立兴的视频)
+
+<br/>
+
+    youtube:https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2
 
 (全球首位华人女骑师 江碧蕙的视频)
 
