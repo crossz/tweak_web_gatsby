@@ -4,12 +4,12 @@ languages:
 - zh-CN
 cover:
 - "../images/thumbnail-changed-02.png"
-date: 2022-05-23T00:00:00+08:00
+date: 2022-05-23T00:00:00.000+08:00
 title: Take2 Health X 四位顶尖香港运动员　预早准备迎接挑战无顾忌
 detail: 香港运动员持续在国际舞台上发光发热，他们坚毅不屈的斗志和追求卓越的决心，肯定值得我们的掌声。这次拍摄项目，我们很荣幸能邀请到四位来自香港的运动菁英和Take2
   Health一起预早准备，迎接挑战。现在就让我们立即观看这次拍摄的细节吧！
 href: ''
-slug: ''
+slug: athletes-program
 
 ---
 ![](../images/thumbnail-changed-05.png)
