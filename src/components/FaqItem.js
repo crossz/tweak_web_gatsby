@@ -29,8 +29,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   list: {
+    maxWidth: '100%',
     '& a': {
       color: theme.palette.primary.main,
+    },
+    '& img': {
+      width: '100%',
+      height: 'auto',
     },
   },
 }))
@@ -145,9 +150,7 @@ const FaqItem = ({ question, content, onChange, id, activePanel }) => {
         </FaqAccordionSummary>
         <FaqAccordionDetails>
           <Box whiteSpace='break-spaces' className={classes.list}>
-            <div
-              dangerouslySetInnerHTML={{ __html: replaceURLs(content) }}
-            ></div>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </Box>
         </FaqAccordionDetails>
       </FaqAccordion>
