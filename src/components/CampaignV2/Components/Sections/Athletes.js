@@ -210,6 +210,13 @@ const Athletes = () => {
                       containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
+                      id={
+                        index === 0
+                          ? 'ECP_Athlete_Gymnast_long_video_play'
+                          : index === 1
+                          ? 'ECP_Athlete_Chris_long_video_play'
+                          : 'ECP_Athlete_Sherie_long_video_play'
+                      }
                       opts={{
                         width: '100%',
                         height: '100%',
@@ -238,6 +245,13 @@ const Athletes = () => {
                       containerClassName={classes.videoContainer}
                       className={classes.videoFullWidth}
                       videoId={athlete.videos[0]}
+                      id={
+                        index === 0
+                          ? 'ECP_Athlete_Gymnast_long_video_play'
+                          : index === 1
+                          ? 'ECP_Athlete_Chris_long_video_play'
+                          : 'ECP_Athlete_Sherie_long_video_play'
+                      }
                       opts={{
                         width: '100%',
                         height: '100%',
@@ -260,6 +274,13 @@ const Athletes = () => {
                           containerClassName={classes.videoContainer}
                           className={classes.video}
                           videoId={athlete.videos[1]}
+                          id={
+                            index === 0
+                              ? 'ECP_Athlete_Gymnast_CTA_video_play'
+                              : index === 1
+                              ? 'ECP_Athlete_Chris_CTA_video_play'
+                              : 'ECP_Athlete_Sherie_CTA_video_play'
+                          }
                           opts={{
                             width: '100%',
                             height: '100%',
@@ -382,7 +403,7 @@ const Athletes = () => {
                   variant='contained'
                   color='secondary'
                   target='_blank'
-                  id='ECP_Article_EH'
+                  id='ECP_Athlete_2_EH'
                 >
                   {t('common.book_now')}
                 </Button>
@@ -396,7 +417,7 @@ const Athletes = () => {
                     className={classes.outlineButton}
                     fullWidth
                     variant='outlined'
-                    id='ECP_Article_Location'
+                    id='ECP_Athlete_1_Location'
                   >
                     {t('cp_v2.common.view_service_location')}
                   </Button>
@@ -406,7 +427,11 @@ const Athletes = () => {
             {isMobile && (
               <Box mt={2} textAlign='center'>
                 <Link className={classes.link} to='/' underline='always'>
-                  <Box fontSize='body1.fontSize' component='span'>
+                  <Box
+                    fontSize='body1.fontSize'
+                    component='span'
+                    id='ECP_Athlete_BTS'
+                  >
                     {t('cp_v2.athletes.paragraphs.4')}
                   </Box>
                 </Link>
@@ -431,7 +456,7 @@ const Athletes = () => {
             variant='contained'
             color='secondary'
             target='_blank'
-            id='ECP_Article_EH'
+            id='ECP_Athlete_2_EH'
           >
             {t('common.book_now')}
           </Button>
@@ -445,7 +470,7 @@ const Athletes = () => {
               className={classes.outlineButton}
               fullWidth
               variant='outlined'
-              id='ECP_Article_Location'
+              id='ECP_Athlete_2_Location'
             >
               {t('cp_v2.common.view_service_location')}
             </Button>
