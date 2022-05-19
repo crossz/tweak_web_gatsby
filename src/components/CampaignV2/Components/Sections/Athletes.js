@@ -359,7 +359,7 @@ const Athletes = () => {
             <Box px={2.5} textAlign='right'>
               <Link
                 className={classes.link}
-                to='/'
+                to='/whats-new/updates/athletes-program/'
                 underline='always'
                 target='_blank'
               >
@@ -421,9 +421,9 @@ const Athletes = () => {
               <Box mt={2} textAlign='center'>
                 <Link
                   className={classes.link}
-                  to='/'
-                  underline='always'
+                  to='/whats-new/updates/athletes-program/'
                   target='_blank'
+                  underline='always'
                 >
                   <Box
                     fontSize='body1.fontSize'
