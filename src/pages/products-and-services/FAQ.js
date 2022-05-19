@@ -188,7 +188,6 @@ const FAQ = () => {
         if (resType.code !== 1000) {
           return console.log('fetch error')
         } else {
-          console.log(resType.data)
           allTypeList.push(...resType.data)
           setFaqTypes(allTypeList)
           setLoadingStatus('fulfilled')
@@ -255,8 +254,7 @@ const FAQ = () => {
                         key={index}
                         data-value={tB('name', type)}
                       >
-                        {translateFaqType(tB('name', type)) ||
-                          t('options.faq_types.all')}
+                        {translateFaqType(tB('name', type))}
                       </Box>
                     ))}
                   </Box>
