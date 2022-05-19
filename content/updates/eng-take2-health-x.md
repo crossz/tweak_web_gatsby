@@ -11,7 +11,7 @@ detail: Hong Kong athletes continue to glow in international sports events. In t
   be well-prepared together to face the health challenges. Let’s deconstruct the details
   of the campaign’s hero video now!
 href: ''
-slug: ''
+slug: athletes
 
 ---
 ![](../images/thumbnail-changed-03.png)
@@ -171,8 +171,6 @@ Besides, as of now, there is no vaccine available for prevention or medication f
 <br/>
 
 The Take2 Prophecy™ Test for NPC has over 97% sensitivity⁵ ⁶, and very few cases of NPC would be missed. Also, it only has a 0.7% remarkably low false-positive rate⁶. By providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests. Beginning with the research achievement from a renowned Hong Kong university, and being validated in a large-scale clinical study involving 20,000 individuals⁵, with the use of Next-generation Sequencing (NGS) technology, the test effectively enables NPC patients to be identified in their early-stage.
-
-Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕少漏檢；假陽性率極低 (0.7%)⁶，是市場上最準確可靠的測試。此測試採用本地頂尖大學的研發成果，並通過二萬人參與大型臨床驗証⁵，結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing)，有效識別出早期鼻咽癌患者。
 
 <br/>
 
