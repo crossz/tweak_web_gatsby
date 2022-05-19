@@ -162,7 +162,7 @@ const FAQ = () => {
   const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
   const [activePanel, setActivePanel] = useState(null)
-  const [faqTypes, setFaqTypes] = useState([''])
+  const [faqTypes, setFaqTypes] = useState()
   const [loadingStatus, setLoadingStatus] = useState('')
   const allTypeList = [
     { nameHk: '所有問題', nameEn: 'All questions', nameCn: '所有问题' },
@@ -201,7 +201,11 @@ const FAQ = () => {
   }, [])
 
   const handleChange = (index) => setActivePanel(index)
-  const handleSearchResult = (result) => setFaqList(result)
+  const handleSearchResult = (result) => {
+    console.log(result, 'hhh')
+
+    setFaqList(result)
+  }
 
   const handleTypeChange = (e) => {
     scrollTo('#section-tabs')
@@ -277,7 +281,7 @@ const FAQ = () => {
                       className={classes.select}
                       displayEmpty
                     >
-                      {faqTypes.map((type, index) => (
+                      {faqTypes?.map((type, index) => (
                         <EMenuItem key={index} value={tB('name', type)}>
                           {translateFaqType(tB('name', type)) ||
                             t('options.faq_types.all')}
@@ -289,7 +293,9 @@ const FAQ = () => {
               </Box>
             </Hidden>
             <Grid item xs={12} sm={8}>
-              {faqList?.length > 0 && loadingStatus !== 'pending' ? (
+              {faqList?.length > 0 &&
+              loadingStatus !== 'pending' &&
+              faqList?.find((faq) => faq.status) ? (
                 faqList
                   ?.filter(
                     (faq) =>

@@ -5,6 +5,7 @@ import SearchIcon from '@images/icons/search.svg'
 import CancelIcon from '@images/icons/cancel.svg'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useObjectTranslation from '@hooks/useObjectTranslation'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -34,6 +35,7 @@ const Search = ({ data, setSearchResult, isFAQ }) => {
   const classes = useStyles()
   const { t } = useI18next()
   const [query, setQuery] = useState('')
+  const { tB } = useObjectTranslation()
 
   useEffect(() => {
     if (!query) setSearchResult(data)
@@ -50,7 +52,9 @@ const Search = ({ data, setSearchResult, isFAQ }) => {
     try {
       const result = query
         ? data?.filter(
-            (item) => regex?.test(item.question) || regex?.test(item.content)
+            (item) =>
+              regex?.test(tB('question', item)) ||
+              regex?.test(tB('content', item))
             // item.question.includes(query) || item.content.includes(query)
           ) || []
         : data
