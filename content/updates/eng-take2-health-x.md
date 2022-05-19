@@ -18,7 +18,7 @@ slug: athletes-program
 
 <br/>
 
-Hong Kong athletes continue to glow in international sports events. Their spirit of perseverance and determination to pursue excellence deserves all the applause. Take2 Health, as a start-up built from Hong Kong, also strives for perfection, aims to provide practical information, and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia. In this campaign, we are honoured to invite four Hong Kong top athletes to get ready, and be well-prepared together to face the health challenges. Let’s deconstruct the details of the campaign’s hero video now!
+Hong Kong athletes continue to glow in international sports events. Their spirit of perseverance and determination to pursue excellence deserves all the applause. Take2 Health, as a start-up built from Hong Kong, also strives for perfection, aims to provide practical information, and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia. In this campaign, we are honoured to invite four Hong Kong top athletes to get ready, and be well-prepared together to tackle the health challenges. Let’s deconstruct the details of the campaign’s hero video now!
 
 <br/>
 
@@ -26,7 +26,7 @@ Hong Kong athletes continue to glow in international sports events. Their spirit
 
 #### **To win in the games we need to get prepared in advance　Same as to manage your health**
 
-To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health and the production team have conducted a comprehensive study on their training, inner journey, and daily life of the four athletes and have gone through numerous lively discussions. We have discovered the stories of the four athletes facing various challenges and difficulties under the spotlight. One significant common factor driving them to succeed is early preparation which is coincidentally consistent with our beliefs about surmounting the odds of nasopharyngeal cancer and managing our own health. Therefore, we have decided the theme of the video to be, “Always start preparation early for the golden timing”!
+To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health and the production team have conducted a comprehensive study on their training, inner journey, and daily life of the four athletes and have gone through numerous lively discussions. We have discovered the stories of the four athletes facing various challenges and difficulties under the spotlight. One significant common factor driving them to succeed is early preparation which is coincidentally consistent with our beliefs about surmounting the odds of nasopharyngeal cancer and managing our own health. Therefore, we have decided the theme of the video to be, “Always prepare early for the golden timing”!
 
 <br/>
 
@@ -52,7 +52,7 @@ Everyone is the same; the earlier we get prepared, the easier we can organise ou
 
 <br/>
 
-##### _The first and second protagonists: Stone and Kelvin_
+##### _The first two protagonists: Stone and Kelvin_
 
 <br/>
 
