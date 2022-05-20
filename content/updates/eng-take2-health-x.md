@@ -24,7 +24,7 @@ Hong Kong athletes continue to glow in international sports events. Their spirit
 
 <br/>
 
-## **To win in the games we need to get prepared in advance**　
+## **To win in the games we need to get prepared in advance**
 
 ## **Same as to manage your health**
 
@@ -34,7 +34,7 @@ To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health
 
 <br/>
 
-## **Maintain a good condition**　
+## **Maintain a good condition**
 
 ## **Begin with staying mindful to your body**
 
@@ -52,7 +52,7 @@ Everyone is the same; the earlier we get prepared, the easier we can organise ou
 
 <br/>
 
-## **Reveal the four athlete protagonists**　
+## **Reveal the four athlete protagonists**
 
 ## **Fully disclose the footage of the making-of**
 
@@ -244,19 +244,19 @@ It is believed that no one in the production team is more familiar with and can 
 
 We and the production team have made sufficient and detailed preparations in advance, to present numerous incredible cinematic scenes as a feast for the eyes. So, without further ado, let’s watch the video now:
 
-    youtube:https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1
+`youtube:https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1`
 
 (Hong Kong Gymnast Stone Shek and Kelvin Ng's video)
 
 <br/>
 
-    youtube:https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3
+`youtube:https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3`
 
 (Hong Kong Freediving Record Holder Chris Cheung's video)
 
 <br/>
 
-    youtube:https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2
+`youtube:https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2`
 
 (The First Hong Kong Female Jockey Sherie Kong's video)
 
