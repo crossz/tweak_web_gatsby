@@ -95,7 +95,7 @@ const Athletes = () => {
           alt='athlete hero image 02'
         ></StaticImage>
       ),
-      videos: ['gIKEJ2N2MVs', 'wOPREMoVhys'],
+      videos: ['gIKEJ2N2MVs', 'ea2Kkmmv4M4'],
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
       intro: 'cp_v2.athletes.heros.1.intro',
@@ -115,7 +115,7 @@ const Athletes = () => {
           alt='athlete hero image 03'
         ></StaticImage>
       ),
-      videos: ['U_3tVZWEl6I', 'wOPREMoVhys'],
+      videos: ['U_3tVZWEl6I', 'UbKroM0_gPE'],
       name: 'cp_v2.athletes.heros.2.name',
       title: 'cp_v2.athletes.heros.2.title',
       intro: 'cp_v2.athletes.heros.2.intro',
