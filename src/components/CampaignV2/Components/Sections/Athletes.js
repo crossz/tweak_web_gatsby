@@ -71,7 +71,7 @@ const Athletes = () => {
       ),
       image: (
         <StaticImage
-          src='../../images/athlete_hero_02_detail.jpg'
+          src='../../images/athlete_hero_01_detail.jpg'
           alt='athlete hero image 01'
         ></StaticImage>
       ),
