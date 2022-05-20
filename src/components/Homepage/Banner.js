@@ -11,7 +11,7 @@ import {
   alpha,
   Hidden,
 } from '@material-ui/core'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
@@ -24,7 +24,7 @@ import useObjectTranslation from '@hooks/useObjectTranslation'
 import classnames from 'classnames'
 import ImageTranslation from '@components/ImageTranslation'
 
-SwiperCore.use([Pagination, Navigation])
+SwiperCore.use([Autoplay, Pagination, Navigation])
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,11 +76,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   promoBannerBg: {
-    background: `rgb(127,177,210)`,
     background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
   },
   athletesBannerBg: {
-    background: `rgb(169,211,240)`,
     background: `linear-gradient(90deg, rgba(169,211,240,1) 0%, rgba(227,176,109,1) 100%)`,
   },
   containImg: {
@@ -228,7 +226,7 @@ const Banner = ({ nodes }) => {
           navigation={nodes?.length > 1}
           pagination={{ clickable: true }}
           className={classes.swiperWrapper}
-          // autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return toggleTheme?.(
               nodes[swiper.realIndex - 1]?.frontmatter?.theme

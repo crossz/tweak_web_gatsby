@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core'
 import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
-import replaceURLs from '@utils/replaceURLs'
 
 const useStyles = makeStyles((theme) => ({
   root: {

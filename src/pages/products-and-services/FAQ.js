@@ -16,7 +16,6 @@ import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import FaqSearch from '@components/FaqSearch'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
-import { groupBy } from 'lodash-es'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import Loading from '@components/Loading'
@@ -181,10 +180,6 @@ const FAQ = () => {
         const list = res?.data?.filter((item) => item.status) || []
         setAllFaqList(list)
         setFaqList(list)
-        const groupType = groupBy(
-          list?.filter((item) => item.status),
-          'typeName'
-        )
         if (resType.code !== 1000) {
           return console.log('fetch error')
         } else {
