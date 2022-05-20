@@ -14,7 +14,7 @@ href: ''
 slug: athletes-program
 
 ---
-![](../images/thumbnail-changed-03.png)
+![](../images/ehealth-banner-changed-03.jpg)
 
 <br/>
 
@@ -292,9 +292,9 @@ The whole test process is just amazingly simple. By making appointments on the T
 
 Register as a member now to enjoy the special promotional offer by entering Promo Code “2022NEW” *.
 
-Book the test now: [https://bit.ly/3MyBAK4](https://bit.ly/3MyBAK4 "https://bit.ly/3MyBAK4")
+Book the test now: [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
-Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
+Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/3MyBAK4](https://bit.ly/3MyBAK4 "https://bit.ly/3MyBAK4")
 
 \*Limited to the first 200 appointments. Terms and Conditions apply.
 
