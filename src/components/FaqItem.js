@@ -29,12 +29,19 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     maxWidth: '100%',
-    '& a': {
-      color: theme.palette.primary.main,
-    },
+
     '& img': {
       width: '100%',
       height: 'auto',
+    },
+    '& iframe': {
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        height: 'auto',
+      },
+    },
+    '& a': {
+      color: theme.palette.primary.main,
     },
   },
 }))
