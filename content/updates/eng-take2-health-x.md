@@ -102,7 +102,11 @@ Moreover, to make the scenes more realistic and textured, Stone and Kelvin fully
 
 <br/>
 
-<br/>![](../images/dsc00031_min.jpg)![](../images/dsc06356_min.jpg)
+![](../images/dsc00031_min.jpg)
+
+<br/>
+
+![](../images/dsc06356_min.jpg)
 
 <br/>
 
