@@ -327,7 +327,7 @@ const Athletes = () => {
         maxWidth={1192}
         mx='auto'
         pt={isMobile ? 8 : 3.5}
-        pb={isMobile ? 9 : 4}
+        pb={4}
         mt={-3}
         boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
         bgcolor={isMobile ? 'prophecyPrimary.main' : 'background.paper'}
@@ -418,7 +418,7 @@ const Athletes = () => {
               </Box>
             </Box>
             {isMobile && (
-              <Box mt={2} textAlign='center'>
+              <Box mt={3} textAlign='center'>
                 <Link
                   className={classes.link}
                   to='/whats-new/updates/athletes-program/'
