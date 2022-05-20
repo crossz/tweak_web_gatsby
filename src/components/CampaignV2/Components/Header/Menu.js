@@ -123,7 +123,6 @@ export default function Menu(props) {
   const [state, setState] = React.useState(false)
 
   const toggleDrawer = (open) => (event) => {
-    console.log('toggleDrawer ', toggleDrawer)
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')

@@ -75,7 +75,7 @@ const Athletes = () => {
           alt='athlete hero image 01'
         ></StaticImage>
       ),
-      videos: ['nSD7pEd4J-s', 'wOPREMoVhys'],
+      videos: ['nSD7pEd4J-s'],
       name: 'cp_v2.athletes.heros.0.name',
       title: 'cp_v2.athletes.heros.0.title',
       intro: 'cp_v2.athletes.heros.0.intro',
@@ -263,18 +263,25 @@ const Athletes = () => {
                     }}
                   >
                     <ImageListItem>
-                      <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
-                        <YouTube
-                          containerClassName={classes.videoContainer}
-                          className={classes.video}
-                          videoId={athlete.videos[1]}
-                          id={athlete.countNode2}
-                          opts={{
-                            width: '100%',
-                            height: '100%',
-                          }}
-                        />
-                      </Box>
+                      {athlete.videos[1] ? (
+                        <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
+                          <YouTube
+                            containerClassName={classes.videoContainer}
+                            className={classes.video}
+                            videoId={athlete.videos[1]}
+                            id={athlete.countNode2}
+                            opts={{
+                              width: '100%',
+                              height: '100%',
+                            }}
+                          />
+                        </Box>
+                      ) : (
+                        <StaticImage
+                          src='../../images/athlete_hero_02_detail_02.jpg'
+                          alt='athlete hero detail 02'
+                        ></StaticImage>
+                      )}
                     </ImageListItem>
                     <ImageListItem>{athlete.image}</ImageListItem>
                   </ImageList>
