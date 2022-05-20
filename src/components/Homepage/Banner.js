@@ -64,13 +64,6 @@ const useStyles = makeStyles((theme) => ({
       bottom: '6%',
     },
   },
-  athletesImageButton: {
-    position: 'absolute',
-    bottom: '17%',
-    [theme.breakpoints.down('xs')]: {
-      bottom: 'unset',
-    },
-  },
   containImgWrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -254,11 +247,12 @@ const Banner = ({ nodes }) => {
                 ></ImageTranslation>
                 <Box className={classes.imageButtonWrapper}>
                   <Box
-                    className={classes.athletesImageButton}
-                    right={isMobile ? '7.8%' : isEn ? '37.5%' : '31%'}
+                    position='absolute'
+                    right={isMobile ? '7.8%' : isEn ? '38.5%' : '32%'}
                     width={isMobile ? '22%' : isEn ? '14.5%' : '16%'}
                     height={isMobile ? '6%' : '8%'}
                     top={isMobile ? '38.5%' : 'auto'}
+                    bottom={isMobile ? 'unset' : isEn ? '9%' : '12.5%'}
                     to={process.env.GATSBY_SITE_URL}
                     target='_blank'
                     component={Link}
@@ -267,11 +261,12 @@ const Banner = ({ nodes }) => {
                     <Box />
                   </Box>
                   <Box
-                    className={classes.athletesImageButton}
-                    right={isMobile ? '7.8%' : isEn ? '2.5%' : '4.5%'}
+                    position='absolute'
+                    right={isMobile ? '7.8%' : isEn ? '3.5%' : '5.5%'}
                     width={isMobile ? '22%' : isEn ? '32%' : '23%'}
                     height={isMobile ? '3.5%' : '8%'}
                     top={isMobile ? '47.5%' : 'unset'}
+                    bottom={isMobile ? 'unset' : isEn ? '9%' : '12.5%'}
                     to='/whats-new/updates/athletes-program/'
                     component={Link}
                     id='RW_HP_Top_Banner_PVCampaign_EHEALTH'
