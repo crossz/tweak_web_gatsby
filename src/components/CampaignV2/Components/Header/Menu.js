@@ -15,7 +15,6 @@ import CloseIcon from '@images/icons/close.svg'
 import classnames from 'classnames'
 import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import scrollTo from 'gatsby-plugin-smoothscroll'
 const { languageLabels } = require('../../../../../languages')
 
 const useStyles = makeStyles((theme) => ({
@@ -133,17 +132,13 @@ export default function Menu(props) {
     setState(open)
   }
 
-  const handleScroll = (e) => {
-    const { id } = e.currentTarget.dataset
-
+  const _handleScroll = (e) => {
     setState(false)
-    setTimeout(() => {
-      scrollTo(`#${id}`, 'start')
-    }, 0)
+    props?.handleScroll(e)
   }
 
   return (
-    <div>
+    <>
       <IconButton onClick={toggleDrawer(true)}>
         <MenuIcon
           className={classnames(classes.icon, { [classes.isDark]: props.dark })}
@@ -185,7 +180,7 @@ export default function Menu(props) {
                 <Divider className={classes.divider}></Divider>
                 <ListItem
                   className={classes.listItem}
-                  onClick={handleScroll}
+                  onClick={_handleScroll}
                   disableGutters
                   data-id={item.id}
                   id={item.countNode}
@@ -228,6 +223,6 @@ export default function Menu(props) {
           </Box>
         </Box>
       </Drawer>
-    </div>
+    </>
   )
 }

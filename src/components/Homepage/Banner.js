@@ -222,7 +222,7 @@ const Banner = ({ nodes }) => {
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return toggleTheme?.(
-              nodes[swiper.realIndex - 1]?.frontmatter?.theme
+              nodes[swiper.realIndex - 2]?.frontmatter?.theme
             )
           }}
           initialSlide={0}
