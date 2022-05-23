@@ -271,7 +271,6 @@ const Banner = ({ nodes }) => {
                     component={Link}
                     id='BannerRW_HP_Top_Banner_Athlete_KnowMore'
                   >
-                    1
                     <Box />
                   </Box>
                 </Box>
