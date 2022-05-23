@@ -26,6 +26,13 @@ const useStyles = makeStyles((theme) => ({
   imageListItem: {
     overflow: 'visible',
   },
+  videoContainer: {
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
   video: {
     borderRadius: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
@@ -145,15 +152,18 @@ const SectionOne = () => {
           mt={isMobile ? -5.25 : -8}
           mb={isMobile ? 6 : 8}
         >
-          <YouTube
-            className={classes.video}
-            videoId='wOPREMoVhys'
-            opts={{
-              width: '100%',
-              height: isMobile ? 165 : 405,
-            }}
-            id='ECP_Video_Play'
-          />
+          <Box pt={`${(9 / 16) * 100}%`} position='relative'>
+            <YouTube
+              containerClassName={classes.videoContainer}
+              className={classes.video}
+              videoId='wOPREMoVhys'
+              opts={{
+                width: '100%',
+                height: '100%',
+              }}
+              id='ECP_Video_Play'
+            />
+          </Box>
           <Box
             textAlign={isMobile ? 'left' : 'center'}
             color='grey.900'
