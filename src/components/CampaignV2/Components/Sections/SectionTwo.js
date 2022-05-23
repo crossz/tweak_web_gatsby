@@ -128,7 +128,7 @@ const SectionTwo = () => {
             my={4}
           >
             <Box>{t('cp_v2.ngs_advantage.paragraphs.1')}</Box>
-            <Box color='secondary.main' whiteSpace='pre' component='span'>
+            <Box color='secondary.main' component='span'>
               {t('cp_v2.ngs_advantage.paragraphs.6')}
             </Box>
             {isMobile && <br />}{' '}
