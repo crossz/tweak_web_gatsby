@@ -77,13 +77,16 @@ const Header = (props) => {
 
   const handleScroll = (e) => {
     const { id } = e.currentTarget.dataset
+
     gsap.to(window, {
       duration: 1,
       scrollTo: {
         y: `#${id}`,
-        offsetY:
-          headerRef?.current?.clientHeight ||
-          (isMobile ? MOBILE_HEADER_HEIGHT : HEADER_HEIGHT) * 8,
+        offsetY: headerRef?.current?.clientHeight
+          ? isMobile
+            ? headerRef?.current?.clientHeight
+            : headerRef?.current?.clientHeight - PROMOTION_BAR_HEIGHT
+          : (isMobile ? MOBILE_HEADER_HEIGHT : HEADER_HEIGHT) * 8,
       },
       ease: 'power2',
     })
