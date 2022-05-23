@@ -298,7 +298,7 @@ const Athletes = () => {
                     variant='contained'
                     color='secondary'
                     target='_blank'
-                    id='ECP_Article_EH'
+                    id='ECP_Athlete_1_EH'
                   >
                     {t('common.book_now')}
                   </Button>
@@ -312,7 +312,7 @@ const Athletes = () => {
                       className={classes.outlineButton}
                       fullWidth
                       variant='outlined'
-                      id='ECP_Article_Location'
+                      id='ECP_Athlete_1_Location'
                     >
                       {t('cp_v2.common.view_service_location')}
                     </Button>
@@ -356,7 +356,7 @@ const Athletes = () => {
             {!isMobile && t('cp_v2.athletes.paragraphs.5')}
           </Box>
           {!isMobile && (
-            <Box px={2.5} textAlign='right'>
+            <Box px={2.5} textAlign='right' id='ECP_Athlete_BTS'>
               <Link className={classes.link} to='/' underline='always'>
                 <Box component='span'>{t('cp_v2.athletes.paragraphs.4')}</Box>
               </Link>
