@@ -4,35 +4,39 @@ languages:
 - en
 cover:
 - "../images/thumbnail-changed-06.png"
-date: 2022-05-23T00:00:00+08:00
+date: 2022-05-23T00:00:00.000+08:00
 title: 'Take2 Health & Four Hong Kong Top Athletes　Early Preparation for Your Health '
 detail: Hong Kong athletes continue to glow in international sports events. In this
   campaign, we are honoured to invite four Hong Kong top athletes to get ready, and
   be well-prepared together to face the health challenges. Let’s deconstruct the details
   of the campaign’s hero video now!
 href: ''
-slug: ''
+slug: athletes-program
 
 ---
-![](../images/thumbnail-changed-03.png)
+![](../images/ehealth-banner-changed-03.jpg)
 
 <br/>
 
-Hong Kong athletes continue to glow in international sports events. Their spirit of perseverance and determination to pursue excellence deserves all the applause. Take2 Health, as a start-up built from Hong Kong, also strives for perfection, aims to provide practical information, and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia. In this campaign, we are honoured to invite four Hong Kong top athletes to get ready, and be well-prepared together to face the health challenges. Let’s deconstruct the details of the campaign’s hero video now!
-
-<br/>
-
-<br/>
-
-**To win in the games we need to get prepared in advance　Same as to manage your health**
-
-To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health and the production team have conducted a comprehensive study on their training, inner journey, and daily life of the four athletes and have gone through numerous lively discussions. We have discovered the stories of the four athletes facing various challenges and difficulties under the spotlight. One significant common factor driving them to succeed is early preparation which is coincidentally consistent with our beliefs about surmounting the odds of nasopharyngeal cancer and managing our own health. Therefore, we have decided the theme of the video to be, “Always start preparation early for the golden timing”!
+Hong Kong athletes continue to glow in international sports events. Their spirit of perseverance and determination to pursue excellence deserves all the applause. Take2 Health, as a start-up built from Hong Kong, also strives for perfection, aims to provide practical information, and harness the power of state-of-the-art technologies to mark the advent of a new generation of healthcare across Asia. In this campaign, we are honoured to invite four Hong Kong top athletes to get ready, and be well-prepared together to tackle the health challenges. Let’s deconstruct the details of the campaign’s hero video now!
 
 <br/>
 
 <br/>
 
-**Maintain a good condition　Begin with staying mindful to your body**
+## **To win in the games we need to get prepared in advance**
+
+## **Same as to manage your health**
+
+To showcase the characteristics of Hong Kong athletes meticulously, Take2 Health and the production team have conducted a comprehensive study on their training, inner journey, and daily life of the four athletes and have gone through numerous lively discussions. We have discovered the stories of the four athletes facing various challenges and difficulties under the spotlight. One significant common factor driving them to succeed is early preparation which is coincidentally consistent with our beliefs about surmounting the odds of nasopharyngeal cancer and managing our own health. Therefore, we have decided the theme of the video to be, “Always prepare early for the golden timing”!
+
+<br/>
+
+<br/>
+
+## **Maintain a good condition**
+
+## **Begin with staying mindful to your body**
 
 To create the best performance, every movement has been practiced over millions of times, and every detail has been rehearsed in the mind beforehand. To achieve excellence in the games, it is vital to practice relentlessly. On the other hand, athletes need to constantly monitor and manage their body condition, even if the most subtle muscle changes cannot be missed, in order to map out the targeted training and treatment for achieving the best result. The earlier we listen to the signals sent by our body, the better we can take control of our health, as well as the circumstances to win the game.
 
@@ -46,21 +50,45 @@ Everyone is the same; the earlier we get prepared, the easier we can organise ou
 
 <br/>
 
-**Reveal the four athlete protagonists　Fully disclose the footage of the making-of**
+<br/>
 
-_The first and second protagonists: Stone and Kelvin_
+## **Reveal the four athlete protagonists**
 
-Shek Wai Hung (Stone), the Hong Kong gymnast, is specialised in the vault. In 2010, he represented Hong Kong to compete in the Asian Games men’s vault for the first time and won his first Olympic entrance ticket after two years, becoming the first gymnastics Olympian from Hong Kong.
+## **Fully disclose the footage of the making-of**
+
+<br/>
+
+### _The first two protagonists: Stone and Kelvin_
+
+<br/>
 
 ![](../images/dsc09186_min.jpg)
 
-Ng Kiu Chung (Kelvin), the Hong Kong gymnast, is known for the name of “Lord of the Rings”. He has won numerous global prizes in his gymnast career and has successfully made two elements on rings to be named after him.![](../images/dsc00268_min.jpg)
+Shek Wai Hung (Stone), the Hong Kong gymnast, is specialised in the vault. In 2010, he represented Hong Kong to compete in the Asian Games men’s vault for the first time and won his first Olympic entrance ticket after two years, becoming the first gymnastics Olympian from Hong Kong.
+
+<br/>
+
+![](../images/dsc00268_min.jpg)
+
+Ng Kiu Chung (Kelvin), the Hong Kong gymnast, is known for the name of “Lord of the Rings”. He has won numerous global prizes in his gymnast career and has successfully made two elements on rings to be named after him.
 
 <br/>
 
 To let Stone and Kelvin get used to the shooting condition with ease, the production team has done a series of preparation, including collecting information in detail, and understanding the daily habits and schedules of Stone and Kelvin from interviews. Knowing that the Hong Kong gymnastics team is currently training at Shun Lee Estate Sports Centre, which is equipped with various professional facilities, including rings, vaults, uneven bars, pommel horses, and balance beams, we immediately decided to use the centre as the shooting venue, to relieve Stone and Kelvin's nervousness and ensure they could complete the shooting in a safe environment, avoiding injuries because of the stress of shooting.
 
-![](../images/dsc06907_min.jpg)![](../images/dsc08282_min.jpg)![](../images/dsc08336_min.jpg)
+<br/>
+
+![](../images/dsc06907_min.jpg)
+
+<br/>
+
+![](../images/dsc08282_min.jpg)
+
+<br/>
+
+![](../images/dsc08336_min.jpg)
+
+<br/>
 
 (Production team was conceiving of each camera angle and shot seriously)
 
@@ -68,23 +96,51 @@ To let Stone and Kelvin get used to the shooting condition with ease, the produc
 
 Moreover, to make the scenes more realistic and textured, Stone and Kelvin fully concentrated on performing the shooting moves. They did the movements over and over again for the cameramen to shoot from different angles, and capture as much detail as they could to construct the most perfect scenes. Their seriousness, professionalism and solid skills could be seen from their jumps, leaps and turns, as if they were competing in the Olympic Games.
 
-![](../images/dsc05880_min.jpg)![](../images/dsc00031_min.jpg)![](../images/dsc06356_min.jpg)![](../images/dsc06554_min.jpg)
+<br/>
+
+![](../images/dsc05880_min.jpg)
+
+<br/>
+
+![](../images/dsc00031_min.jpg)
+
+<br/>
+
+![](../images/dsc06356_min.jpg)
+
+<br/>
+
+![](../images/dsc06554_min.jpg)
+
+<br/>
 
 (Stone and Kelvin performed their daily training seriously)
 
 <br/>
 
-![](../images/dsc08624_min.jpg)![](../images/dsc08423_min.jpg)![](../images/dsc08533_min.jpg)
+![](../images/dsc08624_min.jpg)
+
+<br/>
+
+![](../images/dsc08423_min.jpg)
+
+<br/>
+
+![](../images/dsc08533_min.jpg)
+
+<br/>
 
 (Stone repeatedly performed his iconic moves to strive for perfection)
 
 <br/>
 
-_The third protagonist: Chris_
+### _The third protagonist: Chris_
 
-Cheung Lap Hing (Chris) is the current Hong Kong freediving record holder and the president of the Hong Kong Freediving Association. In the earlier regional competition, he has broken the Hong Kong freediving record in three disciplines (Static Apnea, Dynamic With Bi-Fins, and Dynamic Without Fins), winning the men’s overall championship.
+<br/>
 
 ![](../images/dsc00186_min.jpg)
+
+Cheung Lap Hing (Chris) is the current Hong Kong freediving record holder and the president of the Hong Kong Freediving Association. In the earlier regional competition, he has broken the Hong Kong freediving record in three disciplines (Static Apnea, Dynamic With Bi-Fins, and Dynamic Without Fins), winning the men’s overall championship.
 
 <br/>
 
@@ -92,7 +148,17 @@ Freediving is still not a popular sport in Hong Kong, and therefore the producti
 
 <br/>
 
-Chris explained that practicing yoga can increase his body flexibility which helps to improve his mobility in the water. In addition, by mastering the technique of diaphragmatic breathing and meditation, he keeps himself calm, brings awareness to different body parts, and gets relaxed. All these help the free divers use their muscles more efficiently, reduce physical exertion, and thereby reduce oxygen consumption.![](../images/dsc00312_min.jpg)![](../images/dsc00066_min.jpg)
+Chris explained that practicing yoga can increase his body flexibility which helps to improve his mobility in the water. In addition, by mastering the technique of diaphragmatic breathing and meditation, he keeps himself calm, brings awareness to different body parts, and gets relaxed. All these help the free divers use their muscles more efficiently, reduce physical exertion, and thereby reduce oxygen consumption.
+
+<br/>
+
+![](../images/dsc00312_min.jpg)
+
+<br/>
+
+![](../images/dsc00066_min.jpg)
+
+<br/>
 
 (Many scenes about Chris practicing yoga and doing meditation could be seen)
 
@@ -100,27 +166,57 @@ Chris explained that practicing yoga can increase his body flexibility which hel
 
 Of course, talking about freediving, outdoor shooting is inevitable. To assist in having a smooth shooting, Chris has provided full support in the preparation phase. For instance, since Chris is familiar with the changes in weather and the sea, he shared a lot of knowledge about weather prediction such that the production team was able to choose a suitable shooting venue at the end.
 
-![](../images/dsc00306_min.jpg)![](../images/dsc00336_min.jpg)
+<br/>
+
+![](../images/dsc00306_min.jpg)
+
+<br/>
+
+![](../images/dsc00336_min.jpg)
+
+<br/>
 
 (Chris served as our “Observatory” and provided a lot of weather information)
 
 <br/>
 
-P.S. We wanted to share a little surprise that we found during the filming. We are glad to invite special guests during the shooting, the two daughters of Chris. Apart from being a freediving champion, Chris is also a loving father. At the shooting venue, the two daughters performed several yoga movements such as splitting. Coupled with their joyful conversations and interactions, it is shown that they have close rapport and created a pleasant shooting atmosphere.![](../images/dsc00372_min.jpg)![](../images/dsc00654_min.jpg)![](../images/dsc00460_min.jpg)
+P.S. We wanted to share a little surprise that we found during the filming. We are glad to invite special guests during the shooting, the two daughters of Chris. Apart from being a freediving champion, Chris is also a loving father. At the shooting venue, the two daughters performed several yoga movements such as splitting. Coupled with their joyful conversations and interactions, it is shown that they have close rapport and created a pleasant shooting atmosphere.
+
+<br/>
+
+![](../images/dsc00372_min.jpg)
+
+<br/>
+
+![](../images/dsc00654_min.jpg)
+
+<br/>
+
+![](../images/dsc00460_min.jpg)
+
+<br/>
 
 (The joyful interactions between Chris and his two daughters lighten the atmosphere)
 
 <br/>
 
-_The forth protagonist: Sherie_
-
-Kong Pik Wai (Sherie) is the first Hong Kong female jockey. She started training in riding school at the age of 16 and debuted a year after. She won her first race at the age of 19 and has won a total of 11 races in her five-year career.
-
-![](../images/pcw_20210405_0857_min.jpg)
+### _The fourth protagonist: Sherie_
 
 <br/>
 
-![](../images/pcw_20210405_0146.jpg)![](../images/pcw_20210405_0992_min.jpg)
+![](../images/pcw_20210405_0857_min.jpg)
+
+Kong Pik Wai (Sherie) is The World’s First Chinese Female Jockey. She started training in riding school at the age of 16 and debuted a year after. She won her first race at the age of 19 and has won a total of 11 races in her five-year career.
+
+<br/>
+
+![](../images/pcw_20210405_0146.jpg)
+
+<br/>
+
+![](../images/pcw_20210405_0992_min.jpg)
+
+<br/>
 
 (The production team was trying to film the horse’s “action scenes”)
 
@@ -128,7 +224,19 @@ Kong Pik Wai (Sherie) is the first Hong Kong female jockey. She started training
 
 It is believed that no one in the production team is more familiar with and can understand every single move of the horse better than Sherie. The production team set some interaction scenes with the horse to fit her shooting’s content. Hence Sherie needed to perform some dangerous moves. To capture the great shots, the team needed to understand the mood and condition of the horse on the day itself through contact with it in a short period of time. It was entirely up to Sherie’s communication with the horse beforehand, building up a trustful and tacit relationship, and therefore our shooting was able to go smoothly.
 
-![](../images/pcw_20210405_0803_min.jpg)![](../images/pcw_20210405_3292_min.jpg)![](../images/pcw_20210405_3741_min.jpg)
+<br/>
+
+![](../images/pcw_20210405_0803_min.jpg)
+
+<br/>
+
+![](../images/pcw_20210405_3292_min.jpg)
+
+<br/>
+
+![](../images/pcw_20210405_3741_min.jpg)
+
+<br/>
 
 (It was entirely up to Sherie’s communication with the horse in advance, so that the horse was well-behaved when filming)
 
@@ -136,19 +244,23 @@ It is believed that no one in the production team is more familiar with and can 
 
 <br/>
 
-**Check out the new 2022 campaign**
+## **Check out the new 2022 campaign**
 
 We and the production team have made sufficient and detailed preparations in advance, to present numerous incredible cinematic scenes as a feast for the eyes. So, without further ado, let’s watch the video now:
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1 "https://www.youtube.com/watch?v=nSD7pEd4J-s")
+`youtube:https://www.youtube.com/watch?v=nSD7pEd4J-s&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=1`
 
 (Hong Kong Gymnast Stone Shek and Kelvin Ng's video)
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3 "https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3")
+<br/>
+
+`youtube:https://www.youtube.com/watch?v=gIKEJ2N2MVs&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=3`
 
 (Hong Kong Freediving Record Holder Chris Cheung's video)
 
-`youtube:`[`https://www.youtube.com/watch?v=L-gWUe8i32c&t=4s`](https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2 "https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2")
+<br/>
+
+`youtube:https://www.youtube.com/watch?v=U_3tVZWEl6I&list=PLlChtdcugmzNg-Oa_s6cjSRVpTNH0z-6e&index=2`
 
 (The First Hong Kong Female Jockey Sherie Kong's video)
 
@@ -156,7 +268,7 @@ We and the production team have made sufficient and detailed preparations in adv
 
 <br/>
 
-**Early Preparation for your Health to Face Challenges without Scruples**
+## **Early Preparation for your Health to Face Challenges without Scruples**
 
 When seeing the athletes standing on the podium, we believe that there is nothing simple behind this triumphant success. A medal and a recognition are accumulated through countless challenges, setbacks, persistence, and more importantly, early preparation.
 
@@ -172,8 +284,6 @@ Besides, as of now, there is no vaccine available for prevention or medication f
 
 The Take2 Prophecy™ Test for NPC has over 97% sensitivity⁵ ⁶, and very few cases of NPC would be missed. Also, it only has a 0.7% remarkably low false-positive rate⁶. By providing accurate and reliable results, the Take2 Prophecy™ Test for NPC ranks the top over other similar tests. Beginning with the research achievement from a renowned Hong Kong university, and being validated in a large-scale clinical study involving 20,000 individuals⁵, with the use of Next-generation Sequencing (NGS) technology, the test effectively enables NPC patients to be identified in their early-stage.
 
-Take2 Prophecy™ 早期鼻咽癌篩查的準確度高於97%⁵ ⁶，而且絕少漏檢；假陽性率極低 (0.7%)⁶，是市場上最準確可靠的測試。此測試採用本地頂尖大學的研發成果，並通過二萬人參與大型臨床驗証⁵，結合PCR及次世代DNA測序技術 (NGS: Next-generation Sequencing)，有效識別出早期鼻咽癌患者。
-
 <br/>
 
 The whole test process is just amazingly simple. By making appointments on the Take2 Health Online Platform, without hospital admission or taking leave, you can take the test through a blood draw at your nearest clinic and get it done within the time of a lunch. Results can be available as soon as 3 working days.
@@ -182,9 +292,9 @@ The whole test process is just amazingly simple. By making appointments on the T
 
 Register as a member now to enjoy the special promotional offer by entering Promo Code “2022NEW” *.
 
-Book the test now: [https://bit.ly/3Lqqo0T](https://bit.ly/3Lqqo0T "https://bit.ly/3Lqqo0T")
+Book the test now: [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
-Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/3woinVN](https://bit.ly/3woinVN "https://bit.ly/3woinVN")
+Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/3MyBAK4](https://bit.ly/3MyBAK4 "https://bit.ly/3MyBAK4")
 
 \*Limited to the first 200 appointments. Terms and Conditions apply.
 
@@ -192,7 +302,7 @@ Learn more about the Take2 Prophecy™ Test for NPC: [https://bit.ly/3woinVN](ht
 
 <br/>
 
-參考資料
+References
 
 1\. 鼻咽癌：及早察覺、徵狀、放射及化學治療. Hong Kong Anti-Cancer Society, April 2021, [https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf](https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf "https://www.hkacs.org.hk/ufiles/NasopharyngealCarcinoma.pdf").
 

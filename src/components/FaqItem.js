@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core'
 import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
-import replaceURLs from '@utils/replaceURLs'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +28,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   list: {
+    maxWidth: '100%',
+
+    '& img': {
+      width: '100%',
+      height: 'auto',
+    },
+    '& iframe': {
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        height: 'auto',
+      },
+    },
     '& a': {
       color: theme.palette.primary.main,
     },
@@ -145,9 +156,7 @@ const FaqItem = ({ question, content, onChange, id, activePanel }) => {
         </FaqAccordionSummary>
         <FaqAccordionDetails>
           <Box whiteSpace='break-spaces' className={classes.list}>
-            <div
-              dangerouslySetInnerHTML={{ __html: replaceURLs(content) }}
-            ></div>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </Box>
         </FaqAccordionDetails>
       </FaqAccordion>

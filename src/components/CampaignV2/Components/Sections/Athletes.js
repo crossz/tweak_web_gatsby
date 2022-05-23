@@ -71,11 +71,11 @@ const Athletes = () => {
       ),
       image: (
         <StaticImage
-          src='../../images/athlete_hero_02_detail.jpg'
+          src='../../images/athlete_hero_01_detail.jpg'
           alt='athlete hero image 01'
         ></StaticImage>
       ),
-      videos: ['wOPREMoVhys', 'wOPREMoVhys'],
+      videos: ['nSD7pEd4J-s'],
       name: 'cp_v2.athletes.heros.0.name',
       title: 'cp_v2.athletes.heros.0.title',
       intro: 'cp_v2.athletes.heros.0.intro',
@@ -95,7 +95,7 @@ const Athletes = () => {
           alt='athlete hero image 02'
         ></StaticImage>
       ),
-      videos: ['wOPREMoVhys', 'wOPREMoVhys'],
+      videos: ['gIKEJ2N2MVs', 'ea2Kkmmv4M4'],
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
       intro: 'cp_v2.athletes.heros.1.intro',
@@ -115,7 +115,7 @@ const Athletes = () => {
           alt='athlete hero image 03'
         ></StaticImage>
       ),
-      videos: ['wOPREMoVhys', 'wOPREMoVhys'],
+      videos: ['U_3tVZWEl6I', 'UbKroM0_gPE'],
       name: 'cp_v2.athletes.heros.2.name',
       title: 'cp_v2.athletes.heros.2.title',
       intro: 'cp_v2.athletes.heros.2.intro',
@@ -263,18 +263,25 @@ const Athletes = () => {
                     }}
                   >
                     <ImageListItem>
-                      <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
-                        <YouTube
-                          containerClassName={classes.videoContainer}
-                          className={classes.video}
-                          videoId={athlete.videos[1]}
-                          id={athlete.countNode2}
-                          opts={{
-                            width: '100%',
-                            height: '100%',
-                          }}
-                        />
-                      </Box>
+                      {athlete.videos[1] ? (
+                        <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
+                          <YouTube
+                            containerClassName={classes.videoContainer}
+                            className={classes.video}
+                            videoId={athlete.videos[1]}
+                            id={athlete.countNode2}
+                            opts={{
+                              width: '100%',
+                              height: '100%',
+                            }}
+                          />
+                        </Box>
+                      ) : (
+                        <StaticImage
+                          src='../../images/athlete_hero_02_detail_02.jpg'
+                          alt='athlete hero detail 02'
+                        ></StaticImage>
+                      )}
                     </ImageListItem>
                     <ImageListItem>{athlete.image}</ImageListItem>
                   </ImageList>
@@ -327,7 +334,7 @@ const Athletes = () => {
         maxWidth={1192}
         mx='auto'
         pt={isMobile ? 8 : 3.5}
-        pb={isMobile ? 9 : 4}
+        pb={4}
         mt={-3}
         boxShadow={`0 5px 30px 0 ${alpha('#7C7C7C', 0.1)}`}
         bgcolor={isMobile ? 'prophecyPrimary.main' : 'background.paper'}
@@ -413,8 +420,13 @@ const Athletes = () => {
               </Box>
             </Box>
             {isMobile && (
-              <Box mt={2} textAlign='center'>
-                <Link className={classes.link} to='/' underline='always'>
+              <Box mt={3} textAlign='center'>
+                <Link
+                  className={classes.link}
+                  to='/whats-new/updates/athletes-program/'
+                  target='_blank'
+                  underline='always'
+                >
                   <Box
                     fontSize='body1.fontSize'
                     component='span'
