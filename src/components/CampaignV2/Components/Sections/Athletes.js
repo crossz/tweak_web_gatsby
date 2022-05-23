@@ -363,8 +363,14 @@ const Athletes = () => {
             {!isMobile && t('cp_v2.athletes.paragraphs.5')}
           </Box>
           {!isMobile && (
-            <Box px={2.5} textAlign='right' id='ECP_Athlete_BTS'>
-              <Link className={classes.link} to='/' underline='always'>
+            <Box px={2.5} textAlign='right'>
+              <Link
+                className={classes.link}
+                to='/whats-new/updates/athletes-program/'
+                target='_blank'
+                underline='always'
+                id='ECP_Athlete_BTS'
+              >
                 <Box component='span'>{t('cp_v2.athletes.paragraphs.4')}</Box>
               </Link>
             </Box>
@@ -426,12 +432,9 @@ const Athletes = () => {
                   to='/whats-new/updates/athletes-program/'
                   target='_blank'
                   underline='always'
+                  id='ECP_Athlete_BTS'
                 >
-                  <Box
-                    fontSize='body1.fontSize'
-                    component='span'
-                    id='ECP_Athlete_BTS'
-                  >
+                  <Box fontSize='body1.fontSize' component='span'>
                     {t('cp_v2.athletes.paragraphs.4')}
                   </Box>
                 </Link>
