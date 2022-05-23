@@ -256,7 +256,7 @@ const Banner = ({ nodes }) => {
                     to={process.env.GATSBY_SITE_URL}
                     target='_blank'
                     component={Link}
-                    id='RW_HP_Top_Banner_PVCampaign_KnowMore'
+                    id='RW_HP_Top_Banner_Athlete_EHEALTH'
                   >
                     <Box />
                   </Box>
@@ -269,8 +269,9 @@ const Banner = ({ nodes }) => {
                     bottom={isMobile ? 'unset' : isEn ? '9%' : '12.5%'}
                     to='/whats-new/updates/athletes-program/'
                     component={Link}
-                    id='RW_HP_Top_Banner_PVCampaign_EHEALTH'
+                    id='BannerRW_HP_Top_Banner_Athlete_KnowMore'
                   >
+                    1
                     <Box />
                   </Box>
                 </Box>
