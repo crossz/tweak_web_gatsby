@@ -16,6 +16,7 @@ import classnames from 'classnames'
 import FaqItem from '@components/FaqItem'
 import FaqSearch from '@components/FaqSearch'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
+import { groupBy } from 'lodash-es'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import Loading from '@components/Loading'
@@ -161,32 +162,27 @@ const FAQ = () => {
   const [allFaqList, setAllFaqList] = useState([])
   const [faqList, setFaqList] = useState([])
   const [activePanel, setActivePanel] = useState(null)
-  const [faqTypes, setFaqTypes] = useState()
+  const [faqTypes, setFaqTypes] = useState([''])
+  const [activeType, setActiveType] = useState('')
   const [loadingStatus, setLoadingStatus] = useState('')
-  const allTypeList = [
-    { nameHk: '所有問題', nameEn: 'All questions', nameCn: '所有问题' },
-  ]
-  const [activeType, setActiveType] = useState(tB('name', allTypeList[0]))
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoadingStatus('pending')
         const res = await fetchWithTimeout(`/faqs/list`)
-        const resType = await fetchWithTimeout(`/faqType/list`)
         if (res?.code !== 1000) {
           return console.log('fetch error')
         }
         const list = res?.data?.filter((item) => item.status) || []
         setAllFaqList(list)
         setFaqList(list)
-        if (resType.code !== 1000) {
-          return console.log('fetch error')
-        } else {
-          allTypeList.push(...resType.data)
-          setFaqTypes(allTypeList)
-          setLoadingStatus('fulfilled')
-        }
+        const groupType = groupBy(
+          list?.filter((item) => item.status),
+          'typeName'
+        )
+        setFaqTypes(['', ...Object.keys(groupType)])
+        setLoadingStatus('fulfilled')
       } catch (error) {
         setLoadingStatus('rejected')
         console.log('fetch error')
@@ -196,9 +192,7 @@ const FAQ = () => {
   }, [])
 
   const handleChange = (index) => setActivePanel(index)
-  const handleSearchResult = (result) => {
-    setFaqList(result)
-  }
+  const handleSearchResult = (result) => setFaqList(result)
 
   const handleTypeChange = (e) => {
     scrollTo('#section-tabs')
@@ -224,7 +218,7 @@ const FAQ = () => {
                 color='primary'
               >
                 {t('common.faq')}
-                {activeType && activeType !== tB('name', allTypeList[0]) && (
+                {activeType && (
                   <Typography
                     component='span'
                     variant='h5'
@@ -246,12 +240,12 @@ const FAQ = () => {
                       <Box
                         className={classnames(
                           classes.type,
-                          activeType === tB('name', type) && classes.activeType
+                          activeType === type && classes.activeType
                         )}
                         key={index}
-                        data-value={tB('name', type)}
+                        data-value={type}
                       >
-                        {translateFaqType(tB('name', type))}
+                        {translateFaqType(type) || t('options.faq_types.all')}
                       </Box>
                     ))}
                   </Box>
@@ -274,10 +268,9 @@ const FAQ = () => {
                       className={classes.select}
                       displayEmpty
                     >
-                      {faqTypes?.map((type, index) => (
-                        <EMenuItem key={index} value={tB('name', type)}>
-                          {translateFaqType(tB('name', type)) ||
-                            t('options.faq_types.all')}
+                      {faqTypes.map((type, index) => (
+                        <EMenuItem key={index} value={type}>
+                          {translateFaqType(type) || t('options.faq_types.all')}
                         </EMenuItem>
                       ))}
                     </ESelect>
@@ -286,16 +279,9 @@ const FAQ = () => {
               </Box>
             </Hidden>
             <Grid item xs={12} sm={8}>
-              {faqList?.length > 0 &&
-              loadingStatus !== 'pending' &&
-              faqList?.find((faq) => faq.status) ? (
+              {faqList?.length > 0 && loadingStatus !== 'pending' ? (
                 faqList
-                  ?.filter(
-                    (faq) =>
-                      faq.typeName === activeType ||
-                      !activeType ||
-                      activeType === tB('name', allTypeList[0])
-                  )
+                  ?.filter((faq) => faq.typeName === activeType || !activeType)
                   ?.map((faq) => (
                     <FaqItem
                       key={faq.id}
