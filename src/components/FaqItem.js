@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core'
 import ExpandIcon from '@images/icons/expand.svg'
 import CollapseIcon from '@images/icons/collapse.svg'
-import replaceURLs from '@utils/replaceURLs'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,12 +29,19 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     maxWidth: '100%',
-    '& a': {
-      color: theme.palette.primary.main,
-    },
+
     '& img': {
       width: '100%',
       height: 'auto',
+    },
+    '& iframe': {
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        height: 'auto',
+      },
+    },
+    '& a': {
+      color: theme.palette.primary.main,
     },
   },
 }))

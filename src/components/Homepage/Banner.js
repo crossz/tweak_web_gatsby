@@ -11,7 +11,7 @@ import {
   alpha,
   Hidden,
 } from '@material-ui/core'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from '@components/Link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
@@ -41,26 +41,38 @@ const useStyles = makeStyles((theme) => ({
   },
   imageButtonWrapper: {
     transform: `translate(-50%,-50%)`,
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    maxHeight: `${(2631 / 4320) * 100}vw`,
+    maxWidth: (4320 / 2631) * 877,
+    [theme.breakpoints.down('xs')]: {
+      maxHeight: `100%`,
+      maxWidth: (1125 / 1506) * 877,
+    },
   },
   imageButton: {
     position: 'absolute',
     width: '14%',
     height: '7%',
     bottom: '13%',
-    // transform: `translateY(20.4vw)`,
     [theme.breakpoints.down('xs')]: {
       width: '20.2%',
       height: '4.8%',
       bottom: '6%',
-      // transform: `translateY(860%)`,
     },
   },
   containImgWrapper: {
     display: 'flex',
     alignItems: 'center',
-    // backgroundColor: '#BADCF2',
-    background: `rgb(127,177,210)`,
+  },
+  promoBannerBg: {
     background: `radial-gradient(circle, rgba(127,177,210,1) 0%, rgba(159,194,239,1) 50%, rgba(201,243,224,1) 100%)`,
+  },
+  athletesBannerBg: {
+    background: `linear-gradient(90deg, rgba(169,211,240,1) 0%, rgba(227,176,109,1) 100%)`,
   },
   containImg: {
     maxHeight: '100%',
@@ -207,10 +219,10 @@ const Banner = ({ nodes }) => {
           navigation={nodes?.length > 1}
           pagination={{ clickable: true }}
           className={classes.swiperWrapper}
-          // autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return toggleTheme?.(
-              nodes[swiper.realIndex - 1]?.frontmatter?.theme
+              nodes[swiper.realIndex - 2]?.frontmatter?.theme
             )
           }}
           initialSlide={0}
@@ -223,7 +235,55 @@ const Banner = ({ nodes }) => {
               <Box
                 className={classnames(
                   classes.heroImgWrapper,
-                  classes.containImgWrapper
+                  classes.containImgWrapper,
+                  classes.athletesBannerBg
+                )}
+                position='relative'
+              >
+                <ImageTranslation
+                  filename='athletes_banner'
+                  alt='athletes banner'
+                  className={classes.containImg}
+                ></ImageTranslation>
+                <Box className={classes.imageButtonWrapper}>
+                  <Box
+                    position='absolute'
+                    right={isMobile ? '7.8%' : isEn ? '38.5%' : '32%'}
+                    width={isMobile ? '22%' : isEn ? '14.5%' : '16%'}
+                    height={isMobile ? '6%' : '8%'}
+                    top={isMobile ? '38.5%' : 'auto'}
+                    bottom={isMobile ? 'unset' : isEn ? '9%' : '12.5%'}
+                    to={process.env.GATSBY_SITE_URL}
+                    target='_blank'
+                    component={Link}
+                    id='RW_HP_Top_Banner_Athlete_EHEALTH'
+                  >
+                    <Box />
+                  </Box>
+                  <Box
+                    position='absolute'
+                    right={isMobile ? '7.8%' : isEn ? '3.5%' : '5.5%'}
+                    width={isMobile ? '22%' : isEn ? '32%' : '23%'}
+                    height={isMobile ? '3.5%' : '8%'}
+                    top={isMobile ? '47.5%' : 'unset'}
+                    bottom={isMobile ? 'unset' : isEn ? '9%' : '12.5%'}
+                    to='/whats-new/updates/athletes-program/'
+                    component={Link}
+                    id='BannerRW_HP_Top_Banner_Athlete_KnowMore'
+                  >
+                    <Box />
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Box className={classes.heroBannerWrapper}>
+              <Box
+                className={classnames(
+                  classes.heroImgWrapper,
+                  classes.containImgWrapper,
+                  classes.promoBannerBg
                 )}
                 position='relative'
               >
@@ -232,18 +292,7 @@ const Banner = ({ nodes }) => {
                   alt='promo banner'
                   className={classes.containImg}
                 ></ImageTranslation>
-                <Box
-                  className={classes.imageButtonWrapper}
-                  width='100%'
-                  height='100%'
-                  maxHeight={isMobile ? '100%' : `${(2631 / 4320) * 100}vw`}
-                  maxWidth={
-                    isMobile ? (1125 / 1506) * 877 : (4320 / 2631) * 877
-                  }
-                  position='absolute'
-                  top='50%'
-                  left='50%'
-                >
+                <Box className={classes.imageButtonWrapper}>
                   <Box
                     className={classes.imageButton}
                     left={

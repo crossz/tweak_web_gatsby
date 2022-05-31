@@ -35,7 +35,6 @@ const Layout = ({ children }) => {
   )
 
   const handleChangeHeroTheme = (theme) => {
-    console.log('ok')
     return setHeroTheme(theme)
   }
 
