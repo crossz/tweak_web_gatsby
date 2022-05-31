@@ -228,7 +228,7 @@ const FAQ = () => {
               >
                 {activeType && activeType !== tB('name', allTypeList[0]) && (
                   <Typography component='span' variant='h5'>
-                    {activeType}
+                    {` ${activeType}`}
                   </Typography>
                 )}
               </Typography>
