@@ -206,7 +206,6 @@ const FAQ = () => {
   }
 
   const handleTypeChange = (e) => {
-    console.log(e.target.dataset?.value)
     scrollTo('#section-tabs')
     return setActiveType(e.target.dataset?.value)
   }
