@@ -228,12 +228,12 @@ const FAQ = () => {
                 variant='h4'
                 color='primary'
               >
-                {t('common.faq')}
+                {/* {t('common.faq')} */}
                 {activeType && activeType !== tB('name', allTypeList[0]) && (
                   <Typography
                     component='span'
                     variant='h5'
-                  >{` #${translateFaqType(activeType)}`}</Typography>
+                  >{`${translateFaqType(activeType)}`}</Typography>
                 )}
               </Typography>
             </Grid>
