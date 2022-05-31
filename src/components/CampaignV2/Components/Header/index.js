@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Box from '@material-ui/core/Box'
 import {
   makeStyles,
@@ -15,7 +15,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Waypoint } from 'react-waypoint'
 import PromotionBar from './PromotionBar'
 import PromotionContent from './PromotionContent'
-import scrollTo from 'gatsby-plugin-smoothscroll'
+import { gsap } from '@components/CampaignV2/utils/initGsap'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,6 +73,24 @@ const Header = (props) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const [withBg, setWithBg] = useState(true)
+  const headerRef = useRef()
+
+  const handleScroll = (e) => {
+    const { id } = e.currentTarget.dataset
+
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: {
+        y: `#${id}`,
+        offsetY: headerRef?.current?.clientHeight
+          ? isMobile
+            ? headerRef?.current?.clientHeight
+            : headerRef?.current?.clientHeight - PROMOTION_BAR_HEIGHT
+          : (isMobile ? MOBILE_HEADER_HEIGHT : HEADER_HEIGHT) * 8,
+      },
+      ease: 'power2',
+    })
+  }
 
   return (
     <>
@@ -85,6 +103,7 @@ const Header = (props) => {
         position='sticky'
         top={isMobile ? 0 : -PROMOTION_BAR_HEIGHT}
         zIndex='appBar'
+        ref={(current) => (headerRef.current = current)}
       >
         <PromotionBar></PromotionBar>
         <Box id='header' className={classes.header}>
@@ -100,7 +119,14 @@ const Header = (props) => {
               mr={2}
               flexShrink={0}
               className={classes.logoWrapper}
-              onClick={() => scrollTo('#scroll-to-top', 'start')}
+              onClick={() =>
+                gsap.to(window, {
+                  duration: 1,
+                  scrollTo: {
+                    y: '#scroll-to-top',
+                  },
+                })
+              }
             >
               {withBg ? (
                 <StaticImage
@@ -121,7 +147,7 @@ const Header = (props) => {
               className={classes.menuBtn}
               id={withBg ? 'ECP_Stickybar_Menu' : 'ECP_Menu'}
             >
-              <Menu dark={withBg}></Menu>
+              <Menu handleScroll={handleScroll} dark={withBg}></Menu>
             </Box>
           </Container>
         </Box>

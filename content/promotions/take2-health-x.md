@@ -22,7 +22,7 @@ slug: ''
 
 **靈敏度冠絕市場同類測試**
 
-Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next-generation Sequencing)，來分析血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97% ² ³，冠絕同類測試！ 
+Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next-generation Sequencing)，來分析血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，有效識別出未有明顯病徵的早期患者，助其及早開展治療，而且靈敏度>97% ² ³，冠絕同類測試！
 
 ![](../images/tableart.jpg)
 
@@ -80,6 +80,16 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 <br/>
 
+**Medtimes 時代醫療集團 - 早期鼻咽癌篩查 ($3,000)**
+
+**分店地址：**尖沙咀 / 上水
+
+**網上預約：**[https://bit.ly/3KksG0I](https://bit.ly/3KksG0I "https://bit.ly/3KksG0I")  / 電話預約：3585 8533
+
+**計劃詳情：**計劃包括早期鼻咽癌篩查 (不包括醫生解釋報告)。
+
+<br/>
+
 **6. New Town Medical 新都醫療 - 早期鼻咽癌篩查 ($1,800)**
 
 **分店地址：** 銅鑼灣 / 觀塘 / 尖沙咀 / 荃灣 / 沙田 / 元朗 /屯門 /天水圍
@@ -122,6 +132,16 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 **網上預約：** [https://bit.ly/3virsPf](https://bit.ly/3virsPf "https://bit.ly/3virsPf")
 
 **計劃詳情**：檢查項目包括早期鼻咽癌篩查、血全像、血脂肪、糖尿篩查、甲狀腺評估、心臟功能評估及本中心註冊醫生解釋檢查結果。
+
+<br/>
+
+**Trinity Medical Centre全仁醫務中心  - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,100)**
+
+**分店地址：**中環 / 尖沙咀
+
+**網上預約：**[https://bit.ly/38w3iYB](https://bit.ly/38w3iYB "https://bit.ly/38w3iYB")
+
+**計劃詳情：**計劃包括醫生診症費用及Take2 Prophecy™ 早期鼻咽癌篩查。3-7個工作天有報告。
 
 <br/>
 
