@@ -24,7 +24,6 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
 import useObjectTranslation from '@hooks/useObjectTranslation'
-import { FAQ_TYPES } from '@utils/constant'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -214,8 +213,7 @@ const FAQ = () => {
     scrollTo('#section-tabs')
     return setActiveType(e.target?.value)
   }
-  const translateFaqType = (type) =>
-    FAQ_TYPES[type] ? t(FAQ_TYPES[type]) : type
+
   return (
     <Layout>
       <Box className={classes.root}>
@@ -228,12 +226,10 @@ const FAQ = () => {
                 variant='h4'
                 color='primary'
               >
-                {t('common.faq')}
                 {activeType && activeType !== tB('name', allTypeList[0]) && (
-                  <Typography
-                    component='span'
-                    variant='h5'
-                  >{` #${translateFaqType(activeType)}`}</Typography>
+                  <Typography component='span' variant='h5'>
+                    {activeType}
+                  </Typography>
                 )}
               </Typography>
             </Grid>
@@ -256,7 +252,7 @@ const FAQ = () => {
                         key={index}
                         data-value={tB('name', type)}
                       >
-                        {translateFaqType(tB('name', type))}
+                        {tB('name', type)}
                       </Box>
                     ))}
                   </Box>
@@ -281,8 +277,7 @@ const FAQ = () => {
                     >
                       {faqTypes?.map((type, index) => (
                         <EMenuItem key={index} value={tB('name', type)}>
-                          {translateFaqType(tB('name', type)) ||
-                            t('options.faq_types.all')}
+                          {tB('name', type) || t('options.faq_types.all')}
                         </EMenuItem>
                       ))}
                     </ESelect>
