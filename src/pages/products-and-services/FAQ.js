@@ -206,6 +206,7 @@ const FAQ = () => {
   }
 
   const handleTypeChange = (e) => {
+    console.log(e.target.dataset?.value)
     scrollTo('#section-tabs')
     return setActiveType(e.target.dataset?.value)
   }
@@ -297,7 +298,7 @@ const FAQ = () => {
                 faqList
                   ?.filter(
                     (faq) =>
-                      faq.typeName === activeType ||
+                      tB('typeName', faq) === activeType ||
                       !activeType ||
                       activeType === tB('name', allTypeList[0])
                   )
