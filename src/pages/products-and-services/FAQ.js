@@ -281,7 +281,12 @@ const FAQ = () => {
             <Grid item xs={12} sm={8}>
               {faqList?.length > 0 && loadingStatus !== 'pending' ? (
                 faqList
-                  ?.filter((faq) => faq.typeName === activeType || !activeType)
+                  ?.filter(
+                    (faq) =>
+                      tB('typeName', faq) === activeType ||
+                      !activeType ||
+                      activeType === tB('name', allTypeList[0])
+                  )
                   ?.map((faq) => (
                     <FaqItem
                       key={faq.id}
