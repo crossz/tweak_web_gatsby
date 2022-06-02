@@ -162,7 +162,7 @@ Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generati
 
 <br/>
 
-備註：各體檢中心保留隨時更改其服務的價格及任何折扣優惠，而不作另行通知的權利，最終定價以各醫療集團網上價格為準。詳情請參閱其網上商店或網站。
+备注：各体检中心保留随时更改其服务的价格及任何折扣优惠，而不作另行通知的权利，最终定价以各医疗集团网上价格为准。详情请参阅其网上商店或网站。
 
 1\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
 
@@ -173,5 +173,3 @@ Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generati
 4\. Chang, Kai-Ping, et al. “Complementary Serum Test of Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early Antigen: A Possible Alternative for Primary Screening of Nasopharyngeal Carcinoma.” _Oral Oncology_, vol. 44, no. 8, 2008, pp. 784–92.
 
 5\. Tay, Joshua K., et al. “Screening in Nasopharyngeal Carcinoma: Current Strategies and Future Directions.” _Current Otorhinolaryngology Reports_, vol. 2, no. 1, 2013, pp. 1–7.
-
-![](../images/cp-2-1.jpg)
