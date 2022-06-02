@@ -12,7 +12,7 @@ href: ''
 slug: ''
 
 ---
-![](../images/inner-page-cover.jpg)
+![](../images/cover-photo-tr-1200-x-600.jpg)
 
 「台上一分鐘，台下十年功」，運動員為了上場一刻，都會預早準備，迎接每個挑戰。但即使擁有強健體魄，都有機會被突如其來的意外打亂陣腳。正如在人生高峰期時被癌症找上，也定必方寸大亂。
 
@@ -155,11 +155,11 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **11. Virtus 尚至醫療 - Take2 Prophecy™ 早期鼻咽癌篩查計劃 ($2,200)**
 
-**分店地址：**中環 / 尖沙咀
+\**分店地址：**中環 / 尖沙咀
 
 **網上預約：**[https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") **/ 電話查詢及預約：** 8102 2022 **/ WhatsApp查詢：**9325 4580
 
-**計劃詳情：**計劃包括Take2 Prophecy™ 血液檢查及醫生講解化驗報告。
+\**計劃詳情：**計劃包括Take2 Prophecy™ 血液檢查及醫生講解化驗報告。
 
 1\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
 
