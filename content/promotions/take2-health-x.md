@@ -58,7 +58,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 <br/>
 
-**4. Medicare Group匡喬醫療集團 - 鼻咽癌篩查 ($1,800)**
+**4. Medicare Group 匡喬醫療集團 - 鼻咽癌篩查 ($1,800)**
 
 **分店地址：** 尖沙咀
 
