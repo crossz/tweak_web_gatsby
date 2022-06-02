@@ -1,7 +1,8 @@
 ---
 languages:
 - zh-CN
-cover: []
+cover:
+- "../images/thumbnail-s-chi-300-x-600.jpg"
 date: 2022-05-06T00:00:00+08:00
 title: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠
 detail: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠
