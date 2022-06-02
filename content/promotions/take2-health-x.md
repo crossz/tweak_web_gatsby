@@ -1,7 +1,5 @@
 ---
 languages:
-- en
-- zh-CN
 - zh-HK
 cover:
 - "../images/thumbnail.jpg"
