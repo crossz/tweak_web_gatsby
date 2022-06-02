@@ -1,11 +1,11 @@
 ---
 languages:
-- en
+- zh-CN
 cover:
 - "../images/thumbnail.jpg"
 date: 2022-05-06T00:00:00+08:00
-title: Take2 Health X XXXXX
-detail: Take2 Health X 各大體檢中心｜早期鼻咽癌篩查優惠
+title: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠
+detail: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠
 type: ''
 pdf: ''
 href: ''
