@@ -152,6 +152,16 @@ Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generati
 
 <br/>
 
+**11. 1. Virtus 尚至医疗 - Take2 Prophecy™ 早期鼻咽癌筛查计划 ($2,200)**
+
+**分店地址：**中环 / 尖沙咀
+
+**网上预约：**[https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") / 电话查询及预约： 8102 2022 / WhatsApp查询：9325 4580
+
+**计划详情：**计划包括Take2 Prophecy™血液检查及医生讲解化验报告。
+
+<br/>
+
 備註：各體檢中心保留隨時更改其服務的價格及任何折扣優惠，而不作另行通知的權利，最終定價以各醫療集團網上價格為準。詳情請參閱其網上商店或網站。
 
 1\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
