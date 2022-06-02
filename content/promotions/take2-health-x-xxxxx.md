@@ -112,43 +112,43 @@ Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generati
 
 <br/>
 
-**8. Re:HEALTH 香港仁和體檢 - 早期鼻咽癌篩查計劃 ($2,000)**
+**8. Re:HEALTH 香港仁和体检 - 早期鼻咽癌筛查计划 ($2,000)**
 
-**分店地址**：銅鑼灣 / 旺角
+**分店地址：**铜锣湾 / 旺角
 
-**網上預約：** [https://bit.ly/37Hhezh](https://bit.ly/37Hhezh "https://bit.ly/37Hhezh") / WhatsApp 查詢及預約： 6324 5948
+**网上预约：**[https://bit.ly/37Hhezh](https://bit.ly/37Hhezh "https://bit.ly/37Hhezh")
 
-**計劃詳情**：計劃包括採集血液樣本及由醫護人員分析報告 (如結果為陽性，會轉介諮詢耳鼻喉科專家)。14個工作天後收取報告。
-
-<br/>
-
-**9.** **Trinity Medical Centre全仁醫務中心 - 早期鼻咽癌綜合健康檢查 ($3,088)**
-
-**分店地址：** 中環 / 尖沙咀
-
-**網上預約：** [https://bit.ly/3virsPf](https://bit.ly/3virsPf "https://bit.ly/3virsPf")
-
-**計劃詳情**：檢查項目包括早期鼻咽癌篩查、血全像、血脂肪、糖尿篩查、甲狀腺評估、心臟功能評估及本中心註冊醫生解釋檢查結果。
+**计划详情：**计划包括采集血液样本及由医护人员分析报告 (如结果为阳性，会转介咨询耳鼻喉科专家)。14个工作天后收取报告。
 
 <br/>
 
-**Trinity Medical Centre全仁醫務中心  - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,100)**
+**9.** **Trinity Medical Centre 全仁医务中心 - 早期鼻咽癌综合健康检查 ($3,088)**
 
-\**分店地址：**中環 / 尖沙咀
+**分店地址：**中环 / 尖沙咀
 
-**網上預約：**[https://bit.ly/38w3iYB](https://bit.ly/38w3iYB "https://bit.ly/38w3iYB")
+**网上预约：**[https://bit.ly/3MPEaeI](https://bit.ly/3MPEaeI "https://bit.ly/3MPEaeI")
 
-\**計劃詳情：**計劃包括醫生診症費用及Take2 Prophecy™ 早期鼻咽癌篩查。3-7個工作天有報告。
+**计划详情：**检查项目包括早期鼻咽癌筛查、血全像、血脂肪、糖尿筛查、甲状腺评估、心脏功能评估及本中心注册医生解释检查结果。
 
 <br/>
 
-**10. V-Care - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,000)**
+**Trinity Medical Centre 全仁医务中心 - Take2 Prophecy™️ 早期鼻咽癌筛查 ($2,100)**
 
-**分店地址：** 銅鑼灣 / 佐敦 / 荃灣
+**分店地址：**中环 / 尖沙咀
 
-**網上預約：** [https://bit.ly/3vjvy9V](https://bit.ly/3vjvy9V "https://bit.ly/3vjvy9V")
+**网上预约：**[https://bit.ly/3sWNJAD](https://bit.ly/3sWNJAD "https://bit.ly/3sWNJAD")
 
-**計劃詳情：** 計劃包括詳細病歷調查、醫生會診 / 醫生視像會診、鼻咽癌基因檢測及醫生解釋報告。
+**计划详情：**计划包括医生诊症费用及Take2 Prophecy™早期鼻咽癌筛查。3-7个工作天有报告。
+
+<br/>
+
+**10. V-Care - Take2 Prophecy™️ 早期鼻咽癌筛查 ($2,000)**
+
+**分店地址：**铜锣湾 / 佐敦 / 荃湾
+
+**网上预约：**[https://bit.ly/3vjvy9V](https://bit.ly/3vjvy9V "https://bit.ly/3vjvy9V")
+
+**计划详情：**计划包括详细病历调查、医生会诊 / 医生视像会诊、鼻咽癌基因检测及医生解释报告。
 
 <br/>
 
