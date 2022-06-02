@@ -123,7 +123,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 <br/>
 
-**9.** **Trinity Medical Centre全仁醫務中心 - 早期鼻咽癌綜合健康檢查 ($3,088)**
+**9.** **Trinity Medical Centre 全仁醫務中心 - 早期鼻咽癌綜合健康檢查 ($3,088)**
 
 **分店地址：** 中環 / 尖沙咀
 
@@ -133,7 +133,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 <br/>
 
-**Trinity Medical Centre全仁醫務中心  - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,100)**
+**Trinity Medical Centre 全仁醫務中心  - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,100)**
 
 \**分店地址：**中環 / 尖沙咀
 
