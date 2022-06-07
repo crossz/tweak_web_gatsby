@@ -68,7 +68,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **E-booking:** [https: //bit.ly/36PicJ8](https://bit.ly/36PicJ8)
 
-\**Details:**Test results are ready within 7 days. The plan includes Report Explanation by Doctor.
+**Details:** Test results are ready within 7 days. The plan includes Report Explanation by Doctor.
 
 <br/>
 
