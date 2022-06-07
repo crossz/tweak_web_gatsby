@@ -22,7 +22,7 @@ slug: ''
 
 **灵敏度冠绝市场同类测试**
 
-Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generation Sequencing)，来分析血浆中人类和EB病毒的DNA与鼻咽癌相关之特征，有效识别出未有明显病征的早期患者，助其及早开展治疗，而且灵敏度>97% ² ³，冠绝同类测试！
+Take2 Prophecy™ 早期鼻咽癌筛查采用高通量测序技术 (Next-generation Sequencing)，来分析血浆中人类和EB病毒的DNA与鼻咽癌相关之特征，有效识别出未有明显病征的早期患者，助其及早开展治疗，而且灵敏度>97% ² ³，冠绝同类测试！
 
 ![](../images/table_sc.png)
 
