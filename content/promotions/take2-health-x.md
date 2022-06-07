@@ -2,7 +2,7 @@
 languages:
 - zh-HK
 cover:
-- "../images/thumbnail.jpg"
+- "../images/thumbnail-tr-300-x-600.jpg"
 date: 2022-05-06T00:00:00.000+08:00
 title: Take2 Health X 各大體檢中心｜早期鼻咽癌篩查優惠
 detail: Take2 Health X 各大體檢中心｜早期鼻咽癌篩查優惠
