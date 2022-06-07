@@ -153,7 +153,7 @@ Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generati
 
 <br/>
 
-**11. 1. Virtus 尚至医疗 - Take2 Prophecy™ 早期鼻咽癌筛查计划 ($2,200)**
+**11. Virtus 尚至医疗 - Take2 Prophecy™ 早期鼻咽癌筛查计划 ($2,200)**
 
 \**分店地址：**中环 / 尖沙咀
 

@@ -1,169 +1,173 @@
 ---
 languages:
-- zh-CN
+- en
 cover:
-- "../images/thumbnail-s-chi-300-x-600.jpg"
+- "../images/thumbnail_eng-300-x-600.jpg"
 date: 2022-05-06T00:00:00+08:00
-title: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠-(copy)
-detail: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠
+title: Take2 Health & Medical Partners｜Special Offer for Early Nasopharyngeal Cancer
+  Detection
+detail: Take2 Health & Medical Partners｜Special Offer for Early Nasopharyngeal Cancer
+  Detection
 type: ''
 pdf: ''
 href: ''
 slug: ''
 
 ---
-![](../images/cover-photo-s-chi-1200-x-600.jpg)
+![](../images/cover-photo-eng-1200-x-600.jpg)
 
-「台上一分钟，台下十年功」，运动员为了在比赛中发挥出最好成绩，都会提前准备，迎接每个挑战。可是，尽管拥有强健的体魄，都有机会被突如其来的意外打乱计划，就好像在人生高峰期时患上癌症，一定会方寸大乱。
+As the Chinese idiom goes, “One minute on the stage needs ten years practice off stage”. To achieve the best results in the competition, athletes prepare thoroughly in advance. However, there would always be unexpected issues which can interrupt their game plans no matter how fit they are. Similarly, imagine if you are diagnosed with cancer in the prime time of your life, how would your life be disrupted?
 
-鼻咽癌是本港最常见的头颈部癌症，发病高峰期介乎40至50岁，更是20-44岁男士头号癌症¹！鼻咽癌早期病征与感冒非常相似，包括：头痛、鼻塞、耳鸣，导致患者容易混淆而忽略，到病情变得严重的时候才求医，届时癌细胞有机会已经扩散，白白错过治疗黄金期。不想每一次出现征状都要揣测？定期进行早期鼻咽癌筛查即能帮助你分辨。只需要一顿午饭的时间，到附近诊所抽血检查，就毋须再提心吊胆。
-
-**灵敏度冠绝市场同类测试**
-
-Take2 Prophecy™早期鼻咽癌筛查采用高通量测序技术 (Next-generation Sequencing)，来分析血浆中人类和EB病毒的DNA与鼻咽癌相关之特征，有效识别出未有明显病征的早期患者，助其及早开展治疗，而且灵敏度>97% ² ³，冠绝同类测试！
-
-![](../images/tableart.jpg)
-
-**不要犹豫，立即预约！**
-
-**Take2 Health联合各大医疗集团推出限时鼻咽癌筛查优惠，包括：**
-
-**1.** **Human Health 盈健医疗 - 早期鼻咽癌筛查计划 ($1700)** 
-
-**分店地址：** 旺角
-
-**网上预约**： [https://bit.ly/3LpgU6S](https://bit.ly/3LpgU6S "https://bit.ly/3LpgU6S")
-
-**计划详情：**计划包括血液检验及由医护人员解释报告。
+Nasopharyngeal cancer (NPC) is one of the most common head and neck cancers in Hong Kong, with the peak incidence occurring among those aged 40–50, and it is top cancer for men aged between 20-44¹. As the symptoms of early NPC resemble flu or inflammatory illnesses, including headache, nasal blockage, and tinnitus, it is typically easy to let the patients’ guards down, causing a delay in seeking medical consultation. As such, the best timing for NPC treatment is often missed when they notice the situation is getting worse. Stop guessing and get tested with early NPC regularly. The Take2 Prophecy™ Test for NPC only requires a simple blood draw at the clinic which is nearby your home or work locations, you can get it done within a lunchtime!
 
 <br/>
 
-**2. JP Partners Medical 庄柏医疗 - 早期鼻咽癌筛查 ($1,500)**
+**Sensitivity ranks the top over other similar tests**
 
-**分店地址：**北角 / 中环 / 钻石山 / 九龙城 / 佐敦 / 旺角 / 荃湾 / 上水 / 屯门
+The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generation Sequencing (NGS) technology, analyses human and NPC-associated genomic signatures of EBV DNA in the blood plasma. It enables patients with non-specific symptoms to be identified at the early stage for timely treatment. Also, the Take2 Prophecy™ Test for NPC has over 97% sensitivity² ³, which ranks the top over other similar tests!
 
-**网上预约：**[https://bit.ly/3OHwU69](https://bit.ly/3OHwU69 "https://bit.ly/3OHwU69") **/ WhatsApp 查询：**9011 8042
+![](../images/table_eng.png)
 
-**计划详情：**计划包括医生咨询及医生分析报告及血液检查。7 – 10个工作天后有报告。
+**Do not hesitate, Book now!**
 
-<br/>
+**Take2 Health collaborates with medical partners, offering a special discount on Take2 Prophecy™ Test for NPC, including:**
 
-**3. Kinetics 1. 毅力医护健康集团 - 鼻咽癌基因筛查 ($1,400) (优惠码：SHATIN)**
+**1.** **Human Health** **- Early Nasopharyngeal Cancer Screening ($1,700)**
 
-**分店地址：**铜锣湾 / 佐敦 / 荃湾 / 沙田
+**Locations:** Mong Kok
 
-**网上预约：**[https://bit.ly/379p9ox](https://bit.ly/379p9ox "https://bit.ly/379p9ox") **/ WhatsApp 查询及预约：**9336 8186
+**E-booking:** [https://bit.ly/3sWDNas](https://bit.ly/3sWDNas "https://bit.ly/3sWDNas")
 
-**计划详情：**身体检查报告将于完成检查及提供所有样本后大约4星期内发出。
-
-<br/>
-
-**4. Medicare Group 匡乔医疗集团 - 鼻咽癌筛查 ($1,800)**
-
-**分店地址：**尖沙咀
-
-**网上预约：**[https://bit.ly/36PicJ8](https://bit.ly/36PicJ8 "https://bit.ly/36PicJ8")
-
-**计划详情：**7天快速结果，计划包含医生解释报告。
+**Details:** Theplan includes Collection of blood samples and Test Results interpretation by doctor.
 
 <br/>
 
-**5. Medtimes 时代医疗集团 - 吸烟人士综合检查计划 ($2,980)**
+**2. JP Partners Medical - Early Detection Test for NPC ($1,500)**
 
-**分店地址：**尖沙咀 / 上水
+**Locations:** North Point / Central / Diamond Hill / Kowloon City / Jordan / Mong Kok / Tsuen Wan / Sheung Shui / Tuen Mun
 
-**网上预约：**[https://bit.ly/39VaLkY](https://bit.ly/39VaLkY "https://bit.ly/39VaLkY") **/ 电话预约：**3585 8533
+**E-booking:** [https: //bit.ly/3OHwU69](https://bit.ly/3OHwU69) **/ WhatsApp enquiry:** 9011 8042
 
-**计划详情：**检查项目包括早期鼻咽癌筛查、基本体格检查、心脏检查、X 光检查、血脂肪、全血计数、糖尿病及医生解释报告。
-
-<br/>
-
-**Medtimes 时代医疗集团 - 早期鼻咽癌筛查 ($3,000)**
-
-**分店地址：**尖沙咀 / 上水
-
-**网上预约：**[https://bit.ly/3NCYL5Y](https://bit.ly/3NCYL5Y "https://bit.ly/3NCYL5Y") **/ 电话预约：**3585 8533
-
-**计划详情：**计划包括早期鼻咽癌筛查 (不包括医生解释报告)。
+**Details:** Theplan includes Doctor Consultation and Report Explanation by Doctor. Test results are ready within 7 – 10 working days.
 
 <br/>
 
-**6. New Town Medical 新都医疗 - 早期鼻咽癌筛查 ($1,800)**
+**3. Kinetics Medical & Health Group Co - Carcinoma (NPC) DNA Screening ($1,400) (Promotion code: SHATIN)**
 
-**分店地址：**铜锣湾 / 观塘 / 尖沙咀 / 荃湾 / 沙田 / 元朗 /屯门 /天水围
+**Locations:** Causeway Bay / Jordan / Tsuen Wan / Sha Tin
 
-**网上预约：** [https://bit.ly/3ERBTfR](https://bit.ly/3ERBTfR "https://bit.ly/3ERBTfR")
+**E-booking:** [https: //bit.ly/379p9ox](https://bit.ly/379p9ox) **/ WhatsApp enquiry & booking:** 9336 8186
 
-**计划详情：**完成检查后，报告可另约时间，在新都医务中心内由医生讲解。
-
-<br/>
-
-**7. Quality HealthCare 卓健医疗服务 - 鼻咽癌筛查计划 ($2,185) (会员价)**
-
-**分店地址：**   
- **香港岛：**中环 / 金钟 / 湾仔 / 太古坊 / 铜锣湾 / 北角 / 赤柱
-
-**九龙：**尖沙咀 / 佐敦 / 旺角 / 九龙港铁站 / 九龙湾 / 观塘
-
-**新界及离岛:** 沙田 / 马鞍山 / 将军澳 / 荃湾 / 青衣 / 东涌 / 愉景湾 / 屯门 / 元朗
-
-**网上预约：**[https://bit.ly/3viKJ36](https://bit.ly/3viKJ36 "https://bit.ly/3viKJ36")
-
-**计划详情：**计划包括详细病历调查、医生会诊、鼻咽癌基因检测、医生解释报告。
+**Details:** Report will be issued within 4 weeks after checkup and submission of all required specimens.
 
 <br/>
 
-**8. Re:HEALTH 香港仁和体检 - 早期鼻咽癌筛查计划 ($2,000)**
+**4. Medicare Group - Early Detection Test for NPC ($1,800)**
 
-**分店地址：**铜锣湾 / 旺角
+**Locations:** Tsim Sha Tsui
 
-**网上预约：**[https://bit.ly/37Hhezh](https://bit.ly/37Hhezh "https://bit.ly/37Hhezh")
+**E-booking:** [https: //bit.ly/36PicJ8](https://bit.ly/36PicJ8)
 
-**计划详情：**计划包括采集血液样本及由医护人员分析报告 (如结果为阳性，会转介咨询耳鼻喉科专家)。14个工作天后收取报告。
-
-<br/>
-
-**9.** **Trinity Medical Centre 全仁医务中心 - 早期鼻咽癌综合健康检查 ($3,088)**
-
-**分店地址：**中环 / 尖沙咀
-
-**网上预约：**[https://bit.ly/3MPEaeI](https://bit.ly/3MPEaeI "https://bit.ly/3MPEaeI")
-
-**计划详情：**检查项目包括早期鼻咽癌筛查、血全像、血脂肪、糖尿筛查、甲状腺评估、心脏功能评估及本中心注册医生解释检查结果。
+**Details:**Test results are ready within 7 days. The plan includes Report Explanation by Doctor.
 
 <br/>
 
-**Trinity Medical Centre 全仁医务中心 - Take2 Prophecy™️ 早期鼻咽癌筛查 ($2,100)**
+**5. Medtimes Medical Group – Smoker Health Check Plan (Standard) ($2,980)**
 
-**分店地址：**中环 / 尖沙咀
+**Locations:** Tsim Sha Tsui / Sheung Shui
 
-**网上预约：**[https://bit.ly/3sWNJAD](https://bit.ly/3sWNJAD "https://bit.ly/3sWNJAD")
+**E-booking:** [https://bit.ly/3yYG6Ob](https://bit.ly/3yYG6Ob "https://bit.ly/3yYG6Ob") **/ Tel for booking:** 3585 8533
 
-**计划详情：**计划包括医生诊症费用及Take2 Prophecy™早期鼻咽癌筛查。3-7个工作天有报告。
-
-<br/>
-
-**10. V-Care - Take2 Prophecy™️ 早期鼻咽癌筛查 ($2,000)**
-
-**分店地址：**铜锣湾 / 佐敦 / 荃湾
-
-**网上预约：**[https://bit.ly/3vjvy9V](https://bit.ly/3vjvy9V "https://bit.ly/3vjvy9V")
-
-**计划详情：**计划包括详细病历调查、医生会诊 / 医生视像会诊、鼻咽癌基因检测及医生解释报告。
+**Details:** The plan includes Prophecy Early Nasopharyngeal Cancer Screening, Physical Examination, Heart Examination, X-Ray Examination, Blood Lipid, Complete Blood Count (CBC), Diabetes and Report Explanation by Medical Professional.
 
 <br/>
 
-**11. 1. Virtus 尚至医疗 - Take2 Prophecy™ 早期鼻咽癌筛查计划 ($2,200)**
+**Medtimes Medical Group – Take2 Prophecy Test ($3,000)**
 
-**分店地址：**中环 / 尖沙咀
+**Locations:** Tsim Sha Tsui / Sheung Shui
 
-**网上预约：**[https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") / 电话查询及预约： 8102 2022 / WhatsApp查询：9325 4580
+**E-booking:** [https: //bit.ly/3KksG0I](https://bit.ly/3KksG0I) **/ Tel for booking:** 3585 8533
 
-**计划详情：**计划包括Take2 Prophecy™血液检查及医生讲解化验报告。
+**Details:** Theplan includes Take2 Prophecy Test for NPC (Report explanation is not included).
 
 <br/>
 
-备注：各体检中心保留随时更改其服务的价格及任何折扣优惠，而不作另行通知的权利，最终定价以各医疗集团网上价格为准。详情请参阅其网上商店或网站。
+**6. New Town Medical - Early Detection Test for NPC ($1,800)**
+
+**Locations:** Causeway Bay / Kwun Tong / Tsim Sha Tsui / Tsuen Wan / Sha Tin / Yuen Long / Tuen Mun / Tin Shui Wai
+
+**E-booking:** [https: //bit.ly/3ERBTfR](https://bit.ly/3ERBTfR)
+
+**Details:** After the test is completed, the report can be explained by the doctor at New Town Medical Center at a separate time.
+
+<br/>
+
+**7. Quality HealthCare - Nasopharyngeal Cancer Screening ($2,185) (Member exclusive price)**
+
+**Locations:**   
+**Hong Kong Island:** Central / Admiralty / Wan Chai / Taikoo Place / Causeway Bay / North Point / Stanley
+
+**Kowloon:** Tsim Sha Tsui / Jordan / Mong Kok / Kowloon MTR Station / Kowloon Bay / Kwun Tong
+
+**New Territories & Outlying Islands:** Shatin / Ma On Shan / Tseung Kwan O / Tsuen Wan / Tsing Yi / Tung Chung / Discovery Bay / Tuen Mun / Yuen Long
+
+**E-booking:** [https://bit.ly/3NEAixn](https://bit.ly/3NEAixn "https://bit.ly/3NEAixn")
+
+**Details:** Theplan includes Detailed Medical History Evaluation, Doctor Consultation, NPC Screening Test and Follow-up Consultation for Report Review.
+
+<br/>
+
+**8. Re:HEALTH - Early Detection Test for NPC ($2,000)**
+
+**Locations:** Causeway Bay / Mong Kok
+
+**E-booking:** [https://bit.ly/37Hhezh](https://bit.ly/37Hhezh "https://bit.ly/37Hhezh")
+
+**Details:** Theplan includes Collection of Blood Samples, Report Interpretation and Conclusive Advice by Medical Professional (Patients with positive test result will be referred to ENT specialists).Report will be available 14 working days after the test.
+
+<br/>
+
+**9.** **Trinity Medical Centre - Nasopharyngeal Cancer (NPC) Comprehensive Health Care Plan ($3,088)**
+
+**Locations:** Central / Tsim Sha Tsui
+
+**E-booking:** [https://bit.ly/3lFdyBp](https://bit.ly/3lFdyBp "https://bit.ly/3lFdyBp")
+
+**Details:** The plan includes Nasopharyngeal Cancer Screening, Complete Blood Count,Blood Lipids,Diabetes Screening, Thyroid Assessment, Cardiovascular Function Assessment and Report interpreted and explained by center registered physician.
+
+<br/>
+
+**Trinity Medical Centre - Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC) ($2,100)**
+
+**Locations:** Central / Tsim Sha Tsui
+
+**E-booking:** [https://bit.ly/3lDCqcN](https://bit.ly/3lDCqcN "https://bit.ly/3lDCqcN")
+
+**Details:** The plan includes Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC) test and doctor’s consultation fee. The report will be ready in 3-7 working days.
+
+<br/>
+
+**10. V-Care - Take2 Prophecy™ Test for NPC ($2,000)**
+
+**Locations:** Causeway Bay / Jordan / Tsuen Wan
+
+**E-booking:** [https://bit.ly/3vjvy9V](https://bit.ly/3vjvy9V "https://bit.ly/3vjvy9V")
+
+**Details:** The plan includes Detailed Medical History Evaluation, Doctor consultation/Virtual Consultation, NPC Screening Test and Report Explanation by Doctor.
+
+<br/>
+
+**11. Virtus - Take2 Prophecy™ Early Nasopharyngeal Cancer Screening ($2,200)**
+
+**Locations:** Central / Tsim Sha Tsui
+
+**E-booking:** [https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") **/ Tel for booking:** 8102 2022 **/ WhatsApp enquiry:** 9325 4580
+
+**Details:** The plan includes Take2 Prophecy™ blood examination and Doctor consultation.
+
+<br/>
+
+Remarks: Medical Partners reserve the right to make changes to the price and conditions from time to time without prior notice. The price listed in Medical Partners’ website should be considered as final.
 
 1\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
 
