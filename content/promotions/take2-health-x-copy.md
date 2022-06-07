@@ -52,7 +52,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 <br/>
 
-**3. Kinetics Medical & Health Group Co - Carcinoma (NPC) DNA Screening ($1,400) (Promotion code: SHATIN)**
+**3. Kinetics Medical & Health Group Co - Carcinoma (NPC) DNA Screening ($1,500)** 
 
 **Locations:** Causeway Bay / Jordan / Tsuen Wan / Sha Tin
 
@@ -68,7 +68,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **E-booking:** [https: //bit.ly/36PicJ8](https://bit.ly/36PicJ8)
 
-**Details:**Test results are ready within 7 days. The plan includes Report Explanation by Doctor.
+\**Details:**Test results are ready within 7 days. The plan includes Report Explanation by Doctor.
 
 <br/>
 
@@ -104,7 +104,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **7. Quality HealthCare - Nasopharyngeal Cancer Screening ($2,185) (Member exclusive price)**
 
-**Locations:**   
+**Locations:**  
 **Hong Kong Island:** Central / Admiralty / Wan Chai / Taikoo Place / Causeway Bay / North Point / Stanley
 
 **Kowloon:** Tsim Sha Tsui / Jordan / Mong Kok / Kowloon MTR Station / Kowloon Bay / Kwun Tong
