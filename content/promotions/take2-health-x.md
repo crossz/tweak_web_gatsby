@@ -54,7 +54,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **分店地址：** 銅鑼灣 / 佐敦 / 荃灣 / 沙田
 
-**網上預約：** [https://bit.ly/379p9ox ](https://bit.ly/379p9ox "https://bit.ly/379p9ox")/ WhatsApp 查詢及預約：9336 8186
+**網上預約：** [https://bit.ly/379p9ox ](https://bit.ly/379p9ox "https://bit.ly/379p9ox")**/ WhatsApp 查詢及預約：**9336 8186
 
 **計劃詳情：** 身體檢查報告將於完成檢查及提供所有樣本後大約4星期內發出。
 
@@ -74,7 +74,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **分店地址：** 尖沙咀 / 上水
 
-**網上預約：** [https://bit.ly/3vnpRYD](https://bit.ly/3vnpRYD "https://bit.ly/3vnpRYD") / **電話預約：**3585 8533
+**網上預約：** [https://bit.ly/3vnpRYD](https://bit.ly/3vnpRYD "https://bit.ly/3vnpRYD") **/ 電話預約：**3585 8533
 
 **計劃詳情：** 檢查項目包括早期鼻咽癌篩查、基本體格檢查、心臟檢查、X 光檢查、血脂肪、全血計數、糖尿病及醫生解釋報告。
 
@@ -82,11 +82,11 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **Medtimes 時代醫療集團 - 早期鼻咽癌篩查 ($3,000)**
 
-\**分店地址：**尖沙咀 / 上水
+**分店地址：**尖沙咀 / 上水
 
 **網上預約：**[https://bit.ly/3KksG0I](https://bit.ly/3KksG0I "https://bit.ly/3KksG0I") **/ 電話預約：**3585 8533
 
-\**計劃詳情：**計劃包括早期鼻咽癌篩查 (不包括醫生解釋報告)。
+**計劃詳情：**計劃包括早期鼻咽癌篩查 (不包括醫生解釋報告)。
 
 <br/>
 
@@ -137,11 +137,11 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **Trinity Medical Centre 全仁醫務中心  - Take2 Prophecy™️ 早期鼻咽癌篩查 ($2,100)**
 
-\**分店地址：**中環 / 尖沙咀
+**分店地址：**中環 / 尖沙咀
 
 **網上預約：**[https://bit.ly/38w3iYB](https://bit.ly/38w3iYB "https://bit.ly/38w3iYB")
 
-\**計劃詳情：**計劃包括醫生診症費用及Take2 Prophecy™早期鼻咽癌篩查。3-7個工作天有報告。
+**計劃詳情：**計劃包括醫生診症費用及Take2 Prophecy™ 早期鼻咽癌篩查。3-7個工作天有報告。
 
 <br/>
 
@@ -157,11 +157,11 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **11. Virtus 尚至醫療 - Take2 Prophecy™ 早期鼻咽癌篩查計劃 ($2,200)**
 
-\**分店地址：**中環 / 尖沙咀
+**分店地址：**中環 / 尖沙咀
 
 **網上預約：**[https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") **/ 電話查詢及預約：** 8102 2022 **/ WhatsApp查詢：**9325 4580
 
-\**計劃詳情：**計劃包括Take2 Prophecy™ 血液檢查及醫生講解化驗報告。
+**計劃詳情：**計劃包括Take2 Prophecy™ 血液檢查及醫生講解化驗報告。
 
 <br/>
 
