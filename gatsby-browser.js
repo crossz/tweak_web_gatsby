@@ -14,6 +14,8 @@ const getOriginalPath = (pathname) => {
 const shouldUpdateScroll = ({ prevRouterProps, pathname }) => {
   // When user navigates between section pages should no update page scroll
 
+  if (getOriginalPath(pathname) === '/whats-new/campaign/') return false
+
   const betweenSectionPage = MenuData?.find(
     (menu) =>
       menu?.sections?.find(
