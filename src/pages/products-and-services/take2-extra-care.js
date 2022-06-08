@@ -321,7 +321,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   box04Wrapper: {
-    maxWidth: 568,
+    maxWidth: 585,
   },
   box04BtnWrapper: {
     display: 'flex',
@@ -419,7 +419,10 @@ const Take2ExtraCare = () => {
                     <React.Fragment key={index}>
                       <Box className={classes.stepItem}>
                         <Box className={classes.stepIcon}>{icon}</Box>
-                        <Box className={classes.stepLabel}>
+                        <Box
+                          className={classes.stepLabel}
+                          pt={index === 2 ? 1.75 : 0}
+                        >
                           {index < steps.length - 1 && (
                             <Box className={classes.stepNum}>
                               <TitleDot size={1.5} left={-2}></TitleDot>

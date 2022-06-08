@@ -117,7 +117,6 @@ const useStyles = makeStyles((theme) => ({
   partnerItem: {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: 248,
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.spacing(1),
     padding: theme.spacing(2),
@@ -333,7 +332,7 @@ const International = () => {
                     target='_blank'
                     underline='none'
                   >
-                    <Box className={classes.partnerItem}>
+                    <Box className={classes.partnerItem} minHeight='270px'>
                       <Box className={classes.country}>
                         {tB('country', partner)}
                       </Box>
