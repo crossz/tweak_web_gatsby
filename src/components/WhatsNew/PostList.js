@@ -14,6 +14,7 @@ import {
 } from '@material-ui/core'
 import { POST_PAGE_SIZE } from '@utils/constant'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import RightIcon from '@images/icons/right.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   moreBtnWrapper: {
     marginTop: theme.spacing(12.5),
-    textAlign: 'right',
+    textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(0.5),
       textAlign: 'center',
@@ -44,6 +45,11 @@ const useStyles = makeStyles((theme) => ({
   moreBtn: {
     paddingLeft: theme.spacing(3.25),
     paddingRight: theme.spacing(3.25),
+    background: theme.palette.primary.main,
+    color: '#fff',
+    '& path': {
+      fill: theme.palette.primary.contrastText,
+    },
     [theme.breakpoints.down('xs')]: {
       paddingLeft: theme.spacing(6),
       paddingRight: theme.spacing(6),
@@ -117,6 +123,7 @@ const PostList = ({ title, caption, nodes }) => {
               variant='outlined'
               color='primary'
               onClick={handleMoreViews}
+              endIcon={<RightIcon />}
             >
               {t('common.view_more')}
             </Button>
