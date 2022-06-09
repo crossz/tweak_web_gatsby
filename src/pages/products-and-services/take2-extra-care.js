@@ -253,6 +253,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 1,
     '&:last-child $stepIcon': {
       width: 209,
+      height: 142,
       [theme.breakpoints.down('xs')]: {
         width: 174,
       },
@@ -321,7 +322,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   box04Wrapper: {
-    maxWidth: 568,
+    maxWidth: 585,
   },
   box04BtnWrapper: {
     display: 'flex',
