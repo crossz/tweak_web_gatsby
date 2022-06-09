@@ -291,6 +291,7 @@ const useStyles = makeStyles((theme) => ({
   reportType: {
     display: 'flex',
     alignItems: 'center',
+    flexShrink: '0',
   },
   imageListItemItem: {
     overflow: 'initial',
