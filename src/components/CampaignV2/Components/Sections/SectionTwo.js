@@ -26,11 +26,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const SectionTwo = () => {
-  const { t, language } = useI18next()
+  const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles()
-  const isEn = language === 'en'
 
   const steps = [
     {
@@ -152,7 +151,7 @@ const SectionTwo = () => {
               </Box>
             ))}
           </Box>
-          <Box mt={1} textAlign={isEn ? '' : 'justify'}>
+          <Box mt={1}>
             <Trans i18nKey='cp_v2.ngs_advantage.paragraphs.2'>
               .<sup>1</sup>
             </Trans>

@@ -253,6 +253,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 1,
     '&:last-child $stepIcon': {
       width: 209,
+      height: 142,
       [theme.breakpoints.down('xs')]: {
         width: 174,
       },
@@ -419,10 +420,7 @@ const Take2ExtraCare = () => {
                     <React.Fragment key={index}>
                       <Box className={classes.stepItem}>
                         <Box className={classes.stepIcon}>{icon}</Box>
-                        <Box
-                          className={classes.stepLabel}
-                          pt={index === 2 ? 1.75 : 0}
-                        >
+                        <Box className={classes.stepLabel}>
                           {index < steps.length - 1 && (
                             <Box className={classes.stepNum}>
                               <TitleDot size={1.5} left={-2}></TitleDot>

@@ -332,7 +332,7 @@ const International = () => {
                     target='_blank'
                     underline='none'
                   >
-                    <Box className={classes.partnerItem} minHeight='270px'>
+                    <Box className={classes.partnerItem}>
                       <Box className={classes.country}>
                         {tB('country', partner)}
                       </Box>
