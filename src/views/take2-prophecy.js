@@ -333,9 +333,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Take2Prophecy = () => {
   const classes = useStyles()
-  const { t, language } = useI18next()
-  const isEn = language === 'en'
-
+  const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -449,10 +447,7 @@ const Take2Prophecy = () => {
                       }}
                       className={classes.imageListItem}
                     >
-                      <Box
-                        className={classes.reportItem}
-                        height={isEn ? '198px' : 'auto'}
-                      >
+                      <Box className={classes.reportItem}>
                         <Box className={classes.reportTop}>
                           <Box
                             className={classes.reportType}
