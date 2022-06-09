@@ -120,34 +120,60 @@ const ContactReference = () => {
 
   const reference = [
     {
-      list: '1. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.',
+      list: `1. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus
+          DNA to Screen for Nasopharyngeal Cancer.”
+          <i> New England Journal of Medicine,</i> vol. 377, no. 6, 2017, pp.
+          513–22.`,
     },
     {
-      list: '2. Hong Kong Cancer Registry. Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
+      list: `2. Hong Kong Cancer Registry.<i>Hong Kong Hospital Authority,</i>
+          www3.ha.org.hk/cancereg/. Accessed 23 May 2021.`,
     },
     {
-      list: '3. Overview of Hong Kong Cancer Statistics of 2018. Hong Kong Hospital Authority, October 2020.',
+      list: `3. Overview of Hong Kong Cancer Statistics of 2018.
+          <i>Hong Kong Hospital Authority,</i> October 2020.`,
     },
     {
-      list: '4. “Nasopharyngeal Cancer.” Centre for Health Protection, Department of Health, The Government of the Hong Kong Special Administrative Region, 2021, www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July 2021.',
+      list: `4. “Nasopharyngeal Cancer.” Centre for Health Protection, Department
+          of Health,
+          <i>
+            The Government of the Hong Kong Special Administrative Region,
+          </i>
+          2021, www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23
+          July 2021.`,
     },
     {
-      list: '5. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424.',
+      list: `5. Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN Estimates
+          of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.”
+          CA: <i>A Cancer Journal for Clinicians,</i> vol. 68, no. 6, 2018, pp.
+          394-424.`,
     },
     {
-      list: '6. Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” Proceedings of the NationalAcademy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.',
+      list: `6. Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size
+          Profiling of Plasma Epstein–Barr Virus DNA Enhance Population
+          Screening of Nasopharyngeal Carcinoma.”
+          <i>Proceedings of the NationalAcademy of Sciences,</i> vol. 115, no.
+          22, 2018, pp. E5115–24.`,
     },
     {
-      list: '7. Chang, Kai-Ping, et al. “Complementary Serum Test of Antibodies to Epstein-Barr Virus Nuclear Antigen-1 and Early Antigen: A Possible Alternative for Primary Screening of Nasopharyngeal Carcinoma.” Oral Oncology, vol. 44, no. 8, 2008, pp. 784–92.',
+      list: `7. Chang, Kai-Ping, et al. “Complementary Serum Test of Antibodies to
+          Epstein-Barr Virus Nuclear Antigen-1 and Early Antigen: A Possible
+          Alternative for Primary Screening of Nasopharyngeal Carcinoma.”
+          <i>Oral Oncology,</i> vol. 44, no. 8, 2008, pp. 784–92.`,
     },
     {
-      list: '8. Tay, Joshua K., et al. “Screening in Nasopharyngeal Carcinoma: Current Strategies and Future Directions.” Current Otorhinolaryngology Reports, vol. 2, no. 1, 2013, pp. 1–7.',
+      list: `8. Tay, Joshua K., et al. “Screening in Nasopharyngeal Carcinoma:
+          Current Strategies and Future Directions.”
+          <i>Current Otorhinolaryngology Reports,</i> vol. 2, no. 1, 2013, pp.
+          1–7.`,
     },
     {
-      list: '9. Overview of Hong Kong Cancer Statistics of 2019. Hong Kong Hospital Authority, October 2021.',
+      list: ` 9. Overview of Hong Kong Cancer Statistics of 2019.
+          <i>Hong Kong Hospital Authority,</i> October 2021.`,
     },
     {
-      list: '10. “癌者治療後易出現口腔副作用，四成受訪者感口腔有鐵鏽味.” HK01, 2021, https://bit.ly/3sMuvxD',
+      list: `10. “癌者治療後易出現口腔副作用，四成受訪者感口腔有鐵鏽味.”
+          <i> HK01, </i>2021, https://bit.ly/3sMuvxD`,
     },
   ]
 
@@ -364,7 +390,10 @@ const ContactReference = () => {
               >
                 <Box className={classes.referenceDetail2}>
                   {reference.map((item, index) => (
-                    <Box key={index}>{item.list}</Box>
+                    <Box
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: item.list }}
+                    />
                   ))}
                 </Box>
               </AccordionDetails>
@@ -403,7 +432,10 @@ const ContactReference = () => {
             </Box>
             <Box className={classes.referenceDetail}>
               {reference.map((item, index) => (
-                <Box key={index}>{item.list}</Box>
+                <Box
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: item.list }}
+                />
               ))}
             </Box>
             <Box className={classes.reference} my={4}>

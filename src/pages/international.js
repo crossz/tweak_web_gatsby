@@ -117,10 +117,10 @@ const useStyles = makeStyles((theme) => ({
   partnerItem: {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: 248,
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.spacing(1),
     padding: theme.spacing(2),
+    minHeight: '295px',
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.standard,
     }),
@@ -145,7 +145,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   partnerContent: {
+    display: '-webkit-box',
     color: theme.palette.text.primary,
+    '-webkit-box-orient': 'vertical',
+    lineClamp: '5',
+    '-webkit-line-clamp': '5',
+    overflow: 'hidden' /*溢出部分隐藏*/,
+    textOverflow: 'ellipsis',
     [theme.breakpoints.down('xs')]: {
       paddingBottom: theme.spacing(1),
     },
