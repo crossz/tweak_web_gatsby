@@ -45,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
   moreBtn: {
     paddingLeft: theme.spacing(3.25),
     paddingRight: theme.spacing(3.25),
-    background: theme.palette.primary.main,
     color: '#fff',
     '& path': {
       fill: theme.palette.primary.contrastText,
@@ -120,7 +119,7 @@ const PostList = ({ title, caption, nodes }) => {
             <Button
               className={classes.moreBtn}
               size='small'
-              variant='outlined'
+              variant='contained'
               color='primary'
               onClick={handleMoreViews}
               endIcon={<RightIcon />}
