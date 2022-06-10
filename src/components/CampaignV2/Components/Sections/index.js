@@ -20,7 +20,7 @@ const Sections = ({ storyNodes, healthTipsNodes }) => {
         <SectionThree></SectionThree>
       </Box>
       <Box id='athletes'>
-        <Athletes />
+        <Athletes storyNodes={storyNodes} />
       </Box>
       <Box id='gsap-scroll-to-section-four'>
         <SectionFour

@@ -14,6 +14,7 @@ import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import Link from '@components/Link'
 import ImageTranslation from '../ImageTranslation'
+import PostCard from '../PostCard'
 
 const useStyles = makeStyles((theme) => ({
   videoContainer: {
@@ -54,8 +55,12 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: '#F2974C',
   },
+
+  imageListItem: {
+    overflow: 'visible',
+  },
 }))
-const Athletes = () => {
+const Athletes = ({ storyNodes }) => {
   const classes = useStyles()
   const { t } = useI18next()
   const theme = useTheme()
@@ -70,10 +75,20 @@ const Athletes = () => {
         ></StaticImage>
       ),
       image: (
-        <StaticImage
-          src='../../images/athlete_hero_01_detail.jpg'
-          alt='athlete hero image 01'
-        ></StaticImage>
+        <Box width='100%' height='100%'>
+          <PostCard
+            slug={storyNodes[2].fields.slug}
+            {...storyNodes[2].frontmatter}
+            title={
+              storyNodes[2].frontmatter.cpTitle ||
+              storyNodes[2].frontmatter.title
+            }
+            detail={
+              storyNodes[2].frontmatter.cpDetail ||
+              storyNodes[2].frontmatter.detail
+            }
+          />
+        </Box>
       ),
       videos: ['nSD7pEd4J-s'],
       name: 'cp_v2.athletes.heros.0.name',
