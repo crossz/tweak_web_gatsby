@@ -17,16 +17,21 @@ fields:
       file: 
       path: 
   label: Post Type
-- name: sort
-  type: number
-  label: Sort
-  description: ''
-  default: 0
-  required: true
+- name: athleteType
+  type: select
+  default: 体操
   config:
-    min: 0
-    max: 
-    step: 1
+    required: true
+    options:
+    - 体操
+    - 骑马
+    - 潜水
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Athlete Type
   showOnly:
     field: postType
     value: campaignAthlete
