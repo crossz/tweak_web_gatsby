@@ -58,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
 
   imageListItem: {
     overflow: 'visible',
+    '& div': {
+      borderRadius: '10px',
+    },
   },
 }))
 const Athletes = ({ storyNodes }) => {
@@ -277,7 +280,7 @@ const Athletes = ({ storyNodes }) => {
                       flexDirection: index % 2 ? 'row' : 'row-reverse',
                     }}
                   >
-                    <ImageListItem>
+                    <ImageListItem classes={{ item: classes.imageListItem }}>
                       {athlete.videos[1] ? (
                         <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
                           <YouTube
@@ -298,7 +301,9 @@ const Athletes = ({ storyNodes }) => {
                         ></StaticImage>
                       )}
                     </ImageListItem>
-                    <ImageListItem>{athlete.image}</ImageListItem>
+                    <ImageListItem classes={{ item: classes.imageListItem }}>
+                      {athlete.image}
+                    </ImageListItem>
                   </ImageList>
                 </Box>
               </Box>
