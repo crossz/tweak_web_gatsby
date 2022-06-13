@@ -10,6 +10,7 @@ fields:
     options:
     - campaignStory
     - campaignNews
+    - campaignAthlete
     source:
       type: simple
       section: 
