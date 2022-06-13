@@ -17,3 +17,16 @@ fields:
       file: 
       path: 
   label: Post Type
+- name: sort
+  type: number
+  label: Sort
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 1
+  showOnly:
+    field: postType
+    value: campaignAthlete
