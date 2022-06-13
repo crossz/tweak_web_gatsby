@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { makeStyles, alpha, Box } from '@material-ui/core'
+import { makeStyles, Box } from '@material-ui/core'
 import Link from '@components/Link'
 import ViewButton from '@themes/components/ViewButton'
 import { useI18next } from 'gatsby-plugin-react-i18next'
