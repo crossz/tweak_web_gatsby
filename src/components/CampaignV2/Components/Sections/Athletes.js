@@ -14,7 +14,7 @@ import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import Link from '@components/Link'
 import ImageTranslation from '../ImageTranslation'
-import PostCard from '../PostCard'
+import AthletePostCard from '../AthletePostCard'
 
 const useStyles = makeStyles((theme) => ({
   videoContainer: {
