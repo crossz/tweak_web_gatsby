@@ -68,7 +68,6 @@ const Athletes = ({ athleteNodes }) => {
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
-  // const gymnastics = athleteNodes?.find((node) => node.athleteType === '体操')
   // const horsemanship = athleteNodes?.find((node) => node.athleteType === '骑马')
   // const snorkeling = athleteNodes?.find((node) => node.athleteType === '潜水')
 
@@ -86,21 +85,8 @@ const Athletes = ({ athleteNodes }) => {
           alt='athlete hero image 01'
         ></StaticImage>
       ),
-      article: (
-        <Box width='100%' height='100%'>
-          <PostCard
-            slug={athleteNodes[0]?.fields.slug}
-            {...athleteNodes[0]?.frontmatter}
-            title={
-              athleteNodes[0]?.frontmatter.cpTitle ||
-              athleteNodes[0]?.frontmatter.title
-            }
-            detail={
-              athleteNodes[0]?.frontmatter.cpDetail ||
-              athleteNodes[0]?.frontmatter.detail
-            }
-          />
-        </Box>
+      article: athleteNodes?.find(
+        (node) => node?.frontmatter.athleteType === '体操'
       ),
       videos: ['nSD7pEd4J-s'],
       name: 'cp_v2.athletes.heros.0.name',
@@ -311,9 +297,24 @@ const Athletes = ({ athleteNodes }) => {
                       )}
                     </ImageListItem>
                     <ImageListItem classes={{ item: classes.imageListItem }}>
-                      {athlete.article && athleteNodes[0]
-                        ? athlete.article
-                        : athlete.image}
+                      {athlete.article && athleteNodes[0] ? (
+                        <Box width='100%' height='100%'>
+                          <PostCard
+                            slug={athlete.article?.fields.slug}
+                            {...athlete.article?.frontmatter}
+                            title={
+                              athlete.article?.frontmatter.cpTitle ||
+                              athlete.article?.frontmatter.title
+                            }
+                            detail={
+                              athlete.article?.frontmatter.cpDetail ||
+                              athlete.article?.frontmatter.detail
+                            }
+                          />
+                        </Box>
+                      ) : (
+                        athlete.image
+                      )}
                     </ImageListItem>
                   </ImageList>
                 </Box>

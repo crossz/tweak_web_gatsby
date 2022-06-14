@@ -130,6 +130,7 @@ export const query = graphql`
           title
           detail
           date
+          athleteType
           href
           cover {
             childImageSharp {
