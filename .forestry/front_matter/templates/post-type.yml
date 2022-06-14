@@ -10,9 +10,28 @@ fields:
     options:
     - campaignStory
     - campaignNews
+    - campaignAthlete
     source:
       type: simple
       section: 
       file: 
       path: 
   label: Post Type
+- name: athleteType
+  type: select
+  default: 体操
+  config:
+    required: true
+    options:
+    - 体操
+    - 骑马
+    - 潜水
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Athlete Type
+  showOnly:
+    field: postType
+    value: campaignAthlete
