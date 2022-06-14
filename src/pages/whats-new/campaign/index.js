@@ -125,8 +125,6 @@ export const query = graphql`
           slug
         }
         frontmatter {
-          cpTitle
-          cpDetail
           title
           detail
           date

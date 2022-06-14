@@ -302,14 +302,8 @@ const Athletes = ({ athleteNodes }) => {
                           <AthletePostCard
                             slug={athlete.article?.fields.slug}
                             {...athlete.article?.frontmatter}
-                            title={
-                              athlete.article?.frontmatter.cpTitle ||
-                              athlete.article?.frontmatter.title
-                            }
-                            detail={
-                              athlete.article?.frontmatter.cpDetail ||
-                              athlete.article?.frontmatter.detail
-                            }
+                            title={athlete.article?.frontmatter.title}
+                            detail={athlete.article?.frontmatter.detail}
                           />
                         </Box>
                       ) : (
