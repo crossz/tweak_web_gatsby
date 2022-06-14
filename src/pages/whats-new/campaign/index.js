@@ -109,5 +109,33 @@ export const query = graphql`
         }
       }
     }
+    athleteNodes: allMdx(
+      limit: 6
+      filter: { frontmatter: { postType: { eq: "campaignAthlete" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          cpTitle
+          cpDetail
+          title
+          detail
+          date
+          href
+          cover {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+            }
+          }
+          # pdf {
+          #   publicURL
+          # }
+        }
+      }
+    }
   }
 `
