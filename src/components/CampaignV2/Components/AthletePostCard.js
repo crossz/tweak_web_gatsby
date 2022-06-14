@@ -10,7 +10,11 @@ import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxHeight: 435,
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
     borderRadius: theme.spacing(1.25),
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
@@ -20,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover $btnWrapper button': {
       backgroundColor: theme.palette.secondary.main,
     },
-    [theme.breakpoints.down('xs')]: {
-      minHeight: theme.spacing(31.25),
-    },
+    // [theme.breakpoints.down('xs')]: {
+    //   minHeight: theme.spacing(31.25),
+    // },
   },
   btnWrapper: {
     marginTop: theme.spacing(3),
@@ -82,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     display: '-webkit-box',
     '-webkit-box-orient': 'vertical',
     overflow: 'hidden',
-    fontSize: 26,
+    fontSize: 24,
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.subtitle1.fontSize,
     },
@@ -118,8 +122,8 @@ const AthletePostCard = ({
       to={pdf?.publicURL || href || slug}
       isPdf={Boolean(pdf?.publicURL)}
     >
-      <Box className={classes.root} minHeight='453px'>
-        <Box height={images[0] ? 'auto' : 200} className={classes.imageWrapper}>
+      <Box className={classes.root}>
+        <Box height='auto' className={classes.imageWrapper}>
           {images[0] && (
             <GatsbyImage
               imgClassName={classes.image}

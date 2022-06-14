@@ -298,7 +298,7 @@ const Athletes = ({ athleteNodes }) => {
                     </ImageListItem>
                     <ImageListItem classes={{ item: classes.imageListItem }}>
                       {athlete.article ? (
-                        <Box width='100%' height='100%'>
+                        <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
                           <AthletePostCard
                             slug={athlete.article?.fields.slug}
                             {...athlete.article?.frontmatter}
