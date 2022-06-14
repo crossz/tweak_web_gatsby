@@ -297,7 +297,7 @@ const Athletes = ({ athleteNodes }) => {
                       )}
                     </ImageListItem>
                     <ImageListItem classes={{ item: classes.imageListItem }}>
-                      {athlete.article && athleteNodes[0] ? (
+                      {athlete.article ? (
                         <Box width='100%' height='100%'>
                           <PostCard
                             slug={athlete.article?.fields.slug}
