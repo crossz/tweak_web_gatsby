@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PostCard = ({
+const AthletePostCard = ({
   title,
   detail,
   type,
@@ -165,4 +165,4 @@ const PostCard = ({
   )
 }
 
-export default PostCard
+export default AthletePostCard
