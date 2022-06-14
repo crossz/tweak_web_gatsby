@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Post = ({ data }) => {
   const classes = useStyles()
+
+  if (!data?.mdx) return null
+
   const mdx = data?.mdx?.body
   const { date, title } = data?.mdx?.frontmatter
 
