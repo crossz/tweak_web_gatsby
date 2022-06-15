@@ -38,7 +38,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **E-booking:** [https://bit.ly/3sWDNas](https://bit.ly/3sWDNas "https://bit.ly/3sWDNas")
 
-**Details:** Theplan includes Collection of blood samples and Test Results interpretation by doctor.
+**Details:** The plan includes Collection of blood samples and Test Results interpretation by doctor.
 
 <br/>
 
@@ -46,9 +46,9 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **Locations:** North Point / Central / Diamond Hill / Kowloon City / Jordan / Mong Kok / Tsuen Wan / Sheung Shui / Tuen Mun
 
-**E-booking:** [https: //bit.ly/3OHwU69](https://bit.ly/3OHwU69) **/ WhatsApp enquiry:** 9011 8042
+**E-booking:** [https: //bit.ly/3OHwU69](https://bit.ly/3OHwU69) / **WhatsApp enquiry:** 9011 8042
 
-**Details:** Theplan includes Doctor Consultation and Report Explanation by Doctor. Test results are ready within 7 – 10 working days.
+**Details:** The plan includes Doctor Consultation and Report Explanation by Doctor. Test results are ready within 7 – 10 working days.
 
 <br/>
 
@@ -56,7 +56,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **Locations:** Causeway Bay / Jordan / Tsuen Wan / Sha Tin
 
-**E-booking:** [https: //bit.ly/379p9ox](https://bit.ly/379p9ox) **/ WhatsApp enquiry & booking:** 9336 8186
+**E-booking:** [https://bit.ly/3NW18S1](https://bit.ly/3NW18S1 "https://bit.ly/3NW18S1") **/ WhatsApp enquiry & booking:** 9336 8186
 
 **Details:** Report will be issued within 4 weeks after checkup and submission of all required specimens.
 
@@ -76,9 +76,9 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **Locations:** Tsim Sha Tsui / Sheung Shui
 
-**E-booking:** [https://bit.ly/3yYG6Ob](https://bit.ly/3yYG6Ob "https://bit.ly/3yYG6Ob") **/ Tel for booking:** 3585 8533
+**E-booking:** [https://bit.ly/3yYG6Ob](https://bit.ly/3yYG6Ob "https://bit.ly/3yYG6Ob") / **Tel for booking:** 3585 8533
 
-**Details:** The plan includes Prophecy Early Nasopharyngeal Cancer Screening, Physical Examination, Heart Examination, X-Ray Examination, Blood Lipid, Complete Blood Count (CBC), Diabetes and Report Explanation by Medical Professional.
+**Details:** The plan includes Prophecy Early Nasopharyngeal Cancer Screening, Physical Examination, Heart Examination, X-Ray Examination, Blood Lipid, Complete Blood Count (CBC), Diabetes and Report Explanation by Medical Professionals.
 
 <br/>
 
