@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     fontSize: theme.typography.body2.fontSize,
-    padding: theme.spacing(3),
+    padding: theme.spacing(2, 3),
     display: 'flex',
     flexDirection: 'column',
     flexGrow: 1,
@@ -81,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       fontSize: theme.typography.subtitle1.fontSize,
-      lineClamp: 1,
     },
   },
   campaignPageTitle: {
@@ -92,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     fontSize: 24,
     [theme.breakpoints.down('sm')]: {
-      fontSize: theme.typography.h6.fontSize,
+      fontSize: theme.typography.subtitle1.fontSize,
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.body1.fontSize,
