@@ -301,7 +301,7 @@ const Athletes = ({ athleteNodes }) => {
                         <Box
                           pt={`${(1350 / 1650) * 100}%`}
                           position='relative'
-                          minHeight='250px'
+                          minHeight='260px'
                         >
                           <AthletePostCard
                             slug={athlete.article?.fields.slug}
