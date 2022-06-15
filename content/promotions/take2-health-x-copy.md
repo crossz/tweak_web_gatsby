@@ -3,7 +3,7 @@ languages:
 - en
 cover:
 - "../images/thumbnail_eng-300-x-600.jpg"
-date: 2022-05-06T00:00:00+08:00
+date: 2022-05-06T00:00:00.000+08:00
 title: Take2 Health & Medical Partners｜Special Offer for Early Nasopharyngeal Cancer
   Detection
 detail: Take2 Health & Medical Partners｜Special Offer for Early Nasopharyngeal Cancer
@@ -18,7 +18,7 @@ slug: ''
 
 As the Chinese idiom goes, “One minute on the stage needs ten years practice off stage”. To achieve the best results in the competition, athletes prepare thoroughly in advance. However, there would always be unexpected issues which can interrupt their game plans no matter how fit they are. Similarly, imagine if you are diagnosed with cancer in the prime time of your life, how would your life be disrupted?
 
-Nasopharyngeal cancer (NPC) is one of the most common head and neck cancers in Hong Kong, with the peak incidence occurring among those aged 40–50, and it is top cancer for men aged between 20-44¹. As the symptoms of early NPC resemble flu or inflammatory illnesses, including headache, nasal blockage, and tinnitus, it is typically easy to let the patients’ guards down, causing a delay in seeking medical consultation. As such, the best timing for NPC treatment is often missed when they notice the situation is getting worse. Stop guessing and get tested with early NPC regularly. The Take2 Prophecy™ Test for NPC only requires a simple blood draw at the clinic which is nearby your home or work locations, you can get it done within a lunchtime!
+Nasopharyngeal cancer (NPC) is one of the most common head and neck cancers in Hong Kong, with the peak incidence occurring among those aged 40–50, and it is the top cancer for men aged between 20-44¹. As the symptoms of early NPC resemble flu or inflammatory illnesses, including headache, nasal blockage, and tinnitus, it is typically easy to let the patients’ guards down, causing a delay in seeking medical consultation. As such, the best timing for NPC treatment is often missed when they notice the situation is getting worse. Stop guessing and get tested with early NPC regularly. The Take2 Prophecy™ Test for NPC only requires a simple blood draw at the clinic which is nearby your home or work locations, you can get it done within a lunchtime!
 
 <br/>
 
@@ -52,7 +52,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 <br/>
 
-**3. Kinetics Medical & Health Group Co - Carcinoma (NPC) DNA Screening ($1,500)** 
+**3. Kinetics Medical & Health Group Co - Carcinoma (NPC) DNA Screening ($1,500)**
 
 **Locations:** Causeway Bay / Jordan / Tsuen Wan / Sha Tin
 
