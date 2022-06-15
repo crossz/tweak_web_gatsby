@@ -48,16 +48,13 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     fontSize: theme.typography.body2.fontSize,
-    padding: theme.spacing(3),
+    padding: theme.spacing(2, 3),
     display: 'flex',
     flexDirection: 'column',
     flexGrow: 1,
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(1),
       paddingBottom: theme.spacing(1.5),
-    },
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(2),
     },
   },
   type: {
@@ -83,8 +80,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: theme.typography.body2.fontSize,
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: 18,
-      lineClamp: 1,
+      fontSize: theme.typography.subtitle1.fontSize,
     },
   },
   campaignPageTitle: {
@@ -95,10 +91,10 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     fontSize: 24,
     [theme.breakpoints.down('sm')]: {
-      fontSize: 18,
+      fontSize: theme.typography.subtitle1.fontSize,
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: theme.typography.subtitle1.fontSize,
+      fontSize: theme.typography.body1.fontSize,
     },
   },
   date: {
