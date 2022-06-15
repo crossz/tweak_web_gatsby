@@ -32,7 +32,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **Take2 Health collaborates with medical partners, offering a special discount on Take2 Prophecy™ Test for NPC, including:**
 
-**1.** **Human Health** **- Early Nasopharyngeal Cancer Screening ($1,700)**
+**1.** **Human Health** **- Early Nasopharyngeal Cancer Screening ($1,445) (promo code: SUPERDAD)**
 
 **Locations:** Mong Kok
 
