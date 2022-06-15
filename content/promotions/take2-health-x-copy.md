@@ -86,7 +86,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **Locations:** Tsim Sha Tsui / Sheung Shui
 
-**E-booking:** [https: //bit.ly/3KksG0I](https://bit.ly/3KksG0I) **/ Tel for booking:** 3585 8533
+**E-booking:** [https: //bit.ly/3KksG0I](https://bit.ly/3KksG0I) / **Tel for booking:** 3585 8533
 
 **Details:** Theplan includes Take2 Prophecy Test for NPC (Report explanation is not included).
 
@@ -105,15 +105,15 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 **7. Quality HealthCare - Nasopharyngeal Cancer Screening ($2,185) (Member exclusive price)**
 
 **Locations:**  
-**Hong Kong Island:** Central / Admiralty / Wan Chai / Taikoo Place / Causeway Bay / North Point / Stanley
+**Hong Kong Island:** Central / Admiralty / Wan Chai / Quarry Bay / Causeway Bay / North Point / Stanley
 
-**Kowloon:** Tsim Sha Tsui / Jordan / Mong Kok / Kowloon MTR Station / Kowloon Bay / Kwun Tong
+**Kowloon:** Tsim Sha Tsui / Jordan / Mong Kok / Kowloon Bay
 
-**New Territories & Outlying Islands:** Shatin / Ma On Shan / Tseung Kwan O / Tsuen Wan / Tsing Yi / Tung Chung / Discovery Bay / Tuen Mun / Yuen Long
+**New Territories & Outlying Islands:** Shatin / Tseung Kwan O / Tsing Yi / Tung Chung / Discovery Bay / Tuen Mun / Yuen Long
 
 **E-booking:** [https://bit.ly/3NEAixn](https://bit.ly/3NEAixn "https://bit.ly/3NEAixn")
 
-**Details:** Theplan includes Detailed Medical History Evaluation, Doctor Consultation, NPC Screening Test and Follow-up Consultation for Report Review.
+**Details:** The plan includes Detailed Medical History Evaluation, Doctor Consultation, NPC Screening Test and Follow-up Consultation for Report Review.
 
 <br/>
 
@@ -123,7 +123,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **E-booking:** [https://bit.ly/37Hhezh](https://bit.ly/37Hhezh "https://bit.ly/37Hhezh")
 
-**Details:** Theplan includes Collection of Blood Samples, Report Interpretation and Conclusive Advice by Medical Professional (Patients with positive test result will be referred to ENT specialists).Report will be available 14 working days after the test.
+**Details:** The plan includes Collection of Blood Samples, Report Interpretation and Conclusive Advice by Medical Professional (Patients with positive test result will be referred to ENT specialists). Report will be available 14 working days after the test.
 
 <br/>
 
@@ -133,7 +133,7 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **E-booking:** [https://bit.ly/3lFdyBp](https://bit.ly/3lFdyBp "https://bit.ly/3lFdyBp")
 
-**Details:** The plan includes Nasopharyngeal Cancer Screening, Complete Blood Count,Blood Lipids,Diabetes Screening, Thyroid Assessment, Cardiovascular Function Assessment and Report interpreted and explained by center registered physician.
+**Details:** The plan includes Nasopharyngeal Cancer Screening, Complete Blood Count, Blood Lipids, Diabetes Screening, Thyroid Assessment, Cardiovascular Function Assessment and Report interpreted and explained by center registered physician.
 
 <br/>
 
@@ -161,13 +161,15 @@ The Take2 Prophecy™ Test for Nasopharyngeal Cancer (NPC), using Next-generatio
 
 **Locations:** Central / Tsim Sha Tsui
 
-**E-booking:** [https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") **/ Tel for booking:** 8102 2022 **/ WhatsApp enquiry:** 9325 4580
+**E-booking:** [https://bit.ly/3x3jjOr](https://bit.ly/3x3jjOr "https://bit.ly/3x3jjOr") / **Tel for booking:** 8102 2022 / **WhatsApp enquiry:** 9325 4580
 
 **Details:** The plan includes Take2 Prophecy™ blood examination and Doctor consultation.
 
 <br/>
 
 Remarks: Medical Partners reserve the right to make changes to the price and conditions from time to time without prior notice. The price listed in Medical Partners’ website should be considered as final.
+
+<br/>
 
 1\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
 
