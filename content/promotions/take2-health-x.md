@@ -42,7 +42,7 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 **2. JP Partners Medical 莊柏醫療 - 早期鼻咽癌篩查 ($1,500)**
 
-**分店地址：** 北角 / 中環 / 鑽石山 / 九龍城 / 佐敦 / 旺角 / 荃灣/ 上水 / 屯門
+**分店地址：** 北角 / 中環 / 鑽石山 / 九龍城 / 佐敦 / 旺角 / 荃灣 / 上水 / 屯門
 
 **網上預約：** [https://bit.ly/3OHwU69](https://bit.ly/3OHwU69 "https://bit.ly/3OHwU69") / **WhatsApp 查詢**：9011 8042
 
