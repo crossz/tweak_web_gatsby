@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: theme.typography.body2.fontSize,
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: 18,
+      // fontSize: 16,
       lineClamp: 1,
     },
   },
