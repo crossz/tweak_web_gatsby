@@ -108,6 +108,9 @@ const Athletes = ({ athleteNodes }) => {
           alt='athlete hero image 02'
         ></StaticImage>
       ),
+      article: athleteNodes?.find(
+        (node) => node?.frontmatter.athleteType === '潜水'
+      ),
       videos: ['gIKEJ2N2MVs', 'ea2Kkmmv4M4'],
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
@@ -127,6 +130,9 @@ const Athletes = ({ athleteNodes }) => {
           src='../../images/athlete_hero_03_detail.jpg'
           alt='athlete hero image 03'
         ></StaticImage>
+      ),
+      article: athleteNodes?.find(
+        (node) => node?.frontmatter.athleteType === '骑马'
       ),
       videos: ['U_3tVZWEl6I', 'UbKroM0_gPE'],
       name: 'cp_v2.athletes.heros.2.name',
