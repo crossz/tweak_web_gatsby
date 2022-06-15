@@ -30,21 +30,21 @@ Take2 Prophecy™ 早期鼻咽癌筛查采用高通量测序技术 (Next-generat
 
 **Take2 Health联合各大医疗集团推出限时鼻咽癌筛查优惠，包括：**
 
-**1.** **Human Health 盈健医疗 - 早期鼻咽癌筛查计划 ($1700) (优惠码：SUPERDAD)**
+**1.** **Human Health 盈健医疗 - 早期鼻咽癌筛查计划 ($1,445) (优惠码：SUPERDAD)**
 
 **分店地址：** 旺角
 
 **网上预约**： [https://bit.ly/3LpgU6S](https://bit.ly/3LpgU6S "https://bit.ly/3LpgU6S")
 
-\**计划详情：**计划包括血液检验及由医护人员解释报告。
+**计划详情**：计划包括血液检验及由医护人员解释报告。
 
 <br/>
 
 **2. JP Partners Medical 庄柏医疗 - 早期鼻咽癌筛查 ($1,500)**
 
-\**分店地址：**北角 / 中环 / 钻石山 / 九龙城 / 佐敦 / 旺角 / 荃湾 / 上水 / 屯门
+**分店地址**：北角 / 中环 / 钻石山 / 九龙城 / 佐敦 / 旺角 / 荃湾 / 上水 / 屯门
 
-**网上预约：**[https://bit.ly/3OHwU69](https://bit.ly/3OHwU69 "https://bit.ly/3OHwU69") **/ WhatsApp 查询：**9011 8042
+**网上预约：**[https://bit.ly/3OHwU69](https://bit.ly/3OHwU69 "https://bit.ly/3OHwU69") / **WhatsApp 查询**：9011 8042
 
 \**计划详情：**计划包括医生咨询及医生分析报告及血液检查。7 – 10个工作天后有报告。
 
@@ -52,9 +52,9 @@ Take2 Prophecy™ 早期鼻咽癌筛查采用高通量测序技术 (Next-generat
 
 **3. Kinetics 毅力医护健康集团 - 鼻咽癌基因筛查 ($1,500)**
 
-\**分店地址：**铜锣湾 / 佐敦 / 荃湾 / 沙田
+__分店地址**__：铜锣湾 / 佐敦 / 荃湾 / 沙田
 
-**网上预约：**[https://bit.ly/379p9ox](https://bit.ly/379p9ox "https://bit.ly/379p9ox") **/ WhatsApp 查询及预约：**9336 8186
+\**网上预约：**[https://bit.ly/379p9ox](https://bit.ly/3NW18S1﻿  "https://bit.ly/3NW18S1﻿ ") **/ WhatsApp 查询及预约：**9336 8186
 
 \**计划详情：**身体检查报告将于完成检查及提供所有样本后大约4星期内发出。
 
