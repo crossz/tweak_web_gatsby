@@ -165,6 +165,12 @@ Take2 Prophecy™ 早期鼻咽癌篩查採用次世代DNA測序技術 (NGS: Next
 
 <br/>
 
+<br/>
+
+備註：各體檢中心保留隨時更改其服務的價格及任何折扣優惠，而不作另行通知的權利，最終定價以各醫療集團網上價格為準。詳情請參閱其網上商店或網站。
+
+<br/>
+
 1\. _Overview of Hong Kong Cancer Statistics of 2018_. Hong Kong Hospital Authority, October 2020.
 
 2\. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” _New England Journal of Medicine_, vol. 377, no. 6, 2017, pp. 513–22.
