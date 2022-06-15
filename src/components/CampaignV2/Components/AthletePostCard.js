@@ -56,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(1),
       paddingBottom: theme.spacing(1.5),
     },
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(2),
+    },
   },
   type: {
     minHeight: theme.spacing(2.5),
@@ -79,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.body2.fontSize,
     },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 18,
+      lineClamp: 1,
+    },
   },
   campaignPageTitle: {
     textOverflow: 'ellipsis',
@@ -87,6 +94,9 @@ const useStyles = makeStyles((theme) => ({
     '-webkit-box-orient': 'vertical',
     overflow: 'hidden',
     fontSize: 24,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 18,
+    },
     [theme.breakpoints.down('xs')]: {
       fontSize: theme.typography.subtitle1.fontSize,
     },
