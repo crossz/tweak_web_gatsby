@@ -30,7 +30,7 @@
         "sign_up_as_menber": "Register in Take2 Health Platform",
         "or": "or",
         "book_detection": "Book our Service Now",
-        "service_location": "Service Locations - Overseas",
+        "service_location": "Service Locations",
         "notice": "Important Note",
         "sign_in": "Sign In",
         "faq": "FAQ",
@@ -220,7 +220,7 @@
             "notes": {
                 "0": {
                     "title": "How Does the Take2 Prophecy™ Test for NPC Work?",
-                    "content": "The Take2 Prophecy™ Test for NPC detects human and NPC-associated genomic signatures of EBV DNA in the bloodstream with a combination of Polymerase Chain Reaction (PCR) and Next-generation Sequencing (NGS) technologies. With the help of advanced algorithms, NPC can be accurately detected at a significantly earlier stage such that patients can receive more timely and effective treatment to increase chances of survival¹."
+                    "content": "The Take2 Prophecy™ Test for NPC detects human and NPC-associated genomic signatures of EBV DNA in the bloodstream with a combination of Polymerase Chain Reaction (PCR) and Next-generation Sequencing (NGS) technologies. With the help of advanced algorithms, NPC can be accurately detected at a significantly earlier stage such that patients can receive more timely and effective treatment to increase chances of survival³."
                 },
                 "1": {
                     "title": "Limitations of Identifying NPC Through Tissue Biopsy",
@@ -250,16 +250,16 @@
             "center_data_title": "Recent Hong Kong Cancer Registry figures show that NPC:",
             "content_data_detail": "Cancer might seem frightening to many people but let us not worry. Taking early cancer detection tests regularly is an excellent first step for us to stay vigilant about potential diseases. Early diagnosis and treatment may bring better survival. After all, we can still live a quality life after the battle.",
             "whats_is_early_cancer_detection": "What is an Early Detection Test for NPC?",
-            "whats_is_early_cancer_detection_content": "An early cancer detection test is a medical assessment that helps to identify the risks of cancer in apparently healthy people. A person with cancer may, or may not, be experiencing significant symptoms; moreover, the presence of symptoms alone is not a reliable indicator to confirm having cancer. Under this situation, an early cancer detection test can tell the likeliness of having such disease at the test moment or in the future. With the information provided by an early cancer detection test, a patient can realise the disease earlier and receive timely treatment. The patient might possibly suffer fewer complications and experience better survival. An early cancer detection test with high sensitivity and specificity can further reduce the possibilities of misdiagnosis and lift the anxiety brought by inaccurate testing results.<br/><br/>The Take2 Prophecy Test for NPC is an early cancer detection test which is suitable for anyone, no matter one is asymptomatic or with non-specific symptoms. Our test is blood-based and non-invasive with the use of ground-breaking Next-generation Sequencing technology to analyse human and NPC-associated genomic signatures of EBV DNA in the blood plasma. By testing early, NPC patients can be identified at the early stage then start to receive treatment much earlier which can minimise possible side-effects and significantly increase their chance of survival.",
+            "whats_is_early_cancer_detection_content": "An early cancer detection test is a medical assessment that helps to identify the risks of cancer in apparently healthy people. A person with cancer may, or may not, be experiencing significant symptoms; moreover, the presence of symptoms alone is not a reliable indicator to confirm having cancer. Under this situation, an early cancer detection test can tell the likeliness of having such disease at the test moment or in the future. With the information provided by an early cancer detection test, a patient can realise the disease earlier and receive timely treatment. The patient might possibly suffer fewer complications and experience better survival. An early cancer detection test with high sensitivity and specificity can further reduce the possibilities of misdiagnosis and lift the anxiety brought by inaccurate testing results.<br/><br/>The Take2 Prophecy™ Test for NPC is an early cancer detection test which is suitable for anyone, no matter one is asymptomatic or with non-specific symptoms. Our test is blood-based and non-invasive with the use of ground-breaking Next-generation Sequencing technology to analyse human and NPC-associated genomic signatures of EBV DNA in the blood plasma. By testing early, NPC patients can be identified at the early stage then start to receive treatment much earlier which can minimise possible side-effects and significantly increase their chance of survival.",
             "reason_title": "Why is Early Detection for NPC so Important?",
             "reasons": {
                 "0": {
-                    "content": "NPC is not easy to notice. The anatomical location of nasopharynx is rather ‘concealed’ and difficult to examine. Some NPC symptoms may resemble flu or inflammation conditions, patients may overlook these warning signs.",
+                    "content": "The anatomical location of nasopharynx is rather ‘concealed’ and difficult to examine. Some NPC symptoms may resemble flu or inflammation conditions, patients may overlook these warning signs.",
                     "title": "NPC is not easy to notice."
                 },
                 "1": {
                     "content": "There is no vaccination to prevent NPC yet.",
-                    "title": ""
+                    "title": "There is no vaccination to prevent NPC yet."
                 },
                 "2": {
                     "content": "Radiotherapy and chemotherapy remain the major treatment choices according to the staging of NPC.",
@@ -280,8 +280,8 @@
             "what_is_extra_care": "About the Program",
             "what_is_extra_care_content": "Open to any individuals, Take2 Extra Care is a complimentary all-round health management program, designed by a team of healthcare professionals.",
             "how_to_join_extra_care": "Simple Enrolment",
-            "benefit_of_extra_care": "What are the Benefits of Joining Take2 Extra Care?",
-            "benefit_of_extra_care_content": "Open to any individuals, Take2 Extra Care is a complimentary all-round health management program, designed by a team of healthcare professionals.\n•\tLive chat\n•\tExclusive offers\n•\tHealth tips\n•\tAnnual check-up reminders\n\nGet prepared for tomorrow’s challenges. Sign up for your membership today, get access to cutting-edge technologies and professional healthcare support and save time and money on your health management. ",
+            "benefit_of_extra_care": "What are the Benefits of Joining\nTake2 Extra Care?",
+            "benefit_of_extra_care_content": "Open to any individuals, Take2 Extra Care is a complimentary all-round health management program, designed by a team of healthcare professionals, including live chat, exclusive offers, health tips and annual check-up reminders.\n\nSign up for your membership today, get access to cutting-edge technologies and professional healthcare support and save time and money on your health management. ",
             "club_plans": {
                 "0": "Live chat",
                 "1": "Exclusive offers",
@@ -317,7 +317,8 @@
             },
             "notice": "Patients who have had organ transplant, currently have cancer or autoimmune diseases, or those currently receiving systemic glucocorticoid or immunosuppressive treatment are not recommended for early NPC detection using our test. If in doubt, please consult healthcare professionals for more information. ",
             "do_you_have": "Book our service to detect your health status in relation to NPC.",
-            "action": "Act now!"
+            "action": "Act now!",
+            "covid_notice": "From the day of receipt of samples"
         }
     },
     "about_us": {
@@ -325,7 +326,7 @@
             "title": "Our Principles and Mission",
             "team_title": "Founding Team",
             "background_founder": "Our background and founders",
-            "team_founder_content": "Established by three internationally recognised and respected pathology professors from the renowned Chinese University of Hong in 2019, Take2 Health is an exemplary case of successful commercialisation of leading academic invention.Leveraging the founders’ proven 20-plus-year track records in Genomics and Diagnostics research, we, an enterprise built from Hong Kong, are providing the Take2 ProphecyTM Test for Nasopharyngeal Cancer as the pioneering product. With the aspiration to expand this service to a much wider community, we aim to radiate positive impacts to people’s lives across Asia.<br/><br/>Please click the link below for an article about Take2 Health, our three founders and our first product:<br/><1>https://www.businesswire.com/news/home/20190506005296/zh-HK/</1>",
+            "team_founder_content": "Established by three internationally recognised and respected pathology professors from the renowned Chinese University of Hong in 2019, Take2 Health is an exemplary case of successful commercialisation of leading academic invention.Leveraging the founders’ proven 20-plus-year track records in Genomics and Diagnostics research, we, an enterprise built from Hong Kong, are providing the Take2 Prophecy™ Test for Nasopharyngeal Cancer as the pioneering product. With the aspiration to expand this service to a much wider community, we aim to radiate positive impacts to people’s lives across Asia.<br/><br/>Please click the link below for an article about Take2 Health, our three founders and our first product:<br/><1>https://www.businesswire.com/news/home/20190506005296/zh-HK/</1>",
             "our_team": "Our team",
             "our_team_content": "Building a team of brilliant talents from across the globe who stand behind the same vision, we grow stronger day by day to deliver what we envision, “We are proud to deliver positive impact and benefit the community at large by leveraging research achievements from leading scholars worldwide. Made up of young and enthusiastic visionaries, we are meticulous and innovative frontiersmen that believe in pushing boundaries and making things happen. In caring for human health, we will continue to be dedicated and looking for progressive health solutions that change lives.”",
             "beliefs": {
@@ -344,7 +345,7 @@
         "join_us": {
             "title": "Join Us",
             "detail": "As a forward-thinking startup, we hope to join hands with professionals from biotechnology and many other industries to empower more and more communities and affect the world through positive change.<br /><br />Join us in boldly taking on the challenges of health today and advance the world of tomorrow!",
-            "open_positions": "Job Vacancies",
+            "open_positions": "Job Vacancies ({{count}})",
             "form_detail": "Cannot find any position you match with?<br/> Leave your contact and learn the upcoming vacant positions from us:"
         }
     },
