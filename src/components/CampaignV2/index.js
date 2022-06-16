@@ -18,7 +18,12 @@ const useStyles = makeStyles((theme) =>
   })
 )
 
-const Page = ({ storyNodes, healthTipsNodes, imagesTranslation }) => {
+const Page = ({
+  storyNodes,
+  healthTipsNodes,
+  imagesTranslation,
+  athleteNodes,
+}) => {
   const classes = useStyles()
   const el = useRef()
   const q = gsap.utils.selector(el)
@@ -73,6 +78,7 @@ const Page = ({ storyNodes, healthTipsNodes, imagesTranslation }) => {
           <Sections
             storyNodes={storyNodes}
             healthTipsNodes={healthTipsNodes}
+            athleteNodes={athleteNodes}
           ></Sections>
           <ContactReference></ContactReference>
           <Footer></Footer>

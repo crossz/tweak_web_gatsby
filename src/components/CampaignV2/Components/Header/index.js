@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react'
-import Box from '@material-ui/core/Box'
+import React, { useLayoutEffect, useState, useRef } from 'react'
 import {
   makeStyles,
   useTheme,
   useMediaQuery,
   Container,
   alpha,
+  Box,
 } from '@material-ui/core'
 import { MOBILE_HEADER_HEIGHT, HEADER_HEIGHT } from '@utils/constant'
 import { PROMOTION_BAR_HEIGHT } from '../../utils/constant'
@@ -16,6 +16,7 @@ import { Waypoint } from 'react-waypoint'
 import PromotionBar from './PromotionBar'
 import PromotionContent from './PromotionContent'
 import { gsap } from '@components/CampaignV2/utils/initGsap'
+import { useLocation } from '@reach/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,14 +75,13 @@ const Header = (props) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const [withBg, setWithBg] = useState(true)
   const headerRef = useRef()
+  const location = useLocation()
 
-  const handleScroll = (e) => {
-    const { id } = e.currentTarget.dataset
-
+  const gsapScrollTo = (el) => {
     gsap.to(window, {
       duration: 1,
       scrollTo: {
-        y: `#${id}`,
+        y: el,
         offsetY: headerRef?.current?.clientHeight
           ? isMobile
             ? headerRef?.current?.clientHeight
@@ -90,6 +90,15 @@ const Header = (props) => {
       },
       ease: 'power2',
     })
+  }
+
+  useLayoutEffect(() => {
+    if (location?.hash) gsapScrollTo(location?.hash)
+  }, [location?.hash])
+
+  const handleScroll = (e) => {
+    const { id } = e.currentTarget.dataset
+    gsapScrollTo(`#${id}`)
   }
 
   return (
