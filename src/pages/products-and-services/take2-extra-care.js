@@ -456,7 +456,7 @@ const Take2ExtraCare = () => {
       <Box className={classes.box04}>
         <Box mx={3}>
           <Container disableGutters className={classes.box04Wrapper}>
-            <Box className={classes.box04Title}>
+            <Box whiteSpace='break-spaces' className={classes.box04Title}>
               {t(
                 'products_and_services.take2_extra_care.benefit_of_extra_care'
               )}
