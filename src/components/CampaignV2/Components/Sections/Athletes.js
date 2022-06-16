@@ -14,6 +14,7 @@ import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import YouTube from 'react-youtube'
 import Link from '@components/Link'
 import ImageTranslation from '../ImageTranslation'
+import AthletePostCard from '../AthletePostCard'
 
 const useStyles = makeStyles((theme) => ({
   videoContainer: {
@@ -54,12 +55,21 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: '#F2974C',
   },
+
+  imageListItem: {
+    overflow: 'visible',
+    '& div': {
+      borderRadius: '10px',
+    },
+  },
 }))
-const Athletes = () => {
+const Athletes = ({ athleteNodes }) => {
   const classes = useStyles()
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+  // const horsemanship = athleteNodes?.find((node) => node.athleteType === '骑马')
+  // const snorkeling = athleteNodes?.find((node) => node.athleteType === '潜水')
 
   const ATHLETES_INFO = [
     {
@@ -75,12 +85,16 @@ const Athletes = () => {
           alt='athlete hero image 01'
         ></StaticImage>
       ),
+      article: athleteNodes?.find(
+        (node) => node?.frontmatter.athleteType === '体操'
+      ),
       videos: ['nSD7pEd4J-s'],
       name: 'cp_v2.athletes.heros.0.name',
       title: 'cp_v2.athletes.heros.0.title',
       intro: 'cp_v2.athletes.heros.0.intro',
       countNode: 'ECP_Athlete_Gymnast_long_video_play',
       countNode2: 'ECP_Athlete_Gymnast_CTA_video_play',
+      code: 'ECP_Athlete_Gymnast_advertorial',
     },
     {
       avatar: (
@@ -95,12 +109,16 @@ const Athletes = () => {
           alt='athlete hero image 02'
         ></StaticImage>
       ),
+      article: athleteNodes?.find(
+        (node) => node?.frontmatter.athleteType === '潜水'
+      ),
       videos: ['gIKEJ2N2MVs', 'ea2Kkmmv4M4'],
       name: 'cp_v2.athletes.heros.1.name',
       title: 'cp_v2.athletes.heros.1.title',
       intro: 'cp_v2.athletes.heros.1.intro',
       countNode: 'ECP_Athlete_Chris_long_video_play',
       countNode2: 'ECP_Athlete_Chris_CTA_video_play',
+      code: 'ECP_Athlete_Chris_advertorial',
     },
     {
       avatar: (
@@ -115,12 +133,16 @@ const Athletes = () => {
           alt='athlete hero image 03'
         ></StaticImage>
       ),
+      article: athleteNodes?.find(
+        (node) => node?.frontmatter.athleteType === '骑马'
+      ),
       videos: ['U_3tVZWEl6I', 'UbKroM0_gPE'],
       name: 'cp_v2.athletes.heros.2.name',
       title: 'cp_v2.athletes.heros.2.title',
       intro: 'cp_v2.athletes.heros.2.intro',
       countNode: 'ECP_Athlete_Sherie_long_video_play',
       countNode2: 'ECP_Athlete_Sherie_CTA_video_play',
+      code: 'ECP_Athlete_Sherie_advertorial',
     },
   ]
   return (
@@ -262,7 +284,7 @@ const Athletes = () => {
                       flexDirection: index % 2 ? 'row' : 'row-reverse',
                     }}
                   >
-                    <ImageListItem>
+                    <ImageListItem classes={{ item: classes.imageListItem }}>
                       {athlete.videos[1] ? (
                         <Box pt={`${(1350 / 1650) * 100}%`} position='relative'>
                           <YouTube
@@ -283,7 +305,25 @@ const Athletes = () => {
                         ></StaticImage>
                       )}
                     </ImageListItem>
-                    <ImageListItem>{athlete.image}</ImageListItem>
+                    <ImageListItem classes={{ item: classes.imageListItem }}>
+                      {athlete.article ? (
+                        <Box
+                          pt={`${(1350 / 1650) * 100}%`}
+                          position='relative'
+                          minHeight='260px'
+                          id={athlete.code}
+                        >
+                          <AthletePostCard
+                            slug={athlete.article?.fields.slug}
+                            {...athlete.article?.frontmatter}
+                            title={athlete.article?.frontmatter.title}
+                            detail={athlete.article?.frontmatter.detail}
+                          />
+                        </Box>
+                      ) : (
+                        athlete.image
+                      )}
+                    </ImageListItem>
                   </ImageList>
                 </Box>
               </Box>

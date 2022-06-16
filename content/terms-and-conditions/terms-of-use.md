@@ -6,8 +6,6 @@ languages:
 slug: website-terms-of-use
 
 ---
-![](../images/picture1.png)
-
 **Terms of Use (“Terms”)**
 
 Thank you for accessing [https://take2health.net/](https://take2health.net/ "https://take2health.net/") (the “**Website**”). Please read these Terms of Use carefully before using the Website, which is managed and operated by Take2 Health Limited (“**we**”, “**us**”, “**ours**”), whose registered office is located at 21/F, Edinburgh Tower, The Landmark, 15 Queen’s Road Central, Hong Kong.

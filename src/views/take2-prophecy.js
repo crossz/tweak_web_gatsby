@@ -291,6 +291,7 @@ const useStyles = makeStyles((theme) => ({
   reportType: {
     display: 'flex',
     alignItems: 'center',
+    flexShrink: '0',
   },
   imageListItemItem: {
     overflow: 'initial',
@@ -465,7 +466,7 @@ const Take2Prophecy = () => {
                           </Box>
                           {t(report.suggestion)}
                         </Box>
-                        {t(report.mark)}
+                        <Box>{t(report.mark)}</Box>
                       </Box>
                     </ImageListItem>
                   ))}

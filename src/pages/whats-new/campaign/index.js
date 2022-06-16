@@ -4,13 +4,13 @@ import Campaign from '@components/CampaignV2'
 import Layout from '@layouts/Layout'
 
 const CampaignRoot = ({ data }) => {
-  const { storyNodes, healthTipsNodes, imagesTranslation } = data
-
+  const { storyNodes, healthTipsNodes, imagesTranslation, athleteNodes } = data
   return (
     <Layout>
       <Campaign
         storyNodes={storyNodes?.nodes}
         healthTipsNodes={healthTipsNodes?.nodes}
+        athleteNodes={athleteNodes?.nodes}
         imagesTranslation={imagesTranslation?.nodes}
       ></Campaign>
     </Layout>
@@ -97,6 +97,38 @@ export const query = graphql`
           title
           detail
           date
+          href
+          cover {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+            }
+          }
+          # pdf {
+          #   publicURL
+          # }
+        }
+      }
+    }
+    athleteNodes: allMdx(
+      limit: 6
+      filter: {
+        frontmatter: {
+          languages: { eq: $language }
+          postType: { eq: "campaignAthlete" }
+        }
+      }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          detail
+          date
+          athleteType
           href
           cover {
             childImageSharp {

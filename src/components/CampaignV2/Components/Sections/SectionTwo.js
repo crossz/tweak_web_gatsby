@@ -251,7 +251,7 @@ const SectionTwo = () => {
                       {index === 1 ? (
                         <Box>
                           <Trans i18nKey={item.detail}>
-                            .<sup>1</sup>.
+                            .<sup>1</sup>
                             <Box
                               fontSize={13}
                               component={isMobile ? 'span' : 'div'}

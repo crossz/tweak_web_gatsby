@@ -253,6 +253,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 1,
     '&:last-child $stepIcon': {
       width: 209,
+      height: 142,
       [theme.breakpoints.down('xs')]: {
         width: 174,
       },
@@ -321,7 +322,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   box04Wrapper: {
-    maxWidth: 568,
+    maxWidth: 585,
   },
   box04BtnWrapper: {
     display: 'flex',
@@ -455,7 +456,7 @@ const Take2ExtraCare = () => {
       <Box className={classes.box04}>
         <Box mx={3}>
           <Container disableGutters className={classes.box04Wrapper}>
-            <Box className={classes.box04Title}>
+            <Box whiteSpace='break-spaces' className={classes.box04Title}>
               {t(
                 'products_and_services.take2_extra_care.benefit_of_extra_care'
               )}
