@@ -94,6 +94,7 @@ const Athletes = ({ athleteNodes }) => {
       intro: 'cp_v2.athletes.heros.0.intro',
       countNode: 'ECP_Athlete_Gymnast_long_video_play',
       countNode2: 'ECP_Athlete_Gymnast_CTA_video_play',
+      code: 'ECP_Athlete_Gymnast_advertorial',
     },
     {
       avatar: (
@@ -117,6 +118,7 @@ const Athletes = ({ athleteNodes }) => {
       intro: 'cp_v2.athletes.heros.1.intro',
       countNode: 'ECP_Athlete_Chris_long_video_play',
       countNode2: 'ECP_Athlete_Chris_CTA_video_play',
+      code: 'ECP_Athlete_Chris_advertorial',
     },
     {
       avatar: (
@@ -140,6 +142,7 @@ const Athletes = ({ athleteNodes }) => {
       intro: 'cp_v2.athletes.heros.2.intro',
       countNode: 'ECP_Athlete_Sherie_long_video_play',
       countNode2: 'ECP_Athlete_Sherie_CTA_video_play',
+      code: 'ECP_Athlete_Sherie_advertorial',
     },
   ]
   return (
@@ -308,6 +311,7 @@ const Athletes = ({ athleteNodes }) => {
                           pt={`${(1350 / 1650) * 100}%`}
                           position='relative'
                           minHeight='260px'
+                          id={athlete.code}
                         >
                           <AthletePostCard
                             slug={athlete.article?.fields.slug}
