@@ -79,8 +79,14 @@ fields:
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/health-tips/1-1.md
+- content/health-tips/1.md
+- content/health-tips/2-1.md
+- content/health-tips/2.md
 - content/health-tips/24-parents-1.md
 - content/health-tips/24-parents.md
+- content/health-tips/3-eb-1.md
+- content/health-tips/3-eb.md
 - content/health-tips/80-1.md
 - content/health-tips/80.md
 - content/health-tips/97-dna.md
