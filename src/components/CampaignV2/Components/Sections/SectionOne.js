@@ -18,6 +18,7 @@ import IntersectIcon from '@components/CampaignV2/images/intersect.svg'
 import Link from '@components/Link'
 import ImageTranslation from '../ImageTranslation'
 import classnames from 'classnames'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   imageList: {
@@ -132,6 +133,7 @@ const SectionOne = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles()
+  const addLangQuery = useLangQuery()
 
   return (
     <>
@@ -375,7 +377,7 @@ const SectionOne = () => {
               fullWidth
               variant='contained'
               color='secondary'
-              href={process.env.GATSBY_SITE_URL}
+              href={addLangQuery()}
               target='_blank'
               id='ECP_Symptoms_EH'
             >

@@ -14,6 +14,7 @@ import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { toast } from 'react-toastify'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -58,6 +59,7 @@ const PromotionContent = ({ whiteBg }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const isTable = useMediaQuery(theme.breakpoints.down('sm'))
+  const addLangQuery = useLangQuery()
 
   const handleCopy = (e) => toast.success('優惠碼複製成功！')
 
@@ -181,7 +183,7 @@ const PromotionContent = ({ whiteBg }) => {
           variant='contained'
           color='secondary'
           id='ECP_Stickybar_EH'
-          href={process.env.GATSBY_SITE_URL}
+          href={addLangQuery()}
           target='_blank'
         >
           {t('common.book_now')}

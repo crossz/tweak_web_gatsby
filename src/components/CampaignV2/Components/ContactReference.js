@@ -26,6 +26,7 @@ import {
   FACEBOOK_LINK,
 } from '../utils/constant'
 import { T_AND_C } from '../../../utils/constant'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   websiteButton: {
@@ -117,7 +118,7 @@ const ContactReference = () => {
     progressRightWidth: isMobile ? 80 : 316,
     isMobile,
   })
-
+  const addLangQuery = useLangQuery()
   const reference = [
     {
       list: `1. Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus
@@ -235,11 +236,7 @@ const ContactReference = () => {
         >
           得易健康服務平台《個人資料收集聲明》
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={process.env.GATSBY_SITE_URL}
-        >
+        <Link target='_blank' underline='always' to={addLangQuery()}>
           https://take2health.net/health-platform/
         </Link>
       </Trans>

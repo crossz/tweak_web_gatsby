@@ -11,6 +11,7 @@ import YouTube from 'react-youtube'
 import LineDots from '@components/CampaignV2/images/bg_wave_dots.png'
 import ImageTranslation from '../ImageTranslation'
 import Link from '@components/Link'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   bgImage: {
@@ -47,6 +48,7 @@ const SectionFive = () => {
     progressRightWidth: isMobile ? 80 : 316,
     isMobile,
   })
+  const addLangQuery = useLangQuery()
 
   return (
     <>
@@ -104,7 +106,7 @@ const SectionFive = () => {
               fullWidth
               variant='contained'
               color='secondary'
-              href={process.env.GATSBY_SITE_URL}
+              href={addLangQuery()}
               target='_blank'
               id='ECP_TM_EH'
             >
@@ -130,7 +132,7 @@ const SectionFive = () => {
             <Button
               variant='contained'
               color='secondary'
-              href={process.env.GATSBY_SITE_URL}
+              href={addLangQuery()}
               target='_blank'
               className={classes.btn}
               id='ECP_TM_EH'

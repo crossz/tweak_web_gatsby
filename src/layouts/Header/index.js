@@ -15,6 +15,7 @@ import Link from '@components/Link'
 import { Waypoint } from 'react-waypoint'
 import { HeroThemeContext } from '@layouts/context'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -92,6 +93,7 @@ const Header = (props) => {
   const isHomepage = originalPath === '/'
   const [withBg, setWithBg] = useState(true)
   const context = useContext(HeroThemeContext)
+  const addLangQuery = useLangQuery()
 
   return (
     <>
@@ -119,13 +121,13 @@ const Header = (props) => {
             color='primary.main'
             component='span'
           >
-            <Link to={`${process.env.GATSBY_SITE_URL}signin`}>
+            <Link to={addLangQuery(`${process.env.GATSBY_SITE_URL}signin`)}>
               {t('common.book_now')}
             </Link>
             <Hidden xsDown>
               <Link
                 className={classes.link}
-                to={`${process.env.GATSBY_SITE_URL}signup`}
+                to={addLangQuery(`${process.env.GATSBY_SITE_URL}signup`)}
               >
                 {t('common.member_registration')}
               </Link>

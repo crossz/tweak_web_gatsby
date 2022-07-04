@@ -29,6 +29,7 @@ import MenuIcon from '@images/icons/menu.svg'
 import CloseIcon from '@images/icons/close.svg'
 import ArrowIcon from '@images/icons/arrow.svg'
 import LanguageButton from '../LanguageButton'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -159,6 +160,7 @@ const Menu = (props) => {
   const menu = useMenu()
   const [open, setOpen] = useState(false)
   const [panel, setPanel] = useState('')
+  const addLangQuery = useLangQuery()
 
   const handleOpen = () => {
     setOpen(true)
@@ -197,7 +199,7 @@ const Menu = (props) => {
     <Box className={classes.contactList} display='flex'>
       <Link
         className={classnames(classes.link, classes.contactLink)}
-        to={`${process.env.GATSBY_SITE_URL}signin`}
+        to={addLangQuery(`${process.env.GATSBY_SITE_URL}signin`)}
         onClick={handleClose}
         underline='always'
       >
@@ -205,7 +207,7 @@ const Menu = (props) => {
       </Link>
       <Link
         className={classnames(classes.link, classes.contactLink)}
-        to={`${process.env.GATSBY_SITE_URL}signup`}
+        to={addLangQuery(`${process.env.GATSBY_SITE_URL}signup`)}
         onClick={handleClose}
         underline='always'
       >
