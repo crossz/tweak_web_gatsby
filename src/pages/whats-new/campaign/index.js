@@ -51,6 +51,7 @@ export const query = graphql`
         frontmatter: {
           languages: { eq: $language }
           postType: { eq: "campaignStory" }
+          isCampaign: { ne: false }
         }
       }
       sort: { fields: frontmatter___date, order: DESC }
@@ -82,6 +83,7 @@ export const query = graphql`
         frontmatter: {
           languages: { eq: $language }
           postType: { eq: "campaignNews" }
+          isCampaign: { ne: false }
         }
       }
       sort: { fields: frontmatter___date, order: DESC }
