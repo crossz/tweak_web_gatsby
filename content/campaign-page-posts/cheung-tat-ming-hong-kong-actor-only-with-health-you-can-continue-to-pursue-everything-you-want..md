@@ -5,7 +5,7 @@ languages:
 cover:
 - "../images/skypostog.jpg"
 date: '2022-04-18T00:05:00+08:00'
-title: Cheung Tat-ming (Hong Kong actor)
+title: 'Cheung Tat-ming (Hong Kong actor)                      '
 detail: "“Not just the elderly or smokers will be diagnosed with NPC.”"
 type: ''
 pdf: ''
