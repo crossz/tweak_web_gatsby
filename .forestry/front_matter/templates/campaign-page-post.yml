@@ -13,6 +13,7 @@ fields:
   template: promotions
   label: Post
 pages:
+- content/campaign-page-posts/20-44.md
 - content/campaign-page-posts/45-6-7-5.md
 - content/campaign-page-posts/7.md
 - content/campaign-page-posts/80.md
