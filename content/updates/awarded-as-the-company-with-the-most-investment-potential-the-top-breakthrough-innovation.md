@@ -31,10 +31,10 @@ The World Conference on Early Detection of Cancer was co-hosted by the China Ant
 
 Thrilled to have the opportunity to share our insights with the industry’s leading scientists, academicians, researchers, physicians, and business entrepreneurs, our Chief Technology Officer, Dr. Mingzhi Ye, shared how Take2 utilised our state-of-the-art genomics technologies in the screening for Nasopharyngeal Cancer (NPC), which effectively identify NPC patients at significantly earlier stages, and how Take2’s effort will immensely drive the progress of early NPC detection for better survival and health outcomes.
 
-![](../images/wechat-image_20220718085926.jpg)
-
-![](../images/wechat-image_20220718085738_crop.jpg)
-
 <br/>
 
 Looking forward, we will continue to dedicate ourselves to and work towards delivering progress in healthcare inventions that positively impact China’s and the world’s health communities.
+
+![](../images/wechat-image_20220718085926.jpg)
+
+![](../images/wechat-image_20220718085738_crop.jpg)
