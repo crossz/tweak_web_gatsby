@@ -136,7 +136,7 @@ const PromotionContent = ({ whiteBg }) => {
               {PROMOTION_CODE}
             </Box>
           </CopyToClipboard>
-          <Typography className={classes.priceText} component='div' noWrap>
+          <Typography className={classes.priceText} component='span' noWrap>
             <Box
               fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
               fontWeight='fontWeightMedium'
@@ -147,16 +147,16 @@ const PromotionContent = ({ whiteBg }) => {
             {!isMobile &&
               (isTable || (isEn && whiteBg) ? (
                 <Box
-                  fontWeight='fontWeightLight'
-                  fontSize='caption.fontSize'
+                  fontWeight='fontWeightMedium'
+                  fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
                   lineHeight={1}
                 >
                   {t('cp_v2.promotion.tip')}
                 </Box>
               ) : (
                 <Box
-                  fontWeight='fontWeightLight'
-                  fontSize='body2.fontSize'
+                  fontWeight='fontWeightMedium'
+                  fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
                   component='span'
                   pl={0.5}
                 >
@@ -167,8 +167,9 @@ const PromotionContent = ({ whiteBg }) => {
         </Box>
         {isMobile && (
           <Box
-            fontWeight='fontWeightLight'
-            fontSize='caption.fontSize'
+            display='inline-block'
+            fontWeight='fontWeightMedium'
+            fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
             component='span'
             lineHeight={1}
           >
