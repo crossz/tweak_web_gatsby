@@ -67,6 +67,7 @@ fields:
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/updates/awarded-as-the-company-with-the-most-investment-potential-the-top-breakthrough-innovation.md
 - content/updates/collaborating-with-gmt-take2-prophecy-is-currently-available-across-the-phillippines.md
 - content/updates/dna-1.md
 - content/updates/dna.md
