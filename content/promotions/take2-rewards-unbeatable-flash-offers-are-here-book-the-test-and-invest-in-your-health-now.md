@@ -2,7 +2,7 @@
 languages:
 - en
 cover:
-- "../images/banner.JPG"
+- "../images/english-600x300.jpg"
 date: 2022-08-01T00:00:00+08:00
 title: "【Take2 Rewards】Unbeatable flash offers are here　Book the test and invest in
   your health now"
@@ -77,7 +77,7 @@ Take2 Health Platform supports appointments made at least two working days in ad
 
 “Take2 Rewards” Promotion ( “Promotion”) Terms and Conditions (“Terms”)
 
-1\.	Below Terms apply to the Promotion offered by Take2 Health Limited (“we”, “us”, “our”). By participating in the Promotion, you agree to the Terms below. 
+1\.	Below Terms apply to the Promotion offered by Take2 Health Limited (“we”, “us”, “our”). By participating in the Promotion, you agree to the Terms below.
 
 2\.	You must read these Terms along with the [Privacy Policy](https://take2health.net/en/terms-and-conditions/privacy-policy/), [Terms of Use](https://take2health.net/en/terms-and-conditions/website-terms-of-use/), [Personal Information Collection Statement](https://take2health.net/en/terms-and-conditions/personal-information-collection-statement/) on our Website (“Website”: take2health.net), [Take2 Health Platform Privacy Policy](https://take2health.net/health-platform/agreement/2), [Take2 Health Platform Terms and Conditions](https://take2health.net/health-platform/agreement/3), [Take2 Health Platform Personal Information Collection Statement](https://take2health.net/health-platform/agreement/1), and any other terms we may provide to you (“Other Terms”). In addition to these terms, any Other Terms also apply.
 
