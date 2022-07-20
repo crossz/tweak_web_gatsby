@@ -25,7 +25,7 @@ The second batch of consumption vouchers is rolling out on 7 August. To be a “
 
 **Limited time only! Enjoy double rewards and save more than $800**
 
-![](../images/asset-13.png)
+![](../images/cw_reward_en.png)
 
 **Reward one:** From now until 31 August 2022, purchase the Take2 Prophecy™ Test for Nasopharyngeal Cancer (single test item) on the Take2 Health Platform; and complete the blood-drawing procedure on or before 5 September 2022, you can earn a Samsung C&T ITFIT IPX7 Waterproof Bluetooth Speaker (value: HKD498).
 
