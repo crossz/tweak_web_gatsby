@@ -111,7 +111,7 @@ const CONTACT_LIST = [
 ]
 
 const ContactReference = () => {
-  const { t } = useI18next()
+  const { t, language } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
@@ -239,7 +239,13 @@ const ContactReference = () => {
         <Link
           target='_blank'
           underline='always'
-          to={T_AND_C.PROMOTION_POLICY.url}
+          to={
+            language === 'en'
+              ? T_AND_C.PROMOTION_POLICY.urlEn
+              : language === 'zh-HK'
+              ? T_AND_C.PROMOTION_POLICY.urlHk
+              : T_AND_C.PROMOTION_POLICY.urlCn
+          }
         >
           「NEW330」優惠碼推廣（「推廣優惠」）條款及細則
         </Link>

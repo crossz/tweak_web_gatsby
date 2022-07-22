@@ -260,7 +260,12 @@ export const T_AND_C = {
   },
   PROMOTION_POLICY: {
     label: '「NEW330」優惠碼推廣（「推廣優惠」）條款及細則）',
-    url: 'https://take2health.net/whats-new/promotions/%E3%80%8CNEW330%E3%80%8D%E5%84%AA%E6%83%A0%E7%A2%BC%E6%8E%A8%E5%BB%A3%EF%BC%88%E3%80%8C%E6%8E%A8%E5%BB%A3%E5%84%AA%E6%83%A0%E3%80%8D%EF%BC%89%E6%A2%9D%E6%AC%BE%E5%8F%8A%E7%B4%B0%E5%89%87',
+    urlHk:
+      'https://take2health.net/whats-new/promotions/%E3%80%8CNEW330%E3%80%8D%E5%84%AA%E6%83%A0%E7%A2%BC%E6%8E%A8%E5%BB%A3%EF%BC%88%E3%80%8C%E6%8E%A8%E5%BB%A3%E5%84%AA%E6%83%A0%E3%80%8D%EF%BC%89%E6%A2%9D%E6%AC%BE%E5%8F%8A%E7%B4%B0%E5%89%87',
+    urlEn:
+      'https://take2health.net/en/whats-new/promotions/%E2%80%9CNEW330%E2%80%9D%20Promotion%20Code%20Promotion%20(the%20%E2%80%9CPromotion%E2%80%9D)%20Terms%20and%20Conditions',
+    urlCn:
+      'https://take2health.net/zh-CN/whats-new/promotions/%E2%80%9CNEW330%E2%80%9D%E4%BC%98%E6%83%A0%E7%A0%81%E6%8E%A8%E5%B9%BF%EF%BC%88%E3%80%8C%E6%8E%A8%E5%B9%BF%E4%BC%98%E6%83%A0%E3%80%8D%EF%BC%89%E6%9D%A1%E6%AC%BE%E5%8F%8A%E7%BB%86%E5%88%99',
   },
   HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT: {
     label: '得易健康服務平台《個人資料收集聲明》',
