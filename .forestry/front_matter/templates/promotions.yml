@@ -60,6 +60,7 @@ fields:
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/promotions/2.md
 - content/promotions/new330-1.md
 - content/promotions/new330-promotion-code-promotion-the-promotion-terms-and-conditions.md
 - content/promotions/new330.md
