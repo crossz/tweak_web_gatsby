@@ -13,7 +13,7 @@ href: ''
 slug: ''
 
 ---
-![](../images/promo1.png)
+![](../images/edmbanner-english.jpg)
 
 **Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
 
