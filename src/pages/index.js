@@ -11,7 +11,6 @@ const Index = ({ data }) => {
     promotionNodes,
     healthTipsNodes,
   } = data
-
   return (
     <Layout>
       <ImagesTranslationContext.Provider

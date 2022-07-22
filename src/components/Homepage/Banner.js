@@ -56,13 +56,28 @@ const useStyles = makeStyles((theme) => ({
   },
   imageButton: {
     position: 'absolute',
-    width: '14%',
-    height: '7%',
-    bottom: '13%',
+    width: '30%',
+    height: '30%',
+    bottom: '16%',
+    left: '35%',
     [theme.breakpoints.down('xs')]: {
-      width: '20.2%',
-      height: '4.8%',
-      bottom: '6%',
+      left: ' 52%',
+      width: '43%',
+      bottom: '44%',
+      height: '22%',
+    },
+  },
+  imageButton2: {
+    position: 'absolute',
+    width: '33%',
+    height: '35%',
+    bottom: '2%',
+    left: '66%',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      height: '10%',
+      left: '0%',
+      bottom: '1%',
     },
   },
   containImgWrapper: {
@@ -221,7 +236,7 @@ const Banner = ({ nodes }) => {
           navigation={nodes?.length > 1}
           pagination={{ clickable: true }}
           className={classes.swiperWrapper}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000000000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
             return toggleTheme?.(
               nodes[swiper.realIndex - 2]?.frontmatter?.theme
@@ -232,6 +247,56 @@ const Banner = ({ nodes }) => {
           watchOverflow={true}
           watchSlidesVisibility={true}
         >
+          {' '}
+          <SwiperSlide>
+            <Box className={classes.heroBannerWrapper}>
+              <Box
+                className={classnames(
+                  classes.heroImgWrapper,
+                  classes.containImgWrapper,
+                  classes.promoBannerBg
+                )}
+                position='relative'
+              >
+                <ImageTranslation
+                  filename='promo_banner'
+                  alt='promo banner'
+                  className={classes.containImg}
+                ></ImageTranslation>
+                <Box className={classes.imageButtonWrapper}>
+                  <Box
+                    className={classes.imageButton}
+                    left={
+                      isMobile ? (isEn ? '26.4%' : '16.8%') : isEn ? '8%' : '7%'
+                    }
+                    to={addLangQuery()}
+                    target='_blank'
+                    component={Link}
+                    id='RW_HP_Top_Banner_CV2_EHEALTH'
+                  >
+                    <Box />
+                  </Box>
+                  <Box
+                    className={classes.imageButton2}
+                    left={
+                      isMobile
+                        ? isEn
+                          ? '53.4%'
+                          : '43.8%'
+                        : isEn
+                        ? '26%'
+                        : '25%'
+                    }
+                    to={addLangQuery()}
+                    component={Link}
+                    id='RW_HP_Top_Banner_CV2_KnowMore'
+                  >
+                    <Box />
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </SwiperSlide>
           <SwiperSlide>
             <Box className={classes.heroBannerWrapper}>
               <Box
@@ -272,55 +337,6 @@ const Banner = ({ nodes }) => {
                     to='/whats-new/updates/athletes-program/'
                     component={Link}
                     id='BannerRW_HP_Top_Banner_Athlete_KnowMore'
-                  >
-                    <Box />
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Box className={classes.heroBannerWrapper}>
-              <Box
-                className={classnames(
-                  classes.heroImgWrapper,
-                  classes.containImgWrapper,
-                  classes.promoBannerBg
-                )}
-                position='relative'
-              >
-                <ImageTranslation
-                  filename='promo_banner'
-                  alt='promo banner'
-                  className={classes.containImg}
-                ></ImageTranslation>
-                <Box className={classes.imageButtonWrapper}>
-                  <Box
-                    className={classes.imageButton}
-                    left={
-                      isMobile ? (isEn ? '26.4%' : '16.8%') : isEn ? '8%' : '7%'
-                    }
-                    to='/whats-new/campaign/'
-                    target='_blank'
-                    component={Link}
-                    id='RW_HP_Top_Banner_PVCampaign_KnowMore'
-                  >
-                    <Box />
-                  </Box>
-                  <Box
-                    className={classes.imageButton}
-                    left={
-                      isMobile
-                        ? isEn
-                          ? '53.4%'
-                          : '43.8%'
-                        : isEn
-                        ? '26%'
-                        : '25%'
-                    }
-                    to={addLangQuery()}
-                    component={Link}
-                    id='RW_HP_Top_Banner_PVCampaign_EHEALTH'
                   >
                     <Box />
                   </Box>
