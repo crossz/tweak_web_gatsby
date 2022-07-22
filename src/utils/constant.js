@@ -258,6 +258,10 @@ export const T_AND_C = {
     label: '得易健康服務平台條款',
     url: 'https://take2health.net/health-platform/agreement/3',
   },
+  PROMOTION_POLICY: {
+    label: '「NEW330」優惠碼推廣（「推廣優惠」）條款及細則）',
+    url: 'https://take2health.net/whats-new/promotions/%E3%80%8CNEW330%E3%80%8D%E5%84%AA%E6%83%A0%E7%A2%BC%E6%8E%A8%E5%BB%A3%EF%BC%88%E3%80%8C%E6%8E%A8%E5%BB%A3%E5%84%AA%E6%83%A0%E3%80%8D%EF%BC%89%E6%A2%9D%E6%AC%BE%E5%8F%8A%E7%B4%B0%E5%89%87',
+  },
   HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT: {
     label: '得易健康服務平台《個人資料收集聲明》',
     url: 'https://take2health.net/health-platform/agreement/1',
