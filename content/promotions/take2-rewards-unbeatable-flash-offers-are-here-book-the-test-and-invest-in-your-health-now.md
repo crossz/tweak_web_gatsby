@@ -41,7 +41,7 @@ The second batch of consumption vouchers is rolling out on 7 August. To be a “
 
 **Check out the three reasons why you should get tested with Take2 Prophecy™**
 
-![](../images/asset-4.png)
+![](../images/cw_reason1_en.png)
 
 <br/>
 
