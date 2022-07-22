@@ -11,6 +11,7 @@ import Link from '@components/Link'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import ImageTranslation from '../ImageTranslation'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   outlineButton: {
@@ -30,6 +31,7 @@ const SectionTwo = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles()
+  const addLangQuery = useLangQuery()
 
   const steps = [
     {
@@ -284,7 +286,7 @@ const SectionTwo = () => {
         >
           <Button
             fullWidth
-            href={process.env.GATSBY_SITE_URL}
+            href={addLangQuery()}
             variant='contained'
             color='secondary'
             target='_blank'

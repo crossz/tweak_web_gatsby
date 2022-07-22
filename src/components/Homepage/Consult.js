@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { T_AND_C } from '../../utils/constant'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,6 +75,7 @@ const Consult = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const { t } = useI18next()
+  const addLangQuery = useLangQuery()
 
   return (
     <Container disableGutters className={classes.root} maxWidth='xl'>
@@ -122,7 +124,7 @@ const Consult = () => {
                 <Button
                   variant='contained'
                   color='secondary'
-                  href={process.env.GATSBY_SITE_URL}
+                  href={addLangQuery()}
                   target='_blank'
                   fullWidth={matches}
                   className={classes.btn}

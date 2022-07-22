@@ -23,6 +23,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
 import classnames from 'classnames'
 import ImageTranslation from '@components/ImageTranslation'
+import useLangQuery from '@hooks/useLangQuery'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -210,6 +211,7 @@ const Banner = ({ nodes }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const { toggleTheme } = useContext(HeroThemeContext)
+  const addLangQuery = useLangQuery()
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -253,7 +255,7 @@ const Banner = ({ nodes }) => {
                     height={isMobile ? '6%' : '8%'}
                     top={isMobile ? '38.5%' : 'auto'}
                     bottom={isMobile ? 'unset' : isEn ? '9%' : '12.5%'}
-                    to={process.env.GATSBY_SITE_URL}
+                    to={addLangQuery()}
                     target='_blank'
                     component={Link}
                     id='RW_HP_Top_Banner_Athlete_EHEALTH'
@@ -316,7 +318,7 @@ const Banner = ({ nodes }) => {
                         ? '26%'
                         : '25%'
                     }
-                    to={process.env.GATSBY_SITE_URL}
+                    to={addLangQuery()}
                     component={Link}
                     id='RW_HP_Top_Banner_PVCampaign_EHEALTH'
                   >
