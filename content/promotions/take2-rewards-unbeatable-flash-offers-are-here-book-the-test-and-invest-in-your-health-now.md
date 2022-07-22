@@ -49,7 +49,7 @@ The second batch of consumption vouchers is rolling out on 7 August. To be a “
 
 <br/>
 
-![](../images/asset-6.png)
+![](../images/cw_reason3_en.jpg)
 
 The earlier you know, the better you can manage. The survival rate of early-stage NPC patients can be higher than 90%².
 
