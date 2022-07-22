@@ -20,6 +20,7 @@ import ImageListItem from '@material-ui/core/ImageListItem'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import Layout from '@layouts/Layout'
+import useLangQuery from '@hooks/useLangQuery'
 
 const steps = [
   {
@@ -337,6 +338,7 @@ const Take2Prophecy = () => {
   const { t } = useI18next()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
+  const addLangQuery = useLangQuery()
 
   return (
     <Layout>
@@ -513,7 +515,7 @@ const Take2Prophecy = () => {
                       <Button
                         variant='outlined'
                         color='primary'
-                        href={process.env.GATSBY_SITE_URL}
+                        href={addLangQuery()}
                         target='_blank'
                         fullWidth={matches}
                         className={classes.btn}

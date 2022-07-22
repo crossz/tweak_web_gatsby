@@ -15,6 +15,7 @@ import YouTube from 'react-youtube'
 import Link from '@components/Link'
 import ImageTranslation from '../ImageTranslation'
 import AthletePostCard from '../AthletePostCard'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   videoContainer: {
@@ -68,6 +69,8 @@ const Athletes = ({ athleteNodes }) => {
   const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+  const addLangQuery = useLangQuery()
+
   // const horsemanship = athleteNodes?.find((node) => node.athleteType === '骑马')
   // const snorkeling = athleteNodes?.find((node) => node.athleteType === '潜水')
 
@@ -341,7 +344,7 @@ const Athletes = ({ athleteNodes }) => {
                 >
                   <Button
                     fullWidth
-                    href={process.env.GATSBY_SITE_URL}
+                    href={addLangQuery()}
                     variant='contained'
                     color='secondary'
                     target='_blank'
@@ -440,7 +443,7 @@ const Athletes = ({ athleteNodes }) => {
               >
                 <Button
                   fullWidth
-                  href={process.env.GATSBY_SITE_URL}
+                  href={addLangQuery()}
                   variant='contained'
                   color='secondary'
                   target='_blank'
@@ -495,7 +498,7 @@ const Athletes = ({ athleteNodes }) => {
         >
           <Button
             fullWidth
-            href={process.env.GATSBY_SITE_URL}
+            href={addLangQuery()}
             variant='contained'
             color='secondary'
             target='_blank'

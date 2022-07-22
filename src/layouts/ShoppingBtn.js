@@ -6,6 +6,7 @@ import { Trans } from 'gatsby-plugin-react-i18next'
 import WhatsAppIcon from '@material-ui/icons/WhatsApp'
 import ETooltip from '@themes/components/ETooltip'
 import { useMatch } from '@reach/router'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 const ShoppingBtn = () => {
   const classes = useStyles()
   const isReHealthPlansPage = useMatch('/rehealth-prevaccination-plans')
+  const addLangQuery = useLangQuery()
 
   return (
     <Box className={classes.root}>
@@ -73,7 +75,7 @@ const ShoppingBtn = () => {
       )}
       <IconButton
         className={classes.shopBtn}
-        href={process.env.GATSBY_SITE_URL}
+        href={addLangQuery()}
         target='_blank'
         variant='contain'
         id='ECP_Sticky_EH'
