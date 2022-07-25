@@ -3,15 +3,7 @@ import MdxLayout from '@layouts/MdxLayout'
 import { graphql } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
 import MoreUpdates from '@components/WhatsNew/MoreUpdates'
-import {
-  makeStyles,
-  alpha,
-  Typography,
-  Container,
-  Box,
-  Breadcrumbs,
-  Hidden,
-} from '@material-ui/core'
+import { makeStyles, alpha, Typography, Container, Box, Breadcrumbs, Hidden } from '@material-ui/core'
 import ArrowIcon from '@images/icons/arrow.svg'
 import useMenu from '@hooks/useMenu'
 import Links from '@components/WhatsNew/Links'
@@ -165,9 +157,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const mdx = data?.mdx?.body
   const { date, cpTitle, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
-  const middlePath = `/whats-new/${
-    sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath
-  }`
+  const middlePath = `/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`
   const middleTitle =
     sectionPath === 'campaign-page-posts'
       ? 'Campaign Page'
@@ -201,10 +191,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
                     {type && (
                       <Box
                         className={classes.mark}
-                        bgcolor={
-                          POST_TYPES.find((item) => item.label === type)
-                            ?.color || 'secondary.main'
-                        }
+                        bgcolor={POST_TYPES.find((item) => item.label === type)?.color || 'secondary.main'}
                       >
                         {t(`options.post_types.${type}`)}
                       </Box>
@@ -264,10 +251,7 @@ export const query = graphql`
         }
       }
     }
-    mdx: mdx(
-      fields: { slug: { eq: $slug } }
-      frontmatter: { languages: { eq: $language } }
-    ) {
+    mdx: mdx(fields: { slug: { eq: $slug } }, frontmatter: { languages: { eq: $language }, hide: { ne: true } }) {
       id
       frontmatter {
         date
@@ -278,10 +262,7 @@ export const query = graphql`
       body
     }
     morePosts: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: $regex }
-        frontmatter: { languages: { eq: $language } }
-      }
+      filter: { fileAbsolutePath: { regex: $regex }, frontmatter: { languages: { eq: $language }, hide: { ne: true } } }
       limit: 3
       sort: { fields: frontmatter___date, order: DESC }
     ) {

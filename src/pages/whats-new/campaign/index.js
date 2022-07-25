@@ -21,9 +21,7 @@ export default CampaignRoot
 
 export const query = graphql`
   query ($language: String!) {
-    imagesTranslation: allFile(
-      filter: { sourceInstanceName: { eq: "campaignImages" } }
-    ) {
+    imagesTranslation: allFile(filter: { sourceInstanceName: { eq: "campaignImages" } }) {
       nodes {
         name
         childImageSharp {
@@ -31,12 +29,7 @@ export const query = graphql`
         }
       }
     }
-    locales: allLocale(
-      filter: {
-        ns: { in: ["translation", "campaignPageV2"] }
-        language: { eq: $language }
-      }
-    ) {
+    locales: allLocale(filter: { ns: { in: ["translation", "campaignPageV2"] }, language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -52,6 +45,7 @@ export const query = graphql`
           languages: { eq: $language }
           postType: { eq: "campaignStory" }
           isCampaign: { ne: false }
+          hide: { ne: true }
         }
       }
       sort: { fields: frontmatter___date, order: DESC }
@@ -84,6 +78,7 @@ export const query = graphql`
           languages: { eq: $language }
           postType: { eq: "campaignNews" }
           isCampaign: { ne: false }
+          hide: { ne: true }
         }
       }
       sort: { fields: frontmatter___date, order: DESC }
@@ -113,12 +108,7 @@ export const query = graphql`
     }
     athleteNodes: allMdx(
       limit: 6
-      filter: {
-        frontmatter: {
-          languages: { eq: $language }
-          postType: { eq: "campaignAthlete" }
-        }
-      }
+      filter: { frontmatter: { languages: { eq: $language }, postType: { eq: "campaignAthlete" }, hide: { ne: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

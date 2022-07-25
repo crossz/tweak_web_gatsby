@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 const useBusinessPartners = () => {
   const data = useStaticQuery(graphql`
     {
-      allBusinessPartnersJson {
+      allBusinessPartnersJson(filter: { hide: { ne: true } }) {
         nodes {
           countryHk
           countryCn

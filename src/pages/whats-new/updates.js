@@ -1,14 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import { graphql } from 'gatsby'
 import UpdateItem from '@components/WhatsNew/UpdateItem'
-import {
-  makeStyles,
-  Container,
-  useTheme,
-  useMediaQuery,
-  Grid,
-  Box,
-} from '@material-ui/core'
+import { makeStyles, Container, useTheme, useMediaQuery, Grid, Box } from '@material-ui/core'
 import classnames from 'classnames'
 import { ESelect, EMenuItem } from '@themes/components/ETextField'
 import { POST_TYPES, MOBILE_HEADER_HEIGHT } from '@utils/constant'
@@ -60,10 +53,7 @@ const Updates = ({ data }) => {
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
 
   const curNodes = useMemo(
-    () =>
-      activeType
-        ? nodes?.filter((node) => node.frontmatter?.type === activeType)
-        : nodes,
+    () => (activeType ? nodes?.filter((node) => node.frontmatter?.type === activeType) : nodes),
     [activeType, nodes]
   )
 
@@ -75,19 +65,9 @@ const Updates = ({ data }) => {
       <Box className={classes.root}>
         <Container disableGutters maxWidth='md'>
           <Grid container spacing={0}>
-            <Grid
-              className={classnames(matches && classes.selectWrapper)}
-              item
-              xs={12}
-              sm={4}
-            >
+            <Grid className={classnames(matches && classes.selectWrapper)} item xs={12} sm={4}>
               {matches ? (
-                <ESelect
-                  value={activeType}
-                  onChange={handleMobileChange}
-                  className={classes.select}
-                  displayEmpty
-                >
+                <ESelect value={activeType} onChange={handleMobileChange} className={classes.select} displayEmpty>
                   {POST_TYPES.map((type, index) => (
                     <EMenuItem key={index} value={type.value}>
                       {t(type.label)}
@@ -98,10 +78,7 @@ const Updates = ({ data }) => {
                 <Box className={classes.types} onClick={handleChange}>
                   {POST_TYPES.map((type, index) => (
                     <Box
-                      className={classnames(
-                        classes.type,
-                        activeType === type.value && classes.activeType
-                      )}
+                      className={classnames(classes.type, activeType === type.value && classes.activeType)}
                       key={index}
                       data-value={type.value}
                     >
@@ -114,11 +91,7 @@ const Updates = ({ data }) => {
             <Grid item xs={12} sm={8}>
               {curNodes?.length > 0 &&
                 curNodes?.map((node) => (
-                  <UpdateItem
-                    key={node.id}
-                    slug={`${node.fields.slug}`}
-                    {...node.frontmatter}
-                  />
+                  <UpdateItem key={node.id} slug={`${node.fields.slug}`} {...node.frontmatter} />
                 ))}
             </Grid>
           </Grid>
@@ -145,7 +118,7 @@ export const query = graphql`
       limit: 1000
       filter: {
         fileAbsolutePath: { regex: "/updates/" }
-        frontmatter: { languages: { eq: $language } }
+        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
