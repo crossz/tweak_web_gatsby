@@ -24,6 +24,7 @@ import useObjectTranslation from '@hooks/useObjectTranslation'
 import classnames from 'classnames'
 import ImageTranslation from '@components/ImageTranslation'
 import useLangQuery from '@hooks/useLangQuery'
+import { T_AND_C } from '../../utils/constant'
 
 SwiperCore.use([Autoplay, Pagination, Navigation])
 
@@ -287,7 +288,13 @@ const Banner = ({ nodes }) => {
                         ? '26%'
                         : '25%'
                     }
-                    to={addLangQuery()}
+                    to={
+                      language === 'en'
+                        ? T_AND_C.PROMOTION_POLICY.urlEn
+                        : language === 'zh-HK'
+                        ? T_AND_C.PROMOTION_POLICY.urlHk
+                        : T_AND_C.PROMOTION_POLICY.urlCn
+                    }
                     component={Link}
                     id='RW_HP_Top_Banner_CV2_KnowMore'
                   >
