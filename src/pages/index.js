@@ -4,34 +4,55 @@ import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
 import { ImagesTranslationContext } from '@layouts/context'
 
-const Index = ({ data }) => {
-  const {
-    imagesTranslation,
-    heroBannerNodes,
-    promotionNodes,
-    healthTipsNodes,
-  } = data
+const Index =
+  ({
+    data,
+  }) => {
+    const {
+      imagesTranslation,
+      heroBannerNodes,
+      promotionNodes,
+      healthTipsNodes,
+    } =
+      data
 
-  return (
-    <Layout>
-      <ImagesTranslationContext.Provider
-        value={{ images: imagesTranslation?.nodes }}
-      >
-        <Homepage
-          heroBannerNodes={heroBannerNodes?.nodes}
-          promotionNodes={promotionNodes?.nodes}
-          healthTipsNodes={healthTipsNodes?.nodes}
-        ></Homepage>
-      </ImagesTranslationContext.Provider>
-    </Layout>
-  )
-}
+    return (
+      <Layout>
+        <ImagesTranslationContext.Provider
+          value={{
+            images:
+              imagesTranslation?.nodes,
+          }}
+        >
+          <Homepage
+            heroBannerNodes={
+              heroBannerNodes?.nodes
+            }
+            promotionNodes={
+              promotionNodes?.nodes
+            }
+            healthTipsNodes={
+              healthTipsNodes?.nodes
+            }
+          ></Homepage>
+        </ImagesTranslationContext.Provider>
+      </Layout>
+    )
+  }
 
 export default Index
 
 export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+  query (
+    $language: String!
+  ) {
+    locales: allLocale(
+      filter: {
+        language: {
+          eq: $language
+        }
+      }
+    ) {
       edges {
         node {
           ns
@@ -41,7 +62,11 @@ export const query = graphql`
       }
     }
     imagesTranslation: allFile(
-      filter: { sourceInstanceName: { eq: "imagesTranslation" } }
+      filter: {
+        sourceInstanceName: {
+          eq: "imagesTranslation"
+        }
+      }
     ) {
       nodes {
         name
@@ -51,8 +76,15 @@ export const query = graphql`
       }
     }
     heroBannerNodes: allMdx(
-      filter: { fileAbsolutePath: { regex: "/hero-banners/" } }
-      sort: { fields: frontmatter___sort, order: ASC }
+      filter: {
+        fileAbsolutePath: {
+          regex: "/hero-banners/"
+        }
+      }
+      sort: {
+        fields: frontmatter___sort
+        order: ASC
+      }
     ) {
       nodes {
         id
@@ -65,12 +97,16 @@ export const query = graphql`
           detailCn
           image {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+              )
             }
           }
           mobileImage {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+              )
             }
           }
           reference
@@ -81,6 +117,7 @@ export const query = graphql`
             color
             name
             link
+            id
             internal
           }
         }
@@ -89,10 +126,19 @@ export const query = graphql`
     promotionNodes: allMdx(
       limit: 6
       filter: {
-        fileAbsolutePath: { regex: "/promotions/" }
-        frontmatter: { languages: { eq: $language } }
+        fileAbsolutePath: {
+          regex: "/promotions/"
+        }
+        frontmatter: {
+          languages: {
+            eq: $language
+          }
+        }
       }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: {
+        fields: frontmatter___date
+        order: DESC
+      }
     ) {
       nodes {
         id
@@ -106,7 +152,10 @@ export const query = graphql`
           href
           cover {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                aspectRatio: 2
+              )
             }
           }
           # pdf {
@@ -118,10 +167,19 @@ export const query = graphql`
     healthTipsNodes: allMdx(
       limit: 6
       filter: {
-        fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language } }
+        fileAbsolutePath: {
+          regex: "/health-tips/"
+        }
+        frontmatter: {
+          languages: {
+            eq: $language
+          }
+        }
       }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: {
+        fields: frontmatter___date
+        order: DESC
+      }
     ) {
       nodes {
         id
@@ -135,7 +193,10 @@ export const query = graphql`
           href
           cover {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                aspectRatio: 2
+              )
             }
           }
           # pdf {
