@@ -50,3 +50,8 @@ fields:
   config:
     required: false
   label: Link
+- name: id
+  type: text
+  config:
+    required: false
+  label: Id
