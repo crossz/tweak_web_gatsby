@@ -42,6 +42,7 @@ import { toast } from 'react-toastify'
 import ReCaptcha from '@components/ReCaptcha'
 import fetchWithTimeout from '@utils/fetchWithTimeout'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -348,6 +349,7 @@ const Quiz = () => {
   const [finishQuiz, setFinishQuiz] = useState(false)
   const [reCapStatus, setReCapStatus] = useState(0)
   const [loading, setLoading] = useState(false)
+  const addLangQuery = useLangQuery()
 
   const schema = oriSchema(t).pick([
     'requiredEmailOrPhone',
@@ -871,7 +873,7 @@ const Quiz = () => {
                           <Hidden xsDown>
                             <Link
                               className={classes.platformLink}
-                              to={process.env.GATSBY_SITE_URL}
+                              to={addLangQuery()}
                             >
                               {t('quiz.direct_sign_up')}
                             </Link>
@@ -882,7 +884,7 @@ const Quiz = () => {
                                 classes.platformLink,
                                 classes.mobilePlatformLink
                               )}
-                              to={process.env.GATSBY_SITE_URL}
+                              to={addLangQuery()}
                             >
                               {t('quiz.direct_sign_up')}
                             </Link>
@@ -962,7 +964,7 @@ const Quiz = () => {
                               variant='outlined'
                               color='primary'
                               fullWidth
-                              href={process.env.GATSBY_SITE_URL}
+                              href={addLangQuery()}
                               target='_blank'
                             >
                               {t('common.learn_more')}
@@ -973,7 +975,7 @@ const Quiz = () => {
                             fullWidth
                             variant='contained'
                             color='secondary'
-                            href={process.env.GATSBY_SITE_URL}
+                            href={addLangQuery()}
                             target='_blank'
                           >
                             {t('common.sign_up_as_menber')}

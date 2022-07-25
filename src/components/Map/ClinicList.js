@@ -20,6 +20,7 @@ import { orderBy } from 'lodash-es'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
 import { REGIONS } from '@utils/constant'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -149,7 +150,7 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
   const { tB } = useObjectTranslation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
-
+  const addLangQuery = useLangQuery()
   const _handleChange = (activeArea) => (e, isExpanded) => {
     onChange && onChange(isExpanded ? activeArea : '')
   }
@@ -227,7 +228,9 @@ const ClinicList = ({ clinics, curProvince, curArea, onChange }) => {
                             variant='outlined'
                             size='small'
                             color='primary'
-                            href={`${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`}
+                            href={addLangQuery(
+                              `${process.env.GATSBY_SITE_URL}clinic/${clinic.id}`
+                            )}
                             target='_blank'
                           >
                             {t('common.book_now')}

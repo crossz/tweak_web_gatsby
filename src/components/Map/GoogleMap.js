@@ -10,6 +10,7 @@ import { minBy, maxBy } from 'lodash-es'
 import Link from '@components/Link'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import useObjectTranslation from '@hooks/useObjectTranslation'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -155,6 +156,7 @@ const InfoWindow = (props) => {
   const classes = useStyles()
   const { t } = useI18next()
   const { tB } = useObjectTranslation()
+  const addLangQuery = useLangQuery()
 
   if (!props?.info) return null
 
@@ -184,7 +186,7 @@ const InfoWindow = (props) => {
       <Button
         href={
           clinicType === 1
-            ? `${process.env.GATSBY_SITE_URL}clinic/${id}`
+            ? addLangQuery(`${process.env.GATSBY_SITE_URL}clinic/${id}`)
             : `tel:${phone}`
         }
         target={clinicType === 1 ? '_blank' : ''}

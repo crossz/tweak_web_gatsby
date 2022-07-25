@@ -16,6 +16,7 @@ import { padStartNum } from '@utils'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
+import useLangQuery from '@hooks/useLangQuery'
 
 const steps = [
   {
@@ -348,7 +349,7 @@ const useStyles = makeStyles((theme) => ({
 const Take2ExtraCare = () => {
   const classes = useStyles()
   const { t } = useI18next()
-
+  const addLangQuery = useLangQuery()
   return (
     <Layout>
       <Typography className={classes.title} variant='h4' color='primary'>
@@ -474,7 +475,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='outlined'
                 color='primary'
-                href={`${process.env.GATSBY_SITE_URL}signup`}
+                href={addLangQuery(`${process.env.GATSBY_SITE_URL}signup`)}
                 target='_blank'
                 className={classes.box04Btn}
               >
@@ -483,7 +484,7 @@ const Take2ExtraCare = () => {
               <Button
                 variant='contained'
                 color='secondary'
-                href={`${process.env.GATSBY_SITE_URL}signin`}
+                href={addLangQuery(`${process.env.GATSBY_SITE_URL}signin`)}
                 target='_blank'
                 className={classes.box04Btn}
               >

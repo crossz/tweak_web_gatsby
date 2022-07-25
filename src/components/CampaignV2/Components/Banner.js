@@ -10,6 +10,7 @@ import {
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import ImageTranslation from './ImageTranslation'
+import useLangQuery from '@hooks/useLangQuery'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -34,6 +35,7 @@ const Banner = () => {
   const classes = useStyles({ isEn })
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
+  const addLangQuery = useLangQuery()
 
   return (
     <Box position='relative'>
@@ -41,7 +43,7 @@ const Banner = () => {
         className={classnames(classes.button, {
           [classes.mobileButton]: isMobile,
         })}
-        href={process.env.GATSBY_SITE_URL}
+        href={addLangQuery()}
         variant='contained'
         color='secondary'
         id='ECP_Banner_EH'
