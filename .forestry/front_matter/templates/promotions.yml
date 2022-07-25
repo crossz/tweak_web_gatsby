@@ -59,6 +59,10 @@ fields:
   label: Slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
+- name: hide
+  type: boolean
+  label: Hide
+  description: Hide post
 pages:
 - content/promotions/2-1.md
 - content/promotions/2.md
