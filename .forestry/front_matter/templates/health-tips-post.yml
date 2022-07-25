@@ -2,6 +2,11 @@
 label: Health Tips Post
 hide_body: false
 fields:
+- name: hide
+  type: boolean
+  label: Hide
+  description: Hide post
+  default: false
 - name: campaignPagePostCard
   type: include
   config: {}
@@ -78,11 +83,6 @@ fields:
   label: Slug
   description: Path for post detail page, if this is empty, post path would be post
     title.
-- name: hide
-  type: boolean
-  label: Hide
-  description: Hide post
-  default: false
 pages:
 - content/health-tips/1-1.md
 - content/health-tips/1.md
