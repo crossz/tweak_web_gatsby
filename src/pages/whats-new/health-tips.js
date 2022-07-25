@@ -34,7 +34,7 @@ export const query = graphql`
       limit: 1000
       filter: {
         fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language } }
+        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

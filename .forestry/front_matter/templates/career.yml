@@ -2,6 +2,10 @@
 label: Career
 hide_body: false
 fields:
+- name: hide
+  type: boolean
+  label: Hide
+  description: Hide career
 - name: languages
   type: include
   config: {}

@@ -94,10 +94,7 @@ export const query = graphql`
         }
       }
     }
-    mdx: mdx(
-      fields: { slug: { eq: $slug } }
-      frontmatter: { languages: { eq: $language } }
-    ) {
+    mdx: mdx(fields: { slug: { eq: $slug } }, frontmatter: { languages: { eq: $language }, hide: { ne: true } }) {
       id
       frontmatter {
         date

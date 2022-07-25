@@ -3,6 +3,10 @@ label: Update Post
 hide_body: false
 display_field: title
 fields:
+- name: hide
+  type: boolean
+  label: Hide
+  description: Hide post
 - name: languages
   type: include
   config: {}
@@ -67,6 +71,7 @@ fields:
   description: Path for post detail page, if this is empty, post path would be post
     title.
 pages:
+- content/updates/awarded-as-the-company-with-the-most-investment-potential-the-top-breakthrough-innovation.md
 - content/updates/collaborating-with-gmt-take2-prophecy-is-currently-available-across-the-phillippines.md
 - content/updates/dna-1.md
 - content/updates/dna.md
@@ -90,6 +95,8 @@ pages:
 - content/updates/take2-health-3.md
 - content/updates/take2-health-4.md
 - content/updates/take2-health-5.md
+- content/updates/take2-health-6.md
+- content/updates/take2-health-7.md
 - content/updates/take2-health-and-kpmg-reached-partnership-to-enlist-the-take2-prophecy-test-for-nasopharyngeal-cancer-as-employee-benefit.md
 - content/updates/take2-health-and-pantai-premier-pathology-joining-hands-to-promote-early-npc-detection.md
 - content/updates/take2-health-collaborating-with-cxa-to-provide-innovative-employee-benefits.md

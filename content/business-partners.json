@@ -9,7 +9,8 @@
     "introEn": "Affiliated with the renowned global wellbeing specialist, IHH Healthcare, Pantai Premier Pathology is one of Malaysia’s largest diagnostics laboratories.",
     "link": "https://www.premierpathology.com.my",
     "lat": 3.8124274936333666,
-    "lng": 101.60320871733128
+    "lng": 101.60320871733128,
+    "hide": false
   },
   {
     "countryHk": "菲律賓",
@@ -21,7 +22,8 @@
     "introEn": "A medical distribution group based in the Philippines, supporting local communities by bringing globally advanced technologies in the country to provide healthcare practitioners, patients and customers with access to different healthcare and diagnostic services.",
     "link": "https://gmtmanila.com/",
     "lat": 14.622741230780443,
-    "lng": 120.9678862363281
+    "lng": 120.9678862363281,
+    "hide": false
   },
   {
     "countryHk": "台灣",
@@ -33,7 +35,8 @@
     "introEn": "Listed on the London Stock Exchange, UK-headquartered Yourgene Health is leading the way in international molecular diagnostics and commercialised genomic services via branches in Taipei, Singapore, the U.S., and Canada.",
     "link": "https://www.yourgene-health.com",
     "lat": 24.007028114876242,
-    "lng": 121.07166512736177
+    "lng": 121.07166512736177,
+    "hide": false
   },
   {
     "countryHk": "新加坡",
@@ -45,7 +48,8 @@
     "introEn": "A genomic technology pioneer whose operations cover Singapore, Malaysia and Vietnam, Lifestrands Genomics is a member of the Pathology Asia Holdings, a genomics group. Its sister company, GenomixLab, is Malaysia’s first CAP certified laboratory.",
     "link": "",
     "lat": 1.3579294889776585,
-    "lng": 103.86964607814394
+    "lng": 103.86964607814394,
+    "hide": false
   },
   {
     "countryHk": "菲律賓",
@@ -57,7 +61,8 @@
     "introEn": "A medical diagnostics group operating in the Philippines, Singapore and India, Pascific Laboratories focuses on precision pathology and molecular diagnostics. ",
     "link": "https://www.pascific.com/",
     "lat": 14.622741230780443,
-    "lng": 120.9678862363281
+    "lng": 120.9678862363281,
+    "hide": false
   },
   {
     "countryHk": "卡塔爾",
@@ -69,7 +74,8 @@
     "introEn": "Headquartered in Doha, Tempcon provides local public and private medical institutions, chain clinics, as well large corporates an extensive range of medical products, including daily consumables, laboratory reagents and top-notch medical devices.",
     "link": "https://www.tempconqatar.com/index.php",
     "lat": 25.310775003022403,
-    "lng": 51.195632901833974
+    "lng": 51.195632901833974,
+    "hide": false
   },
   {
     "countryHk": "澳門",
@@ -81,6 +87,7 @@
     "introEn": "A Macau-based biotechnology distributor dedicated to providing high-end testing technology to local medical institutions.",
     "link": "",
     "lat": 22.158991865767508,
-    "lng": 113.57665634534713
+    "lng": 113.57665634534713,
+    "hide": false
   }
 ]
