@@ -288,13 +288,7 @@ const Banner = ({ nodes }) => {
                         ? '26%'
                         : '25%'
                     }
-                    to={
-                      language === 'en'
-                        ? T_AND_C.PROMOTION_POLICY.urlEn
-                        : language === 'zh-HK'
-                        ? T_AND_C.PROMOTION_POLICY.urlHk
-                        : T_AND_C.PROMOTION_POLICY.urlCn
-                    }
+                    to={T_AND_C.PROMOTION_POLICY.url}
                     component={Link}
                     id='RW_HP_Top_Banner_CV2_KnowMore'
                   >
