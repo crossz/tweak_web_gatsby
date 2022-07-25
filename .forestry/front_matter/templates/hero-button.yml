@@ -55,4 +55,4 @@ fields:
   config:
     required: false
   label: Id
-  default: " "
+  default: ''
