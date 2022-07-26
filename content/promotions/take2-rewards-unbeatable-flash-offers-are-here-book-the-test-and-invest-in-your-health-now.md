@@ -3,7 +3,7 @@ languages:
 - en
 cover:
 - "../images/english-600x300.jpg"
-date: 2022-08-01T00:00:00+08:00
+date: 2022-08-01T00:00:00.000+08:00
 title: "【Take2 Rewards】Unbeatable flash offers are here　Book the test and invest in
   your health now"
 detail: The second batch of consumption vouchers is rolling out on 7 August. To be
@@ -13,6 +13,7 @@ type: ''
 pdf: ''
 href: ''
 slug: take2-rewards
+hide: true
 
 ---
 ![](../images/edmbanner-english.jpg)
