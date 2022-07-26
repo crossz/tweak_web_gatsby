@@ -13,7 +13,7 @@ type: ''
 pdf: ''
 href: ''
 slug: take2-rewards
-hide: true
+hide: false
 
 ---
 ![](../images/edmbanner-english.jpg)
