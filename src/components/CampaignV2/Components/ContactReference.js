@@ -19,12 +19,7 @@ import MailIcon from '../images/mail.svg'
 import PhoneIcon from '../images/phone.svg'
 import WhatsAppIcon from '../images/WhatsApp.svg'
 import FacebookIcon from '../images/facebook.svg'
-import {
-  WHATS_APP_LINK,
-  SERVICE_EMAIL,
-  SERVICE_PHONE,
-  FACEBOOK_LINK,
-} from '../utils/constant'
+import { WHATS_APP_LINK, SERVICE_EMAIL, SERVICE_PHONE, FACEBOOK_LINK } from '../utils/constant'
 import { T_AND_C } from '../../../utils/constant'
 import useLangQuery from '@hooks/useLangQuery'
 
@@ -191,48 +186,25 @@ const ContactReference = () => {
         <Link target='_blank' underline='always' to='/'>
           take2health.net
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={T_AND_C.PRIVACY_POLICY.url}
-        >
+        <Link target='_blank' underline='always' to={T_AND_C.PRIVACY_POLICY.url}>
           私隱政策
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={T_AND_C.WEBSITE_TERMS_OF_USE.url}
-        >
+        <Link target='_blank' underline='always' to={T_AND_C.WEBSITE_TERMS_OF_USE.url}>
           網站使用條款
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}
-        >
+        <Link target='_blank' underline='always' to={T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}>
           個人資料收集聲明
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={T_AND_C.HEALTH_PLATFORM_PRIVACY_POLICY.url}
-        >
+        <Link target='_blank' underline='always' to={T_AND_C.HEALTH_PLATFORM_PRIVACY_POLICY.url}>
           得易健康服務平台《私隱政策》
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={T_AND_C.HEALTH_PLATFORM_TERMS_AND_CONDITIONS.url}
-        >
+        <Link target='_blank' underline='always' to={T_AND_C.HEALTH_PLATFORM_TERMS_AND_CONDITIONS.url}>
           得易健康服務平台條款
         </Link>
         <Link
           target='_blank'
           underline='always'
-          to={
-            T_AND_C.HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT
-              .url
-          }
+          to={T_AND_C.HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}
         >
           得易健康服務平台《個人資料收集聲明》
         </Link>
@@ -264,25 +236,12 @@ const ContactReference = () => {
       px={2.5}
       bgcolor={isMobile ? 'transparent' : 'background.paper'}
     >
-      <Box
-        className='gsap-fade-in-11-trigger gsap-fade-in-11'
-        mx='auto'
-        maxWidth={1192}
-      >
-        <Box
-          color='prophecyPrimary.main'
-          fontWeight='fontWeightBold'
-          fontSize={24}
-        >
+      <Box className='gsap-fade-in-11-trigger gsap-fade-in-11' mx='auto' maxWidth={1192}>
+        <Box color='prophecyPrimary.main' fontWeight='fontWeightBold' fontSize={24}>
           {t('cp_v2.contact_and_reference.paragraphs.0')}
         </Box>
         <Box py={isMobile ? 5 : 6} borderBottom='1px solid #E1E1E1'>
-          <Box
-            fontWeight='fontWeightMedium'
-            fontSize='body1.fontSize'
-            color='grey.900'
-            mb={2}
-          >
+          <Box fontWeight='fontWeightMedium' fontSize='body1.fontSize' color='grey.900' mb={2}>
             {t('cp_v2.contact_and_reference.paragraphs.1')}
           </Box>
           <Box display={isMobile ? 'block' : 'flex'}>
@@ -317,17 +276,8 @@ const ContactReference = () => {
         </Box>
         <Grid container spacing={0}>
           <Grid item xs={12} sm={6}>
-            <Box
-              height='100%'
-              py={isMobile ? 5 : 6}
-              borderBottom='1px solid #E1E1E1'
-            >
-              <Box
-                fontWeight='fontWeightMedium'
-                fontSize='body1.fontSize'
-                color='grey.900'
-                mb={2}
-              >
+            <Box height='100%' py={isMobile ? 5 : 6} borderBottom='1px solid #E1E1E1'>
+              <Box fontWeight='fontWeightMedium' fontSize='body1.fontSize' color='grey.900' mb={2}>
                 {t('cp_v2.contact_and_reference.paragraphs.2')}
               </Box>
               <Link target='_blank' to='/'>
@@ -345,17 +295,8 @@ const ContactReference = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Box
-              height='100%'
-              py={isMobile ? 5 : 6}
-              borderBottom='1px solid #E1E1E1'
-            >
-              <Box
-                fontWeight='fontWeightMedium'
-                fontSize='body1.fontSize'
-                color='grey.900'
-                mb={2}
-              >
+            <Box height='100%' py={isMobile ? 5 : 6} borderBottom='1px solid #E1E1E1'>
+              <Box fontWeight='fontWeightMedium' fontSize='body1.fontSize' color='grey.900' mb={2}>
                 {t('cp_v2.contact_and_reference.paragraphs.3')}
               </Box>
               <Box height={56}>
@@ -389,9 +330,7 @@ const ContactReference = () => {
                   root: classes.summaryRoot,
                 }}
               >
-                <Typography className={classes.heading}>
-                  {t('cp_v2.contact_and_reference.paragraphs.4')}
-                </Typography>
+                <Typography className={classes.heading}>{t('cp_v2.contact_and_reference.paragraphs.4')}</Typography>
               </AccordionSummary>
               <AccordionDetails
                 classes={{
@@ -400,10 +339,7 @@ const ContactReference = () => {
               >
                 <Box className={classes.referenceDetail2}>
                   {reference.map((item, index) => (
-                    <Box
-                      key={index}
-                      dangerouslySetInnerHTML={{ __html: item.list }}
-                    />
+                    <Box key={index} dangerouslySetInnerHTML={{ __html: item.list }} />
                   ))}
                 </Box>
               </AccordionDetails>
@@ -422,9 +358,7 @@ const ContactReference = () => {
                   root: classes.summaryRoot,
                 }}
               >
-                <Typography className={classes.heading}>
-                  {t(T_AND_C.TERMS_AND_CONDITIONS.label)}
-                </Typography>
+                <Typography className={classes.heading}>{t(T_AND_C.TERMS_AND_CONDITIONS.label)}</Typography>
               </AccordionSummary>
               <AccordionDetails
                 classes={{
@@ -442,10 +376,7 @@ const ContactReference = () => {
             </Box>
             <Box className={classes.referenceDetail}>
               {reference.map((item, index) => (
-                <Box
-                  key={index}
-                  dangerouslySetInnerHTML={{ __html: item.list }}
-                />
+                <Box key={index} dangerouslySetInnerHTML={{ __html: item.list }} />
               ))}
             </Box>
             <Box className={classes.reference} my={4}>
