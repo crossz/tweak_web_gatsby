@@ -208,17 +208,7 @@ const ContactReference = () => {
         >
           得易健康服務平台《個人資料收集聲明》
         </Link>
-        <Link
-          target='_blank'
-          underline='always'
-          to={
-            language === 'en'
-              ? T_AND_C.PROMOTION_POLICY.urlEn
-              : language === 'zh-HK'
-              ? T_AND_C.PROMOTION_POLICY.urlHk
-              : T_AND_C.PROMOTION_POLICY.urlCn
-          }
-        >
+        <Link target='_blank' underline='always' to={T_AND_C.PROMOTION_POLICY.url}>
           「NEW330」優惠碼推廣（「推廣優惠」）條款及細則
         </Link>
         <Link target='_blank' underline='always' to={addLangQuery()}>
