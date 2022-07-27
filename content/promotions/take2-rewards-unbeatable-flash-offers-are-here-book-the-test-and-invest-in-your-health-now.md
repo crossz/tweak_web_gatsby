@@ -4,11 +4,10 @@ languages:
 cover:
 - "../images/english-600x300.jpg"
 date: 2022-08-01T00:00:00.000+08:00
-title: "【Take2 Rewards】Unbeatable flash offers are here　Book the test and invest in
-  your health now"
-detail: The second batch of consumption vouchers is rolling out on 7 August. To be
-  a “smart” shopper and make the most of your budget, you should definitely grab this
-  hottest deal and invest in your health!
+title: "【Take2 Rewards】Unbeatable flash offers　Schedule a check and invest in your
+  health now"
+detail: 'Phase II consumption vouchers are going to be disbursed on 7 August. Don’t
+  miss our biggest offer, save the most and invest in your health! '
 type: ''
 pdf: ''
 href: ''
@@ -16,45 +15,49 @@ slug: take2-rewards
 hide: false
 
 ---
-![](../images/edmbanner-english.jpg)
+![](../images/english.jpg)
 
-**Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
-
-<br/>
-
-The second batch of consumption vouchers is rolling out on 7 August. To be a “smart” shopper and make the most of your budget, you should definitely grab this hottest deal and invest in your health!
+### **Book Now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
 
 <br/>
 
-**Limited time only! Enjoy double rewards and save more than $800**
-
-![](../images/cw_reward_en.png)
-
-**Reward one:** From now until 31 August 2022, purchase the Take2 Prophecy™ Test for Nasopharyngeal Cancer (single test item) on the Take2 Health Platform; and complete the blood-drawing procedure on or before 5 September 2022, you can earn a Samsung C&T ITFIT IPX7 Waterproof Bluetooth Speaker (value: HKD498)
+### Phase II consumption vouchers are going to be disbursed on 7 August. Don’t miss our biggest offer, save the most and invest in your health!
 
 <br/>
 
-**Reward two:** Enter promo code “NEW330” during checkout to enjoy an extra $330 off (original price: $2,200). Rewards are available while stock lasts. So be quick and save more than $800 with these unbeatable offers!
+## Limited time only!　Enjoy double rewards and save more than $800
 
-**Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
+![](../images/promo_en.png)
 
-<br/>
+**Reward one***: Earn a Samsung C&T ITFIT IPX7 Waterproof Bluetooth Speaker (value: HKD498) when you purchase the Take2 Prophecy™ Test for Nasopharyngeal Cancer (single test item) on Take2 Health Platform on or before 31 August 2022 and complete the blood-draw on or before 5 September 2022 **FOR FREE**.
 
-**Check out the three reasons why you should get tested with Take2 Prophecy™**
-
-![](../images/cw_reason1_en.png)
+\*Rewards are available while stock lasts.
 
 <br/>
 
-![](../images/asset-5.png)
+Reward two: Enter promo code “NEW330” during checkout to enjoy an extra $330 off (original price: $2,200).
+
+Act now and save more than $800 with these unbeatable offers!
+
+### **Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
 
 <br/>
 
-![](../images/cw_reason3_en.jpg)
+## Check out the three reasons why you should get tested with Take2 Prophecy™ Test for Nasopharyngeal Cancer!
+
+![](../images/pt1-1.png)
+
+<br/>
+
+![](../images/pt2-1.png)
+
+<br/>
+
+![](../images/pt3-1.png)
 
 The earlier you know, the better you can manage. The survival rate of early-stage NPC patients can be higher than 90%².
 
-**Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
+### **Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
 
 <br/>
 
