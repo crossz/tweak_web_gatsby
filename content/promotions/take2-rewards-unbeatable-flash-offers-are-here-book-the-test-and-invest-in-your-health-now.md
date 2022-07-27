@@ -39,7 +39,7 @@ hide: false
 
 Act now and save more than $800 with these unbeatable offers!
 
-### **Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
+### **Book Now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
 
 <br/>
 
