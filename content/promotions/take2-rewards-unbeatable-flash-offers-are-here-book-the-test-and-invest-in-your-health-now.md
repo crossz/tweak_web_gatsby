@@ -29,9 +29,9 @@ hide: false
 
 ![](../images/promo_en.png)
 
-**Reward one***: Earn a Samsung C&T ITFIT IPX7 Waterproof Bluetooth Speaker (value: HKD498) when you purchase the Take2 Prophecy™ Test for Nasopharyngeal Cancer (single test item) on Take2 Health Platform on or before 31 August 2022 and complete the blood-draw on or before 5 September 2022 **FOR FREE**.
+**Reward one**: Earn a Samsung C&T ITFIT IPX7 Waterproof Bluetooth Speaker (value: HKD498) when you purchase the Take2 Prophecy™ Test for Nasopharyngeal Cancer (single test item) on Take2 Health Platform on or before 31 August 2022 and complete the blood-draw on or before 5 September 2022 **FOR FREE**.
 
-\*Rewards are available while stock lasts.
+\#Rewards are available while stock lasts.
 
 <br/>
 
