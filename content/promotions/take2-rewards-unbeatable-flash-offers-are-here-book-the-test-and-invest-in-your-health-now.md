@@ -35,7 +35,7 @@ hide: false
 
 <br/>
 
-Reward two: Enter promo code “NEW330” during checkout to enjoy an extra $330 off (original price: $2,200).
+**Reward two**: Enter promo code “NEW330” during checkout to enjoy an extra $330 off (original price: $2,200).
 
 Act now and save more than $800 with these unbeatable offers!
 
