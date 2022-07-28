@@ -65,7 +65,7 @@ Terms and Conditions apply.
 
 The styles, patterns, and colours of the gifts will be offered on a random and first-come-first-served basis. Available while stock lasts.
 
-Take2 Health Platform supports appointments made at least two working days in advance and is subject to the service provider's availability.
+Take2 Health Platform supports bookings 3 days ahead, while the actual appointment is subject to the clinic's availability.
 
 <br/>
 
