@@ -49,7 +49,7 @@ Act now and save more than $800 with these unbeatable offers!
 
 <br/>
 
-![](../images/pt2-1.png)
+![](../images/nasopharynx_eng.png)
 
 <br/>
 
