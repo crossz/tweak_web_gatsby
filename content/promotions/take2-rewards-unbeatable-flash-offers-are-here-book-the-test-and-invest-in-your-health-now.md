@@ -53,7 +53,7 @@ Act now and save more than $800 with these unbeatable offers!
 
 <br/>
 
-![](../images/pt3-1.png)
+![](../images/simple3steps_eng.png)
 
 The earlier you know, the better you can manage. The survival rate of early-stage NPC patients can be higher than 90%².
 
