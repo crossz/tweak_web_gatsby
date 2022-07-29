@@ -79,7 +79,7 @@ Take2 Health Platform supports bookings 3 days ahead, while the actual appointme
 
 <br/>
 
-**“Take2 Rewards” Promotion ( “Promotion”) Terms and Conditions (“Terms”)**
+“Take2 Rewards” Promotion ( “Promotion”) Terms and Conditions (“Terms”)
 
 1\. Below Terms apply to the Promotion offered by Take2 Health Limited (“we”, “us”, “our”). By participating in the Promotion, you agree to the Terms below.
 
