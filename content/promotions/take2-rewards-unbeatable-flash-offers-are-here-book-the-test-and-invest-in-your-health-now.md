@@ -57,7 +57,7 @@ Act now and save more than $800 with these unbeatable offers!
 
 The earlier you know, the better you can manage. The survival rate of early-stage NPC patients can be higher than 90%².
 
-### **Book the test now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
+### **Book Now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
 
 <br/>
 
