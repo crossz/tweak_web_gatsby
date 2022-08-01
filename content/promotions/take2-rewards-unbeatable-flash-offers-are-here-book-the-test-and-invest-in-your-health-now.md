@@ -15,7 +15,7 @@ slug: take2-rewards
 hide: false
 
 ---
-![](../images/inner_page_banner_english.jpg)
+![](../images/banner-eng-4320x2631.jpg)
 
 ### **Book Now:** [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
