@@ -15,9 +15,9 @@ slug: take2-rewards
 hide: false
 
 ---
-![](../images/take2-rewards_banner-eng-600x300_v1.jpg)
+![](../images/banner-eng-4320x2631.jpg)
 
-### **Book Now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
+### **Book Now:** [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
 <br/>
 
@@ -39,7 +39,7 @@ hide: false
 
 Act now and save more than $800 with these unbeatable offers!
 
-### **Book Now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
+### **Book Now:** [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
 <br/>
 
@@ -57,9 +57,7 @@ Act now and save more than $800 with these unbeatable offers!
 
 The earlier you know, the better you can manage. The survival rate of early-stage NPC patients can be higher than 90%².
 
-### **Book Now:** [**https://bit.ly/3PsW2O8**](https://bit.ly/3PsW2O8 "https://bit.ly/3PsW2O8")
-
-<br/>
+### **Book Now:** [https://bit.ly/37XYNpY](https://bit.ly/37XYNpY "https://bit.ly/37XYNpY")
 
 Terms and Conditions apply.
 
