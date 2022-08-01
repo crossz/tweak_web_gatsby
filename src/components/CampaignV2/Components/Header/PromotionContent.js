@@ -1,14 +1,6 @@
 import React from 'react'
 import ClockIcon from '@components/CampaignV2/images/clock.svg'
-import {
-  makeStyles,
-  useTheme,
-  useMediaQuery,
-  Hidden,
-  Box,
-  Button,
-  Typography,
-} from '@material-ui/core'
+import { makeStyles, useTheme, useMediaQuery, Hidden, Box, Button, Typography } from '@material-ui/core'
 import { PROMOTION_CODE } from '@utils/constant'
 import classnames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
@@ -77,12 +69,7 @@ const PromotionContent = ({ whiteBg }) => {
         pt={isMobile ? 0.25 : 0}
         overflow='hidden'
       >
-        <Box
-          width={isMobile ? '100%' : 'auto'}
-          alignItems='center'
-          display='flex'
-          flexShrink={0}
-        >
+        <Box width={isMobile ? '100%' : 'auto'} alignItems='center' display='flex' flexShrink={0}>
           <ClockIcon
             className={classnames(classes.icon, {
               [classes.whiteBgIcon]: whiteBg,
@@ -90,13 +77,7 @@ const PromotionContent = ({ whiteBg }) => {
           />
           <Box
             pl={0.5}
-            fontSize={
-              isTable
-                ? isMobile
-                  ? 'body2.fontSize'
-                  : 'body1.fontSize'
-                : 'h6.fontSize'
-            }
+            fontSize={isTable ? (isMobile ? 'body2.fontSize' : 'body1.fontSize') : 'h6.fontSize'}
             component='span'
             whiteSpace='nowrap'
           >
@@ -124,9 +105,7 @@ const PromotionContent = ({ whiteBg }) => {
               alignItems='center'
               height={isMobile ? 18 : 32}
               display='flex'
-              color={
-                whiteBg ? 'secondary.contrastText' : 'prophecyPrimary.main'
-              }
+              color={whiteBg ? 'secondary.contrastText' : 'prophecyPrimary.main'}
               borderRadius={4}
               px={isMobile ? 1 : 1.5}
               mx={isMobile ? 0.5 : 1.5}
@@ -136,7 +115,7 @@ const PromotionContent = ({ whiteBg }) => {
               {PROMOTION_CODE}
             </Box>
           </CopyToClipboard>
-          <Typography className={classes.priceText} component='div' noWrap>
+          <Typography className={classes.priceText} component='span' noWrap>
             <Box
               fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
               fontWeight='fontWeightMedium'
@@ -147,16 +126,16 @@ const PromotionContent = ({ whiteBg }) => {
             {!isMobile &&
               (isTable || (isEn && whiteBg) ? (
                 <Box
-                  fontWeight='fontWeightLight'
-                  fontSize='caption.fontSize'
+                  fontWeight='fontWeightMedium'
+                  fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
                   lineHeight={1}
                 >
                   {t('cp_v2.promotion.tip')}
                 </Box>
               ) : (
                 <Box
-                  fontWeight='fontWeightLight'
-                  fontSize='body2.fontSize'
+                  fontWeight='fontWeightMedium'
+                  fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
                   component='span'
                   pl={0.5}
                 >
@@ -167,8 +146,9 @@ const PromotionContent = ({ whiteBg }) => {
         </Box>
         {isMobile && (
           <Box
-            fontWeight='fontWeightLight'
-            fontSize='caption.fontSize'
+            display='inline-block'
+            fontWeight='fontWeightMedium'
+            fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
             component='span'
             lineHeight={1}
           >

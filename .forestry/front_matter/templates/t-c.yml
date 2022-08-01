@@ -2,6 +2,10 @@
 label: T&C
 hide_body: false
 fields:
+- name: hide
+  type: boolean
+  label: Hide
+  description: Hide T&amp;C
 - name: slug
   type: select
   default: personal-infomation-collection-statement
