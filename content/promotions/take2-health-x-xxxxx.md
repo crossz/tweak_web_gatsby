@@ -9,7 +9,8 @@ detail: Take2 Health X 各大体检中心｜早期鼻咽癌筛查优惠
 type: ''
 pdf: ''
 href: ''
-slug: ''
+slug: athletes-medical-collaborations
+hide: false
 
 ---
 ![](../images/athlete-promo-banner-update-s-chi-02.jpg)

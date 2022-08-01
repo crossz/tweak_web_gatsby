@@ -11,7 +11,8 @@ detail: Take2 Health & Medical Partners｜Special Offer for Early Nasopharyngeal
 type: ''
 pdf: ''
 href: ''
-slug: ''
+slug: athletes-medical-collaborations
+hide: false
 
 ---
 ![](../images/cover-photo-eng-1200-x-600.jpg)
