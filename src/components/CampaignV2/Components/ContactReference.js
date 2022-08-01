@@ -106,7 +106,7 @@ const CONTACT_LIST = [
 ]
 
 const ContactReference = () => {
-  const { t, language } = useI18next()
+  const { t } = useI18next()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const classes = useStyles({
@@ -195,20 +195,20 @@ const ContactReference = () => {
         <Link target='_blank' underline='always' to={T_AND_C.PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}>
           個人資料收集聲明
         </Link>
-        <Link target='_blank' underline='always' to={T_AND_C.HEALTH_PLATFORM_PRIVACY_POLICY.url}>
+        <Link target='_blank' underline='always' to={addLangQuery(T_AND_C.HEALTH_PLATFORM_PRIVACY_POLICY.url)}>
           得易健康服務平台《私隱政策》
         </Link>
-        <Link target='_blank' underline='always' to={T_AND_C.HEALTH_PLATFORM_TERMS_AND_CONDITIONS.url}>
+        <Link target='_blank' underline='always' to={addLangQuery(T_AND_C.HEALTH_PLATFORM_TERMS_AND_CONDITIONS.url)}>
           得易健康服務平台條款
         </Link>
         <Link
           target='_blank'
           underline='always'
-          to={T_AND_C.HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT.url}
+          to={addLangQuery(T_AND_C.HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT.url)}
         >
           得易健康服務平台《個人資料收集聲明》
         </Link>
-        <Link target='_blank' underline='always' to={T_AND_C.PROMOTION_POLICY.url}>
+        <Link target='_blank' underline='always' to={T_AND_C.PROMOTION_POLICY.urlTnc}>
           「NEW330」優惠碼推廣（「推廣優惠」）條款及細則
         </Link>
         <Link target='_blank' underline='always' to={addLangQuery()}>
