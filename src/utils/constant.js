@@ -260,7 +260,8 @@ export const T_AND_C = {
   },
   PROMOTION_POLICY: {
     label: '「NEW330」優惠碼推廣（「推廣優惠」）條款及細則）',
-    url: 'https://take2health.net/whats-new/promotions/take2-rewards',
+    url: '/whats-new/promotions/take2-rewards',
+    urlTnc: '/whats-new/promotions/new330-tnc',
   },
   HEALTH_PLATFORM_PERSONAL_INFORMATION_COLLECTION_STATEMENT: {
     label: '得易健康服務平台《個人資料收集聲明》',
