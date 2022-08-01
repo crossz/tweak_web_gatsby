@@ -83,18 +83,13 @@ const ClinicalPapers = ({ data }) => {
               alt='clinical papers banner'
             ></StaticImage>
             <Box className={classes.bannerContent}>
-              <Box className={classes.bannerTitle}>
-                {t('our_technologies.clinical_papers.title')}
-              </Box>
+              <Box className={classes.bannerTitle}>{t('our_technologies.clinical_papers.title')}</Box>
               <Box>{t('our_technologies.clinical_papers.detail')}</Box>
             </Box>
           </Box>
           <Box className={classes.list}>
             {nodes?.map((node) => (
-              <ClinicPaperItem
-                key={node.id}
-                {...node?.frontmatter}
-              ></ClinicPaperItem>
+              <ClinicPaperItem key={node.id} {...node?.frontmatter}></ClinicPaperItem>
             ))}
           </Box>
         </Container>
@@ -118,7 +113,7 @@ export const query = graphql`
     }
     allMdx(
       limit: 1000
-      filter: { fileAbsolutePath: { regex: "/clinical-papers/" } }
+      filter: { fileAbsolutePath: { regex: "/clinical-papers/" }, frontmatter: { hide: { ne: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

@@ -1,16 +1,7 @@
 import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
 import { graphql, navigate } from 'gatsby'
-import {
-  makeStyles,
-  Container,
-  Box,
-  Dialog,
-  IconButton,
-  useTheme,
-  useMediaQuery,
-  Typography,
-} from '@material-ui/core'
+import { makeStyles, Container, Box, Dialog, IconButton, useTheme, useMediaQuery, Typography } from '@material-ui/core'
 import { StaticImage } from 'gatsby-plugin-image'
 import CloseIcon from '@images/icons/close.svg'
 import classnames from 'classnames'
@@ -121,26 +112,13 @@ const Post = ({ data }) => {
 
   return (
     <Box className={classes.root}>
-      <Dialog
-        open
-        fullScreen
-        onClose={handleClose}
-        aria-labelledby='close'
-        transitionDuration={0}
-      >
+      <Dialog open fullScreen onClose={handleClose} aria-labelledby='close' transitionDuration={0}>
         <Container disableGutters maxWidth='lg'>
           <Box className={classes.header}>
             <Box width={matches ? 100 : 145}>
-              <StaticImage
-                src='../assets/images/common/take2_full_color.png'
-                alt='Logo'
-              />
+              <StaticImage src='../assets/images/common/take2_full_color.png' alt='Logo' />
             </Box>
-            <IconButton
-              className={classnames(classes.btn, classes.closeBtn)}
-              onClick={handleClose}
-              aria-label='close'
-            >
+            <IconButton className={classnames(classes.btn, classes.closeBtn)} onClick={handleClose} aria-label='close'>
               <CloseIcon className={classes.icon} />
             </IconButton>
           </Box>
@@ -150,11 +128,7 @@ const Post = ({ data }) => {
                 {/* <Typography className={classes.type} variant='caption'>
                   {type}
                 </Typography> */}
-                <Typography
-                  className={classes.title}
-                  variant='h4'
-                  color='primary'
-                >
+                <Typography className={classes.title} variant='h4' color='primary'>
                   {title}
                 </Typography>
                 <Typography className={classes.company} variant='body1'>
@@ -166,9 +140,7 @@ const Post = ({ data }) => {
                     {formatLocal(date)}
                   </Box>
                 </Typography>
-                <Box className={classes.region}>
-                  {t(`options.career_regions.${region}`)}
-                </Box>
+                <Box className={classes.region}>{t(`options.career_regions.${region}`)}</Box>
               </Box>
               <Box pb={3}>
                 <MdxLayout>{mdx}</MdxLayout>
@@ -194,7 +166,7 @@ export const query = graphql`
         }
       }
     }
-    mdx: mdx(fields: { slug: { eq: $slug } }) {
+    mdx: mdx(fields: { slug: { eq: $slug } }, frontmatter: { hide: { ne: true } }) {
       id
       frontmatter {
         title

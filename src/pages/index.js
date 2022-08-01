@@ -5,17 +5,14 @@ import Layout from '@layouts/Layout'
 import { ImagesTranslationContext } from '@layouts/context'
 
 const Index = ({ data }) => {
-  const {
-    imagesTranslation,
-    heroBannerNodes,
-    promotionNodes,
-    healthTipsNodes,
-  } = data
+  const { imagesTranslation, heroBannerNodes, promotionNodes, healthTipsNodes } = data
 
   return (
     <Layout>
       <ImagesTranslationContext.Provider
-        value={{ images: imagesTranslation?.nodes }}
+        value={{
+          images: imagesTranslation?.nodes,
+        }}
       >
         <Homepage
           heroBannerNodes={heroBannerNodes?.nodes}
@@ -40,9 +37,7 @@ export const query = graphql`
         }
       }
     }
-    imagesTranslation: allFile(
-      filter: { sourceInstanceName: { eq: "imagesTranslation" } }
-    ) {
+    imagesTranslation: allFile(filter: { sourceInstanceName: { eq: "imagesTranslation" } }) {
       nodes {
         name
         childImageSharp {
@@ -81,6 +76,7 @@ export const query = graphql`
             color
             name
             link
+            id
             internal
           }
         }
@@ -90,7 +86,7 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/promotions/" }
-        frontmatter: { languages: { eq: $language } }
+        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
@@ -119,7 +115,7 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language } }
+        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

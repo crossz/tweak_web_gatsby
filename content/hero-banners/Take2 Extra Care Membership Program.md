@@ -23,11 +23,13 @@ buttons:
   color: primary
   name: common.learn_more
   link: https://take2health.net/products-and-services/take2-extra-care/
+  id: RW_Ehealth_HP_Top_Banner_EXCARE_KnowMore
 - template: hero-button
   variant: contained
   color: secondary
   name: common.book_now
   link: https://take2health.net/health-platform/signup
+  id: RW_Ehealth_HP_Top_Banner_EXCARE_EHEALTH
 reference: https://take2health.net/zh-HK/products-and-services/take2-extra-care/
 
 ---

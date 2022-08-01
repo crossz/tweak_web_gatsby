@@ -20,13 +20,7 @@ import CareerItem from '@components/CareerItem'
 import { Formik } from 'formik'
 import { oriSchema } from '@utils/schema'
 import { CAREER_REGIONS } from '@utils/constant'
-import {
-  EInputBase,
-  EFormLabel,
-  ESelect,
-  CancelButton,
-  EMenuItem,
-} from '@themes/components/ETextField'
+import { EInputBase, EFormLabel, ESelect, CancelButton, EMenuItem } from '@themes/components/ETextField'
 import { toast } from 'react-toastify'
 import { StaticImage } from 'gatsby-plugin-image'
 import ArrowIcon from '@images/icons/arrow.svg'
@@ -203,8 +197,7 @@ const JoinUs = ({ data, pageContext }) => {
   const classes = useStyles()
   const { t } = useTranslation()
   const { totalCount } = data?.allMdx?.pageInfo
-  const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } =
-    pageContext
+  const { humanPageNumber, nextPagePath, previousPagePath, numberOfPages } = pageContext
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const curPageCareers = data?.allMdx?.nodes || []
@@ -221,8 +214,7 @@ const JoinUs = ({ data, pageContext }) => {
       const res = await fetchWithTimeout(`/joinUs/add`, {
         values, // data can be `string` or {object}!
       })
-      if (res?.code !== 1000)
-        return Promise.reject(res?.message || t('status.submit.fail'))
+      if (res?.code !== 1000) return Promise.reject(res?.message || t('status.submit.fail'))
       return
     } catch (error) {
       return Promise.reject(t('status.submit.fail'))
@@ -233,22 +225,11 @@ const JoinUs = ({ data, pageContext }) => {
     <Layout>
       <Box className={classes.root}>
         <Container className={classes.box01} disableGutters maxWidth='md'>
-          <Container
-            className={classes.headerRoot}
-            disableGutters
-            maxWidth='sm'
-          >
-            <Typography
-              className={classes.box01Title}
-              variant='h4'
-              color='primary'
-            >
+          <Container className={classes.headerRoot} disableGutters maxWidth='sm'>
+            <Typography className={classes.box01Title} variant='h4' color='primary'>
               {t('about_us.join_us.title')}
             </Typography>
-            <Typography
-              variant={matches ? 'body2' : 'body1'}
-              color='textPrimary'
-            >
+            <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
               <Trans i18nKey='about_us.join_us.detail'></Trans>
             </Typography>
           </Container>
@@ -270,19 +251,13 @@ const JoinUs = ({ data, pageContext }) => {
               <Grid item xs={12} sm={8}>
                 <Box>
                   {careers?.map((career) => (
-                    <CareerItem
-                      key={career.id}
-                      slug={career?.fields?.slug}
-                      {...career.frontmatter}
-                    ></CareerItem>
+                    <CareerItem key={career.id} slug={career?.fields?.slug} {...career.frontmatter}></CareerItem>
                   ))}
                 </Box>
                 {numberOfPages > 1 && !searching && careers?.length > 0 && (
                   <Box className={classes.pagination}>
                     <Link
-                      className={classnames(
-                        humanPageNumber === 1 && classes.disableLink
-                      )}
+                      className={classnames(humanPageNumber === 1 && classes.disableLink)}
                       to={previousPagePath}
                       disabled
                     >
@@ -291,9 +266,7 @@ const JoinUs = ({ data, pageContext }) => {
                       </IconButton>
                     </Link>
                     <Box className={classes.pageInfo}>
-                      <Box className={classes.curPageBtn}>
-                        {humanPageNumber}
-                      </Box>
+                      <Box className={classes.curPageBtn}>{humanPageNumber}</Box>
                       <Box>of {numberOfPages}</Box>
                     </Box>
                     <Link to={nextPagePath}>
@@ -321,17 +294,10 @@ const JoinUs = ({ data, pageContext }) => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Box className={classes.box03Wrapper}>
-                  <Typography
-                    className={classes.box03Title}
-                    variant='h4'
-                    color='primary'
-                  >
+                  <Typography className={classes.box03Title} variant='h4' color='primary'>
                     {t('about_us.join_us.title')}
                   </Typography>
-                  <Typography
-                    variant={matches ? 'body2' : 'body1'}
-                    color='textPrimary'
-                  >
+                  <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
                     <Trans i18nKey='about_us.join_us.form_detail'></Trans>
                   </Typography>
                   <Formik
@@ -344,9 +310,7 @@ const JoinUs = ({ data, pageContext }) => {
                       if (loading) return
                       try {
                         setLoading(true)
-                        await handleFetch(
-                          omit(values, ['requiredArea', 'requiredName'])
-                        )
+                        await handleFetch(omit(values, ['requiredArea', 'requiredName']))
                         toast.success(t('status.submit.success'))
                         resetForm()
                       } catch (error) {
@@ -357,21 +321,10 @@ const JoinUs = ({ data, pageContext }) => {
                     }, 1000)}
                   >
                     {(props) => {
-                      const {
-                        values,
-                        handleSubmit,
-                        handleChange,
-                        touched,
-                        errors,
-                        setFieldValue,
-                      } = props
-                      const isError = (field) =>
-                        touched[field] && Boolean(errors[field])
+                      const { values, handleSubmit, handleChange, touched, errors, setFieldValue } = props
+                      const isError = (field) => touched[field] && Boolean(errors[field])
                       const errorText = (field) =>
-                        touched[field] &&
-                        errors[field] && (
-                          <FormHelperText>{errors[field]}</FormHelperText>
-                        )
+                        touched[field] && errors[field] && <FormHelperText>{errors[field]}</FormHelperText>
 
                       const CusCancelButton = ({ field }) => (
                         <CancelButton
@@ -384,17 +337,9 @@ const JoinUs = ({ data, pageContext }) => {
                       )
 
                       return (
-                        <form
-                          onSubmit={handleSubmit}
-                          className={classes.form}
-                          noValidate
-                        >
+                        <form onSubmit={handleSubmit} className={classes.form} noValidate>
                           <Box className={classes.formControlLine}>
-                            <FormControl
-                              fullWidth
-                              error={isError('name')}
-                              required
-                            >
+                            <FormControl fullWidth error={isError('name')} required>
                               <EFormLabel>{t('form.contact.label')}</EFormLabel>
                               <EInputBase
                                 id='contact-name'
@@ -409,12 +354,7 @@ const JoinUs = ({ data, pageContext }) => {
                             </FormControl>
                           </Box>
                           <Box className={classes.formControlLine}>
-                            <FormControl
-                              fullWidth
-                              error={isError('email')}
-                              required
-                              className={classes.formControl}
-                            >
+                            <FormControl fullWidth error={isError('email')} required className={classes.formControl}>
                               <EFormLabel>{t('form.email.label')}</EFormLabel>
                               <EInputBase
                                 id='email'
@@ -422,21 +362,12 @@ const JoinUs = ({ data, pageContext }) => {
                                 margin='none'
                                 value={values.email}
                                 onChange={handleChange}
-                                placeholder={
-                                  isError('email')
-                                    ? ''
-                                    : 'example@take2health.com'
-                                }
+                                placeholder={isError('email') ? '' : 'example@take2health.com'}
                                 endAdornment={<CusCancelButton field='email' />}
                               />
                               {errorText('email')}
                             </FormControl>
-                            <FormControl
-                              fullWidth
-                              error={isError('area')}
-                              required
-                              className={classes.formControl}
-                            >
+                            <FormControl fullWidth error={isError('area')} required className={classes.formControl}>
                               <EFormLabel>{t('form.region.label')}</EFormLabel>
                               <ESelect
                                 displayEmpty
@@ -447,11 +378,7 @@ const JoinUs = ({ data, pageContext }) => {
                                 onChange={handleChange}
                               >
                                 {CAREER_REGIONS?.map((region) => (
-                                  <EMenuItem
-                                    key={region.value}
-                                    value={region.value}
-                                    disabled={!region.value}
-                                  >
+                                  <EMenuItem key={region.value} value={region.value} disabled={!region.value}>
                                     {t(region.label)}
                                   </EMenuItem>
                                 ))}
@@ -467,17 +394,9 @@ const JoinUs = ({ data, pageContext }) => {
                             className={classes.submitBtn}
                             disabled={reCapStatus === 1}
                           >
-                            {loading ? (
-                              <CircularProgress color='inherit' size={24} />
-                            ) : (
-                              t('common.submit')
-                            )}
+                            {loading ? <CircularProgress color='inherit' size={24} /> : t('common.submit')}
                           </Button>
-                          {reCapStatus > 0 && (
-                            <ReCaptcha
-                              onChange={(value) => setReCapStatus(value)}
-                            ></ReCaptcha>
-                          )}
+                          {reCapStatus > 0 && <ReCaptcha onChange={(value) => setReCapStatus(value)}></ReCaptcha>}
                         </form>
                       )
                     }}
@@ -508,7 +427,7 @@ export const query = graphql`
     allMdx(
       filter: {
         fileAbsolutePath: { regex: "/join-us/" }
-        frontmatter: { languages: { eq: $language } }
+        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
       skip: $skip
@@ -531,7 +450,7 @@ export const query = graphql`
       }
     }
     allCareer: allMdx(
-      filter: { fileAbsolutePath: { regex: "/join-us/" } }
+      filter: { fileAbsolutePath: { regex: "/join-us/" }, frontmatter: { hide: { ne: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

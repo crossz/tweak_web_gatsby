@@ -6,7 +6,9 @@
     "rehealth",
     "scroller"
   ],
-  "i18n-ally.localesPaths": ["src/assets/locales"],
+  "i18n-ally.localesPaths": [
+    "src/assets/locales"
+  ],
   "i18n-ally.keystyle": "nested",
   "i18n-ally.sourceLanguage": "zh-HK",
   "i18n-ally.displayLanguage": "zh-HK",
@@ -178,5 +180,6 @@
     "calc(50% - ${theme.spacing(4 / 2)}px)",
     " ?",
     "\n          Take2 Prophecy™\n          "
-  ]
+  ],
+  "prettier.printWidth": 120
 }
