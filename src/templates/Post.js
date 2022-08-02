@@ -10,7 +10,7 @@ import Links from '@components/WhatsNew/Links'
 import { StaticImage } from 'gatsby-plugin-image'
 import { POST_TYPES } from '@utils/constant'
 import Layout from '@layouts/Layout'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, useI18next } from 'gatsby-plugin-react-i18next'
 import Link from '@components/Link'
 import { formatLocal } from '@utils/moment'
 
@@ -151,8 +151,12 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const { t } = useTranslation()
   const classes = useStyles()
   const menu = useMenu()
+  const { navigate } = useI18next()
 
-  if (!data?.mdx) return null
+  if (!data?.mdx) {
+    navigate(`/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`, { replace: true })
+    return null
+  }
 
   const mdx = data?.mdx?.body
   const { date, cpTitle, title, type } = data?.mdx?.frontmatter
