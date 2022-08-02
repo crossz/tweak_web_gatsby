@@ -153,7 +153,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const menu = useMenu()
 
   if (!data?.mdx) {
-    navigate(`/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`)
+    navigate(`/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`, { replace: true })
     return null
   }
 
