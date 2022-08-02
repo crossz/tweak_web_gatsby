@@ -5,9 +5,10 @@ date: 2021-11-01T00:00:00.000+08:00
 title: Take2 Health 聯動CXA集團 提供創新員工醫療福利計劃
 detail: Take2 Prophecy™ 早期鼻咽癌篩查及相關套餐於2020年11月正式進駐CXA員工福利平台，為本港用戶提供全新的身體檢查服務。
 href: ''
-slug: ''
+slug: partner-CXA
 languages:
 - zh-HK
+hide: false
 
 ---
 Take2 Prophecy**™** 早期鼻咽癌篩查及相關套餐於2020年11月正式進駐CXA員工福利平台，為本港用戶提供全新的身體檢查服務。
