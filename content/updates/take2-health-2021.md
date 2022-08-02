@@ -8,7 +8,7 @@ detail: 由凝動香港體育基金主辦的首屆《企業「一」起動》嘉
 href: ''
 slug: sports-hour-company-2021
 languages:
-- zh-CN
+- zh-HK
 hide: false
 
 ---
