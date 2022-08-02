@@ -10,7 +10,7 @@ detail: Take2 Health and Yourgene Health have reached a partnership to offer the
   Take2 Prophecy™ Test for Nasopharyngeal Cancer in Taiwan region, as well as to establish
   a medical network for the collection of clinical specimens.
 href: ''
-slug: teaming-with-yourgene
+slug: partner-yourgene
 hide: false
 
 ---
