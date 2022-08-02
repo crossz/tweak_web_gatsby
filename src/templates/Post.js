@@ -1,6 +1,6 @@
 import React from 'react'
 import MdxLayout from '@layouts/MdxLayout'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
 import MoreUpdates from '@components/WhatsNew/MoreUpdates'
 import { makeStyles, alpha, Typography, Container, Box, Breadcrumbs, Hidden } from '@material-ui/core'
@@ -153,7 +153,7 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const menu = useMenu()
 
   if (!data?.mdx) {
-    window.location.href = `/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`
+    navigate(`/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`)
     return null
   }
 
