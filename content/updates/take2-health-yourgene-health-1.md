@@ -6,7 +6,7 @@ languages:
 cover: []
 date: 2020-11-02T00:00:00+08:00
 title: " Take2 Health 和 Yourgene Health 达成合作　将现行服务网络扩展至台湾 地区"
-detail: Take2 Health 和 Yourgene Health达成合作关系，为台湾地区民众提供经临床实证的Take2 Prophecy™ 早期鼻咽癌筛查，并建立采集临床样本的医疗网络。
+detail: Take2 Health 和 Yourgene Health 达成合作关系，为台湾地区民众提供经临床实证的Take2 Prophecy™ 早期鼻咽癌筛查，并建立采集临床样本的医疗网络。
 href: ''
 slug: partner-yourgene
 
