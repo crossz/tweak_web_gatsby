@@ -12,7 +12,6 @@ href: ''
 slug: business-wire
 
 ---
-
 中国香港--([BUSINESS WIRE](https://www.businesswire.com/))--TAKE2 HEALTH LTD. 「得易健康有限公司」 (“TAKE2”)，一家总部位于中国香港的医疗健康科技企业，今天宣布与GRAIL, Inc. 就早期鼻咽癌检测相关的一系列知识产权达成协议，TAKE2获得相关技术的全球独家授权。 TAKE2创办人包括香港中文大学的卢煜明教授、赵慧君教授和陈君赐教授。 TAKE2致力推动医疗健康发展，让最创新的医疗健康技术发明在中国以及亚州地区造福普罗大众。
 
 TAKE2的首项业务将致力于开发及产业化早期鼻咽癌的检测技术，该技术由卢煜明教授与其团队研发，并于较早前授权予GRAIL, Inc.。 2017年，卢教授的研究团队发表了一项被广泛报道的研究，该划时代的研究成果证实了通过分析游离DNA，可在未有病征前便有效地检测出早期鼻咽癌。该研究更获全球顶尖医学期刊《新英伦医学杂志》(The New England Journal of Medicine) 选为「2017年度十大最瞩目研究」。
@@ -29,10 +28,8 @@ GRAIL是一家以在早期可治愈阶段诊断和筛查癌症为使命的生命
 
 <br/>
 
-### **Contacts**
+## **Contacts**
 
-Dennis Lo
-
-TAKE2
-
-Contact_us@take2.health
+Dennis Lo  
+TAKE2  
+[Contact_us@take2.health](mailto:Contact_us@take2.health)
