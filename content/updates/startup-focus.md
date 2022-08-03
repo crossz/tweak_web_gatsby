@@ -1,5 +1,5 @@
 ---
-type: industry_information
+type: company_trends
 hide: false
 languages:
 - zh-CN
