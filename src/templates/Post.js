@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MdxLayout from '@layouts/MdxLayout'
 import { graphql } from 'gatsby'
 import MorePosts from '@components/WhatsNew/MorePosts'
@@ -153,11 +153,12 @@ const Post = ({ data, pageContext, location: { href } }) => {
   const menu = useMenu()
   const { navigate } = useI18next()
 
-  if (!data?.mdx) {
-    navigate(`/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`, { replace: true })
-    return null
-  }
-
+  useEffect(() => {
+    if (!data?.mdx) {
+      navigate(`/whats-new/${sectionPath === 'campaign-page-posts' ? 'campaign/' : sectionPath}`, { replace: true })
+    }
+  }, [data?.mdx])
+  if (!data?.mdx) return null
   const mdx = data?.mdx?.body
   const { date, cpTitle, title, type } = data?.mdx?.frontmatter
   const morePostsNodes = data?.morePosts?.nodes
