@@ -7,9 +7,10 @@ detail: Starting from November 2020, the Take2 Prophecy™ Test for Nasopharynge
   and other health assessment services officially joined the CXA’s wellness provider
   network, providing the innovative medical solution to Hong Kong users.
 href: ''
-slug: ''
+slug: partner-CXA
 languages:
 - en
+hide: false
 
 ---
 Starting from November 2020, the Take2 Prophecy™ Test for Nasopharyngeal Cancer and other health assessment services officially joined the CXA’s wellness provider network, providing the innovative medical solution to Hong Kong users.

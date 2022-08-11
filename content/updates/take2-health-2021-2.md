@@ -6,9 +6,10 @@ date: 2021-09-10T00:00:00.000+08:00
 title: Take2 Health获选为2021年 凝动香港体育基金《企业「一」起动》嘉许企业
 detail: 由凝动香港体育基金主办的首届《企业「一」起动》嘉许计划及年度优秀实践案例典礼于2021年9月9日假柴湾青年广场圆满举行。Take2 Health（下称：我司）获选为受嘉许企业之一，我司对此感到十分荣幸。
 href: ''
-slug: ''
+slug: sports-hour-company-2021
 languages:
 - zh-CN
+hide: false
 
 ---
 ![](../images/award1.jpg)

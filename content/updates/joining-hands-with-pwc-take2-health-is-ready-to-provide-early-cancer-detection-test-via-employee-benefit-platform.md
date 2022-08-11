@@ -9,9 +9,10 @@ detail: Take2 Health has reached a collaboration with PwC that starting from 2 D
   Test for Nasopharyngeal Cancer in designated medical service providers through their
   corporate welfare platform PwC Wellness Reimagined.
 href: ''
-slug: ''
+slug: partner-pwc
 languages:
 - en
+hide: false
 
 ---
 Take2 Health has reached a collaboration with PwC that starting from 2 December 2021, PwC employees can enjoy the privileged price for taking the Take2 Prophecy™ Test for Nasopharyngeal Cancer in designated medical service providers through their corporate welfare platform PwC Wellness Reimagined.
