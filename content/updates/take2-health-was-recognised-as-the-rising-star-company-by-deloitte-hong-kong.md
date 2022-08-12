@@ -7,9 +7,10 @@ title: Take2 Health was Recognised as the Rising Star Company by Deloitte Hong K
 detail: Take2 Health was honoured to be named the Rising Star Company in the 2021
   Deloitte Hong Kong Technology Fast 20 (#TF20) program on Dec 15, 2021.
 href: ''
-slug: ''
+slug: rising-star-company-2021
 languages:
 - en
+hide: false
 
 ---
 ![](../images/untitled-design-19.png)

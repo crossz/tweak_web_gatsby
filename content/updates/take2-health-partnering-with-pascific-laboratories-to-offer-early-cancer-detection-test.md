@@ -3,14 +3,15 @@ type: industry_information
 languages:
 - en
 cover: []
-date: 2021-07-26T00:00:00+08:00
+date: 2021-07-26T00:00:00.000+08:00
 title: Take2 Health Partnering with Pascific Laboratories to Offer Early Cancer Detection
   Test
 detail: Take2 Health and Pascific Laboratories are working together to offer the Take2
   Prophecy™ Test for Nasopharyngeal Cancer in the Philippines, as the first step of
   rolling out the operation.
 href: ''
-slug: ''
+slug: partner-pascific-laboratories
+hide: false
 
 ---
 Take2 Health (“Take2”) and Pascific Laboratories are working together to offer the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“NPC”) in the Philippines, as the first step of rolling out the operation.

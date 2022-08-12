@@ -1,16 +1,17 @@
 ---
 type: industry_information
 cover: []
-date: 2021-10-01T00:00:00+08:00
+date: 2021-10-01T00:00:00.000+08:00
 title: Take2 Health and KPMG Reached Partnership to Enlist the Take2 Prophecy™ as
   Employee Benefit
 detail: From 1 October 2021 onwards, KPMG employees could choose the Take2 Prophecy™
   Test for Nasopharyngeal Cancer and be eligible for reimbursement under their employees’
   medical check-up benefit.
 href: ''
-slug: ''
+slug: partner-kpmg
 languages:
 - en
+hide: false
 
 ---
 From 1 October 2021 onwards, KPMG employees could choose the Take2 Prophecy™ Test for Nasopharyngeal Cancer and be eligible for reimbursement under their employees’ medical check-up benefit.

@@ -4,7 +4,7 @@ languages:
 - en
 cover:
 - "../images/wechat-image_20220718085926.jpg"
-date: 2022-07-19T00:00:00+08:00
+date: 2022-07-19T00:00:00.000+08:00
 title: Awarded as The Company with the Most Investment Potential & The Top Breakthrough
   Innovation
 detail: Take2 Health are privileged to have participated in the first ZAODX World
@@ -12,7 +12,8 @@ detail: Take2 Health are privileged to have participated in the first ZAODX Worl
   The Company with the Most Investment Potential (金篩獎‧最具投資價值潛力企業) as well as The Top
   Breakthrough Innovation (金篩獎‧突破性創新獎)
 href: ''
-slug: ''
+slug: ZAODX2022
+hide: false
 
 ---
 We are privileged to have participated in the first ZAODX World Conference on Early Detection of Cancer, and are very honoured to be awarded as The Company with the Most Investment Potential (金篩獎‧最具投資價值潛力企業) as well as The Top Breakthrough Innovation (金篩獎‧突破性創新獎)

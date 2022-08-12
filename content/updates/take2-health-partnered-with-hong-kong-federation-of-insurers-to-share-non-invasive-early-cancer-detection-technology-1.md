@@ -1,16 +1,17 @@
 ---
 type: industry_information
 cover: []
-date: 2021-09-17T00:00:00+08:00
+date: 2021-09-17T00:00:00.000+08:00
 title: Partnered with HK Federation of Insurers to Share Non-invasive Early Cancer
   Detection Technology
 detail: Supported by the Hong Kong Federation of Insurers, an industry sharing themed
   “Screening for Early Cancers by Circulating DNA Analysis”, was successfully held
   on 17 September 2021.
 href: ''
-slug: ''
+slug: hkfi-seminar
 languages:
 - en
+hide: false
 
 ---
 Supported by the Hong Kong Federation of Insurers (“HKFI”), an industry sharing themed “Screening for Early Cancers by Circulating DNA Analysis”, was successfully held on 17 September 2021. The online seminar attracted more than 180 senior managements from 37 insurance companies and led to heated discussions.
