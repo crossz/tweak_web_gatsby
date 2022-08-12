@@ -11,10 +11,11 @@ detail: Mr. Cheung Tat-ming, a Nasopharyngeal Cancer (NPC) survivor, had experie
   the risk of NPC. It can strike anyone at any age. Therefore, everyone must be vigilant
   to NPC and consider taking the early NPC detection test as a precaution.
 href: https://take2health.net/whats-new/campaign/
-slug: ''
+slug: go-live-again
 cover:
 - "../images/244344811_23849084159150722_5937673592520422583_n-png.jpg"
 languages:
 - en
+hide: false
 
 ---
