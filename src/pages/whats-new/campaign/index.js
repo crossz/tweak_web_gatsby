@@ -65,9 +65,9 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
-          pdf {
-            publicURL
-          }
+          # pdf {
+          #   publicURL
+          # }
         }
       }
     }
@@ -100,9 +100,9 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
-          pdf {
-            publicURL
-          }
+          # pdf {
+          #   publicURL
+          # }
         }
       }
     }
@@ -127,9 +127,9 @@ export const query = graphql`
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
             }
           }
-          pdf {
-            publicURL
-          }
+          # pdf {
+          #   publicURL
+          # }
         }
       }
     }
