@@ -8,9 +8,10 @@ detail: 'Since March 2021, the Take2 Prophecy™ Test for Nasopharyngeal Cancer 
   related health assessment services are available on HSBC Life Benefits+ as one of
   the new employee benefits. '
 href: ''
-slug: ''
+slug: launch-on-hsbc-life-benefit
 languages:
 - en
+hide: false
 
 ---
 Since March 2021, the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“the Test”) and related health assessment services are available on HSBC Life Benefits+ as one of the new employee benefits. At present, all employees of HSBC, Hang Seng Bank and other subsidiaries of the HSBC Group can access the Test with a special offer on their one-stop group medical benefits platform.

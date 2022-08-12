@@ -10,9 +10,10 @@ detail: The Take2 Prophecy™ Test for Nasopharyngeal Cancer is officially launc
   insurance clients can earn points through their health metrics for different rewards,
   including the Take2 Prophecy™ Test for NPC.
 href: ''
-slug: ''
+slug: launch-on-boc-live-young
 languages:
 - en
+hide: false
 
 ---
 ![](../images/untitled-design-31.png)

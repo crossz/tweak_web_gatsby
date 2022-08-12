@@ -3,7 +3,7 @@ type: industry_information
 languages:
 - en
 cover: []
-date: 2020-10-15T00:00:00+08:00
+date: 2020-10-15T00:00:00.000+08:00
 title: Take2 Health and Pantai Premier Pathology Joining Hands to Promote Early NPC
   Detection
 detail: Take2 Health and Pantai Premier Pathology joined hands to offer the Take2
@@ -11,7 +11,8 @@ detail: Take2 Health and Pantai Premier Pathology joined hands to offer the Take
   NPC patients and thereby enable timely diagnosis and treatments for patients in
   Malaysia.
 href: ''
-slug: ''
+slug: partner-pantai-premier-pathology
+hide: false
 
 ---
 Take2 Health (“Take2”) and Pantai Premier Pathology joined hands to offer the Take2 Prophecy™ Test for Nasopharyngeal Cancer (“NPC”) in Malaysia, aiming to identify early-stage NPC patients and thereby enable timely diagnosis and treatments for patients in Malaysia.

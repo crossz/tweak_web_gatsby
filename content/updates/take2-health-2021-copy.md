@@ -8,9 +8,10 @@ title: Take2 Health is Honoured to be Awarded in the 2021 Inaugural SportsHour C
 detail: Take2 Health is honoured to receive the Inaugural SportsHour Company Scheme
   Award which is organised by the InspiringHK Sports Foundation.
 href: ''
-slug: ''
+slug: sports-hour-company-2021
 languages:
 - en
+hide: false
 
 ---
 ![](../images/award1.jpg)
