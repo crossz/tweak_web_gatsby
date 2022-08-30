@@ -123,7 +123,7 @@ const PromotionContent = ({ whiteBg }) => {
             >
               {t('cp_v2.promotion.price')}
             </Box>
-            {!isMobile &&
+            {/* {!isMobile &&
               (isTable || (isEn && whiteBg) ? (
                 <Box
                   fontWeight='fontWeightMedium'
@@ -141,10 +141,10 @@ const PromotionContent = ({ whiteBg }) => {
                 >
                   {t('cp_v2.promotion.tip')}
                 </Box>
-              ))}
+              ))} */}
           </Typography>
         </Box>
-        {isMobile && (
+        {/* {isMobile && (
           <Box
             display='inline-block'
             fontWeight='fontWeightMedium'
@@ -154,7 +154,7 @@ const PromotionContent = ({ whiteBg }) => {
           >
             {t('cp_v2.promotion.tip')}
           </Box>
-        )}
+        )} */}
       </Box>
       {whiteBg && (
         <Button
