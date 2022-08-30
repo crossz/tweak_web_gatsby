@@ -1,6 +1,6 @@
 import { MOBILE_REGEX_HK, MOBILE_REGEX_CN, MOBILE_REGEX_MO } from './regex'
 import { keyBy } from 'lodash-es'
-export const PROMOTION_CODE = 'NEW330'
+export const PROMOTION_CODE = '2022NEW'
 export const HEADER_HEIGHT = 10.5
 export const MOBILE_HEADER_HEIGHT = 7.5
 export const POST_ASPECT_RATIO = 2
@@ -259,7 +259,7 @@ export const T_AND_C = {
     url: 'https://take2health.net/health-platform/agreement/3',
   },
   PROMOTION_POLICY: {
-    label: '「NEW330」優惠碼推廣（「推廣優惠」）條款及細則）',
+    label: '「2022NEW」優惠碼推廣（「推廣優惠」）條款及細則）',
     url: '/whats-new/promotions/take2-rewards',
     urlTnc: '/whats-new/promotions/new330-tnc',
   },
