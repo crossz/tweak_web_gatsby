@@ -102,8 +102,6 @@ const SectionBanner = () => {
   useEffect(() => {
     if (getDomTop(pointerRef.current) < document.documentElement.scrollTop) scrollTo('#section-tabs')
   }, [originalPath])
-  console.log(menu)
-
   const curMenuItem = useMemo(() => menu?.find((item) => originalPath.includes(item.path)), [menu, originalPath])
 
   const curMenuItemPath = useMemo(() => {
