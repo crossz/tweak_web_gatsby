@@ -7,10 +7,6 @@
     "titleColor": "primary.main",
     "sections": [
       {
-        "title": "menu.cancer_screen_package",
-        "path": "/whats-new/cancer-screen-package/"
-      },
-      {
         "title": "menu.promotions",
         "path": "/whats-new/promotions/"
       },
@@ -55,6 +51,10 @@
       {
         "title": "menu.take2_prophecy",
         "path": "/products-and-services/take2-prophecy/"
+      },
+      {
+        "title": "menu.cancer_screen_package",
+        "path": "/products-and-services/cancer-screen-package/"
       },
       {
         "title": "menu.take2_extra_care",
