@@ -7,6 +7,10 @@
     "titleColor": "primary.main",
     "sections": [
       {
+        "title": "menu.cancer_screen_package",
+        "path": "/whats-new/cancer-screen-package/"
+      },
+      {
         "title": "menu.promotions",
         "path": "/whats-new/promotions/"
       },
