@@ -18,10 +18,10 @@ import ArrowIcon from '@images/icons/arrow.svg'
 import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem'
 import classnames from 'classnames'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Layout from '@layouts/Layout'
 import useLangQuery from '@hooks/useLangQuery'
-
+import ErrorIcon from '@material-ui/icons/Error'
 const steps = [
   {
     label: 'products_and_services.take2_prophecy.process.0',
@@ -117,6 +117,26 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(13),
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(5),
+    },
+  },
+  sectionOneBg: {
+    borderRadius: theme.spacing(1.5),
+    height: 294,
+    paddingTop: theme.spacing(5),
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(-32),
+    },
+  },
+  subBox: {
+    width: theme.spacing(46),
+    background: '#fff',
+    height: theme.spacing(8.75),
+    borderRadius: 10,
+    marginTop: theme.spacing(4),
+    '& path': {
+      fill: theme.palette.error.main,
     },
   },
   bannerWrapper: {
@@ -356,6 +376,23 @@ const CancerScreen = () => {
               </Box>
             </Box>
             <Box className={classes.sectionOneWrapper}>
+              <Box className={classes.sectionOneBg}>
+                <Typography variant='h4'>
+                  <Box textAlign='center'> {t('products_and_services.cancer_screen_package.subtitle')}</Box>
+                </Typography>
+                <Box display='flex' justifyContent='center'>
+                  <Box className={classes.subBox} mr={2} color='primary.main'>
+                    <ErrorIcon color='red' />
+                    <Trans i18nKey={t('products_and_services.cancer_screen_package.sub_detail1')}>
+                      ..<sup>1</sup>..<sup>2</sup>..
+                    </Trans>
+                  </Box>
+                  <Box className={classes.subBox} color='primary.main'>
+                    <ErrorIcon />
+                    {t('products_and_services.cancer_screen_package.sub_detail2')}
+                  </Box>
+                </Box>
+              </Box>
               <Box className={classes.bannerWrapper}>
                 <StaticImage
                   className={classes.bannerBg}
