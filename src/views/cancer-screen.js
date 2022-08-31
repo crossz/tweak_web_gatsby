@@ -137,16 +137,20 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(-32),
+      height: 450,
+      padding: theme.spacing(3, 3),
     },
   },
   sectionSubBg: {
     borderRadius: theme.spacing(1.5),
-    paddingTop: theme.spacing(7),
-    paddingLeft: theme.spacing(8.5),
-    paddingBottom: theme.spacing(10),
+    marginTop: theme.spacing(7),
+    marginLeft: theme.spacing(8.5),
+    marginBottom: theme.spacing(10),
     backgroundColor: 'rgb(248, 249, 250)',
     [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(37.5),
       marginBottom: theme.spacing(-32),
+      marginLeft: 0,
     },
   },
   subBox: {
@@ -162,6 +166,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3, 2),
     '& path': {
       fill: theme.palette.error.main,
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(12),
+      width: '100%',
     },
   },
   bannerWrapper: {
@@ -350,7 +358,7 @@ const useStyles = makeStyles((theme) => ({
   },
   prophecyImgWrapper: {
     overflow: 'hidden',
-    width: 400,
+    width: 350,
     marginRight: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {
       marginRight: 0,
@@ -373,7 +381,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.caption.fontSize,
     padding: theme.spacing(0, 6),
     [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(2),
+      marginTop: theme.spacing(10),
       padding: 0,
     },
   },
@@ -413,9 +421,13 @@ const CancerScreen = () => {
             <Box className={classes.sectionOneWrapper}>
               <Box className={classes.sectionOneBg}>
                 <Typography variant='h4'>
-                  <Box textAlign='center'> {t('products_and_services.cancer_screen_package.subtitle')}</Box>
+                  <Box textAlign='center' lineHeight={1.5}>
+                    {t('products_and_services.cancer_screen_package.subtitle0')}
+                    {matches ? <br /> : null}
+                    {t('products_and_services.cancer_screen_package.subtitle')}
+                  </Box>
                 </Typography>
-                <Box display='flex' justifyContent='center'>
+                <Box display='flex' justifyContent='center' flexDirection={matches ? 'column' : 'row'}>
                   <Box className={classes.subBox} mr={2} color='primary.main' justifyContent='center'>
                     <ErrorIcon color='red' />
                     <Box ml={1}>
@@ -436,26 +448,44 @@ const CancerScreen = () => {
                 </Box>
               </Box>
               <Box className={classes.sectionSubBg}>
-                <Typography variant='h4' color='primary'>
-                  <Box> Take2 Health提供的癌症篩查套餐 </Box>
-                  <Box mb={8}> 涵蓋了多種本港常見癌症的腫瘤指標篩查，包括：</Box>
-                </Typography>
-                <Box display='flex' flexDirection='row' justifyContent='space-around'>
-                  <Box lineHeight={3}>
+                {!matches && (
+                  <Typography variant='h4' color='primary'>
+                    <Box>{t('products_and_services.cancer_screen_package.pachages')} </Box>
+                    <Box mb={8}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
+                  </Typography>
+                )}
+                <Box display='flex' flexDirection={matches ? 'column-reverse' : 'row'} justifyContent='space-around'>
+                  <Box lineHeight={3} ml={matches ? 2 : 0}>
                     {compass.map((item) => (
                       <Box>
                         <TitleDot />
                         <Box display='flex' alignItems='center'>
-                          <Box fontSize='20px' fontWeight={400}>
+                          <Box fontSize={matches ? '13px' : '20px'} fontWeight={400} flexShrink='0' color='#1A285D'>
                             {item.name}
                           </Box>
-                          <Box color='grey.800'>{item.object}</Box>
+                          <Box color='grey.800' flexShrink='0'>
+                            {item.object}
+                          </Box>
                         </Box>
                       </Box>
                     ))}
                   </Box>
-                  <Box width={337}>
-                    <img src={img} height={337} />
+                  <Box width={!matches ? 337 : '100%'}>
+                    <Box mr={matches ? 0 : 3}>
+                      <StaticImage
+                        className={classes.prophecyImgWrapper}
+                        imgClassName={classes.prophecyImg}
+                        src='../assets/imagesTranslation/cancer_screen_Hk.png'
+                        alt='take2 prophecy 01'
+                      ></StaticImage>{' '}
+                    </Box>
+
+                    {matches && (
+                      <Typography variant='h4' color='primary'>
+                        <Box mt={3}>{t('products_and_services.cancer_screen_package.pachages')} </Box>
+                        <Box mb={3}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
+                      </Typography>
+                    )}
                     {/* <ImageTranslation filename='cancer_screen' alt='cancer_screen_Hk'></ImageTranslation> */}
                   </Box>
                 </Box>
@@ -465,32 +495,35 @@ const CancerScreen = () => {
                   </Box>
                 </Box>
               </Box>
-              <Typography variant='h4'>
-                <Box textAlign='center' color='secondary.main'>
-                  {t('products_and_services.cancer_screen_package.subdetail4')}
-                </Box>
-              </Typography>
-              <Grid className={classes.btnWrapper} container spacing={2} justifyContent='center'>
-                <Grid item xs={matches ? 6 : 'auto'}>
-                  <Button
-                    variant='outlined'
-                    color='primary'
-                    href={addLangQuery()}
-                    target='_blank'
-                    fullWidth={matches}
-                    className={classes.btn}
-                  >
-                    {t('common.book_now')}
-                  </Button>
-                </Grid>
-                <Grid item xs={matches ? 6 : 'auto'}>
-                  <Link to='/service-location/'>
-                    <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
-                      {t('common.service_location')}
+              <Box mt={matches ? 40 : 0}>
+                <Typography variant='h4'>
+                  <Box textAlign='center' color='secondary.main'>
+                    {t('products_and_services.cancer_screen_package.subdetail4')}
+                  </Box>
+                </Typography>
+                <Grid className={classes.btnWrapper} container spacing={2} justifyContent='center'>
+                  <Grid item xs={matches ? 6 : 'auto'}>
+                    <Button
+                      variant='outlined'
+                      color='primary'
+                      href={addLangQuery()}
+                      target='_blank'
+                      fullWidth={matches}
+                      className={classes.btn}
+                    >
+                      {t('common.book_now')}
                     </Button>
-                  </Link>
+                  </Grid>
+                  <Grid item xs={matches ? 6 : 'auto'}>
+                    <Link to='/service-location/'>
+                      <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
+                        {t('common.service_location')}
+                      </Button>
+                    </Link>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Box>
+
               <Box className={classes.bannerWrapper} mt={10}>
                 <StaticImage
                   className={classes.bannerBg}
@@ -556,10 +589,13 @@ const CancerScreen = () => {
                   })}
                 </Box>
 
-                <Box className={classes.reportTip} my={3}>
+                <Box className={classes.reportTip} my={3} textAlign={matches ? 'center' : null} mx={matches ? 2 : 0}>
                   {t('common.notice')} <br />
-                  {t('products_and_services.take2_prophecy.notice')}
+                  {matches && <br />}
+                  {t('products_and_services.take2_prophecy.notice')} {matches && <br />} {matches && <br />}
+                  {t('products_and_services.cancer_screen_package.contact')}
                   <br />
+                  {matches && <br />}
                   <sup>#</sup>
                   {t('products_and_services.take2_prophecy.covid_notice')}
                 </Box>
@@ -568,58 +604,54 @@ const CancerScreen = () => {
           </Container>
         </Box>
       </Container>
-      <Box display='flex' justifyContent='center'>
-        <Box>
-          <StaticImage
-            className={classes.prophecyImgWrapper}
-            imgClassName={classes.prophecyImg}
-            src='../assets/imagesTranslation/cancer_screen_Hk.png'
-            alt='take2 prophecy 01'
-          ></StaticImage>
-        </Box>
+      <Box display='flex' justifyContent='center' flexDirection={matches ? 'column' : 'row'} alignItems='center'>
+        <StaticImage
+          className={classes.prophecyImgWrapper}
+          imgClassName={classes.prophecyImg}
+          src='../assets/imagesTranslation/cancer_screen_Hk.png'
+          alt='take2 prophecy 01'
+        ></StaticImage>
         <Box ml={matches ? 0 : 5}>
           <Typography variant='h5' component='div'>
-            <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
+            <Box pt={matches ? 5 : 14} color='prophecyPrimary.main' ml={matches ? -10 : 0}>
               {t('common.book_detection')}
             </Box>
-            <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
+            <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7} ml={matches ? -10 : 0}>
               <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
                 {t('products_and_services.take2_prophecy.do_you_have')}
-                <Hidden smUp>
-                  <br />
-                </Hidden>
-                {t('products_and_services.take2_prophecy.action')}
               </Typography>
             </Box>
           </Typography>
-          <Grid className={classes.btnWrapper} container spacing={2}>
-            <Grid item xs={matches ? 6 : 'auto'}>
-              <Button
-                variant='outlined'
-                color='primary'
-                href={addLangQuery()}
-                target='_blank'
-                fullWidth={matches}
-                className={classes.btn}
-              >
-                {t('common.book_now')}
-              </Button>
-            </Grid>
-            <Grid item xs={matches ? 6 : 'auto'}>
-              <Link to='/service-location/'>
-                <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
-                  {t('common.service_location')}
-                </Button>
-              </Link>
-            </Grid>
-          </Grid>
         </Box>
-      </Box>
-      <Box className={classes.reportTip} mt={10} mb={12} ml={20}>
+      </Box>{' '}
+      <Grid className={classes.btnWrapper} container spacing={2} justifyContent='center'>
+        <Grid item xs={matches ? 5 : 'auto'}>
+          <Button
+            variant='outlined'
+            color='primary'
+            href={addLangQuery()}
+            target='_blank'
+            fullWidth={matches}
+            className={classes.btn}
+          >
+            {t('common.book_now')}
+          </Button>
+        </Grid>
+        <Grid item xs={matches ? 5 : 'auto'}>
+          <Link to='/service-location/'>
+            <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
+              {t('common.service_location')}
+            </Button>
+          </Link>
+        </Grid>
+      </Grid>
+      <Box className={classes.reportTip} mb={matches ? 3 : 12} ml={matches ? 3 : 20} mt={10}>
         {t('cp_v2.contact_and_reference.paragraphs.4')} <br />
-        1.“Cancer Factsheet.” World Health Organisation, February 2022, from
+        {matches ? <br /> : null}
+        1. “Cancer Factsheet.” World Health Organisation, February 2022, from
         https://www.who.int/news-room/fact-sheets/detail/cancer. Accessed 08 August 2022. <br />
-        2.Hong Kong Cancer Strategy 2019. Department of Health, Food and Health Bureau, & Hospital Authority, July 2019.
+        2. Hong Kong Cancer Strategy 2019. Department of Health, Food and Health Bureau, & Hospital Authority, July
+        2019.
       </Box>
     </Layout>
   )
