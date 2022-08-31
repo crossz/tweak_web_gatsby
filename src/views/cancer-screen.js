@@ -203,6 +203,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sectionOneContent: {
+    width: '100%',
+    paddingBottom: 10,
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(0, 2),
     },
@@ -369,7 +371,6 @@ const useStyles = makeStyles((theme) => ({
   reportTip: {
     color: '#818181',
     fontSize: theme.typography.caption.fontSize,
-    marginTop: theme.spacing(3),
     padding: theme.spacing(0, 6),
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(2),
@@ -402,6 +403,10 @@ const CancerScreen = () => {
               <Box mt={matches ? 2.5 : 3}>
                 <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
                   {t('products_and_services.cancer_screen_package.detail')}
+                  {matches ? <br /> : null}
+                  <Box display={matches ? 'block' : 'inline-block'} mt={matches ? 2 : 0}>
+                    {t('products_and_services.cancer_screen_package.detail2')}
+                  </Box>
                 </Typography>
               </Box>
             </Box>
@@ -551,7 +556,7 @@ const CancerScreen = () => {
                   })}
                 </Box>
 
-                <Box className={classes.reportTip}>
+                <Box className={classes.reportTip} my={3}>
                   {t('common.notice')} <br />
                   {t('products_and_services.take2_prophecy.notice')}
                   <br />
