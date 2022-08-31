@@ -130,11 +130,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   subBox: {
-    width: theme.spacing(46),
+    width: theme.spacing(48),
     background: '#fff',
     height: theme.spacing(8.75),
     borderRadius: 10,
     marginTop: theme.spacing(4),
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '16px',
+    fontWeight: 700,
+    padding: theme.spacing(3, 2),
     '& path': {
       fill: theme.palette.error.main,
     },
@@ -381,16 +386,23 @@ const CancerScreen = () => {
                   <Box textAlign='center'> {t('products_and_services.cancer_screen_package.subtitle')}</Box>
                 </Typography>
                 <Box display='flex' justifyContent='center'>
-                  <Box className={classes.subBox} mr={2} color='primary.main'>
+                  <Box className={classes.subBox} mr={2} color='primary.main' justifyContent='center'>
                     <ErrorIcon color='red' />
-                    <Trans i18nKey={t('products_and_services.cancer_screen_package.sub_detail1')}>
-                      ..<sup>1</sup>..<sup>2</sup>..
-                    </Trans>
+                    <Box ml={1}>
+                      <Trans i18nKey='products_and_services.cancer_screen_package.sub_detail1'>
+                        .<sup>.</sup>.
+                      </Trans>
+                    </Box>
                   </Box>
                   <Box className={classes.subBox} color='primary.main'>
-                    <ErrorIcon />
-                    {t('products_and_services.cancer_screen_package.sub_detail2')}
+                    <ErrorIcon pr={2} />
+                    <Box ml={3}> {t('products_and_services.cancer_screen_package.sub_detail2')}</Box>
                   </Box>
+                </Box>
+                <Box mt={5} textAlign='center'>
+                  <Typography variant={matches ? 'body2' : 'body1'}>
+                    {t('products_and_services.cancer_screen_package.subdetail3')}
+                  </Typography>
                 </Box>
               </Box>
               <Box className={classes.bannerWrapper}>
