@@ -69,7 +69,14 @@ const PromotionContent = ({ whiteBg }) => {
         pt={isMobile ? 0.25 : 0}
         overflow='hidden'
       >
-        <Box width={isMobile ? '100%' : 'auto'} alignItems='center' display='flex' flexShrink={0}>
+        <Box
+          width={isMobile ? '100%' : 'auto'}
+          alignItems='center'
+          mt={isMobile ? 1 : 0}
+          display='flex'
+          flexShrink={0}
+          justifyContent={isMobile ? 'center' : null}
+        >
           <ClockIcon
             className={classnames(classes.icon, {
               [classes.whiteBgIcon]: whiteBg,
@@ -89,7 +96,7 @@ const PromotionContent = ({ whiteBg }) => {
             </Hidden>
           </Box>
         </Box>
-        <Box overflow='hidden' alignItems='center' display='flex'>
+        <Box overflow='hidden' alignItems='center' display='flex' justifyContent={isMobile ? 'center' : null}>
           <Box
             fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
             flexShrink={0}
