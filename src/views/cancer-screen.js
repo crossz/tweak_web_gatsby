@@ -22,6 +22,9 @@ import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Layout from '@layouts/Layout'
 import useLangQuery from '@hooks/useLangQuery'
 import ErrorIcon from '@material-ui/icons/Error'
+import TitleDot from '@themes/components/TitleDot'
+// import ImageTranslation from '@components/ImageTranslation'
+import img from '../assets/imagesTranslation/cancer_screen_Hk.png'
 const steps = [
   {
     label: 'products_and_services.take2_prophecy.process.0',
@@ -89,7 +92,14 @@ const reports = [
     color: '#00AA82',
   },
 ]
-
+const compass = [
+  { name: 'Take2 Prophecy™ 早期鼻咽癌篩查', object: '' },
+  { name: 'AFP（肝臟腫瘤指標）', object: '' },
+  { name: 'CA19.9 （胰臟腫瘤指標）', object: '' },
+  { name: ' CA125 （卵巢腫瘤指標）', object: '-  只適用於女性' },
+  { name: 'CA15.3 （乳房腫瘤指標）', object: '-  只適用於女性' },
+  { name: 'PSA, TOTAL （總前列腺癌抗原指數）', object: ' -  只適用於男性' },
+]
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.grey[100],
@@ -129,6 +139,16 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(-32),
     },
   },
+  sectionSubBg: {
+    borderRadius: theme.spacing(1.5),
+    paddingTop: theme.spacing(7),
+    paddingLeft: theme.spacing(8.5),
+    paddingBottom: theme.spacing(10),
+    backgroundColor: 'rgb(248, 249, 250)',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(-32),
+    },
+  },
   subBox: {
     width: theme.spacing(48),
     background: '#fff',
@@ -160,6 +180,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     width: '100%',
     backgroundColor: alpha(theme.palette.prophecyPrimary.main, 0.85),
+    opacity: '0.75',
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.h5.fontSize,
     fontWeight: theme.typography.fontWeightBold,
@@ -200,6 +221,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     fontWeight: theme.typography.fontWeightBold,
     textAlign: 'center',
+    zIndex: '2',
     whiteSpace: 'break-spaces',
     [theme.breakpoints.down('xs')]: {
       width: '50%',
@@ -215,6 +237,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   stepIcon: {
+    background: '#fff',
+    borderRadius: '50%',
     maxWidth: theme.spacing(21.5),
     marginBottom: theme.spacing(3.75),
     [theme.breakpoints.down('xs')]: {
@@ -324,6 +348,7 @@ const useStyles = makeStyles((theme) => ({
   },
   prophecyImgWrapper: {
     overflow: 'hidden',
+    width: 400,
     marginRight: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {
       marginRight: 0,
@@ -405,7 +430,63 @@ const CancerScreen = () => {
                   </Typography>
                 </Box>
               </Box>
-              <Box className={classes.bannerWrapper}>
+              <Box className={classes.sectionSubBg}>
+                <Typography variant='h4' color='primary'>
+                  <Box> Take2 Health提供的癌症篩查套餐 </Box>
+                  <Box mb={8}> 涵蓋了多種本港常見癌症的腫瘤指標篩查，包括：</Box>
+                </Typography>
+                <Box display='flex' flexDirection='row' justifyContent='space-around'>
+                  <Box lineHeight={3}>
+                    {compass.map((item) => (
+                      <Box>
+                        <TitleDot />
+                        <Box display='flex' alignItems='center'>
+                          <Box fontSize='20px' fontWeight={400}>
+                            {item.name}
+                          </Box>
+                          <Box color='grey.800'>{item.object}</Box>
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                  <Box width={337}>
+                    <img src={img} height={337} />
+                    {/* <ImageTranslation filename='cancer_screen' alt='cancer_screen_Hk'></ImageTranslation> */}
+                  </Box>
+                </Box>
+                <Box mt={5} textAlign='center'>
+                  <Box fontSize='12px' color='grey.700'>
+                    {t('products_and_services.cancer_screen_package.attention')}
+                  </Box>
+                </Box>
+              </Box>
+              <Typography variant='h4'>
+                <Box textAlign='center' color='secondary.main'>
+                  {t('products_and_services.cancer_screen_package.subdetail4')}
+                </Box>
+              </Typography>
+              <Grid className={classes.btnWrapper} container spacing={2} justifyContent='center'>
+                <Grid item xs={matches ? 6 : 'auto'}>
+                  <Button
+                    variant='outlined'
+                    color='primary'
+                    href={addLangQuery()}
+                    target='_blank'
+                    fullWidth={matches}
+                    className={classes.btn}
+                  >
+                    {t('common.book_now')}
+                  </Button>
+                </Grid>
+                <Grid item xs={matches ? 6 : 'auto'}>
+                  <Link to='/service-location/'>
+                    <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
+                      {t('common.service_location')}
+                    </Button>
+                  </Link>
+                </Grid>
+              </Grid>
+              <Box className={classes.bannerWrapper} mt={10}>
                 <StaticImage
                   className={classes.bannerBg}
                   src='../assets/images/products_services_banner_bg.jpg'
@@ -415,7 +496,7 @@ const CancerScreen = () => {
                   {t('products_and_services.take2_prophecy.detection_process')}
                 </Box>
               </Box>
-              <Box className={classes.sectionOneContent}>
+              <Box className={classes.sectionOneContent} bgcolor='#fafafa'>
                 <Box className={classes.stepsWrapper}>
                   {steps.map((step, index) => {
                     let curStep
@@ -469,45 +550,7 @@ const CancerScreen = () => {
                     )
                   })}
                 </Box>
-                <Box
-                  fontWeight={matches ? 'fontWeightBold' : 'fontWeightMedium'}
-                  textAlign='center'
-                  mb={matches ? 4 : 3}
-                  mt={matches ? 1 : 8}
-                  color='primary.main'
-                  fontSize='body1.fontSize'
-                >
-                  {t('products_and_services.take2_prophecy.process.4')}:
-                </Box>
-                <ImageList rowHeight='auto' cols={matches ? 1 : 2} gap={matches ? 16 : 24}>
-                  {reports.map((report, index) => (
-                    <ImageListItem
-                      key={index}
-                      classes={{
-                        item: classes.imageListItemItem,
-                      }}
-                      className={classes.imageListItem}
-                    >
-                      <Box className={classes.reportItem}>
-                        <Box className={classes.reportTop}>
-                          <Box
-                            className={classes.reportType}
-                            style={{
-                              color: report.color,
-                            }}
-                          >
-                            {t(report.result)}
-                            <RightIcon
-                              className={classnames(classes.rightIcon, index === 1 && classes.greenRightIcon)}
-                            ></RightIcon>
-                          </Box>
-                          {t(report.suggestion)}
-                        </Box>
-                        <Box>{t(report.mark)}</Box>
-                      </Box>
-                    </ImageListItem>
-                  ))}
-                </ImageList>
+
                 <Box className={classes.reportTip}>
                   {t('common.notice')} <br />
                   {t('products_and_services.take2_prophecy.notice')}
@@ -517,58 +560,62 @@ const CancerScreen = () => {
                 </Box>
               </Box>
             </Box>
-            <Grid container>
-              <Grid item xs={12} sm={6}>
-                <StaticImage
-                  className={classes.prophecyImgWrapper}
-                  imgClassName={classes.prophecyImg}
-                  src='../assets/images/take2_prophecy_01.jpg'
-                  alt='take2 prophecy 01'
-                ></StaticImage>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Box ml={matches ? 0 : 5}>
-                  <Typography variant='h5' component='div'>
-                    <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
-                      {t('common.book_detection')}
-                    </Box>
-                    <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
-                      <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
-                        {t('products_and_services.take2_prophecy.do_you_have')}
-                        <Hidden smUp>
-                          <br />
-                        </Hidden>
-                        {t('products_and_services.take2_prophecy.action')}
-                      </Typography>
-                    </Box>
-                  </Typography>
-                  <Grid className={classes.btnWrapper} container spacing={2}>
-                    <Grid item xs={matches ? 6 : 'auto'}>
-                      <Button
-                        variant='outlined'
-                        color='primary'
-                        href={addLangQuery()}
-                        target='_blank'
-                        fullWidth={matches}
-                        className={classes.btn}
-                      >
-                        {t('common.book_now')}
-                      </Button>
-                    </Grid>
-                    <Grid item xs={matches ? 6 : 'auto'}>
-                      <Link to='/service-location/'>
-                        <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
-                          {t('common.service_location')}
-                        </Button>
-                      </Link>
-                    </Grid>
-                  </Grid>
-                </Box>
-              </Grid>
-            </Grid>
           </Container>
         </Box>
       </Container>
+      <Box display='flex' justifyContent='center'>
+        <Box>
+          <StaticImage
+            className={classes.prophecyImgWrapper}
+            imgClassName={classes.prophecyImg}
+            src='../assets/imagesTranslation/cancer_screen_Hk.png'
+            alt='take2 prophecy 01'
+          ></StaticImage>
+        </Box>
+        <Box ml={matches ? 0 : 5}>
+          <Typography variant='h5' component='div'>
+            <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
+              {t('common.book_detection')}
+            </Box>
+            <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
+              <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
+                {t('products_and_services.take2_prophecy.do_you_have')}
+                <Hidden smUp>
+                  <br />
+                </Hidden>
+                {t('products_and_services.take2_prophecy.action')}
+              </Typography>
+            </Box>
+          </Typography>
+          <Grid className={classes.btnWrapper} container spacing={2}>
+            <Grid item xs={matches ? 6 : 'auto'}>
+              <Button
+                variant='outlined'
+                color='primary'
+                href={addLangQuery()}
+                target='_blank'
+                fullWidth={matches}
+                className={classes.btn}
+              >
+                {t('common.book_now')}
+              </Button>
+            </Grid>
+            <Grid item xs={matches ? 6 : 'auto'}>
+              <Link to='/service-location/'>
+                <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
+                  {t('common.service_location')}
+                </Button>
+              </Link>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+      <Box className={classes.reportTip} mt={10} mb={12} ml={20}>
+        {t('cp_v2.contact_and_reference.paragraphs.4')} <br />
+        1.“Cancer Factsheet.” World Health Organisation, February 2022, from
+        https://www.who.int/news-room/fact-sheets/detail/cancer. Accessed 08 August 2022. <br />
+        2.Hong Kong Cancer Strategy 2019. Department of Health, Food and Health Bureau, & Hospital Authority, July 2019.
+      </Box>
     </Layout>
   )
 }
