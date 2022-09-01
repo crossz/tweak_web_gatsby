@@ -374,6 +374,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(2),
+      width: '380px',
     },
   },
   reportTip: {
@@ -604,7 +605,13 @@ const CancerScreen = () => {
           </Container>
         </Box>
       </Container>
-      <Box display='flex' justifyContent='center' flexDirection={matches ? 'column' : 'row'} alignItems='center'>
+      <Box
+        display='flex'
+        justifyContent='center'
+        flexDirection={matches ? 'column' : 'row'}
+        alignItems='center'
+        width='100%'
+      >
         <StaticImage
           className={classes.prophecyImgWrapper}
           imgClassName={classes.prophecyImg}
