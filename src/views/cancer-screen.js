@@ -364,6 +364,16 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 0,
     },
   },
+  prophecyImgWrapper1: {
+    display: 'flex',
+    overflow: 'hidden',
+    width: 350,
+    marginRight: theme.spacing(5),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: 0,
+      width: '100%',
+    },
+  },
   prophecyImg: {
     borderRadius: theme.spacing(1.5),
   },
@@ -474,7 +484,7 @@ const CancerScreen = () => {
                   <Box width={!matches ? 337 : '100%'}>
                     <Box mr={matches ? 0 : 3}>
                       <StaticImage
-                        className={classes.prophecyImgWrapper}
+                        className={classes.prophecyImgWrapper1}
                         imgClassName={classes.prophecyImg}
                         src='../assets/imagesTranslation/cancer_screen_Hk.png'
                         alt='take2 prophecy 01'
