@@ -384,7 +384,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(2),
-      width: '380px',
+      // width: '380px',
     },
   },
   reportTip: {
