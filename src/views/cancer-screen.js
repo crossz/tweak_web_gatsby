@@ -214,7 +214,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     paddingBottom: 10,
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(0, 2),
+      padding: theme.spacing(4, 2),
     },
   },
   stepsWrapper: {
