@@ -93,12 +93,21 @@ const reports = [
   },
 ]
 const compass = [
-  { name: 'Take2 Prophecy™ 早期鼻咽癌篩查', object: '' },
-  { name: 'AFP（肝臟腫瘤指標）', object: '' },
-  { name: 'CA19.9 （胰臟腫瘤指標）', object: '' },
-  { name: ' CA125 （卵巢腫瘤指標）', object: '-  只適用於女性' },
-  { name: 'CA15.3 （乳房腫瘤指標）', object: '-  只適用於女性' },
-  { name: 'PSA, TOTAL （總前列腺癌抗原指數）', object: ' -  只適用於男性' },
+  { name: 'products_and_services.take2_extra_care.title', object: '' },
+  { name: 'products_and_services.cancer_screen_package.compass2', object: '' },
+  { name: 'products_and_services.cancer_screen_package.compass3', object: '' },
+  {
+    name: 'products_and_services.cancer_screen_package.compass4',
+    object: 'products_and_services.cancer_screen_package.only_to_woman',
+  },
+  {
+    name: 'products_and_services.cancer_screen_package.compass5',
+    object: 'products_and_services.cancer_screen_package.only_to_woman',
+  },
+  {
+    name: 'products_and_services.cancer_screen_package.compass6',
+    object: 'products_and_services.cancer_screen_package.only_to_man',
+  },
 ]
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -467,15 +476,15 @@ const CancerScreen = () => {
                 )}
                 <Box display='flex' flexDirection={matches ? 'column-reverse' : 'row'} justifyContent='space-around'>
                   <Box lineHeight={3} ml={matches ? 2 : 0}>
-                    {compass.map((item) => (
-                      <Box>
+                    {compass.map((item, index) => (
+                      <Box key={index}>
                         <TitleDot />
                         <Box display='flex' alignItems='center'>
                           <Box fontSize={matches ? '13px' : '20px'} fontWeight={400} flexShrink='0' color='#1A285D'>
-                            {item.name}
+                            {t(item.name)}
                           </Box>
                           <Box color='grey.800' flexShrink='0'>
-                            {item.object}
+                            {t(item.object)}
                           </Box>
                         </Box>
                       </Box>

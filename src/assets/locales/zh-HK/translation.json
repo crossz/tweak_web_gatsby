@@ -332,7 +332,14 @@
             "subtitle0": "全面癌症篩查",
             "pachages": "Take2 Health提供的癌症篩查套餐",
             "pachages2": "涵蓋了多種本港常見癌症的腫瘤指標篩查，包括：",
-            "contact": "如有任何疑問，請向專業醫護人員查詢。"
+            "contact": "如有任何疑問，請向專業醫護人員查詢。",
+            "compass2": "AFP（肝臟腫瘤指標）",
+            "compass3": "CA19.9 （胰臟腫瘤指標）",
+            "compass4": "CA125 （卵巢腫瘤指標）",
+            "compass5": "CA15.3 （乳房腫瘤指標）",
+            "compass6": "PSA, TOTAL （總前列腺癌抗原指數）",
+            "only_to_woman": "只適用於女性",
+            "only_to_man": "只適用於男性"
         }
     },
     "about_us": {
