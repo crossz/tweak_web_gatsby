@@ -483,9 +483,11 @@ const CancerScreen = () => {
                           <Box fontSize={matches ? '13px' : '20px'} fontWeight={400} flexShrink='0' color='#1A285D'>
                             {t(item.name)}
                           </Box>
-                          <Box color='grey.800' flexShrink='0'>
-                            {t(item.object)}
-                          </Box>
+                          {item.object && (
+                            <Box color='grey.800' flexShrink='0'>
+                              -{t(item.object)}
+                            </Box>
+                          )}
                         </Box>
                       </Box>
                     ))}
