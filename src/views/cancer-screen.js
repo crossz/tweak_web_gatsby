@@ -12,18 +12,15 @@ import {
 } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import { StaticImage } from 'gatsby-plugin-image'
-import RightIcon from '@images/icons/right.svg'
 import Link from '@components/Link'
 import ArrowIcon from '@images/icons/arrow.svg'
-import ImageList from '@material-ui/core/ImageList'
-import ImageListItem from '@material-ui/core/ImageListItem'
 import classnames from 'classnames'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import Layout from '@layouts/Layout'
 import useLangQuery from '@hooks/useLangQuery'
 import ErrorIcon from '@material-ui/icons/Error'
 import TitleDot from '@themes/components/TitleDot'
-// import ImageTranslation from '@components/ImageTranslation'
+import ImageTranslation from '../components/ImageTranslation'
 import img from '../assets/imagesTranslation/cancer_screen_Hk.png'
 const steps = [
   {
@@ -327,9 +324,6 @@ const useStyles = makeStyles((theme) => ({
       fill: '#00AA82',
     },
   },
-  imageListItem: {
-    height: 'auto',
-  },
   reportItem: {
     padding: theme.spacing(4),
     color: theme.palette.grey[600],
@@ -362,9 +356,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexShrink: '0',
   },
-  imageListItemItem: {
-    overflow: 'initial',
-  },
   prophecyImgWrapper: {
     overflow: 'hidden',
     width: 350,
@@ -375,6 +366,7 @@ const useStyles = makeStyles((theme) => ({
   },
   prophecyImgWrapper1: {
     display: 'flex',
+    alignItems: 'center',
     overflow: 'hidden',
     width: 350,
     marginRight: theme.spacing(5),
@@ -414,7 +406,8 @@ const useStyles = makeStyles((theme) => ({
 
 const CancerScreen = () => {
   const classes = useStyles()
-  const { t } = useI18next()
+  const { t, language } = useI18next()
+  const isEn = language === 'en'
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const addLangQuery = useLangQuery()
@@ -450,7 +443,7 @@ const CancerScreen = () => {
                 <Box display='flex' justifyContent='center' flexDirection={matches ? 'column' : 'row'}>
                   <Box className={classes.subBox} mr={2} color='primary.main' justifyContent='center'>
                     <ErrorIcon color='red' />
-                    <Box ml={1}>
+                    <Box ml={1} lineHeight={isEn ? 1 : 1.5}>
                       <Trans i18nKey='products_and_services.cancer_screen_package.sub_detail1'>
                         .<sup>.</sup>.
                       </Trans>
@@ -458,7 +451,10 @@ const CancerScreen = () => {
                   </Box>
                   <Box className={classes.subBox} color='primary.main'>
                     <ErrorIcon pr={2} />
-                    <Box ml={3}> {t('products_and_services.cancer_screen_package.sub_detail2')}</Box>
+                    <Box ml={3} lineHeight={isEn ? 1 : 1.5}>
+                      {' '}
+                      {t('products_and_services.cancer_screen_package.sub_detail2')}
+                    </Box>
                   </Box>
                 </Box>
                 <Box mt={5} textAlign='center'>
@@ -494,12 +490,17 @@ const CancerScreen = () => {
                   </Box>
                   <Box width={!matches ? 337 : '100%'}>
                     <Box mr={matches ? 0 : 3}>
-                      <StaticImage
+                      {/* <StaticImage
                         className={classes.prophecyImgWrapper1}
                         imgClassName={classes.prophecyImg}
                         src='../assets/imagesTranslation/cancer_screen_Hk.png'
                         alt='take2 prophecy 01'
-                      ></StaticImage>{' '}
+                      ></StaticImage>{' '} */}
+                      <ImageTranslation
+                        className={classes.prophecyImgWrapper1}
+                        filename='cancer_screen'
+                        alt='cancer screen'
+                      ></ImageTranslation>
                     </Box>
 
                     {matches && (
@@ -639,12 +640,12 @@ const CancerScreen = () => {
           src='../assets/imagesTranslation/cancer_screen_Hk.png'
           alt='take2 prophecy 01'
         ></StaticImage>
-        <Box ml={matches ? 0 : 5}>
+        <Box ml={matches ? 0 : 5} px={isEn ? 4 : 0}>
           <Typography variant='h5' component='div'>
-            <Box pt={matches ? 5 : 14} color='prophecyPrimary.main' ml={matches ? -10 : 0}>
+            <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
               {t('common.book_detection')}
             </Box>
-            <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7} ml={matches ? -10 : 0}>
+            <Box mt={matches ? 1.5 : 2} mb={matches ? 5 : 7}>
               <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
                 {t('products_and_services.take2_prophecy.do_you_have')}
               </Typography>
