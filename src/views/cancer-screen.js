@@ -137,13 +137,13 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionOneBg: {
     borderRadius: theme.spacing(1.5),
-    height: 294,
+    height: 'auto',
     paddingTop: theme.spacing(5),
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(-32),
-      height: 450,
+      height: 'auto',
       padding: theme.spacing(3, 3),
     },
   },
@@ -457,7 +457,7 @@ const CancerScreen = () => {
                     </Box>
                   </Box>
                 </Box>
-                <Box mt={5} textAlign='center'>
+                <Box mt={5} textAlign='center' py={2}>
                   <Typography variant={matches ? 'body2' : 'body1'}>
                     {t('products_and_services.cancer_screen_package.subdetail3')}
                   </Typography>
