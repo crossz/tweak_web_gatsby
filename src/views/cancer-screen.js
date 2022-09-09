@@ -160,7 +160,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   subBox: {
-    width: theme.spacing(48),
+    width: theme.spacing(50),
     background: '#fff',
     height: theme.spacing(8.75),
     borderRadius: 10,
