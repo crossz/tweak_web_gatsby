@@ -20,7 +20,7 @@ import Layout from '@layouts/Layout'
 import useLangQuery from '@hooks/useLangQuery'
 import ErrorIcon from '@material-ui/icons/Error'
 import TitleDot from '@themes/components/TitleDot'
-import ImageTranslation from '../components/CampaignV2/Components/ImageTranslation'
+import ImageTranslation from '@components/ImageTranslation'
 const steps = [
   {
     label: 'products_and_services.take2_prophecy.process.0',
