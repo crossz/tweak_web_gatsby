@@ -8,6 +8,7 @@ const { languagePrefixes } = require('../../languages')
 const ImageTranslation = ({ filename, alt, hasMobile = true, ...rest }) => {
   const { language } = useI18next()
   const { images } = useContext(ImagesTranslationContext)
+  console.log(images)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const realFilename = `${filename}${isMobile && hasMobile ? '_mobile' : ''}${

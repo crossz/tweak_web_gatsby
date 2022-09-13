@@ -21,7 +21,7 @@ import useLangQuery from '@hooks/useLangQuery'
 import ErrorIcon from '@material-ui/icons/Error'
 import TitleDot from '@themes/components/TitleDot'
 import ImageTranslation from '@components/ImageTranslation'
-import { ImagesTranslationContext } from '@components/CampaignV2/utils/context'
+import { ImagesTranslationContext } from '@layouts/context'
 
 const steps = [
   {
@@ -496,44 +496,18 @@ const CancerScreen = ({ images }) => {
                     </Box>
                     <Box width={!matches ? 337 : '100%'}>
                       <Box mr={matches ? 0 : 3}>
-                        {/* {language === 'zh-HK' && (
-                        <StaticImage
-                          className={classes.prophecyImgWrapper1}
-                          imgClassName={classes.prophecyImg}
-                          src='../assets/imagesTranslation/cancer_screen_Hk.jpg'
-                          alt='take2 prophecy 01'
-                        ></StaticImage>
-                      )}
-                      {language === 'zh-CN' && (
-                        <StaticImage
-                          className={classes.prophecyImgWrapper1}
-                          imgClassName={classes.prophecyImg}
-                          src='../assets/imagesTranslation/cancer_screen_cn.jpg'
-                          alt='take2 prophecy 01'
-                        ></StaticImage>
-                      )}
-                      {language === 'en' && (
-                        <StaticImage
-                          className={classes.prophecyImgWrapper1}
-                          imgClassName={classes.prophecyImg}
-                          src='../assets/imagesTranslation/cancer_screen_En.jpg'
-                          alt='take2 prophecy 01'
-                        ></StaticImage>
-                      )} */}
                         <ImageTranslation
                           className={classes.prophecyImgWrapper1}
                           filename='cancer_screen'
                           alt='cancer screen'
                         ></ImageTranslation>
                       </Box>
-
                       {matches && (
                         <Typography variant='h4' color='primary'>
                           <Box mt={3}>{t('products_and_services.cancer_screen_package.pachages')} </Box>
                           <Box mb={3}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
                         </Typography>
                       )}
-                      <ImageTranslation filename='cancer_screen' alt='cancer_screen_Hk'></ImageTranslation>
                     </Box>
                   </Box>
                   <Box mt={5} textAlign='center'>
@@ -658,36 +632,11 @@ const CancerScreen = ({ images }) => {
           alignItems='center'
           width='100%'
         >
-          {language === 'zh-HK' && (
-            <StaticImage
-              className={classes.prophecyImgWrapper1}
-              imgClassName={classes.prophecyImg}
-              src='../assets/imagesTranslation/cancer_screen_Hk.jpg'
-              alt='take2 prophecy 01'
-            ></StaticImage>
-          )}
-          {language === 'zh-CN' && (
-            <StaticImage
-              className={classes.prophecyImgWrapper1}
-              imgClassName={classes.prophecyImg}
-              src='../assets/imagesTranslation/cancer_screen_cn.jpg'
-              alt='take2 prophecy 01'
-            ></StaticImage>
-          )}
-          {language === 'en' && (
-            <StaticImage
-              className={classes.prophecyImgWrapper1}
-              imgClassName={classes.prophecyImg}
-              src='../assets/imagesTranslation/cancer_screen_En.jpg'
-              alt='take2 prophecy 01'
-            ></StaticImage>
-          )}
-          {/* <StaticImage
-          className={classes.prophecyImgWrapper}
-          imgClassName={classes.prophecyImg}
-          src='../assets/imagesTranslation/cancer_screen_Hk.png'
-          alt='take2 prophecy 01'
-        ></StaticImage> */}
+          <ImageTranslation
+            className={classes.prophecyImgWrapper}
+            filename='cancer_screen'
+            alt='cancer screen'
+          ></ImageTranslation>
           <Box ml={matches ? 0 : 5} px={isEn ? 4 : 0}>
             <Typography variant='h5' component='div'>
               <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>

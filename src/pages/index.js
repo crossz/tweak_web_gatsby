@@ -3,6 +3,7 @@ import Homepage from '@components/Homepage'
 import { graphql } from 'gatsby'
 import Layout from '@layouts/Layout'
 import { ImagesTranslationContext } from '@layouts/context'
+import CancerScreen from '../views/cancer-screen'
 
 const Index = ({ data }) => {
   const { imagesTranslation, heroBannerNodes, promotionNodes, healthTipsNodes } = data
@@ -19,6 +20,7 @@ const Index = ({ data }) => {
           promotionNodes={promotionNodes?.nodes}
           healthTipsNodes={healthTipsNodes?.nodes}
         ></Homepage>
+        <CancerScreen></CancerScreen>
       </ImagesTranslationContext.Provider>
     </Layout>
   )
