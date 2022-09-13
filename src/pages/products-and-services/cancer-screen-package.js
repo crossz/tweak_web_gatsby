@@ -1,10 +1,19 @@
 import React from 'react'
 import CancerScreen from '@views/cancer-screen'
 import { graphql } from 'gatsby'
+import { ImagesTranslationContext } from '@layouts/context'
 
 const CancerScreenPackage = ({ data }) => {
   const { imagesTranslation } = data
-  return <CancerScreen images={imagesTranslation?.nodes} />
+  return (
+    <ImagesTranslationContext.Provider
+      value={{
+        images: imagesTranslation?.nodes,
+      }}
+    >
+      <CancerScreen />
+    </ImagesTranslationContext.Provider>
+  )
 }
 
 export default CancerScreenPackage
