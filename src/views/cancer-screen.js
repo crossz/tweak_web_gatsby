@@ -410,7 +410,7 @@ const CancerScreen = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('xs'))
   const addLangQuery = useLangQuery()
-
+  const { languagePrefixes } = require('../../languages')
   return (
     <Layout>
       <Container className={classes.root} disableGutters maxWidth='xl'>
@@ -489,17 +489,35 @@ const CancerScreen = () => {
                   </Box>
                   <Box width={!matches ? 337 : '100%'}>
                     <Box mr={matches ? 0 : 3}>
-                      {/* <StaticImage
-                        className={classes.prophecyImgWrapper1}
-                        imgClassName={classes.prophecyImg}
-                        src='../assets/imagesTranslation/cancer_screen_Hk.png'
-                        alt='take2 prophecy 01'
-                      ></StaticImage>{' '} */}
-                      <ImageTranslation
+                      {language === 'zh-HK' && (
+                        <StaticImage
+                          className={classes.prophecyImgWrapper1}
+                          imgClassName={classes.prophecyImg}
+                          src='../assets/imagesTranslation/cancer_screen_Hk.jpg'
+                          alt='take2 prophecy 01'
+                        ></StaticImage>
+                      )}
+                      {language === 'zh-CN' && (
+                        <StaticImage
+                          className={classes.prophecyImgWrapper1}
+                          imgClassName={classes.prophecyImg}
+                          src='../assets/imagesTranslation/cancer_screen_cn.jpg'
+                          alt='take2 prophecy 01'
+                        ></StaticImage>
+                      )}
+                      {language === 'en' && (
+                        <StaticImage
+                          className={classes.prophecyImgWrapper1}
+                          imgClassName={classes.prophecyImg}
+                          src='../assets/imagesTranslation/cancer_screen_En.jpg'
+                          alt='take2 prophecy 01'
+                        ></StaticImage>
+                      )}
+                      {/* <ImageTranslation
                         className={classes.prophecyImgWrapper1}
                         filename='cancer_screen'
                         alt='cancer screen'
-                      ></ImageTranslation>
+                      ></ImageTranslation> */}
                     </Box>
 
                     {matches && (
@@ -633,6 +651,30 @@ const CancerScreen = () => {
         alignItems='center'
         width='100%'
       >
+        {language === 'zh-HK' && (
+          <StaticImage
+            className={classes.prophecyImgWrapper1}
+            imgClassName={classes.prophecyImg}
+            src='../assets/imagesTranslation/cancer_screen_Hk.jpg'
+            alt='take2 prophecy 01'
+          ></StaticImage>
+        )}
+        {language === 'zh-CN' && (
+          <StaticImage
+            className={classes.prophecyImgWrapper1}
+            imgClassName={classes.prophecyImg}
+            src='../assets/imagesTranslation/cancer_screen_cn.jpg'
+            alt='take2 prophecy 01'
+          ></StaticImage>
+        )}
+        {language === 'en' && (
+          <StaticImage
+            className={classes.prophecyImgWrapper1}
+            imgClassName={classes.prophecyImg}
+            src='../assets/imagesTranslation/cancer_screen_En.jpg'
+            alt='take2 prophecy 01'
+          ></StaticImage>
+        )}
         {/* <StaticImage
           className={classes.prophecyImgWrapper}
           imgClassName={classes.prophecyImg}
