@@ -20,8 +20,7 @@ import Layout from '@layouts/Layout'
 import useLangQuery from '@hooks/useLangQuery'
 import ErrorIcon from '@material-ui/icons/Error'
 import TitleDot from '@themes/components/TitleDot'
-import ImageTranslation from '../components/ImageTranslation'
-import img from '../assets/imagesTranslation/cancer_screen_Hk.png'
+import ImageTranslation from '../components/CampaignV2/Components/ImageTranslation'
 const steps = [
   {
     label: 'products_and_services.take2_prophecy.process.0',
@@ -509,7 +508,7 @@ const CancerScreen = () => {
                         <Box mb={3}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
                       </Typography>
                     )}
-                    {/* <ImageTranslation filename='cancer_screen' alt='cancer_screen_Hk'></ImageTranslation> */}
+                    <ImageTranslation filename='cancer_screen' alt='cancer_screen_Hk'></ImageTranslation>
                   </Box>
                 </Box>
                 <Box mt={5} textAlign='center'>
@@ -634,12 +633,12 @@ const CancerScreen = () => {
         alignItems='center'
         width='100%'
       >
-        <StaticImage
+        {/* <StaticImage
           className={classes.prophecyImgWrapper}
           imgClassName={classes.prophecyImg}
           src='../assets/imagesTranslation/cancer_screen_Hk.png'
           alt='take2 prophecy 01'
-        ></StaticImage>
+        ></StaticImage> */}
         <Box ml={matches ? 0 : 5} px={isEn ? 4 : 0}>
           <Typography variant='h5' component='div'>
             <Box pt={matches ? 5 : 14} color='prophecyPrimary.main'>
