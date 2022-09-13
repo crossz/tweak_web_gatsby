@@ -2,8 +2,9 @@ import React from 'react'
 import CancerScreen from '@views/cancer-screen'
 import { graphql } from 'gatsby'
 
-const CancerScreenPackage = () => {
-  return <CancerScreen />
+const CancerScreenPackage = ({ data }) => {
+  const { imagesTranslation } = data
+  return <CancerScreen images={imagesTranslation?.nodes} />
 }
 
 export default CancerScreenPackage
@@ -16,6 +17,14 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    imagesTranslation: allFile(filter: { sourceInstanceName: { eq: "imagesTranslation" } }) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
