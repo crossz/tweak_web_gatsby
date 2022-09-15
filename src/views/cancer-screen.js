@@ -524,6 +524,7 @@ const CancerScreen = () => {
                       href={addLangQuery()}
                       target='_blank'
                       fullWidth={matches}
+                      id='RW_Ehealth_CancerScreening_1'
                       className={classes.btn}
                     >
                       {t('common.book_now')}
@@ -531,7 +532,13 @@ const CancerScreen = () => {
                   </Grid>
                   <Grid item xs={matches ? 6 : 'auto'}>
                     <Link to='/service-location/'>
-                      <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
+                      <Button
+                        className={classes.btn}
+                        variant='contained'
+                        color='secondary'
+                        fullWidth={matches}
+                        id='RW_SL_CancerScreening_1'
+                      >
                         {t('common.service_location')}
                       </Button>
                     </Link>
@@ -654,13 +661,20 @@ const CancerScreen = () => {
             target='_blank'
             fullWidth={matches}
             className={classes.btn}
+            id='RW_Ehealth_CancerScreening_2'
           >
             {t('common.book_now')}
           </Button>
         </Grid>
         <Grid item xs={matches ? 5 : 'auto'}>
           <Link to='/service-location/'>
-            <Button className={classes.btn} variant='contained' color='secondary' fullWidth={matches}>
+            <Button
+              className={classes.btn}
+              variant='contained'
+              color='secondary'
+              fullWidth={matches}
+              id='RW_SL_CancerScreening_2'
+            >
               {t('common.service_location')}
             </Button>
           </Link>
