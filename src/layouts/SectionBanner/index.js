@@ -103,7 +103,12 @@ const SectionBanner = () => {
     if (getDomTop(pointerRef.current) < document.documentElement.scrollTop) scrollTo('#section-tabs')
   }, [originalPath])
   const curMenuItem = useMemo(() => menu?.find((item) => originalPath.includes(item.path)), [menu, originalPath])
-
+  const productsAndServicesTrackingCode = [
+    { code: 'RW_Product_Prophecy_Tab' },
+    { code: 'RW_Product_CancerScreening_Tab' },
+    { code: 'RW_Product_Membership_Tab' },
+    { code: 'RW_Product_FAQ_Tab' },
+  ]
   const curMenuItemPath = useMemo(() => {
     const curMenuItemChild =
       curMenuItem?.path === originalPath
@@ -156,6 +161,11 @@ const SectionBanner = () => {
                       [classes.activeTab]:
                         (curMenuItem?.path === originalPath && !index) || item?.path === originalPath,
                     })}
+                    id={
+                      curMenuItem?.path === '/products-and-services/'
+                        ? productsAndServicesTrackingCode[index]?.code
+                        : ''
+                    }
                     activeClassName={classes.activeTab}
                     key={item.title}
                     partiallyActive={true}
