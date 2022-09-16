@@ -132,7 +132,10 @@ const PromotionContent = ({ whiteBg }) => {
               alignItems='center'
             >
               <Trans i18nKey='cp_v2.promotion.price'>
-                .<span style={{ fontSize: isMobile ? '20px' : '25px', fontWeight: 900 }}>$1,500</span>
+                .
+                <span style={{ fontSize: isMobile ? '20px' : '25px', fontWeight: 900, marginLeft: isEn ? '5px' : '' }}>
+                  $1,500
+                </span>
               </Trans>
             </Box>
             {/* {!isMobile &&
