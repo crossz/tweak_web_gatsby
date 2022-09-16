@@ -128,6 +128,8 @@ const PromotionContent = ({ whiteBg }) => {
               fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
               fontWeight='fontWeightMedium'
               component='span'
+              display='flex'
+              alignItems='center'
             >
               <Trans i18nKey='cp_v2.promotion.price'>
                 .<span style={{ fontSize: isMobile ? '20px' : '25px', fontWeight: 900 }}>$1,500</span>
