@@ -294,7 +294,6 @@
         },
         "take2_prophecy": {
             "title": "Take2 Prophecy™ 早期鼻咽癌篩查",
-            "title2":"Take2 Prophecy™ 早期鼻咽癌篩查",
             "detail": "Take2 Prophecy™ 早期鼻咽癌篩查，適用群體包括常規體檢者、無徵狀人士及有疑似徵狀人士等。",
             "detection_process": "篩查流程",
             "process": {
@@ -340,7 +339,8 @@
             "compass5": "CA15.3 （乳房腫瘤指標）",
             "compass6": "PSA, TOTAL （總前列腺癌抗原指數）",
             "only_to_woman": "只適用於女性",
-            "only_to_man": "只適用於男性"
+            "only_to_man": "只適用於男性",
+            "compass1": "Take2 Prophecy™ 早期鼻咽癌篩查"
         }
     },
     "about_us": {

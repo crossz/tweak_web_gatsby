@@ -90,7 +90,7 @@ const reports = [
   },
 ]
 const compass = [
-  { name: 'products_and_services.take2_extra_care.title2', object: '' },
+  { name: 'products_and_services.cancer_screen_package.compass1', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass2', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass3', object: '' },
   {
