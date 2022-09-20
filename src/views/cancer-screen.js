@@ -90,7 +90,7 @@ const reports = [
   },
 ]
 const compass = [
-  { name: 'Take2 Prophecy™早期鼻咽癌篩查', object: '' },
+  { name: 'products_and_services.take2_extra_care.title2', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass2', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass3', object: '' },
   {
@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
   subBox: {
     width: theme.spacing(50),
     background: '#fff',
-    height: theme.spacing(12),
+    height: theme.spacing(15),
     borderRadius: 10,
     marginTop: theme.spacing(4),
     display: 'flex',
@@ -174,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.error.main,
     },
     [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(12),
+      // height: theme.spacing(1),
       width: '100%',
     },
   },
@@ -435,7 +435,7 @@ const CancerScreen = () => {
                 <Typography variant='h4'>
                   <Box textAlign='center' lineHeight={1.5}>
                     {t('products_and_services.cancer_screen_package.subtitle0')}
-                    {matches ? <br /> : isEn ? ' ' : null}
+                    {matches ? isEn ? ' ' : null : <br />}
                     {t('products_and_services.cancer_screen_package.subtitle')}
                   </Box>
                 </Typography>
@@ -456,7 +456,7 @@ const CancerScreen = () => {
                     </Box>
                   </Box>
                 </Box>
-                <Box mt={5} textAlign='center' py={2}>
+                <Box mt={5} py={2} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
                   <Typography variant={matches ? 'body2' : 'body1'}>
                     {t('products_and_services.cancer_screen_package.subdetail3')}
                   </Typography>
@@ -465,7 +465,7 @@ const CancerScreen = () => {
               <Box className={classes.sectionSubBg}>
                 {!matches && (
                   <Typography variant='h4' color='primary'>
-                    <Box>{t('products_and_services.cancer_screen_package.pachages')} </Box>
+                    <Box>{t('products_and_services.cancer_screen_package.pachages')}</Box>
                     <Box mb={8}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
                   </Typography>
                 )}
@@ -498,14 +498,13 @@ const CancerScreen = () => {
                     </Box>
                     {matches && (
                       <Typography variant='h4' color='primary'>
-                        <Box mt={3}>{t('products_and_services.cancer_screen_package.pachages')} </Box>
-                        <Box mb={3}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
-                        {t('products_and_services.cancer_screen_package.compass1')}
+                        {t('products_and_services.cancer_screen_package.pachages')}
+                        {t('products_and_services.cancer_screen_package.pachages2')}
                       </Typography>
                     )}
                   </Box>
                 </Box>
-                <Box mt={5} textAlign='center'>
+                <Box mt={5} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
                   <Box fontSize='12px' color='grey.700'>
                     {t('products_and_services.cancer_screen_package.attention')}
                   </Box>
@@ -584,13 +583,18 @@ const CancerScreen = () => {
                           })}
                         >
                           <Box className={classes.stepIcon}>{curStep.icon}</Box>
+                          {matches && (
+                            <Box color='primary.main' fontSize={20} mt={-3}>
+                              <em>{index + 1}</em>
+                            </Box>
+                          )}
                           <Box className={classes.stepLabel}>
                             <Box component='span'>
-                              {!(index === 4 && matches) && t(curStep.label)}
+                              {t(curStep.label)}
                               {index === 3 && !matches && <sup>#</sup>}
                               {index === 2 && matches && <sup>#</sup>}
                             </Box>
-                            <Hidden smUp>
+                            {/* <Hidden smUp>
                               {index < steps?.length - 1 && (
                                 <ArrowIcon
                                   className={classnames(classes.arrowIcon, {
@@ -601,12 +605,12 @@ const CancerScreen = () => {
                                   })}
                                 ></ArrowIcon>
                               )}
-                            </Hidden>
+                            </Hidden> */}
                           </Box>
                         </Box>
-                        <Hidden xsDown>
+                        {/* <Hidden xsDown>
                           {index < steps?.length - 1 && <ArrowIcon className={classes.arrowIcon}></ArrowIcon>}
-                        </Hidden>
+                        </Hidden> */}
                       </React.Fragment>
                     )
                   })}
