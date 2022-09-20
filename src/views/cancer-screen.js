@@ -90,7 +90,7 @@ const reports = [
   },
 ]
 const compass = [
-  { name: 'products_and_services.take2_extra_care.title', object: '' },
+  { name: 'Take2 Prophecy™早期鼻咽癌篩查', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass2', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass3', object: '' },
   {
@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
   subBox: {
     width: theme.spacing(50),
     background: '#fff',
-    height: theme.spacing(8.75),
+    height: theme.spacing(12),
     borderRadius: 10,
     marginTop: theme.spacing(4),
     display: 'flex',
@@ -435,14 +435,14 @@ const CancerScreen = () => {
                 <Typography variant='h4'>
                   <Box textAlign='center' lineHeight={1.5}>
                     {t('products_and_services.cancer_screen_package.subtitle0')}
-                    {matches ? <br /> : null}
+                    {matches ? <br /> : isEn ? ' ' : null}
                     {t('products_and_services.cancer_screen_package.subtitle')}
                   </Box>
                 </Typography>
                 <Box display='flex' justifyContent='center' flexDirection={matches ? 'column' : 'row'}>
                   <Box className={classes.subBox} mr={2} color='primary.main' justifyContent='center'>
                     <ErrorIcon color='red' />
-                    <Box ml={1} lineHeight={isEn ? 1 : 1.5}>
+                    <Box ml={1}>
                       <Trans i18nKey='products_and_services.cancer_screen_package.sub_detail1'>
                         .<sup>.</sup>.
                       </Trans>
@@ -480,7 +480,7 @@ const CancerScreen = () => {
                           </Box>
                           {item.object && (
                             <Box color='grey.800' flexShrink='0'>
-                              -{t(item.object)}
+                              <em>-{t(item.object)}</em>
                             </Box>
                           )}
                         </Box>
@@ -500,6 +500,7 @@ const CancerScreen = () => {
                       <Typography variant='h4' color='primary'>
                         <Box mt={3}>{t('products_and_services.cancer_screen_package.pachages')} </Box>
                         <Box mb={3}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
+                        {t('products_and_services.cancer_screen_package.compass1')}
                       </Typography>
                     )}
                   </Box>
@@ -683,10 +684,10 @@ const CancerScreen = () => {
       <Box className={classes.reportTip} mb={matches ? 3 : 12} ml={matches ? 3 : 20} mt={10}>
         {t('cp_v2.contact_and_reference.paragraphs.4')} <br />
         {matches ? <br /> : null}
-        1. “Cancer Factsheet.” World Health Organisation, February 2022, from
+        1. "<em>Cancer Factsheet.</em>" World Health Organisation, February 2022, from
         https://www.who.int/news-room/fact-sheets/detail/cancer. Accessed 08 August 2022. <br />
-        2. Hong Kong Cancer Strategy 2019. Department of Health, Food and Health Bureau, & Hospital Authority, July
-        2019.
+        2. <em>Hong Kong Cancer Strategy 2019. </em>Department of Health, Food and Health Bureau, & Hospital Authority,
+        July 2019.
       </Box>
     </Layout>
   )
