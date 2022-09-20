@@ -285,6 +285,20 @@ const Banner = ({ nodes }) => {
           <SwiperSlide>
             <Box className={classes.heroBannerWrapper}>
               <Box
+                className={classnames(classes.heroImgWrapper, classes.containImgWrapper, classes.promoBannerBg)}
+                position='relative'
+              >
+                <ImageTranslation
+                  filename='anniversary'
+                  alt='anniversary banner'
+                  className={classes.containImg}
+                ></ImageTranslation>
+              </Box>
+            </Box>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Box className={classes.heroBannerWrapper}>
+              <Box
                 className={classnames(classes.heroImgWrapper, classes.containImgWrapper, classes.athletesBannerBg)}
                 position='relative'
               >
