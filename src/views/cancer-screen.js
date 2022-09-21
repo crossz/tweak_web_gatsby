@@ -475,7 +475,7 @@ const CancerScreen = () => {
                       <Box key={index}>
                         <TitleDot />
                         <Box display='flex' alignItems='center'>
-                          <Box fontSize={matches ? '13px' : '20px'} fontWeight={400} flexShrink='0' color='#1A285D'>
+                          <Box fontSize={matches ? '13px' : '20px'} fontWeight={400} color='#1A285D'>
                             {t(item.name)}
                           </Box>
                           {item.object && (
