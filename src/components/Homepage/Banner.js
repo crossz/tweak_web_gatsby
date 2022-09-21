@@ -231,6 +231,7 @@ const Banner = ({ nodes }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const { toggleTheme } = useContext(HeroThemeContext)
   const addLangQuery = useLangQuery()
+  const context = useContext(HeroThemeContext)
 
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -242,7 +243,7 @@ const Banner = ({ nodes }) => {
           className={classes.swiperWrapper}
           autoplay={{ delay: 5000000000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
-            return toggleTheme?.(nodes[swiper.realIndex]?.frontmatter?.theme)
+            return toggleTheme?.(nodes[swiper.realIndex]?.frontmatter?.theme, swiper.realIndex)
           }}
           initialSlide={0}
           speed={700}
