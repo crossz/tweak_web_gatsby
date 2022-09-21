@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import {
   makeStyles,
   Typography,
@@ -231,8 +231,10 @@ const Banner = ({ nodes }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
   const { toggleTheme } = useContext(HeroThemeContext)
   const addLangQuery = useLangQuery()
-  const context = useContext(HeroThemeContext)
-
+  const bannersTheme = useMemo(() => {
+    const cmsBannersTheme = nodes?.map((node) => node?.frontmatter?.theme) || []
+    return ['dark', 'light', ...cmsBannersTheme]
+  }, [nodes])
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
       {nodes?.length > 0 && (
@@ -243,7 +245,7 @@ const Banner = ({ nodes }) => {
           className={classes.swiperWrapper}
           autoplay={{ delay: 5000000000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
-            return toggleTheme?.(nodes[swiper.realIndex]?.frontmatter?.theme, swiper.realIndex)
+            return toggleTheme?.(bannersTheme[swiper.realIndex], swiper.realIndex)
           }}
           initialSlide={0}
           speed={700}
