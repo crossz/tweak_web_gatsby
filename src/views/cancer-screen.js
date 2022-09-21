@@ -90,7 +90,7 @@ const reports = [
   },
 ]
 const compass = [
-  { name: 'products_and_services.take2_extra_care.title', object: '' },
+  { name: 'products_and_services.cancer_screen_package.compass1', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass2', object: '' },
   { name: 'products_and_services.cancer_screen_package.compass3', object: '' },
   {
@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
   subBox: {
     width: theme.spacing(50),
     background: '#fff',
-    height: theme.spacing(8.75),
+    height: theme.spacing(15),
     borderRadius: 10,
     marginTop: theme.spacing(4),
     display: 'flex',
@@ -174,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
       fill: theme.palette.error.main,
     },
     [theme.breakpoints.down('xs')]: {
-      height: theme.spacing(12),
+      // height: theme.spacing(1),
       width: '100%',
     },
   },
@@ -435,14 +435,14 @@ const CancerScreen = () => {
                 <Typography variant='h4'>
                   <Box textAlign='center' lineHeight={1.5}>
                     {t('products_and_services.cancer_screen_package.subtitle0')}
-                    {matches ? <br /> : null}
+                    {matches ? isEn ? ' ' : null : <br />}
                     {t('products_and_services.cancer_screen_package.subtitle')}
                   </Box>
                 </Typography>
                 <Box display='flex' justifyContent='center' flexDirection={matches ? 'column' : 'row'}>
                   <Box className={classes.subBox} mr={2} color='primary.main' justifyContent='center'>
                     <ErrorIcon color='red' />
-                    <Box ml={1} lineHeight={isEn ? 1 : 1.5}>
+                    <Box ml={1}>
                       <Trans i18nKey='products_and_services.cancer_screen_package.sub_detail1'>
                         .<sup>.</sup>.
                       </Trans>
@@ -456,7 +456,7 @@ const CancerScreen = () => {
                     </Box>
                   </Box>
                 </Box>
-                <Box mt={5} textAlign='center' py={2}>
+                <Box mt={5} py={2} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
                   <Typography variant={matches ? 'body2' : 'body1'}>
                     {t('products_and_services.cancer_screen_package.subdetail3')}
                   </Typography>
@@ -465,7 +465,7 @@ const CancerScreen = () => {
               <Box className={classes.sectionSubBg}>
                 {!matches && (
                   <Typography variant='h4' color='primary'>
-                    <Box>{t('products_and_services.cancer_screen_package.pachages')} </Box>
+                    <Box>{t('products_and_services.cancer_screen_package.pachages')}</Box>
                     <Box mb={8}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
                   </Typography>
                 )}
@@ -480,7 +480,7 @@ const CancerScreen = () => {
                           </Box>
                           {item.object && (
                             <Box color='grey.800' flexShrink='0'>
-                              -{t(item.object)}
+                              <em>-{t(item.object)}</em>
                             </Box>
                           )}
                         </Box>
@@ -498,13 +498,13 @@ const CancerScreen = () => {
                     </Box>
                     {matches && (
                       <Typography variant='h4' color='primary'>
-                        <Box mt={3}>{t('products_and_services.cancer_screen_package.pachages')} </Box>
-                        <Box mb={3}> {t('products_and_services.cancer_screen_package.pachages2')}</Box>
+                        {t('products_and_services.cancer_screen_package.pachages')}
+                        {t('products_and_services.cancer_screen_package.pachages2')}
                       </Typography>
                     )}
                   </Box>
                 </Box>
-                <Box mt={5} textAlign='center'>
+                <Box mt={5} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
                   <Box fontSize='12px' color='grey.700'>
                     {t('products_and_services.cancer_screen_package.attention')}
                   </Box>
@@ -583,13 +583,18 @@ const CancerScreen = () => {
                           })}
                         >
                           <Box className={classes.stepIcon}>{curStep.icon}</Box>
+                          {matches && (
+                            <Box color='primary.main' fontSize={20} mt={-3}>
+                              <em>{index + 1}</em>
+                            </Box>
+                          )}
                           <Box className={classes.stepLabel}>
                             <Box component='span'>
-                              {!(index === 4 && matches) && t(curStep.label)}
+                              {t(curStep.label)}
                               {index === 3 && !matches && <sup>#</sup>}
                               {index === 2 && matches && <sup>#</sup>}
                             </Box>
-                            <Hidden smUp>
+                            {/* <Hidden smUp>
                               {index < steps?.length - 1 && (
                                 <ArrowIcon
                                   className={classnames(classes.arrowIcon, {
@@ -600,18 +605,18 @@ const CancerScreen = () => {
                                   })}
                                 ></ArrowIcon>
                               )}
-                            </Hidden>
+                            </Hidden> */}
                           </Box>
                         </Box>
-                        <Hidden xsDown>
+                        {/* <Hidden xsDown>
                           {index < steps?.length - 1 && <ArrowIcon className={classes.arrowIcon}></ArrowIcon>}
-                        </Hidden>
+                        </Hidden> */}
                       </React.Fragment>
                     )
                   })}
                 </Box>
 
-                <Box className={classes.reportTip} my={3} textAlign={matches ? 'center' : null} mx={matches ? 2 : 0}>
+                <Box className={classes.reportTip} my={3} mx={matches ? 2 : 0}>
                   {t('common.notice')} <br />
                   {matches && <br />}
                   {t('products_and_services.take2_prophecy.notice')} {matches && <br />} {matches && <br />}
@@ -683,10 +688,10 @@ const CancerScreen = () => {
       <Box className={classes.reportTip} mb={matches ? 3 : 12} ml={matches ? 3 : 20} mt={10}>
         {t('cp_v2.contact_and_reference.paragraphs.4')} <br />
         {matches ? <br /> : null}
-        1. “Cancer Factsheet.” World Health Organisation, February 2022, from
+        1. "<em>Cancer Factsheet.</em>" World Health Organisation, February 2022, from
         https://www.who.int/news-room/fact-sheets/detail/cancer. Accessed 08 August 2022. <br />
-        2. Hong Kong Cancer Strategy 2019. Department of Health, Food and Health Bureau, & Hospital Authority, July
-        2019.
+        2. <em>Hong Kong Cancer Strategy 2019. </em>Department of Health, Food and Health Bureau, & Hospital Authority,
+        July 2019.
       </Box>
     </Layout>
   )
