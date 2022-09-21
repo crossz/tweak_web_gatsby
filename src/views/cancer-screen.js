@@ -584,7 +584,7 @@ const CancerScreen = () => {
                         >
                           <Box className={classes.stepIcon}>{curStep.icon}</Box>
                           {matches && (
-                            <Box color='primary.main' fontSize={20} mt={-3}>
+                            <Box color='primary.main' fontSize={20} mt={-3} zIndex={2}>
                               <em>{index + 1}</em>
                             </Box>
                           )}
