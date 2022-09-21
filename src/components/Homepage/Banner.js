@@ -239,7 +239,7 @@ const Banner = ({ nodes }) => {
           className={classes.swiperWrapper}
           autoplay={{ delay: 5000000000, disableOnInteraction: false }}
           onSlideChange={(swiper) => {
-            return toggleTheme?.(nodes[swiper.realIndex - 1]?.frontmatter?.theme)
+            return toggleTheme?.(nodes[swiper.realIndex]?.frontmatter?.theme)
           }}
           initialSlide={0}
           speed={700}
@@ -282,6 +282,26 @@ const Banner = ({ nodes }) => {
               </Box>
             </Box>
           </SwiperSlide> */}
+          <SwiperSlide>
+            <Box
+              className={classes.heroBannerWrapper}
+              id='RW_HP_Top_Banner_SepPromo_EHEALTH'
+              to={addLangQuery()}
+              target='_blank'
+              component={Link}
+            >
+              <Box
+                className={classnames(classes.heroImgWrapper, classes.containImgWrapper, classes.promoBannerBg)}
+                position='relative'
+              >
+                <ImageTranslation
+                  filename='anniversary'
+                  alt='anniversary banner'
+                  className={classes.containImg}
+                ></ImageTranslation>
+              </Box>
+            </Box>
+          </SwiperSlide>
           <SwiperSlide>
             <Box className={classes.heroBannerWrapper}>
               <Box
