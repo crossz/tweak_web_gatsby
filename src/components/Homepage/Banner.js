@@ -91,6 +91,9 @@ const useStyles = makeStyles((theme) => ({
   athletesBannerBg: {
     background: `linear-gradient(90deg, rgba(169,211,240,1) 0%, rgba(227,176,109,1) 100%)`,
   },
+  anniversaryBannerWrapper: {
+    background: `linear-gradient(90deg, rgba(51,54,79,1) 0%, rgba(51,54,79,1) 100%)`,
+  },
   containImg: {
     maxHeight: '100%',
   },
@@ -291,7 +294,12 @@ const Banner = ({ nodes }) => {
               component={Link}
             >
               <Box
-                className={classnames(classes.heroImgWrapper, classes.containImgWrapper, classes.promoBannerBg)}
+                className={classnames(
+                  classes.heroImgWrapper,
+                  classes.anniversaryBannerWrapper,
+                  classes.containImgWrapper,
+                  classes.promoBannerBg
+                )}
                 position='relative'
               >
                 <ImageTranslation
