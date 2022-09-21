@@ -325,7 +325,7 @@
             "subtitle": "helps you to detect the risks of cancer early",
             "sub_detail1": "Cancer is the leading cause of death globally<1>1</1> and the top killer in Hong Kong for decades, with a rising trend in its incidence<1>2</1>",
             "sub_detail2": "Not all cancers can be prevented",
-            "subdetail3": "the best way to tackle it is to perform regular cancer screening in order to detect any changes in the body",
+            "subdetail3": "The best way to tackle it is to perform regular cancer screening in order to detect any changes in the body",
             "attention": "Disclaimer: Test items other than the Take2 Prophecy™ Test for NPC are performed by Take2 Health's partnering laboratory and medical organisations.",
             "subdetail4": "Detecting cancers early might bring better treatment outcomes",
             "detail2": "this non-invasive Cancer Screening Package is suitable for all ages, including individuals who intend to do routine check-ups, who are asymptomatic, and those with relevant family history.",
@@ -339,7 +339,8 @@
             "compass5": "CA15.3 (Breast cancer marker)",
             "compass6": "PSA, TOTAL (Prostate cancer marker)",
             "only_to_woman": "for women only",
-            "only_to_man": "for men only"
+            "only_to_man": "for men only",
+            "compass1": "NPC-associated EBV DNA (Take2 Prophecy™ Test for NPC)"
         }
     },
     "about_us": {
