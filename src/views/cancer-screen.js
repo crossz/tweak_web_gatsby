@@ -616,7 +616,7 @@ const CancerScreen = () => {
                   })}
                 </Box>
 
-                <Box className={classes.reportTip} my={3} textAlign={matches ? 'center' : null} mx={matches ? 2 : 0}>
+                <Box className={classes.reportTip} my={3} mx={matches ? 2 : 0}>
                   {t('common.notice')} <br />
                   {matches && <br />}
                   {t('products_and_services.take2_prophecy.notice')} {matches && <br />} {matches && <br />}
