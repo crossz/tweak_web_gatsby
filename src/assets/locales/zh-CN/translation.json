@@ -339,7 +339,8 @@
             "compass5": "CA15.3（乳腺肿瘤标志物）",
             "compass6": "PSA, TOTAL（总前列腺特异性抗原）",
             "only_to_woman": "只适用于女性",
-            "only_to_man": "只适用于男性"
+            "only_to_man": "只适用于男性",
+            "compass1": "Take2 Prophecy™ 早期鼻咽癌筛查"
         }
     },
     "about_us": {
