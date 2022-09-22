@@ -233,7 +233,7 @@ const Banner = ({ nodes }) => {
   const addLangQuery = useLangQuery()
   const bannersTheme = useMemo(() => {
     const cmsBannersTheme = nodes?.map((node) => node?.frontmatter?.theme) || []
-    return ['dark', 'light', ...cmsBannersTheme]
+    return ['light', ...cmsBannersTheme]
   }, [nodes])
   return (
     <Container disableGutters maxWidth='xl' className={classes.root}>
@@ -288,7 +288,7 @@ const Banner = ({ nodes }) => {
               </Box>
             </Box>
           </SwiperSlide> */}
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <Box
               className={classes.heroBannerWrapper}
               id='RW_HP_Top_Banner_SepPromo_EHEALTH'
@@ -312,7 +312,7 @@ const Banner = ({ nodes }) => {
                 ></ImageTranslation>
               </Box>
             </Box>
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide>
             <Box className={classes.heroBannerWrapper}>
               <Box
