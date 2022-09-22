@@ -450,10 +450,7 @@ const CancerScreen = () => {
                   </Box>
                   <Box className={classes.subBox} color='primary.main'>
                     <ErrorIcon pr={2} />
-                    <Box ml={3} lineHeight={isEn ? 1 : 1.5}>
-                      {' '}
-                      {t('products_and_services.cancer_screen_package.sub_detail2')}
-                    </Box>
+                    <Box ml={1}> {t('products_and_services.cancer_screen_package.sub_detail2')}</Box>
                   </Box>
                 </Box>
                 <Box mt={5} py={2} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
