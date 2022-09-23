@@ -420,13 +420,13 @@ const CancerScreen = () => {
               <Typography variant='h4' color='primary'>
                 {t('menu.cancer_screen_package')}
               </Typography>
-              <Box mt={matches ? 2.5 : 3}>
+              <Box mt={matches ? 2.5 : 3} textAlign='justify'>
                 <Typography variant={matches ? 'body2' : 'body1'} color='textPrimary'>
                   {t('products_and_services.cancer_screen_package.detail')}
-                  {matches ? <br /> : null}
-                  <Box display={matches ? 'block' : 'inline-block'} mt={matches ? 2 : 0}>
-                    {t('products_and_services.cancer_screen_package.detail2')}
-                  </Box>
+                  {/* {matches ? <br /> : null} */}
+                  {/* <Box display={matches ? 'block' : 'inline-block'} mt={matches ? 2 : 0}> */}
+                  {t('products_and_services.cancer_screen_package.detail2')}
+                  {/* </Box> */}
                 </Typography>
               </Box>
             </Box>
@@ -453,7 +453,7 @@ const CancerScreen = () => {
                     <Box ml={1}> {t('products_and_services.cancer_screen_package.sub_detail2')}</Box>
                   </Box>
                 </Box>
-                <Box mt={5} py={2} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
+                <Box mt={1} py={2} textAlign={isEn ? (matches ? 'left' : 'center') : 'center'}>
                   <Typography variant={matches ? 'body2' : 'body1'}>
                     {t('products_and_services.cancer_screen_package.subdetail3')}
                   </Typography>
@@ -494,10 +494,12 @@ const CancerScreen = () => {
                       ></ImageTranslation>
                     </Box>
                     {matches && (
-                      <Typography variant='h4' color='primary'>
-                        {t('products_and_services.cancer_screen_package.pachages')}
-                        {t('products_and_services.cancer_screen_package.pachages2')}
-                      </Typography>
+                      <Box my={3}>
+                        <Typography variant='h4' color='primary'>
+                          {t('products_and_services.cancer_screen_package.pachages')}
+                          {t('products_and_services.cancer_screen_package.pachages2')}
+                        </Typography>
+                      </Box>
                     )}
                   </Box>
                 </Box>
