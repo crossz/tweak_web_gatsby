@@ -3,10 +3,11 @@ import ClockIcon from '@components/CampaignV2/images/clock.svg'
 import { makeStyles, useTheme, useMediaQuery, Hidden, Box, Button, Typography } from '@material-ui/core'
 import { PROMOTION_CODE } from '@utils/constant'
 import classnames from 'classnames'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import { toast } from 'react-toastify'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import useLangQuery from '@hooks/useLangQuery'
+import { matches } from 'lodash-es'
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -69,7 +70,14 @@ const PromotionContent = ({ whiteBg }) => {
         pt={isMobile ? 0.25 : 0}
         overflow='hidden'
       >
-        <Box width={isMobile ? '100%' : 'auto'} alignItems='center' display='flex' flexShrink={0}>
+        <Box
+          width={isMobile ? '100%' : 'auto'}
+          alignItems='center'
+          mt={isMobile ? 1 : 0}
+          display='flex'
+          flexShrink={0}
+          justifyContent={isMobile ? 'center' : null}
+        >
           <ClockIcon
             className={classnames(classes.icon, {
               [classes.whiteBgIcon]: whiteBg,
@@ -89,7 +97,7 @@ const PromotionContent = ({ whiteBg }) => {
             </Hidden>
           </Box>
         </Box>
-        <Box overflow='hidden' alignItems='center' display='flex'>
+        <Box overflow='hidden' alignItems='center' display='flex' justifyContent={isMobile ? 'center' : null}>
           <Box
             fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
             flexShrink={0}
@@ -120,10 +128,17 @@ const PromotionContent = ({ whiteBg }) => {
               fontSize={isMobile ? 'body2.fontSize' : 'body1.fontSize'}
               fontWeight='fontWeightMedium'
               component='span'
+              display='flex'
+              alignItems='center'
             >
-              {t('cp_v2.promotion.price')}
+              <Trans i18nKey='cp_v2.promotion.price'>
+                .
+                <span style={{ fontSize: isMobile ? '20px' : '25px', fontWeight: 900, marginLeft: isEn ? '5px' : '' }}>
+                  $1,500
+                </span>
+              </Trans>
             </Box>
-            {!isMobile &&
+            {/* {!isMobile &&
               (isTable || (isEn && whiteBg) ? (
                 <Box
                   fontWeight='fontWeightMedium'
@@ -141,10 +156,10 @@ const PromotionContent = ({ whiteBg }) => {
                 >
                   {t('cp_v2.promotion.tip')}
                 </Box>
-              ))}
+              ))} */}
           </Typography>
         </Box>
-        {isMobile && (
+        {/* {isMobile && (
           <Box
             display='inline-block'
             fontWeight='fontWeightMedium'
@@ -154,7 +169,7 @@ const PromotionContent = ({ whiteBg }) => {
           >
             {t('cp_v2.promotion.tip')}
           </Box>
-        )}
+        )} */}
       </Box>
       {whiteBg && (
         <Button
