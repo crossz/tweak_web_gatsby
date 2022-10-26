@@ -44,8 +44,8 @@ export const query = graphql`
         frontmatter: {
           languages: { eq: $language }
           postType: { eq: "campaignStory" }
-          isCampaign: { ne: false }
-          hide: { ne: true }
+          # isCampaign: { ne: false }
+          # hide: { ne: true }
         }
       }
       sort: { fields: frontmatter___date, order: DESC }
@@ -60,78 +60,18 @@ export const query = graphql`
           detail
           date
           href
-          cover {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
-            }
-          }
+          #cover {
+            #childImageSharp {
+            #  gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+            #}
+          #}
           # pdf {
           #   publicURL
           # }
         }
       }
     }
-    healthTipsNodes: allMdx(
-      limit: 6
-      filter: {
-        frontmatter: {
-          languages: { eq: $language }
-          postType: { eq: "campaignNews" }
-          isCampaign: { ne: false }
-          hide: { ne: true }
-        }
-      }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      nodes {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          cpTitle
-          cpDetail
-          title
-          detail
-          date
-          href
-          cover {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
-            }
-          }
-          # pdf {
-          #   publicURL
-          # }
-        }
-      }
-    }
-    athleteNodes: allMdx(
-      limit: 6
-      filter: { frontmatter: { languages: { eq: $language }, postType: { eq: "campaignAthlete" }, hide: { ne: true } } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      nodes {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          detail
-          date
-          athleteType
-          href
-          cover {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
-            }
-          }
-          # pdf {
-          #   publicURL
-          # }
-        }
-      }
-    }
+    
+    
   }
 `

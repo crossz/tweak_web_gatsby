@@ -114,7 +114,7 @@ const PostCard = ({
 }) => {
   const classes = useStyles({ minHeight })
   const { t, routed, language } = useI18next()
-  const images = cover.map((item) => getImage(item))
+  // const images = cover.map((item) => getImage(item))
   const isCampaignPage = useMatch(
     `${routed ? `/${language}` : ''}/whats-new/campaign`
   )
@@ -126,7 +126,7 @@ const PostCard = ({
       isPdf={Boolean(pdf?.publicURL)}
     >
       <Box className={classes.root}>
-        <Box height={images[0] ? 'auto' : 200} className={classes.imageWrapper}>
+        {/* <Box height={images[0] ? 'auto' : 200} className={classes.imageWrapper}>
           {images[0] && (
             <GatsbyImage
               imgClassName={classes.image}
@@ -135,7 +135,7 @@ const PostCard = ({
               alt={title}
             ></GatsbyImage>
           )}
-        </Box>
+        </Box> */}
         {isCampaignPage ? (
           <Box className={classes.info}>
             <Box

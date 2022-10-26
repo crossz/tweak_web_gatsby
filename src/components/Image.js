@@ -12,9 +12,9 @@ const Image = ({ alt, filename, ...rest }) => {
             nodes {
               relativePath
               name
-              childImageSharp {
-                gatsbyImageData
-              }
+              # childImageSharp {
+              #  gatsbyImageData
+              #}
             }
           }
         }

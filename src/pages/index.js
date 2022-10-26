@@ -40,9 +40,9 @@ export const query = graphql`
     imagesTranslation: allFile(filter: { sourceInstanceName: { eq: "imagesTranslation" } }) {
       nodes {
         name
-        childImageSharp {
-          gatsbyImageData
-        }
+        #childImageSharp {
+        #  gatsbyImageData
+        #}
       }
     }
     heroBannerNodes: allMdx(
@@ -58,16 +58,16 @@ export const query = graphql`
           detailHk
           detailEn
           detailCn
-          image {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
-          mobileImage {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
+          #image {
+            #childImageSharp {
+            #  gatsbyImageData(layout: FULL_WIDTH)
+            #}
+          #}
+          #mobileImage {
+            #childImageSharp {
+            #  gatsbyImageData(layout: FULL_WIDTH)
+            #}
+          #}
           reference
           sort
           theme
@@ -86,7 +86,12 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/promotions/" }
-        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
+        frontmatter: { 
+          languages: { 
+            eq: $language 
+          }, 
+          # hide: { ne: true } 
+        }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
@@ -100,11 +105,11 @@ export const query = graphql`
           date
           type
           href
-          cover {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
-            }
-          }
+          #cover {
+            #childImageSharp {
+            #  gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+            #}
+          #}
           # pdf {
           #   publicURL
           # }
@@ -115,7 +120,12 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/health-tips/" }
-        frontmatter: { languages: { eq: $language }, hide: { ne: true } }
+        frontmatter: {
+          languages: { 
+            eq: $language 
+          }, 
+          # hide: { ne: true } 
+        }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
@@ -129,11 +139,11 @@ export const query = graphql`
           date
           type
           href
-          cover {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
-            }
-          }
+          #cover {
+            #childImageSharp {
+            #  gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2)
+            #}
+          #}
           # pdf {
           #   publicURL
           # }

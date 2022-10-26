@@ -12,42 +12,42 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
     let slug = ''
 
-    switch (relativeDirectory) {
-      case 'clinical-papers':
-        break
-      case 'join-us':
-        slug = `/about-us/${relativeDirectory}/${node.id}`
-        break
-      case 'terms-and-conditions':
-        slug = `/terms-and-conditions/${
-          node.frontmatter.slug === 'terms-and-conditions'
-            ? ''
-            : node.frontmatter.slug || node.frontmatter.title?.trim() || name
-        }`
-        break
-      case 'health-tips':
-        slug = node.frontmatter.postType
-          ? `/whats-new/campaign/${relativeDirectory}/${
-              node.frontmatter.slug || node.frontmatter.cpTitle?.trim() || name
-            }`
-          : `/whats-new/${relativeDirectory}/${
-              node.frontmatter.slug || node.frontmatter.title?.trim() || name
-            }`
-        break
-      case 'promotions':
-      case 'updates':
-        slug = `/whats-new/${relativeDirectory}/${
-          node.frontmatter.slug || node.frontmatter.title?.trim() || name
-        }`
-        break
-      case 'campaign-page-posts':
+    // switch (relativeDirectory) {
+      // case 'clinical-papers':
+      //   break
+      // case 'join-us':
+      //   slug = `/about-us/${relativeDirectory}/${node.id}`
+      //   break
+      // case 'terms-and-conditions':
+      //   slug = `/terms-and-conditions/${
+      //     node.frontmatter.slug === 'terms-and-conditions'
+      //       ? ''
+      //       : node.frontmatter.slug || node.frontmatter.title?.trim() || name
+      //   }`
+      //   break
+      // case 'health-tips':
+      //   slug = node.frontmatter.postType
+      //     ? `/whats-new/campaign/${relativeDirectory}/${
+      //         node.frontmatter.slug || node.frontmatter.cpTitle?.trim() || name
+      //       }`
+      //     : `/whats-new/${relativeDirectory}/${
+      //         node.frontmatter.slug || node.frontmatter.title?.trim() || name
+      //       }`
+      //   break
+      // case 'promotions':
+      // case 'updates':
+      //   slug = `/whats-new/${relativeDirectory}/${
+      //     node.frontmatter.slug || node.frontmatter.title?.trim() || name
+      //   }`
+      //   break
+    //   case 'campaign-page-posts':
         slug = `/whats-new/campaign/${relativeDirectory}/${
           node.frontmatter.slug || node.frontmatter.title?.trim() || name
         }`
-        break
-      default:
-        break
-    }
+    //     break
+    //   default:
+    //     break
+    // }
 
     slug &&
       createNodeField({
@@ -61,29 +61,29 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createRedirect, createPage } = actions
 
-  const careers = await graphql(`
-    {
-      allMdx(
-        filter: { fileAbsolutePath: { regex: "/join-us/" } }
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
-        nodes {
-          id
-        }
-      }
-    }
-  `)
+  // const careers = await graphql(`
+  //   {
+  //     allMdx(
+  //       filter: { fileAbsolutePath: { regex: "/join-us/" } }
+  //       sort: { fields: frontmatter___date, order: DESC }
+  //     ) {
+  //       nodes {
+  //         id
+  //       }
+  //     }
+  //   }
+  // `)
 
-  if (careers.errors)
-    return reporter.panicOnBuild(`Error while running GraphQL query.`)
-  const joinUsTemplate = resolve(__dirname, 'src/templates/JoinUs.js')
-  paginate({
-    createPage, // The Gatsby `createPage` function
-    items: careers?.data?.allMdx?.nodes || [], // An array of objects
-    itemsPerPage: 5, // How many items you want per page
-    pathPrefix: '/about-us/join-us/', // Creates pages like `/blog`, `/blog/2`, etc
-    component: joinUsTemplate, // Just like `createPage()`
-  })
+  // if (careers.errors)
+  //   return reporter.panicOnBuild(`Error while running GraphQL query.`)
+  // const joinUsTemplate = resolve(__dirname, 'src/templates/JoinUs.js')
+  // paginate({
+  //   createPage, // The Gatsby `createPage` function
+  //   items: careers?.data?.allMdx?.nodes || [], // An array of objects
+  //   itemsPerPage: 5, // How many items you want per page
+  //   pathPrefix: '/about-us/join-us/', // Creates pages like `/blog`, `/blog/2`, etc
+  //   component: joinUsTemplate, // Just like `createPage()`
+  // })
 
   const allMdxQuery = await graphql(`
     {
@@ -106,40 +106,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (allMdxQuery.errors)
     return reporter.panicOnBuild(`Error while running GraphQL query.`)
 
-  const postTemplate = resolve(__dirname, 'src/templates/Post.js')
-  const tAndCTemplate = resolve(__dirname, 'src/templates/T&C.js')
-  const careerTemplate = resolve(__dirname, 'src/templates/Career.js')
+  // const postTemplate = resolve(__dirname, 'src/templates/Post.js')
+  // // const tAndCTemplate = resolve(__dirname, 'src/templates/T&C.js')
+  // // const careerTemplate = resolve(__dirname, 'src/templates/Career.js')
 
-  const allMdxList = allMdxQuery.data.allMdx.nodes
+  // const allMdxList = allMdxQuery.data.allMdx.nodes
 
-  allMdxList?.forEach((mdx) => {
-    let path = mdx.fields?.slug
-    if (!path) return
+  // allMdxList?.forEach((mdx) => {
+  //   let path = mdx.fields?.slug
+  //   if (!path) return
 
-    let template = null
+  //   let template = null
 
-    switch (mdx.parent.relativeDirectory) {
-      case 'terms-and-conditions':
-        template = tAndCTemplate
-        break
-      case 'join-us':
-        template = careerTemplate
-        break
-      default:
-        template = postTemplate
-        break
-    }
+  //   // switch (mdx.parent.relativeDirectory) {
+  //   //   case 'terms-and-conditions':
+  //   //     template = tAndCTemplate
+  //   //     break
+  //   //   case 'join-us':
+  //   //     template = careerTemplate
+  //   //     break
+  //   //   default:
+  //       template = postTemplate
+  //   //     break
+  //   // }
 
-    createPage({
-      path,
-      component: template,
-      context: {
-        slug: mdx.fields.slug,
-        sectionPath: mdx.parent.relativeDirectory,
-        regex: `/${mdx.parent.relativeDirectory}/`,
-      },
-    })
-  })
+  //   createPage({
+  //     path,
+  //     component: template,
+  //     context: {
+  //       slug: mdx.fields.slug,
+  //       sectionPath: mdx.parent.relativeDirectory,
+  //       regex: `/${mdx.parent.relativeDirectory}/`,
+  //     },
+  //   })
+  // })
 
   createRedirect({
     fromPath: '/index.html',
