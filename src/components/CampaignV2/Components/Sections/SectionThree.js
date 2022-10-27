@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTheme, useMediaQuery, Box, makeStyles } from '@material-ui/core'
 import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
-import Map from '@components/Map'
+// import Map from '@components/Map'
 import { StaticImage } from 'gatsby-plugin-image'
 import ImageTranslation from '../ImageTranslation'
 
@@ -164,7 +164,7 @@ const Steps = () => {
             {t('cp_v2.ngs_progress.paragraphs.2')}
           </Box>
           <Box borderRadius={isMobile ? 0 : 16} overflow='hidden'>
-            <Map showMap className={classes.map} trackCodeV2></Map>
+            {/* <Map showMap className={classes.map} trackCodeV2></Map> */}
           </Box>
         </Box>
       </Box>

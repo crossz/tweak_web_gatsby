@@ -1,5 +1,5 @@
 import React from 'react'
-import Map from '@components/Map'
+// import Map from '@components/Map'
 import { makeStyles } from '@material-ui/core/'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
@@ -87,7 +87,7 @@ const Homepage = ({ heroBannerNodes, promotionNodes, healthTipsNodes }) => {
               {t('service_location.title')}
             </Typography>
           </Box>
-          <Map showMap></Map>
+          {/* <Map showMap></Map> */}
         </Container>
       </Box>
       <Container disableGutters maxWidth='lg'>

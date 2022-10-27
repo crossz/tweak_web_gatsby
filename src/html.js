@@ -11,7 +11,7 @@ export default function HTML(props) {
           name='viewport'
           content='width=device-width, initial-scale=1, shrink-to-fit=no'
         />
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             var _gaq = _gaq || []
@@ -30,9 +30,9 @@ export default function HTML(props) {
             })()
             `,
           }}
-        />
+        /> */}
         {/* Google Tag Manager */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             (function (w, d, s, l, i) {
@@ -50,15 +50,15 @@ export default function HTML(props) {
             })(window, document, 'script', 'dataLayer', 'GTM-TK5V677');
               `,
           }}
-        />
+        /> */}
         {/* End Google Tag Manager */}
 
         {/* Global site tag (gtag.js) - Google Ads: 339029822 */}
-        <script
+        {/* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=AW-339029822'
-        ></script>
-        <script
+        ></script> */}
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -68,9 +68,9 @@ export default function HTML(props) {
             gtag('config', 'AW-339029822');
             `,
           }}
-        />
+        /> */}
         {/* Facebook Pixel Code */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             !function(f,b,e,v,n,t,s)
@@ -112,19 +112,19 @@ export default function HTML(props) {
             fbq('track', 'PageView');           
               `,
           }}
-        />
-        <noscript>
+        /> */}
+        {/* <noscript>
           <img
             height='1'
             width='1'
             src='https://www.facebook.com/tr?id=437103407310894&ev=PageView&noscript=1'
           />
-        </noscript>
+        </noscript> */}
         {/* End Facebook Pixel Code */}
-        <meta
+        {/* <meta
           name='facebook-domain-verification'
           content='676t4atbin7z9lcz6g62cs9txva5hv'
-        />
+        /> */}
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -155,7 +155,7 @@ export default function HTML(props) {
           }}
         /> */}
         {/* Google Tag Manager (noscript) */}
-        <noscript>
+        {/* <noscript>
           <iframe
             src='https://www.googletagmanager.com/ns.html?id=GTM-TK5V677'
             height='0'
@@ -165,7 +165,7 @@ export default function HTML(props) {
               visibility: 'hidden',
             }}
           ></iframe>
-        </noscript>
+        </noscript> */}
         {props.preBodyComponents}
         <div
           key={`body`}
